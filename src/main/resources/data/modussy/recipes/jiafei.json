@@ -1,0 +1,15 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "modussy:jiafei_product"
+    },
+    {
+      "item": "modussy:slaginium_yassifier_premium"
+    }
+  ],
+  "result": {
+    "count": 1,
+    "item": "modussy:jiafei"
+  }
+}

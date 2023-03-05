@@ -1,0 +1,15 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "modussy:slaginium_yassifier_premium"
+    },
+    {
+      "item": "modussy:cpr"
+    }
+  ],
+  "result": {
+    "count": 1,
+    "item": "modussy:wednesday"
+  }
+}

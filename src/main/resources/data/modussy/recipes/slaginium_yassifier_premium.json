@@ -1,0 +1,21 @@
+{
+  "group": "slaginium_yassifier_premium",
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "scs",
+    "s s",
+    " s "
+  ],
+  "key": {
+    "s": {
+      "item": "modussy:flopium"
+    },
+    "c": {
+      "item": "modussy:gagastone"
+    }
+  },
+  "result": {
+    "item": "modussy:slaginium_yassifier_premium",
+    "count": 1
+  }
+}

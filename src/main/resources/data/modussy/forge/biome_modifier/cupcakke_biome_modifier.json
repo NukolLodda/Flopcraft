@@ -1,0 +1,13 @@
+{
+  "type": "forge:add_spawns",
+  "biomes": [
+    "badlands",
+    "crimson_forest"
+  ],
+  "spawners": {
+    "type": "modussy:cupcakke",
+    "weight": 20,
+    "minCount": 1,
+    "maxCount": 3
+  }
+}

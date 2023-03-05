@@ -1,0 +1,470 @@
+{
+  "aesthetic_1": {
+    "subtitle": "subtitles.aesthetic_1",
+    "sounds": [
+      {
+        "name": "modussy:aesthetic_1",
+        "stream": true
+      }
+    ]
+  },
+  "aesthetic_2": {
+    "subtitle": "subtitles.aesthetic_2",
+    "sounds": [
+      {
+        "name": "modussy:aesthetic_2",
+        "stream": true
+      }
+    ]
+  },
+  "aesthetic_3": {
+    "subtitle": "subtitles.aesthetic_3",
+    "sounds": [
+      {
+        "name": "modussy:aesthetic_3",
+        "stream": true
+      }
+    ]
+  },
+  "aesthetic_4": {
+    "subtitle": "subtitles.aesthetic_4",
+    "sounds": [
+      {
+        "name": "modussy:aesthetic_4",
+        "stream": true
+      }
+    ]
+  },
+  "aesthetic_5": {
+    "subtitle": "subtitles.aesthetic_5",
+    "sounds": [
+      {
+        "name": "modussy:aesthetic_5",
+        "stream": true
+      }
+    ]
+  },
+  "aesthetic_jiafei": {
+    "subtitle": "subtitles.aesthetic_jiafei",
+    "sounds": [
+      {
+        "name": "modussy:aesthetic_jiafei",
+        "stream": true
+      }
+    ]
+  },
+  "aesthetic_shenseea": {
+    "subtitle": "subtitles.aesthetic_shenseea",
+    "sounds": [
+      {
+        "name": "modussy:aesthetic_shenseea",
+        "stream": true
+      }
+    ]
+  },
+  "after_like": {
+    "subtitle": "subtitles.after_like",
+    "sounds": [
+      {
+        "name": "modussy:after_like",
+        "stream": true
+      }
+    ]
+  },
+  "back_beat": {
+    "subtitle": "subtitles.back_beat",
+    "sounds": [
+      {
+        "name": "modussy:back_beat",
+        "stream": true
+      }
+    ]
+  },
+  "bad_hoemance": {
+    "subtitle": "subtitles.bad_hoemance",
+    "sounds": [
+      {
+        "name": "modussy:bad_hoemance",
+        "stream": true
+      }
+    ]
+  },
+  "bad_romance": {
+    "subtitle": "subtitles.bad_romance",
+    "sounds": [
+      {
+        "name": "modussy:bad_romance",
+        "stream": true
+      }
+    ]
+  },
+  "bollywood": {
+    "subtitle": "subtitles.bollywood",
+    "sounds": [
+      {
+        "name": "modussy:bollywood",
+        "stream": true
+      }
+    ]
+  },
+  "cpr": {
+    "subtitle": "subtitles.cpr",
+    "sounds": [
+      {
+        "name": "modussy:cpr",
+        "stream": true
+      }
+    ]
+  },
+  "deepthroat": {
+    "subtitle": "subtitles.deepthroat",
+    "sounds": [
+      {
+        "name": "modussy:deepthroat",
+        "stream": true
+      }
+    ]
+  },
+  "get_into": {
+    "subtitle": "subtitles.get_into",
+    "sounds": [
+      {
+        "name": "modussy:get_into",
+        "stream": true
+      }
+    ]
+  },
+  "gimme_more": {
+    "subtitle": "subtitles.gimme_more",
+    "sounds": [
+      {
+        "name": "modussy:gimme_more",
+        "stream": true
+      }
+    ]
+  },
+  "hip_dont": {
+    "subtitle": "subtitles.hip_dont",
+    "sounds": [
+      {
+        "name": "modussy:hip_dont",
+        "stream": true
+      }
+    ]
+  },
+  "hallo_aus": {
+    "subtitle": "subtitles.hallo_aus",
+    "sounds": [
+      {
+        "name": "modussy:hallo_aus",
+        "stream": true
+      }
+    ]
+  },
+  "ieven_polkka": {
+    "subtitle": "subtitles.ieven_polkka",
+    "sounds": [
+      {
+        "name": "modussy:ieven_polkka",
+        "stream": true
+      }
+    ]
+  },
+  "into_you": {
+    "subtitle": "subtitles.into_you",
+    "sounds": [
+      {
+        "name": "modussy:into_you",
+        "stream": true
+      }
+    ]
+  },
+  "jiafei": {
+    "subtitle": "subtitles.jiafei",
+    "sounds": [
+      {
+        "name": "modussy:jiafei",
+        "stream": true
+      }
+    ]
+  },
+  "metro": {
+    "subtitle": "subtitles.metro",
+    "sounds": [
+      {
+        "name": "modussy:metro",
+        "stream": true
+      }
+    ]
+  },
+  "misery": {
+    "subtitle": "subtitles.misery",
+    "sounds": [
+      {
+        "name": "modussy:misery",
+        "stream": true
+      }
+    ]
+  },
+  "need_doctor": {
+    "subtitle": "subtitles.need_doctor",
+    "sounds": [
+      {
+        "name": "modussy:need_doctor",
+        "stream": true
+      }
+    ]
+  },
+  "pink_venom": {
+    "subtitle": "subtitles.pink_venom",
+    "sounds": [
+      {
+        "name": "modussy:pink_venom",
+        "stream": true
+      }
+    ]
+  },
+  "poker_face": {
+    "subtitle": "subtitles.poker_face",
+    "sounds": [
+      {
+        "name": "modussy:poker_face",
+        "stream": true
+      }
+    ]
+  },
+  "pon_mi": {
+    "subtitle": "subtitles.pon_mi",
+    "sounds": [
+      {
+        "name": "modussy:pon_mi",
+        "stream": true
+      }
+    ]
+  },
+  "pop": {
+    "subtitle": "subtitles.pop",
+    "sounds": [
+      {
+        "name": "modussy:pop",
+        "stream": true
+      }
+    ]
+  },
+  "round_life": {
+    "subtitle": "subtitles.round_life",
+    "sounds": [
+      {
+        "name": "modussy:round_life",
+        "stream": true
+      }
+    ]
+  },
+  "see_tinh": {
+    "subtitle": "subtitles.see_tinh",
+    "sounds": [
+      {
+        "name": "modussy:see_tinh",
+        "stream": true
+      }
+    ]
+  },
+  "techno_cpr": {
+    "subtitle": "subtitles.techno_cpr",
+    "sounds": [
+      {
+        "name": "modussy:techno_cpr",
+        "stream": true
+      }
+    ]
+  },
+  "titanic": {
+    "subtitle": "subtitles.titanic",
+    "sounds": [
+      {
+        "name": "modussy:titanic",
+        "stream": true
+      }
+    ]
+  },
+  "tukah_taka": {
+    "subtitle": "subtitles.tukah_taka",
+    "sounds": [
+      {
+        "name": "modussy:tukah_taka",
+        "stream": true
+      }
+    ]
+  },
+  "vagina": {
+    "subtitle": "subtitles.vagina",
+    "sounds": [
+      {
+        "name": "modussy:vagina",
+        "stream": true
+      }
+    ]
+  },
+  "wednesday": {
+    "subtitle": "subtitles.wednesday",
+    "sounds": [
+      {
+        "name": "modussy:wednesday",
+        "stream": true
+      }
+    ]
+  },
+  "wham": {
+    "subtitle": "subtitles.wham",
+    "sounds": [
+      {
+        "name": "modussy:wham",
+        "stream": true
+      }
+    ]
+  },
+  "cupcakke_1": {
+    "subtitle": "subtitles.cupcakke_1",
+    "sounds": [
+      {
+        "name": "modussy:cupcakke_1",
+        "stream": true
+      }
+    ]
+  },
+  "cupcakke_2": {
+    "subtitle": "subtitles.cupcakke_2",
+    "sounds": [
+      {
+        "name": "modussy:cupcakke_2",
+        "stream": true
+      }
+    ]
+  },
+  "cupcakke_3": {
+    "subtitle": "subtitles.cupcakke_3",
+    "sounds": [
+      {
+        "name": "modussy:cupcakke_3",
+        "stream": true
+      }
+    ]
+  },
+  "cupcakke_4": {
+    "subtitle": "subtitles.cupcakke_4",
+    "sounds": [
+      {
+        "name": "modussy:cupcakke_4",
+        "stream": true
+      }
+    ]
+  },
+  "cupcakke_5": {
+    "subtitle": "subtitles.cupcakke_5",
+    "sounds": [
+      {
+        "name": "modussy:cupcakke_5",
+        "stream": true
+      }
+    ]
+  },
+  "cupcakke_6": {
+    "subtitle": "subtitles.cupcakke_6",
+    "sounds": [
+      {
+        "name": "modussy:cupcakke_6",
+        "stream": true
+      }
+    ]
+  },
+  "cupcakke_7": {
+    "subtitle": "subtitles.cupcakke_7",
+    "sounds": [
+      {
+        "name": "modussy:cupcakke_7",
+        "stream": true
+      }
+    ]
+  },
+  "cupcakke_8": {
+    "subtitle": "subtitles.cupcakke_8",
+    "sounds": [
+      {
+        "name": "modussy:cupcakke_8",
+        "stream": true
+      }
+    ]
+  },
+  "cupcakke_9": {
+    "subtitle": "subtitles.cupcakke_9",
+    "sounds": [
+      {
+        "name": "modussy:cupcakke_9",
+        "stream": true
+      }
+    ]
+  },
+  "cupcakke_10": {
+    "subtitle": "subtitles.cupcakke_10",
+    "sounds": [
+      {
+        "name": "modussy:cupcakke_10",
+        "stream": true
+      }
+    ]
+  },
+  "cupcakke_hurt1": {
+    "subtitle": "subtitles.cupcakke_hurt1",
+    "sounds": [
+      {
+        "name": "modussy:cupcakke_hurt1",
+        "stream": true
+      }
+    ]
+  },
+  "cupcakke_hurt2": {
+    "subtitle": "subtitles.cupcakke_hurt2",
+    "sounds": [
+      {
+        "name": "modussy:cupcakke_hurt2",
+        "stream": true
+      }
+    ]
+  },
+  "cupcakke_hurt3": {
+    "subtitle": "subtitles.cupcakke_hurt3",
+    "sounds": [
+      {
+        "name": "modussy:cupcakke_hurt3",
+        "stream": true
+      }
+    ]
+  },
+  "cupcakke_hurt4": {
+    "subtitle": "subtitles.cupcakke_hurt4",
+    "sounds": [
+      {
+        "name": "modussy:cupcakke_hurt4",
+        "stream": true
+      }
+    ]
+  },
+  "cupcakke_slurp": {
+    "subtitle": "subtitles.cupcakke_slurp",
+    "sounds": [
+      {
+        "name": "modussy:cupcakke_slurp",
+        "stream": true
+      }
+    ]
+  },
+  "yuh": {
+    "subtitle": "subtitles.yuh",
+    "sounds": [
+      {
+        "name": "modussy:yuh",
+        "stream": true
+      }
+    ]
+  }
+}

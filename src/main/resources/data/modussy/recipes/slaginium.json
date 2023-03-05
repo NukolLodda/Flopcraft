@@ -1,0 +1,30 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "modussy:cvm"
+    },
+    {
+      "item": "modussy:cvm"
+    },
+    {
+      "item": "modussy:cvm"
+    },
+    {
+      "item": "modussy:cupcake"
+    },
+    {
+      "item": "minecraft:gold_ingot"
+    },
+    {
+      "item": "minecraft:gold_ingot"
+    },
+    {
+      "item": "minecraft:gold_ingot"
+    }
+  ],
+  "result": {
+    "count": 1,
+    "item": "modussy:slaginium"
+  }
+}

@@ -1,0 +1,18 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "modussy:cupcake"
+    },
+    {
+      "item": "modussy:slaginium_yassifier_premium"
+    },
+    {
+      "item": "modussy:arana_grande"
+    }
+  ],
+  "result": {
+    "count": 1,
+    "item": "modussy:into_you"
+  }
+}

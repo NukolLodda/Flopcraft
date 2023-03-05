@@ -1,0 +1,18 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "modussy:cupcake"
+    },
+    {
+      "item": "modussy:slaginium_yassifier_plus"
+    },
+    {
+      "item": "minecraft:allium"
+    }
+  ],
+  "result": {
+    "count": 1,
+    "item": "modussy:see_tinh"
+  }
+}

@@ -1,0 +1,18 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "modussy:jiafei_product"
+    },
+    {
+      "item": "modussy:slaginium_yassifier_premium"
+    },
+    {
+      "item": "modussy:poker_face"
+    }
+  ],
+  "result": {
+    "count": 1,
+    "item": "modussy:bad_romance"
+  }
+}
