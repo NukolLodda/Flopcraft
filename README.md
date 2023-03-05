@@ -1,7 +1,7 @@
-This Modussy, a little hobby of mine that I've been working on.
+This is Modussy, a little hobby of mine that I've been working on.
 
 
-Due to the fact this mod as cvm and other certain features, the mod's dowload is in the tag of this
+Due to the fact this mod has cvm and other certain features, the mod's download is in the tag of this
 directory instead of on curseforge. To find the mod download, go to the right column of the page where
 it says tags, press tags where it'll then lead you to modussy, press that and within it should
 be a section called assets where the download file ends with a .jar file extension. Click on that
