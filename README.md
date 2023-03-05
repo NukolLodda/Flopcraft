@@ -12,7 +12,7 @@ however, if you want to listen to music using this mod, you have to record a son
 convert it to an ogg file using this link - https://convertio.co/
 
 
-If you download the file itself as a .jar, the file extension is easy to renamed as .zip in order
+If you download the file itself as a .jar, the file extension is easy to be renamed as .zip in order
 to allow you to add the music disc files. (After adding the music disc files, you MUST rename the .zip
 back to a .jar file or Minecraft's not gonna load the mod)
 The following directory is where the music disc sound files should end up:
