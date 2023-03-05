@@ -1,6 +1,12 @@
 This Modussy, a little hobby of mine that I've been working on.
 
 
+Due to the fact this mod as cvm and other certain features, the mod's dowload is in the tag of this
+directory instead of on curseforge. To find the mod download, go to the right column of the page where
+it says tags, press tags where it'll then lead you to modussy, press that and within it should
+be a section called assets where the download file ends with a .jar file extension. Click on that
+and the mod modussy should automatically download.
+
 It is noted that the music discs were removed to prevent any copyright claims on to my mod
 however, if you want to listen to music using this mod, you have to record a song down and
 convert it to an ogg file using this link - https://convertio.co/
