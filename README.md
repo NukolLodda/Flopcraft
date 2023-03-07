@@ -19,6 +19,9 @@ The following directory is where the music disc sound files should end up:
 
 assets/modussy/sounds
 
+It is also noted that a texture pack can also be made to allow the sounds below to be accesible
+however, it is important and very crucial that you MUST convert all sound files for the mod into .ogg files
+
 
 the music disc's supposed sound files are recorded from the following videos:
 
