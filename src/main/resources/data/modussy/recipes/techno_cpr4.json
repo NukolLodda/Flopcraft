@@ -1,0 +1,18 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "modussy:cupcake"
+    },
+    {
+      "item": "modussy:slaginium_yassifier_deluxe"
+    },
+    {
+      "item": "minecraft:music_disc_pigstep"
+    }
+  ],
+  "result": {
+    "count": 1,
+    "item": "modussy:techno_cpr"
+  }
+}

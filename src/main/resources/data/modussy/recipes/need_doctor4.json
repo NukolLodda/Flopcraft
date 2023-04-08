@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "modussy:cupcake"
+    },
+    {
+      "item": "modussy:jiafei_product"
+    },
+    {
+      "item": "modussy:slaginium_yassifier_deluxe"
+    },
+    {
+      "item": "minecraft:leather_chestplate"
+    }
+  ],
+  "result": {
+    "count": 1,
+    "item": "modussy:need_doctor"
+  }
+}

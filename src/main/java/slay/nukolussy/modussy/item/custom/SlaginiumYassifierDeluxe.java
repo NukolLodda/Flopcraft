@@ -68,9 +68,9 @@ public class SlaginiumYassifierDeluxe extends Item {
             ImmutableMultimap.Builder<Attribute, AttributeModifier> builder = ImmutableMultimap.builder();
             builder.putAll(super.getDefaultAttributeModifiers(equipmentSlot));
             builder.put(Attributes.ATTACK_DAMAGE,
-                    new AttributeModifier(BASE_ATTACK_DAMAGE_UUID, "Tool modifier", 24f, AttributeModifier.Operation.ADDITION));
+                    new AttributeModifier(BASE_ATTACK_DAMAGE_UUID, "Tool modifier", 48f, AttributeModifier.Operation.ADDITION));
             builder.put(Attributes.ATTACK_SPEED,
-                    new AttributeModifier(BASE_ATTACK_SPEED_UUID, "Tool modifier", -8, AttributeModifier.Operation.ADDITION));
+                    new AttributeModifier(BASE_ATTACK_SPEED_UUID, "Tool modifier", 0, AttributeModifier.Operation.ADDITION));
             return builder.build();
 
         }

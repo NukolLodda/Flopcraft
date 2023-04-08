@@ -1,0 +1,18 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "modussy:shenseium"
+    },
+    {
+      "item": "modussy:slaginium_yassifier_deluxe"
+    },
+    {
+      "item": "modussy:after_like"
+    }
+  ],
+  "result": {
+    "count": 1,
+    "item": "modussy:pop"
+  }
+}

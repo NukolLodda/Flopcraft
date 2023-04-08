@@ -4,16 +4,21 @@ import net.minecraft.client.Minecraft;
 import net.minecraft.commands.CommandSource;
 import net.minecraft.commands.CommandSourceStack;
 import net.minecraft.core.particles.SimpleParticleType;
+import net.minecraft.nbt.CompoundTag;
 import net.minecraft.network.chat.Component;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.sounds.SoundEvent;
+import net.minecraft.world.InteractionHand;
 import net.minecraft.world.damagesource.DamageSource;
 import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.effect.MobEffects;
-import net.minecraft.world.entity.Entity;
-import net.minecraft.world.entity.LivingEntity;
-import net.minecraft.world.entity.TamableAnimal;
+import net.minecraft.world.entity.*;
+import net.minecraft.world.entity.monster.Ghast;
 import net.minecraft.world.entity.monster.Monster;
+import net.minecraft.world.entity.monster.Spider;
+import net.minecraft.world.entity.monster.hoglin.Hoglin;
+import net.minecraft.world.entity.npc.Villager;
+import net.minecraft.world.entity.npc.WanderingTrader;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.LevelAccessor;
@@ -22,13 +27,13 @@ import net.minecraft.world.phys.Vec2;
 import net.minecraft.world.phys.Vec3;
 import net.minecraftforge.fml.common.Mod;
 import slay.nukolussy.modussy.Modussy;
+import slay.nukolussy.modussy.entity.ModEntities;
+import slay.nukolussy.modussy.entity.custom.twink.Twink;
 import slay.nukolussy.modussy.item.ModItem;
 import slay.nukolussy.modussy.particles.ModParticleTypes;
 import slay.nukolussy.modussy.sound.ModSounds;
 
-import java.util.Comparator;
-import java.util.List;
-import java.util.Random;
+import java.util.*;
 
 
 @Mod.EventBusSubscriber
@@ -43,6 +48,7 @@ public class SlaginiumYassifierRightclicked {
         else return ModParticleTypes.AESTHETIC_5.get();
     }
     private static SoundEvent AestheticSounds(int up) {
+        if (up > 8) up = 8;
         Random random = new Random();
         int randomNum = random.nextInt(1,up);
         if (randomNum == 1) return ModSounds.AESTHETIC_1.get();
@@ -54,10 +60,12 @@ public class SlaginiumYassifierRightclicked {
         else return ModSounds.AESTHETIC_JIAFEI.get();
     }
     private static ItemStack randItem(int up) {
+        if (up > 3) up = 3;
         Random random = new Random();
         int randomNum = random.nextInt(0,up);
         if (randomNum == 0) return new ItemStack(ModItem.CUPCAKE.get());
-        else return new ItemStack(ModItem.SHENSEIUM.get());
+        else if (randomNum == 1) return new ItemStack(ModItem.SHENSEIUM.get());
+        else return new ItemStack(ModItem.JIAFEI_PRODUCT.get());
     }
     public static void execute(LevelAccessor world, double x, double y, double z, Entity entity, ItemStack itemStack, int lvl) {
         int itemDura = 104;
@@ -82,38 +90,43 @@ public class SlaginiumYassifierRightclicked {
         }
         if (entity instanceof Player) {
             if (entity instanceof Player _player) {
-                _player.getCooldowns().addCooldown(itemStack.getItem(), 100);
+                _player.getCooldowns().addCooldown(itemStack.getItem(), 100 * lvl);
             }
             if (entity instanceof LivingEntity _entity) {
                 _entity.addEffect(new MobEffectInstance(MobEffects.REGENERATION, 300 * lvl, amp));
-                _entity.addEffect(new MobEffectInstance(MobEffects.WATER_BREATHING, 600 * lvl, amp));
+                _entity.addEffect(new MobEffectInstance(MobEffects.WATER_BREATHING, 600 * lvl, 0));
                 _entity.addEffect(new MobEffectInstance(MobEffects.FIRE_RESISTANCE, 600 * lvl, amp));
                 _entity.addEffect(new MobEffectInstance(MobEffects.DAMAGE_RESISTANCE, 400 * lvl, amp));
                 _entity.addEffect(new MobEffectInstance(MobEffects.DIG_SPEED, 600 * lvl, 2 * amp));
                 _entity.addEffect(new MobEffectInstance(MobEffects.DAMAGE_BOOST, 600 * lvl, 2 * amp));
-                _entity.addEffect(new MobEffectInstance(MobEffects.NIGHT_VISION, 300 * lvl, amp));
+                _entity.addEffect(new MobEffectInstance(MobEffects.NIGHT_VISION, 300 * lvl, 0));
                 if (lvl > 1) {
                     _entity.addEffect(new MobEffectInstance(MobEffects.ABSORPTION, 600 * lvl, amp));
                     _entity.addEffect(new MobEffectInstance(MobEffects.LUCK, 600 * lvl, 2 * amp));
-                    _entity.addEffect(new MobEffectInstance(MobEffects.SATURATION, 600 * lvl, amp));;
-                    _entity.addEffect(new MobEffectInstance(MobEffects.SLOW_FALLING, 600 * lvl, amp));
+                    _entity.addEffect(new MobEffectInstance(MobEffects.SATURATION, 600 * lvl, amp));
+                    _entity.addEffect(new MobEffectInstance(MobEffects.SLOW_FALLING, 600 * lvl, 0));
                     if (lvl > 2) _entity.addEffect(new MobEffectInstance(MobEffects.HEALTH_BOOST, 600 * lvl, amp));
                 }
             }
         }
         {
             final Vec3 _center = new Vec3(x, y, z);
-            List<Entity> _entfound = world.getEntitiesOfClass(Entity.class, new AABB(_center, _center).inflate(32 / 2d), e -> true).stream()
+            List<Entity> _entfound = world.getEntitiesOfClass(Entity.class, new AABB(_center, _center).inflate(28 + (4 * lvl) / 2d), e -> true).stream()
                     .sorted(Comparator.comparingDouble(_entcnd -> _entcnd.distanceToSqr(_center))).toList();
             for (Entity entityiterator : _entfound) {
                 if (entityiterator instanceof Monster) {
                     ((Monster) entityiterator).addEffect(new MobEffectInstance(MobEffects.MOVEMENT_SLOWDOWN, 8400 * lvl, amp));
                     ((Monster) entityiterator).addEffect(new MobEffectInstance(MobEffects.WEAKNESS, 8400 * lvl, amp));
-                    if (lvl == 1) ((Monster) entityiterator).addEffect(new MobEffectInstance(MobEffects.POISON, 1380 * lvl, 1));
+                    if (lvl == 1) ((Monster) entityiterator).addEffect(new MobEffectInstance(MobEffects.POISON, 1380 * lvl, 0));
                     else {
                         ((Monster) entityiterator).addEffect(new MobEffectInstance(MobEffects.WITHER, 1380 * lvl, amp));
                         ((Monster) entityiterator).addEffect(new MobEffectInstance(MobEffects.GLOWING, 1380 * lvl, amp));
-                        if (lvl > 2) ((Monster) entityiterator).addEffect(new MobEffectInstance(MobEffects.LEVITATION, 600, 1));
+                        if (entityiterator instanceof Spider) {
+                            (entityiterator).setItemSlot(EquipmentSlot.MAINHAND, new ItemStack(ModItem.ARANA_GRANDE.get()));
+                            ((Spider) entityiterator).setGuaranteedDrop(EquipmentSlot.MAINHAND);
+                            (entityiterator).kill();
+                        }
+                        if (lvl > 2) ((Monster) entityiterator).addEffect(new MobEffectInstance(MobEffects.LEVITATION, 600, 0));
                     }
                     entityiterator.hurt(new DamageSource("slayyyy").bypassArmor(), 2);
                     itemDura += 80;
@@ -130,6 +143,19 @@ public class SlaginiumYassifierRightclicked {
                     }
                     itemDura += 120;
                 }
+                Random rand = new Random();
+                if (entityiterator instanceof Villager) {
+                    Twink twink = ((Villager) entityiterator).convertTo(ModEntities.TWINK.get(), false);
+                    twink.getPersistentData().putInt("Variant", rand.nextInt(0,6));
+                    twink.addAdditionalSaveData(twink.getPersistentData());
+                }
+                if (entityiterator instanceof WanderingTrader) {
+                    ((WanderingTrader) entityiterator).convertTo(ModEntities.TWINK.get(), true);
+                }
+                if ((entityiterator instanceof Hoglin || entityiterator instanceof Ghast) && lvl > 1) {
+                    entityiterator.hurt(new DamageSource("slayyyy").bypassArmor(), 10);
+                    itemDura += 80;
+                }
             }
         }
         if (world instanceof ServerLevel _level) {
@@ -137,7 +163,10 @@ public class SlaginiumYassifierRightclicked {
             if (lvl > 2) {
                 _level.getServer().getCommands().performPrefixedCommand(new CommandSourceStack(CommandSource.NULL, new Vec3(x, y, z), Vec2.ZERO, _level,
                         4, "", Component.literal(""), _level.getServer(), null).withSuppressedOutput(), "time set 1000");
-
+                if (lvl > 3) {
+                    _level.getServer().getCommands().performPrefixedCommand(new CommandSourceStack(CommandSource.NULL, new Vec3(x, y, z), Vec2.ZERO, _level,
+                            4, "", Component.literal(""), _level.getServer(), null).withSuppressedOutput(), "weather clear");
+                }
             }
         }
         (itemStack).setDamageValue(itemDura);

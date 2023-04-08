@@ -1,0 +1,24 @@
+{
+  "group": "arana_grande",
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "ese",
+    "sys",
+    "sss"
+  ],
+  "key": {
+    "s": {
+      "item": "minecraft:string"
+    },
+    "e": {
+      "item": "minecraft:spider_eye"
+    },
+    "y": {
+      "item": "modussy:slaginium_yassifier_deluxe"
+    }
+  },
+  "result": {
+    "item": "modussy:arana_grande",
+    "count": 1
+  }
+}

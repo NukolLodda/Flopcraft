@@ -1,0 +1,30 @@
+{
+  "group": "cupcakke_spawn_egg",
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "pvp",
+    "csc",
+    "pyp"
+  ],
+  "key": {
+    "s": {
+      "item": "modussy:slaginium_yassifier_deluxe"
+    },
+    "c": {
+      "item": "modussy:cupcake"
+    },
+    "p": {
+      "item": "modussy:cvmtitplasm"
+    },
+    "y": {
+      "item": "modussy:posei"
+    },
+    "v": {
+      "item": "modussy:cvm"
+    }
+  },
+  "result": {
+    "item": "modussy:cupcakke_spawn_egg",
+    "count": 1
+  }
+}
