@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:block/crop",
+  "textures": {
+    "crop": "modussy:block/growing_jiafei_stage4"
+  }
+}

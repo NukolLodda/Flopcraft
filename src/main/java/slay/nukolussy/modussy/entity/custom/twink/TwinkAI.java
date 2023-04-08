@@ -13,7 +13,8 @@ import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.phys.Vec3;
 import slay.nukolussy.modussy.item.ModItem;
 
-import java.util.*;
+import java.util.Optional;
+import java.util.Random;
 
 public class TwinkAI {
     public static final Item CUM = ModItem.CVM.get();
@@ -22,13 +23,14 @@ public class TwinkAI {
         Random obj = new Random();
         int randNum = obj.nextInt(1,100);
         if (randNum > 35) {
-            if (randNum < 55) return new ItemStack(ModItem.SCARUSSY.get());
-            else if (randNum < 65) return new ItemStack(ModItem.CUPCAKE.get());
-            else if (randNum < 75) return new ItemStack(ModItem.POSEI.get());
-            else if (randNum < 80) return new ItemStack(ModItem.SLAGINIUM.get());
-            else if (randNum < 85) return new ItemStack(ModItem.SHENSEIUM.get());
-            else if (randNum < 90) return new ItemStack(ModItem.CVMTITPLASM.get());
-            else if (randNum < 95) return new ItemStack(ModItem.METRO.get());
+            if (randNum < 45) return new ItemStack(ModItem.SCARUSSY.get());
+            else if (randNum < 60) return new ItemStack(ModItem.CUPCAKE.get());
+            else if (randNum < 70) return new ItemStack(ModItem.POSEI.get());
+            else if (randNum < 75) return new ItemStack(ModItem.SLAGINIUM.get());
+            else if (randNum < 80) return new ItemStack(ModItem.SHENSEIUM.get());
+            else if (randNum < 85) return new ItemStack(ModItem.CVMTITPLASM.get());
+            else if (randNum < 90) return new ItemStack(ModItem.METRO.get());
+            else if (randNum < 95) return new ItemStack(ModItem.JIAFEI_SEED.get());
             else if (randNum < 98) return new ItemStack(ModItem.INFUSED_SLAGINIUM.get());
             else return new ItemStack(ModItem.JIAFEI_PRODUCT.get());
         }
@@ -81,7 +83,6 @@ public class TwinkAI {
         Vec3 pos = LandRandomPos.getPos(twink, 4,2);
         return pos == null ? twink.position() : pos;
     }
-
     private static void putInInventory(Twink twink, ItemStack item) {
         twink.addToInventory(item);
         throwItemsToDirection(twink, randItem(), getRandomNearbyPos(twink));
@@ -113,6 +114,9 @@ public class TwinkAI {
         ItemStack itemStack;
         if (item.getItem().is(CUM)) {
             twink.take(item, item.getItem().getCount());
+            if (twink.getHealth() < twink.getMaxHealth()) {
+                twink.heal(1.5f);
+            }
             itemStack = randItem();
             item.discard();
         } else {

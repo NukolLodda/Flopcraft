@@ -1,0 +1,24 @@
+{
+  "group": "mystrical_flopium_pickaxol",
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "scs",
+    " ts",
+    " t "
+  ],
+  "key": {
+    "s": {
+      "item": "modussy:mystical_flopium"
+    },
+    "c": {
+      "item": "modussy:cvmium"
+    },
+    "t": {
+      "item": "modussy:infused_slaginium"
+    }
+  },
+  "result": {
+    "item": "modussy:mystrical_flopium_pickaxol",
+    "count": 1
+  }
+}

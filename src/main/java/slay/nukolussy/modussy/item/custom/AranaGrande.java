@@ -8,10 +8,11 @@ import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.Level;
 import slay.nukolussy.modussy.procedures.AranaGrandeRightclicked;
+import slay.nukolussy.modussy.tabs.ModCreativeTabs;
 
 public class AranaGrande extends Item {
     public AranaGrande() {
-        super(new Item.Properties().tab(CreativeModeTab.TAB_MISC));
+        super(new Item.Properties().tab(ModCreativeTabs.SLAY_TOOLS));
     }
 
     @Override

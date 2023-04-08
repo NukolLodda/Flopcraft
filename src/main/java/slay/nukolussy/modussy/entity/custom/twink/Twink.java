@@ -17,26 +17,27 @@ import net.minecraft.world.entity.*;
 import net.minecraft.world.entity.ai.Brain;
 import net.minecraft.world.entity.ai.attributes.AttributeSupplier;
 import net.minecraft.world.entity.ai.attributes.Attributes;
-import net.minecraft.world.entity.ai.goal.*;
-import net.minecraft.world.entity.ai.goal.target.HurtByTargetGoal;
-import net.minecraft.world.entity.ai.navigation.GroundPathNavigation;
-import net.minecraft.world.entity.ai.util.GoalUtils;
+import net.minecraft.world.entity.ai.goal.MeleeAttackGoal;
 import net.minecraft.world.entity.item.ItemEntity;
 import net.minecraft.world.entity.player.Player;
+import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.ServerLevelAccessor;
+import net.minecraft.world.level.gameevent.GameEvent;
 import net.minecraft.world.level.levelgen.Heightmap;
 import net.minecraftforge.network.PlayMessages;
 import net.minecraftforge.registries.ForgeRegistries;
 import org.jetbrains.annotations.NotNull;
 import slay.nukolussy.modussy.client.renderer.twink.Variant;
 import slay.nukolussy.modussy.entity.ModEntities;
+import slay.nukolussy.modussy.entity.custom.Flops;
+import slay.nukolussy.modussy.entity.goal.FlopBreedingGoal;
 import slay.nukolussy.modussy.item.ModItem;
 
 import javax.annotation.Nullable;
 
-public class Twink extends PathfinderMob {
+public class Twink extends Flops {
     private static final EntityDataAccessor<Integer> DATA_ID_TYPE_VARIANT = SynchedEntityData.defineId(Twink.class, EntityDataSerializers.INT);
     private final SimpleContainer inventory = new SimpleContainer(8);
     public Twink(PlayMessages.SpawnEntity packet, Level world) {
@@ -45,10 +46,6 @@ public class Twink extends PathfinderMob {
 
     public Brain<Twink> getBrain() {
         return (Brain<Twink>) super.getBrain();
-    }
-
-    public ItemStack addToInventory(ItemStack item) {
-        return this.inventory.addItem(item);
     }
 
     @Override
@@ -83,7 +80,7 @@ public class Twink extends PathfinderMob {
         this.inventory.fromTag(tag.getList("Inventory",10));
     }
 
-    private void setVariant(Variant variant) {
+    public void setVariant(Variant variant) {
         this.setTypeVariant(variant.getId());
     }
 
@@ -109,15 +106,12 @@ public class Twink extends PathfinderMob {
                 return (4.0 + entity.getBbWidth() * entity.getBbWidth());
             }
         });
-        this.goalSelector.addGoal(2, new LookAtPlayerGoal(this, Player.class, 5.0f));
-        this.goalSelector.addGoal(3, new RandomStrollGoal(this, 1));
-        this.targetSelector.addGoal(4, new HurtByTargetGoal(this));
-        this.goalSelector.addGoal(5, new RandomLookAroundGoal(this));
-        this.goalSelector.addGoal(6, new FloatGoal(this));
-        this.goalSelector.addGoal(7, new OpenDoorGoal(this, true));
-        this.goalSelector.addGoal(8, new OpenDoorGoal(this, false));
-        this.goalSelector.addGoal(9, new MoveBackToVillageGoal(this, 0.6, false));
+        this.goalSelector.addGoal(10, new FlopBreedingGoal(this, 1.0d));
 
+    }
+
+    public ItemStack addToInventory(ItemStack item) {
+        return this.inventory.addItem(item);
     }
 
     @Override
@@ -163,10 +157,26 @@ public class Twink extends PathfinderMob {
 
     public InteractionResult mobInteract(Player player, InteractionHand hand) {
         InteractionResult result = super.mobInteract(player, hand);
+        ItemStack stack = player.getItemInHand(hand);
+        Item item = stack.getItem();
         if (result.consumesAction()) return result;
         else if (!this.level.isClientSide) return TwinkAI.mobInteract(this, player, hand);
         else {
             boolean flag = TwinkAI.canAdmire(this, player.getItemInHand(hand));
+            if (player.isHolding(ModItem.CVM.get()) || player.isHolding(ModItem.CVMIUM.get())) {
+                this.getNavigation().moveTo(player.getX(), player.getY(), player.getZ(), 1);
+            }
+            if (item.equals(ModItem.CVMIUM.get())) {
+                if (this.getHealth() < this.getMaxHealth()) {
+                    this.heal(3f);
+                }
+                if (!player.getAbilities().instabuild) {
+                    stack.shrink(1);
+                }
+                this.setInLove(player);
+                this.gameEvent(GameEvent.EAT, this);
+                return InteractionResult.SUCCESS;
+            }
             return flag ? InteractionResult.SUCCESS : InteractionResult.PASS;
         }
     }
@@ -201,16 +211,11 @@ public class Twink extends PathfinderMob {
 
         return builder;
     }
-    private void applyOpenDoorsAbility() {
-        if (GoalUtils.hasGroundPathNavigation(this)) {
-            ((GroundPathNavigation)this.getNavigation()).setCanOpenDoors(true);
-        }
-    }
 
     @Nullable
     public SpawnGroupData finalizeSpawn(ServerLevelAccessor level, @NotNull DifficultyInstance instance, @NotNull MobSpawnType type, SpawnGroupData data, CompoundTag tag) {
         RandomSource randomSource = level.getRandom();
-        Variant variant = Util.getRandom(Variant.values(), this.random);
+        Variant variant = Util.getRandom(Variant.values(), randomSource);
         setVariant(variant);
         return super.finalizeSpawn(level, instance, type, data, tag);
     }

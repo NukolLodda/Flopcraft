@@ -1,0 +1,24 @@
+{
+  "group": "flopium_pickaxol",
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "scs",
+    "st ",
+    " t "
+  ],
+  "key": {
+    "s": {
+      "item": "modussy:flopium"
+    },
+    "c": {
+      "item": "modussy:jiafei"
+    },
+    "t": {
+      "item": "modussy:gagastone"
+    }
+  },
+  "result": {
+    "item": "modussy:flopium_pickaxol",
+    "count": 1
+  }
+}

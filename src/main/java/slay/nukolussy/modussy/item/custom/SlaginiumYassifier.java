@@ -11,21 +11,22 @@ import net.minecraft.world.entity.ai.attributes.Attribute;
 import net.minecraft.world.entity.ai.attributes.AttributeModifier;
 import net.minecraft.world.entity.ai.attributes.Attributes;
 import net.minecraft.world.entity.player.Player;
-import net.minecraft.world.item.CreativeModeTab;
-import net.minecraft.world.item.Item;
-import net.minecraft.world.item.ItemStack;
-import net.minecraft.world.item.Rarity;
+import net.minecraft.world.item.*;
 import net.minecraft.world.item.crafting.Ingredient;
-import net.minecraft.world.item.enchantment.Enchantment;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.state.BlockState;
 import org.jetbrains.annotations.NotNull;
 import slay.nukolussy.modussy.item.ModItem;
 import slay.nukolussy.modussy.procedures.SlaginiumYassifierRightclicked;
+import slay.nukolussy.modussy.procedures.SlayAttack;
+import slay.nukolussy.modussy.procedures.SlayBreak;
+import slay.nukolussy.modussy.tabs.ModCreativeTabs;
 
-public class SlaginiumYassifier extends Item {
-    public SlaginiumYassifier() {
-        super(new Item.Properties().tab(CreativeModeTab.TAB_TOOLS).durability(42069).fireResistant());
+public class SlaginiumYassifier extends TieredItem {
+    private final int lvl;
+    public SlaginiumYassifier(Tier tier,int dura, int lvl, Rarity rarity) {
+        super(tier, new Item.Properties().tab(ModCreativeTabs.SLAY_TOOLS).durability(dura).fireResistant().rarity(rarity));
+        this.lvl = lvl;
     }
 
 
@@ -36,14 +37,16 @@ public class SlaginiumYassifier extends Item {
     }
 
     @Override
-    public boolean mineBlock(ItemStack itemstack, @NotNull Level world, @NotNull BlockState blockstate, @NotNull BlockPos pos, @NotNull LivingEntity entity) {
-        itemstack.hurtAndBreak(1, entity, i -> i.broadcastBreakEvent(EquipmentSlot.MAINHAND));
-        return true;
+    public boolean mineBlock(ItemStack stack, Level world, BlockState state, BlockPos pos, LivingEntity entity) {
+        boolean retval = super.mineBlock(stack, world, state, pos, entity);
+        SlayBreak.execute(world, pos.getX(), pos.getY(), pos.getZ(), state, pos, entity);
+        return retval;
     }
 
     @Override
     public boolean hurtEnemy(ItemStack itemStack, @NotNull LivingEntity entity, @NotNull LivingEntity sourceentity) {
         itemStack.hurtAndBreak(2, entity, i -> i.broadcastBreakEvent(EquipmentSlot.MAINHAND));
+        SlayAttack.execute(itemStack, sourceentity, entity, this.lvl);
         return true;
     }
 
@@ -54,7 +57,7 @@ public class SlaginiumYassifier extends Item {
     @Override
     public InteractionResultHolder<ItemStack> use(Level world, Player entity, InteractionHand hand) {
         InteractionResultHolder<ItemStack> ar = super.use(world, entity, hand);
-        SlaginiumYassifierRightclicked.execute(world, entity.getX(), entity.getY(), entity.getZ(), entity, entity.getMainHandItem(), 1);
+        SlaginiumYassifierRightclicked.execute(world, entity.getX(), entity.getY(), entity.getZ(), entity, entity.getMainHandItem(), lvl);
         return ar;
     }
 
@@ -69,9 +72,9 @@ public class SlaginiumYassifier extends Item {
             ImmutableMultimap.Builder<Attribute, AttributeModifier> builder = ImmutableMultimap.builder();
             builder.putAll(super.getDefaultAttributeModifiers(equipmentSlot));
             builder.put(Attributes.ATTACK_DAMAGE,
-                    new AttributeModifier(BASE_ATTACK_DAMAGE_UUID, "Tool modifier", 6f, AttributeModifier.Operation.ADDITION));
+                    new AttributeModifier(BASE_ATTACK_DAMAGE_UUID, "Tool modifier", 3f * Math.pow(2, lvl), AttributeModifier.Operation.ADDITION));
             builder.put(Attributes.ATTACK_SPEED,
-                    new AttributeModifier(BASE_ATTACK_SPEED_UUID, "Tool modifier", -2, AttributeModifier.Operation.ADDITION));
+                    new AttributeModifier(BASE_ATTACK_SPEED_UUID, "Tool modifier", -2.0f / lvl, AttributeModifier.Operation.ADDITION));
             return builder.build();
 
         }

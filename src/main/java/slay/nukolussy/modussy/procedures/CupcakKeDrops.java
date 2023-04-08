@@ -10,7 +10,6 @@ import slay.nukolussy.modussy.item.ModItem;
 
 import java.util.Random;
 
-
 @Mod.EventBusSubscriber
 public class CupcakKeDrops {
     public static void execute(LevelAccessor world, double x, double y, double z) {

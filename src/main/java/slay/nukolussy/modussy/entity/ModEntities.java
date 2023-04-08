@@ -13,7 +13,8 @@ import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
 import slay.nukolussy.modussy.Modussy;
 import slay.nukolussy.modussy.entity.custom.CupcakKe;
-import slay.nukolussy.modussy.entity.custom.Twink;
+import slay.nukolussy.modussy.entity.custom.Jiafei;
+import slay.nukolussy.modussy.entity.custom.twink.Twink;
 
 @Mod.EventBusSubscriber(bus = Mod.EventBusSubscriber.Bus.MOD)
 public class ModEntities {
@@ -28,6 +29,11 @@ public class ModEntities {
                 EntityType.Builder.<Twink>of(Twink::new, MobCategory.AMBIENT).setShouldReceiveVelocityUpdates(true)
                 .setTrackingRange(64).setUpdateInterval(3).setCustomClientFactory(Twink::new)
                 .sized(0.6f,1.8f));
+
+        public static final RegistryObject<EntityType<Jiafei>> JIAFEI = register("jiafei",
+                EntityType.Builder.<Jiafei>of(Jiafei::new, MobCategory.AMBIENT).setShouldReceiveVelocityUpdates(true)
+                        .setTrackingRange(64).setUpdateInterval(3).setCustomClientFactory(Jiafei::new)
+                        .sized(0.6f,1.8f));
         private static <T extends Entity> RegistryObject<EntityType<T>> register(String registryname, EntityType.Builder<T> entityTypeBuilder) {
             return Entities.register(registryname, () -> (EntityType<T>) entityTypeBuilder.build(registryname));
     }
@@ -37,13 +43,15 @@ public class ModEntities {
          event.enqueueWork(() -> {
             CupcakKe.init();
             Twink.init();
+            Jiafei.init();
           });
     }
 
     @SubscribeEvent
     public static void registerAttributes(EntityAttributeCreationEvent event) {
-            event.put(CUPCAKKE.get(), CupcakKe.createAttributes().build());
-            event.put(TWINK.get(), Twink.createAttributes().build());
+        event.put(CUPCAKKE.get(), CupcakKe.createAttributes().build());
+        event.put(TWINK.get(), Twink.createAttributes().build());
+        event.put(JIAFEI.get(), Jiafei.createAttributes().build());
     }
 
     public static void register(IEventBus eventBus) { Entities.register(eventBus); }

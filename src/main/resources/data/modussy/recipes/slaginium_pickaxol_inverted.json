@@ -1,0 +1,24 @@
+{
+  "group": "slaginium_pickaxol",
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "scs",
+    " ts",
+    " t "
+  ],
+  "key": {
+    "s": {
+      "item": "modussy:slaginium"
+    },
+    "c": {
+      "item": "modussy:cupcake"
+    },
+    "t": {
+      "item": "minecraft:stick"
+    }
+  },
+  "result": {
+    "item": "modussy:slaginium_pickaxol",
+    "count": 1
+  }
+}

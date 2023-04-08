@@ -2,7 +2,6 @@ package slay.nukolussy.modussy.block;
 
 import net.minecraft.util.valueproviders.UniformInt;
 import net.minecraft.world.item.BlockItem;
-import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.level.block.*;
 import net.minecraft.world.level.block.state.BlockBehaviour;
@@ -13,6 +12,7 @@ import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
 import slay.nukolussy.modussy.Modussy;
 import slay.nukolussy.modussy.item.ModItem;
+import slay.nukolussy.modussy.tabs.ModCreativeTabs;
 
 import java.util.function.Supplier;
 
@@ -25,6 +25,8 @@ public class ModBlocks {
                     .destroyTime(12).requiresCorrectToolForDrops().sound(SoundType.NETHERRACK),
                     UniformInt.of(2,6)));
 
+    public static final RegistryObject<Block> GROWING_JIAFEI = BLOCKS.register("growing_jiafei", JiafeiCrop::new);
+
     private static <T extends Block> RegistryObject<T> registerBlock(String name, Supplier<T> block) {
         RegistryObject<T> toReturn = BLOCKS.register(name, block);
         registerBlockItem(name, toReturn);
@@ -32,7 +34,7 @@ public class ModBlocks {
     }
 
     private static <T extends Block> RegistryObject<Item> registerBlockItem(String name, RegistryObject<T> block) {
-        return ModItem.ITEMS.register(name, () -> new BlockItem(block.get(), new Item.Properties().tab(CreativeModeTab.TAB_BUILDING_BLOCKS).fireResistant()));
+        return ModItem.ITEMS.register(name, () -> new BlockItem(block.get(), new Item.Properties().tab(ModCreativeTabs.PAPIBLOCKS).fireResistant()));
     }
 
     public static void register(IEventBus eventBus) {

@@ -8,8 +8,6 @@ import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.LivingEntity;
-import net.minecraft.world.entity.TamableAnimal;
-import net.minecraft.world.entity.item.ItemEntity;
 import net.minecraft.world.entity.monster.Monster;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.ItemStack;
@@ -35,14 +33,14 @@ public class AranaGrandeRightclicked {
                     .sorted(Comparator.comparingDouble(_entcnd -> _entcnd.distanceToSqr(_center))).toList();
             for (Entity entityiterator : _entfound) {
                 if (entityiterator instanceof Monster) {
-                    ((Monster) entityiterator).addEffect(new MobEffectInstance(MobEffects.MOVEMENT_SLOWDOWN, 2400, 10));
+                    ((Monster) entityiterator).addEffect(new MobEffectInstance(MobEffects.MOVEMENT_SLOWDOWN, 2400, 10, true, false));
                     ((Monster) entityiterator).addEffect(new MobEffectInstance(MobEffects.WITHER, 690, 1));
                     ((Monster) entityiterator).addEffect(new MobEffectInstance(MobEffects.WEAKNESS, 2400, 10));
                     entityiterator.hurt(new DamageSource("yuh").bypassArmor(), 5);
                 }
                 if (entityiterator instanceof LivingEntity && !(entityiterator instanceof Player)) {
-                    ((LivingEntity) entityiterator).addEffect(new MobEffectInstance(MobEffects.MOVEMENT_SLOWDOWN, 690, 5));
-                    ((LivingEntity) entityiterator).addEffect(new MobEffectInstance(MobEffects.WEAKNESS, 690, 5));
+                    ((LivingEntity) entityiterator).addEffect(new MobEffectInstance(MobEffects.MOVEMENT_SLOWDOWN, 690, 5, true, false));
+                    ((LivingEntity) entityiterator).addEffect(new MobEffectInstance(MobEffects.WEAKNESS, 690, 5, true, false));
                 }
             }
         }

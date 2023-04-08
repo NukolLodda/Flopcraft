@@ -8,14 +8,16 @@ public enum Variant {
     FEM(0),
     SUIT(1),
     FLOWER(2),
-    FLANNEL(3);
+    FLANNEL(3),
+    RAINBOW(4),
+    GREEN(5);
 
 
     private static final Variant[] BY_ID = Arrays.stream(values()).sorted(Comparator.comparingInt(Variant::getId)).toArray(Variant[]::new);
-    private final int id;
+    public final int id;
 
-    private Variant(int p_30984_) {
-        this.id = p_30984_;
+    Variant(int id) {
+        this.id = id;
     }
 
     public int getId() {
