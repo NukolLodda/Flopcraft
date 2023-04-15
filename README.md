@@ -39,7 +39,11 @@ bollywood - https://www.youtube.com/watch?v=oeK5yPAvRf8
 
 cpr - https://www.youtube.com/watch?v=aRO4wQ4SVTk
 
+cupid - https://www.youtube.com/watch?v=I2edUZHiwmA
+
 deepthroat - https://www.youtube.com/watch?v=TYWINwURoRc
+
+drivers - https://www.youtube.com/watch?v=Z9MNu2Kr2ok
 
 get_into - https://www.youtube.com/watch?v=itUNIzqkKPs
 
@@ -54,6 +58,8 @@ ieven_polkka - https://www.youtube.com/watch?v=FSDCu7cbJnU
 into_you - https://www.youtube.com/watch?v=IdY2jV8hVfk
 
 jiafei - https://www.youtube.com/watch?v=f63oc8d8mIM
+
+jiafei_remix - https://www.youtube.com/watch?v=SQ_U3TPd7Dc
 
 misery - https://www.youtube.com/watch?v=byueHxMGiEw (https://www.youtube.com/watch?v=O2XY3Y7JIa0 chorus)
 
@@ -72,6 +78,8 @@ round_life - https://www.youtube.com/watch?v=r0WBPloHthY
 see_tinh - https://www.youtube.com/watch?v=NJyXgBoNncQ
 
 sekalali - https://www.youtube.com/watch?v=nX6v8-o_ptc
+
+telephone - https://www.youtube.com/watch?v=j8m2mjCun6M
 
 titanic - https://www.youtube.com/watch?app=desktop&v=OnClMS6ZY2A
 
