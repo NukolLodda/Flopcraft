@@ -1,4 +1,11 @@
-This is Modussy, a little hobby of mine that I've been working on.
+Modussy (aka Flopcraft, Slaycraft, ect.)
+---
+a little hobby of mine that I've been working on.
+
+
+As of right now, Modussy currently has support for Minecraft versions 1.19.2 and 1.20.1 on forge API.
+A fabric port will likely get made some day however, it will likely be in a separate repository.
+
 
 ---
 Due to the fact this mod has cvm and other certain features, the mod's download is in the tag of this
