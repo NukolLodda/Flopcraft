@@ -25,7 +25,8 @@ however, it is important and very crucial that you MUST convert all sound files 
 ___
 the music disc's supposed sound files are recorded from the following videos:
 
-(note: the initial of each entry is what the music file HAS to be named as or else the mod will not work)
+(note: the initial of each entry is what the music file HAS to be named as or else the audio for the music discs
+will not work)
 ___
 after_like - https://www.youtube.com/watch?v=FfmPctW89Y0
 
