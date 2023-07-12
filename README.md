@@ -1,41 +1,7 @@
-Modussy (aka Flopcraft, Slaycraft, ect.)
+List of Sounds For The Latest Version of Modussy 1.19
 ---
-a little hobby of mine that I've been working on.
-
-
-As of right now, Modussy currently has support for Minecraft versions 1.19.2 and 1.20.1 on forge API.
-A fabric port will likely get made some day however, it will likely be in a separate repository.
-
-
----
-Due to the fact this mod has cvm and other certain features, the mod's download is in the tag of this
-directory instead of on curseforge. To find the mod download, go to the right column of the page where
-it says tags, press tags where it'll then lead you to modussy, press that and within it should
-be a section called assets where the download file ends with a .jar file extension. Click on that
-and the mod modussy should automatically download.
-
----
-It is noted that the music discs were removed to prevent any copyright claims on to my mod
-however, if you want to listen to music using this mod, you have to record a song down and
-convert it to an ogg file using this link - https://convertio.co/
-
----
-If you download the file itself as a .jar, the file extension is easy to be renamed as .zip in order
-to allow you to add the music disc files. (After adding the music disc files, you MUST rename the .zip
-back to a .jar file or Minecraft's not gonna load the mod)
-The following directory is where the music disc sound files should end up:
-
-assets/modussy/sounds
-
-It is also noted that a texture pack can also be made to allow the sounds below to be accesible
-however, it is important and very crucial that you MUST convert all sound files for the mod into .ogg files
-
----
-
-the music disc's supposed sound files are recorded from the following videos:
-
-(note: the initial of each entry is what the music file HAS to be named as or else the audio for the music discs
-will not work)
+All sounds go into the directory assets/modussy/sounds as .ogg files whether for a texture pack you can make or
+via directly placing them into the downloaded jar
 
 ---
 after_like - https://www.youtube.com/watch?v=FfmPctW89Y0
