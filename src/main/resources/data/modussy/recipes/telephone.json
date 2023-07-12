@@ -1,0 +1,18 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "modussy:cupcake"
+    },
+    {
+      "tag": "forge:yassifiers/basic"
+    },
+    {
+      "item": "modussy:gagastone"
+    }
+  ],
+  "result": {
+    "count": 1,
+    "item": "modussy:telephone"
+  }
+}

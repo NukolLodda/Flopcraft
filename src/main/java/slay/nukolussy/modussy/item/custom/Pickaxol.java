@@ -21,10 +21,8 @@ import net.minecraftforge.common.ToolAction;
 import net.minecraftforge.common.ToolActions;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
+import slay.nukolussy.modussy.item.ActivateMethods;
 import slay.nukolussy.modussy.item.ToolsTag;
-import slay.nukolussy.modussy.procedures.SlayAttack;
-import slay.nukolussy.modussy.procedures.SlayBreak;
-import slay.nukolussy.modussy.tabs.ModCreativeTabs;
 
 import java.util.Set;
 
@@ -38,7 +36,7 @@ public class Pickaxol extends DiggerItem {
 
     public Pickaxol(Tier tier, int atkbase, float speed, Rarity rare) {
         super((float) atkbase, speed, tier, ToolsTag.MINEABLE_WITH_PICKAXOL,
-                new Item.Properties().tab(ModCreativeTabs.SLAY_TOOLS).fireResistant()
+                new Item.Properties().fireResistant()
                         .durability(tier.getLevel() * 6900).rarity(rare));
         this.lvl = tier.getLevel() - 2;
     }
@@ -46,7 +44,7 @@ public class Pickaxol extends DiggerItem {
     @Override
     public boolean mineBlock(ItemStack stack, Level world, BlockState state, BlockPos pos, LivingEntity entity) {
         boolean retval = super.mineBlock(stack, world, state, pos, entity);
-        SlayBreak.execute(world, pos.getX(), pos.getY(), pos.getZ(), state, pos, entity);
+        ActivateMethods.slayBreak(world, state, pos, entity);
         return retval;
     }
 
@@ -128,7 +126,7 @@ public class Pickaxol extends DiggerItem {
     @Override
     public boolean hurtEnemy(ItemStack itemStack, @NotNull LivingEntity entity, @NotNull LivingEntity sourceentity) {
         itemStack.hurtAndBreak(2, entity, i -> i.broadcastBreakEvent(EquipmentSlot.MAINHAND));
-        SlayAttack.execute(itemStack, sourceentity, entity, this.lvl);
+        ActivateMethods.slayAttack(itemStack, sourceentity, entity, this.lvl);
         return true;
     }
 

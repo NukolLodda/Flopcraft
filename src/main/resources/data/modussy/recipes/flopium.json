@@ -1,0 +1,29 @@
+{
+  "type": "modussy:cvm_infusion",
+  "ingredients": [
+    {
+      "item": "modussy:cvmtitplasm"
+    },
+    {
+      "item": "modussy:scarussy"
+    },
+    {
+      "item": "modussy:cvmtitplasm"
+    },
+    {
+      "item": "modussy:posei"
+    },
+    {
+      "item": "modussy:infused_slaginium"
+    },
+    {
+      "item": "modussy:posei"
+    },
+    {
+      "item": "modussy:hairussy"
+    }
+  ],
+  "output": {
+    "item": "modussy:flopium"
+  }
+}

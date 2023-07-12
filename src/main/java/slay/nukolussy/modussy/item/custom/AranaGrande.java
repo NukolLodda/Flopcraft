@@ -3,16 +3,14 @@ package slay.nukolussy.modussy.item.custom;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResultHolder;
 import net.minecraft.world.entity.player.Player;
-import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.Level;
-import slay.nukolussy.modussy.procedures.AranaGrandeRightclicked;
-import slay.nukolussy.modussy.tabs.ModCreativeTabs;
+import slay.nukolussy.modussy.item.ActivateMethods;
 
 public class AranaGrande extends Item {
     public AranaGrande() {
-        super(new Item.Properties().tab(ModCreativeTabs.SLAY_TOOLS));
+        super(new Item.Properties());
     }
 
     @Override
@@ -23,7 +21,7 @@ public class AranaGrande extends Item {
         double y = entity.getY();
         double z = entity.getZ();
 
-        AranaGrandeRightclicked.execute(world, x, y, z, entity, entity.getMainHandItem());
+        ActivateMethods.aranaGrandeRightClick(world, x, y, z, entity, entity.getMainHandItem());
         return ar;
     }
 

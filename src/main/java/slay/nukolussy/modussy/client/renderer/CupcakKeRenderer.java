@@ -6,13 +6,13 @@ import net.minecraft.client.renderer.entity.EntityRendererProvider;
 import net.minecraft.client.renderer.entity.HumanoidMobRenderer;
 import net.minecraft.client.renderer.entity.layers.HumanoidArmorLayer;
 import net.minecraft.resources.ResourceLocation;
-import slay.nukolussy.modussy.entity.custom.CupcakKe;
+import slay.nukolussy.modussy.entities.custom.CupcakKe;
 
 public class CupcakKeRenderer extends HumanoidMobRenderer<CupcakKe, HumanoidModel<CupcakKe>> {
     public CupcakKeRenderer(EntityRendererProvider.Context context) {
         super(context, new HumanoidModel(context.bakeLayer(ModelLayers.PLAYER)), 0.5f);
         this.addLayer(new HumanoidArmorLayer(this, new HumanoidModel(context.bakeLayer(ModelLayers.PLAYER_INNER_ARMOR)),
-                new HumanoidModel(context.bakeLayer(ModelLayers.PLAYER_OUTER_ARMOR))));
+                new HumanoidModel(context.bakeLayer(ModelLayers.PLAYER_OUTER_ARMOR)), context.getModelManager()));
     }
 
     @Override

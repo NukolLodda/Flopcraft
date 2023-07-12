@@ -1,0 +1,18 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "modussy:cupcake"
+    },
+    {
+      "tag": "forge:yassifiers/basic"
+    },
+    {
+      "item": "modussy:wonyoung_essence"
+    }
+  ],
+  "result": {
+    "count": 1,
+    "item": "modussy:i_am"
+  }
+}

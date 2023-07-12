@@ -1,0 +1,18 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "modussy:jiafei_product"
+    },
+    {
+      "tag": "forge:yassifiers/elite"
+    },
+    {
+      "item": "minecraft:minecart"
+    }
+  ],
+  "result": {
+    "count": 1,
+    "item": "modussy:drivers"
+  }
+}

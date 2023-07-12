@@ -1,6 +1,7 @@
 {
   "replace": false,
   "values": [
-    "modussy:shenseium_ore"
+    "modussy:shenseium_ore",
+    "modussy:cvm_infusion_alter"
   ]
 }

@@ -16,16 +16,13 @@ import net.minecraft.world.item.crafting.Ingredient;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.state.BlockState;
 import org.jetbrains.annotations.NotNull;
+import slay.nukolussy.modussy.item.ActivateMethods;
 import slay.nukolussy.modussy.item.ModItem;
-import slay.nukolussy.modussy.procedures.SlaginiumYassifierRightclicked;
-import slay.nukolussy.modussy.procedures.SlayAttack;
-import slay.nukolussy.modussy.procedures.SlayBreak;
-import slay.nukolussy.modussy.tabs.ModCreativeTabs;
 
 public class SlaginiumYassifier extends TieredItem {
     private final int lvl;
     public SlaginiumYassifier(Tier tier,int dura, int lvl, Rarity rarity) {
-        super(tier, new Item.Properties().tab(ModCreativeTabs.SLAY_TOOLS).durability(dura).fireResistant().rarity(rarity));
+        super(tier, new Item.Properties().durability(dura).fireResistant().rarity(rarity));
         this.lvl = lvl;
     }
 
@@ -39,25 +36,21 @@ public class SlaginiumYassifier extends TieredItem {
     @Override
     public boolean mineBlock(ItemStack stack, Level world, BlockState state, BlockPos pos, LivingEntity entity) {
         boolean retval = super.mineBlock(stack, world, state, pos, entity);
-        SlayBreak.execute(world, pos.getX(), pos.getY(), pos.getZ(), state, pos, entity);
+        ActivateMethods.slayBreak(world, state, pos, entity);
         return retval;
     }
 
     @Override
     public boolean hurtEnemy(ItemStack itemStack, @NotNull LivingEntity entity, @NotNull LivingEntity sourceentity) {
         itemStack.hurtAndBreak(2, entity, i -> i.broadcastBreakEvent(EquipmentSlot.MAINHAND));
-        SlayAttack.execute(itemStack, sourceentity, entity, this.lvl);
+        ActivateMethods.slayAttack(itemStack, sourceentity, entity, this.lvl);
         return true;
-    }
-
-    public Ingredient getRepairIngredient() {
-        return Ingredient.of(new ItemStack(ModItem.SLAGINIUM.get()));
     }
 
     @Override
     public InteractionResultHolder<ItemStack> use(Level world, Player entity, InteractionHand hand) {
         InteractionResultHolder<ItemStack> ar = super.use(world, entity, hand);
-        SlaginiumYassifierRightclicked.execute(world, entity.getX(), entity.getY(), entity.getZ(), entity, entity.getMainHandItem(), lvl);
+        ActivateMethods.yassifierRightClick(world, entity.getX(), entity.getY(), entity.getZ(), entity, entity.getMainHandItem(), lvl);
         return ar;
     }
 

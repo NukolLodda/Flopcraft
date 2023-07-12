@@ -1,0 +1,29 @@
+{
+  "type": "modussy:cvm_infusion",
+  "ingredients": [
+    {
+      "item": "modussy:cvmium"
+    },
+    {
+      "item": "modussy:posei"
+    },
+    {
+      "item": "modussy:cvmium"
+    },
+    {
+      "item": "modussy:gagastone"
+    },
+    {
+      "item": "modussy:flopium"
+    },
+    {
+      "item": "modussy:gagastone"
+    },
+    {
+      "item": "modussy:wonyoung_essence"
+    }
+  ],
+  "output": {
+    "item": "modussy:mystical_flopium"
+  }
+}

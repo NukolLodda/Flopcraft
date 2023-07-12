@@ -27,7 +27,7 @@ public enum ModTiers implements Tier {
     private final float damage;
 
     private final int enchantmentValue;
-    private final LazyLoadedValue<Ingredient> repairIngredient;
+    private final Ingredient repairIngredient;
 
 
     ModTiers(int lvl, int dura, float speed, float dmg, int enchantval, Supplier<Ingredient> ingredient) {
@@ -36,7 +36,7 @@ public enum ModTiers implements Tier {
         this.speed = speed;
         this.damage = dmg;
         this.enchantmentValue = enchantval;
-        this.repairIngredient = new LazyLoadedValue<>(ingredient);
+        this.repairIngredient = ingredient.get();
     }
 
     @Override
@@ -66,6 +66,6 @@ public enum ModTiers implements Tier {
 
     @Override
     public Ingredient getRepairIngredient() {
-        return this.repairIngredient.get();
+        return this.repairIngredient;
     }
 }

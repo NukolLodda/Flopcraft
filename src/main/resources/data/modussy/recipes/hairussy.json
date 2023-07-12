@@ -8,7 +8,7 @@
       "item": "minecraft:brown_wool"
     },
     {
-      "item": "modussy:slaginium_yassifier"
+      "tag": "forge:yassifiers/basic"
     }
   ],
   "result": {

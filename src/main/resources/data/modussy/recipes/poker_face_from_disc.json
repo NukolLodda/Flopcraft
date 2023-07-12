@@ -2,7 +2,7 @@
   "type": "minecraft:crafting_shapeless",
   "ingredients": [
     {
-      "item": "modussy:slaginium_yassifier"
+      "tag": "forge:yassifiers/basic"
     },
     {
       "item": "modussy:deepthroat"
