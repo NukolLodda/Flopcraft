@@ -2,7 +2,6 @@ package slay.nukolussy.modussy.entities.flops.twink;
 
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResult;
-import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.ai.behavior.BehaviorUtils;
 import net.minecraft.world.entity.ai.memory.MemoryModuleType;
 import net.minecraft.world.entity.ai.util.LandRandomPos;
@@ -29,32 +28,12 @@ public class TwinkAI {
             else if (randNum < 80) return new ItemStack(ModItem.SHENSEIUM.get());
             else if (randNum < 85) return new ItemStack(ModItem.CVMTITPLASM.get());
             else if (randNum < 90) return new ItemStack(ModItem.METRO.get());
+            else if (randNum < 92) return new ItemStack(ModItem.DEJE_BULLYING.get());
             else if (randNum < 95) return new ItemStack(ModItem.JIAFEI_SEED.get());
             else if (randNum < 98) return new ItemStack(ModItem.INFUSED_SLAGINIUM.get());
             else return new ItemStack(ModItem.JIAFEI_PRODUCT.get());
         }
         else return new ItemStack(ModItem.HAIRUSSY.get());
-    }
-
-    private static final ItemStack[] twinkTrade = {
-            new ItemStack(ModItem.SCARUSSY.get()),
-            new ItemStack(ModItem.CUPCAKE.get()),
-            new ItemStack(ModItem.POSEI.get()),
-            new ItemStack(ModItem.SLAGINIUM.get()),
-            new ItemStack(ModItem.SHENSEIUM.get()),
-            new ItemStack(ModItem.CVMTITPLASM.get()),
-            new ItemStack(ModItem.METRO.get()),
-            new ItemStack(ModItem.INFUSED_SLAGINIUM.get()),
-            new ItemStack(ModItem.JIAFEI_PRODUCT.get()),
-            new ItemStack(ModItem.HAIRUSSY.get())
-    };
-
-    private static boolean isBarterCurrency(ItemStack item) {
-        return item.is(CUM);
-    }
-
-    private static boolean seesPlayerHoldingWantedItem(Twink twink) {
-        return twink.getBrain().hasMemoryValue(MemoryModuleType.NEAREST_PLAYER_HOLDING_WANTED_ITEM);
     }
 
     private static void stopWalking(Twink twink) {
@@ -84,17 +63,10 @@ public class TwinkAI {
     }
     private static void putInInventory(Twink twink, ItemStack item) {
         twink.addToInventory(item);
-        throwItemsToDirection(twink, randItem(), getRandomNearbyPos(twink));
     }
 
     private static boolean admire(Twink twink) {
         return twink.getBrain().hasMemoryValue(MemoryModuleType.ADMIRING_ITEM);
-    }
-
-    private static void throwItems(Twink twink, ItemStack itemList) {
-        Optional<Player> option = twink.getBrain().getMemory(MemoryModuleType.NEAREST_VISIBLE_PLAYER);
-        Vec3 pos = option.map(Entity::position).orElseGet(() -> getRandomNearbyPos(twink));
-        throwItemsToDirection(twink, itemList, pos);
     }
 
     private static void throwItemsToDirection(Twink twink, ItemStack item, Vec3 pos) {
@@ -123,32 +95,13 @@ public class TwinkAI {
             itemStack = removeOneItemFromItemEntity(item);
         }
 
-        if (itemStack.is(CUM)) {
-            holdInOffHand(twink, itemStack);
+        if (item.getItem().is(CUM)) {
+            throwItemsToDirection(twink, itemStack, getRandomNearbyPos(twink));
+
         } else {
             twink.equipItemIfPossible(itemStack);
             putInInventory(twink, itemStack);
 
-        }
-    }
-
-    protected static void stopHoldingOffHandItem(Twink twink, boolean bool) {
-        ItemStack item = twink.getItemInHand(InteractionHand.OFF_HAND);
-        twink.setItemInHand(InteractionHand.OFF_HAND, ItemStack.EMPTY);
-        boolean isTradeItem = false;
-        ItemStack listOf;
-        for (ItemStack posItem : twinkTrade) {
-            isTradeItem = isTradeItem || item.is(posItem.getItem());
-            if (item.is(posItem.getItem())) {
-                listOf = posItem;
-            }
-        }
-        boolean flag = item.is(CUM) || isTradeItem;
-        if (bool && flag) {
-            throwItems(twink, item);
-        } else if (!flag) {
-            twink.equipItemIfPossible(item);
-            putInInventory(twink, item);
         }
     }
 

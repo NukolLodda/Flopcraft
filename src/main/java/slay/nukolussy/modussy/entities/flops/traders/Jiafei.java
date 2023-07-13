@@ -120,13 +120,16 @@ public class Jiafei extends AbstractFlopTraders {
                 this.setInLove(player);
                 this.gameEvent(GameEvent.EAT, this);
                 return InteractionResult.SUCCESS;
-            } else if (!item.equals(ModItem.JIAFEI_EGG.get())  && this.isAlive() && !this.isTrading() && !player.isSecondaryUseActive()) {
-                boolean hasOffer = this.getOffers().isEmpty();
+            } else if (!item.equals(ModItem.JIAFEI_EGG.get()) && this.isAlive() && !this.isTrading() && !player.isSecondaryUseActive()) {
+                boolean offerless = this.getOffers().isEmpty();
 
-                if (!hasOffer) {
+                if (!offerless) {
                     if (!this.level().isClientSide && !this.offers.isEmpty()) {
+                        this.playSound(getNotifyTradeSound());
                         this.startTrading(player);
                     }
+                } else {
+                    this.playSound(ModSounds.JIAFEI_PRODUCTLESS.get());
                 }
                 return InteractionResult.sidedSuccess(this.level().isClientSide);
             }
@@ -173,9 +176,6 @@ public class Jiafei extends AbstractFlopTraders {
 
     private int getTypeVariant() {
         return this.entityData.get(JIAFEI_ID_DATATYPE_VARIANT);
-    }
-    public JiafeiVariant getVariant() {
-        return JiafeiVariant.byId(this.getTypeVariant() & 255);
     }
 
     @Override
@@ -232,7 +232,7 @@ public class Jiafei extends AbstractFlopTraders {
 
     @Override
     public void notifyTradeUpdated(ItemStack pStack) {
-
+        getNotifyTradeSound();
     }
 
     @Override
@@ -246,8 +246,13 @@ public class Jiafei extends AbstractFlopTraders {
     }
 
     @Override
-    public SoundEvent getNotifyTradeSound() {
-        return ModSounds.JIAFEI_TRADE.get();
+    public @NotNull SoundEvent getNotifyTradeSound() {
+        int rand = (int)(Math.random() * 3);
+        return switch(rand) {
+            case 1 -> ModSounds.JIAFEI_TRADE_1.get();
+            case 2 -> ModSounds.JIAFEI_TRADE_2.get();
+            default -> ModSounds.JIAFEI_TRADE_3.get();
+        };
     }
 
     private void startTrading(Player pPlayer) {

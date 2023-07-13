@@ -674,11 +674,20 @@
       }
     ]
   },
-  "jiafei_bought": {
+  "jiafei_bought_1": {
     "subtitle": "subtitles.jiafei_bought",
     "sounds": [
       {
-        "name": "modussy:jiafei_bought",
+        "name": "modussy:jiafei_bought_1",
+        "stream": true
+      }
+    ]
+  },
+  "jiafei_bought_2": {
+    "subtitle": "subtitles.jiafei_bought",
+    "sounds": [
+      {
+        "name": "modussy:jiafei_bought_2",
         "stream": true
       }
     ]
@@ -746,11 +755,38 @@
       }
     ]
   },
-  "jiafei_trade": {
+  "jiafei_productless": {
+    "subtitle": "subtitles.jiafei_productless",
+    "sounds": [
+      {
+        "name": "modussy:jiafei_productless",
+        "stream": true
+      }
+    ]
+  },
+  "jiafei_trade_1": {
     "subtitle": "subtitles.jiafei_trade",
     "sounds": [
       {
-        "name": "modussy:jiafei_trade",
+        "name": "modussy:jiafei_trade_1",
+        "stream": true
+      }
+    ]
+  },
+  "jiafei_trade_2": {
+    "subtitle": "subtitles.jiafei_trade",
+    "sounds": [
+      {
+        "name": "modussy:jiafei_trade_2",
+        "stream": true
+      }
+    ]
+  },
+  "jiafei_trade_3": {
+    "subtitle": "subtitles.jiafei_trade",
+    "sounds": [
+      {
+        "name": "modussy:jiafei_trade_3",
         "stream": true
       }
     ]
