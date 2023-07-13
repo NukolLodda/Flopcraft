@@ -38,12 +38,12 @@ public class ModEntities {
                         .sized(0.6f,1.8f));
 
         public static final RegistryObject<EntityType<Cvm>> CVM = register("cvm",
-                EntityType.Builder.of(Cvm::new, MobCategory.MISC)
-                        .setTrackingRange(64).setUpdateInterval(1).sized(0.5f, 0.5f));
+                EntityType.Builder.<Cvm>of(Cvm::new, MobCategory.MISC)
+                        .sized(0.5f, 0.5f).setTrackingRange(4).setUpdateInterval(1));
 
         public static final RegistryObject<EntityType<Cvmium>> CVMIUM = register("cvmium",
-                EntityType.Builder.of(Cvmium::new, MobCategory.MISC)
-                        .setTrackingRange(64).setUpdateInterval(1).sized(0.5f, 0.5f));
+                EntityType.Builder.<Cvmium>of(Cvmium::new, MobCategory.MISC)
+                        .sized(0.5f, 0.5f).setTrackingRange(8).setUpdateInterval(1));
         private static <T extends Entity> RegistryObject<EntityType<T>> register(String registryname, EntityType.Builder<T> entityTypeBuilder) {
             return Entities.register(registryname, () -> (EntityType<T>) entityTypeBuilder.build(registryname));
     }

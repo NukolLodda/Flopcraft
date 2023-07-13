@@ -58,11 +58,8 @@ public class Jiafei extends AbstractFlopFigures {
 
     @Override
     public SoundEvent getAmbientSound() {
-        Random random = new Random();
-        int randNum = random.nextInt(1,4);
-        String sound = "modussy:jiafei_3";
-        if (randNum == 1) sound = "modussy:jiafei_1";
-        if (randNum == 2) sound = "modussy:jiafei_2";
+        int hurtNum = (int) (Math.random() * 3 + 1);
+        String sound = "modussy:jiafei_" + hurtNum;
         return ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation(sound));
     }
 
@@ -73,10 +70,8 @@ public class Jiafei extends AbstractFlopFigures {
 
     @Override
     public SoundEvent getDeathSound() {
-        Random random = new Random();
-        int dedNum = random.nextInt(1,3);
-        String deathSound = "modussy:jiafei_death_2";
-        if (dedNum == 1) deathSound = "modussy:jiafei_death_1";
+        int dedNum = (int) (Math.random() * 2 + 1);
+        String deathSound = "modussy:jiafei_death_" + dedNum;
         return ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation(deathSound));
     }
 

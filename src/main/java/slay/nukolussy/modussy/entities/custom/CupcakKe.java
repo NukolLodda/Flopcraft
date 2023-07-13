@@ -47,30 +47,16 @@ public class CupcakKe extends AbstractFlopFigures {
 
     @Override
     public SoundEvent getAmbientSound() {
-        Random random = new Random();
-        int hurtNum = random.nextInt(1,11);
-        String hurtSound = "modussy:cupcakke_10";
-        if (hurtNum == 1) hurtSound = "modussy:cupcakke_1";
-        if (hurtNum == 2) hurtSound = "modussy:cupcakke_2";
-        if (hurtNum == 3) hurtSound = "modussy:cupcakke_3";
-        if (hurtNum == 4) hurtSound = "modussy:cupcakke_4";
-        if (hurtNum == 5) hurtSound = "modussy:cupcakke_5";
-        if (hurtNum == 6) hurtSound = "modussy:cupcakke_6";
-        if (hurtNum == 7) hurtSound = "modussy:cupcakke_7";
-        if (hurtNum == 8) hurtSound = "modussy:cupcakke_8";
-        if (hurtNum == 9) hurtSound = "modussy:cupcakke_9";
+        int hurtNum = (int) (Math.random() * 10 + 1);
+        String hurtSound = "modussy:cupcakke_" + hurtNum;
 
         return ForgeRegistries.SOUND_EVENTS.getValue((new ResourceLocation(hurtSound)));
     }
 
     @Override
     public SoundEvent getHurtSound(DamageSource ds) {
-        Random random = new Random();
-        int hurtNum = random.nextInt(1,5);
-        String hurtSound = "modussy:cupcakke_hurt4";
-        if (hurtNum == 1) hurtSound = "modussy:cupcakke_hurt1";
-        if (hurtNum == 2) hurtSound = "modussy:cupcakke_hurt2";
-        if (hurtNum == 3) hurtSound = "modussy:cupcakke_hurt3";
+        int hurtNum = (int) (Math.random() * 4 + 1);
+        String hurtSound = "modussy:cupcakke_hurt" + hurtNum;
         return ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation(hurtSound));
     }
 

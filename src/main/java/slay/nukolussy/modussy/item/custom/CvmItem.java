@@ -17,6 +17,6 @@ public class CvmItem extends ArrowItem {
     }
 
     public AbstractCvm createArrow(Level pLevel, ItemStack pStack, LivingEntity pShooter) {
-        return pStack.is(ModItem.CVMIUM.get()) ? new Cvmium(ModEntities.CVMIUM.get(), pLevel) : new Cvm(ModEntities.CVM.get(), pLevel);
+        return pStack.is(ModItem.CVMIUM.get()) ? new Cvmium(pShooter, pLevel) : new Cvm(pShooter, pLevel);
     }
 }

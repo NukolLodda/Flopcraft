@@ -2,12 +2,14 @@ package slay.nukolussy.modussy.entities.misc;
 
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.EntityType;
+import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.phys.BlockHitResult;
 import net.minecraft.world.phys.EntityHitResult;
 import org.jetbrains.annotations.NotNull;
+import slay.nukolussy.modussy.entities.ModEntities;
 import slay.nukolussy.modussy.item.ActivateMethods;
 import slay.nukolussy.modussy.item.ModItem;
 import slay.nukolussy.modussy.sound.ModSounds;
@@ -15,6 +17,14 @@ import slay.nukolussy.modussy.sound.ModSounds;
 public class Cvmium extends AbstractCvm {
     public Cvmium(EntityType<? extends AbstractCvm> type, Level world) {
         super(type, world);
+    }
+
+    public Cvmium(double pX, double pY, double pZ, Level world) {
+        super(ModEntities.CVM.get(), pX, pY, pZ, world);
+    }
+
+    public Cvmium(LivingEntity pShooter, Level pLevel) {
+        super(ModEntities.CVM.get(), pShooter, pLevel);
     }
 
     @Override
