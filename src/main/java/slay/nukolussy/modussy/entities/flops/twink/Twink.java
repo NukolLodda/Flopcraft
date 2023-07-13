@@ -1,4 +1,4 @@
-package slay.nukolussy.modussy.entities.custom.twink;
+package slay.nukolussy.modussy.entities.flops.twink;
 
 import net.minecraft.Util;
 import net.minecraft.nbt.CompoundTag;
@@ -31,7 +31,7 @@ import net.minecraftforge.registries.ForgeRegistries;
 import org.jetbrains.annotations.NotNull;
 import slay.nukolussy.modussy.client.renderer.twink.Variant;
 import slay.nukolussy.modussy.entities.ModEntities;
-import slay.nukolussy.modussy.entities.custom.AbstractFlops;
+import slay.nukolussy.modussy.entities.flops.AbstractFlops;
 import slay.nukolussy.modussy.entities.goal.FlopBreedingGoal;
 import slay.nukolussy.modussy.item.ModItem;
 

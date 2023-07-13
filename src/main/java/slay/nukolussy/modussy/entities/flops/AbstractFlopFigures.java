@@ -1,10 +1,11 @@
-package slay.nukolussy.modussy.entities.custom;
+package slay.nukolussy.modussy.entities.flops;
 
 import net.minecraft.tags.DamageTypeTags;
 import net.minecraft.world.damagesource.DamageSource;
 import net.minecraft.world.entity.*;
 import net.minecraft.world.entity.ai.attributes.AttributeSupplier;
 import net.minecraft.world.entity.ai.attributes.Attributes;
+import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.Level;
 import slay.nukolussy.modussy.item.ModItem;
@@ -60,5 +61,9 @@ public abstract class AbstractFlopFigures extends AbstractFlops {
     @Override
     public boolean alwaysAccepts() {
         return super.alwaysAccepts();
+    }
+
+    public boolean canBeLeashed(Player pPlayer) {
+        return false;
     }
 }

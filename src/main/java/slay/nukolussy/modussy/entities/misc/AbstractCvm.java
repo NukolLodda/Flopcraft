@@ -20,10 +20,6 @@ public abstract class AbstractCvm extends AbstractArrow implements ItemSupplier 
         super(type, world);
     }
 
-    protected AbstractCvm(EntityType<? extends AbstractArrow> type, double pX, double pY, double pZ, Level world) {
-        super(type, pX, pY, pZ, world);
-    }
-
     protected AbstractCvm(EntityType<? extends AbstractCvm> type, LivingEntity pShooter, Level world) {
         super(type, pShooter, world);
     }

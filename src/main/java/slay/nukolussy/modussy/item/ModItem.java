@@ -1,5 +1,6 @@
 package slay.nukolussy.modussy.item;
 
+import net.minecraft.world.entity.EquipmentSlot;
 import net.minecraft.world.food.FoodProperties;
 import net.minecraft.world.item.*;
 import net.minecraftforge.common.ForgeSpawnEggItem;
@@ -11,6 +12,7 @@ import slay.nukolussy.modussy.Modussy;
 import slay.nukolussy.modussy.entities.ModEntities;
 import slay.nukolussy.modussy.item.custom.*;
 import slay.nukolussy.modussy.item.custom.jiafei.*;
+import slay.nukolussy.modussy.tiers.ModArmorMaterials;
 import slay.nukolussy.modussy.tiers.ModTiers;
 
 public class ModItem {
@@ -86,10 +88,14 @@ public class ModItem {
     public static final RegistryObject<Item> MYSTICAL_FLOPIUM_PICKAXOL = ITEMS.register("mystical_flopium_pickaxol",
             () -> new Pickaxol(ModTiers.MYSTICAL_FLOPIUM, 3, -2.8f, Rarity.EPIC));
 
-    public static final RegistryObject<Item> JIAFEI_BOOTS = ITEMS.register("jiafei_boots", JiafeiArmor.Boots::new);
-    public static final RegistryObject<Item> JIAFEI_LEGGINGS = ITEMS.register("jiafei_leggings", JiafeiArmor.Leggings::new);
-    public static final RegistryObject<Item> JIAFEI_CHESTPLATE = ITEMS.register("jiafei_chestplate", JiafeiArmor.Chestplate::new);
-    public static final RegistryObject<Item> JIAFEI_HELMET = ITEMS.register("jiafei_helmet", JiafeiArmor.Helmet::new);
+    public static final RegistryObject<Item> JIAFEI_BOOTS = ITEMS.register("jiafei_boots",
+            () -> new AestheticArmor(ModArmorMaterials.JIAFEI, ArmorItem.Type.BOOTS));
+    public static final RegistryObject<Item> JIAFEI_LEGGINGS = ITEMS.register("jiafei_leggings",
+            () -> new AestheticArmor(ModArmorMaterials.JIAFEI, ArmorItem.Type.LEGGINGS));
+    public static final RegistryObject<Item> JIAFEI_CHESTPLATE = ITEMS.register("jiafei_chestplate",
+            () -> new AestheticArmor(ModArmorMaterials.JIAFEI, ArmorItem.Type.CHESTPLATE));
+    public static final RegistryObject<Item> JIAFEI_HELMET = ITEMS.register("jiafei_helmet",
+            () -> new AestheticArmor(ModArmorMaterials.JIAFEI, ArmorItem.Type.HELMET));
     public static final RegistryObject<Item> ARANA_GRANDE = ITEMS.register("arana_grande", AranaGrande::new);
     public static final RegistryObject<Item> JIAFEI_PERFUME = ITEMS.register("jiafei_perfume", JiafeiPerfume::new);
     public static final RegistryObject<Item> FLOPTROPICA_TICKET = ITEMS.register("floptropica_ticket", FloptropicaTicket::new);

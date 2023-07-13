@@ -1,9 +1,11 @@
-package slay.nukolussy.modussy.entities.custom;
+package slay.nukolussy.modussy.entities.flops.traders;
 
+import net.minecraft.nbt.CompoundTag;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.sounds.SoundEvent;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResult;
+import net.minecraft.world.SimpleContainer;
 import net.minecraft.world.damagesource.DamageSource;
 import net.minecraft.world.entity.*;
 import net.minecraft.world.entity.ai.goal.TemptGoal;
@@ -11,6 +13,8 @@ import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.crafting.Ingredient;
+import net.minecraft.world.item.trading.MerchantOffer;
+import net.minecraft.world.item.trading.MerchantOffers;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.gameevent.GameEvent;
 import net.minecraftforge.network.PlayMessages;
@@ -21,7 +25,7 @@ import slay.nukolussy.modussy.sound.ModSounds;
 
 import java.util.Random;
 
-public class Jiafei extends AbstractFlopFigures {
+public class Jiafei extends AbstractFlopTraders {
     private static final Ingredient FOOD_ITEMS = Ingredient.of(
             ModItem.JIAFEI_PRODUCT.get(), ModItem.SLAGINIUM.get(), ModItem.INFUSED_SLAGINIUM.get(), ModItem.FLOPIUM.get(), ModItem.MYSTICAL_FLOPIUM.get());
 
@@ -107,11 +111,78 @@ public class Jiafei extends AbstractFlopFigures {
         return result;
     }
 
+    @Override
+    public void addAdditionalSaveData(CompoundTag tag) {
+        super.addAdditionalSaveData(tag);
+        MerchantOffers offers = this.getOffers();
+        tag.put("Offers", offers.createTag());
+
+        this.writeInventoryToTag(tag);
+    }
+
+    @Override
+    public void readAdditionalSaveData(CompoundTag tag) {
+        super.readAdditionalSaveData(tag);
+        this.offers = new MerchantOffers(tag.getCompound("Offers"));
+
+        this.readInventoryFromTag(tag);
+    }
+
     public void aiStep() {
         super.aiStep();
     }
 
     public static void init() {
         // mob should spawn under certain circumstance
+    }
+
+    @Override
+    public SimpleContainer getInventory() {
+        return super.getInventory();
+    }
+
+    @Override
+    public MerchantOffers getOffers() {
+        return offers;
+    }
+
+    @Override
+    public void overrideOffers(MerchantOffers pOffers) {
+
+    }
+
+    @Override
+    public void notifyTrade(MerchantOffer pOffer) {
+
+    }
+
+    @Override
+    public void notifyTradeUpdated(ItemStack pStack) {
+
+    }
+
+    @Override
+    public int getVillagerXp() {
+        return 0;
+    }
+
+    @Override
+    public void overrideXp(int pXp) {
+
+    }
+
+    @Override
+    public boolean showProgressBar() {
+        return false;
+    }
+
+    @Override
+    public SoundEvent getNotifyTradeSound() {
+        return null;
+    }
+
+    @Override
+    public boolean isClientSide() {
+        return false;
     }
 }

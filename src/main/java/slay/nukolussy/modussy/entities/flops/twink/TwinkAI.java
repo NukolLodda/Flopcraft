@@ -1,4 +1,4 @@
-package slay.nukolussy.modussy.entities.custom.twink;
+package slay.nukolussy.modussy.entities.flops.twink;
 
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResult;

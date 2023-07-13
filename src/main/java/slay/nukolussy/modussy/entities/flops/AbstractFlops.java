@@ -1,4 +1,4 @@
-package slay.nukolussy.modussy.entities.custom;
+package slay.nukolussy.modussy.entities.flops;
 
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.world.entity.*;

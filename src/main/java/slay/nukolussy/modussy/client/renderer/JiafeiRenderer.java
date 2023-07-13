@@ -9,7 +9,7 @@ import net.minecraft.client.renderer.entity.layers.ArrowLayer;
 import net.minecraft.client.renderer.entity.layers.BeeStingerLayer;
 import net.minecraft.client.renderer.entity.layers.HumanoidArmorLayer;
 import net.minecraft.resources.ResourceLocation;
-import slay.nukolussy.modussy.entities.custom.Jiafei;
+import slay.nukolussy.modussy.entities.flops.traders.Jiafei;
 
 public class JiafeiRenderer extends HumanoidMobRenderer<Jiafei, PlayerModel<Jiafei>> {
     public JiafeiRenderer(EntityRendererProvider.Context context) {

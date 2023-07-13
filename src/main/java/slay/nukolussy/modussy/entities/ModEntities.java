@@ -12,9 +12,9 @@ import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
 import slay.nukolussy.modussy.Modussy;
-import slay.nukolussy.modussy.entities.custom.CupcakKe;
-import slay.nukolussy.modussy.entities.custom.Jiafei;
-import slay.nukolussy.modussy.entities.custom.twink.Twink;
+import slay.nukolussy.modussy.entities.flops.CupcakKe;
+import slay.nukolussy.modussy.entities.flops.traders.Jiafei;
+import slay.nukolussy.modussy.entities.flops.twink.Twink;
 import slay.nukolussy.modussy.entities.misc.Cvm;
 import slay.nukolussy.modussy.entities.misc.Cvmium;
 

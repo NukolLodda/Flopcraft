@@ -20,10 +20,6 @@ public class Cvm extends AbstractCvm {
         super(type, world);
     }
 
-    public Cvm(double pX, double pY, double pZ, Level world) {
-        super(ModEntities.CVM.get(), pX, pY, pZ, world);
-    }
-
     public Cvm(LivingEntity pShooter, Level pLevel) {
         super(ModEntities.CVM.get(), pShooter, pLevel);
     }
@@ -32,11 +28,12 @@ public class Cvm extends AbstractCvm {
     public void onHitBlock(BlockHitResult pResult) {
         Entity owner = this.getOwner();
         if (owner instanceof Player _player) {
-            ActivateMethods.cvmShoot(this.level(), this.getX(), this.getY(), this.getZ(), _player, (int)this.getBaseDamage(), flame ? 100 : 0);
+            ActivateMethods.cvmShoot(this.level(), this.getX(), this.getY(), this.getZ(), _player,
+                    (int)this.getBaseDamage(), flame ? 100 : 0);
             owner.playSound(ModSounds.CVM.get());
         }
-        this.kill();
         super.onHitBlock(pResult);
+        this.kill();
     }
 
     public void setFireness(boolean flame) {
@@ -47,11 +44,12 @@ public class Cvm extends AbstractCvm {
     public void onHitEntity(EntityHitResult pResult) {
         Entity owner = this.getOwner();
         if (owner instanceof Player _player) {
-            ActivateMethods.cvmShoot(this.level(), this.getX(), this.getY(), this.getZ(), _player, (int)this.getBaseDamage(), flame ? 100 : 0);
+            ActivateMethods.cvmShoot(this.level(), this.getX(), this.getY(), this.getZ(), _player,
+                    (int)this.getBaseDamage(), flame ? 100 : 0);
             owner.playSound(ModSounds.CVM.get());
         }
-        this.kill();
         super.onHitEntity(pResult);
+        this.kill();
     }
 
     @Override

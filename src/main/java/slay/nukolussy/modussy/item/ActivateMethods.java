@@ -30,11 +30,11 @@ import net.minecraft.world.phys.Vec3;
 import slay.nukolussy.modussy.block.JiafeiCrop;
 import slay.nukolussy.modussy.client.renderer.twink.Variant;
 import slay.nukolussy.modussy.entities.ModEntities;
-import slay.nukolussy.modussy.entities.custom.CupcakKe;
-import slay.nukolussy.modussy.entities.custom.AbstractFlops;
-import slay.nukolussy.modussy.entities.custom.Jiafei;
-import slay.nukolussy.modussy.entities.custom.twink.Twink;
-import slay.nukolussy.modussy.entities.custom.twink.TwinkAI;
+import slay.nukolussy.modussy.entities.flops.CupcakKe;
+import slay.nukolussy.modussy.entities.flops.AbstractFlops;
+import slay.nukolussy.modussy.entities.flops.traders.Jiafei;
+import slay.nukolussy.modussy.entities.flops.twink.Twink;
+import slay.nukolussy.modussy.entities.flops.twink.TwinkAI;
 import slay.nukolussy.modussy.sound.ModSounds;
 
 import java.util.Collection;

@@ -18,8 +18,8 @@ import net.minecraft.world.phys.shapes.CollisionContext;
 import net.minecraft.world.phys.shapes.VoxelShape;
 import org.jetbrains.annotations.NotNull;
 import slay.nukolussy.modussy.entities.ModEntities;
-import slay.nukolussy.modussy.entities.custom.AbstractFlops;
-import slay.nukolussy.modussy.entities.custom.Jiafei;
+import slay.nukolussy.modussy.entities.flops.AbstractFlops;
+import slay.nukolussy.modussy.entities.flops.traders.Jiafei;
 import slay.nukolussy.modussy.item.ModItem;
 import slay.nukolussy.modussy.sound.ModSoundTypes;
 

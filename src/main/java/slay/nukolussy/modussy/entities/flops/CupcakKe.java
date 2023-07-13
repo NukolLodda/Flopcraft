@@ -1,4 +1,4 @@
-package slay.nukolussy.modussy.entities.custom;
+package slay.nukolussy.modussy.entities.flops;
 
 import net.minecraft.core.particles.ParticleTypes;
 import net.minecraft.resources.ResourceLocation;
@@ -22,7 +22,6 @@ import slay.nukolussy.modussy.item.ModItem;
 import slay.nukolussy.modussy.sound.ModSounds;
 
 import java.util.Collection;
-import java.util.Random;
 
 public class CupcakKe extends AbstractFlopFigures {
     public ItemLike item = ModItem.CVMTITPLASM.get();
