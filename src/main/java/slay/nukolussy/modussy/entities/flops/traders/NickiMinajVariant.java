@@ -1,7 +1,8 @@
 package slay.nukolussy.modussy.entities.flops.traders;
 
 public enum NickiMinajVariant implements FlopTraderVariants {
-    DEFAULT(0, "default");
+    COOK(0, "foodseller"),
+    TOYMAKER(1, "toymaker");
 
     private final int id;
     private final String name;
