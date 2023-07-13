@@ -7,6 +7,7 @@ A fabric port will likely get made some day however, it will likely be in a sepa
 
 ---
 **Requests**
+
 I am aware that some of you wants me to add specific things into Modussy (things like LovelyPeaches
 and deeldoughs) and I will state that for items, blocks, entities/mobs, and structures, I will try
 to get to them as soon as I can. However, since I have other projects I'm making at the moment along
@@ -23,7 +24,8 @@ For anyone asking me to port Modussy to fabric, I will be doing that at some poi
 items and stuff, it will take me a bit of time.
 
 ___
-**Why Modussy Isn't On Curseforge***
+**Why Modussy Isn't On Curseforge**
+
 Due to the fact this mod has cvm and other certain features, the mod's download is in the tag of this
 directory instead of on curseforge. To find the mod download, go to the right column of the page where
 it says tags, press tags where it'll then lead you to modussy, press that and within it should
@@ -32,12 +34,14 @@ and the mod modussy should automatically download.
 
 ___
 **Where Are Modussy's Aesthetic Music**
+
 It is noted that the music discs were removed to prevent any copyright claims on to my mod
 however, if you want to listen to music using this mod, you have to record a song down and
 convert it to an ogg file using this link - https://convertio.co/
 
 ___
 **Downloading Aesthetic Music Files For Modussy**
+
 If you download the file itself as a .jar, the file extension is easy to be renamed as .zip in order
 to allow you to add the music disc files. (After adding the music disc files, you MUST rename the .zip
 back to a .jar file or Minecraft's not going to load the mod)
