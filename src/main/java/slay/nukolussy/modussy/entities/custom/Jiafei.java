@@ -21,7 +21,7 @@ import slay.nukolussy.modussy.sound.ModSounds;
 
 import java.util.Random;
 
-public class Jiafei extends FlopFigures {
+public class Jiafei extends AbstractFlopFigures {
     private static final Ingredient FOOD_ITEMS = Ingredient.of(
             ModItem.JIAFEI_PRODUCT.get(), ModItem.SLAGINIUM.get(), ModItem.INFUSED_SLAGINIUM.get(), ModItem.FLOPIUM.get(), ModItem.MYSTICAL_FLOPIUM.get());
 

@@ -14,7 +14,6 @@ import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.ItemLike;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.gameevent.GameEvent;
-import net.minecraftforge.event.entity.SpawnPlacementRegisterEvent;
 import net.minecraftforge.network.PlayMessages;
 import net.minecraftforge.registries.ForgeRegistries;
 import slay.nukolussy.modussy.entities.ModEntities;
@@ -25,7 +24,7 @@ import slay.nukolussy.modussy.sound.ModSounds;
 import java.util.Collection;
 import java.util.Random;
 
-public class CupcakKe extends FlopFigures {
+public class CupcakKe extends AbstractFlopFigures {
     public ItemLike item = ModItem.CVMTITPLASM.get();
 
     public CupcakKe(EntityType<CupcakKe> type, Level world) {

@@ -18,7 +18,7 @@ import net.minecraft.world.phys.shapes.CollisionContext;
 import net.minecraft.world.phys.shapes.VoxelShape;
 import org.jetbrains.annotations.NotNull;
 import slay.nukolussy.modussy.entities.ModEntities;
-import slay.nukolussy.modussy.entities.custom.Flops;
+import slay.nukolussy.modussy.entities.custom.AbstractFlops;
 import slay.nukolussy.modussy.entities.custom.Jiafei;
 import slay.nukolussy.modussy.item.ModItem;
 import slay.nukolussy.modussy.sound.ModSoundTypes;
@@ -71,7 +71,7 @@ public class JiafeiCrop extends CropBlock {
 
     @Override
     public void entityInside(BlockState state, Level lvl, BlockPos pos, Entity ent) {
-        if ((ent instanceof Player || ent instanceof Flops) && this.isMaxAge(state)) {
+        if ((ent instanceof Player || ent instanceof AbstractFlops) && this.isMaxAge(state)) {
             Mob newMob = new Jiafei(ModEntities.JIAFEI.get(), ent.level());
             newMob.moveTo(pos.getX(), pos.getY(), pos.getZ());
             ent.level().addFreshEntity(newMob);

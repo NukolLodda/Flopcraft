@@ -9,8 +9,6 @@ import net.minecraft.core.particles.ParticleTypes;
 import net.minecraft.network.chat.Component;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.sounds.SoundEvent;
-import net.minecraft.world.damagesource.DamageSource;
-import net.minecraft.world.damagesource.DamageSources;
 import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.entity.*;
@@ -20,23 +18,20 @@ import net.minecraft.world.entity.monster.hoglin.Hoglin;
 import net.minecraft.world.entity.npc.AbstractVillager;
 import net.minecraft.world.entity.npc.Villager;
 import net.minecraft.world.entity.npc.WanderingTrader;
-import net.minecraft.world.entity.player.Inventory;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.LevelAccessor;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.state.BlockState;
-import net.minecraft.world.level.gameevent.GameEvent;
 import net.minecraft.world.phys.AABB;
 import net.minecraft.world.phys.Vec2;
 import net.minecraft.world.phys.Vec3;
-import slay.nukolussy.modussy.Modussy;
 import slay.nukolussy.modussy.block.JiafeiCrop;
 import slay.nukolussy.modussy.client.renderer.twink.Variant;
 import slay.nukolussy.modussy.entities.ModEntities;
 import slay.nukolussy.modussy.entities.custom.CupcakKe;
-import slay.nukolussy.modussy.entities.custom.Flops;
+import slay.nukolussy.modussy.entities.custom.AbstractFlops;
 import slay.nukolussy.modussy.entities.custom.Jiafei;
 import slay.nukolussy.modussy.entities.custom.twink.Twink;
 import slay.nukolussy.modussy.entities.custom.twink.TwinkAI;
@@ -139,12 +134,12 @@ public class ActivateMethods {
     private static void villagerYassification(AbstractVillager entity, LevelAccessor world) {
         if (entity instanceof Villager || entity instanceof WanderingTrader) {
             int randval = (int) (Math.random() * 6971);
-            EntityType<? extends Flops> type = ModEntities.TWINK.get();
+            EntityType<? extends AbstractFlops> type = ModEntities.TWINK.get();
             if (randval < 34)
                 type = ModEntities.CUPCAKKE.get();
             else if (randval < 69)
                 type = ModEntities.JIAFEI.get();
-            Flops flop = entity.convertTo(type, true);
+            AbstractFlops flop = entity.convertTo(type, true);
             assert flop != null;
             if (flop instanceof Twink twink)
                 twink.setVariant(Util.getRandom(Variant.values(), world.getRandom()));
@@ -211,7 +206,7 @@ public class ActivateMethods {
                         monsterEffects(_ent);
                     }
                     if (_ent instanceof TamableAnimal _tamIsTamedBy && _tamIsTamedBy.isOwnedBy(player)
-                            || _ent instanceof Flops) {
+                            || _ent instanceof AbstractFlops) {
                         simpleFlopEffects(_ent);
                     }
                 }
@@ -264,7 +259,7 @@ public class ActivateMethods {
                         itemDura += 80;
                     }
                     if (_mob instanceof TamableAnimal _tamIsTamedBy && entity instanceof Player _livEnt && _tamIsTamedBy.isOwnedBy(_livEnt)
-                            || _mob instanceof Flops) {
+                            || _mob instanceof AbstractFlops) {
                         advancedFlopEffects(_mob, lvl, amp);
                         itemDura += 120;
                     }
@@ -287,7 +282,7 @@ public class ActivateMethods {
 
     public static void slayAttack(ItemStack item, Entity source, Entity target, int lvl) {
         int amp = (lvl + 1) / 2, itemDura = 0;
-        if (source instanceof Player || source instanceof Flops) {
+        if (source instanceof Player || source instanceof AbstractFlops) {
             ((LivingEntity) source).heal(3.0f);
         }
 
@@ -337,7 +332,7 @@ public class ActivateMethods {
                         _ent.setSecondsOnFire(flame);
                     }
                     if (_ent instanceof TamableAnimal _tamIsTamedBy && _tamIsTamedBy.isOwnedBy(player)
-                            || _ent instanceof Flops) {
+                            || _ent instanceof AbstractFlops) {
                         simpleFlopEffects(_ent);
                         if (_ent instanceof Twink) {
                             _ent.spawnAtLocation(TwinkAI.randItem());

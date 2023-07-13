@@ -31,13 +31,13 @@ import net.minecraftforge.registries.ForgeRegistries;
 import org.jetbrains.annotations.NotNull;
 import slay.nukolussy.modussy.client.renderer.twink.Variant;
 import slay.nukolussy.modussy.entities.ModEntities;
-import slay.nukolussy.modussy.entities.custom.Flops;
+import slay.nukolussy.modussy.entities.custom.AbstractFlops;
 import slay.nukolussy.modussy.entities.goal.FlopBreedingGoal;
 import slay.nukolussy.modussy.item.ModItem;
 
 import javax.annotation.Nullable;
 
-public class Twink extends Flops {
+public class Twink extends AbstractFlops {
     private static final EntityDataAccessor<Integer> DATA_ID_TYPE_VARIANT = SynchedEntityData.defineId(Twink.class, EntityDataSerializers.INT);
     private final SimpleContainer inventory = new SimpleContainer(8);
     public Twink(PlayMessages.SpawnEntity packet, Level world) {

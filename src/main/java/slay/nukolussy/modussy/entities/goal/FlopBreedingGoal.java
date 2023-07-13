@@ -5,7 +5,7 @@ import net.minecraft.util.RandomSource;
 import net.minecraft.world.entity.ai.goal.Goal;
 import net.minecraft.world.entity.ai.targeting.TargetingConditions;
 import net.minecraft.world.level.Level;
-import slay.nukolussy.modussy.entities.custom.Flops;
+import slay.nukolussy.modussy.entities.custom.AbstractFlops;
 import slay.nukolussy.modussy.entities.custom.Jiafei;
 import slay.nukolussy.modussy.entities.custom.twink.Twink;
 import slay.nukolussy.modussy.item.ModItem;
@@ -16,21 +16,21 @@ import java.util.List;
 
 public class FlopBreedingGoal extends Goal {
     private static final TargetingConditions PARTNER_TARGETING = TargetingConditions.forNonCombat().range(8.0D).ignoreLineOfSight();
-    protected final Flops flops;
-    private final Class<? extends Flops> partnerClass;
+    protected final AbstractFlops flops;
+    private final Class<? extends AbstractFlops> partnerClass;
     protected final Level level;
     @Nullable
-    protected Flops partner;
+    protected AbstractFlops partner;
     private int loveTime;
     private final double speedModifier;
     private int itemSpawned;
     
     
-    public FlopBreedingGoal(Flops flops, double speed) {
+    public FlopBreedingGoal(AbstractFlops flops, double speed) {
         this(flops, speed, flops.getClass());
     }
 
-    public FlopBreedingGoal(Flops flops, double speed, Class<? extends Flops> aClass) {
+    public FlopBreedingGoal(AbstractFlops flops, double speed, Class<? extends AbstractFlops> aClass) {
         this.flops = flops;
         this.level = flops.level();
         this.partnerClass = aClass;
@@ -74,13 +74,13 @@ public class FlopBreedingGoal extends Goal {
     }
 
     @Nullable
-    private Flops getFreePartner() {
+    private AbstractFlops getFreePartner() {
         this.itemSpawned = 0;
-        List<? extends Flops> list = this.level.getNearbyEntities(this.partnerClass, PARTNER_TARGETING, this.flops, this.flops.getBoundingBox().inflate(8.0d));
+        List<? extends AbstractFlops> list = this.level.getNearbyEntities(this.partnerClass, PARTNER_TARGETING, this.flops, this.flops.getBoundingBox().inflate(8.0d));
         double max = Double.MAX_VALUE;
-        Flops flops = null;
+        AbstractFlops flops = null;
 
-        for(Flops flop : list) {
+        for(AbstractFlops flop : list) {
             if (this.flops.canMate(flop) && this.flops.distanceToSqr(flop) < max) {
                 flops = flop;
                 max = this.flops.distanceToSqr(flop);
@@ -91,7 +91,7 @@ public class FlopBreedingGoal extends Goal {
     }
 
     protected void breed() {
-        Flops flop = this.flops;
+        AbstractFlops flop = this.flops;
         RandomSource random = RandomSource.create();
         double x = flop.getX();
         double y = flop.getY();
