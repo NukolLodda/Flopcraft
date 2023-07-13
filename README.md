@@ -5,7 +5,25 @@ A very s3xy and aesthetic Minecraft mod
 As of right now, Modussy currently has support for Minecraft versions 1.19.2 and 1.20.1 on forge API.
 A fabric port will likely get made some day however, it will likely be in a separate repository.
 
+---
+**Requests**
+I am aware that some of you wants me to add specific things into Modussy (things like LovelyPeaches
+and deeldoughs) and I will state that for items, blocks, entities/mobs, and structures, I will try
+to get to them as soon as I can. However, since I have other projects I'm making at the moment along
+with the fact that I'm still relatively new to the java programming language, necessary for modding
+Minecraft itself, it will take me a bit.
+
+However, I will not be taking any requests for porting Modussy to older versions of Minecraft since
+I will have to basically figure out how to redo some very complicated parts of Modussy's source code.
+And I will especially not be porting Modussy to Bedrock as I'm pretty certain that not only does
+Bedrock have a safeguard against modding, but also that Bedrock is written in a language I am currently
+unfamiliar with.
+
+For anyone asking me to port Modussy to fabric, I will be doing that at some point, however, like adding
+items and stuff, it will take me a bit of time.
+
 ___
+**Why Modussy Isn't On Curseforge***
 Due to the fact this mod has cvm and other certain features, the mod's download is in the tag of this
 directory instead of on curseforge. To find the mod download, go to the right column of the page where
 it says tags, press tags where it'll then lead you to modussy, press that and within it should
@@ -13,11 +31,13 @@ be a section called assets where the download file ends with a .jar file extensi
 and the mod modussy should automatically download.
 
 ___
+**Where Are Modussy's Aesthetic Music**
 It is noted that the music discs were removed to prevent any copyright claims on to my mod
 however, if you want to listen to music using this mod, you have to record a song down and
 convert it to an ogg file using this link - https://convertio.co/
 
 ___
+**Downloading Aesthetic Music Files For Modussy**
 If you download the file itself as a .jar, the file extension is easy to be renamed as .zip in order
 to allow you to add the music disc files. (After adding the music disc files, you MUST rename the .zip
 back to a .jar file or Minecraft's not going to load the mod)
