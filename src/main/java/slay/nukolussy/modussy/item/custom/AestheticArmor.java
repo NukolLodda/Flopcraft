@@ -17,6 +17,6 @@ public class AestheticArmor extends ArmorItem {
     public @Nullable String getArmorTexture(ItemStack stack, Entity entity, EquipmentSlot slot, String type) {
         String layer = "1";
         if (slot == EquipmentSlot.LEGS) layer = "2";
-        return "tekora:textures/models/armor/" + this.material.getName() + "_layer" + layer + ".png";
+        return "modussy:textures/models/armor/" + this.material.getName() + "_layer" + layer + ".png";
     }
 }

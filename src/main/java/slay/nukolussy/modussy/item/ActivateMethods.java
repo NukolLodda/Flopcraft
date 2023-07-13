@@ -28,13 +28,14 @@ import net.minecraft.world.phys.AABB;
 import net.minecraft.world.phys.Vec2;
 import net.minecraft.world.phys.Vec3;
 import slay.nukolussy.modussy.block.JiafeiCrop;
-import slay.nukolussy.modussy.client.renderer.twink.Variant;
 import slay.nukolussy.modussy.entities.ModEntities;
 import slay.nukolussy.modussy.entities.flops.CupcakKe;
 import slay.nukolussy.modussy.entities.flops.AbstractFlops;
 import slay.nukolussy.modussy.entities.flops.traders.Jiafei;
+import slay.nukolussy.modussy.entities.flops.traders.JiafeiVariant;
 import slay.nukolussy.modussy.entities.flops.twink.Twink;
 import slay.nukolussy.modussy.entities.flops.twink.TwinkAI;
+import slay.nukolussy.modussy.entities.flops.twink.TwinkVariant;
 import slay.nukolussy.modussy.sound.ModSounds;
 
 import java.util.Collection;
@@ -142,7 +143,10 @@ public class ActivateMethods {
             AbstractFlops flop = entity.convertTo(type, true);
             assert flop != null;
             if (flop instanceof Twink twink)
-                twink.setVariant(Util.getRandom(Variant.values(), world.getRandom()));
+                twink.setVariant(Util.getRandom(TwinkVariant.values(), world.getRandom()));
+            if (flop instanceof Jiafei jiafei) {
+                jiafei.setVariant(Util.getRandom(JiafeiVariant.values(), world.getRandom()));
+            }
             flop.setCanPickUpLoot(true);
             flop.addAdditionalSaveData(flop.getPersistentData());
         }

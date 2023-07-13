@@ -29,7 +29,6 @@ import net.minecraft.world.level.levelgen.Heightmap;
 import net.minecraftforge.network.PlayMessages;
 import net.minecraftforge.registries.ForgeRegistries;
 import org.jetbrains.annotations.NotNull;
-import slay.nukolussy.modussy.client.renderer.twink.Variant;
 import slay.nukolussy.modussy.entities.ModEntities;
 import slay.nukolussy.modussy.entities.flops.AbstractFlops;
 import slay.nukolussy.modussy.entities.goal.FlopBreedingGoal;
@@ -38,7 +37,7 @@ import slay.nukolussy.modussy.item.ModItem;
 import javax.annotation.Nullable;
 
 public class Twink extends AbstractFlops {
-    private static final EntityDataAccessor<Integer> DATA_ID_TYPE_VARIANT = SynchedEntityData.defineId(Twink.class, EntityDataSerializers.INT);
+    private static final EntityDataAccessor<Integer> TWINK_ID_DATATYPE_VARIANT = SynchedEntityData.defineId(Twink.class, EntityDataSerializers.INT);
     private final SimpleContainer inventory = new SimpleContainer(8);
     public Twink(PlayMessages.SpawnEntity packet, Level world) {
         super(ModEntities.TWINK.get(), world);
@@ -51,7 +50,7 @@ public class Twink extends AbstractFlops {
     @Override
     protected void defineSynchedData() {
         super.defineSynchedData();
-        this.entityData.define(DATA_ID_TYPE_VARIANT, 0);
+        this.entityData.define(TWINK_ID_DATATYPE_VARIANT, 0);
     }
 
     protected void pickUpItem(ItemEntity item) {
@@ -80,7 +79,7 @@ public class Twink extends AbstractFlops {
         this.inventory.fromTag(tag.getList("Inventory",10));
     }
 
-    public void setVariant(Variant variant) {
+    public void setVariant(TwinkVariant variant) {
         this.setTypeVariant(variant.getId());
     }
 
@@ -189,13 +188,13 @@ public class Twink extends AbstractFlops {
                 Mob::checkMobSpawnRules);
     }
     private void setTypeVariant(int id) {
-        this.entityData.set(DATA_ID_TYPE_VARIANT, id);
+        this.entityData.set(TWINK_ID_DATATYPE_VARIANT, id);
     }
     private int getTypeVariant() {
-        return this.entityData.get(DATA_ID_TYPE_VARIANT);
+        return this.entityData.get(TWINK_ID_DATATYPE_VARIANT);
     }
-    public Variant getVariant() {
-        return Variant.byId(this.getTypeVariant() & 255);
+    public TwinkVariant getVariant() {
+        return TwinkVariant.byId(this.getTypeVariant() & 255);
     }
 
     public static AttributeSupplier.Builder createAttributes() {
@@ -214,7 +213,7 @@ public class Twink extends AbstractFlops {
     @Nullable
     public SpawnGroupData finalizeSpawn(ServerLevelAccessor level, @NotNull DifficultyInstance instance, @NotNull MobSpawnType type, SpawnGroupData data, CompoundTag tag) {
         RandomSource randomSource = level.getRandom();
-        Variant variant = Util.getRandom(Variant.values(), randomSource);
+        TwinkVariant variant = Util.getRandom(TwinkVariant.values(), randomSource);
         setVariant(variant);
         return super.finalizeSpawn(level, instance, type, data, tag);
     }

@@ -1,14 +1,22 @@
 package slay.nukolussy.modussy.entities.flops.traders;
 
+import com.google.common.collect.Sets;
+import it.unimi.dsi.fastutil.ints.Int2ObjectMap;
+import net.minecraft.Util;
 import net.minecraft.nbt.CompoundTag;
+import net.minecraft.network.syncher.EntityDataAccessor;
+import net.minecraft.network.syncher.EntityDataSerializers;
+import net.minecraft.network.syncher.SynchedEntityData;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.sounds.SoundEvent;
+import net.minecraft.util.RandomSource;
+import net.minecraft.world.DifficultyInstance;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResult;
-import net.minecraft.world.SimpleContainer;
 import net.minecraft.world.damagesource.DamageSource;
 import net.minecraft.world.entity.*;
 import net.minecraft.world.entity.ai.goal.TemptGoal;
+import net.minecraft.world.entity.ai.memory.MemoryModuleType;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
@@ -16,16 +24,22 @@ import net.minecraft.world.item.crafting.Ingredient;
 import net.minecraft.world.item.trading.MerchantOffer;
 import net.minecraft.world.item.trading.MerchantOffers;
 import net.minecraft.world.level.Level;
+import net.minecraft.world.level.ServerLevelAccessor;
 import net.minecraft.world.level.gameevent.GameEvent;
 import net.minecraftforge.network.PlayMessages;
 import net.minecraftforge.registries.ForgeRegistries;
+import org.jetbrains.annotations.NotNull;
+import slay.nukolussy.modussy.entities.flops.twink.TwinkVariant;
 import slay.nukolussy.modussy.entities.goal.FlopBreedingGoal;
 import slay.nukolussy.modussy.item.ModItem;
 import slay.nukolussy.modussy.sound.ModSounds;
 
+import javax.annotation.Nullable;
 import java.util.Random;
+import java.util.Set;
 
 public class Jiafei extends AbstractFlopTraders {
+    private static final EntityDataAccessor<Integer> JIAFEI_ID_DATATYPE_VARIANT = SynchedEntityData.defineId(Jiafei.class, EntityDataSerializers.INT);
     private static final Ingredient FOOD_ITEMS = Ingredient.of(
             ModItem.JIAFEI_PRODUCT.get(), ModItem.SLAGINIUM.get(), ModItem.INFUSED_SLAGINIUM.get(), ModItem.FLOPIUM.get(), ModItem.MYSTICAL_FLOPIUM.get());
 
@@ -106,15 +120,31 @@ public class Jiafei extends AbstractFlopTraders {
                 this.setInLove(player);
                 this.gameEvent(GameEvent.EAT, this);
                 return InteractionResult.SUCCESS;
+            } else if (!item.equals(ModItem.JIAFEI_EGG.get())  && this.isAlive() && !this.isTrading() && !player.isSecondaryUseActive()) {
+                boolean hasOffer = this.getOffers().isEmpty();
+
+                if (!hasOffer) {
+                    if (!this.level().isClientSide && !this.offers.isEmpty()) {
+                        this.startTrading(player);
+                    }
+                }
+                return InteractionResult.sidedSuccess(this.level().isClientSide);
             }
         }
         return result;
     }
 
     @Override
+    protected void defineSynchedData() {
+        super.defineSynchedData();
+        this.entityData.define(JIAFEI_ID_DATATYPE_VARIANT, 0);
+    }
+
+    @Override
     public void addAdditionalSaveData(CompoundTag tag) {
         super.addAdditionalSaveData(tag);
         MerchantOffers offers = this.getOffers();
+        tag.putInt("Variant", this.getTypeVariant());
         tag.put("Offers", offers.createTag());
 
         this.writeInventoryToTag(tag);
@@ -123,6 +153,7 @@ public class Jiafei extends AbstractFlopTraders {
     @Override
     public void readAdditionalSaveData(CompoundTag tag) {
         super.readAdditionalSaveData(tag);
+        this.setTypeVariant(tag.getInt("Variant"));
         this.offers = new MerchantOffers(tag.getCompound("Offers"));
 
         this.readInventoryFromTag(tag);
@@ -136,14 +167,20 @@ public class Jiafei extends AbstractFlopTraders {
         // mob should spawn under certain circumstance
     }
 
-    @Override
-    public SimpleContainer getInventory() {
-        return super.getInventory();
+    private void setTypeVariant(int id) {
+        this.entityData.set(JIAFEI_ID_DATATYPE_VARIANT, id);
+    }
+
+    private int getTypeVariant() {
+        return this.entityData.get(JIAFEI_ID_DATATYPE_VARIANT);
+    }
+    public JiafeiVariant getVariant() {
+        return JiafeiVariant.byId(this.getTypeVariant() & 255);
     }
 
     @Override
     public MerchantOffers getOffers() {
-        return offers;
+        return super.getOffers();
     }
 
     @Override
@@ -151,8 +188,45 @@ public class Jiafei extends AbstractFlopTraders {
 
     }
 
-    @Override
-    public void notifyTrade(MerchantOffer pOffer) {
+    public void setVariant(JiafeiVariant variant) {
+        this.setTypeVariant(variant.getId());
+    }
+
+    public int getJiafeiData() {
+        return this.entityData.get(JIAFEI_ID_DATATYPE_VARIANT);
+    }
+
+    protected void updateTrades() {
+        int jiafeiData = getJiafeiData();
+        Int2ObjectMap<FlopTrades.ItemListing[]> int2objectmap = FlopTrades.TRADES.get(JiafeiVariant.byId(jiafeiData));
+        if (int2objectmap != null && !int2objectmap.isEmpty()) {
+            FlopTrades.ItemListing[] afloptrades$itemlisting = int2objectmap.get(1);
+            if (afloptrades$itemlisting != null) {
+                MerchantOffers merchantoffers = this.getOffers();
+                this.addOffersFromItemListings(merchantoffers, afloptrades$itemlisting, 7);
+            }
+        }
+    }
+
+    protected void addOffersFromItemListings(MerchantOffers pGivenMerchantOffers, FlopTrades.ItemListing[] pNewTrades, int pMaxNumbers) {
+        Set<Integer> set = Sets.newHashSet();
+        if (pNewTrades.length > pMaxNumbers) {
+            while(set.size() < pMaxNumbers) {
+                set.add(this.random.nextInt(pNewTrades.length));
+            }
+        } else {
+            for(int i = 0; i < pNewTrades.length; ++i) {
+                set.add(i);
+            }
+        }
+
+        for(Integer integer : set) {
+            FlopTrades.ItemListing floptrades$itemlisting = pNewTrades[integer];
+            MerchantOffer merchantoffer = floptrades$itemlisting.getOffer(this, this.random);
+            if (merchantoffer != null) {
+                pGivenMerchantOffers.add(merchantoffer);
+            }
+        }
 
     }
 
@@ -172,17 +246,22 @@ public class Jiafei extends AbstractFlopTraders {
     }
 
     @Override
-    public boolean showProgressBar() {
-        return false;
-    }
-
-    @Override
     public SoundEvent getNotifyTradeSound() {
-        return null;
+        return ModSounds.JIAFEI_TRADE.get();
     }
 
-    @Override
-    public boolean isClientSide() {
-        return false;
+    private void startTrading(Player pPlayer) {
+        this.setTradingPlayer(pPlayer);
+        this.openTradingScreen(pPlayer, this.getDisplayName(), 1);
+        this.getBrain().eraseMemory(MemoryModuleType.WALK_TARGET);
+        this.getNavigation().stop();
+    }
+
+    @Nullable
+    public SpawnGroupData finalizeSpawn(ServerLevelAccessor level, @NotNull DifficultyInstance instance, @NotNull MobSpawnType type, SpawnGroupData data, CompoundTag tag) {
+        RandomSource randomSource = level.getRandom();
+        JiafeiVariant variant = Util.getRandom(JiafeiVariant.values(), randomSource);
+        setVariant(variant);
+        return super.finalizeSpawn(level, instance, type, data, tag);
     }
 }
