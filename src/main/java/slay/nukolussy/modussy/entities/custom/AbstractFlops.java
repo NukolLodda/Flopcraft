@@ -16,12 +16,12 @@ import slay.nukolussy.modussy.item.ModItem;
 import javax.annotation.Nullable;
 import java.util.*;
 
-public abstract class Flops extends PathfinderMob {
+public abstract class AbstractFlops extends PathfinderMob {
     protected static final Ingredient FOOD_ITEMS = Ingredient.of(ModItem.CVM.get(), ModItem.CVMIUM.get());
     private int inLove;
     @Nullable
     private UUID loveCause;
-    public Flops(EntityType type, Level world) {
+    public AbstractFlops(EntityType type, Level world) {
         super(type, world);
         xpReward = 0;
         setNoAi(false);
@@ -89,7 +89,7 @@ public abstract class Flops extends PathfinderMob {
         return this.inLove > 0;
     }
 
-    public boolean canMate(Flops flops) {
+    public boolean canMate(AbstractFlops flops) {
         if (flops == this) {
             return false;
         } else if (flops.getClass() != this.getClass()) {

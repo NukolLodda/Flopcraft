@@ -1,6 +1,5 @@
 package slay.nukolussy.modussy.entities.custom;
 
-import net.minecraft.sounds.SoundEvent;
 import net.minecraft.tags.DamageTypeTags;
 import net.minecraft.world.damagesource.DamageSource;
 import net.minecraft.world.entity.*;
@@ -12,8 +11,8 @@ import slay.nukolussy.modussy.item.ModItem;
 
 import java.util.Random;
 
-public abstract class FlopFigures extends Flops {
-    public FlopFigures(EntityType type, Level world) {
+public abstract class AbstractFlopFigures extends AbstractFlops {
+    public AbstractFlopFigures(EntityType type, Level world) {
         super(type, world);
 
         Random random = new Random();
