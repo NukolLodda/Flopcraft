@@ -13,6 +13,7 @@ A fabric port will likely get made some day however, it will likely be in a sepa
 Information about latest version<br>
 Forge API version: 43.1.47 <br>
 Minecraft Java version: 1.19.2 <br>
+Modussy Version: 0.0.3(pre-release) <br>
 
 Click <a href="https://github.com/NukolLodda/Modussy/tags">here</a> to find all versions of Modussy
 
