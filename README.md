@@ -66,8 +66,7 @@ however, it is important and very crucial that you MUST convert all sound files 
 ___
 the music disc's supposed sound files are recorded from the following videos:
 
-(note: the initial of each entry is what the music file HAS to be named as or else the audio for the music discs
-will not work)
+(note: the music file must be named what the entry is or else the sound won't play in game)
 ___
 <a href="https://www.youtube.com/watch?v=FfmPctW89Y0">after_like.ogg</a>
 
