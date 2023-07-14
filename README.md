@@ -52,7 +52,7 @@ ___
 
 It is noted that the music discs were removed to prevent any copyright claims on to my mod
 however, if you want to listen to music using this mod, you have to record a song down and
-convert it to an ogg file using this link - https://convertio.co/
+convert it to an ogg file using <a href="https://convertio.co/">this link</a>
 
 ___
 **Downloading Aesthetic Music Files For Modussy**
