@@ -21,20 +21,20 @@ Click <a href="https://github.com/NukolLodda/Modussy/tags">here</a> to find all 
 ---
 **Requests**
 
-I am aware that some of you wants me to add specific things into Modussy and for items, blocks, entities/mobs, and structures, I will try
-to get to them as soon as I can. However, since I have other projects I'm making at the moment along
-with the fact that Modussy's complexity has a tendency to require tons of debuggin, it will take me a bit.
+I am aware that some of you wants me to add specific things into Modussy and for items, blocks, entities/mobs,
+and structures, I will try to get to them as soon as I can. However, since I have other projects I'm making
+at the moment along with the fact that Modussy's complexity has a tendency to require tons of debugging,
+it will take me a bit. However, I will MOT be taking EVERY request thrown my way which I'd do if the request
+in question is too complicated for someone my level or that it just doesn't feel right in Modussy.
 
-However, I will not be taking any requests for porting Modussy to older versions of Minecraft since
-I will have to basically figure out how to redo some very complicated parts of Modussy's source code.
-And I will especially not be porting Modussy to Bedrock as I'm pretty certain that not only does
-Bedrock have a safeguard against modding, but also that Bedrock is written in a language I am currently
-unfamiliar with. However, if any of you reading this have a thorough understanding of Java and Minecraft
-code and you are up for the task, I give you full permission to fork this project and port
-Modussy to older versions of Minecraft. This applies to you C++ people versed in Bedrock code.
-
-For anyone asking me to port Modussy to fabric, I will be doing that at some point, however, like adding
-items and stuff, it will take me a bit of time.
+I will however, not be taking any requests for porting Modussy to other versions of Minecraft since
+I would have to basically figure out how to redo entire segments of Modussy's source code, which will take
+me weeks if not months, and I will especially not be porting Modussy to Bedrock as I'm pretty certain
+that not only does Bedrock have a safeguard against modding, but also that Bedrock is written in a
+language I am currently unfamiliar with. However, if any of you reading this have a thorough
+understanding of Java and Minecraft code and you are up for the task, I give you full permission to
+fork this project and port Modussy to older versions of Minecraft. This applies to you C++ people
+versed in Bedrock code.
 
 ___
 **Why Modussy Isn't On Curseforge**
