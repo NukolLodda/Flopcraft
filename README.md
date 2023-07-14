@@ -39,10 +39,10 @@ items and stuff, it will take me a bit of time.
 ___
 **Why Modussy Isn't On Curseforge**
 
-The inclusion of Cvm, Deeldoughs, and also CupcakKe's texture and some other features seemingly violated
-curseforge's terms of service so the download links are in the repository instead. Click 
-<a href=https://github.com/NukolLodda/Modussy/releases/download/v1.19.2-0.0>here</a> for the most recent
-version uploaded (Modussy-0.0.3 for Minecraft 1.19.2 Forge API 43.1.47) and
+After reading Curseforge's terms of service, I believe that some features of Modussy, namely
+CupcakKe's texture, specific items, and mobs violates it, so the download links are in this
+repository instead. Click <a href=https://github.com/NukolLodda/Modussy/releases/download/v1.19.2-0.0>here</a>
+for the most recent version uploaded (Modussy-0.0.3 for Minecraft 1.19.2 Forge API 43.1.47) and
 <a href="https://github.com/NukolLodda/Modussy/tags">here</a> for every available
 version of Modussy.
 
