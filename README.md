@@ -5,7 +5,7 @@ A very s3xy and aesthetic Minecraft mod
 As of right now, Modussy currently has support for Minecraft Java versions 1.19.2 and 1.20.1 on forge API.
 A fabric port will likely get made some day however, it will likely be in a separate repository.
 
-(Download for the latest version of Modussy - https://github.com/NukolLodda/Modussy/releases/download/seedyModussy/modussy-0.0.3.jar)
+(Download for the latest version of Modussy - https://github.com/NukolLodda/Modussy/releases/download/v1.19.2-0.0.3/modussy-0.0.3.jar)
 
 ---
 **Requests**
