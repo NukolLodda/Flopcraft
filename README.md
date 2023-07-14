@@ -2,7 +2,8 @@ Modussy (aka Flopcraft)
 ---
 A very s3xy and aesthetic Minecraft mod
 
-As of right now, Modussy currently has support for Minecraft Java versions 1.19.2 and 1.20.1 on forge API.
+As of right now, Modussy currently has support for Minecraft Java versions 1.19.2 on forge API,
+with the 1.20.1 version being a work in progress that should be out soon.
 A fabric port will likely get made some day however, it will likely be in a separate repository.
 
 ---
@@ -20,11 +21,9 @@ Click <a href="https://github.com/NukolLodda/Modussy/tags">here</a> to find all 
 ---
 **Requests**
 
-I am aware that some of you wants me to add specific things into Modussy (things like LovelyPeaches
-and deeldoughs) and I will state that for items, blocks, entities/mobs, and structures, I will try
+I am aware that some of you wants me to add specific things into Modussy and for items, blocks, entities/mobs, and structures, I will try
 to get to them as soon as I can. However, since I have other projects I'm making at the moment along
-with the fact that I'm still relatively new to the java programming language, necessary for modding
-Minecraft itself, it will take me a bit.
+with the fact that Modussy's complexity has a tendency to require tons of debuggin, it will take me a bit.
 
 However, I will not be taking any requests for porting Modussy to older versions of Minecraft since
 I will have to basically figure out how to redo some very complicated parts of Modussy's source code.
