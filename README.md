@@ -14,6 +14,8 @@ Information about latest version<br>
 Forge API version: 43.1.47 <br>
 Minecraft Java version: 1.19.2 <br>
 
+click <a href="https://github.com/NukolLodda/Modussy/tags">here</a> to find all versions of Modussy
+
 ---
 **Requests**
 
