@@ -4,68 +4,56 @@ All sounds go into the directory assets/modussy/sounds as .ogg files whether for
 via directly placing them into the downloaded jar
 
 ---
-after_like - https://www.youtube.com/watch?v=FfmPctW89Y0
+<a href="https://www.youtube.com/watch?v=FfmPctW89Y0">after_like.ogg</a>
 
-back_beat - https://www.youtube.com/watch?v=6tGJkLYINhE
+<a href="https://www.youtube.com/watch?v=6tGJkLYINhE">back_beat.ogg</a>
 
-bad_hoemance - https://www.youtube.com/watch?v=6Ri4vLxrOEw
+<a href="https://www.youtube.com/watch?v=6Ri4vLxrOEw">bad_hoemance.ogg</a>
 
-bad_romance - https://www.youtube.com/watch?v=P8am7O7R8fw
+<a href="https://www.youtube.com/watch?v=P8am7O7R8fw">bad_romance.ogg</a>
 
-bollywood - https://www.youtube.com/watch?v=oeK5yPAvRf8
+<a href="https://www.youtube.com/watch?v=oeK5yPAvRf8">bollywood.ogg</a>
 
-cpr - https://www.youtube.com/watch?v=aRO4wQ4SVTk
+<a href="https://www.youtube.com/watch?v=aRO4wQ4SVTk">cpr.ogg</a>
 
-cupid - https://www.youtube.com/watch?v=I2edUZHiwmA
+<a href="https://www.youtube.com/watch?v=TYWINwURoRc">deepthroat.ogg</a>
 
-deepthroat - https://www.youtube.com/watch?v=TYWINwURoRc
+<a href="https://www.youtube.com/watch?v=itUNIzqkKPs">get_into.ogg</a>
 
-drivers - https://www.youtube.com/watch?v=Z9MNu2Kr2ok
+<a href="https://www.youtube.com/watch?v=cX7itW3yfD4">gimme_more.ogg</a>
 
-get_into - https://www.youtube.com/watch?v=itUNIzqkKPs
+<a href="https://www.youtube.com/watch?v=KTB7CwyJkv8">hallo_aus.ogg</a>
 
-gimme_more - https://www.youtube.com/watch?v=cX7itW3yfD4
+<a href="https://www.youtube.com/watch?v=8NO6oFOPeNo">hip_dont.ogg</a>
 
-hallo_aus - https://www.youtube.com/watch?v=KTB7CwyJkv8
+<a href="https://www.youtube.com/watch?v=FSDCu7cbJnU">ieven_polkka.ogg</a>
 
-hip_dont - https://www.youtube.com/watch?v=8NO6oFOPeNo
+<a href="https://www.youtube.com/watch?v=IdY2jV8hVfk">into_you.ogg</a>
 
-i_am - https://www.youtube.com/watch?v=mh9QhWIGsEQ
+<a href="https://www.youtube.com/watch?v=f63oc8d8mIM">jiafei.ogg</a>
 
-ieven_polkka - https://www.youtube.com/watch?v=FSDCu7cbJnU
+<a href="https://www.youtube.com/watch?v=byueHxMGiEw">misery.ogg</a> (<a href="https://www.youtube.com/watch?v=O2XY3Y7JIa0">chorus</a> for those of you who have a sound editing program)
 
-into_you - https://www.youtube.com/watch?v=IdY2jV8hVfk
+<a href="https://www.youtube.com/watch?v=4uuGucFBtPI">need_doctor.ogg</a>
 
-jiafei - https://www.youtube.com/watch?v=f63oc8d8mIM
+<a href="https://www.youtube.com/watch?v=WgDPslCb5Tw">pink_venom.ogg</a>
 
-jiafei_remix - https://www.youtube.com/watch?v=SQ_U3TPd7Dc
+<a href="https://www.youtube.com/watch?v=nLh5XTDwXaI">poker_face.ogg</a>
 
-misery - https://www.youtube.com/watch?v=byueHxMGiEw (https://www.youtube.com/watch?v=O2XY3Y7JIa0 chorus)
+<a href="https://www.youtube.com/watch?v=4IZtb_84h-M">pon_mi.ogg</a>
 
-need_doctor - https://www.youtube.com/watch?v=4uuGucFBtPI
+<a href="https://www.youtube.com/watch?v=Ge_mOcf0ImE">pop.ogg</a>
 
-pink_venom - https://www.youtube.com/watch?v=WgDPslCb5Tw
+<a href="https://www.youtube.com/watch?v=r0WBPloHthY">round_life.ogg</a>
 
-poker_face - https://www.youtube.com/watch?v=nLh5XTDwXaI
+<a href="https://www.youtube.com/watch?v=NJyXgBoNncQ">see_tinh.ogg</a>
 
-pon_mi - https://www.youtube.com/watch?v=4IZtb_84h-M
+<a href="https://www.youtube.com/watch?vv=OnClMS6ZY2A">titanic.ogg</a>
 
-pop - https://www.youtube.com/watch?v=Ge_mOcf0ImE
+<a href="https://www.youtube.com/watch?v=q2_iIaI3KHI">tukah_taka.ogg</a>
 
-round_life - https://www.youtube.com/watch?v=r0WBPloHthY
+<a href="https://www.youtube.com/watch?v=8bsbs-c-GDo">vagina.ogg</a>
 
-see_tinh - https://www.youtube.com/watch?v=NJyXgBoNncQ
+<a href="https://www.youtube.com/watch?v=Qd2YGwXF2O0">wednesday.ogg</a>
 
-sekalali - https://www.youtube.com/watch?v=nX6v8-o_ptc
-
-telephone - https://www.youtube.com/watch?v=j8m2mjCun6M
-
-titanic - https://www.youtube.com/watch?app=desktop&v=OnClMS6ZY2A
-
-tukah_taka - https://www.youtube.com/watch?v=q2_iIaI3KHI
-
-vagina - https://www.youtube.com/watch?v=8bsbs-c-GDo
-
-wednesday - https://www.youtube.com/watch?v=Qd2YGwXF2O0
-
-wham - https://www.youtube.com/watch?v=tDDJENXAlRI
+<a href="https://www.youtube.com/watch?v=tDDJENXAlRI">wham.ogg</a>
