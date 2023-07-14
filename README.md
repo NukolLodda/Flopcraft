@@ -7,6 +7,7 @@ A fabric port will likely get made some day however, it will likely be in a sepa
 
 ---
 **Download**
+
 <a href=https://github.com/NukolLodda/Modussy/releases/download/v1.19.2-0.0.3/modussy-0.0.3.jar>Downlaod latest version here!</a>
 
 Information about latest version<br>
@@ -68,74 +69,74 @@ the music disc's supposed sound files are recorded from the following videos:
 (note: the initial of each entry is what the music file HAS to be named as or else the audio for the music discs
 will not work)
 ___
-after_like - https://www.youtube.com/watch?v=FfmPctW89Y0
+<a href="https://www.youtube.com/watch?v=FfmPctW89Y0">after_like.ogg</a>
 
-back_beat - https://www.youtube.com/watch?v=6tGJkLYINhE
+<a href="https://www.youtube.com/watch?v=6tGJkLYINhE">back_beat.ogg</a>
 
-bad_hoemance - https://www.youtube.com/watch?v=6Ri4vLxrOEw
+<a href="https://www.youtube.com/watch?v=6Ri4vLxrOEw">bad_hoemance.ogg</a>
 
-bad_romance - https://www.youtube.com/watch?v=P8am7O7R8fw
+<a href="https://www.youtube.com/watch?v=P8am7O7R8fw">bad_romance.ogg</a>
 
-bollywood - https://www.youtube.com/watch?v=oeK5yPAvRf8
+<a href="https://www.youtube.com/watch?v=oeK5yPAvRf8">bollywood.ogg</a>
 
-cpr - https://www.youtube.com/watch?v=aRO4wQ4SVTk
+<a href="https://www.youtube.com/watch?v=aRO4wQ4SVTk">cpr.ogg</a>
 
-cupid - https://www.youtube.com/watch?v=I2edUZHiwmA
+<a href="https://www.youtube.com/watch?v=I2edUZHiwmA">cupid.ogg</a>
 
-deepthroat - https://www.youtube.com/watch?v=TYWINwURoRc
+<a href="https://www.youtube.com/watch?v=TYWINwURoRc">deepthroat.ogg</a>
 
-drivers - https://www.youtube.com/watch?v=Z9MNu2Kr2ok
+<a href="https://www.youtube.com/watch?v=Z9MNu2Kr2ok">driver.ogg</a>
 
-get_into - https://www.youtube.com/watch?v=itUNIzqkKPs
+<a href="https://www.youtube.com/watch?v=itUNIzqkKPs">get_into.ogg</a>
 
-gimme_more - https://www.youtube.com/watch?v=cX7itW3yfD4
+<a href="https://www.youtube.com/watch?v=cX7itW3yfD4">gimme_more.ogg</a>
 
-god_woman - https://www.youtube.com/watch?v=BMsaU0CxFf8
+<a href="https://www.youtube.com/watch?v=BMsaU0CxFf8">god_woman.ogg</a>
 
-hallo_aus - https://www.youtube.com/watch?v=KTB7CwyJkv8
+<a href="https://www.youtube.com/watch?v=KTB7CwyJkv8">hallo_aus.ogg</a>
 
-hip_dont - https://www.youtube.com/watch?v=8NO6oFOPeNo
+<a href="https://www.youtube.com/watch?v=8NO6oFOPeNo">hip_dont.ogg</a>
 
-i_am - https://www.youtube.com/watch?v=mh9QhWIGsEQ
+<a href="https://www.youtube.com/watch?v=mh9QhWIGsEQ">i_am.ogg</a>
 
-ieven_polkka - https://www.youtube.com/watch?v=FSDCu7cbJnU
+<a href="https://www.youtube.com/watch?v=FSDCu7cbJnU">ieven_polkka.ogg</a>
 
-into_you - https://www.youtube.com/watch?v=IdY2jV8hVfk
+<a href="https://www.youtube.com/watch?v=IdY2jV8hVfk">into_you.ogg</a>
 
-jiafei - https://www.youtube.com/watch?v=f63oc8d8mIM
+<a href="https://www.youtube.com/watch?v=f63oc8d8mIM">jiafei.ogg</a>
 
-jiafei_remix - https://www.youtube.com/watch?v=SQ_U3TPd7Dc
+<a href="https://www.youtube.com/watch?v=SQ_U3TPd7Dc">jiafei_remix.ogg</a>
 
-misery - https://www.youtube.com/watch?v=byueHxMGiEw (https://www.youtube.com/watch?v=O2XY3Y7JIa0 chorus)
+<a href="https://www.youtube.com/watch?v=byueHxMGiEw">misery.ogg</a> (<a href="https://www.youtube.com/watch?v=O2XY3Y7JIa0">chorus</a> for those of you who have a sound editing program)
 
-need_doctor - https://www.youtube.com/watch?v=4uuGucFBtPI
+<a href="https://www.youtube.com/watch?v=4uuGucFBtPI">need_doctor.ogg</a>
 
-pink_venom - https://www.youtube.com/watch?v=WgDPslCb5Tw
+<a href="https://www.youtube.com/watch?v=WgDPslCb5Tw">pink_venom.ogg</a>
 
-poker_face - https://www.youtube.com/watch?v=nLh5XTDwXaI
+<a href="https://www.youtube.com/watch?v=nLh5XTDwXaI">poker_face.ogg</a>
 
-pon_mi - https://www.youtube.com/watch?v=4IZtb_84h-M
+<a href="https://www.youtube.com/watch?v=4IZtb_84h-M">pon_mi.ogg</a>
 
-pop - https://www.youtube.com/watch?v=Ge_mOcf0ImE
+<a href="https://www.youtube.com/watch?v=Ge_mOcf0ImE">pop.ogg</a>
 
-resonance - https://www.youtube.com/watch?v=EQdl5f1npT0
+<a href="https://www.youtube.com/watch?v=EQdl5f1npT0">resonance.ogg</a>
 
-round_life - https://www.youtube.com/watch?v=r0WBPloHthY
+<a href="https://www.youtube.com/watch?v=r0WBPloHthY">round_life.ogg</a>
 
-say_so - https://www.youtube.com/watch?v=4L_EKMtiGiQ
+<a href="https://www.youtube.com/watch?v=4L_EKMtiGiQ">say_so.ogg</a>
 
-see_tinh - https://www.youtube.com/watch?v=NJyXgBoNncQ
+<a href="https://www.youtube.com/watch?v=NJyXgBoNncQ">see_tinh.ogg</a>
 
-sekalali - https://www.youtube.com/watch?v=nX6v8-o_ptc
+<a href="https://www.youtube.com/watch?v=nX6v8-o_ptc">sekalali.ogg</a>
 
-telephone - https://www.youtube.com/watch?v=j8m2mjCun6M
+<a href="https://www.youtube.com/watch?v=j8m2mjCun6M">telephone.ogg</a>
 
-titanic - https://www.youtube.com/watch?app=desktop&v=OnClMS6ZY2A
+<a href="https://www.youtube.com/watch?vv=OnClMS6ZY2A">titanic.ogg</a>
 
-tukah_taka - https://www.youtube.com/watch?v=q2_iIaI3KHI
+<a href="https://www.youtube.com/watch?v=q2_iIaI3KHI">tukah_taka.ogg</a>
 
-vagina - https://www.youtube.com/watch?v=8bsbs-c-GDo
+<a href="https://www.youtube.com/watch?v=8bsbs-c-GDo">vagina.ogg</a>
 
-wednesday - https://www.youtube.com/watch?v=Qd2YGwXF2O0
+<a href="https://www.youtube.com/watch?v=Qd2YGwXF2O0">wednesday.ogg</a>
 
-wham - https://www.youtube.com/watch?v=tDDJENXAlRI
+<a href="https://www.youtube.com/watch?v=tDDJENXAlRI">wham.ogg</a>
