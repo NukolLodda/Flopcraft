@@ -31,7 +31,7 @@ I will have to basically figure out how to redo some very complicated parts of M
 And I will especially not be porting Modussy to Bedrock as I'm pretty certain that not only does
 Bedrock have a safeguard against modding, but also that Bedrock is written in a language I am currently
 unfamiliar with. However, if any of you reading this have a thorough understanding of Java and Minecraft
-code and you are up for the task, Modussy's source code is open source and you are all free to port
+code and you are up for the task, I give you full permission to fork this project and port
 Modussy to older versions of Minecraft. This applies to you C++ people versed in Bedrock code.
 
 For anyone asking me to port Modussy to fabric, I will be doing that at some point, however, like adding
