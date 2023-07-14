@@ -39,11 +39,12 @@ items and stuff, it will take me a bit of time.
 ___
 **Why Modussy Isn't On Curseforge**
 
-Due to the fact this mod has cvm and other certain features, the mod's download is in the tag of this
-directory instead of on curseforge. To find the mod download, go to the right column of the page where
-it says tags, press tags where it'll then lead you to modussy, press that and within it should
-be a section called assets where the download file ends with a .jar file extension. Click on that
-and the mod modussy should automatically download.
+The inclusion of Cvm, Deeldoughs, and also CupcakKe's texture and some other features seemingly violated
+curseforge's terms of service so the download links are in the repository instead. Click 
+<a href=https://github.com/NukolLodda/Modussy/releases/download/v1.19.2-0.0>here</a> for the most recent
+version uploaded (Modussy-0.0.3 for Minecraft 1.19.2 Forge API 43.1.47) and
+<a href="https://github.com/NukolLodda/Modussy/tags">here</a> for every available
+version of Modussy.
 
 ___
 **Where Are Modussy's Aesthetic Music**
