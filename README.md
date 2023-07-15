@@ -1,133 +1,138 @@
-Modussy (aka Flopcraft)
 ---
 A very s3xy and aesthetic Minecraft mod
 
-As of right now, Modussy currently has support for Minecraft Java versions 1.19.2 and 1.20.1 on forge API.
+As of right now, Modussy currently has support for Minecraft Java versions 1.19.2 on forge API,
+with the 1.20.1 version being a work in progress that should be out soon.
 A fabric port will likely get made some day however, it will likely be in a separate repository.
+
+---
+**Download**
+
+<a href=https://github.com/NukolLodda/Modussy/releases/download/v1.19.2-0.0.3/modussy-0.0.3.jar>Downlaod latest version here!</a>
+
+Information about latest version<br>
+Forge API version: 43.1.47 <br>
+Minecraft Java version: 1.19.2 <br>
+Modussy Version: 0.0.3(pre-release) <br>
+
+Click <a href="https://github.com/NukolLodda/Modussy/tags">here</a> to find all versions of Modussy
 
 ---
 **Requests**
 
-I am aware that some of you wants me to add specific things into Modussy (things like LovelyPeaches
-and deeldoughs) and I will state that for items, blocks, entities/mobs, and structures, I will try
-to get to them as soon as I can. However, since I have other projects I'm making at the moment along
-with the fact that I'm still relatively new to the java programming language, necessary for modding
-Minecraft itself, it will take me a bit.
+I am aware that some of you wants me to add specific things into Modussy and for items, blocks, entities/mobs,
+and structures, I will try to get to them as soon as I can. However, since I have other projects I'm making
+at the moment along with the fact that Modussy's complexity has a tendency to require tons of debugging,
+it will take me a bit. However, I will MOT be taking EVERY request thrown my way which I'd do if the request
+in question is too complicated for someone my level or that it just doesn't feel right in Modussy.
 
-However, I will not be taking any requests for porting Modussy to older versions of Minecraft since
-I will have to basically figure out how to redo some very complicated parts of Modussy's source code.
-And I will especially not be porting Modussy to Bedrock as I'm pretty certain that not only does
-Bedrock have a safeguard against modding, but also that Bedrock is written in a language I am currently
-unfamiliar with. However, if any of you reading this have a thorough understanding of Java and Minecraft
-code and you are up for the task, Modussy's source code is open source and you are all free to port
-Modussy to older versions of Minecraft. This applies to you C++ people versed in Bedrock code.
-
-For anyone asking me to port Modussy to fabric, I will be doing that at some point, however, like adding
-items and stuff, it will take me a bit of time.
+I will however, not be taking any requests for porting Modussy to other versions of Minecraft since
+I would have to basically figure out how to redo entire segments of Modussy's source code, which will take
+me weeks if not months, and I will especially not be porting Modussy to Bedrock as I'm pretty certain
+that not only does Bedrock have a safeguard against modding, but also that Bedrock is written in a
+language I am currently unfamiliar with. However, if any of you reading this have a thorough
+understanding of Java and Minecraft code and you are up for the task, I give you full permission to
+fork this project and port Modussy to older versions of Minecraft. This applies to you C++ people
+versed in Bedrock code.
 
 ___
 **Why Modussy Isn't On Curseforge**
 
-Due to the fact this mod has cvm and other certain features, the mod's download is in the tag of this
-directory instead of on curseforge. To find the mod download, go to the right column of the page where
-it says tags, press tags where it'll then lead you to modussy, press that and within it should
-be a section called assets where the download file ends with a .jar file extension. Click on that
-and the mod modussy should automatically download.
+After reading Curseforge's terms of service, I believe that some features of Modussy, namely
+CupcakKe's texture, specific items, and mobs violates it, so the download links are in this
+repository instead. Click <a href=https://github.com/NukolLodda/Modussy/releases/download/v1.19.2-0.0>here</a>
+for the most recent version uploaded (Modussy-0.0.3 for Minecraft 1.19.2 Forge API 43.1.47) and
+<a href="https://github.com/NukolLodda/Modussy/tags">here</a> for every available
+version of Modussy.
 
 ___
 **Where Are Modussy's Aesthetic Music**
 
 It is noted that the music discs were removed to prevent any copyright claims on to my mod
 however, if you want to listen to music using this mod, you have to record a song down and
-convert it to an ogg file using this link - https://convertio.co/
+convert it to an ogg file using <a href="https://convertio.co/">this link</a>
 
 ___
 **Downloading Aesthetic Music Files For Modussy**
-
-If you download the file itself as a .jar, the file extension is easy to be renamed as .zip in order
-to allow you to add the music disc files. (After adding the music disc files, you MUST rename the .zip
-back to a .jar file or Minecraft's not going to load the mod)
-The following directory is where the music disc sound files should end up:
-
-assets/modussy/sounds
-
-It is also noted that a texture pack can also be made to allow the sounds below to be accessible
-however, it is important and very crucial that you MUST convert all sound files for the mod into .ogg files
-
+Expand All
+@@ -69,76 +57,77 @@ however, it is important and very crucial that you MUST convert all sound files
 ___
 the music disc's supposed sound files are recorded from the following videos:
 
-(note: the initial of each entry is what the music file HAS to be named as or else the audio for the music discs
-will not work)
+(note: the music file must be named what the entry is or else the sound won't play in game)
 ___
-after_like - https://www.youtube.com/watch?v=FfmPctW89Y0
+<a href="https://www.youtube.com/watch?v=FfmPctW89Y0">music_disc_c1.ogg</a>
 
-back_beat - https://www.youtube.com/watch?v=6tGJkLYINhE
+<a href="https://www.youtube.com/watch?v=6tGJkLYINhE">music_disc_c2.ogg</a>
 
-bad_hoemance - https://www.youtube.com/watch?v=6Ri4vLxrOEw
+<a href="https://www.youtube.com/watch?v=6Ri4vLxrOEw">music_disc_c3.ogg</a>
 
-bad_romance - https://www.youtube.com/watch?v=P8am7O7R8fw
+<a href="https://www.youtube.com/watch?v=oeK5yPAvRf8">music_disc_c4.ogg</a>
 
-bollywood - https://www.youtube.com/watch?v=oeK5yPAvRf8
+<a href="https://www.youtube.com/watch?v=I2edUZHiwmA">music_disc_c5.ogg</a>
 
-cpr - https://www.youtube.com/watch?v=aRO4wQ4SVTk
+<a href="https://www.youtube.com/watch?v=itUNIzqkKPs">music_disc_c6.ogg</a>
 
-cupid - https://www.youtube.com/watch?v=I2edUZHiwmA
+<a href="https://www.youtube.com/watch?v=BMsaU0CxFf8">music_disc_c7.ogg</a>
 
-deepthroat - https://www.youtube.com/watch?v=TYWINwURoRc
+<a href="https://www.youtube.com/watch?v=KTB7CwyJkv8">music_disc_c8.ogg</a>
 
-drivers - https://www.youtube.com/watch?v=Z9MNu2Kr2ok
+<a href="https://www.youtube.com/watch?v=8NO6oFOPeNo">music_disc_c9.ogg</a>
 
-get_into - https://www.youtube.com/watch?v=itUNIzqkKPs
+<a href="https://www.youtube.com/watch?v=mh9QhWIGsEQ">music_disc_c10.ogg</a>
 
-gimme_more - https://www.youtube.com/watch?v=cX7itW3yfD4
+<a href="https://www.youtube.com/watch?v=FSDCu7cbJnU">music_disc_c11.ogg</a>
 
-god_woman - https://www.youtube.com/watch?v=BMsaU0CxFf8
+<a href="https://www.youtube.com/watch?v=IdY2jV8hVfk">music_disc_c12.ogg</a>
 
-hallo_aus - https://www.youtube.com/watch?v=KTB7CwyJkv8
+<a href="https://www.youtube.com/watch?v=byueHxMGiEw">music_disc_c13.ogg</a> (<a href="https://www.youtube.com/watch?v=O2XY3Y7JIa0">chorus</a> for those of you who have a sound editing program)
 
-hip_dont - https://www.youtube.com/watch?v=8NO6oFOPeNo
+<a href="https://www.youtube.com/watch?v=WgDPslCb5Tw">music_disc_c14.ogg</a>
 
-i_am - https://www.youtube.com/watch?v=mh9QhWIGsEQ
+<a href="https://www.youtube.com/watch?v=nLh5XTDwXaI">music_disc_c15.ogg</a>
 
-ieven_polkka - https://www.youtube.com/watch?v=FSDCu7cbJnU
+<a href="https://www.youtube.com/watch?v=nX6v8-o_ptc">music_disc_c17.ogg</a>
 
-into_you - https://www.youtube.com/watch?v=IdY2jV8hVfk
+<a href="https://www.youtube.com/watch?v=NJyXgBoNncQ">music_disc_c18.ogg</a>
 
-jiafei - https://www.youtube.com/watch?v=f63oc8d8mIM
+<a href="https://www.youtube.com/watch?v=Ff5BZE8yPrk">music_disc_c19.ogg</a>
 
-jiafei_remix - https://www.youtube.com/watch?v=SQ_U3TPd7Dc
+<a href="https://www.youtube.com/watch?v=QsF5x0VyMjs">music_disc_c20.ogg</a>
 
-misery - https://www.youtube.com/watch?v=byueHxMGiEw (https://www.youtube.com/watch?v=O2XY3Y7JIa0 chorus)
+<a href="https://www.youtube.com/watch?v=j8m2mjCun6M">music_disc_c21.ogg</a>
 
-need_doctor - https://www.youtube.com/watch?v=4uuGucFBtPI
+<a href="https://www.youtube.com/watch?v=Qd2YGwXF2O0">music_disc_c24.ogg</a>
 
-pink_venom - https://www.youtube.com/watch?v=WgDPslCb5Tw
+<a href="https://www.youtube.com/watch?v=tDDJENXAlRI">music_disc_c25.ogg</a>
 
-poker_face - https://www.youtube.com/watch?v=nLh5XTDwXaI
+<a href="https://www.youtube.com/watch?v=4uuGucFBtPI">music_disc_cj1.ogg</a>
 
-pon_mi - https://www.youtube.com/watch?v=4IZtb_84h-M
+<a href="https://www.youtube.com/watch?v=Ge_mOcf0ImE">music_disc_cpm1.ogg</a>
 
-pop - https://www.youtube.com/watch?v=Ge_mOcf0ImE
+<a href="https://www.youtube.com/watch?v=aRO4wQ4SVTk">music_disc_cupcakke1.ogg</a>
 
-resonance - https://www.youtube.com/watch?v=EQdl5f1npT0
+<a href="https://www.youtube.com/watch?v=TYWINwURoRc">music_disc_cupcakke2.ogg</a>
 
-round_life - https://www.youtube.com/watch?v=r0WBPloHthY
+<a href="https://www.youtube.com/watch?v=4L_EKMtiGiQ">music_disc_db1.ogg</a>
 
-say_so - https://www.youtube.com/watch?v=4L_EKMtiGiQ
+<a href="https://www.youtube.com/watch?v=P8am7O7R8fw">music_disc_j1.ogg</a>
 
-see_tinh - https://www.youtube.com/watch?v=NJyXgBoNncQ
+<a href="https://www.youtube.com/watch?v=Z9MNu2Kr2ok">music_disc_j2.ogg</a>
 
-sekalali - https://www.youtube.com/watch?v=nX6v8-o_ptc
+<a href="https://www.youtube.com/watch?v=SQ_U3TPd7Dc">music_disc_j4.ogg</a>
 
-telephone - https://www.youtube.com/watch?v=j8m2mjCun6M
+<a href="https://www.youtube.com/watch?v=EQdl5f1npT0">music_disc_j5.ogg</a>
 
-titanic - https://www.youtube.com/watch?app=desktop&v=OnClMS6ZY2A
+<a href="https://www.youtube.com/watch?v=cX7itW3yfD4">music_disc_jc1.ogg</a>
 
-tukah_taka - https://www.youtube.com/watch?v=q2_iIaI3KHI
+<a href="https://www.youtube.com/watch?v=f63oc8d8mIM">music_disc_jiafei.ogg</a>
 
-vagina - https://www.youtube.com/watch?v=8bsbs-c-GDo
+<a href="https://www.youtube.com/watch?v=r0WBPloHthY">music_disc_pm1.ogg</a>
 
-wednesday - https://www.youtube.com/watch?v=Qd2YGwXF2O0
+<a href="https://www.youtube.com/watch?v=4IZtb_84h-M">music_disc_ponmi.ogg</a>
 
-wham - https://www.youtube.com/watch?v=tDDJENXAlRI
+<a href="https://www.youtube.com/watch?vv=OnClMS6ZY2A">music_disc_c22.ogg</a>
+
+<a href="https://www.youtube.com/watch?v=q2_iIaI3KHI">music_disc_c23.ogg</a>
+
+<a href="https://www.youtube.com/watch?v=8bsbs-c-GDo">music_disc_cupcakke3.ogg</a>

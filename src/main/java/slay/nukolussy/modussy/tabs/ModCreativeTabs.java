@@ -91,7 +91,6 @@ public class ModCreativeTabs {
                         pOutput.accept(ModItem.DISC_C13.get());
                         pOutput.accept(ModItem.DISC_C14.get());
                         pOutput.accept(ModItem.DISC_C15.get());
-                        pOutput.accept(ModItem.DISC_C16.get());
                         pOutput.accept(ModItem.DISC_C17.get());
                         pOutput.accept(ModItem.DISC_C18.get());
                         pOutput.accept(ModItem.DISC_C20.get());
@@ -113,6 +112,7 @@ public class ModCreativeTabs {
                         pOutput.accept(ModItem.DISC_J5.get());
                         pOutput.accept(ModItem.DISC_JC1.get());
                         pOutput.accept(ModItem.DISC_JIAFEI.get());
+                        pOutput.accept(ModItem.DISC_PM1.get());
                         pOutput.accept(ModItem.DISC_PONMI.get());
                         pOutput.accept(ModItem.DISC_RANVISION.get());
                         pOutput.accept(ModItem.DISC_CUPCAKKE3.get());

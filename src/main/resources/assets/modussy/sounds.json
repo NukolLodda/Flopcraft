@@ -350,11 +350,11 @@
       }
     ]
   },
-  "music_disc_c16": {
+  "music_disc_pm1": {
     "subtitle": "subtitles.music",
     "sounds": [
       {
-        "name": "modussy:music_disc_c16",
+        "name": "modussy:music_disc_pm1",
         "stream": true
       }
     ]

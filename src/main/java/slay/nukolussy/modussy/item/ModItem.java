@@ -117,7 +117,6 @@ public class ModItem {
     public static final RegistryObject<Item> DISC_C13 = ITEMS.register("music_disc_c13",  () -> new SoundItems("modussy:music_disc_c13", 4200));
     public static final RegistryObject<Item> DISC_C14 = ITEMS.register("music_disc_c14",  () -> new SoundItems("modussy:music_disc_c14", 3640));
     public static final RegistryObject<Item> DISC_C15 = ITEMS.register("music_disc_c15",  () -> new SoundItems("modussy:music_disc_c15", 4700));
-    public static final RegistryObject<Item> DISC_C16 = ITEMS.register("music_disc_c16",  () -> new SoundItems("modussy:music_disc_c16", 6160));
     public static final RegistryObject<Item> DISC_C17 = ITEMS.register("music_disc_c17",  () -> new SoundItems("modussy:music_disc_c17", 3600));
     public static final RegistryObject<Item> DISC_C18 = ITEMS.register("music_disc_c18",  () -> new SoundItems("modussy:music_disc_c18", 3320));
     public static final RegistryObject<Item> DISC_C19 = ITEMS.register("music_disc_c19",  () -> new SoundItems("modussy:music_disc_c19", 3120));
@@ -140,6 +139,7 @@ public class ModItem {
     public static final RegistryObject<Item> DISC_J5 = ITEMS.register("music_disc_j5",  () -> new SoundItems("modussy:music_disc_j5", 4060));
     public static final RegistryObject<Item> DISC_JC1 = ITEMS.register("music_disc_jc1",  () -> new SoundItems("modussy:music_disc_jc1", 1480));
     public static final RegistryObject<Item> DISC_JIAFEI = ITEMS.register("music_disc_jiafei",  () -> new SoundItems("modussy:music_disc_jiafei", 3800));
+    public static final RegistryObject<Item> DISC_PM1 = ITEMS.register("music_disc_pm1",  () -> new SoundItems("modussy:music_disc_pm1", 6160));
     public static final RegistryObject<Item> DISC_PONMI = ITEMS.register("music_disc_ponmi",  () -> new SoundItems("modussy:music_disc_ponmi", 2740));
     public static final RegistryObject<Item> DISC_RANVISION = ITEMS.register("music_disc_ranvision",  () -> new SoundItems("modussy:music_disc_ranvision", 720));
 
