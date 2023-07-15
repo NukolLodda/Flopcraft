@@ -72,50 +72,50 @@ public class ModCreativeTabs {
 
     public static RegistryObject<CreativeModeTab> YASS_DISCS = CREATIVE_MODE_TABS.register("yass_discs", () ->
             CreativeModeTab.builder()
-                    .icon(() -> ModItem.SEE_TINH.get().getDefaultInstance())
+                    .icon(() -> ModItem.DISC_C18.get().getDefaultInstance())
                     .title(Component.translatable("itemGroup.yass_discs"))
                     .withTabsBefore(CreativeModeTabs.SPAWN_EGGS)
                     .displayItems(((pParameters, pOutput) -> {
-                        pOutput.accept(ModItem.AFTER_LIKE.get());
-                        pOutput.accept(ModItem.BACK_BEAT.get());
-                        pOutput.accept(ModItem.BAD_ROMANCE.get());
-                        pOutput.accept(ModItem.BAD_HOEMANCE.get());
-                        pOutput.accept(ModItem.BOLLYWOOD.get());
-                        pOutput.accept(ModItem.CPR.get());
-                        pOutput.accept(ModItem.CUPID.get());
-                        pOutput.accept(ModItem.DEEPTHROAT.get());
-                        pOutput.accept(ModItem.DEJE_BULLYING.get());
-                        pOutput.accept(ModItem.DRIVERS.get());
-                        pOutput.accept(ModItem.GET_INTO.get());
-                        pOutput.accept(ModItem.GIMME_MORE.get());
-                        pOutput.accept(ModItem.GOD_WOMAN.get());
-                        pOutput.accept(ModItem.HALLO_AUS.get());
-                        pOutput.accept(ModItem.HIP_DONT.get());
-                        pOutput.accept(ModItem.I_AM.get());
-                        pOutput.accept(ModItem.IEVEN_POLKKA.get());
-                        pOutput.accept(ModItem.INTO_YOU.get());
-                        pOutput.accept(ModItem.JIAFEI.get());
-                        pOutput.accept(ModItem.JIAFEI_REMIX.get());
-                        pOutput.accept(ModItem.METRO.get());
-                        pOutput.accept(ModItem.MISERY.get());
-                        pOutput.accept(ModItem.NEED_DOCTOR.get());
-                        pOutput.accept(ModItem.PINK_VENOM.get());
-                        pOutput.accept(ModItem.POKER_FACE.get());
-                        pOutput.accept(ModItem.PON_MI.get());
-                        pOutput.accept(ModItem.POP.get());
-                        pOutput.accept(ModItem.RESONANCE.get());
-                        pOutput.accept(ModItem.ROUND_LIFE.get());
-                        pOutput.accept(ModItem.SAY_SO.get());
-                        pOutput.accept(ModItem.SEKALALI.get());
-                        pOutput.accept(ModItem.SEE_TINH.get());
-                        pOutput.accept(ModItem.SSERAFIM.get());
-                        pOutput.accept(ModItem.SOLO.get());
-                        pOutput.accept(ModItem.TELEPHONE.get());
-                        pOutput.accept(ModItem.TITANIC.get());
-                        pOutput.accept(ModItem.TUKAH_TAKA.get());
-                        pOutput.accept(ModItem.VAGINA.get());
-                        pOutput.accept(ModItem.WEDNESDAY.get());
-                        pOutput.accept(ModItem.WHAM.get());
+                        pOutput.accept(ModItem.DISC_C1.get());
+                        pOutput.accept(ModItem.DISC_C2.get());
+                        pOutput.accept(ModItem.DISC_C3.get());
+                        pOutput.accept(ModItem.DISC_C4.get());
+                        pOutput.accept(ModItem.DISC_C5.get());
+                        pOutput.accept(ModItem.DISC_C6.get());
+                        pOutput.accept(ModItem.DISC_C7.get());
+                        pOutput.accept(ModItem.DISC_C8.get());
+                        pOutput.accept(ModItem.DISC_C9.get());
+                        pOutput.accept(ModItem.DISC_C10.get());
+                        pOutput.accept(ModItem.DISC_C11.get());
+                        pOutput.accept(ModItem.DISC_C12.get());
+                        pOutput.accept(ModItem.DISC_C13.get());
+                        pOutput.accept(ModItem.DISC_C14.get());
+                        pOutput.accept(ModItem.DISC_C15.get());
+                        pOutput.accept(ModItem.DISC_C16.get());
+                        pOutput.accept(ModItem.DISC_C17.get());
+                        pOutput.accept(ModItem.DISC_C18.get());
+                        pOutput.accept(ModItem.DISC_C20.get());
+                        pOutput.accept(ModItem.DISC_C19.get());
+                        pOutput.accept(ModItem.DISC_C21.get());
+                        pOutput.accept(ModItem.DISC_C22.get());
+                        pOutput.accept(ModItem.DISC_C23.get());
+                        pOutput.accept(ModItem.DISC_C24.get());
+                        pOutput.accept(ModItem.DISC_C25.get());
+                        pOutput.accept(ModItem.DISC_CJ1.get());
+                        pOutput.accept(ModItem.DISC_CPM1.get());
+                        pOutput.accept(ModItem.DISC_CUPCAKKE1.get());
+                        pOutput.accept(ModItem.DISC_CUPCAKKE2.get());
+                        pOutput.accept(ModItem.DISC_DB1.get());
+                        pOutput.accept(ModItem.DISC_DEJE_BULLYING.get());
+                        pOutput.accept(ModItem.DISC_J1.get());
+                        pOutput.accept(ModItem.DISC_J2.get());
+                        pOutput.accept(ModItem.DISC_J4.get());
+                        pOutput.accept(ModItem.DISC_J5.get());
+                        pOutput.accept(ModItem.DISC_JC1.get());
+                        pOutput.accept(ModItem.DISC_JIAFEI.get());
+                        pOutput.accept(ModItem.DISC_PONMI.get());
+                        pOutput.accept(ModItem.DISC_RANVISION.get());
+                        pOutput.accept(ModItem.DISC_CUPCAKKE3.get());
                     })).build());
 
     public static RegistryObject<CreativeModeTab> YASSIFYING_INGREDIENTS = CREATIVE_MODE_TABS.register("yassifying_ingredients", () ->

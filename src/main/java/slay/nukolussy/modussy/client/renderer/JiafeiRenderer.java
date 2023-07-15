@@ -22,6 +22,6 @@ public class JiafeiRenderer extends HumanoidMobRenderer<Jiafei, PlayerModel<Jiaf
 
     @Override
     public ResourceLocation getTextureLocation(Jiafei entity) {
-        return new ResourceLocation("modussy:textures/entities/jiafei.png");
+        return new ResourceLocation("modussy:textures/entities/music_disc_jiafei.png");
     }
 }

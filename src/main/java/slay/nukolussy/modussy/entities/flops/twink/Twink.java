@@ -19,6 +19,8 @@ import net.minecraft.world.entity.ai.attributes.AttributeSupplier;
 import net.minecraft.world.entity.ai.attributes.Attributes;
 import net.minecraft.world.entity.ai.goal.*;
 import net.minecraft.world.entity.item.ItemEntity;
+import net.minecraft.world.entity.monster.Monster;
+import net.minecraft.world.entity.monster.Zombie;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
@@ -98,14 +100,8 @@ public class Twink extends AbstractFlops {
     @Override
     protected void registerGoals() {
         super.registerGoals();
-
-        this.goalSelector.addGoal(1, new MeleeAttackGoal(this, 1.2, false) {
-            @Override
-            protected double getAttackReachSqr(LivingEntity entity) {
-                return (4.0 + entity.getBbWidth() * entity.getBbWidth());
-            }
-        });
-        this.goalSelector.addGoal(10, new FlopBreedingGoal(this, 1.0d));
+        this.goalSelector.addGoal(9, new FlopBreedingGoal(this, 1.0d));
+        this.goalSelector.addGoal(1, new AvoidEntityGoal<>(this, Monster.class, 10.0f, 0.5d, 0.5d));
 
     }
 

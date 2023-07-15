@@ -5,6 +5,7 @@ import net.minecraft.world.SimpleContainer;
 import net.minecraft.world.damagesource.DamageSource;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.EntityType;
+import net.minecraft.world.entity.ai.goal.TradeWithPlayerGoal;
 import net.minecraft.world.entity.npc.InventoryCarrier;
 import net.minecraft.world.entity.npc.Npc;
 import net.minecraft.world.entity.player.Player;
@@ -42,6 +43,7 @@ public abstract class AbstractFlopTraders extends AbstractFlopFigures implements
 
     @Override
     public void setTradingPlayer(@Nullable Player pTradingPlayer) {
+        if (pTradingPlayer != null) pTradingPlayer.stopUsingItem();
         this.trader = pTradingPlayer;
     }
 
@@ -49,6 +51,11 @@ public abstract class AbstractFlopTraders extends AbstractFlopFigures implements
     @Override
     public Player getTradingPlayer() {
         return this.trader;
+    }
+
+    @Override
+    protected void registerGoals() {
+        super.registerGoals();
     }
 
     @Override
@@ -69,8 +76,8 @@ public abstract class AbstractFlopTraders extends AbstractFlopFigures implements
 
     @Override
     public void die(DamageSource pDamageSource) {
-        super.die(pDamageSource);
         this.stopTrading();
+        super.die(pDamageSource);
     }
 
     @Nullable
@@ -84,4 +91,10 @@ public abstract class AbstractFlopTraders extends AbstractFlopFigures implements
     public boolean isClientSide() {
         return this.level().isClientSide;
     }
+
+    /*
+     * Mobs under this category:
+     * Jiafei
+     * Nicki Minaj
+     */
 }

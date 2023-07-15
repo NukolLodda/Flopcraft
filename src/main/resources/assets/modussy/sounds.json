@@ -62,47 +62,47 @@
       }
     ]
   },
-  "after_like": {
+  "music_disc_c1": {
     "subtitle": "subtitles.music",
     "sounds": [
       {
-        "name": "modussy:after_like",
+        "name": "modussy:music_disc_c1",
         "stream": true
       }
     ]
   },
-  "back_beat": {
+  "music_disc_c2": {
     "subtitle": "subtitles.music",
     "sounds": [
       {
-        "name": "modussy:back_beat",
+        "name": "modussy:music_disc_c2",
         "stream": true
       }
     ]
   },
-  "bad_hoemance": {
+  "music_disc_c3": {
     "subtitle": "subtitles.music",
     "sounds": [
       {
-        "name": "modussy:bad_hoemance",
+        "name": "modussy:music_disc_c3",
         "stream": true
       }
     ]
   },
-  "bad_romance": {
+  "music_disc_j1": {
     "subtitle": "subtitles.music",
     "sounds": [
       {
-        "name": "modussy:bad_romance",
+        "name": "modussy:music_disc_j1",
         "stream": true
       }
     ]
   },
-  "bollywood": {
+  "music_disc_c4": {
     "subtitle": "subtitles.music",
     "sounds": [
       {
-        "name": "modussy:bollywood",
+        "name": "modussy:music_disc_c4",
         "stream": true
       }
     ]
@@ -116,47 +116,47 @@
       }
     ]
   },
-  "cpr": {
+  "music_disc_cupcakke1": {
     "subtitle": "subtitles.music",
     "sounds": [
       {
-        "name": "modussy:cpr",
+        "name": "modussy:music_disc_cupcakke1",
         "stream": true
       }
     ]
   },
-  "cupid": {
+  "music_disc_c5": {
     "subtitle": "subtitles.music",
     "sounds": [
       {
-        "name": "modussy:cupid",
+        "name": "modussy:music_disc_c5",
         "stream": true
       }
     ]
   },
-  "deepthroat": {
+  "music_disc_cupcakke2": {
     "subtitle": "subtitles.music",
     "sounds": [
       {
-        "name": "modussy:deepthroat",
+        "name": "modussy:music_disc_cupcakke2",
         "stream": true
       }
     ]
   },
-  "deje_bullying": {
+  "music_disc_deje_bullying": {
     "subtitle": "subtitles.music",
     "sounds": [
       {
-        "name": "modussy:deje_bullying",
+        "name": "modussy:music_disc_deje_bullying",
         "stream": true
       }
     ]
   },
-  "drivers": {
+  "music_disc_j2": {
     "subtitle": "subtitles.music",
     "sounds": [
       {
-        "name": "modussy:drivers",
+        "name": "modussy:music_disc_j2",
         "stream": true
       }
     ]
@@ -188,209 +188,209 @@
       }
     ]
   },
-  "get_into": {
+  "music_disc_c6": {
     "subtitle": "subtitles.music",
     "sounds": [
       {
-        "name": "modussy:get_into",
+        "name": "modussy:music_disc_c6",
         "stream": true
       }
     ]
   },
-  "gimme_more": {
+  "music_disc_jc1": {
     "subtitle": "subtitles.music",
     "sounds": [
       {
-        "name": "modussy:gimme_more",
+        "name": "modussy:music_disc_jc1",
         "stream": true
       }
     ]
   },
-  "god_woman": {
+  "music_disc_c7": {
     "subtitle": "subtitles.music",
     "sounds": [
       {
-        "name": "modussy:god_woman",
+        "name": "modussy:music_disc_c7",
         "stream": true
       }
     ]
   },
-  "hip_dont": {
+  "music_disc_c9": {
     "subtitle": "subtitles.music",
     "sounds": [
       {
-        "name": "modussy:hip_dont",
+        "name": "modussy:music_disc_c9",
         "stream": true
       }
     ]
   },
-  "hallo_aus": {
+  "music_disc_c8": {
     "subtitle": "subtitles.music",
     "sounds": [
       {
-        "name": "modussy:hallo_aus",
+        "name": "modussy:music_disc_c8",
         "stream": true
       }
     ]
   },
-  "i_am": {
+  "music_disc_c10": {
     "subtitle": "subtitles.music",
     "sounds": [
       {
-        "name": "modussy:i_am",
+        "name": "modussy:music_disc_c10",
         "stream": true
       }
     ]
   },
-  "ieven_polkka": {
+  "music_disc_c11": {
     "subtitle": "subtitles.music",
     "sounds": [
       {
-        "name": "modussy:ieven_polkka",
+        "name": "modussy:music_disc_c11",
         "stream": true
       }
     ]
   },
-  "into_you": {
+  "music_disc_c12": {
     "subtitle": "subtitles.music",
     "sounds": [
       {
-        "name": "modussy:into_you",
+        "name": "modussy:music_disc_c12",
         "stream": true
       }
     ]
   },
-  "jiafei": {
+  "music_disc_jiafei": {
     "subtitle": "subtitles.music",
     "sounds": [
       {
-        "name": "modussy:jiafei",
+        "name": "modussy:music_disc_jiafei",
         "stream": true
       }
     ]
   },
-  "jiafei_remix": {
+  "music_disc_j4": {
     "subtitle": "subtitles.music",
     "sounds": [
       {
-        "name": "modussy:jiafei_remix",
+        "name": "modussy:music_disc_j4",
         "stream": true
       }
     ]
   },
-  "metro": {
+  "music_disc_ranvision": {
     "subtitle": "subtitles.music",
     "sounds": [
       {
-        "name": "modussy:metro",
+        "name": "modussy:music_disc_ranvision",
         "stream": true
       }
     ]
   },
-  "misery": {
+  "music_disc_c13": {
     "subtitle": "subtitles.music",
     "sounds": [
       {
-        "name": "modussy:misery",
+        "name": "modussy:music_disc_c13",
         "stream": true
       }
     ]
   },
-  "need_doctor": {
+  "music_disc_cj1": {
     "subtitle": "subtitles.music",
     "sounds": [
       {
-        "name": "modussy:need_doctor",
+        "name": "modussy:music_disc_cj1",
         "stream": true
       }
     ]
   },
-  "pink_venom": {
+  "music_disc_c14": {
     "subtitle": "subtitles.music",
     "sounds": [
       {
-        "name": "modussy:pink_venom",
+        "name": "modussy:music_disc_c14",
         "stream": true
       }
     ]
   },
-  "poker_face": {
+  "music_disc_c15": {
     "subtitle": "subtitles.music",
     "sounds": [
       {
-        "name": "modussy:poker_face",
+        "name": "modussy:music_disc_c15",
         "stream": true
       }
     ]
   },
-  "pon_mi": {
+  "music_disc_ponmi": {
     "subtitle": "subtitles.music",
     "sounds": [
       {
-        "name": "modussy:pon_mi",
+        "name": "modussy:music_disc_ponmi",
         "stream": true
       }
     ]
   },
-  "pop": {
+  "music_disc_cpm1": {
     "subtitle": "subtitles.music",
     "sounds": [
       {
-        "name": "modussy:pop",
+        "name": "modussy:music_disc_cpm1",
         "stream": true
       }
     ]
   },
-  "resonance": {
+  "music_disc_j5": {
     "subtitle": "subtitles.music",
     "sounds": [
       {
-        "name": "modussy:resonance",
+        "name": "modussy:music_disc_j5",
         "stream": true
       }
     ]
   },
-  "round_life": {
+  "music_disc_c16": {
     "subtitle": "subtitles.music",
     "sounds": [
       {
-        "name": "modussy:round_life",
+        "name": "modussy:music_disc_c16",
         "stream": true
       }
     ]
   },
-  "say_so": {
+  "music_disc_db1": {
     "subtitle": "subtitles.music",
     "sounds": [
       {
-        "name": "modussy:say_so",
+        "name": "modussy:music_disc_db1",
         "stream": true
       }
     ]
   },
-  "sekalali": {
+  "music_disc_c17": {
     "subtitle": "subtitles.music",
     "sounds": [
       {
-        "name": "modussy:sekalali",
+        "name": "modussy:music_disc_c17",
         "stream": true
       }
     ]
   },
-  "see_tinh": {
+  "music_disc_c18": {
     "subtitle": "subtitles.music",
     "sounds": [
       {
-        "name": "modussy:see_tinh",
+        "name": "modussy:music_disc_c18",
         "stream": true
       }
     ]
   },
-  "solo": {
+  "music_disc_c19": {
     "subtitle": "subtitles.music",
     "sounds": [
       {
-        "name": "modussy:solo",
+        "name": "modussy:music_disc_c19",
         "stream": true
       }
     ]
@@ -413,65 +413,65 @@
       }
     ]
   },
-  "sserafim": {
-    "subtitle": "subtitles.sserafim",
+  "music_disc_c20": {
+    "subtitle": "subtitles.music_disc_c20",
     "sounds": [
       {
-        "name": "modussy:sserafim",
+        "name": "modussy:music_disc_c20",
         "stream": true
       }
     ]
   },
-  "telephone": {
+  "music_disc_c21": {
     "subtitle": "subtitles.music",
     "sounds": [
       {
-        "name": "modussy:telephone",
+        "name": "modussy:music_disc_c21",
         "stream": true
       }
     ]
   },
-  "titanic": {
+  "music_disc_c22": {
     "subtitle": "subtitles.music",
     "sounds": [
       {
-        "name": "modussy:titanic",
+        "name": "modussy:music_disc_c22",
         "stream": true
       }
     ]
   },
-  "tukah_taka": {
+  "music_disc_c23": {
     "subtitle": "subtitles.music",
     "sounds": [
       {
-        "name": "modussy:tukah_taka",
+        "name": "modussy:music_disc_c23",
         "stream": true
       }
     ]
   },
-  "vagina": {
+  "music_disc_cupcakke3": {
     "subtitle": "subtitles.music",
     "sounds": [
       {
-        "name": "modussy:vagina",
+        "name": "modussy:music_disc_cupcakke3",
         "stream": true
       }
     ]
   },
-  "wednesday": {
+  "music_disc_c24": {
     "subtitle": "subtitles.music",
     "sounds": [
       {
-        "name": "modussy:wednesday",
+        "name": "modussy:music_disc_c24",
         "stream": true
       }
     ]
   },
-  "wham": {
+  "music_disc_c25": {
     "subtitle": "subtitles.music",
     "sounds": [
       {
-        "name": "modussy:wham",
+        "name": "modussy:music_disc_c25",
         "stream": true
       }
     ]

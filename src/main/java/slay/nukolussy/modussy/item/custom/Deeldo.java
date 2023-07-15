@@ -1,25 +1,15 @@
 package slay.nukolussy.modussy.item.custom;
 
-import net.minecraft.sounds.SoundEvents;
 import net.minecraft.sounds.SoundSource;
 import net.minecraft.stats.Stats;
-import net.minecraft.world.InteractionHand;
-import net.minecraft.world.InteractionResultHolder;
-import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.LivingEntity;
-import net.minecraft.world.entity.player.Inventory;
 import net.minecraft.world.entity.player.Player;
-import net.minecraft.world.entity.projectile.AbstractArrow;
-import net.minecraft.world.entity.projectile.Projectile;
 import net.minecraft.world.item.*;
 import net.minecraft.world.item.enchantment.EnchantmentHelper;
 import net.minecraft.world.item.enchantment.Enchantments;
 import net.minecraft.world.level.Level;
-import slay.nukolussy.modussy.entities.misc.AbstractCvm;
-import slay.nukolussy.modussy.entities.misc.Cvm;
 import slay.nukolussy.modussy.item.ActivateMethods;
 import slay.nukolussy.modussy.item.ModItem;
-import slay.nukolussy.modussy.sound.ModSoundTypes;
 import slay.nukolussy.modussy.sound.ModSounds;
 
 import java.util.function.Predicate;
@@ -49,27 +39,19 @@ public class Deeldo extends BowItem {
                     boolean inf = player.getAbilities().instabuild || (itemstack.getItem() instanceof CvmItem &&
                             ((CvmItem)itemstack.getItem()).isInfinite(itemstack, pStack, player));
                     if (!pLevel.isClientSide) {
-                        CvmItem cvmitem = (CvmItem)(itemstack.getItem() instanceof CvmItem ? itemstack.getItem() : ModItem.CVM.get());
-                        AbstractCvm cvm = cvmitem.createArrow(pLevel, itemstack, player);
-                        cvm = (AbstractCvm) customArrow(cvm);
-                        cvm.shootFromRotation(player, player.getXRot(), player.getYRot(), 0.0F, powerTime * 3.0F, 1.0F);
-
                         int power = EnchantmentHelper.getItemEnchantmentLevel(Enchantments.POWER_ARROWS, pStack);
-                        int punch = EnchantmentHelper.getItemEnchantmentLevel(Enchantments.PUNCH_ARROWS, pStack);
                         boolean flame = EnchantmentHelper.getItemEnchantmentLevel(Enchantments.FLAMING_ARROWS, pStack) > 0;
+                        boolean isCvmium = itemstack.is(ModItem.CVMIUM.get());
 
-                        if (power > 0) {
-                            cvm.setBaseDamage(cvm.getBaseDamage() + (double)power * 0.5D + 0.5D);
-                        }
-                        if (punch > 0) {
-                            cvm.setKnockback(punch);
-                        }
-                        cvm.setFireness(flame);
+                        double rot = pEntityLiving.yHeadRotO * Math.PI / 180;
+                        double radius = powerTime * 6;
 
-                        pStack.hurtAndBreak(1, player, (p) -> {
-                            p.broadcastBreakEvent(player.getUsedItemHand());
-                        });
-                        pLevel.addFreshEntity(cvm);
+                        double x = pEntityLiving.getX() - (radius * (Math.sin(rot)));
+                        double y = pEntityLiving.getY() + 1;
+                        double z = pEntityLiving.getZ() + (radius * (Math.cos(rot)));
+
+                        ActivateMethods.cvmShoot(pLevel, x, y, z, pEntityLiving, itemstack,
+                                power, flame, isCvmium);
                     }
 
                     pLevel.playSound((Player)null, player.getX(), player.getY(), player.getZ(), ModSounds.SQUIRT.get(), SoundSource.PLAYERS,
@@ -89,7 +71,7 @@ public class Deeldo extends BowItem {
 
     @Override
     public Predicate<ItemStack> getAllSupportedProjectiles() {
-        return (item) -> item.is(ModItem.CVM.get()) || item.is(ModItem.CVMIUM.get());
+        return (item) -> item.is(ModItem.CVMIUM.get()) || item.is(ModItem.CVM.get());
     }
 
     @Override

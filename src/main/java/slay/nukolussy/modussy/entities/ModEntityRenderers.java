@@ -16,7 +16,5 @@ public class ModEntityRenderers {
         event.registerEntityRenderer(ModEntities.CUPCAKKE.get(), CupcakKeRenderer::new);
         event.registerEntityRenderer(ModEntities.TWINK.get(), TwinkRenderer::new);
         event.registerEntityRenderer(ModEntities.JIAFEI.get(), JiafeiRenderer::new);
-        event.registerEntityRenderer(ModEntities.CVM.get(), ThrownItemRenderer::new);
-        event.registerEntityRenderer(ModEntities.CVMIUM.get(), ThrownItemRenderer::new);
     }
 }

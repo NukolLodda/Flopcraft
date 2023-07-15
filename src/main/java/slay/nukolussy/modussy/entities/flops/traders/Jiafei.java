@@ -29,13 +29,11 @@ import net.minecraft.world.level.gameevent.GameEvent;
 import net.minecraftforge.network.PlayMessages;
 import net.minecraftforge.registries.ForgeRegistries;
 import org.jetbrains.annotations.NotNull;
-import slay.nukolussy.modussy.entities.flops.twink.TwinkVariant;
 import slay.nukolussy.modussy.entities.goal.FlopBreedingGoal;
 import slay.nukolussy.modussy.item.ModItem;
 import slay.nukolussy.modussy.sound.ModSounds;
 
 import javax.annotation.Nullable;
-import java.util.Random;
 import java.util.Set;
 
 public class Jiafei extends AbstractFlopTraders {
@@ -52,14 +50,12 @@ public class Jiafei extends AbstractFlopTraders {
     }
 
     private SoundEvent jiafeiEat() {
-        Random rand = new Random();
-        int randVal = rand.nextInt(0,3);
-        if (randVal == 0) {
-            return ModSounds.JIAFEI_EAT_1.get();
-        } else if (randVal == 1) {
-            return ModSounds.JIAFEI_EAT_2.get();
-        }
-        return ModSounds.JIAFEI_EAT_3.get();
+        int randVal = (int) (Math.random() * 3);
+        return switch (randVal) {
+            case 0 -> ModSounds.JIAFEI_EAT_3.get();
+            case 1 -> ModSounds.JIAFEI_EAT_1.get();
+            default -> ModSounds.JIAFEI_EAT_2.get();
+        };
     }
 
     @Override

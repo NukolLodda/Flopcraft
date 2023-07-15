@@ -15,8 +15,6 @@ import slay.nukolussy.modussy.Modussy;
 import slay.nukolussy.modussy.entities.flops.CupcakKe;
 import slay.nukolussy.modussy.entities.flops.traders.Jiafei;
 import slay.nukolussy.modussy.entities.flops.twink.Twink;
-import slay.nukolussy.modussy.entities.misc.Cvm;
-import slay.nukolussy.modussy.entities.misc.Cvmium;
 
 @Mod.EventBusSubscriber(bus = Mod.EventBusSubscriber.Bus.MOD)
 public class ModEntities {
@@ -36,14 +34,6 @@ public class ModEntities {
                 EntityType.Builder.<Jiafei>of(Jiafei::new, MobCategory.AMBIENT).setShouldReceiveVelocityUpdates(true)
                         .setTrackingRange(64).setUpdateInterval(3).setCustomClientFactory(Jiafei::new)
                         .sized(0.6f,1.8f));
-
-        public static final RegistryObject<EntityType<Cvm>> CVM = register("cvm",
-                EntityType.Builder.<Cvm>of(Cvm::new, MobCategory.MISC)
-                        .sized(0.5f, 0.5f).setTrackingRange(4).setUpdateInterval(1));
-
-        public static final RegistryObject<EntityType<Cvmium>> CVMIUM = register("cvmium",
-                EntityType.Builder.<Cvmium>of(Cvmium::new, MobCategory.MISC)
-                        .sized(0.5f, 0.5f).setTrackingRange(8).setUpdateInterval(1));
         private static <T extends Entity> RegistryObject<EntityType<T>> register(String registryname, EntityType.Builder<T> entityTypeBuilder) {
             return Entities.register(registryname, () -> (EntityType<T>) entityTypeBuilder.build(registryname));
     }

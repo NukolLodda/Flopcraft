@@ -12,6 +12,7 @@ import net.minecraft.sounds.SoundEvent;
 import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.entity.*;
+import net.minecraft.world.entity.animal.Cat;
 import net.minecraft.world.entity.item.ItemEntity;
 import net.minecraft.world.entity.monster.*;
 import net.minecraft.world.entity.monster.hoglin.Hoglin;
@@ -94,19 +95,7 @@ public class ActivateMethods {
 
     }
 
-    private static void simpleFlopEffects(LivingEntity ent) {
-        ent.addEffect(new MobEffectInstance(MobEffects.MOVEMENT_SPEED, 1000, 0));
-        ent.addEffect(new MobEffectInstance(MobEffects.REGENERATION, 6900, 1));
-        ent.addEffect(new MobEffectInstance(MobEffects.ABSORPTION, 1710, 1));
-        ent.addEffect(new MobEffectInstance(MobEffects.FIRE_RESISTANCE, 1710, 0));
-        ent.addEffect(new MobEffectInstance(MobEffects.DAMAGE_RESISTANCE, 6900, 1));
-        ent.addEffect(new MobEffectInstance(MobEffects.DIG_SPEED, 1690, 0));
-        ent.addEffect(new MobEffectInstance(MobEffects.DAMAGE_BOOST, 1690, 1));
-        ent.addEffect(new MobEffectInstance(MobEffects.WATER_BREATHING, 1710, 0));
-        ent.addEffect(new MobEffectInstance(MobEffects.NIGHT_VISION, 1710, 0));
-    }
-
-    private static void advancedFlopEffects(LivingEntity entity, int lvl, int amp) {
+    private static void flopEffects(LivingEntity entity, int lvl, int amp) {
         entity.addEffect(new MobEffectInstance(MobEffects.REGENERATION, 300 * lvl, amp));
         entity.addEffect(new MobEffectInstance(MobEffects.WATER_BREATHING, 600 * lvl, 0));
         entity.addEffect(new MobEffectInstance(MobEffects.FIRE_RESISTANCE, 600 * lvl, amp));
@@ -121,6 +110,18 @@ public class ActivateMethods {
             entity.addEffect(new MobEffectInstance(MobEffects.SLOW_FALLING, 600 * lvl, 0));
             if (lvl > 2) entity.addEffect(new MobEffectInstance(MobEffects.HEALTH_BOOST, 600 * lvl, amp));
         }
+    }
+
+    private static void flopEffects(LivingEntity ent) {
+        ent.addEffect(new MobEffectInstance(MobEffects.MOVEMENT_SPEED, 1000, 0));
+        ent.addEffect(new MobEffectInstance(MobEffects.REGENERATION, 6900, 1));
+        ent.addEffect(new MobEffectInstance(MobEffects.ABSORPTION, 1710, 1));
+        ent.addEffect(new MobEffectInstance(MobEffects.FIRE_RESISTANCE, 1710, 0));
+        ent.addEffect(new MobEffectInstance(MobEffects.DAMAGE_RESISTANCE, 6900, 1));
+        ent.addEffect(new MobEffectInstance(MobEffects.DIG_SPEED, 1690, 0));
+        ent.addEffect(new MobEffectInstance(MobEffects.DAMAGE_BOOST, 1690, 1));
+        ent.addEffect(new MobEffectInstance(MobEffects.WATER_BREATHING, 1710, 0));
+        ent.addEffect(new MobEffectInstance(MobEffects.NIGHT_VISION, 1710, 0));
     }
     private static ItemStack randItem(int up) {
         if (up > 3) up = 3;
@@ -194,7 +195,7 @@ public class ActivateMethods {
 
     public static void jiafeiPerfumeSpray(LevelAccessor world, double x, double y, double z, Entity entity, ItemStack itemStack) {
         if (entity instanceof Player _ent) {
-            simpleFlopEffects(_ent);
+            flopEffects(_ent);
             _ent.giveExperiencePoints(5);
             _ent.playSound(ModSounds.SPRAY.get());
         }
@@ -211,7 +212,7 @@ public class ActivateMethods {
                     }
                     if (_ent instanceof TamableAnimal _tamIsTamedBy && _tamIsTamedBy.isOwnedBy(player)
                             || _ent instanceof AbstractFlops) {
-                        simpleFlopEffects(_ent);
+                        flopEffects(_ent);
                     }
                 }
             }
@@ -240,7 +241,7 @@ public class ActivateMethods {
                 }
             }
             _player.getCooldowns().addCooldown(itemStack.getItem(), 100 * lvl);
-            advancedFlopEffects(_player, lvl, amp);
+            flopEffects(_player, lvl, amp);
         }
         {
             final Vec3 _center = new Vec3(x, y, z);
@@ -264,7 +265,7 @@ public class ActivateMethods {
                     }
                     if (_mob instanceof TamableAnimal _tamIsTamedBy && entity instanceof Player _livEnt && _tamIsTamedBy.isOwnedBy(_livEnt)
                             || _mob instanceof AbstractFlops) {
-                        advancedFlopEffects(_mob, lvl, amp);
+                        flopEffects(_mob, lvl, amp);
                         itemDura += 120;
                     }
                 }
@@ -321,7 +322,9 @@ public class ActivateMethods {
         }
     }
 
-    public static void cvmShoot(LevelAccessor world, double x, double y, double z, Entity entity, int power, int flame) {
+    public static void cvmShoot(LevelAccessor world, double x, double y, double z, Entity entity,
+                                ItemStack item, int power, boolean flame, boolean isCvmium) {
+        int amp = isCvmium ? 2 : 1;
         {
             final Vec3 _center = new Vec3(x, y, z);
             List<Entity> _entfound = world.getEntitiesOfClass(Entity.class, new AABB(_center, _center).inflate(10 / 2d), e -> true).stream()
@@ -331,29 +334,34 @@ public class ActivateMethods {
                     if (_ent instanceof AbstractVillager) villagerYassification((AbstractVillager) _ent, world);
                     if (_ent instanceof Monster || _ent instanceof Hoglin
                             || _ent instanceof Shulker || _ent instanceof Ghast || _ent instanceof Phantom) {
-                        monsterEffects(_ent);
+                        monsterEffects(_ent, amp,amp - 1);
                         _ent.hurt(_ent.level().damageSources().drown(), power);
-                        _ent.setSecondsOnFire(flame);
+                        _ent.setSecondsOnFire(flame ? isCvmium ? 420 : 100 : 0);
+                    }
+                    if (_ent instanceof Cat _cat) {
+                        _cat.spawnAtLocation(ModItem.POSEI.get());
                     }
                     if (_ent instanceof TamableAnimal _tamIsTamedBy && _tamIsTamedBy.isOwnedBy(player)
                             || _ent instanceof AbstractFlops) {
-                        simpleFlopEffects(_ent);
-                        if (_ent instanceof Twink) {
-                            _ent.spawnAtLocation(TwinkAI.randItem());
-                        }
-                        if (_ent instanceof CupcakKe _cupcakke) {
-                            if (_cupcakke.getMaxHealth() == _cupcakke.getHealth()) {
-                                Collection<MobEffectInstance> inst = _cupcakke.getActiveEffects();
-                                Mob newMob = new CupcakKe(ModEntities.CUPCAKKE.get(), _cupcakke.level());
-                                newMob.moveTo(_cupcakke.getX(), _cupcakke.getY(), _cupcakke.getZ());
-                                newMob.setXRot(_cupcakke.getXRot());
-                                newMob.setYRot(_cupcakke.getYRot());
-                                _cupcakke.hurt(_cupcakke.level().damageSources().freeze(), 12);
-                                for (MobEffectInstance effect : inst) {
-                                    newMob.addEffect(effect);
+                        flopEffects(_ent, amp,amp - 1);
+                        int randVal = (int) (Math.random() * 5);
+                        if (randVal == 0) {
+                            if (_ent instanceof Twink)
+                                _ent.spawnAtLocation(TwinkAI.randItem());
+                            if (_ent instanceof CupcakKe _cupcakke) {
+                                if (_cupcakke.getMaxHealth() == _cupcakke.getHealth()) {
+                                    Collection<MobEffectInstance> inst = _cupcakke.getActiveEffects();
+                                    Mob newMob = new CupcakKe(ModEntities.CUPCAKKE.get(), _cupcakke.level());
+                                    newMob.moveTo(_cupcakke.getX(), _cupcakke.getY(), _cupcakke.getZ());
+                                    newMob.setXRot(_cupcakke.getXRot());
+                                    newMob.setYRot(_cupcakke.getYRot());
+                                    _cupcakke.hurt(_cupcakke.level().damageSources().freeze(), 12);
+                                    for (MobEffectInstance effect : inst) {
+                                        newMob.addEffect(effect);
+                                    }
+                                    _cupcakke.level().addFreshEntity(newMob);
+                                    _cupcakke.spawnAtLocation(ModItem.CVMTITPLASM.get());
                                 }
-                                _cupcakke.level().addFreshEntity(newMob);
-                                _cupcakke.spawnAtLocation(ModItem.CVMTITPLASM.get());
                             }
                         }
                     }
@@ -361,7 +369,8 @@ public class ActivateMethods {
             }
         }
         if (world instanceof ServerLevel _level) {
-            _level.sendParticles(ParticleTypes.END_ROD, x, y, z, 50,1,1, 1, 1.0);
+            _level.sendParticles(item.is(ModItem.CVMIUM.get()) ? ParticleTypes.LAVA :ParticleTypes.END_ROD,
+                    x, y, z, 50,1,1, 1, 1.0);
         }
     }
 }
