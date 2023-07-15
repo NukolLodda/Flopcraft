@@ -113,6 +113,8 @@ ___
 
 <a href="https://www.youtube.com/watch?v=TYWINwURoRc">music_disc_cupcakke2.ogg</a>
 
+<a href="https://www.youtube.com/watch?v=8bsbs-c-GDo">music_disc_cupcakke3.ogg</a>
+
 <a href="https://www.youtube.com/watch?v=4L_EKMtiGiQ">music_disc_db1.ogg</a>
 
 <a href="https://www.youtube.com/watch?v=P8am7O7R8fw">music_disc_j1.ogg</a>
@@ -134,5 +136,3 @@ ___
 <a href="https://www.youtube.com/watch?vv=OnClMS6ZY2A">music_disc_c22.ogg</a>
 
 <a href="https://www.youtube.com/watch?v=q2_iIaI3KHI">music_disc_c23.ogg</a>
-
-<a href="https://www.youtube.com/watch?v=8bsbs-c-GDo">music_disc_cupcakke3.ogg</a>
