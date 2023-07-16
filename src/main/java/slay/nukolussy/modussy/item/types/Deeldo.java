@@ -1,4 +1,4 @@
-package slay.nukolussy.modussy.item.custom;
+package slay.nukolussy.modussy.item.types;
 
 import net.minecraft.sounds.SoundSource;
 import net.minecraft.stats.Stats;

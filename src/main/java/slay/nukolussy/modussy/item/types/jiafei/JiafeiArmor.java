@@ -1,4 +1,4 @@
-package slay.nukolussy.modussy.item.custom.jiafei;
+package slay.nukolussy.modussy.item.types.jiafei;
 
 import net.minecraft.ChatFormatting;
 import net.minecraft.network.chat.Component;
@@ -15,9 +15,7 @@ import net.minecraft.world.level.Level;
 import slay.nukolussy.modussy.item.ModItem;
 import slay.nukolussy.modussy.sound.ModSounds;
 
-import java.util.HashMap;
 import java.util.List;
-import java.util.Objects;
 
 
 public class JiafeiArmor extends ArmorItem {

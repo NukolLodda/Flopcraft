@@ -103,7 +103,8 @@ public class CvmInfusionAlterRecipe implements Recipe<SimpleContainer> {
             NonNullList<Ingredient> inputs = NonNullList.withSize(7, Ingredient.EMPTY);
 
             for (int i = 0; i < inputs.size(); i++) {
-                if (!Ingredient.fromJson(ingredients.get(i)).test(new ItemStack(Items.BEDROCK)))
+                if (!Ingredient.fromJson(ingredients.get(i)).test(new ItemStack(Items.BEDROCK))
+                        && i < ingredients.size())
                     inputs.set(i, Ingredient.fromJson(ingredients.get(i)));
             }
             return new CvmInfusionAlterRecipe(id, output, inputs);

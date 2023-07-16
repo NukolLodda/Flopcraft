@@ -1,4 +1,4 @@
-package slay.nukolussy.modussy.item.custom;
+package slay.nukolussy.modussy.item.types;
 
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;

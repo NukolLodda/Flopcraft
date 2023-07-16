@@ -21,7 +21,7 @@ import net.minecraftforge.items.IItemHandler;
 import net.minecraftforge.items.ItemStackHandler;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
-import slay.nukolussy.modussy.client.menu.menus.CvmInfusionAlterMenu;
+import slay.nukolussy.modussy.client.menu.CvmInfusionAlterMenu;
 import slay.nukolussy.modussy.item.ModItem;
 import slay.nukolussy.modussy.recipes.CvmInfusionAlterRecipe;
 import slay.nukolussy.modussy.recipes.CvmInfusionAlterShapelessRecipe;
@@ -86,7 +86,7 @@ public class CvmInfusionAlterEntity extends BlockEntity implements MenuProvider 
             @Override
             public int getCount() {
                 return 4;
-            } // must match with the constructor
+            }
         };
     }
 
@@ -153,8 +153,21 @@ public class CvmInfusionAlterEntity extends BlockEntity implements MenuProvider 
             return;
         }
 
+        ItemStack itemFuel = new ItemStack(ent.handler.getStackInSlot(7).getItem());
+
+        if (itemFuel.is(ModItem.CVM.get()) || itemFuel.is(ModItem.CVMIUM.get())) {
+            int addedAmt = itemFuel.is(ModItem.CVMIUM.get()) ? 69 : 30;
+            if (addedAmt + ent.cvmAmt != ent.maxCvm) {
+                ent.cvmAmt += addedAmt;
+                ent.handler.extractItem(7, 1,false);
+            }
+        }
+
         if (hasRecipe(ent)) { // if the block has a crafting recipe in it
-            ent.progress++;
+            if (ent.cvmAmt > 0) {
+                ent.progress++;
+                ent.cvmAmt--;
+            }
             setChanged(lvl, pos, state); // things get reloaded if needed everytime progress is added
 
             if (ent.progress >= ent.maxProgress) {

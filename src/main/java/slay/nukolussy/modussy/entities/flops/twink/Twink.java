@@ -102,7 +102,6 @@ public class Twink extends AbstractFlops {
     protected void registerGoals() {
         super.registerGoals();
         this.goalSelector.addGoal(9, new FlopBreedingGoal(this, 1.0d));
-        this.goalSelector.addGoal(10, new TemptGoal(this, 1.5d, Ingredient.of(ModItem.DEELDO.get()), false));
         this.goalSelector.addGoal(1, new AvoidEntityGoal<>(this, Monster.class, 10.0f, 0.5d, 0.5d));
 
     }

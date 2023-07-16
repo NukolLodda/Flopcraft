@@ -9,8 +9,8 @@ import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
 import slay.nukolussy.modussy.Modussy;
 import slay.nukolussy.modussy.entities.ModEntities;
-import slay.nukolussy.modussy.item.custom.*;
-import slay.nukolussy.modussy.item.custom.jiafei.*;
+import slay.nukolussy.modussy.item.types.*;
+import slay.nukolussy.modussy.item.types.jiafei.*;
 import slay.nukolussy.modussy.tiers.ModTiers;
 
 public class ModItem {

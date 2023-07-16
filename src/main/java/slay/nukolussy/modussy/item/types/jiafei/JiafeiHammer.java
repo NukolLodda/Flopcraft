@@ -1,4 +1,4 @@
-package slay.nukolussy.modussy.item.custom.jiafei;
+package slay.nukolussy.modussy.item.types.jiafei;
 
 import net.minecraft.ChatFormatting;
 import net.minecraft.core.BlockPos;

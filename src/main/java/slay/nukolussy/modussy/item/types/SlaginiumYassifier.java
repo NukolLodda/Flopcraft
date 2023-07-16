@@ -1,4 +1,4 @@
-package slay.nukolussy.modussy.item.custom;
+package slay.nukolussy.modussy.item.types;
 
 import com.google.common.collect.ImmutableMultimap;
 import com.google.common.collect.Multimap;
@@ -12,12 +12,10 @@ import net.minecraft.world.entity.ai.attributes.AttributeModifier;
 import net.minecraft.world.entity.ai.attributes.Attributes;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.*;
-import net.minecraft.world.item.crafting.Ingredient;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.state.BlockState;
 import org.jetbrains.annotations.NotNull;
 import slay.nukolussy.modussy.item.ActivateMethods;
-import slay.nukolussy.modussy.item.ModItem;
 
 public class SlaginiumYassifier extends TieredItem {
     private final int lvl;

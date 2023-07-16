@@ -1,4 +1,4 @@
-package slay.nukolussy.modussy.client.menu.menus;
+package slay.nukolussy.modussy.client.menu;
 
 import net.minecraft.network.FriendlyByteBuf;
 import net.minecraft.world.entity.player.Inventory;
@@ -20,7 +20,7 @@ public class CvmInfusionAlterMenu extends AbstractContainerMenu {
     private final ContainerData data;
 
     public CvmInfusionAlterMenu(int id, Inventory inv, FriendlyByteBuf xtraData) {
-        this(id, inv, inv.player.level().getBlockEntity(xtraData.readBlockPos()), new SimpleContainerData(2));
+        this(id, inv, inv.player.level().getBlockEntity(xtraData.readBlockPos()), new SimpleContainerData(9));
         // SimpleContainerData's val must match with getCount() in CvmInfusionAlterEntity
     }
 
@@ -35,15 +35,15 @@ public class CvmInfusionAlterMenu extends AbstractContainerMenu {
         addPlayerHotbar(inv);
 
         this.blockEntity.getCapability(ForgeCapabilities.ITEM_HANDLER).ifPresent(handler -> {
-            this.addSlot(new SlotItemHandler(handler, 0, 15, 15));
-            this.addSlot(new SlotItemHandler(handler, 1, 35, 15));
-            this.addSlot(new SlotItemHandler(handler, 2, 55, 15));
-            this.addSlot(new SlotItemHandler(handler, 3, 15, 33));
-            this.addSlot(new SlotItemHandler(handler, 4, 35, 33));
-            this.addSlot(new SlotItemHandler(handler, 5, 55, 33));
-            this.addSlot(new SlotItemHandler(handler, 6, 35, 51));
-            this.addSlot(new SlotItemHandler(handler, 7, 55, 51));
-            this.addSlot(new SlotItemHandler(handler, 8, 135, 33));
+
+            for (int i = 0; i < 2; i++) {
+                for (int j = 0; j < 3; j++) {
+                    this.addSlot(new SlotItemHandler(handler, (i * 3) + j, 30 + (j * 18), 17 + (i * 18)));
+                }
+            }
+            this.addSlot(new SlotItemHandler(handler, 6, 48, 53));
+            this.addSlot(new SlotItemHandler(handler, 7, 66, 53));
+            this.addSlot(new SlotItemHandler(handler, 8, 124, 35));
         });
 
         addDataSlots(data);

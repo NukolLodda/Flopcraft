@@ -1,4 +1,4 @@
-package slay.nukolussy.modussy.item.custom;
+package slay.nukolussy.modussy.item.types;
 
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.Rarity;

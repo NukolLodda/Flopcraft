@@ -6,7 +6,7 @@ import net.minecraft.network.chat.Component;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.entity.player.Inventory;
 import slay.nukolussy.modussy.Modussy;
-import slay.nukolussy.modussy.client.menu.menus.CvmInfusionAlterMenu;
+import slay.nukolussy.modussy.client.menu.CvmInfusionAlterMenu;
 
 public class CvmInfusionAlterScreen extends AbstractContainerScreen<CvmInfusionAlterMenu> {
     private static final ResourceLocation TEXTURE =
