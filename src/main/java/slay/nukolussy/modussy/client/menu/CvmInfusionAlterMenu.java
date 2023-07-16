@@ -62,76 +62,57 @@ public class CvmInfusionAlterMenu extends AbstractContainerMenu {
         return maxProgress != 0 && progress !=0 ? progress * progressArrowSize / maxProgress : 0;
     }
 
-    /*
-       thanks to diesieben07 or my life'd be a pain
-       must assign a slot num to each of slots used by GUI
-       for this container, both the tile inventory's slots and the player's inventory slots and the hotbar are visible.
-       Each time we add a slot to the container, it auto increases slot Index meaning:
-       0 - 9 hotbar slots (map to the InventoryPlayer slots num 0 - 8)
-       9 - 35 player inventory slots (map to InventoryPlayer slot numbers 9 - 35)
-       36 - 44 TileInventory slots maps to TileEntity slots numbers 0 - 8
-     */
-
+    // CREDIT GOES TO: diesieben07 | https://github.com/diesieben07/SevenCommons
+    // must assign a slot number to each of the slots used by the GUI.
+    // For this container, we can see both the tile inventory's slots as well as the player inventory slots and the hotbar.
+    // Each time we add a Slot to the container, it automatically increases the slotIndex, which means
+    //  0 - 8 = hotbar slots (which will map to the InventoryPlayer slot numbers 0 - 8)
+    //  9 - 35 = player inventory slots (which map to the InventoryPlayer slot numbers 9 - 35)
+    //  36 - 44 = TileInventory slots, which map to our TileEntity slot numbers 0 - 8)
     private static final int HOTBAR_SLOT_COUNT = 9;
-    private static final int PLAYER_INV_ROW_COUNT = 3;
-    private static final int PLAYER_INV_COLUMN_COUNT = 9;
-    private static final int PLAYER_INV_SLOT_COUNT = PLAYER_INV_COLUMN_COUNT * PLAYER_INV_ROW_COUNT; // equals 27
-    private static final int VANILLA_SLOT_COUNT = HOTBAR_SLOT_COUNT + PLAYER_INV_SLOT_COUNT; // equals 36
-    private static final int VANILLA_FIRST_SLOT = 9;
-    private static final int TE_INV_FIRST_SLOT = VANILLA_FIRST_SLOT + VANILLA_SLOT_COUNT; // equals 45
+    private static final int PLAYER_INVENTORY_ROW_COUNT = 3;
+    private static final int PLAYER_INVENTORY_COLUMN_COUNT = 9;
+    private static final int PLAYER_INVENTORY_SLOT_COUNT = PLAYER_INVENTORY_COLUMN_COUNT * PLAYER_INVENTORY_ROW_COUNT;
+    private static final int VANILLA_SLOT_COUNT = HOTBAR_SLOT_COUNT + PLAYER_INVENTORY_SLOT_COUNT;
+    private static final int VANILLA_FIRST_SLOT_INDEX = 0;
+    private static final int TE_INVENTORY_FIRST_SLOT_INDEX = VANILLA_FIRST_SLOT_INDEX + VANILLA_SLOT_COUNT;
 
-
-    // MUST BE DEFINED
-    private static final int TE_INV_SLOT_COUNT = 8; // MUST BE NUMBER OF SLOTS YOU HAVE
+    // THIS YOU HAVE TO DEFINE!
+    private static final int TE_INVENTORY_SLOT_COUNT = 8;  // must be the number of slots you have!
 
     @Override
-    public @NotNull ItemStack quickMoveStack(Player player, int ind) {
-        Slot source = slots.get(ind);
-        if (!source.hasItem()) return ItemStack.EMPTY;
-        ItemStack sourceStack = source.getItem();
-        ItemStack copyStack = sourceStack.copy();
+    public ItemStack quickMoveStack(Player playerIn, int index) {
+        Slot sourceSlot = slots.get(index);
+        if (sourceSlot == null || !sourceSlot.hasItem()) return ItemStack.EMPTY;  //EMPTY_ITEM
+        ItemStack sourceStack = sourceSlot.getItem();
+        ItemStack copyOfSourceStack = sourceStack.copy();
 
-        // check if the slot clicked is one of the vanilla container slots
-        if (ind == 0) {
-            // this is a vanilla container slot so merge the stack into the tile inventory
-            if (!this.moveItemStackTo(copyStack, 10, 45, true)) {
-                return ItemStack.EMPTY;
+        // Check if the slot clicked is one of the vanilla container slots
+        if (index < VANILLA_FIRST_SLOT_INDEX + VANILLA_SLOT_COUNT) {
+
+            // This is a vanilla container slot so merge the stack into the tile inventory
+            if (!moveItemStackTo(sourceStack, TE_INVENTORY_FIRST_SLOT_INDEX, TE_INVENTORY_FIRST_SLOT_INDEX
+                    + TE_INVENTORY_SLOT_COUNT, false)) {
+                return ItemStack.EMPTY;  // EMPTY_ITEM
             }
-        } else if (ind >= 10 && ind <= 45) {
-            if (!this.moveItemStackTo(copyStack, 1, 9, false)) {
-                if (ind < 37) {
-                    if (!this.moveItemStackTo(copyStack, 37, 44, false)) {
-                        return ItemStack.EMPTY;
-                    }
-                } else if (!this.moveItemStackTo(copyStack, 10, 37, false)) {
-                    return ItemStack.EMPTY;
-                }
-            } else if (!this.moveItemStackTo(copyStack, 10, 45, false)) {
+        } else if (index < TE_INVENTORY_FIRST_SLOT_INDEX + TE_INVENTORY_SLOT_COUNT) {
+
+            // This is a TE slot so merge the stack into the players inventory
+            if (!moveItemStackTo(sourceStack, VANILLA_FIRST_SLOT_INDEX, VANILLA_FIRST_SLOT_INDEX + VANILLA_SLOT_COUNT, false)) {
                 return ItemStack.EMPTY;
             }
         } else {
-            System.out.println("Invalid slotIndex: " + ind);
+            System.out.println("Invalid slotIndex:" + index);
             return ItemStack.EMPTY;
         }
-
-        // if stack size is 0, set slot contents to null
-
-        if (copyStack.isEmpty()) {
-            source.set(ItemStack.EMPTY);
+        // If stack size == 0 (the entire stack was moved) set slot contents to null
+        if (sourceStack.getCount() == 0) {
+            sourceSlot.set(ItemStack.EMPTY);
         } else {
-            source.setChanged();
+            sourceSlot.setChanged();
         }
-
-        if (copyStack.getCount() == sourceStack.getCount()) {
-            return ItemStack.EMPTY;
-        }
-
-        source.onTake(player, copyStack);
-        if (ind == 0) {
-            player.drop(copyStack, false);
-        }
-        return ItemStack.EMPTY;
-        // placeholder code
+        sourceSlot.onTake(playerIn, sourceStack);
+        return copyOfSourceStack;
     }
 
     @Override // checks if the block cna be opened
@@ -146,13 +127,13 @@ public class CvmInfusionAlterMenu extends AbstractContainerMenu {
     private void addPlayerInventory(Inventory playerInv) {
         for (int i = 0; i < 3; i++) {
             for (int l = 0; l < 9; l++) {
-                this.addSlot(new Slot(playerInv, l + i * 9 + 9, 8 + l * 18, 86 + i * 18));
+                this.addSlot(new Slot(playerInv, l + i * 9 + 9, 8 + l * 18, 84 + i * 18));
             }
         }
     }
     private void addPlayerHotbar(Inventory playerInv) {
         for (int i = 0; i < 9; i++) {
-            this.addSlot(new Slot(playerInv, i, 8 + i * 18, 144));
+            this.addSlot(new Slot(playerInv, i, 8 + i * 18, 142));
         }
     }
 }
