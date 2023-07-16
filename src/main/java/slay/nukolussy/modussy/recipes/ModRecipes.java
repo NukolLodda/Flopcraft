@@ -14,6 +14,9 @@ public class ModRecipes {
     public static final RegistryObject<RecipeSerializer<CvmInfusionAlterRecipe>> CVM_INFUSION_SERIALIZER =
             SERIALIZERS.register("cvm_infusion", () -> CvmInfusionAlterRecipe.Serializer.INSTANCE);
 
+    public static final RegistryObject<RecipeSerializer<CvmInfusionAlterShapelessRecipe>> CVM_INFUSION_SHAPELESS_SERIALIZER =
+            SERIALIZERS.register("cvm_infusion_shapless", () -> CvmInfusionAlterShapelessRecipe.Serializer.INSTANCE);
+
     public static void register(IEventBus eventBus) {
         SERIALIZERS.register(eventBus);
     }

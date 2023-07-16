@@ -43,12 +43,13 @@ public class Deeldo extends BowItem {
                         boolean flame = EnchantmentHelper.getItemEnchantmentLevel(Enchantments.FLAMING_ARROWS, pStack) > 0;
                         boolean isCvmium = itemstack.is(ModItem.CVMIUM.get());
 
-                        double rot = pEntityLiving.yHeadRotO * Math.PI / 180;
+                        double horRot = pEntityLiving.yHeadRotO * Math.PI / 180;
+                        double verRot = pEntityLiving.xRotO * Math.PI / -180;
                         double radius = powerTime * 6;
 
-                        double x = pEntityLiving.getX() - (radius * (Math.sin(rot)));
-                        double y = pEntityLiving.getY() + 1;
-                        double z = pEntityLiving.getZ() + (radius * (Math.cos(rot)));
+                        double x = pEntityLiving.getX() - (radius * Math.cos(verRot) * Math.sin(horRot));
+                        double y = pEntityLiving.getY() + (radius * Math.sin(verRot));
+                        double z = pEntityLiving.getZ() + (radius * Math.cos(verRot) * Math.cos(horRot));
 
                         ActivateMethods.cvmShoot(pLevel, x, y, z, pEntityLiving, itemstack,
                                 power, flame, isCvmium);
