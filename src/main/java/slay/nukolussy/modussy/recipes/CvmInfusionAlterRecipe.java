@@ -8,7 +8,6 @@ import net.minecraft.network.FriendlyByteBuf;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.util.GsonHelper;
 import net.minecraft.world.SimpleContainer;
-import net.minecraft.world.entity.player.StackedContents;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.item.crafting.*;
@@ -30,28 +29,20 @@ public class CvmInfusionAlterRecipe implements Recipe<SimpleContainer> {
 
     @Override
     public boolean matches(SimpleContainer container, Level lvl) {
-        if (lvl.isClientSide()) {
+        if(lvl.isClientSide()) {
             return false;
         }
-        StackedContents stackedcontents = new StackedContents();
-        java.util.List<ItemStack> inputs = new java.util.ArrayList<>();
-        int i = 0;
-
-        for(int j = 0; j < container.getContainerSize(); ++j) {
-            ItemStack itemstack = container.getItem(j);
-            if (!itemstack.isEmpty()) {
-                ++i;
-                inputs.add(itemstack);
-            }
-        }
-
-        return i == this.recipeItems.size() && net.minecraftforge.common.util.RecipeMatcher.findMatches(inputs,  this.recipeItems) != null;
-        // checks if the indices match
-        // placeholder code
+        return recipeItems.get(1).test(container.getItem(1)) &&
+                recipeItems.get(2).test(container.getItem(2)) &&
+                recipeItems.get(3).test(container.getItem(3)) &&
+                recipeItems.get(4).test(container.getItem(4)) &&
+                recipeItems.get(5).test(container.getItem(5)) &&
+                recipeItems.get(6).test(container.getItem(6)) &&
+                recipeItems.get(7).test(container.getItem(7)); // brain of the recipe
     }
 
     @Override
-    public ItemStack assemble(SimpleContainer p_44001_, RegistryAccess p_267165_) {
+    public ItemStack assemble(SimpleContainer container, RegistryAccess access) {
         return null;
     }
 
@@ -61,8 +52,8 @@ public class CvmInfusionAlterRecipe implements Recipe<SimpleContainer> {
     }
 
     @Override
-    public ItemStack getResultItem(RegistryAccess p_267052_) {
-        return null;
+    public ItemStack getResultItem(RegistryAccess access) {
+        return this.output;
     }
 
     @Override
@@ -103,7 +94,7 @@ public class CvmInfusionAlterRecipe implements Recipe<SimpleContainer> {
             NonNullList<Ingredient> inputs = NonNullList.withSize(7, Ingredient.EMPTY);
 
             for (int i = 0; i < inputs.size(); i++) {
-                if (!Ingredient.fromJson(ingredients.get(i)).test(new ItemStack(Items.BEDROCK))
+                if (!Ingredient.fromJson(ingredients.get(i)).test(new ItemStack(Items.BARRIER))
                         && i < ingredients.size())
                     inputs.set(i, Ingredient.fromJson(ingredients.get(i)));
             }

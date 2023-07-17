@@ -102,7 +102,7 @@ public class CupcakKe extends AbstractFlopFigures {
                         newMob.addEffect(effect);
                     }
                     this.level().addFreshEntity(newMob);
-                    this.spawnAtLocation(ModItem.CVMTITPLASM.get());
+                    this.spawnAtLocation(cupcakkeDrops());
                 }
 
                 this.playSound(ModSounds.CUPCAkKE_SLURP.get());
@@ -111,6 +111,48 @@ public class CupcakKe extends AbstractFlopFigures {
             }
         }
         return result;
+    }
+
+    public static Item cupcakkeDrops() {
+        int rand = (int) (Math.random() * 69);
+        Item cupcakkeDrops = ModItem.CVMTITPLASM.get();
+        if (rand < 1) {
+            int discRand = (int) (Math.random() * 25);
+            cupcakkeDrops = switch(discRand) {
+                case 1 -> ModItem.DISC_C1.get();
+                case 2 -> ModItem.DISC_C2.get();
+                case 3 -> ModItem.DISC_C3.get();
+                case 4 -> ModItem.DISC_C4.get();
+                case 5 -> ModItem.DISC_C5.get();
+                case 6 -> ModItem.DISC_C6.get();
+                case 7 -> ModItem.DISC_C7.get();
+                case 8 -> ModItem.DISC_C8.get();
+                case 9 -> ModItem.DISC_C9.get();
+                case 10 -> ModItem.DISC_C10.get();
+                case 11 -> ModItem.DISC_C11.get();
+                case 12 -> ModItem.DISC_C12.get();
+                case 13 -> ModItem.DISC_C13.get();
+                case 14 -> ModItem.DISC_C14.get();
+                case 15 -> ModItem.DISC_C15.get();
+                case 17 -> ModItem.DISC_C17.get();
+                case 18 -> ModItem.DISC_C18.get();
+                case 19 -> ModItem.DISC_C19.get();
+                case 20 -> ModItem.DISC_C20.get();
+                case 21 -> ModItem.DISC_C21.get();
+                case 22 -> ModItem.DISC_C22.get();
+                case 23 -> ModItem.DISC_C23.get();
+                case 24 -> ModItem.DISC_C24.get();
+                default -> ModItem.DISC_C25.get();
+            };
+        } else if (rand < 2) {
+            cupcakkeDrops = ModItem.DISC_CUPCAKKE1.get();
+        } else if (rand < 3) {
+            cupcakkeDrops = ModItem.DISC_CUPCAKKE2.get();
+        } else if (rand < 7) {
+            cupcakkeDrops = ModItem.DISC_CUPCAKKE3.get();
+        }
+        return cupcakkeDrops;
+
     }
 
     

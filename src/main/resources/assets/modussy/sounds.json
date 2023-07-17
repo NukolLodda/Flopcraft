@@ -62,101 +62,11 @@
       }
     ]
   },
-  "music_disc_c1": {
-    "subtitle": "subtitles.music",
-    "sounds": [
-      {
-        "name": "modussy:music_disc_c1",
-        "stream": true
-      }
-    ]
-  },
-  "music_disc_c2": {
-    "subtitle": "subtitles.music",
-    "sounds": [
-      {
-        "name": "modussy:music_disc_c2",
-        "stream": true
-      }
-    ]
-  },
-  "music_disc_c3": {
-    "subtitle": "subtitles.music",
-    "sounds": [
-      {
-        "name": "modussy:music_disc_c3",
-        "stream": true
-      }
-    ]
-  },
-  "music_disc_j1": {
-    "subtitle": "subtitles.music",
-    "sounds": [
-      {
-        "name": "modussy:music_disc_j1",
-        "stream": true
-      }
-    ]
-  },
-  "music_disc_c4": {
-    "subtitle": "subtitles.music",
-    "sounds": [
-      {
-        "name": "modussy:music_disc_c4",
-        "stream": true
-      }
-    ]
-  },
   "cvm": {
     "subtitle": "subtitles.cvm",
     "sounds": [
       {
         "name": "modussy:cvm",
-        "stream": true
-      }
-    ]
-  },
-  "music_disc_cupcakke1": {
-    "subtitle": "subtitles.music",
-    "sounds": [
-      {
-        "name": "modussy:music_disc_cupcakke1",
-        "stream": true
-      }
-    ]
-  },
-  "music_disc_c5": {
-    "subtitle": "subtitles.music",
-    "sounds": [
-      {
-        "name": "modussy:music_disc_c5",
-        "stream": true
-      }
-    ]
-  },
-  "music_disc_cupcakke2": {
-    "subtitle": "subtitles.music",
-    "sounds": [
-      {
-        "name": "modussy:music_disc_cupcakke2",
-        "stream": true
-      }
-    ]
-  },
-  "music_disc_deje_bullying": {
-    "subtitle": "subtitles.music",
-    "sounds": [
-      {
-        "name": "modussy:music_disc_deje_bullying",
-        "stream": true
-      }
-    ]
-  },
-  "music_disc_j2": {
-    "subtitle": "subtitles.music",
-    "sounds": [
-      {
-        "name": "modussy:music_disc_j2",
         "stream": true
       }
     ]
@@ -188,20 +98,56 @@
       }
     ]
   },
+  "music_disc_c1": {
+    "subtitle": "subtitles.music",
+    "sounds": [
+      {
+        "name": "modussy:music_disc_c1",
+        "stream": true
+      }
+    ]
+  },
+  "music_disc_c2": {
+    "subtitle": "subtitles.music",
+    "sounds": [
+      {
+        "name": "modussy:music_disc_c2",
+        "stream": true
+      }
+    ]
+  },
+  "music_disc_c3": {
+    "subtitle": "subtitles.music",
+    "sounds": [
+      {
+        "name": "modussy:music_disc_c3",
+        "stream": true
+      }
+    ]
+  },
+  "music_disc_c4": {
+    "subtitle": "subtitles.music",
+    "sounds": [
+      {
+        "name": "modussy:music_disc_c4",
+        "stream": true
+      }
+    ]
+  },
+  "music_disc_c5": {
+    "subtitle": "subtitles.music",
+    "sounds": [
+      {
+        "name": "modussy:music_disc_c5",
+        "stream": true
+      }
+    ]
+  },
   "music_disc_c6": {
     "subtitle": "subtitles.music",
     "sounds": [
       {
         "name": "modussy:music_disc_c6",
-        "stream": true
-      }
-    ]
-  },
-  "music_disc_jc1": {
-    "subtitle": "subtitles.music",
-    "sounds": [
-      {
-        "name": "modussy:music_disc_jc1",
         "stream": true
       }
     ]
@@ -215,20 +161,20 @@
       }
     ]
   },
-  "music_disc_c9": {
-    "subtitle": "subtitles.music",
-    "sounds": [
-      {
-        "name": "modussy:music_disc_c9",
-        "stream": true
-      }
-    ]
-  },
   "music_disc_c8": {
     "subtitle": "subtitles.music",
     "sounds": [
       {
         "name": "modussy:music_disc_c8",
+        "stream": true
+      }
+    ]
+  },
+  "music_disc_c9": {
+    "subtitle": "subtitles.music",
+    "sounds": [
+      {
+        "name": "modussy:music_disc_c9",
         "stream": true
       }
     ]
@@ -260,47 +206,11 @@
       }
     ]
   },
-  "music_disc_jiafei": {
-    "subtitle": "subtitles.music",
-    "sounds": [
-      {
-        "name": "modussy:music_disc_jiafei",
-        "stream": true
-      }
-    ]
-  },
-  "music_disc_j4": {
-    "subtitle": "subtitles.music",
-    "sounds": [
-      {
-        "name": "modussy:music_disc_j4",
-        "stream": true
-      }
-    ]
-  },
-  "music_disc_ranvision": {
-    "subtitle": "subtitles.music",
-    "sounds": [
-      {
-        "name": "modussy:music_disc_ranvision",
-        "stream": true
-      }
-    ]
-  },
   "music_disc_c13": {
     "subtitle": "subtitles.music",
     "sounds": [
       {
         "name": "modussy:music_disc_c13",
-        "stream": true
-      }
-    ]
-  },
-  "music_disc_cj1": {
-    "subtitle": "subtitles.music",
-    "sounds": [
-      {
-        "name": "modussy:music_disc_cj1",
         "stream": true
       }
     ]
@@ -319,51 +229,6 @@
     "sounds": [
       {
         "name": "modussy:music_disc_c15",
-        "stream": true
-      }
-    ]
-  },
-  "music_disc_ponmi": {
-    "subtitle": "subtitles.music",
-    "sounds": [
-      {
-        "name": "modussy:music_disc_ponmi",
-        "stream": true
-      }
-    ]
-  },
-  "music_disc_cpm1": {
-    "subtitle": "subtitles.music",
-    "sounds": [
-      {
-        "name": "modussy:music_disc_cpm1",
-        "stream": true
-      }
-    ]
-  },
-  "music_disc_j5": {
-    "subtitle": "subtitles.music",
-    "sounds": [
-      {
-        "name": "modussy:music_disc_j5",
-        "stream": true
-      }
-    ]
-  },
-  "music_disc_pm1": {
-    "subtitle": "subtitles.music",
-    "sounds": [
-      {
-        "name": "modussy:music_disc_pm1",
-        "stream": true
-      }
-    ]
-  },
-  "music_disc_db1": {
-    "subtitle": "subtitles.music",
-    "sounds": [
-      {
-        "name": "modussy:music_disc_db1",
         "stream": true
       }
     ]
@@ -391,24 +256,6 @@
     "sounds": [
       {
         "name": "modussy:music_disc_c19",
-        "stream": true
-      }
-    ]
-  },
-  "spray": {
-    "subtitle": "subtitles.spray",
-    "sounds": [
-      {
-        "name": "modussy:spray",
-        "stream": true
-      }
-    ]
-  },
-  "squirt": {
-    "subtitle": "subtitles.squirt",
-    "sounds": [
-      {
-        "name": "modussy:squirt",
         "stream": true
       }
     ]
@@ -449,15 +296,6 @@
       }
     ]
   },
-  "music_disc_cupcakke3": {
-    "subtitle": "subtitles.music",
-    "sounds": [
-      {
-        "name": "modussy:music_disc_cupcakke3",
-        "stream": true
-      }
-    ]
-  },
   "music_disc_c24": {
     "subtitle": "subtitles.music",
     "sounds": [
@@ -472,6 +310,168 @@
     "sounds": [
       {
         "name": "modussy:music_disc_c25",
+        "stream": true
+      }
+    ]
+  },
+  "music_disc_cj1": {
+    "subtitle": "subtitles.music",
+    "sounds": [
+      {
+        "name": "modussy:music_disc_cj1",
+        "stream": true
+      }
+    ]
+  },
+  "music_disc_cupcakke1": {
+    "subtitle": "subtitles.music",
+    "sounds": [
+      {
+        "name": "modussy:music_disc_cupcakke1",
+        "stream": true
+      }
+    ]
+  },
+  "music_disc_cupcakke2": {
+    "subtitle": "subtitles.music",
+    "sounds": [
+      {
+        "name": "modussy:music_disc_cupcakke2",
+        "stream": true
+      }
+    ]
+  },
+  "music_disc_cupcakke3": {
+    "subtitle": "subtitles.music",
+    "sounds": [
+      {
+        "name": "modussy:music_disc_cupcakke3",
+        "stream": true
+      }
+    ]
+  },
+  "music_disc_db1": {
+    "subtitle": "subtitles.music",
+    "sounds": [
+      {
+        "name": "modussy:music_disc_db1",
+        "stream": true
+      }
+    ]
+  },
+  "music_disc_deje_bullying": {
+    "subtitle": "subtitles.music",
+    "sounds": [
+      {
+        "name": "modussy:music_disc_deje_bullying",
+        "stream": true
+      }
+    ]
+  },
+  "music_disc_cpm1": {
+    "subtitle": "subtitles.music",
+    "sounds": [
+      {
+        "name": "modussy:music_disc_cpm1",
+        "stream": true
+      }
+    ]
+  },
+  "music_disc_j1": {
+    "subtitle": "subtitles.music",
+    "sounds": [
+      {
+        "name": "modussy:music_disc_j1",
+        "stream": true
+      }
+    ]
+  },
+  "music_disc_j2": {
+    "subtitle": "subtitles.music",
+    "sounds": [
+      {
+        "name": "modussy:music_disc_j2",
+        "stream": true
+      }
+    ]
+  },
+  "music_disc_j4": {
+    "subtitle": "subtitles.music",
+    "sounds": [
+      {
+        "name": "modussy:music_disc_j4",
+        "stream": true
+      }
+    ]
+  },
+  "music_disc_j5": {
+    "subtitle": "subtitles.music",
+    "sounds": [
+      {
+        "name": "modussy:music_disc_j5",
+        "stream": true
+      }
+    ]
+  },
+  "music_disc_jc1": {
+    "subtitle": "subtitles.music",
+    "sounds": [
+      {
+        "name": "modussy:music_disc_jc1",
+        "stream": true
+      }
+    ]
+  },
+  "music_disc_jiafei": {
+    "subtitle": "subtitles.music",
+    "sounds": [
+      {
+        "name": "modussy:music_disc_jiafei",
+        "stream": true
+      }
+    ]
+  },
+  "music_disc_pm1": {
+    "subtitle": "subtitles.music",
+    "sounds": [
+      {
+        "name": "modussy:music_disc_pm1",
+        "stream": true
+      }
+    ]
+  },
+  "music_disc_ponmi": {
+    "subtitle": "subtitles.music",
+    "sounds": [
+      {
+        "name": "modussy:music_disc_ponmi",
+        "stream": true
+      }
+    ]
+  },
+  "music_disc_ranvision": {
+    "subtitle": "subtitles.music",
+    "sounds": [
+      {
+        "name": "modussy:music_disc_ranvision",
+        "stream": true
+      }
+    ]
+  },
+  "spray": {
+    "subtitle": "subtitles.spray",
+    "sounds": [
+      {
+        "name": "modussy:spray",
+        "stream": true
+      }
+    ]
+  },
+  "squirt": {
+    "subtitle": "subtitles.squirt",
+    "sounds": [
+      {
+        "name": "modussy:squirt",
         "stream": true
       }
     ]

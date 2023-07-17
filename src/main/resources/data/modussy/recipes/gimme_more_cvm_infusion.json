@@ -1,0 +1,17 @@
+{
+  "type": "modussy:cvm_infusion_shapeless",
+  "ingredients": [
+    {
+      "item": "minecraft:spy_glass"
+    },
+    {
+      "item": "modussy:cupcake"
+    },
+    {
+      "item": "modussy:jiafei_product"
+    }
+  ],
+  "output": {
+    "item": "modussy:music_disc_jc1"
+  }
+}

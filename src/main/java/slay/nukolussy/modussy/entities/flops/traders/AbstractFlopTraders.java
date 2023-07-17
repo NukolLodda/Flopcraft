@@ -48,6 +48,12 @@ public abstract class AbstractFlopTraders extends AbstractFlopFigures implements
         this.trader = pTradingPlayer;
     }
 
+    @Override
+    public boolean hurt(DamageSource source, float amount) {
+        this.stopTrading();
+        return super.hurt(source, amount);
+    }
+
     @Nullable
     @Override
     public Player getTradingPlayer() {
@@ -66,6 +72,12 @@ public abstract class AbstractFlopTraders extends AbstractFlopFigures implements
     }
     public void notifyTrade(MerchantOffer pOffer) {
 
+    }
+
+    @Override
+    public boolean isUnderWater() {
+        this.stopTrading();
+        return super.isUnderWater();
     }
 
     public boolean isTrading() {

@@ -1,0 +1,15 @@
+{
+  "type": "modussy:cvm_infusion_shapeless",
+  "ingredients": [
+    {
+      "item": "minecraft:leather"
+    },
+    {
+      "item": "minecraft:brown_wool"
+    }
+  ],
+  "output": {
+    "count": 10,
+    "item": "modussy:hairussy"
+  }
+}

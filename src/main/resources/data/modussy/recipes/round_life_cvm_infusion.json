@@ -1,0 +1,14 @@
+{
+  "type": "modussy:cvm_infusion_shapeless",
+  "ingredients": [
+    {
+      "item": "modussy:music_disc_c1"
+    },
+    {
+      "item": "modussy:shenseium"
+    }
+  ],
+  "output": {
+    "item": "modussy:music_disc_pm1"
+  }
+}

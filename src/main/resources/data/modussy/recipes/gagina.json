@@ -1,0 +1,14 @@
+{
+  "type": "modussy:cvm_infusion_shapeless",
+  "ingredients": [
+    {
+      "item": "modussy:gagastone"
+    },
+    {
+      "item": "modussy:arana_grande"
+    }
+  ],
+  "output": {
+    "item": "modussy:gagina"
+  }
+}

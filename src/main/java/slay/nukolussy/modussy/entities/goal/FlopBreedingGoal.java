@@ -63,11 +63,11 @@ public class FlopBreedingGoal extends Goal {
         if (this.partner != null) {
             this.flops.getLookControl().setLookAt(this.partner, 10.0f, (float) this.flops.getMaxHeadXRot());
             this.flops.getNavigation().moveTo(this.partner, this.speedModifier);
-            ++this.loveTime;
-            if (this.itemSpawned > 2) {
-                this.stop();
-            }
+            this.loveTime++;
             if (this.loveTime >= this.adjustedTickDelay(60) && this.flops.distanceToSqr(this.partner) < 9.0) {
+                if (this.itemSpawned > 5) {
+                    this.stop();
+                }
                 this.breed();
             }
         }
@@ -112,5 +112,6 @@ public class FlopBreedingGoal extends Goal {
             flop.spawnAtLocation(ModItem.JIAFEI_SEED.get());
         }
         this.itemSpawned++;
+        if (this.itemSpawned > 5) this.stop();
     }
 }

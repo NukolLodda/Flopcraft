@@ -1,0 +1,30 @@
+{
+  "type": "modussy:cvm_infusion_shapeless",
+  "ingredients": [
+    {
+      "item": "modussy:cvm"
+    },
+    {
+      "item": "modussy:cvm"
+    },
+    {
+      "item": "modussy:cvm"
+    },
+    {
+      "item": "modussy:cupcake"
+    },
+    {
+      "item": "minecraft:gold_ingot"
+    },
+    {
+      "item": "minecraft:gold_ingot"
+    },
+    {
+      "item": "minecraft:gold_ingot"
+    }
+  ],
+  "result": {
+    "count": 3,
+    "item": "modussy:slaginium"
+  }
+}

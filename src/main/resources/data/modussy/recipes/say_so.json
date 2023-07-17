@@ -1,0 +1,18 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "modussy:music_disc_deje_bullying"
+    },
+    {
+      "tag": "forge:yassifiers/ultimate"
+    },
+    {
+      "item": "minecraft:music_disc_cat"
+    }
+  ],
+  "result": {
+    "count": 1,
+    "item": "modussy:music_disc_db1"
+  }
+}

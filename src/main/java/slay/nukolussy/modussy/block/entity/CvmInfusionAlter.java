@@ -22,7 +22,7 @@ public class CvmInfusionAlter extends BaseEntityBlock {
                 .strength(6f).requiresCorrectToolForDrops().sound(SoundType.METAL).noOcclusion());
     }
 
-    private static final VoxelShape SHAPE = Block.box(0, 0, 0, 16, 16,16);
+    private static final VoxelShape SHAPE = Block.box(0, 0, 0, 16, 12,16);
     /*
     param 1-3 = beginning x y z respectively
     param 4-6 = ending x y z respectively
@@ -53,6 +53,7 @@ public class CvmInfusionAlter extends BaseEntityBlock {
         if (!lvl.isClientSide()) {
             BlockEntity ent = lvl.getBlockEntity(pos);
             if (ent instanceof CvmInfusionAlterEntity) { // opens the screen upon right clicking
+                player.stopUsingItem();
                 NetworkHooks.openScreen(((ServerPlayer) player), (CvmInfusionAlterEntity) ent, pos);
             } else {
                 throw new IllegalStateException("Our Container provider is missing!");

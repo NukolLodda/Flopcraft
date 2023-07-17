@@ -118,14 +118,16 @@ public class Jiafei extends AbstractFlopTraders {
                 return InteractionResult.SUCCESS;
             } else if (!item.equals(ModItem.JIAFEI_EGG.get()) && this.isAlive() && !this.isTrading() && !player.isSecondaryUseActive()) {
                 boolean offerless = this.getOffers().isEmpty();
-
-                if (!offerless) {
-                    if (!this.level().isClientSide && !this.offers.isEmpty()) {
-                        this.playSound(getNotifyTradeSound());
-                        this.startTrading(player);
-                    }
-                } else {
+                if (offerless) {
                     this.playSound(ModSounds.JIAFEI_PRODUCTLESS.get());
+                } else {
+                    if (!this.level().isClientSide && !this.offers.isEmpty()) {
+                        if (!(this.isTrading() || this.isInsidePortal || this.isUnderWater())) {
+                            this.playSound(getNotifyTradeSound());
+                            player.stopUsingItem();
+                            this.startTrading(player);
+                        }
+                    }
                 }
                 return InteractionResult.sidedSuccess(this.level().isClientSide);
             }

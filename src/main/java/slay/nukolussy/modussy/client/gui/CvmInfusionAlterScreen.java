@@ -29,17 +29,19 @@ public class CvmInfusionAlterScreen extends AbstractContainerScreen<CvmInfusionA
         graphics.blit(TEXTURE, x, y, 0, 0, this.imageWidth, this.imageHeight);
 
         renderProgressArrow(graphics, x, y);
+        renderCvmArrow(graphics, x, y);
     }
 
     private void renderProgressArrow(GuiGraphics graphics, int x, int y) {
         if (this.menu.isCrafting()) {
             int progress = this.menu.getScaledProgress();
-            graphics.blit(TEXTURE, x + 56, y + 36 + 12 - progress, 176, 12 - progress, 14, progress + 1);
+            graphics.blit(TEXTURE, x + 90, y + 36, 176, 0, progress, 14);
         }
     }
 
     private void renderCvmArrow(GuiGraphics graphics, int x, int y) {
-
+        int progress = this.menu.getCvmAmount();
+        graphics.blit(TEXTURE, x + 92, y + 58, 176, 14,  progress, 14);
     }
 
     @Override

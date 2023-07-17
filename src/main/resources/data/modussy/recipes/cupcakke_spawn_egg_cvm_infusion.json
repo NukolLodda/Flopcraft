@@ -1,0 +1,26 @@
+{
+  "type": "modussy:cvm_infusion",
+  "ingredients": [
+    {
+      "item": "modussy:cvmtitplasm"
+    },
+    {
+      "item": "modussy:cvm"
+    },
+    {
+      "item": "modussy:cvmtitplasm"
+    },
+    {
+      "item": "modussy:cupcake"
+    },
+    {
+      "item": "modussy:posei"
+    },
+    {
+      "item": "modussy:cupcake"
+    }
+  ],
+  "output": {
+    "item": "modussy:cupcake_spawn_egg"
+  }
+}

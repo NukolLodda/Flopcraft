@@ -9,6 +9,7 @@ import net.minecraft.resources.ResourceLocation;
 import net.minecraft.util.GsonHelper;
 import net.minecraft.world.SimpleContainer;
 import net.minecraft.world.entity.player.StackedContents;
+import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.crafting.*;
 import net.minecraft.world.level.Level;
@@ -31,23 +32,19 @@ public class CvmInfusionAlterShapelessRecipe implements Recipe<SimpleContainer> 
         if (lvl.isClientSide()) {
             return false;
         }
-        boolean hasIng1 = false, hasIng2 = false, hasIng3 = false, hasIng4 = false, hasIng5 = false,
-        hasIng6 = false, hasIng7 = false;
-        int nullCounter = 0;
-        Ingredient item;
-        for (int i = 0; i < 7; i++) {
-            item = recipeItems.get(i);
-            if (!hasIng1) hasIng1 = item.test(container.getItem(0));
-            if (!hasIng2) hasIng2 = item.test(container.getItem(1));
-            if (!hasIng3) hasIng3 = item.test(container.getItem(2));
-            if (!hasIng4) hasIng4 = item.test(container.getItem(3));
-            if (!hasIng5) hasIng5 = item.test(container.getItem(4));
-            if (!hasIng6) hasIng6 = item.test(container.getItem(5));
-            if (!hasIng7) hasIng7 = item.test(container.getItem(6));
-            if (container.getItem(i).isEmpty()) nullCounter++;
+        boolean recipeExists;
+        int trueCounter = 0;
+        int hasIng = 0;
+        int recipeSize = recipeItems.size();
+        for (Ingredient ing : recipeItems) {
+            for (int i = 1; i < 8; i++) {
+                recipeExists = ing.test(container.getItem(i));
+                if (recipeExists) trueCounter++;
+            }
+            if (trueCounter == 1) hasIng++;
+            trueCounter = 0;
         }
-        return hasIng1 && hasIng2 && hasIng3 && hasIng4 &&
-                hasIng5 && hasIng6 && hasIng7 && nullCounter < 6;
+        return hasIng == recipeSize; // temp code
         // checks if the indices match
         // placeholder code
     }

@@ -1,8 +1,11 @@
 package slay.nukolussy.modussy.block.entity;
 
 import net.minecraft.core.BlockPos;
+import net.minecraft.core.Registry;
+import net.minecraft.core.RegistryAccess;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.network.chat.Component;
+import net.minecraft.sounds.SoundSource;
 import net.minecraft.world.Containers;
 import net.minecraft.world.MenuProvider;
 import net.minecraft.world.SimpleContainer;
@@ -11,6 +14,7 @@ import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.inventory.AbstractContainerMenu;
 import net.minecraft.world.inventory.ContainerData;
 import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.item.crafting.Recipe;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.entity.BlockEntity;
 import net.minecraft.world.level.block.state.BlockState;
@@ -25,6 +29,7 @@ import slay.nukolussy.modussy.client.menu.CvmInfusionAlterMenu;
 import slay.nukolussy.modussy.item.ModItem;
 import slay.nukolussy.modussy.recipes.CvmInfusionAlterRecipe;
 import slay.nukolussy.modussy.recipes.CvmInfusionAlterShapelessRecipe;
+import slay.nukolussy.modussy.sound.ModSounds;
 
 import java.util.Optional;
 
@@ -38,7 +43,7 @@ public class CvmInfusionAlterEntity extends BlockEntity implements MenuProvider 
         @Override
         public boolean isItemValid(int slot, @NotNull ItemStack stack) {
             return switch (slot) {
-                case 7 -> stack.is(ModItem.CVM.get()) || stack.is(ModItem.CVMIUM.get());
+                case 0 -> stack.is(ModItem.CVM.get()) || stack.is(ModItem.CVMIUM.get());
                 case 8 -> false;
                 default -> true;
             };
@@ -127,6 +132,8 @@ public class CvmInfusionAlterEntity extends BlockEntity implements MenuProvider 
     @Override
     protected void saveAdditional(CompoundTag nbt) {
         nbt.put("inventory", handler.serializeNBT());
+        nbt.putInt("cvm_amt", this.cvmAmt);
+        nbt.putInt("progress", this.progress);
 
         super.saveAdditional(nbt);
     }
@@ -136,6 +143,9 @@ public class CvmInfusionAlterEntity extends BlockEntity implements MenuProvider 
         super.load(nbt);
 
         handler.deserializeNBT(nbt.getCompound("inventory"));
+
+        this.cvmAmt = nbt.getInt("cvm_amt");
+        this.progress = nbt.getInt("progress");
     }
 
     public void drops() { // applies for if a block gets destroyed
@@ -144,7 +154,8 @@ public class CvmInfusionAlterEntity extends BlockEntity implements MenuProvider 
             inv.setItem(i, handler.getStackInSlot(i));
         }
 
-        Containers.dropContents(this.level, this.worldPosition, inv);
+        if (this.level != null)
+            Containers.dropContents(this.level, this.worldPosition, inv);
     }
 
     // called every tick
@@ -153,17 +164,17 @@ public class CvmInfusionAlterEntity extends BlockEntity implements MenuProvider 
             return;
         }
 
-        ItemStack itemFuel = new ItemStack(ent.handler.getStackInSlot(7).getItem());
+        ItemStack itemFuel = new ItemStack(ent.handler.getStackInSlot(0).getItem());
 
         if (itemFuel.is(ModItem.CVM.get()) || itemFuel.is(ModItem.CVMIUM.get())) {
             int addedAmt = itemFuel.is(ModItem.CVMIUM.get()) ? 69 : 30;
-            if (addedAmt + ent.cvmAmt != ent.maxCvm) {
+            if (addedAmt + ent.cvmAmt <= ent.maxCvm) {
                 ent.cvmAmt += addedAmt;
-                ent.handler.extractItem(7, 1,false);
+                ent.handler.extractItem(0, 1,false);
             }
         }
 
-        if (hasRecipe(ent)) { // if the block has a crafting recipe in it
+        if (hasRecipe(ent) || hasShapelessRecipe(ent)) { // if the block has a crafting recipe in it
             if (ent.cvmAmt > 0) {
                 ent.progress++;
                 ent.cvmAmt--;
@@ -186,26 +197,31 @@ public class CvmInfusionAlterEntity extends BlockEntity implements MenuProvider 
     private static void craftItem(CvmInfusionAlterEntity ent) {
         Level lvl = ent.level;
         SimpleContainer inv = new SimpleContainer(ent.handler.getSlots());
-        for (int i = 0; i < ent.handler.getSlots(); i++) {
+        for (int i = 1; i <= ent.handler.getSlots(); i++) {
             inv.setItem(i, ent.handler.getStackInSlot(i));
         }
 
-        Optional<CvmInfusionAlterRecipe> recipe = lvl.getRecipeManager()
+        Optional<CvmInfusionAlterRecipe> shapedRecipe = lvl.getRecipeManager()
                 .getRecipeFor(CvmInfusionAlterRecipe.Type.INSTANCE, inv, lvl);
 
         Optional<CvmInfusionAlterShapelessRecipe> shapelessRecipe = lvl.getRecipeManager()
                 .getRecipeFor(CvmInfusionAlterShapelessRecipe.Type.INSTANCE, inv, lvl);
 
         boolean hasShaped = hasRecipe(ent);
-        boolean hasShapeless = hasShapelessrecipe(ent);
+        boolean hasShapeless = hasShapelessRecipe(ent);
         if (hasShaped || hasShapeless) {
-            for (int j = 0; j < 6; j++) {
+            for (int j = 1; j < 8; j++) {
                 if (!ent.handler.getStackInSlot(j).isEmpty()) ent.handler.extractItem(j, 1, false);
             }
-            if (hasShaped) ent.handler.setStackInSlot(8, new ItemStack(recipe.get().getResultItem(lvl.registryAccess()).getItem(),
-                    ent.handler.getStackInSlot(8).getCount() + 1));
-            if (hasShapeless) ent.handler.setStackInSlot(8, new ItemStack(shapelessRecipe.get().getResultItem(lvl.registryAccess()).getItem(),
-                    ent.handler.getStackInSlot(8).getCount() + 1));
+            int stackCount = ent.handler.getStackInSlot(8).isEmpty() ? 0 : ent.handler.getStackInSlot(8).getCount();
+            if (hasShaped) {
+                ent.handler.setStackInSlot(8,
+                        new ItemStack(shapedRecipe.get().getResultItem(lvl.registryAccess()).getItem(), stackCount + 1));
+            }
+            if (hasShapeless) {
+                ent.handler.setStackInSlot(8,
+                        new ItemStack(shapelessRecipe.get().getResultItem(lvl.registryAccess()).getItem(), stackCount + 1));
+            }
             ent.resetProgress();
         }
     }
@@ -225,7 +241,7 @@ public class CvmInfusionAlterEntity extends BlockEntity implements MenuProvider 
                 canInsertItemIntoOutput(inv, recipe.get().getResultItem(lvl.registryAccess()));
     }
 
-    private static boolean hasShapelessrecipe(CvmInfusionAlterEntity ent) {
+    private static boolean hasShapelessRecipe(CvmInfusionAlterEntity ent) {
         Level lvl = ent.level;
         SimpleContainer inv = new SimpleContainer(ent.handler.getSlots());
         for (int i = 0; i < ent.handler.getSlots(); i++) {
@@ -240,12 +256,12 @@ public class CvmInfusionAlterEntity extends BlockEntity implements MenuProvider 
     }
 
     private static boolean canInsertItemIntoOutput(SimpleContainer inv, ItemStack stack) {
-        return inv.getItem(8).getItem() == stack.getItem() || inv.getItem(8).isEmpty();
+        return inv.getItem(8).isEmpty() || inv.getItem(8).getItem() == stack.getItem();
     }
 
     private static boolean canInsertAmtIntoOutput(SimpleContainer inv) {
         // checks whether the output has enough space
-        return inv.getItem(8).getMaxStackSize() > inv.getItem(8).getCount();
+        return inv.getItem(8).isEmpty() || inv.getItem(8).getMaxStackSize() > inv.getItem(8).getCount();
         // ensures only 64 items can be inserted
     }
 

@@ -1,0 +1,11 @@
+{
+  "type": "modussy:cvm_infusion_shapeless",
+  "ingredients": [
+    {
+      "item": "modussy:music_disc_cupcakke1"
+    }
+  ],
+  "output": {
+    "item": "modussy:music_disc_c24"
+  }
+}

@@ -1,0 +1,11 @@
+{
+  "type": "modussy:cvm_infusion_shapeless",
+  "ingredients": [
+    {
+      "item": "modussy:cvm"
+    }
+  ],
+  "output": {
+    "item": "modussy:cvmium"
+  }
+}

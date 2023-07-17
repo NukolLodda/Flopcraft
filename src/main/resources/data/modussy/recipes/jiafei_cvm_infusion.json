@@ -1,0 +1,11 @@
+{
+  "type": "modussy:cvm_infusion_shapeless",
+  "ingredients": [
+    {
+      "item": "modussy:jiafei_product"
+    }
+  ],
+  "output": {
+    "item": "modussy:music_disc_jiafei"
+  }
+}

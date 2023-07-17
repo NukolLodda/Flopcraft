@@ -1,0 +1,29 @@
+{
+  "type": "modussy:cvm_infusion",
+  "ingredients": [
+    {
+      "item": "modussy:slaginium"
+    },
+    {
+      "item": "minecraft:barrier"
+    },
+    {
+      "item": "modussy:slaginium"
+    },
+    {
+      "item": "modussy:slaginium"
+    },
+    {
+      "item": "minecraft:barrier"
+    },
+    {
+      "item": "modussy:slaginium"
+    },
+    {
+      "item": "modussy:slaginium"
+    }
+  ],
+  "output": {
+    "item": "modussy:slaginium_yassifier"
+  }
+}

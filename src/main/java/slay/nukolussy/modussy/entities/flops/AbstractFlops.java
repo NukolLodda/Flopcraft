@@ -79,6 +79,7 @@ public abstract class AbstractFlops extends PathfinderMob {
                         _entcnd.distanceToSqr(this.getX(), this.getY(), this.getZ()))).toList();
 
         for (Entity ent : list) {
+            if (ent instanceof Player player && player.isCreative()) continue;
             if (ent instanceof AbstractFlops flops && pDamageSource.getEntity() instanceof LivingEntity entity)
                 flops.setTarget(entity);
             // if the causer was the player, it would reduce their yassification level

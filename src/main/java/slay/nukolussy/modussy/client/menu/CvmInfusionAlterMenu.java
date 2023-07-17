@@ -35,14 +35,13 @@ public class CvmInfusionAlterMenu extends AbstractContainerMenu {
         addPlayerHotbar(inv);
 
         this.blockEntity.getCapability(ForgeCapabilities.ITEM_HANDLER).ifPresent(handler -> {
-
+            this.addSlot(new SlotItemHandler(handler, 0, 66, 53));
             for (int i = 0; i < 2; i++) {
                 for (int j = 0; j < 3; j++) {
-                    this.addSlot(new SlotItemHandler(handler, (i * 3) + j, 30 + (j * 18), 17 + (i * 18)));
+                    this.addSlot(new SlotItemHandler(handler, (i * 3) + j + 1, 30 + (j * 18), 17 + (i * 18)));
                 }
             }
-            this.addSlot(new SlotItemHandler(handler, 6, 48, 53));
-            this.addSlot(new SlotItemHandler(handler, 7, 66, 53));
+            this.addSlot(new SlotItemHandler(handler, 7, 48, 53));
             this.addSlot(new SlotItemHandler(handler, 8, 124, 35));
         });
 
@@ -60,6 +59,14 @@ public class CvmInfusionAlterMenu extends AbstractContainerMenu {
         int progressArrowSize = 26; // height in pixels of arrow
 
         return maxProgress != 0 && progress !=0 ? progress * progressArrowSize / maxProgress : 0;
+    }
+
+    public int getCvmAmount() {
+        int cvmAmt = this.data.get(2);
+        int maxCvm = this.data.get(3);
+        int cvmTube = 18;
+
+        return maxCvm != 0 && cvmAmt != 0 ? cvmAmt * cvmTube / maxCvm : 0;
     }
 
     // CREDIT GOES TO: diesieben07 | https://github.com/diesieben07/SevenCommons

@@ -1,0 +1,29 @@
+{
+  "type": "modussy:cvm_infusion",
+  "ingredients": [
+    {
+      "item": "modussy:flopium"
+    },
+    {
+      "item": "modussy:jiafei_product"
+    },
+    {
+      "item": "modussy:flopium"
+    },
+    {
+      "item": "minecraft:barrier"
+    },
+    {
+      "item": "modussy:gagastone"
+    },
+    {
+      "item": "modussy:flopium"
+    },
+    {
+      "item": "modussy:gagastone"
+    }
+  ],
+  "output": {
+    "item": "modussy:flopium_pickaxol"
+  }
+}

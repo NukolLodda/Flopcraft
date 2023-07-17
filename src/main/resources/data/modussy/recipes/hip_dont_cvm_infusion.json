@@ -1,0 +1,14 @@
+{
+  "type": "modussy:cvm_infusion_shapeless",
+  "ingredients": [
+    {
+      "item": "modussy:infused_slaginium"
+    },
+    {
+      "item": "modussy:cupcake"
+    }
+  ],
+  "output": {
+    "item": "modussy:music_disc_c9"
+  }
+}

@@ -17,8 +17,6 @@ import net.minecraft.world.entity.item.ItemEntity;
 import net.minecraft.world.entity.monster.*;
 import net.minecraft.world.entity.monster.hoglin.Hoglin;
 import net.minecraft.world.entity.npc.AbstractVillager;
-import net.minecraft.world.entity.npc.Villager;
-import net.minecraft.world.entity.npc.WanderingTrader;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.Level;
@@ -134,23 +132,27 @@ public class ActivateMethods {
     }
 
     private static void villagerYassification(AbstractVillager entity, LevelAccessor world) {
-        if (entity instanceof Villager || entity instanceof WanderingTrader) {
-            int randval = (int) (Math.random() * 6971);
-            EntityType<? extends AbstractFlops> type = ModEntities.TWINK.get();
-            if (randval < 34)
-                type = ModEntities.CUPCAKKE.get();
-            else if (randval < 69)
-                type = ModEntities.JIAFEI.get();
-            AbstractFlops flop = entity.convertTo(type, true);
-            assert flop != null;
-            if (flop instanceof Twink twink)
-                twink.setVariant(Util.getRandom(TwinkVariant.values(), world.getRandom()));
-            if (flop instanceof Jiafei jiafei) {
-                jiafei.setVariant(Util.getRandom(JiafeiVariant.values(), world.getRandom()));
-            }
-            flop.setCanPickUpLoot(true);
-            flop.addAdditionalSaveData(flop.getPersistentData());
+        if (entity.isBaby()) return;
+
+        int randval = (int) (Math.random() * 6971);
+        float xRot = entity.getXRot();
+        float yRot = entity.getYRot();
+        EntityType<? extends AbstractFlops> type = ModEntities.TWINK.get();
+        if (randval < 34)
+            type = ModEntities.CUPCAKKE.get();
+        else if (randval < 69)
+            type = ModEntities.JIAFEI.get();
+        AbstractFlops flop = entity.convertTo(type, true);
+        assert flop != null;
+        if (flop instanceof Twink twink)
+            twink.setVariant(Util.getRandom(TwinkVariant.values(), world.getRandom()));
+        if (flop instanceof Jiafei jiafei) {
+            jiafei.setVariant(Util.getRandom(JiafeiVariant.values(), world.getRandom()));
         }
+        flop.setCanPickUpLoot(true);
+        flop.setXRot(xRot);
+        flop.setYRot(yRot);
+        flop.addAdditionalSaveData(flop.getPersistentData());
     }
     public static void aranaGrandeRightClick(LevelAccessor world, double x, double y, double z, Entity entity, ItemStack itemStack) {
         if (entity == null)
@@ -360,7 +362,7 @@ public class ActivateMethods {
                                         newMob.addEffect(effect);
                                     }
                                     _cupcakke.level().addFreshEntity(newMob);
-                                    _cupcakke.spawnAtLocation(ModItem.CVMTITPLASM.get());
+                                    _cupcakke.spawnAtLocation(Math.random() > 0.8 ? ModItem.CVMTITPLASM.get() : CupcakKe.cupcakkeDrops());
                                 }
                             }
                         }

@@ -1,0 +1,17 @@
+{
+  "type": "modussy:cvm_infusion_shapeless",
+  "ingredients": [
+    {
+      "item": "modussy:hairussy"
+    },
+    {
+      "item": "modussy:cupcake"
+    },
+    {
+      "item": "modussy:cupcake"
+    }
+  ],
+  "output": {
+    "item": "modussy:music_disc_cupcakke2"
+  }
+}

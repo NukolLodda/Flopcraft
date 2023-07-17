@@ -35,31 +35,15 @@ public class ModSounds {
     public static final RegistryObject<SoundEvent> DISC_C3 = SOUNDS.register("music_disc_c3",
             () -> SoundEvent.createVariableRangeEvent(new ResourceLocation(Modussy.MODID,"music_disc_c3")));
 
-    public static final RegistryObject<SoundEvent> DISC_J1 = SOUNDS.register("music_disc_j1",
-            () -> SoundEvent.createVariableRangeEvent(new ResourceLocation(Modussy.MODID,"music_disc_j1")));
-
     public static final RegistryObject<SoundEvent> DISC_C4 = SOUNDS.register("music_disc_c4",
             () -> SoundEvent.createVariableRangeEvent(new ResourceLocation(Modussy.MODID,"music_disc_c4")));
-
-    public static final RegistryObject<SoundEvent> DISC_CUPCAKKE1 = SOUNDS.register("music_disc_cupcakke1",
-            () -> SoundEvent.createVariableRangeEvent(new ResourceLocation(Modussy.MODID,"music_disc_cupcakke1")));
 
     public static final RegistryObject<SoundEvent> DISC_C5 = SOUNDS.register("music_disc_c5",
             () -> SoundEvent.createVariableRangeEvent(new ResourceLocation(Modussy.MODID,"music_disc_c5")));
 
-    public static final RegistryObject<SoundEvent> DISC_CUPCAKKE2 = SOUNDS.register("music_disc_cupcakke2",
-            () -> SoundEvent.createVariableRangeEvent(new ResourceLocation(Modussy.MODID,"music_disc_cupcakke2")));
-    public static final RegistryObject<SoundEvent> DISC_DEJE_BULLYING = SOUNDS.register("music_disc_deje_bullying",
-            () -> SoundEvent.createVariableRangeEvent(new ResourceLocation(Modussy.MODID,"music_disc_deje_bullying")));
-
-    public static final RegistryObject<SoundEvent> DISC_J2 = SOUNDS.register("music_disc_j2",
-            () -> SoundEvent.createVariableRangeEvent(new ResourceLocation(Modussy.MODID,"music_disc_j2")));
-
     public static final RegistryObject<SoundEvent> DISC_C6 = SOUNDS.register("music_disc_c6",
             () -> SoundEvent.createVariableRangeEvent(new ResourceLocation(Modussy.MODID,"music_disc_c6")));
 
-    public static final RegistryObject<SoundEvent> DISC_JC1 = SOUNDS.register("music_disc_jc1",
-            () -> SoundEvent.createVariableRangeEvent(new ResourceLocation(Modussy.MODID,"music_disc_jc1")));
     public static final RegistryObject<SoundEvent> DISC_C7 = SOUNDS.register("music_disc_c7",
             () -> SoundEvent.createVariableRangeEvent(new ResourceLocation(Modussy.MODID,"music_disc_c7")));
 
@@ -78,15 +62,6 @@ public class ModSounds {
     public static final RegistryObject<SoundEvent> DISC_C12 = SOUNDS.register("music_disc_c12",
             () -> SoundEvent.createVariableRangeEvent(new ResourceLocation(Modussy.MODID,"music_disc_c12")));
 
-    public static final RegistryObject<SoundEvent> JIAFEI = SOUNDS.register("music_disc_jiafei",
-            () -> SoundEvent.createVariableRangeEvent(new ResourceLocation(Modussy.MODID,"music_disc_jiafei")));
-
-    public static final RegistryObject<SoundEvent> DISC_J4 = SOUNDS.register("music_disc_j4",
-            () -> SoundEvent.createVariableRangeEvent(new ResourceLocation(Modussy.MODID,"music_disc_j4")));
-
-    public static final RegistryObject<SoundEvent> DISC_RANVISION = SOUNDS.register("music_disc_ranvision",
-            () -> SoundEvent.createVariableRangeEvent(new ResourceLocation(Modussy.MODID,"music_disc_ranvision")));
-
     public static final RegistryObject<SoundEvent> DISC_C13 = SOUNDS.register("music_disc_c13",
             () -> SoundEvent.createVariableRangeEvent(new ResourceLocation(Modussy.MODID,"music_disc_c13")));
 
@@ -99,19 +74,6 @@ public class ModSounds {
     public static final RegistryObject<SoundEvent> DISC_C15 = SOUNDS.register("music_disc_c15",
             () -> SoundEvent.createVariableRangeEvent(new ResourceLocation(Modussy.MODID,"music_disc_c15")));
 
-    public static final RegistryObject<SoundEvent> DISC_PONMI = SOUNDS.register("music_disc_ponmi",
-            () -> SoundEvent.createVariableRangeEvent(new ResourceLocation(Modussy.MODID,"music_disc_ponmi")));
-
-    public static final RegistryObject<SoundEvent> DISC_CPM1 = SOUNDS.register("music_disc_cpm1",
-            () -> SoundEvent.createVariableRangeEvent(new ResourceLocation(Modussy.MODID,"music_disc_cpm1")));
-    public static final RegistryObject<SoundEvent> DISC_J5 = SOUNDS.register("music_disc_j5",
-            () -> SoundEvent.createVariableRangeEvent(new ResourceLocation(Modussy.MODID,"music_disc_j5")));
-
-    public static final RegistryObject<SoundEvent> DISC_PM1 = SOUNDS.register("music_disc_pm1",
-            () -> SoundEvent.createVariableRangeEvent(new ResourceLocation(Modussy.MODID,"music_disc_pm1")));
-    public static final RegistryObject<SoundEvent> DISC_DB1 = SOUNDS.register("music_disc_db1",
-            () -> SoundEvent.createVariableRangeEvent(new ResourceLocation(Modussy.MODID,"music_disc_db1")));
-
     public static final RegistryObject<SoundEvent> DISC_C17 = SOUNDS.register("music_disc_c17",
             () -> SoundEvent.createVariableRangeEvent(new ResourceLocation(Modussy.MODID,"music_disc_c17")));
 
@@ -120,7 +82,7 @@ public class ModSounds {
 
     public static final RegistryObject<SoundEvent> DISC_C19 = SOUNDS.register("music_disc_c19",
             () -> SoundEvent.createVariableRangeEvent(new ResourceLocation(Modussy.MODID, "music_disc_c19")));
-    
+
     public static final RegistryObject<SoundEvent> DISC_C20 = SOUNDS.register("music_disc_c20",
             () -> SoundEvent.createVariableRangeEvent(new ResourceLocation(Modussy.MODID, "music_disc_c20")));
 
@@ -133,14 +95,56 @@ public class ModSounds {
     public static final RegistryObject<SoundEvent> DISC_C23 = SOUNDS.register("music_disc_c23",
             () -> SoundEvent.createVariableRangeEvent(new ResourceLocation(Modussy.MODID,"music_disc_c23")));
 
-    public static final RegistryObject<SoundEvent> DISC_CUPCAKKE3 = SOUNDS.register("music_disc_cupcakke3",
-            () -> SoundEvent.createVariableRangeEvent(new ResourceLocation(Modussy.MODID,"music_disc_cupcakke3")));
-
     public static final RegistryObject<SoundEvent> DISC_C24 = SOUNDS.register("music_disc_c24",
             () -> SoundEvent.createVariableRangeEvent(new ResourceLocation(Modussy.MODID,"music_disc_c24")));
 
     public static final RegistryObject<SoundEvent> DISC_C25 = SOUNDS.register("music_disc_c25",
             () -> SoundEvent.createVariableRangeEvent(new ResourceLocation(Modussy.MODID,"music_disc_c25")));
+
+    public static final RegistryObject<SoundEvent> DISC_CPM1 = SOUNDS.register("music_disc_cpm1",
+            () -> SoundEvent.createVariableRangeEvent(new ResourceLocation(Modussy.MODID,"music_disc_cpm1")));
+
+    public static final RegistryObject<SoundEvent> DISC_CUPCAKKE1 = SOUNDS.register("music_disc_cupcakke1",
+            () -> SoundEvent.createVariableRangeEvent(new ResourceLocation(Modussy.MODID,"music_disc_cupcakke1")));
+
+    public static final RegistryObject<SoundEvent> DISC_CUPCAKKE2 = SOUNDS.register("music_disc_cupcakke2",
+            () -> SoundEvent.createVariableRangeEvent(new ResourceLocation(Modussy.MODID,"music_disc_cupcakke2")));
+
+    public static final RegistryObject<SoundEvent> DISC_CUPCAKKE3 = SOUNDS.register("music_disc_cupcakke3",
+            () -> SoundEvent.createVariableRangeEvent(new ResourceLocation(Modussy.MODID,"music_disc_cupcakke3")));
+
+    public static final RegistryObject<SoundEvent> DISC_DB1 = SOUNDS.register("music_disc_db1",
+            () -> SoundEvent.createVariableRangeEvent(new ResourceLocation(Modussy.MODID,"music_disc_db1")));
+
+    public static final RegistryObject<SoundEvent> DISC_DEJE_BULLYING = SOUNDS.register("music_disc_deje_bullying",
+            () -> SoundEvent.createVariableRangeEvent(new ResourceLocation(Modussy.MODID,"music_disc_deje_bullying")));
+
+    public static final RegistryObject<SoundEvent> DISC_J1 = SOUNDS.register("music_disc_j1",
+            () -> SoundEvent.createVariableRangeEvent(new ResourceLocation(Modussy.MODID,"music_disc_j1")));
+
+    public static final RegistryObject<SoundEvent> DISC_J2 = SOUNDS.register("music_disc_j2",
+            () -> SoundEvent.createVariableRangeEvent(new ResourceLocation(Modussy.MODID,"music_disc_j2")));
+
+    public static final RegistryObject<SoundEvent> DISC_J4 = SOUNDS.register("music_disc_j4",
+            () -> SoundEvent.createVariableRangeEvent(new ResourceLocation(Modussy.MODID,"music_disc_j4")));
+
+    public static final RegistryObject<SoundEvent> DISC_J5 = SOUNDS.register("music_disc_j5",
+            () -> SoundEvent.createVariableRangeEvent(new ResourceLocation(Modussy.MODID,"music_disc_j5")));
+
+    public static final RegistryObject<SoundEvent> DISC_JC1 = SOUNDS.register("music_disc_jc1",
+            () -> SoundEvent.createVariableRangeEvent(new ResourceLocation(Modussy.MODID,"music_disc_jc1")));
+
+    public static final RegistryObject<SoundEvent> DISC_JIAFEI = SOUNDS.register("music_disc_jiafei",
+            () -> SoundEvent.createVariableRangeEvent(new ResourceLocation(Modussy.MODID,"music_disc_jiafei")));
+
+    public static final RegistryObject<SoundEvent> DISC_PM1 = SOUNDS.register("music_disc_pm1",
+            () -> SoundEvent.createVariableRangeEvent(new ResourceLocation(Modussy.MODID,"music_disc_pm1")));
+
+    public static final RegistryObject<SoundEvent> DISC_PONMI = SOUNDS.register("music_disc_ponmi",
+            () -> SoundEvent.createVariableRangeEvent(new ResourceLocation(Modussy.MODID,"music_disc_ponmi")));
+
+    public static final RegistryObject<SoundEvent> DISC_RANVISION = SOUNDS.register("music_disc_ranvision",
+            () -> SoundEvent.createVariableRangeEvent(new ResourceLocation(Modussy.MODID,"music_disc_ranvision")));
 
 
 

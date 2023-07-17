@@ -1,0 +1,29 @@
+{
+  "type": "modussy:cvm_infusion",
+  "ingredients": [
+    {
+      "item": "modussy:mystical_flopium"
+    },
+    {
+      "item": "modussy:cvmium"
+    },
+    {
+      "item": "modussy:mystical_flopium"
+    },
+    {
+      "item": "minecraft:barrier"
+    },
+    {
+      "item": "modussy:infused_slaginium"
+    },
+    {
+      "item": "modussy:mystical_flopium"
+    },
+    {
+      "item": "modussy:infused_slaginium"
+    }
+  ],
+  "output": {
+    "item": "modussy:mystical_flopium_pickaxol"
+  }
+}
