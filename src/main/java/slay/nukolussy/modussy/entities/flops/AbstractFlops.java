@@ -46,7 +46,6 @@ public abstract class AbstractFlops extends PathfinderMob {
                 return (4.0 + entity.getBbWidth() * entity.getBbWidth());
             }
         });
-        this.goalSelector.addGoal(2, new TemptGoal(this, 1.2d, FOOD_ITEMS, false));
         this.goalSelector.addGoal(3, new LookAtPlayerGoal(this, Player.class, 5.0f));
         this.goalSelector.addGoal(4, new RandomStrollGoal(this,1));
         this.goalSelector.addGoal(5, new RandomLookAroundGoal(this));

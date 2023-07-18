@@ -15,16 +15,16 @@ import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.api.distmarker.OnlyIn;
 import org.jetbrains.annotations.NotNull;
 import slay.nukolussy.modussy.entities.flops.twink.Twink;
-import slay.nukolussy.modussy.entities.flops.twink.TwinkVariant;
 
 import java.util.Map;
 
 @OnlyIn(Dist.CLIENT)
 public class TwinkRenderer extends MobRenderer<Twink, PlayerModel<Twink>> {
-    private static final Map<TwinkVariant, ResourceLocation> LOCATION_BY_VARIANT = Util.make(Maps.newEnumMap(TwinkVariant.class), (type) -> {
-        type.put(TwinkVariant.BEACH, new ResourceLocation("modussy:textures/entities/twink_1.png"));
-        type.put(TwinkVariant.FLOWER, new ResourceLocation("modussy:textures/entities/twink_2.png"));
-        type.put(TwinkVariant.PINK, new ResourceLocation("modussy:textures/entities/twink_3.png"));
+    private static final Map<Twink.Variant, ResourceLocation> LOCATION_BY_VARIANT = Util.make(Maps.newEnumMap(Twink.Variant.class), (type) -> {
+        type.put(Twink.Variant.BLOND, new ResourceLocation("modussy:textures/entities/twink.png")); // Maybe need some redesigning
+        type.put(Twink.Variant.BEACH, new ResourceLocation("modussy:textures/entities/twink_1.png"));
+        type.put(Twink.Variant.FLOWER, new ResourceLocation("modussy:textures/entities/twink_2.png"));
+        type.put(Twink.Variant.PINK, new ResourceLocation("modussy:textures/entities/twink_3.png"));
     });
     public TwinkRenderer(EntityRendererProvider.Context context) {
         super(context, new PlayerModel<>(context.bakeLayer(ModelLayers.PLAYER_SLIM), true), 0.5f);

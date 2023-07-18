@@ -104,6 +104,7 @@ public class ModCreativeTabs {
                         pOutput.accept(ModItem.DISC_CPM1.get());
                         pOutput.accept(ModItem.DISC_CUPCAKKE1.get());
                         pOutput.accept(ModItem.DISC_CUPCAKKE2.get());
+                        pOutput.accept(ModItem.DISC_CUPCAKKE3.get());
                         pOutput.accept(ModItem.DISC_DB1.get());
                         pOutput.accept(ModItem.DISC_DEJE_BULLYING.get());
                         pOutput.accept(ModItem.DISC_J1.get());
@@ -115,7 +116,6 @@ public class ModCreativeTabs {
                         pOutput.accept(ModItem.DISC_PM1.get());
                         pOutput.accept(ModItem.DISC_PONMI.get());
                         pOutput.accept(ModItem.DISC_RANVISION.get());
-                        pOutput.accept(ModItem.DISC_CUPCAKKE3.get());
                     })).build());
 
     public static RegistryObject<CreativeModeTab> YASSIFYING_INGREDIENTS = CREATIVE_MODE_TABS.register("yassifying_ingredients", () ->

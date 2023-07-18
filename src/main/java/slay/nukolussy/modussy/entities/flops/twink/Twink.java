@@ -1,5 +1,6 @@
 package slay.nukolussy.modussy.entities.flops.twink;
 
+import com.mojang.serialization.Codec;
 import net.minecraft.Util;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.network.syncher.EntityDataAccessor;
@@ -7,7 +8,9 @@ import net.minecraft.network.syncher.EntityDataSerializers;
 import net.minecraft.network.syncher.SynchedEntityData;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.sounds.SoundEvent;
+import net.minecraft.util.ByIdMap;
 import net.minecraft.util.RandomSource;
+import net.minecraft.util.StringRepresentable;
 import net.minecraft.world.DifficultyInstance;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResult;
@@ -20,11 +23,9 @@ import net.minecraft.world.entity.ai.attributes.Attributes;
 import net.minecraft.world.entity.ai.goal.*;
 import net.minecraft.world.entity.item.ItemEntity;
 import net.minecraft.world.entity.monster.Monster;
-import net.minecraft.world.entity.monster.Zombie;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
-import net.minecraft.world.item.crafting.Ingredient;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.ServerLevelAccessor;
 import net.minecraft.world.level.gameevent.GameEvent;
@@ -38,8 +39,11 @@ import slay.nukolussy.modussy.entities.goal.FlopBreedingGoal;
 import slay.nukolussy.modussy.item.ModItem;
 
 import javax.annotation.Nullable;
+import java.util.function.IntFunction;
 
 public class Twink extends AbstractFlops {
+    // Nukol is following the rule that thou shall always be horknee
+    // For he wants a twink to smack his ass like a drum and slurp that deek till it cvm
     private static final EntityDataAccessor<Integer> TWINK_ID_DATATYPE_VARIANT = SynchedEntityData.defineId(Twink.class, EntityDataSerializers.INT);
     private final SimpleContainer inventory = new SimpleContainer(8);
     public Twink(PlayMessages.SpawnEntity packet, Level world) {
@@ -82,7 +86,7 @@ public class Twink extends AbstractFlops {
         this.inventory.fromTag(tag.getList("Inventory",10));
     }
 
-    public void setVariant(TwinkVariant variant) {
+    public void setVariant(Variant variant) {
         this.setTypeVariant(variant.getId());
     }
 
@@ -101,6 +105,7 @@ public class Twink extends AbstractFlops {
     @Override
     protected void registerGoals() {
         super.registerGoals();
+        this.goalSelector.addGoal(2, new TemptGoal(this, 1.2d, FOOD_ITEMS, false));
         this.goalSelector.addGoal(9, new FlopBreedingGoal(this, 1.0d));
         this.goalSelector.addGoal(1, new AvoidEntityGoal<>(this, Monster.class, 10.0f, 0.5d, 0.5d));
 
@@ -190,8 +195,8 @@ public class Twink extends AbstractFlops {
     private int getTypeVariant() {
         return this.entityData.get(TWINK_ID_DATATYPE_VARIANT);
     }
-    public TwinkVariant getVariant() {
-        return TwinkVariant.byId(this.getTypeVariant() & 255);
+    public Variant getVariant() {
+        return Variant.byId(this.getTypeVariant() & 255);
     }
 
     public static AttributeSupplier.Builder createAttributes() {
@@ -210,8 +215,38 @@ public class Twink extends AbstractFlops {
     @Nullable
     public SpawnGroupData finalizeSpawn(ServerLevelAccessor level, @NotNull DifficultyInstance instance, @NotNull MobSpawnType type, SpawnGroupData data, CompoundTag tag) {
         RandomSource randomSource = level.getRandom();
-        TwinkVariant variant = Util.getRandom(TwinkVariant.values(), randomSource);
+        Variant variant = Util.getRandom(Variant.values(), randomSource);
         setVariant(variant);
         return super.finalizeSpawn(level, instance, type, data, tag);
+    }
+
+    public enum Variant implements StringRepresentable {
+        BLOND(0, "blond"),
+        BEACH(1, "beach"),
+        FLOWER(2, "flower"),
+        PINK(3, "pink")
+        /*
+        NOIRETTE(4, "noirette"),
+        TANNED(5, "tanned")
+         */;
+
+        public static final Codec<Variant> CODEC = StringRepresentable.fromEnum(Variant::values);
+        private static final IntFunction<Variant> BY_ID = ByIdMap.continuous(Variant::getId, values(), ByIdMap.OutOfBoundsStrategy.WRAP);
+        public final int id;
+        public final String name;
+        Variant(int id, String name) {
+            this.id = id;
+            this.name = name;
+        }
+        public int getId() {
+            return this.id;
+        }
+        @Override
+        public String getSerializedName() {
+            return this.name;
+        }
+        public static Variant byId(int id) {
+            return BY_ID.apply(id);
+        }
     }
 }

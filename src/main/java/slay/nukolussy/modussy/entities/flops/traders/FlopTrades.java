@@ -23,32 +23,32 @@ public class FlopTrades {
 
     public static final Map<FlopTraderVariants, Int2ObjectMap<FlopTrades.ItemListing[]>> TRADES =
             Util.make(Maps.newHashMap(), (tag) -> {
-                tag.put(JiafeiVariant.AESTHETIC, toIntMap(ImmutableMap.of(1, new FlopTrades.ItemListing[]{
+                tag.put(Jiafei.Variant.AESTHETIC, toIntMap(ImmutableMap.of(1, new FlopTrades.ItemListing[]{
                         new FlopTrades.ProductsForSlaginium(ModItem.JIAFEI_PRODUCT.get(), COMMON_ITEMS_SUPPLY, 1),
-                        new FlopTrades.SlaginiumForProducts(ModItem.JIAFEI_PERFUME.get(), 4, UNCOMMON_ITEMS_SUPPLY, 6),
+                        new FlopTrades.InfusedSlaginiumForProducts(ModItem.JIAFEI_PERFUME.get(), 4, UNCOMMON_ITEMS_SUPPLY, 6),
                         new FlopTrades.SlaginiumForProducts(ModItem.JIAFEI_BOOTS.get(), 4, DEFAULT_SUPPLY, 2),
                         new FlopTrades.SlaginiumForProducts(ModItem.JIAFEI_LEGGINGS.get(), 5, DEFAULT_SUPPLY, 2),
                         new FlopTrades.SlaginiumForProducts(ModItem.JIAFEI_CHESTPLATE.get(), 5, DEFAULT_SUPPLY, 2),
                         new FlopTrades.SlaginiumForProducts(ModItem.JIAFEI_HELMET.get(), 4, DEFAULT_SUPPLY, 2),
-                        new FlopTrades.SlaginiumForProducts(ModItem.DEELDO.get(), 3, UNCOMMON_ITEMS_SUPPLY, 6)
+                        new FlopTrades.InfusedSlaginiumForProducts(ModItem.DEELDO.get(), 3, UNCOMMON_ITEMS_SUPPLY, 6)
                 })));
-                tag.put(JiafeiVariant.MUSICIAN, toIntMap(ImmutableMap.of(1, new FlopTrades.ItemListing[]{
+                tag.put(Jiafei.Variant.MUSICIAN, toIntMap(ImmutableMap.of(1, new FlopTrades.ItemListing[]{
                         new FlopTrades.ProductsForSlaginium(ModItem.JIAFEI_PRODUCT.get(), COMMON_ITEMS_SUPPLY, 1),
+                        new FlopTrades.SlaginiumForProducts(ModItem.DISC_CJ1.get(), 2, DEFAULT_SUPPLY, 2),
                         new FlopTrades.SlaginiumForProducts(ModItem.DISC_JIAFEI.get(), 3, DEFAULT_SUPPLY, 2),
                         new FlopTrades.SlaginiumForProducts(ModItem.DISC_J1.get(), 3, UNCOMMON_ITEMS_SUPPLY, 6),
                         new FlopTrades.SlaginiumForProducts(ModItem.DISC_J2.get(), 3, UNCOMMON_ITEMS_SUPPLY, 6),
-                        new FlopTrades.SlaginiumForProducts(ModItem.DISC_J4.get(), 3, DEFAULT_SUPPLY, 2),
-                        new FlopTrades.SlaginiumForProducts(ModItem.DISC_J5.get(), 5, UNCOMMON_ITEMS_SUPPLY, 12),
-                        new FlopTrades.SlaginiumForProducts(ModItem.DISC_CJ1.get(), 2, DEFAULT_SUPPLY, 2)
+                        new FlopTrades.InfusedSlaginiumForProducts(ModItem.DISC_J4.get(), 3, DEFAULT_SUPPLY, 2),
+                        new FlopTrades.InfusedSlaginiumForProducts(ModItem.DISC_J5.get(), 5, UNCOMMON_ITEMS_SUPPLY, 12)
                 })));
-                tag.put(JiafeiVariant.UTILITIES, toIntMap(ImmutableMap.of(1, new FlopTrades.ItemListing[]{
+                tag.put(Jiafei.Variant.UTILITIES, toIntMap(ImmutableMap.of(1, new FlopTrades.ItemListing[]{
                         new FlopTrades.ProductsForSlaginium(ModItem.JIAFEI_PRODUCT.get(), COMMON_ITEMS_SUPPLY, 1),
                         new FlopTrades.SlaginiumForProducts(ModItem.JIAFEI_SEED.get(), 2, UNCOMMON_ITEMS_SUPPLY, 6),
                         new FlopTrades.SlaginiumForProducts(ModItem.JIAFEI_AXE.get(), 2, DEFAULT_SUPPLY, 2),
                         new FlopTrades.SlaginiumForProducts(ModItem.JIAFEI_SHOVEL.get(), 1,DEFAULT_SUPPLY,2),
                         new FlopTrades.SlaginiumForProducts(ModItem.JIAFEI_PICKAXE.get(), 2, DEFAULT_SUPPLY, 2),
-                        new FlopTrades.SlaginiumForProducts(ModItem.JIAFEI_HAMMER.get(), 3, DEFAULT_SUPPLY, 2),
-                        new FlopTrades.SlaginiumForProducts(ModItem.JIAFEI_SICKLE.get(), 2, DEFAULT_SUPPLY, 2)
+                        new FlopTrades.InfusedSlaginiumForProducts(ModItem.JIAFEI_HAMMER.get(), 3, DEFAULT_SUPPLY, 2),
+                        new FlopTrades.InfusedSlaginiumForProducts(ModItem.JIAFEI_SICKLE.get(), 2, DEFAULT_SUPPLY, 2)
                 })));
             });
 
@@ -97,6 +97,26 @@ public class FlopTrades {
         public MerchantOffer getOffer(Entity pTrader, RandomSource pRandom) {
             ItemStack itemstack = new ItemStack(this.item);
             return new MerchantOffer(new ItemStack(ModItem.SLAGINIUM.get(), this.cost), itemstack, this.maxUses, this.flopXp, this.priceMultiplier);
+        }
+    }
+    static class InfusedSlaginiumForProducts implements ItemListing {
+        private final Item item;
+        private final int cost;
+        private final int maxUses;
+        private final int flopXp;
+        private final float priceMultiplier;
+
+        public InfusedSlaginiumForProducts(ItemLike pItem, int pCost, int pMaxUses, int pFlopXp) {
+            this.item = pItem.asItem();
+            this.cost = pCost;
+            this.maxUses = pMaxUses;
+            this.flopXp = pFlopXp;
+            this.priceMultiplier = 0.05F;
+        }
+
+        public MerchantOffer getOffer(Entity pTrader, RandomSource pRandom) {
+            ItemStack itemstack = new ItemStack(this.item);
+            return new MerchantOffer(new ItemStack(ModItem.INFUSED_SLAGINIUM.get(), this.cost), itemstack, this.maxUses, this.flopXp, this.priceMultiplier);
         }
     }
 }

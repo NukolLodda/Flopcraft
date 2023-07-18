@@ -35,7 +35,7 @@ public class CvmInfusionAlterScreen extends AbstractContainerScreen<CvmInfusionA
     private void renderProgressArrow(GuiGraphics graphics, int x, int y) {
         if (this.menu.isCrafting()) {
             int progress = this.menu.getScaledProgress();
-            graphics.blit(TEXTURE, x + 90, y + 36, 176, 0, progress, 14);
+            graphics.blit(TEXTURE, x + 90, y + 35, 176, 0, progress, 15);
         }
     }
 

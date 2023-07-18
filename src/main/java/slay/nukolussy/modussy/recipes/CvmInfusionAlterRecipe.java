@@ -32,18 +32,18 @@ public class CvmInfusionAlterRecipe implements Recipe<SimpleContainer> {
         if(lvl.isClientSide()) {
             return false;
         }
-        return recipeItems.get(1).test(container.getItem(1)) &&
-                recipeItems.get(2).test(container.getItem(2)) &&
-                recipeItems.get(3).test(container.getItem(3)) &&
-                recipeItems.get(4).test(container.getItem(4)) &&
-                recipeItems.get(5).test(container.getItem(5)) &&
-                recipeItems.get(6).test(container.getItem(6)) &&
-                recipeItems.get(7).test(container.getItem(7)); // brain of the recipe
+        return recipeItems.get(0).test(container.getItem(1)) &&
+                recipeItems.get(1).test(container.getItem(2)) &&
+                recipeItems.get(2).test(container.getItem(3)) &&
+                recipeItems.get(3).test(container.getItem(4)) &&
+                recipeItems.get(4).test(container.getItem(5)) &&
+                recipeItems.get(5).test(container.getItem(6)) &&
+                recipeItems.get(6).test(container.getItem(7)); // brain of the recipe
     }
 
     @Override
     public ItemStack assemble(SimpleContainer container, RegistryAccess access) {
-        return null;
+        return this.output;
     }
 
     @Override
@@ -94,8 +94,8 @@ public class CvmInfusionAlterRecipe implements Recipe<SimpleContainer> {
             NonNullList<Ingredient> inputs = NonNullList.withSize(7, Ingredient.EMPTY);
 
             for (int i = 0; i < inputs.size(); i++) {
-                if (i < ingredients.size())
-                    if (!Ingredient.fromJson(ingredients.get(i)).test(new ItemStack(Items.BARRIER)))
+                if (i >= ingredients.size()) break;
+                if (!Ingredient.fromJson(ingredients.get(i)).test(new ItemStack(Items.BARRIER)))
                         inputs.set(i, Ingredient.fromJson(ingredients.get(i)));
             }
             return new CvmInfusionAlterRecipe(id, output, inputs);

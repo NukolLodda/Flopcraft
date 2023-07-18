@@ -28,7 +28,6 @@ public class TwinkAI {
             else if (randNum < 80) return new ItemStack(ModItem.SHENSEIUM.get());
             else if (randNum < 85) return new ItemStack(ModItem.CVMTITPLASM.get());
             else if (randNum < 90) return new ItemStack(ModItem.DISC_RANVISION.get());
-            else if (randNum < 92) return new ItemStack(ModItem.DISC_DEJE_BULLYING.get());
             else if (randNum < 95) return new ItemStack(ModItem.JIAFEI_SEED.get());
             else if (randNum < 98) return new ItemStack(ModItem.INFUSED_SLAGINIUM.get());
             else return new ItemStack(ModItem.JIAFEI_PRODUCT.get());

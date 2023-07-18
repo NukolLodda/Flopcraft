@@ -8,8 +8,6 @@ import net.minecraft.network.FriendlyByteBuf;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.util.GsonHelper;
 import net.minecraft.world.SimpleContainer;
-import net.minecraft.world.entity.player.StackedContents;
-import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.crafting.*;
 import net.minecraft.world.level.Level;
@@ -33,32 +31,29 @@ public class CvmInfusionAlterShapelessRecipe implements Recipe<SimpleContainer> 
             return false;
         }
 
-        boolean partExist;
-        boolean[] slotsToSkip = {false, false, false, false, false, false, false};
-        int partOccurances = 0;
-        int partMatches = 0;
-        for (Ingredient ing : recipeItems) {
-            for (int i = 0; i < 7; i++) {
-                if (slotsToSkip[i]) continue;
-
-                partExist = ing.test(container.getItem(i + 1));
-                if (partExist) {
-                    partOccurances++;
-                    slotsToSkip[i] = true;
-                }
-            }
-            if (partOccurances == 1) partMatches++;
-            partOccurances = 0;
-        }
-
-        return partMatches == recipeItems.size();
+        boolean hasIng1 = false, hasIng2 = false, hasIng3 = false,
+        hasIng4 = false, hasIng5 = false, hasIng6 = false, hasIng7 = false;
+        int nullCounter = 0;
+        Ingredient item;
+        for (int i = 0; i < 7; i++) {
+            item = recipeItems.get(i);
+            if (!hasIng1) hasIng1 = item.test(container.getItem(1));
+            if (!hasIng2) hasIng2 = item.test(container.getItem(2));
+            if (!hasIng3) hasIng3 = item.test(container.getItem(3));
+            if (!hasIng4) hasIng4 = item.test(container.getItem(4));
+            if (!hasIng5) hasIng5 = item.test(container.getItem(5));
+            if (!hasIng6) hasIng6 = item.test(container.getItem(6));
+            if (!hasIng7) hasIng7 = item.test(container.getItem(7));
+            if (container.getItem(i+1).isEmpty()) nullCounter++;
+        } // note: there is a null recipe bug here
+        return hasIng1 && hasIng2 && hasIng3 && hasIng4 && hasIng5 && hasIng6 && hasIng7 && nullCounter < 6;
         // checks if the indices match
         // placeholder code
     }
 
     @Override
     public ItemStack assemble(SimpleContainer container, RegistryAccess access) {
-        return output;
+        return this.output;
     }
 
     @Override
@@ -78,12 +73,12 @@ public class CvmInfusionAlterShapelessRecipe implements Recipe<SimpleContainer> 
 
     @Override
     public RecipeSerializer<?> getSerializer() {
-        return CvmInfusionAlterShapelessRecipe.Serializer.INSTANCE;
+        return Serializer.INSTANCE;
     }
 
     @Override
     public RecipeType<?> getType() {
-        return CvmInfusionAlterShapelessRecipe.Type.INSTANCE;
+        return Type.INSTANCE;
     }
 
     public static class Type implements RecipeType<CvmInfusionAlterShapelessRecipe> {

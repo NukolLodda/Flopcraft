@@ -31,6 +31,7 @@ import slay.nukolussy.modussy.recipes.CvmInfusionAlterRecipe;
 import slay.nukolussy.modussy.recipes.CvmInfusionAlterShapelessRecipe;
 import slay.nukolussy.modussy.sound.ModSounds;
 
+import javax.swing.text.html.Option;
 import java.util.Optional;
 
 public class CvmInfusionAlterEntity extends BlockEntity implements MenuProvider {
@@ -177,7 +178,7 @@ public class CvmInfusionAlterEntity extends BlockEntity implements MenuProvider 
         if (hasRecipe(ent) || hasShapelessRecipe(ent)) { // if the block has a crafting recipe in it
             if (ent.cvmAmt > 0) {
                 ent.progress++;
-                ent.cvmAmt--;
+                if (ent.progress % 6 == 0) ent.cvmAmt--;
             }
             setChanged(lvl, pos, state); // things get reloaded if needed everytime progress is added
 
@@ -197,7 +198,7 @@ public class CvmInfusionAlterEntity extends BlockEntity implements MenuProvider 
     private static void craftItem(CvmInfusionAlterEntity ent) {
         Level lvl = ent.level;
         SimpleContainer inv = new SimpleContainer(ent.handler.getSlots());
-        for (int i = 1; i <= ent.handler.getSlots(); i++) {
+        for (int i = 1; i < ent.handler.getSlots(); i++) {
             inv.setItem(i, ent.handler.getStackInSlot(i));
         }
 
@@ -207,21 +208,21 @@ public class CvmInfusionAlterEntity extends BlockEntity implements MenuProvider 
         Optional<CvmInfusionAlterShapelessRecipe> shapelessRecipe = lvl.getRecipeManager()
                 .getRecipeFor(CvmInfusionAlterShapelessRecipe.Type.INSTANCE, inv, lvl);
 
-        boolean hasShaped = hasRecipe(ent);
-        boolean hasShapeless = hasShapelessRecipe(ent);
-        if (hasShaped || hasShapeless) {
+        if (hasRecipe(ent)) {
             for (int j = 1; j < 8; j++) {
                 if (!ent.handler.getStackInSlot(j).isEmpty()) ent.handler.extractItem(j, 1, false);
             }
-            int stackCount = ent.handler.getStackInSlot(8).isEmpty() ? 0 : ent.handler.getStackInSlot(8).getCount();
-            if (hasShaped) {
-                ent.handler.setStackInSlot(8,
-                        new ItemStack(shapedRecipe.get().getResultItem(lvl.registryAccess()).getItem(), stackCount + 1));
+            ent.handler.setStackInSlot(8,
+                    new ItemStack(shapedRecipe.get().getResultItem(lvl.registryAccess()).getItem(),
+                            ent.handler.getStackInSlot(8).getCount() + 1));
+            ent.resetProgress();
+        } else if (hasShapelessRecipe(ent)) {
+            for (int j = 1; j < 8; j++) {
+                if (!ent.handler.getStackInSlot(j).isEmpty()) ent.handler.extractItem(j, 1, false);
             }
-            if (hasShapeless) {
-                ent.handler.setStackInSlot(8,
-                        new ItemStack(shapelessRecipe.get().getResultItem(lvl.registryAccess()).getItem(), stackCount + 1));
-            }
+            ent.handler.setStackInSlot(8,
+                    new ItemStack(shapelessRecipe.get().getResultItem(lvl.registryAccess()).getItem(),
+                            ent.handler.getStackInSlot(8).getCount() + 1));
             ent.resetProgress();
         }
     }
@@ -230,7 +231,7 @@ public class CvmInfusionAlterEntity extends BlockEntity implements MenuProvider 
         // creates an inventory of sorts
         Level lvl = ent.level;
         SimpleContainer inv = new SimpleContainer(ent.handler.getSlots());
-        for (int i = 0; i < ent.handler.getSlots(); i++) {
+        for (int i = 1; i < 8; i++) {
             inv.setItem(i, ent.handler.getStackInSlot(i));
         }
 
@@ -244,7 +245,7 @@ public class CvmInfusionAlterEntity extends BlockEntity implements MenuProvider 
     private static boolean hasShapelessRecipe(CvmInfusionAlterEntity ent) {
         Level lvl = ent.level;
         SimpleContainer inv = new SimpleContainer(ent.handler.getSlots());
-        for (int i = 0; i < ent.handler.getSlots(); i++) {
+        for (int i = 1; i < 8; i++) {
             inv.setItem(i, ent.handler.getStackInSlot(i));
         }
 

@@ -1,6 +1,7 @@
 package slay.nukolussy.modussy.entities.flops.traders;
 
 import com.google.common.collect.Sets;
+import com.mojang.serialization.Codec;
 import it.unimi.dsi.fastutil.ints.Int2ObjectMap;
 import net.minecraft.Util;
 import net.minecraft.nbt.CompoundTag;
@@ -9,7 +10,9 @@ import net.minecraft.network.syncher.EntityDataSerializers;
 import net.minecraft.network.syncher.SynchedEntityData;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.sounds.SoundEvent;
+import net.minecraft.util.ByIdMap;
 import net.minecraft.util.RandomSource;
+import net.minecraft.util.StringRepresentable;
 import net.minecraft.world.DifficultyInstance;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResult;
@@ -37,6 +40,7 @@ import slay.nukolussy.modussy.sound.ModSounds;
 
 import javax.annotation.Nullable;
 import java.util.Set;
+import java.util.function.IntFunction;
 
 public class Jiafei extends AbstractFlopTraders {
     private static final EntityDataAccessor<Integer> JIAFEI_ID_DATATYPE_VARIANT = SynchedEntityData.defineId(Jiafei.class, EntityDataSerializers.INT);
@@ -63,8 +67,8 @@ public class Jiafei extends AbstractFlopTraders {
     @Override
     protected void registerGoals() {
         super.registerGoals();
+        this.goalSelector.addGoal(2, new TemptGoal(this, 1.2D, FOOD_ITEMS, false));
         this.goalSelector.addGoal(10, new FlopBreedingGoal(this, 1.0d));
-        this.goalSelector.addGoal(11, new TemptGoal(this, 1.2D, FOOD_ITEMS, false));
     }
 
     @Override
@@ -189,7 +193,7 @@ public class Jiafei extends AbstractFlopTraders {
 
     }
 
-    public void setVariant(JiafeiVariant variant) {
+    public void setVariant(Variant variant) {
         this.setTypeVariant(variant.getId());
     }
 
@@ -198,8 +202,8 @@ public class Jiafei extends AbstractFlopTraders {
     }
 
     protected void updateTrades() {
-        int jiafeiData = getJiafeiData();
-        Int2ObjectMap<FlopTrades.ItemListing[]> int2objectmap = FlopTrades.TRADES.get(JiafeiVariant.byId(jiafeiData));
+        int data = getJiafeiData();
+        Int2ObjectMap<FlopTrades.ItemListing[]> int2objectmap = FlopTrades.TRADES.get(Variant.byId(data));
         if (int2objectmap != null && !int2objectmap.isEmpty()) {
             FlopTrades.ItemListing[] afloptrades$itemlisting = int2objectmap.get(1);
             if (afloptrades$itemlisting != null) {
@@ -266,8 +270,33 @@ public class Jiafei extends AbstractFlopTraders {
     @Nullable
     public SpawnGroupData finalizeSpawn(ServerLevelAccessor level, @NotNull DifficultyInstance instance, @NotNull MobSpawnType type, SpawnGroupData data, CompoundTag tag) {
         RandomSource randomSource = level.getRandom();
-        JiafeiVariant variant = Util.getRandom(JiafeiVariant.values(), randomSource);
+        Variant variant = Util.getRandom(Variant.values(), randomSource);
         setVariant(variant);
         return super.finalizeSpawn(level, instance, type, data, tag);
+    }
+
+    public enum Variant implements FlopTraderVariants {
+        AESTHETIC(0, "aesthetic"),
+        UTILITIES(1, "utilities"),
+        MUSICIAN(2, "musician");
+
+        public static final Codec<Variant> CODEC = StringRepresentable.fromEnum(Variant::values);
+        private static final IntFunction<Variant> BY_ID = ByIdMap.continuous(Variant::getId, values(), ByIdMap.OutOfBoundsStrategy.WRAP);
+        private final String name;
+        private final int id;
+        Variant(int id, String name) {
+            this.name = name;
+            this.id = id;
+        }
+        public int getId() {
+            return this.id;
+        }
+        @Override
+        public String getSerializedName() {
+            return name;
+        }
+        public static Variant byId(int id) {
+            return BY_ID.apply(id);
+        }
     }
 }

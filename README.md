@@ -2,19 +2,18 @@ Modussy (Aka Flopcraft)
 ---
 A very s3xy and aesthetic Minecraft mod
 
-As of right now, Modussy currently has support for Minecraft Java versions 1.19.2 on forge API,
-with the 1.20.1 version being a work in progress that should be out soon.
+As of right now, Modussy currently has support for Minecraft Java versions 1.19.2 and 1.20.1 on forge API.
 A fabric port will likely get made some day however, it will likely be in a separate repository.
 
 ---
 **Download**
 
-<a href=https://github.com/NukolLodda/Modussy/releases/download/v1.19.2-0.0.3/modussy-0.0.3.jar>Downlaod latest version here!</a>
+<a href=https://github.com/NukolLodda/Modussy/releases/download/v1.20.1-0.1.0/modussy-0.1.0.jar>Downlaod latest version here!</a>
 
 Information about latest version<br>
-Forge API version: 43.1.47 <br>
-Minecraft Java version: 1.19.2 <br>
-Modussy Version: 0.0.3(pre-release) <br>
+Forge API version: 47.0.43 <br>
+Minecraft Java version: 1.20.1 <br>
+Modussy Version: 0.1.0(pre-release) <br>
 
 Click <a href="https://github.com/NukolLodda/Modussy/tags">here</a> to find all versions of Modussy
 
@@ -40,8 +39,8 @@ ___
 
 After reading Curseforge's terms of service, I believe that some features of Modussy, namely
 CupcakKe's texture, specific items, and mobs violates it, so the download links are in this
-repository instead. Click <a href=https://github.com/NukolLodda/Modussy/releases/download/v1.19.2-0.0>here</a>
-for the most recent version uploaded (Modussy-0.0.3 for Minecraft 1.19.2 Forge API 43.1.47) and
+repository instead. Click <a href=https://github.com/NukolLodda/Modussy/releases/tag/v1.20.1-0.1.0>here</a>
+for the most recent version uploaded (Modussy-0.1.0 for Minecraft 1.20.1 Forge API 47.0.43) and
 <a href="https://github.com/NukolLodda/Modussy/tags">here</a> for every available
 version of Modussy.
 

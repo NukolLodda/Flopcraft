@@ -12,6 +12,7 @@ import net.minecraft.sounds.SoundEvent;
 import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.entity.*;
+import net.minecraft.world.entity.ai.memory.MemoryModuleType;
 import net.minecraft.world.entity.animal.Cat;
 import net.minecraft.world.entity.item.ItemEntity;
 import net.minecraft.world.entity.monster.*;
@@ -33,10 +34,8 @@ import slay.nukolussy.modussy.entities.ModEntities;
 import slay.nukolussy.modussy.entities.flops.CupcakKe;
 import slay.nukolussy.modussy.entities.flops.AbstractFlops;
 import slay.nukolussy.modussy.entities.flops.traders.Jiafei;
-import slay.nukolussy.modussy.entities.flops.traders.JiafeiVariant;
 import slay.nukolussy.modussy.entities.flops.twink.Twink;
 import slay.nukolussy.modussy.entities.flops.twink.TwinkAI;
-import slay.nukolussy.modussy.entities.flops.twink.TwinkVariant;
 import slay.nukolussy.modussy.sound.ModSounds;
 
 import java.util.Collection;
@@ -140,6 +139,7 @@ public class ActivateMethods {
         float xRot = entity.getXRot();
         float yRot = entity.getYRot();
         EntityType<? extends AbstractFlops> type = ModEntities.TWINK.get();
+        // the villager should have a 50/50 chance of either becoming a female flop or a twink
         if (randval < 34)
             type = ModEntities.CUPCAKKE.get();
         else if (randval < 69)
@@ -147,15 +147,38 @@ public class ActivateMethods {
         AbstractFlops flop = entity.convertTo(type, true);
         assert flop != null;
         if (flop instanceof Twink twink)
-            twink.setVariant(Util.getRandom(TwinkVariant.values(), world.getRandom()));
+            twink.setVariant(Util.getRandom(Twink.Variant.values(), world.getRandom()));
         if (flop instanceof Jiafei jiafei) {
-            jiafei.setVariant(Util.getRandom(JiafeiVariant.values(), world.getRandom()));
+            jiafei.setVariant(Util.getRandom(Jiafei.Variant.values(), world.getRandom()));
         }
         flop.setCanPickUpLoot(true);
         flop.setXRot(xRot);
         flop.setYRot(yRot);
         flop.addAdditionalSaveData(flop.getPersistentData());
     }
+
+    private static void witchYassification(Witch entity, LevelAccessor world) {
+        int randval = (int) (Math.random() * 2);
+        float xRot = entity.getXRot();
+        float yRot = entity.getYRot();
+        EntityType<? extends AbstractFlops> type = switch(randval) {
+            case 1 -> ModEntities.JIAFEI.get();
+            // case 2 -> ModEntities.NICKI_MINAJ.get();
+            default -> ModEntities.CUPCAKKE.get();
+            // witches can only turn into female flops, and not into twinks, this will be implemented at a different time
+        };
+        AbstractFlops flop = entity.convertTo(type, true);
+        assert flop != null;
+        if (flop instanceof Jiafei jiafei) {
+            jiafei.setVariant(Util.getRandom(Jiafei.Variant.values(), world.getRandom()));
+        }
+        flop.setCanPickUpLoot(true);
+        flop.setXRot(xRot);
+        flop.setYRot(yRot);
+        flop.getBrain().eraseMemory(MemoryModuleType.ANGRY_AT);
+        flop.addAdditionalSaveData(flop.getPersistentData());
+    }
+
     public static void aranaGrandeRightClick(LevelAccessor world, double x, double y, double z, Entity entity, ItemStack itemStack) {
         if (entity == null)
             return;
@@ -209,10 +232,14 @@ public class ActivateMethods {
                     .sorted(Comparator.comparingDouble(_entcnd -> _entcnd.distanceToSqr(_center))).toList();
             for (Entity entIterator : _entfound) {
                 if (entIterator instanceof LivingEntity _ent && entity instanceof LivingEntity player) {
-                    if (_ent instanceof AbstractVillager) villagerYassification((AbstractVillager) _ent, world);
+                    if (_ent instanceof AbstractVillager villager) villagerYassification(villager, world);
+                    if (_ent instanceof Witch witch) witchYassification(witch, world);
                     if (_ent instanceof Monster || _ent instanceof Hoglin
                             || _ent instanceof Shulker || _ent instanceof Ghast || _ent instanceof Phantom) {
                         monsterEffects(_ent);
+                    }
+                    if (_ent instanceof Cat _cat && Math.random() < 0.16) {
+                        _cat.spawnAtLocation(ModItem.POSEI.get());
                     }
                     if (_ent instanceof TamableAnimal _tamIsTamedBy && _tamIsTamedBy.isOwnedBy(player)
                             || _ent instanceof AbstractFlops) {
@@ -262,10 +289,17 @@ public class ActivateMethods {
                         villagerYassification(_villager, world);
                         itemDura += 10;
                     }
+                    if (_mob instanceof Witch witch) {
+                        witchYassification(witch, world);
+                        itemDura += 10;
+                    }
                     if (_mob instanceof Monster || ((_mob instanceof Hoglin || _mob instanceof Ghast
                             || _mob instanceof Shulker || _mob instanceof Phantom) && lvl > 1)) {
                         monsterEffects(_mob, lvl, amp);
                         itemDura += 80;
+                    }
+                    if (_mob instanceof Cat _cat && Math.random() < 0.16) {
+                        _cat.spawnAtLocation(ModItem.POSEI.get());
                     }
                     if (_mob instanceof TamableAnimal _tamIsTamedBy && entity instanceof Player _livEnt && _tamIsTamedBy.isOwnedBy(_livEnt)
                             || _mob instanceof AbstractFlops) {
@@ -338,20 +372,20 @@ public class ActivateMethods {
             for (Entity entIterator : _entfound) {
                 if (entIterator instanceof LivingEntity _ent && entity instanceof LivingEntity player) {
                     if (_ent instanceof AbstractVillager) villagerYassification((AbstractVillager) _ent, world);
+                    if (_ent instanceof Witch witch) witchYassification(witch, world);
                     if (_ent instanceof Monster || _ent instanceof Hoglin
                             || _ent instanceof Shulker || _ent instanceof Ghast || _ent instanceof Phantom) {
                         monsterEffects(_ent, amp * ((int)chargedTime),amp - 1);
                         _ent.hurt(_ent.level().damageSources().playerAttack((Player) player), power * 2 * (int) chargedTime);
                         _ent.setSecondsOnFire(flame ? isCvmium ? 420 : 100 : 0);
                     }
-                    if (_ent instanceof Cat _cat) {
+                    if (_ent instanceof Cat _cat && Math.random() < 0.16) {
                         _cat.spawnAtLocation(ModItem.POSEI.get());
                     }
                     if (_ent instanceof TamableAnimal _tamIsTamedBy && _tamIsTamedBy.isOwnedBy(player)
                             || _ent instanceof AbstractFlops) {
                         flopEffects(_ent, amp,amp - 1);
-                        int randVal = (int) (Math.random() * 5);
-                        if (randVal == 0) {
+                        if (Math.random() < 0.08333) {
                             if (_ent instanceof Twink)
                                 _ent.spawnAtLocation(TwinkAI.randItem());
                             if (_ent instanceof CupcakKe _cupcakke) {
