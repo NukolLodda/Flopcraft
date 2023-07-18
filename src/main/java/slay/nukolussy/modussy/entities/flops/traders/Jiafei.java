@@ -26,9 +26,11 @@ import net.minecraft.world.item.trading.MerchantOffers;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.ServerLevelAccessor;
 import net.minecraft.world.level.gameevent.GameEvent;
+import net.minecraft.world.level.levelgen.Heightmap;
 import net.minecraftforge.network.PlayMessages;
 import net.minecraftforge.registries.ForgeRegistries;
 import org.jetbrains.annotations.NotNull;
+import slay.nukolussy.modussy.entities.ModEntities;
 import slay.nukolussy.modussy.entities.goal.FlopBreedingGoal;
 import slay.nukolussy.modussy.item.ModItem;
 import slay.nukolussy.modussy.sound.ModSounds;
@@ -165,7 +167,8 @@ public class Jiafei extends AbstractFlopTraders {
     }
 
     public static void init() {
-        // mob should spawn under certain circumstance
+        SpawnPlacements.register(ModEntities.JIAFEI.get(), SpawnPlacements.Type.NO_RESTRICTIONS, Heightmap.Types.MOTION_BLOCKING_NO_LEAVES,
+                Mob::checkMobSpawnRules);
     }
 
     private void setTypeVariant(int id) {

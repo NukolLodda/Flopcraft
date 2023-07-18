@@ -2,7 +2,7 @@
   "type": "modussy:cvm_infusion_shapeless",
   "ingredients": [
     {
-      "item": "minecraft:leather_chestplate",
+      "item": "minecraft:leather_chestplate"
     },
     {
       "item": "modussy:cupcake"

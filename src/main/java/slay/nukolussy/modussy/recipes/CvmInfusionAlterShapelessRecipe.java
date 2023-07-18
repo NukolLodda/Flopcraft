@@ -32,19 +32,26 @@ public class CvmInfusionAlterShapelessRecipe implements Recipe<SimpleContainer> 
         if (lvl.isClientSide()) {
             return false;
         }
-        boolean recipeExists;
-        int trueCounter = 0;
-        int hasIng = 0;
-        int recipeSize = recipeItems.size();
+
+        boolean partExist;
+        boolean[] slotsToSkip = {false, false, false, false, false, false, false};
+        int partOccurances = 0;
+        int partMatches = 0;
         for (Ingredient ing : recipeItems) {
-            for (int i = 1; i < 8; i++) {
-                recipeExists = ing.test(container.getItem(i));
-                if (recipeExists) trueCounter++;
+            for (int i = 0; i < 7; i++) {
+                if (slotsToSkip[i]) continue;
+
+                partExist = ing.test(container.getItem(i + 1));
+                if (partExist) {
+                    partOccurances++;
+                    slotsToSkip[i] = true;
+                }
             }
-            if (trueCounter == 1) hasIng++;
-            trueCounter = 0;
+            if (partOccurances == 1) partMatches++;
+            partOccurances = 0;
         }
-        return hasIng == recipeSize; // temp code
+
+        return partMatches == recipeItems.size();
         // checks if the indices match
         // placeholder code
     }

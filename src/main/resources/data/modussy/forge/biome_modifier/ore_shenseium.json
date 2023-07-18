@@ -1,0 +1,6 @@
+{
+  "type": "forge:add_features",
+  "features": "modussy:ore_shenseium",
+  "biomes": "#minecraft:is_nether",
+  "step": "underground_ores"
+}

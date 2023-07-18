@@ -19,6 +19,8 @@ import net.minecraft.world.entity.monster.hoglin.Hoglin;
 import net.minecraft.world.entity.npc.AbstractVillager;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.item.enchantment.EnchantmentHelper;
+import net.minecraft.world.item.enchantment.Enchantments;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.LevelAccessor;
 import net.minecraft.world.level.block.Block;
@@ -325,19 +327,21 @@ public class ActivateMethods {
     }
 
     public static void cvmShoot(LevelAccessor world, double x, double y, double z, Entity entity,
-                                ItemStack item, int power, boolean flame, boolean isCvmium) {
+                                ItemStack deeldo, boolean isCvmium, float chargedTime) {
+        int power = EnchantmentHelper.getItemEnchantmentLevel(Enchantments.POWER_ARROWS, deeldo);
+        boolean flame = EnchantmentHelper.getItemEnchantmentLevel(Enchantments.FLAMING_ARROWS, deeldo) > 0;
         int amp = isCvmium ? 2 : 1;
         {
             final Vec3 _center = new Vec3(x, y, z);
-            List<Entity> _entfound = world.getEntitiesOfClass(Entity.class, new AABB(_center, _center).inflate(10 / 2d), e -> true).stream()
+            List<Entity> _entfound = world.getEntitiesOfClass(Entity.class, new AABB(_center, _center).inflate(2 * chargedTime / 2d), e -> true).stream()
                     .sorted(Comparator.comparingDouble(_entcnd -> _entcnd.distanceToSqr(_center))).toList();
             for (Entity entIterator : _entfound) {
                 if (entIterator instanceof LivingEntity _ent && entity instanceof LivingEntity player) {
                     if (_ent instanceof AbstractVillager) villagerYassification((AbstractVillager) _ent, world);
                     if (_ent instanceof Monster || _ent instanceof Hoglin
                             || _ent instanceof Shulker || _ent instanceof Ghast || _ent instanceof Phantom) {
-                        monsterEffects(_ent, amp,amp - 1);
-                        _ent.hurt(_ent.level().damageSources().drown(), power);
+                        monsterEffects(_ent, amp * ((int)chargedTime),amp - 1);
+                        _ent.hurt(_ent.level().damageSources().playerAttack((Player) player), power * 2 * (int) chargedTime);
                         _ent.setSecondsOnFire(flame ? isCvmium ? 420 : 100 : 0);
                     }
                     if (_ent instanceof Cat _cat) {
@@ -371,8 +375,8 @@ public class ActivateMethods {
             }
         }
         if (world instanceof ServerLevel _level) {
-            _level.sendParticles(item.is(ModItem.CVMIUM.get()) ? ParticleTypes.LAVA :ParticleTypes.END_ROD,
-                    x, y, z, 50,1,1, 1, 1.0);
+            _level.sendParticles(isCvmium ? ParticleTypes.LAVA :ParticleTypes.END_ROD,
+                    x, y, z, ((int) chargedTime * 15),1,1, 1, (chargedTime * 0.16));
         }
     }
 }

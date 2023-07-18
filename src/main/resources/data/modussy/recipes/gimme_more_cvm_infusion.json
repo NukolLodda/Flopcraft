@@ -2,7 +2,7 @@
   "type": "modussy:cvm_infusion_shapeless",
   "ingredients": [
     {
-      "item": "minecraft:spy_glass"
+      "item": "minecraft:spyglass"
     },
     {
       "item": "modussy:cupcake"

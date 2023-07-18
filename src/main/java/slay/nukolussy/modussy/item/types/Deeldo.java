@@ -39,24 +39,30 @@ public class Deeldo extends BowItem {
                     boolean inf = player.getAbilities().instabuild || (itemstack.getItem() instanceof CvmItem &&
                             ((CvmItem)itemstack.getItem()).isInfinite(itemstack, pStack, player));
                     if (!pLevel.isClientSide) {
-                        int power = EnchantmentHelper.getItemEnchantmentLevel(Enchantments.POWER_ARROWS, pStack);
-                        boolean flame = EnchantmentHelper.getItemEnchantmentLevel(Enchantments.FLAMING_ARROWS, pStack) > 0;
                         boolean isCvmium = itemstack.is(ModItem.CVMIUM.get());
 
                         double horRot = pEntityLiving.yHeadRotO * Math.PI / 180;
                         double verRot = pEntityLiving.xRotO * Math.PI / -180;
-                        double radius = powerTime * 6;
+                        float radius = powerTime * 36;
 
-                        double x = pEntityLiving.getX() - (radius * Math.cos(verRot) * Math.sin(horRot));
-                        double y = pEntityLiving.getY() + (radius * Math.sin(verRot));
-                        double z = pEntityLiving.getZ() + (radius * Math.cos(verRot) * Math.cos(horRot));
+                        double xEqu = Math.cos(verRot) * Math.sin(horRot);
+                        double yEqu = Math.sin(verRot);
+                        double zEqu = Math.cos(verRot) * Math.cos(horRot);
 
-                        ActivateMethods.cvmShoot(pLevel, x, y, z, pEntityLiving, itemstack,
-                                power, flame, isCvmium);
+                        double x = pEntityLiving.getX();
+                        double y = pEntityLiving.getY();
+                        double z = pEntityLiving.getZ();
+
+                        for (int i = 0; i < 6; i++) {
+                            ActivateMethods.cvmShoot(pLevel, x - ((radius * i)/6 * xEqu), y + ((radius * i)/6 * yEqu), z + ((radius * i)/6 * zEqu),
+                                    pEntityLiving, new ItemStack(this), isCvmium,
+                                    (10 * i) / 6.0f);
+                        }
                     }
 
                     pLevel.playSound((Player)null, player.getX(), player.getY(), player.getZ(), ModSounds.SQUIRT.get(), SoundSource.PLAYERS,
-                            1.0F, 1.0F / (pLevel.getRandom().nextFloat() * 0.4F + 1.2F) + powerTime * 0.5F);
+                            1.0f, 1.0f / (pLevel.getRandom().nextFloat() * 0.4f + 1.2f) + powerTime * 0.5f);
+
                     if (!inf && !player.getAbilities().instabuild) {
                         itemstack.shrink(1);
                         if (itemstack.isEmpty()) {

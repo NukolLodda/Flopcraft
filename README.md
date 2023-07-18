@@ -54,8 +54,14 @@ convert it to an ogg file using <a href="https://convertio.co/">this link</a>
 
 ___
 **Downloading Aesthetic Music Files For Modussy**
-Expand All
-@@ -69,76 +57,77 @@ however, it is important and very crucial that you MUST convert all sound files
+
+When you download the Modussy jar file, you either renamed the extension to .zip or make a texture pack.
+There are plenty of tutorials on how to make texture packs but they aren't really that complicated.
+
+In both cases, you must have the sound files go to the following directory:
+"assets/modussy/sounds"
+
+however, it is important and very crucial that you MUST convert all sound files
 ___
 the music disc's supposed sound files are recorded from the following videos:
 

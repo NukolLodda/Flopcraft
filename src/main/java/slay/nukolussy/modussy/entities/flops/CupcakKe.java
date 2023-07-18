@@ -1,8 +1,10 @@
 package slay.nukolussy.modussy.entities.flops;
 
+import net.minecraft.core.BlockPos;
 import net.minecraft.core.particles.ParticleTypes;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.sounds.SoundEvent;
+import net.minecraft.util.RandomSource;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResult;
 import net.minecraft.world.damagesource.*;
@@ -13,7 +15,9 @@ import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.ItemLike;
 import net.minecraft.world.level.Level;
+import net.minecraft.world.level.ServerLevelAccessor;
 import net.minecraft.world.level.gameevent.GameEvent;
+import net.minecraft.world.level.levelgen.Heightmap;
 import net.minecraftforge.network.PlayMessages;
 import net.minecraftforge.registries.ForgeRegistries;
 import slay.nukolussy.modussy.entities.ModEntities;
@@ -168,15 +172,19 @@ public class CupcakKe extends AbstractFlopFigures {
             double x0 = x + random.nextFloat();
             double y0 = y + random.nextFloat();
             double z0 = z + random.nextFloat();
-            double dx = (random.nextFloat() - 0.5D) * 0.5D;
-            double dy = (random.nextFloat() - 0.5D) * 0.5D;
-            double dz = (random.nextFloat() - 0.5D) * 0.5D;
+            double dx = (random.nextFloat() - 0.5) * 0.5;
+            double dy = (random.nextFloat() - 0.5) * 0.5;
+            double dz = (random.nextFloat() - 0.5) * 0.5;
 
             world.addParticle(ParticleTypes.DRAGON_BREATH, x0, y0, z0, dx, dy, dz);
         }
     }
 
     public static void init() {
-        // the mob should spawn under certain circumstances
+    }
+
+    public static boolean canSpawn(EntityType<CupcakKe> entityType, ServerLevelAccessor level, MobSpawnType spawnType,
+                                   BlockPos pos, RandomSource randomSource) {
+        return Mob.checkMobSpawnRules(entityType, level, spawnType, pos, randomSource);
     }
 }

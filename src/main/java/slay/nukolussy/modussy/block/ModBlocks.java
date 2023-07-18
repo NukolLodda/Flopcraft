@@ -19,8 +19,8 @@ public class ModBlocks {
     public static final DeferredRegister<Block> BLOCKS =
             DeferredRegister.create(ForgeRegistries.BLOCKS, Modussy.MODID);
 
-    public static final RegistryObject<Block> SHENSEIUM_ORE = registerBlock("shenseium_ore",
-            () -> new DropExperienceBlock(BlockBehaviour.Properties.copy(Blocks.DEEPSLATE_DIAMOND_ORE).strength(5f)
+    public static final RegistryObject<DropExperienceBlock> SHENSEIUM_ORE = registerBlock("shenseium_ore",
+            () -> new DropExperienceBlock(BlockBehaviour.Properties.copy(Blocks.NETHER_QUARTZ_ORE).strength(5f)
                     .destroyTime(12).requiresCorrectToolForDrops().sound(SoundType.NETHERRACK),
                     UniformInt.of(2,6)));
 
