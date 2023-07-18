@@ -1,0 +1,14 @@
+{
+  "type": "modussy:cvm_infusion_shapeless",
+  "ingredients": [
+    {
+      "item": "modussy:flopium"
+    },
+    {
+      "item": "modussy:music_disc_deje_bullying"
+    }
+  ],
+  "output": {
+    "item": "modussy:mystical_flopium"
+  }
+}

@@ -46,7 +46,7 @@ public class CvmInfusionAlterShapelessRecipe implements Recipe<SimpleContainer> 
             if (!hasIng7) hasIng7 = item.test(container.getItem(7));
             if (container.getItem(i+1).isEmpty()) nullCounter++;
         } // note: there is a null recipe bug here
-        return hasIng1 && hasIng2 && hasIng3 && hasIng4 && hasIng5 && hasIng6 && hasIng7 && nullCounter < 6;
+        return hasIng1 && hasIng2 && hasIng3 && hasIng4 && hasIng5 && hasIng6 && hasIng7 && nullCounter < 7;
         // checks if the indices match
         // placeholder code
     }

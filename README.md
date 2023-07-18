@@ -26,13 +26,9 @@ at the moment along with the fact that Modussy's complexity has a tendency to re
 it will take me a bit. However, I will NOT be taking EVERY request thrown my way which I'd do if the request
 in question is too complicated for someone my level or that it just doesn't feel right in Modussy.
 
-I will however, not be taking any requests for porting Modussy to other versions of Minecraft since
+I will however, not be taking any requests for porting Modussy to other versions/editions of Minecraft since
 I would have to basically figure out how to redo entire segments of Modussy's source code, which will take
-me weeks if not months, and I will especially not be porting Modussy to Bedrock as I'm pretty certain
-that not only does Bedrock have a safeguard against modding, but also that Bedrock is written in a
-language I am currently unfamiliar with. However, if any of you reading this have a thorough
-understanding of programming and Minecraft code and you are up for the task, I give you full permission to
-fork this project and port Modussy to older versions of Minecraft or Bedrock.
+me weeks if not months. However, if any of you guys are up for the task, you are all free to fork this project.
 
 ___
 **Why Modussy Isn't On Curseforge**

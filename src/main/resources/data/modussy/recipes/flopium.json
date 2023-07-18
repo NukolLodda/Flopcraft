@@ -2,13 +2,13 @@
   "type": "modussy:cvm_infusion_shapeless",
   "ingredients": [
     {
-      "item": "modussy:cvm"
+      "item": "modussy:infused_slaginium"
     },
     {
-      "item": "modussy:flopium"
+      "item": "modussy:jiafei_product"
     }
   ],
   "output": {
-    "item": "modussy:cvmium"
+    "item": "modussy:flopium"
   }
 }
