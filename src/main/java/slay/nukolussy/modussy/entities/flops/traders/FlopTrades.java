@@ -25,12 +25,12 @@ public class FlopTrades {
             Util.make(Maps.newHashMap(), (tag) -> {
                 tag.put(Jiafei.Variant.AESTHETIC, toIntMap(ImmutableMap.of(1, new FlopTrades.ItemListing[]{
                         new FlopTrades.ProductsForSlaginium(ModItem.JIAFEI_PRODUCT.get(), COMMON_ITEMS_SUPPLY, 1),
-                        new FlopTrades.InfusedSlaginiumForProducts(ModItem.JIAFEI_PERFUME.get(), 4, UNCOMMON_ITEMS_SUPPLY, 6),
-                        new FlopTrades.SlaginiumForProducts(ModItem.JIAFEI_BOOTS.get(), 4, DEFAULT_SUPPLY, 2),
-                        new FlopTrades.SlaginiumForProducts(ModItem.JIAFEI_LEGGINGS.get(), 5, DEFAULT_SUPPLY, 2),
-                        new FlopTrades.SlaginiumForProducts(ModItem.JIAFEI_CHESTPLATE.get(), 5, DEFAULT_SUPPLY, 2),
                         new FlopTrades.SlaginiumForProducts(ModItem.JIAFEI_HELMET.get(), 4, DEFAULT_SUPPLY, 2),
-                        new FlopTrades.InfusedSlaginiumForProducts(ModItem.DEELDO.get(), 3, UNCOMMON_ITEMS_SUPPLY, 6)
+                        new FlopTrades.SlaginiumForProducts(ModItem.JIAFEI_CHESTPLATE.get(), 5, DEFAULT_SUPPLY, 2),
+                        new FlopTrades.SlaginiumForProducts(ModItem.JIAFEI_LEGGINGS.get(), 5, DEFAULT_SUPPLY, 2),
+                        new FlopTrades.SlaginiumForProducts(ModItem.JIAFEI_BOOTS.get(), 4, DEFAULT_SUPPLY, 2),
+                        new FlopTrades.InfusedSlaginiumForProducts(ModItem.JIAFEI_PERFUME.get(), 4, UNCOMMON_ITEMS_SUPPLY, 6),
+                        new FlopTrades.InfusedSlaginiumForProducts(ModItem.DEELDO.get(), 3, UNCOMMON_ITEMS_SUPPLY, 6) // temporary. will be replaced with jiafei jetpacks
                 })));
                 tag.put(Jiafei.Variant.MUSICIAN, toIntMap(ImmutableMap.of(1, new FlopTrades.ItemListing[]{
                         new FlopTrades.ProductsForSlaginium(ModItem.JIAFEI_PRODUCT.get(), COMMON_ITEMS_SUPPLY, 1),
@@ -43,12 +43,21 @@ public class FlopTrades {
                 })));
                 tag.put(Jiafei.Variant.UTILITIES, toIntMap(ImmutableMap.of(1, new FlopTrades.ItemListing[]{
                         new FlopTrades.ProductsForSlaginium(ModItem.JIAFEI_PRODUCT.get(), COMMON_ITEMS_SUPPLY, 1),
-                        new FlopTrades.SlaginiumForProducts(ModItem.JIAFEI_SEED.get(), 2, UNCOMMON_ITEMS_SUPPLY, 6),
+                        new FlopTrades.SlaginiumForProducts(ModItem.CVM.get(), 2, UNCOMMON_ITEMS_SUPPLY, 6),
                         new FlopTrades.SlaginiumForProducts(ModItem.JIAFEI_AXE.get(), 2, DEFAULT_SUPPLY, 2),
                         new FlopTrades.SlaginiumForProducts(ModItem.JIAFEI_SHOVEL.get(), 1,DEFAULT_SUPPLY,2),
                         new FlopTrades.SlaginiumForProducts(ModItem.JIAFEI_PICKAXE.get(), 2, DEFAULT_SUPPLY, 2),
                         new FlopTrades.InfusedSlaginiumForProducts(ModItem.JIAFEI_HAMMER.get(), 3, DEFAULT_SUPPLY, 2),
                         new FlopTrades.InfusedSlaginiumForProducts(ModItem.JIAFEI_SICKLE.get(), 2, DEFAULT_SUPPLY, 2)
+                })));
+                tag.put(NickiMinaj.Variant.VARIANT, toIntMap(ImmutableMap.of(1, new FlopTrades.ItemListing[]{
+                        new FlopTrades.ProductsForSlaginium(ModItem.HAIRUSSY.get(), COMMON_ITEMS_SUPPLY, 1),
+                        new FlopTrades.SlaginiumForProducts(ModItem.BRA.get(), 2, COMMON_ITEMS_SUPPLY, 2),
+                        new FlopTrades.SlaginiumForProducts(ModItem.DISC_C16.get(), 4, COMMON_ITEMS_SUPPLY, 2),
+                        new FlopTrades.SlaginiumForProducts(ModItem.DISC_C23.get(), 4, COMMON_ITEMS_SUPPLY, 2),
+                        new FlopTrades.SlaginiumForProducts(ModItem.DISC_C26.get(), 4, COMMON_ITEMS_SUPPLY, 2),
+                        new FlopTrades.InfusedSlaginiumForProducts(ModItem.DISC_JC2.get(), 6, UNCOMMON_ITEMS_SUPPLY, 6),
+                        new FlopTrades.InfusedSlaginiumForProducts(ModItem.DEELDO.get(), 6, UNCOMMON_ITEMS_SUPPLY, 6)
                 })));
             });
 

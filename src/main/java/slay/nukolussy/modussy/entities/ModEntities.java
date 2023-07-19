@@ -17,6 +17,7 @@ import net.minecraftforge.registries.RegistryObject;
 import slay.nukolussy.modussy.Modussy;
 import slay.nukolussy.modussy.entities.flops.CupcakKe;
 import slay.nukolussy.modussy.entities.flops.traders.Jiafei;
+import slay.nukolussy.modussy.entities.flops.traders.NickiMinaj;
 import slay.nukolussy.modussy.entities.flops.twink.Twink;
 
 @Mod.EventBusSubscriber(bus = Mod.EventBusSubscriber.Bus.MOD)
@@ -33,6 +34,11 @@ public class ModEntities {
                     .setTrackingRange(64).setUpdateInterval(3).setCustomClientFactory(Jiafei::new)
                     .sized(0.6f,1.8f));
 
+    public static final RegistryObject<EntityType<NickiMinaj>> NICKI_MINAJ = register("nicki_minaj",
+            EntityType.Builder.<NickiMinaj>of(NickiMinaj::new, MobCategory.AMBIENT).setShouldReceiveVelocityUpdates(true)
+                    .setTrackingRange(64).setUpdateInterval(3).setCustomClientFactory(NickiMinaj::new)
+                    .sized(0.6f,1.8f));
+
         public static final RegistryObject<EntityType<Twink>> TWINK = register("twink",
                 EntityType.Builder.<Twink>of(Twink::new, MobCategory.AMBIENT).setShouldReceiveVelocityUpdates(true)
                 .setTrackingRange(64).setUpdateInterval(3).setCustomClientFactory(Twink::new)
@@ -45,27 +51,29 @@ public class ModEntities {
     public static void init(FMLCommonSetupEvent event) {
          event.enqueueWork(() -> {
             CupcakKe.init();
-            Twink.init();
             Jiafei.init();
+            NickiMinaj.init();
+            Twink.init();
           });
     }
 
     @SubscribeEvent
     public static void registerAttributes(EntityAttributeCreationEvent event) {
         event.put(CUPCAKKE.get(), CupcakKe.createAttributes().build());
-        event.put(TWINK.get(), Twink.createAttributes().build());
         event.put(JIAFEI.get(), Jiafei.createAttributes().build());
+        event.put(NICKI_MINAJ.get(), NickiMinaj.createAttributes().build());
+        event.put(TWINK.get(), Twink.createAttributes().build());
     }
 
     @SubscribeEvent
     public static void registerSpawnPlacements(SpawnPlacementRegisterEvent event) {
-            event.register(
-                    CUPCAKKE.get(),
-                    SpawnPlacements.Type.ON_GROUND,
-                    Heightmap.Types.WORLD_SURFACE,
-                    CupcakKe::canSpawn,
-                    SpawnPlacementRegisterEvent.Operation.OR
-            );
+        event.register(
+                CUPCAKKE.get(),
+                SpawnPlacements.Type.ON_GROUND,
+                Heightmap.Types.WORLD_SURFACE,
+                CupcakKe::canSpawn,
+                SpawnPlacementRegisterEvent.Operation.OR
+        );
     }
 
     public static void register(IEventBus eventBus) { Entities.register(eventBus); }

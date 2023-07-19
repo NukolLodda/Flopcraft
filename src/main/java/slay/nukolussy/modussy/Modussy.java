@@ -54,9 +54,10 @@ public class Modussy {
 
     private void addCreative(BuildCreativeModeTabContentsEvent event) {
         if (event.getTabKey() == CreativeModeTabs.SPAWN_EGGS) {
-            event.accept(ModItem.CUPCAKKE_EGG.get());
-            event.accept(ModItem.JIAFEI_EGG.get());
-            event.accept(ModItem.TWINK_EGG.get());
+            event.accept(ModItem.CUPCAKKE_SPAWN_EGG.get());
+            event.accept(ModItem.JIAFEI_SPAWN_EGG.get());
+            event.accept(ModItem.NICKI_MINAJ_SPAWN_EGG.get());
+            event.accept(ModItem.TWINK_SPAWN_EGG.get());
         }
     }
 

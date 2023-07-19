@@ -7,6 +7,7 @@ import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
 import slay.nukolussy.modussy.client.renderer.CupcakKeRenderer;
 import slay.nukolussy.modussy.client.renderer.JiafeiRenderer;
+import slay.nukolussy.modussy.client.renderer.NickiMinajRanderer;
 import slay.nukolussy.modussy.client.renderer.TwinkRenderer;
 
 @Mod.EventBusSubscriber(bus = Mod.EventBusSubscriber.Bus.MOD, value = Dist.CLIENT)
@@ -14,7 +15,8 @@ public class ModEntityRenderers {
     @SubscribeEvent
     public static void registerEntityRenderes(EntityRenderersEvent.RegisterRenderers event) {
         event.registerEntityRenderer(ModEntities.CUPCAKKE.get(), CupcakKeRenderer::new);
-        event.registerEntityRenderer(ModEntities.TWINK.get(), TwinkRenderer::new);
         event.registerEntityRenderer(ModEntities.JIAFEI.get(), JiafeiRenderer::new);
+        event.registerEntityRenderer(ModEntities.NICKI_MINAJ.get(), NickiMinajRanderer::new);
+        event.registerEntityRenderer(ModEntities.TWINK.get(), TwinkRenderer::new);
     }
 }

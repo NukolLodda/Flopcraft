@@ -2,8 +2,8 @@ package slay.nukolussy.modussy.entities.flops;
 
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.particles.ParticleTypes;
-import net.minecraft.resources.ResourceLocation;
 import net.minecraft.sounds.SoundEvent;
+import net.minecraft.tags.DamageTypeTags;
 import net.minecraft.util.RandomSource;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResult;
@@ -11,6 +11,7 @@ import net.minecraft.world.damagesource.*;
 import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.entity.*;
 import net.minecraft.world.entity.ai.goal.TemptGoal;
+import net.minecraft.world.entity.item.ItemEntity;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
@@ -18,9 +19,7 @@ import net.minecraft.world.level.ItemLike;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.ServerLevelAccessor;
 import net.minecraft.world.level.gameevent.GameEvent;
-import net.minecraft.world.level.levelgen.Heightmap;
 import net.minecraftforge.network.PlayMessages;
-import net.minecraftforge.registries.ForgeRegistries;
 import slay.nukolussy.modussy.entities.ModEntities;
 import slay.nukolussy.modussy.item.ActivateMethods;
 import slay.nukolussy.modussy.item.ModItem;
@@ -52,28 +51,49 @@ public class CupcakKe extends AbstractFlopFigures {
 
     @Override
     public SoundEvent getAmbientSound() {
-        int hurtNum = (int) (Math.random() * 10 + 1);
-        String hurtSound = "modussy:cupcakke_" + hurtNum;
-
-        return ForgeRegistries.SOUND_EVENTS.getValue((new ResourceLocation(hurtSound)));
+        int randNum = (int) (Math.random() * 10);
+        return switch (randNum) {
+            case 1 -> ModSounds.CUPCAkKE_1.get();
+            case 2 -> ModSounds.CUPCAkKE_2.get();
+            case 3 -> ModSounds.CUPCAkKE_3.get();
+            case 4 -> ModSounds.CUPCAkKE_4.get();
+            case 5 -> ModSounds.CUPCAkKE_5.get();
+            case 6 -> ModSounds.CUPCAkKE_6.get();
+            case 7 -> ModSounds.CUPCAkKE_7.get();
+            case 8 -> ModSounds.CUPCAkKE_8.get();
+            case 9 -> ModSounds.CUPCAkKE_9.get();
+            default -> ModSounds.CUPCAkKE_10.get();
+        };
     }
 
     @Override
     public SoundEvent getHurtSound(DamageSource ds) {
-        int hurtNum = (int) (Math.random() * 4 + 1);
-        String hurtSound = "modussy:cupcakke_hurt" + hurtNum;
-        return ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation(hurtSound));
+        int hurtNum = (int) (Math.random() * 4);
+        return switch (hurtNum) {
+            case 1 -> ModSounds.CUPCAkKE_HURT1.get();
+            case 2 -> ModSounds.CUPCAkKE_HURT2.get();
+            case 3 -> ModSounds.CUPCAkKE_HURT3.get();
+            default -> ModSounds.CUPCAkKE_HURT4.get();
+        };
     }
 
     @Override
     public SoundEvent getDeathSound() {
-        return ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation("modussy:cupcakke_death"));
+        return ModSounds.CUPCAkKE_DEATH.get();
     }
 
     @Override
     public void baseTick() {
         super.baseTick();
-        ActivateMethods.cupcakkeDrops(this.level(), this.getX(), this.getY(), this.getZ());
+        Level world = this.level();
+        int dropChance = (int) (Math.random() * 8400) + 1;
+        if (dropChance == 1) {
+            if (world.isClientSide()) {
+                ItemEntity entityToSpawn = new ItemEntity(world, this.getX(), this.getY(), this.getZ(), new ItemStack(ModItem.CUPCAKE.get()));
+                entityToSpawn.setPickUpDelay(10);
+                world.addFreshEntity(entityToSpawn);
+            }
+        }
     }
 
     public InteractionResult mobInteract(Player player, InteractionHand hand) {
@@ -94,22 +114,7 @@ public class CupcakKe extends AbstractFlopFigures {
                 if (!player.getAbilities().instabuild) {
                     itemStack.shrink(1);
                 }
-
-                if (this.getMaxHealth() == this.getHealth()) {
-                    Collection<MobEffectInstance> inst = this.getActiveEffects();
-                    Mob newMob = new CupcakKe(ModEntities.CUPCAKKE.get(), this.level());
-                    newMob.moveTo(this.getX(), this.getY(), this.getZ());
-                    newMob.setXRot(this.getXRot());
-                    newMob.setYRot(this.getYRot());
-                    if (item == ModItem.CVM.get()) {
-                        this.hurt(this.level().damageSources().freeze(), 10);
-                    }
-                    for (MobEffectInstance effect : inst) {
-                        newMob.addEffect(effect);
-                    }
-                    this.level().addFreshEntity(newMob);
-                    this.spawnAtLocation(cupcakkeDrops());
-                }
+                cupcakkeDuplication(item, this);
 
                 this.playSound(ModSounds.CUPCAkKE_SLURP.get());
                 this.gameEvent(GameEvent.EAT, this);
@@ -121,9 +126,9 @@ public class CupcakKe extends AbstractFlopFigures {
 
     public static Item cupcakkeDrops() {
         int rand = (int) (Math.random() * 69);
-        Item cupcakkeDrops = ModItem.CVMTITPLASM.get();
+        Item cupcakkeDrops;
         if (rand < 1) {
-            int discRand = (int) (Math.random() * 25);
+            int discRand = (int) (Math.random() * 26);
             cupcakkeDrops = switch(discRand) {
                 case 1 -> ModItem.DISC_C1.get();
                 case 2 -> ModItem.DISC_C2.get();
@@ -140,6 +145,7 @@ public class CupcakKe extends AbstractFlopFigures {
                 case 13 -> ModItem.DISC_C13.get();
                 case 14 -> ModItem.DISC_C14.get();
                 case 15 -> ModItem.DISC_C15.get();
+                case 16 -> ModItem.DISC_C16.get();
                 case 17 -> ModItem.DISC_C17.get();
                 case 18 -> ModItem.DISC_C18.get();
                 case 19 -> ModItem.DISC_C19.get();
@@ -148,20 +154,28 @@ public class CupcakKe extends AbstractFlopFigures {
                 case 22 -> ModItem.DISC_C22.get();
                 case 23 -> ModItem.DISC_C23.get();
                 case 24 -> ModItem.DISC_C24.get();
-                default -> ModItem.DISC_C25.get();
+                case 25 -> ModItem.DISC_C25.get();
+                default -> ModItem.DISC_C26.get();
             };
-        } else if (rand < 2) {
-            cupcakkeDrops = ModItem.DISC_CUPCAKKE1.get();
-        } else if (rand < 3) {
-            cupcakkeDrops = ModItem.DISC_CUPCAKKE2.get();
-        } else if (rand < 7) {
-            cupcakkeDrops = ModItem.DISC_CUPCAKKE3.get();
+        } else {
+            cupcakkeDrops = switch (rand) {
+                case 1 -> ModItem.DISC_CUPCAKKE1.get();
+                case 2 -> ModItem.DISC_CUPCAKKE2.get();
+                case 3 -> ModItem.DISC_CUPCAKKE3.get();
+                case 4 -> ModItem.DISC_CUPCAKKE4.get();
+                default -> ModItem.CVMTITPLASM.get();
+            };
         }
         return cupcakkeDrops;
-
     }
 
-    
+    @Override
+    public boolean hurt(DamageSource source, float amount) {
+        if (source.is(DamageTypeTags.IS_DROWNING)) {
+            return false;
+        }
+        return super.hurt(source, amount);
+    }
 
     public void aiStep() {
         super.aiStep();
@@ -188,5 +202,27 @@ public class CupcakKe extends AbstractFlopFigures {
     public static boolean canSpawn(EntityType<CupcakKe> entityType, ServerLevelAccessor level, MobSpawnType spawnType,
                                    BlockPos pos, RandomSource randomSource) {
         return Mob.checkMobSpawnRules(entityType, level, spawnType, pos, randomSource);
+    }
+
+    public static void cupcakkeDuplication(Item item, CupcakKe cupcakKe) {
+        if (cupcakKe.getMaxHealth() == cupcakKe.getHealth()) {
+            Collection<MobEffectInstance> inst = cupcakKe.getActiveEffects();
+            CupcakKe newMob = new CupcakKe(ModEntities.CUPCAKKE.get(), cupcakKe.level());
+            newMob.moveTo(cupcakKe.getX(), cupcakKe.getY(), cupcakKe.getZ());
+            newMob.setXRot(cupcakKe.getXRot());
+            newMob.setYRot(cupcakKe.getYRot());
+            if (item.equals(ModItem.CVM.get())) {
+                cupcakKe.hurt(cupcakKe.level().damageSources().freeze(), 10);
+            }
+            if (cupcakKe.tamedBy != null) {
+                newMob.setTamed(cupcakKe.tamedBy);
+            }
+            for (MobEffectInstance effect : inst) {
+                newMob.addEffect(effect);
+            }
+            cupcakKe.level().addFreshEntity(newMob);
+            cupcakKe.spawnAtLocation(cupcakkeDrops());
+        }
+
     }
 }

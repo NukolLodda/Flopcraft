@@ -14,10 +14,10 @@ import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.entity.*;
 import net.minecraft.world.entity.ai.memory.MemoryModuleType;
 import net.minecraft.world.entity.animal.Cat;
-import net.minecraft.world.entity.item.ItemEntity;
 import net.minecraft.world.entity.monster.*;
 import net.minecraft.world.entity.monster.hoglin.Hoglin;
 import net.minecraft.world.entity.npc.AbstractVillager;
+import net.minecraft.world.entity.npc.Villager;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.enchantment.EnchantmentHelper;
@@ -34,27 +34,15 @@ import slay.nukolussy.modussy.entities.ModEntities;
 import slay.nukolussy.modussy.entities.flops.CupcakKe;
 import slay.nukolussy.modussy.entities.flops.AbstractFlops;
 import slay.nukolussy.modussy.entities.flops.traders.Jiafei;
+import slay.nukolussy.modussy.entities.flops.traders.NickiMinaj;
 import slay.nukolussy.modussy.entities.flops.twink.Twink;
 import slay.nukolussy.modussy.entities.flops.twink.TwinkAI;
 import slay.nukolussy.modussy.sound.ModSounds;
 
-import java.util.Collection;
 import java.util.Comparator;
 import java.util.List;
 
 public class ActivateMethods {
-    /*
-    private static SimpleParticleType particleGen() {
-        int randomNum = (int) (Math.random() * 6);
-        return switch (randomNum) {
-            case 1 -> ModParticleTypes.AESTHETIC_1.get();
-            case 2 -> ModParticleTypes.AESTHETIC_2.get();
-            case 3 -> ModParticleTypes.AESTHETIC_3.get();
-            case 4 -> ModParticleTypes.AESTHETIC_4.get();
-            default -> ModParticleTypes.AESTHETIC_5.get();
-        };
-    }
-    */
     private static SoundEvent AestheticSounds(int up) {
         if (up > 8) up = 8;
         int randomNum = (int) (Math.random() * (up - 1)) + 1;
@@ -70,7 +58,7 @@ public class ActivateMethods {
         };
     }
 
-    private static void monsterEffects(LivingEntity entity, int lvl, int amp) {
+    public static void monsterEffects(LivingEntity entity, int lvl, int amp) {
         if (entity instanceof Mob) {
             ((Mob) entity).setGuaranteedDrop(EquipmentSlot.MAINHAND);
         }
@@ -83,9 +71,8 @@ public class ActivateMethods {
             entity.addEffect(new MobEffectInstance(MobEffects.GLOWING, 1380 * lvl, amp));
             if (lvl > 2)  entity.addEffect(new MobEffectInstance(MobEffects.LEVITATION, 600, 0));
         }
-        // entity.hurt(new DamageSource("slayyyy").bypassArmor(), 2 * lvl);
     }
-    private static void monsterEffects(LivingEntity ent) {
+    public static void monsterEffects(LivingEntity ent) {
         ent.addEffect(new MobEffectInstance(MobEffects.MOVEMENT_SLOWDOWN, 1000, 0));
         ent.addEffect(new MobEffectInstance(MobEffects.WITHER, 6900, 1));
         ent.addEffect(new MobEffectInstance(MobEffects.DIG_SLOWDOWN, 1690, 0));
@@ -94,7 +81,7 @@ public class ActivateMethods {
 
     }
 
-    private static void flopEffects(LivingEntity entity, int lvl, int amp) {
+    public static void flopEffects(LivingEntity entity, int lvl, int amp) {
         entity.addEffect(new MobEffectInstance(MobEffects.REGENERATION, 300 * lvl, amp));
         entity.addEffect(new MobEffectInstance(MobEffects.WATER_BREATHING, 600 * lvl, 0));
         entity.addEffect(new MobEffectInstance(MobEffects.FIRE_RESISTANCE, 600 * lvl, amp));
@@ -111,7 +98,7 @@ public class ActivateMethods {
         }
     }
 
-    private static void flopEffects(LivingEntity ent) {
+    public static void flopEffects(LivingEntity ent) {
         ent.addEffect(new MobEffectInstance(MobEffects.MOVEMENT_SPEED, 1000, 0));
         ent.addEffect(new MobEffectInstance(MobEffects.REGENERATION, 6900, 1));
         ent.addEffect(new MobEffectInstance(MobEffects.ABSORPTION, 1710, 1));
@@ -122,6 +109,27 @@ public class ActivateMethods {
         ent.addEffect(new MobEffectInstance(MobEffects.WATER_BREATHING, 1710, 0));
         ent.addEffect(new MobEffectInstance(MobEffects.NIGHT_VISION, 1710, 0));
     }
+
+    public static boolean canEntityBecomeNickiMinaj(LevelAccessor world, double x, double y, double z) {
+        {
+            final Vec3 _center = new Vec3(x, y, z);
+            List<Entity> _entfound = world.getEntitiesOfClass(Entity.class, new AABB(_center, _center).inflate(256 / 2d), e -> true).stream()
+                    .sorted(Comparator.comparingDouble(_entcnd -> _entcnd.distanceToSqr(_center))).toList();
+            for (Entity entityiterator : _entfound) {
+                if (entityiterator instanceof NickiMinaj) {
+                    return false;
+                }
+            }
+        }
+
+        return true;
+    }
+
+    public static boolean isMonster(LivingEntity ent) {
+        return ent instanceof Monster || ((ent instanceof Hoglin || ent instanceof Ghast
+                || ent instanceof Shulker || ent instanceof Phantom));
+    }
+
     private static ItemStack randItem(int up) {
         if (up > 3) up = 3;
         int randomNum = (int) (Math.random() * up);
@@ -132,9 +140,7 @@ public class ActivateMethods {
         };
     }
 
-    private static void villagerYassification(AbstractVillager entity, LevelAccessor world) {
-        if (entity.isBaby()) return;
-
+    private static void villagerYassification(AbstractVillager entity, LevelAccessor world, Player player) {
         int randval = (int) (Math.random() * 6971);
         float xRot = entity.getXRot();
         float yRot = entity.getYRot();
@@ -144,37 +150,46 @@ public class ActivateMethods {
             type = ModEntities.CUPCAKKE.get();
         else if (randval < 69)
             type = ModEntities.JIAFEI.get();
+        else if (randval < 90 && canEntityBecomeNickiMinaj(world, entity.getX(), entity.getY(), entity.getZ())) {
+            type = ModEntities.NICKI_MINAJ.get();
+        }
+        // nicki minaj will only spawn in there's no other nicki minaj within 5 chunks
         AbstractFlops flop = entity.convertTo(type, true);
         assert flop != null;
         if (flop instanceof Twink twink)
             twink.setVariant(Util.getRandom(Twink.Variant.values(), world.getRandom()));
-        if (flop instanceof Jiafei jiafei) {
+        if (flop instanceof Jiafei jiafei)
             jiafei.setVariant(Util.getRandom(Jiafei.Variant.values(), world.getRandom()));
-        }
+        if (flop instanceof NickiMinaj minaj)
+            minaj.setVariant(Util.getRandom(NickiMinaj.Variant.values(), world.getRandom()));
         flop.setCanPickUpLoot(true);
         flop.setXRot(xRot);
         flop.setYRot(yRot);
+        flop.setTamed(player);
         flop.addAdditionalSaveData(flop.getPersistentData());
     }
 
-    private static void witchYassification(Witch entity, LevelAccessor world) {
+    private static void witchYassification(Witch entity, LevelAccessor world, Player player) {
         int randval = (int) (Math.random() * 2);
         float xRot = entity.getXRot();
         float yRot = entity.getYRot();
-        EntityType<? extends AbstractFlops> type = switch(randval) {
-            case 1 -> ModEntities.JIAFEI.get();
-            // case 2 -> ModEntities.NICKI_MINAJ.get();
-            default -> ModEntities.CUPCAKKE.get();
+        EntityType<? extends AbstractFlops> type;
+        if (Math.random() < (1f / 3) && canEntityBecomeNickiMinaj(world, entity.getX(), entity.getY(), entity.getZ()))
+            type = ModEntities.NICKI_MINAJ.get();
+        else {
+            type = randval == 1 ? ModEntities.CUPCAKKE.get() : ModEntities.JIAFEI.get();
+        }
             // witches can only turn into female flops, and not into twinks, this will be implemented at a different time
-        };
         AbstractFlops flop = entity.convertTo(type, true);
         assert flop != null;
         if (flop instanceof Jiafei jiafei) {
             jiafei.setVariant(Util.getRandom(Jiafei.Variant.values(), world.getRandom()));
-        }
+        } if (flop instanceof NickiMinaj minaj)
+            minaj.setVariant(Util.getRandom(NickiMinaj.Variant.values(), world.getRandom()));
         flop.setCanPickUpLoot(true);
         flop.setXRot(xRot);
         flop.setYRot(yRot);
+        flop.setTamed(player);
         flop.getBrain().eraseMemory(MemoryModuleType.ANGRY_AT);
         flop.addAdditionalSaveData(flop.getPersistentData());
     }
@@ -195,7 +210,6 @@ public class ActivateMethods {
                     ((Monster) entityiterator).addEffect(new MobEffectInstance(MobEffects.MOVEMENT_SLOWDOWN, 2400, 10, true, false));
                     ((Monster) entityiterator).addEffect(new MobEffectInstance(MobEffects.WITHER, 690, 1));
                     ((Monster) entityiterator).addEffect(new MobEffectInstance(MobEffects.WEAKNESS, 2400, 10));
-                    // entityiterator.hurt(new DamageSource("yuh").bypassArmor(), 5);
                 }
                 if (entityiterator instanceof LivingEntity && !(entityiterator instanceof Player)) {
                     ((LivingEntity) entityiterator).addEffect(new MobEffectInstance(MobEffects.MOVEMENT_SLOWDOWN, 690, 5, true, false));
@@ -209,17 +223,6 @@ public class ActivateMethods {
         itemStack.shrink(1);
     }
 
-    public static void cupcakkeDrops(LevelAccessor world, double x, double y, double z) {
-        int dropChance = (int) (Math.random() * 8400) + 1;
-        if (dropChance == 1) {
-            if (world instanceof Level _level && !_level.isClientSide()) {
-                ItemEntity entityToSpawn = new ItemEntity(_level, x, y, z, new ItemStack(ModItem.CUPCAKE.get()));
-                entityToSpawn.setPickUpDelay(10);
-                _level.addFreshEntity(entityToSpawn);
-            }
-        }
-    }
-
     public static void jiafeiPerfumeSpray(LevelAccessor world, double x, double y, double z, Entity entity, ItemStack itemStack) {
         if (entity instanceof Player _ent) {
             flopEffects(_ent);
@@ -231,11 +234,9 @@ public class ActivateMethods {
             List<Entity> _entfound = world.getEntitiesOfClass(Entity.class, new AABB(_center, _center).inflate(2 / 2d), e -> true).stream()
                     .sorted(Comparator.comparingDouble(_entcnd -> _entcnd.distanceToSqr(_center))).toList();
             for (Entity entIterator : _entfound) {
-                if (entIterator instanceof LivingEntity _ent && entity instanceof LivingEntity player) {
-                    if (_ent instanceof AbstractVillager villager) villagerYassification(villager, world);
-                    if (_ent instanceof Witch witch) witchYassification(witch, world);
-                    if (_ent instanceof Monster || _ent instanceof Hoglin
-                            || _ent instanceof Shulker || _ent instanceof Ghast || _ent instanceof Phantom) {
+                if (entIterator instanceof LivingEntity _ent && entity instanceof Player player) {
+                    yassification(_ent, world, player);
+                    if (isMonster(_ent)) {
                         monsterEffects(_ent);
                     }
                     if (_ent instanceof Cat _cat && Math.random() < 0.16) {
@@ -266,9 +267,6 @@ public class ActivateMethods {
                 if (lvl > 2) {
                     _player.getAbilities().mayfly = (true);
                     _player.onUpdateAbilities();
-                    /*
-                    * the player can fly for 42069 ticks
-                    */
                 }
             }
             _player.getCooldowns().addCooldown(itemStack.getItem(), 100 * lvl);
@@ -279,29 +277,31 @@ public class ActivateMethods {
             List<Entity> _entfound = world.getEntitiesOfClass(Entity.class, new AABB(_center, _center).inflate(28 + (4 * lvl) / 2d), e -> true).stream()
                     .sorted(Comparator.comparingDouble(_entcnd -> _entcnd.distanceToSqr(_center))).toList();
             for (Entity entityiterator : _entfound) {
-                if (entityiterator instanceof Mob _mob) {
+                if (entityiterator instanceof Mob _mob && entity instanceof Player player) {
                     if (_mob instanceof Spider _spider) {
                         _spider.setItemSlot(EquipmentSlot.MAINHAND, new ItemStack(ModItem.ARANA_GRANDE.get()));
                         _spider.setGuaranteedDrop(EquipmentSlot.MAINHAND);
                         _spider.kill();
                     }
-                    if (_mob instanceof AbstractVillager _villager) {
-                        villagerYassification(_villager, world);
-                        itemDura += 10;
+                    if (_mob instanceof Slime slime) {
+                        ItemStack cvmItem = new ItemStack(ModItem.CVM.get());
+                        if (slime instanceof MagmaCube) {
+                            cvmItem = new ItemStack(ModItem.CVMIUM.get());
+                        }
+                        slime.setItemSlot(EquipmentSlot.MAINHAND, cvmItem);
+                        slime.setGuaranteedDrop(EquipmentSlot.MAINHAND);
+                        slime.kill();
                     }
-                    if (_mob instanceof Witch witch) {
-                        witchYassification(witch, world);
-                        itemDura += 10;
-                    }
-                    if (_mob instanceof Monster || ((_mob instanceof Hoglin || _mob instanceof Ghast
-                            || _mob instanceof Shulker || _mob instanceof Phantom) && lvl > 1)) {
+                    yassification(_mob, world, player);
+                    if (_mob instanceof Villager || _mob instanceof Witch) itemDura += 10;
+                    if (isMonster(_mob) && lvl > 1) {
                         monsterEffects(_mob, lvl, amp);
                         itemDura += 80;
                     }
                     if (_mob instanceof Cat _cat && Math.random() < 0.16) {
                         _cat.spawnAtLocation(ModItem.POSEI.get());
                     }
-                    if (_mob instanceof TamableAnimal _tamIsTamedBy && entity instanceof Player _livEnt && _tamIsTamedBy.isOwnedBy(_livEnt)
+                    if (_mob instanceof TamableAnimal _tamIsTamedBy && _tamIsTamedBy.isOwnedBy(player)
                             || _mob instanceof AbstractFlops) {
                         flopEffects(_mob, lvl, amp);
                         itemDura += 120;
@@ -327,6 +327,16 @@ public class ActivateMethods {
         int amp = (lvl + 1) / 2, itemDura = 0;
         if (source instanceof Player || source instanceof AbstractFlops) {
             ((LivingEntity) source).heal(3.0f);
+        }
+
+        if (target instanceof Slime slime) {
+            ItemStack cvmItem = new ItemStack(ModItem.CVM.get());
+            if (slime instanceof MagmaCube) {
+                cvmItem = new ItemStack(ModItem.CVMIUM.get());
+            }
+            slime.setItemSlot(EquipmentSlot.MAINHAND, cvmItem);
+            slime.setGuaranteedDrop(EquipmentSlot.MAINHAND);
+            slime.kill();
         }
 
         if (target instanceof Monster ||
@@ -371,10 +381,8 @@ public class ActivateMethods {
                     .sorted(Comparator.comparingDouble(_entcnd -> _entcnd.distanceToSqr(_center))).toList();
             for (Entity entIterator : _entfound) {
                 if (entIterator instanceof LivingEntity _ent && entity instanceof LivingEntity player) {
-                    if (_ent instanceof AbstractVillager) villagerYassification((AbstractVillager) _ent, world);
-                    if (_ent instanceof Witch witch) witchYassification(witch, world);
-                    if (_ent instanceof Monster || _ent instanceof Hoglin
-                            || _ent instanceof Shulker || _ent instanceof Ghast || _ent instanceof Phantom) {
+                    yassification(_ent, world, (Player)player);
+                    if (isMonster(_ent)) {
                         monsterEffects(_ent, amp * ((int)chargedTime),amp - 1);
                         _ent.hurt(_ent.level().damageSources().playerAttack((Player) player), power * 2 * (int) chargedTime);
                         _ent.setSecondsOnFire(flame ? isCvmium ? 420 : 100 : 0);
@@ -389,19 +397,7 @@ public class ActivateMethods {
                             if (_ent instanceof Twink)
                                 _ent.spawnAtLocation(TwinkAI.randItem());
                             if (_ent instanceof CupcakKe _cupcakke) {
-                                if (_cupcakke.getMaxHealth() == _cupcakke.getHealth()) {
-                                    Collection<MobEffectInstance> inst = _cupcakke.getActiveEffects();
-                                    Mob newMob = new CupcakKe(ModEntities.CUPCAKKE.get(), _cupcakke.level());
-                                    newMob.moveTo(_cupcakke.getX(), _cupcakke.getY(), _cupcakke.getZ());
-                                    newMob.setXRot(_cupcakke.getXRot());
-                                    newMob.setYRot(_cupcakke.getYRot());
-                                    _cupcakke.hurt(_cupcakke.level().damageSources().freeze(), 12);
-                                    for (MobEffectInstance effect : inst) {
-                                        newMob.addEffect(effect);
-                                    }
-                                    _cupcakke.level().addFreshEntity(newMob);
-                                    _cupcakke.spawnAtLocation(Math.random() > 0.8 ? ModItem.CVMTITPLASM.get() : CupcakKe.cupcakkeDrops());
-                                }
+                                CupcakKe.cupcakkeDuplication(ModItem.CVM.get(), _cupcakke);
                             }
                         }
                     }
@@ -412,5 +408,10 @@ public class ActivateMethods {
             _level.sendParticles(isCvmium ? ParticleTypes.LAVA :ParticleTypes.END_ROD,
                     x, y, z, ((int) chargedTime * 15),1,1, 1, (chargedTime * 0.16));
         }
+    }
+
+    public static void yassification(LivingEntity ent, LevelAccessor world, Player player) {
+        if (ent instanceof Villager villager) villagerYassification(villager, world, player);
+        if (ent instanceof Witch witch) witchYassification(witch, world, player);
     }
 }

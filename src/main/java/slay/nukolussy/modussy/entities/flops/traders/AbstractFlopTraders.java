@@ -5,8 +5,6 @@ import net.minecraft.world.SimpleContainer;
 import net.minecraft.world.damagesource.DamageSource;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.EntityType;
-import net.minecraft.world.entity.ai.goal.TemptGoal;
-import net.minecraft.world.entity.ai.goal.TradeWithPlayerGoal;
 import net.minecraft.world.entity.npc.InventoryCarrier;
 import net.minecraft.world.entity.npc.Npc;
 import net.minecraft.world.entity.player.Player;
@@ -58,12 +56,6 @@ public abstract class AbstractFlopTraders extends AbstractFlopFigures implements
     @Override
     public Player getTradingPlayer() {
         return this.trader;
-    }
-
-    @Override
-    protected void registerGoals() {
-        super.registerGoals();
-        this.goalSelector.removeGoal(new TemptGoal(this, 1.2d, FOOD_ITEMS, false));
     }
 
     @Override

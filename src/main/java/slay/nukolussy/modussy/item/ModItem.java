@@ -47,6 +47,9 @@ public class ModItem {
     public static final RegistryObject<Item> MYSTICAL_FLOPIUM = ITEMS.register("mystical_flopium",
             () -> new Item(new Item.Properties().rarity(Rarity.EPIC)));
 
+    public static final RegistryObject<Item> POSEI = ITEMS.register("posei",
+            () -> new Item(new Item.Properties()));
+
     public static final RegistryObject<Item> SCARUSSY = ITEMS.register("scarussy",
             () -> new Item(new Item.Properties()));
 
@@ -59,7 +62,7 @@ public class ModItem {
     public static final RegistryObject<Item> SHENSEIUM = ITEMS.register("shenseium",
             () -> new Item(new Item.Properties()));
 
-    public static final RegistryObject<Item> POSEI = ITEMS.register("posei",
+    public static final RegistryObject<Item> TWINK_EGG = ITEMS.register("twink_egg",
             () -> new Item(new Item.Properties()));
 
     public static final RegistryObject<Item> WONYOUNG_ESSENCE = ITEMS.register("wonyoung_essence",
@@ -95,6 +98,7 @@ public class ModItem {
     public static final RegistryObject<Item> JIAFEI_PERFUME = ITEMS.register("jiafei_perfume", JiafeiPerfume::new);
     public static final RegistryObject<Item> FLOPTROPICA_TICKET = ITEMS.register("floptropica_ticket", FloptropicaTicket::new);
     public static final RegistryObject<Item> JIAFEI_SEED = ITEMS.register("jiafei_seed", JiafeiSeed::new);
+    public static final RegistryObject<Item> BRA = ITEMS.register("bra", InnerWear.Bra::new);
 
     public static final RegistryObject<Item> JIAFEI_AXE = ITEMS.register("jiafei_axe", JiafeiAxe::new);
     public static final RegistryObject<Item> JIAFEI_HAMMER = ITEMS.register("jiafei_hammer", JiafeiHammer::new);
@@ -118,6 +122,7 @@ public class ModItem {
     public static final RegistryObject<Item> DISC_C13 = ITEMS.register("music_disc_c13",  () -> new SoundItems(ModSounds.DISC_C13.get(), 4200));
     public static final RegistryObject<Item> DISC_C14 = ITEMS.register("music_disc_c14",  () -> new SoundItems(ModSounds.DISC_C14.get(), 3640));
     public static final RegistryObject<Item> DISC_C15 = ITEMS.register("music_disc_c15",  () -> new SoundItems(ModSounds.DISC_C15.get(), 4700));
+    public static final RegistryObject<Item> DISC_C16 = ITEMS.register("music_disc_c16",  () -> new SoundItems(ModSounds.DISC_C16.get(), 4200));
     public static final RegistryObject<Item> DISC_C17 = ITEMS.register("music_disc_c17",  () -> new SoundItems(ModSounds.DISC_C17.get(), 3600));
     public static final RegistryObject<Item> DISC_C18 = ITEMS.register("music_disc_c18",  () -> new SoundItems(ModSounds.DISC_C18.get(), 3320));
     public static final RegistryObject<Item> DISC_C19 = ITEMS.register("music_disc_c19",  () -> new SoundItems(ModSounds.DISC_C19.get(), 3120));
@@ -127,11 +132,13 @@ public class ModItem {
     public static final RegistryObject<Item> DISC_C23 = ITEMS.register("music_disc_c23",  () -> new SoundItems(ModSounds.DISC_C23.get(), 3800));
     public static final RegistryObject<Item> DISC_C24 = ITEMS.register("music_disc_c24",  () -> new SoundItems(ModSounds.DISC_C24.get(), 4860));
     public static final RegistryObject<Item> DISC_C25 = ITEMS.register("music_disc_c25",  () -> new SoundItems(ModSounds.DISC_C25.get(), 4880));
+    public static final RegistryObject<Item> DISC_C26 = ITEMS.register("music_disc_c26",  () -> new SoundItems(ModSounds.DISC_C26.get(), 4000));
     public static final RegistryObject<Item> DISC_CJ1 = ITEMS.register("music_disc_cj1",  () -> new SoundItems(ModSounds.DISC_CJ1.get(), 5100));
     public static final RegistryObject<Item> DISC_CPM1 = ITEMS.register("music_disc_cpm1",  () -> new SoundItems(ModSounds.DISC_CPM1.get(), 3300));
     public static final RegistryObject<Item> DISC_CUPCAKKE1 = ITEMS.register("music_disc_cupcakke1",  () -> new SoundItems(ModSounds.DISC_CUPCAKKE1.get(), 4160));
     public static final RegistryObject<Item> DISC_CUPCAKKE2 = ITEMS.register("music_disc_cupcakke2",  () -> new SoundItems(ModSounds.DISC_CUPCAKKE2.get(), 3960));
     public static final RegistryObject<Item> DISC_CUPCAKKE3 = ITEMS.register("music_disc_cupcakke3",  () -> new SoundItems(ModSounds.DISC_CUPCAKKE3.get(), 4120));
+    public static final RegistryObject<Item> DISC_CUPCAKKE4 = ITEMS.register("music_disc_cupcakke4",  () -> new SoundItems(ModSounds.DISC_CUPCAKKE4.get(), 3720));
     public static final RegistryObject<Item> DISC_DB1 = ITEMS.register("music_disc_db1",  () -> new SoundItems(ModSounds.DISC_DB1.get(), 2260));
     public static final RegistryObject<Item> DISC_DEJE_BULLYING = ITEMS.register("music_disc_deje_bullying",  () -> new SoundItems(ModSounds.DISC_DEJE_BULLYING.get(), 480));
     public static final RegistryObject<Item> DISC_J1 = ITEMS.register("music_disc_j1",  () -> new SoundItems(ModSounds.DISC_J1.get(), 5820));
@@ -139,17 +146,20 @@ public class ModItem {
     public static final RegistryObject<Item> DISC_J4 = ITEMS.register("music_disc_j4",  () -> new SoundItems(ModSounds.DISC_J4.get(), 1760));
     public static final RegistryObject<Item> DISC_J5 = ITEMS.register("music_disc_j5",  () -> new SoundItems(ModSounds.DISC_J5.get(), 4060));
     public static final RegistryObject<Item> DISC_JC1 = ITEMS.register("music_disc_jc1",  () -> new SoundItems(ModSounds.DISC_JC1.get(), 1480));
+    public static final RegistryObject<Item> DISC_JC2 = ITEMS.register("music_disc_jc2",  () -> new SoundItems(ModSounds.DISC_JC2.get(), 4160));
     public static final RegistryObject<Item> DISC_JIAFEI = ITEMS.register("music_disc_jiafei",  () -> new SoundItems(ModSounds.DISC_JIAFEI.get(), 3800));
     public static final RegistryObject<Item> DISC_PM1 = ITEMS.register("music_disc_pm1",  () -> new SoundItems(ModSounds.DISC_PM1.get(), 6160));
     public static final RegistryObject<Item> DISC_PONMI = ITEMS.register("music_disc_ponmi",  () -> new SoundItems(ModSounds.DISC_PONMI.get(), 2740));
     public static final RegistryObject<Item> DISC_RANVISION = ITEMS.register("music_disc_ranvision",  () -> new SoundItems(ModSounds.DISC_RANVISION.get(), 720));
 
-    public static final RegistryObject<Item> CUPCAKKE_EGG = ITEMS.register("cupcakke_spawn_egg",
+    public static final RegistryObject<Item> CUPCAKKE_SPAWN_EGG = ITEMS.register("cupcakke_spawn_egg",
             () -> new ForgeSpawnEggItem(ModEntities.CUPCAKKE, -13108, -7328129,  new Item.Properties()));
-    public static final RegistryObject<Item> JIAFEI_EGG = ITEMS.register("jiafei_spawn_egg",
+    public static final RegistryObject<Item> JIAFEI_SPAWN_EGG = ITEMS.register("jiafei_spawn_egg",
             () -> new ForgeSpawnEggItem(ModEntities.JIAFEI,  -5389115, 14354697,  new Item.Properties()));
-    public static final RegistryObject<Item> TWINK_EGG = ITEMS.register("twink_spawn_egg",
-            () -> new ForgeSpawnEggItem(ModEntities.TWINK,  -1, -1,  new Item.Properties()));
+    public static final RegistryObject<Item> NICKI_MINAJ_SPAWN_EGG = ITEMS.register("nicki_minaj_spawn_egg",
+            () -> new ForgeSpawnEggItem(ModEntities.NICKI_MINAJ,  43690, 16733695,  new Item.Properties()));
+    public static final RegistryObject<Item> TWINK_SPAWN_EGG = ITEMS.register("twink_spawn_egg",
+            () -> new ForgeSpawnEggItem(ModEntities.TWINK,  170, 5636095,  new Item.Properties()));
 
     public static void register(IEventBus eventBus) {
         ITEMS.register(eventBus);

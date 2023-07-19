@@ -92,6 +92,8 @@ ___
 
 <a href="https://www.youtube.com/watch?v=nLh5XTDwXaI">music_disc_c15.ogg</a>
 
+<a href="https://www.youtube.com/watch?v=8B2wtJ2zRq8">music_disc_c16.ogg</a>
+
 <a href="https://www.youtube.com/watch?v=nX6v8-o_ptc">music_disc_c17.ogg</a>
 
 <a href="https://www.youtube.com/watch?v=NJyXgBoNncQ">music_disc_c18.ogg</a>
@@ -110,6 +112,8 @@ ___
 
 <a href="https://www.youtube.com/watch?v=tDDJENXAlRI">music_disc_c25.ogg</a>
 
+<a href="https://www.youtube.com/watch?v=bmI--Y1q7l4">music_disc_c26.ogg</a>
+
 <a href="https://www.youtube.com/watch?v=4uuGucFBtPI">music_disc_cj1.ogg</a>
 
 <a href="https://www.youtube.com/watch?v=Ge_mOcf0ImE">music_disc_cpm1.ogg</a>
@@ -119,6 +123,8 @@ ___
 <a href="https://www.youtube.com/watch?v=TYWINwURoRc">music_disc_cupcakke2.ogg</a>
 
 <a href="https://www.youtube.com/watch?v=8bsbs-c-GDo">music_disc_cupcakke3.ogg</a>
+
+<a href="https://www.youtube.com/watch?v=2J4Sz7Q2muk">music_disc_cupcakke4.ogg</a>
 
 <a href="https://www.youtube.com/watch?v=4L_EKMtiGiQ">music_disc_db1.ogg</a>
 
@@ -132,7 +138,9 @@ ___
 
 <a href="https://www.youtube.com/watch?v=cX7itW3yfD4">music_disc_jc1.ogg</a>
 
-<a href="https://www.youtube.com/watch?v=f63oc8d8mIM">music_disc_jiafei.ogg</a>
+<a href="https://www.youtube.com/watch?v=cX7itW3yfD4">music_disc_jc2.ogg</a>
+
+<a href="https://www.youtube.com/watch?v=5jx2nW0khhk">music_disc_jiafei.ogg</a>
 
 <a href="https://www.youtube.com/watch?v=r0WBPloHthY">music_disc_pm1.ogg</a>
 

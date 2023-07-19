@@ -65,9 +65,6 @@ public class FlopBreedingGoal extends Goal {
             this.flops.getNavigation().moveTo(this.partner, this.speedModifier);
             this.loveTime++;
             if (this.loveTime >= this.adjustedTickDelay(60) && this.flops.distanceToSqr(this.partner) < 9.0) {
-                if (this.itemSpawned > 5) {
-                    this.stop();
-                }
                 this.breed();
             }
         }
@@ -107,11 +104,11 @@ public class FlopBreedingGoal extends Goal {
             this.level.addParticle(ParticleTypes.HEART, x0, y0, z0, dx, dy, dz);
         }
         if (flop instanceof Twink) {
-            flop.spawnAtLocation(ModItem.TWINK_EGG.get());
+            flop.spawnAtLocation(ModItem.TWINK_SPAWN_EGG.get());
         } else if (flop instanceof Jiafei) {
             flop.spawnAtLocation(ModItem.JIAFEI_SEED.get());
         }
         this.itemSpawned++;
-        if (this.itemSpawned > 5) this.stop();
+        if (this.itemSpawned > 6) this.stop();
     }
 }

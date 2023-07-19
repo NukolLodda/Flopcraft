@@ -1,0 +1,6 @@
+{
+  "parent": "block/cube_all",
+  "textures": {
+    "all": "modussy:block/infused_slaginium_block"
+  }
+}

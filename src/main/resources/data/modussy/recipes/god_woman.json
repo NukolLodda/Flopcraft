@@ -1,0 +1,18 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "modussy:cupcake"
+    },
+    {
+      "item": "minecraft:ender_pearl"
+    },
+    {
+      "tag": "forge:yassifiers/basic"
+    }
+  ],
+  "result": {
+    "count": 1,
+    "item": "modussy:music_disc_c7"
+  }
+}

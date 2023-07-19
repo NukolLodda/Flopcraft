@@ -2,7 +2,7 @@
   "type": "modussy:cvm_infusion_shapeless",
   "ingredients": [
     {
-      "item": "modussy:music_disc_c1"
+      "item": "minecraft:oak_log"
     },
     {
       "item": "modussy:shenseium"

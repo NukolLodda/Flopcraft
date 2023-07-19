@@ -45,7 +45,7 @@ import java.util.function.IntFunction;
 public class Jiafei extends AbstractFlopTraders {
     private static final EntityDataAccessor<Integer> JIAFEI_ID_DATATYPE_VARIANT = SynchedEntityData.defineId(Jiafei.class, EntityDataSerializers.INT);
     private static final Ingredient FOOD_ITEMS = Ingredient.of(
-            ModItem.JIAFEI_PRODUCT.get(), ModItem.SLAGINIUM.get(), ModItem.INFUSED_SLAGINIUM.get(), ModItem.FLOPIUM.get(), ModItem.MYSTICAL_FLOPIUM.get());
+            ModItem.JIAFEI_PRODUCT.get(), ModItem.SLAGINIUM.get(), ModItem.INFUSED_SLAGINIUM.get());
 
     public Jiafei(PlayMessages.SpawnEntity spawnEntity, Level level) {
         super(spawnEntity.getEntity().getType(), level);
@@ -79,20 +79,22 @@ public class Jiafei extends AbstractFlopTraders {
     @Override
     public SoundEvent getAmbientSound() {
         int hurtNum = (int) (Math.random() * 3 + 1);
-        String sound = "modussy:jiafei_" + hurtNum;
-        return ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation(sound));
+        return switch(hurtNum) {
+            case 1 -> ModSounds.JIAFEI_1.get();
+            case 2 -> ModSounds.JIAFEI_2.get();
+            default -> ModSounds.JIAFEI_3.get();
+        };
     }
 
     @Override
     public SoundEvent getHurtSound(DamageSource ds) {
-        return ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation("modussy:jiafei_hurt"));
+        return ModSounds.JIAFEI_HURT.get();
     }
 
     @Override
     public SoundEvent getDeathSound() {
         int dedNum = (int) (Math.random() * 2 + 1);
-        String deathSound = "modussy:jiafei_death_" + dedNum;
-        return ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation(deathSound));
+        return dedNum == 1 ? ModSounds.JIAFEI_DEATH_1.get() : ModSounds.JIAFEI_DEATH_2.get();
     }
 
     @Override
@@ -122,9 +124,8 @@ public class Jiafei extends AbstractFlopTraders {
                 this.setInLove(player);
                 this.gameEvent(GameEvent.EAT, this);
                 return InteractionResult.SUCCESS;
-            } else if (!item.equals(ModItem.JIAFEI_EGG.get()) && this.isAlive() && !this.isTrading() && !player.isSecondaryUseActive()) {
-                boolean offerless = this.getOffers().isEmpty();
-                if (offerless) {
+            } else if (!item.equals(ModItem.JIAFEI_SPAWN_EGG.get()) && this.isAlive() && !this.isTrading() && !player.isSecondaryUseActive()) {
+                if (this.getOffers().isEmpty()) {
                     this.playSound(ModSounds.JIAFEI_PRODUCTLESS.get());
                 } else {
                     if (!this.level().isClientSide && !this.offers.isEmpty()) {

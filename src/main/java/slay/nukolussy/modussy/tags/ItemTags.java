@@ -3,6 +3,7 @@ package slay.nukolussy.modussy.tags;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.tags.TagKey;
 import net.minecraft.world.item.Item;
+import net.minecraft.world.level.block.Block;
 import slay.nukolussy.modussy.Modussy;
 
 public final class ItemTags {
@@ -17,6 +18,14 @@ public final class ItemTags {
     public static final TagKey<Item> ULTIMATE_YASSIFER = createForge("yassifers/ultimate");
 
     public static final TagKey<Item> SHENSEIUM_ORE = createForge("ores/shenseium");
+
+    public static final TagKey<Item> FLOPIUM_BLOCK = createForge("storage_blocks/flopium");
+    public static final TagKey<Item> GAGASTONE_BLOCK = createForge("storage_blocks/gagastone");
+    public static final TagKey<Item> GAGINA_BLOCK = createForge("storage_blocks/");
+    public static final TagKey<Item> INFUSED_SLAGINIUM_BLOCK = createForge("storage_blocks/infused_slaginium");
+    public static final TagKey<Item> MYSTICAL_FLOPIUM_BLOCK = createForge("storage_blocks/mystical_flopium");
+    public static final TagKey<Item> SHENSEIUM_BLOCK = createForge("storage_blocks/shenseium");
+    public static final TagKey<Item> SLAGINIUM_BLOCK = createForge("storage_blocks/slaginium");
 
     private static TagKey<Item> createForge(String loc) {
         return net.minecraft.tags.ItemTags.create(new ResourceLocation("forge", loc));

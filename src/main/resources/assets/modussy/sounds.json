@@ -233,6 +233,15 @@
       }
     ]
   },
+  "music_disc_c16": {
+    "subtitle": "subtitles.music",
+    "sounds": [
+      {
+        "name": "modussy:music_disc_c16",
+        "stream": true
+      }
+    ]
+  },
   "music_disc_c17": {
     "subtitle": "subtitles.music",
     "sounds": [
@@ -314,6 +323,15 @@
       }
     ]
   },
+  "music_disc_c26": {
+    "subtitle": "subtitles.music",
+    "sounds": [
+      {
+        "name": "modussy:music_disc_c26",
+        "stream": true
+      }
+    ]
+  },
   "music_disc_cj1": {
     "subtitle": "subtitles.music",
     "sounds": [
@@ -346,6 +364,15 @@
     "sounds": [
       {
         "name": "modussy:music_disc_cupcakke3",
+        "stream": true
+      }
+    ]
+  },
+  "music_disc_cupcakke4": {
+    "subtitle": "subtitles.music",
+    "sounds": [
+      {
+        "name": "modussy:music_disc_cupcakke4",
         "stream": true
       }
     ]
@@ -418,6 +445,15 @@
     "sounds": [
       {
         "name": "modussy:music_disc_jc1",
+        "stream": true
+      }
+    ]
+  },
+  "music_disc_jc2": {
+    "subtitle": "subtitles.music",
+    "sounds": [
+      {
+        "name": "modussy:music_disc_jc2",
         "stream": true
       }
     ]
@@ -787,6 +823,87 @@
     "sounds": [
       {
         "name": "modussy:jiafei_trade_3",
+        "stream": true
+      }
+    ]
+  },
+  "nicki_minaj_1": {
+    "subtitle": "subtitles.nicki_minaj",
+    "sounds": [
+      {
+        "name": "modussy:nicki_minaj_1",
+        "stream": true
+      }
+    ]
+  },
+  "nicki_minaj_2": {
+    "subtitle": "subtitles.nicki_minaj",
+    "sounds": [
+      {
+        "name": "modussy:nicki_minaj_2",
+        "stream": true
+      }
+    ]
+  },
+  "nicki_minaj_3": {
+    "subtitle": "subtitles.nicki_minaj",
+    "sounds": [
+      {
+        "name": "modussy:nicki_minaj_3",
+        "stream": true
+      }
+    ]
+  },
+  "nicki_minaj_death": {
+    "subtitle": "subtitles.flop_death",
+    "sounds": [
+      {
+        "name": "modussy:nicki_minaj_death",
+        "stream": true
+      }
+    ]
+  },
+  "nicki_minaj_eat": {
+    "subtitle": "subtitles.nicki_minaj_eat",
+    "sounds": [
+      {
+        "name": "modussy:nicki_minaj_eat",
+        "stream": true
+      }
+    ]
+  },
+  "nicki_minaj_hurt1": {
+    "subtitle": "subtitles.nicki_minaj_hurt",
+    "sounds": [
+      {
+        "name": "modussy:nicki_minaj_hurt1",
+        "stream": true
+      }
+    ]
+  },
+  "nicki_minaj_hurt2": {
+    "subtitle": "subtitles.nicki_minaj_hurt",
+    "sounds": [
+      {
+        "name": "modussy:nicki_minaj_hurt2",
+        "stream": true
+      }
+    ]
+  },
+  "nicki_minaj_summon": {
+    "subtitle": "subtitles.nicki_minaj_summon",
+    "sounds": [
+      {
+        "name": "modussy:nicki_minaj_summon",
+        "stream": true
+      }
+    ]
+  },
+  "nicki_minaj_trade": {
+    "subtitle": "subtitles.nicki_minaj_trade",
+    "sounds": [
+      {
+        "name": "modussy:nicki_minaj_trade",
         "stream": true
       }
     ]

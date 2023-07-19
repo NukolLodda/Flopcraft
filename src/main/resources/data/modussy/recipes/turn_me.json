@@ -1,0 +1,18 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "modussy:cupcake"
+    },
+    {
+      "item": "modussy:slaginium"
+    },
+    {
+      "tag": "forge:yassifiers/basic"
+    }
+  ],
+  "result": {
+    "count": 1,
+    "item": "modussy:music_disc_c26"
+  }
+}

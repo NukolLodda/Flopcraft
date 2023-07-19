@@ -22,6 +22,7 @@ public abstract class AbstractFlops extends PathfinderMob {
     private int inLove;
     @Nullable
     private UUID loveCause;
+    protected Player tamedBy;
     public AbstractFlops(EntityType type, Level world) {
         super(type, world);
         xpReward = 0;
@@ -54,6 +55,10 @@ public abstract class AbstractFlops extends PathfinderMob {
         this.goalSelector.addGoal(8, new OpenDoorGoal(this, true));
     }
 
+    public void setTamed(Player player) {
+        this.tamedBy = player;
+    }
+
     @Override
     public abstract MobType getMobType();
 
@@ -71,16 +76,21 @@ public abstract class AbstractFlops extends PathfinderMob {
         super.baseTick();
     }
 
-    private void alertFlops(DamageSource pDamageSource) {
+    protected void alertFlops(DamageSource pDamageSource) {
         AABB aabb = AABB.unitCubeFromLowerCorner(this.position()).inflate(10d, 10.0d, 10d);
         List<Entity> list = this.level().getEntitiesOfClass(Entity.class, aabb, e -> true).stream()
                 .sorted(Comparator.comparingDouble(_entcnd ->
                         _entcnd.distanceToSqr(this.getX(), this.getY(), this.getZ()))).toList();
 
         for (Entity ent : list) {
-            if (ent instanceof Player player && player.isCreative()) continue;
-            if (ent instanceof AbstractFlops flops && pDamageSource.getEntity() instanceof LivingEntity entity)
-                flops.setTarget(entity);
+            if (ent instanceof AbstractFlops flops && pDamageSource.getEntity() instanceof LivingEntity) {
+                LivingEntity entity = (LivingEntity) pDamageSource.getEntity();
+                if (entity instanceof Player player) {
+                    if (player.equals(flops.tamedBy)) flops.setTamed(null);
+                    else if (player.isCreative()) entity = null;
+                }
+                if (entity != null) flops.setTarget(entity);
+            }
             // if the causer was the player, it would reduce their yassification level
         }
 
@@ -96,6 +106,9 @@ public abstract class AbstractFlops extends PathfinderMob {
 
     @Override
     public boolean hurt(DamageSource pSource, float pAmount) {
+        if (pSource.getEntity() instanceof Player player && player == this.tamedBy) {
+            this.setTamed(null);
+        }
         if (pSource.getEntity() != null) {
             alertFlops(pSource);
         }
@@ -107,11 +120,29 @@ public abstract class AbstractFlops extends PathfinderMob {
         builder = builder.add(Attributes.MOVEMENT_SPEED, 0.3);
         builder = builder.add(Attributes.MAX_HEALTH, 20);
         builder = builder.add(Attributes.ARMOR, 0);
-        builder = builder.add(Attributes.ATTACK_DAMAGE, 3);
+        builder = builder.add(Attributes.ATTACK_DAMAGE, 6);
         builder = builder.add(Attributes.FOLLOW_RANGE, 16);
         builder = builder.add(Attributes.ATTACK_KNOCKBACK, 2);
 
         return builder;
+    }
+
+
+
+    @Override
+    public void tick() {
+        super.tick();
+
+        if (!this.level().isClientSide && this.tamedBy != null) {
+            DamageSource lastDmg = this.tamedBy.getLastDamageSource();
+            if (this.tamedBy != null && lastDmg != null) {
+                Entity ent = lastDmg.getEntity();
+                if (!(ent instanceof AbstractFlops) && ent instanceof LivingEntity entity) {
+                    this.setTarget(entity);
+                    this.alertFlops(lastDmg);
+                }
+            }
+        }
     }
 
     public boolean isInLove() {
