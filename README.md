@@ -26,7 +26,8 @@ Requests I accept includes: <br>
 - Removal of content (as long as the requested content isn't integral to the structure of this mod)
 
 Requests I reject includes: <br>
-- Porting Modussy to other versions/editions of Minecraft<br>
+- Porting Modussy to other versions/editions of Minecraft
+(I lack both the time and knowledge for this)<br>
 - Porting Modussy to other APIs
 (though I will still try to make a fabric port)<br>
 - Addition of music discs sounds in the sounds folder (mostly legal reasons so it's better safe than sorry)
