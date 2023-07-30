@@ -21,15 +21,14 @@ Click <a href="https://github.com/NukolLodda/Modussy/tags">here</a> to find all 
 **Requests**
 
 Requests I accept includes: <br>
-- Addition of new content, ie. blocks, items, entities, ect. (as long as it makes sense for this mod and it isn't too complicated)
-<br>
+- Addition of new content, ie. blocks, items, entities, ect.
+(as long as it makes sense for this mod and it isn't too complicated)<br>
 - Removal of content (as long as the requested content isn't integral to the structure of this mod)
 
 Requests I reject includes: <br>
-- Porting Modussy to other versions/editions of Minecraft
-<br>
-- Porting Modussy to other APIs (though I will still try to make a fabric port)
-<br>
+- Porting Modussy to other versions/editions of Minecraft<br>
+- Porting Modussy to other APIs
+(though I will still try to make a fabric port)<br>
 - Addition of music discs sounds in the sounds folder (mostly legal reasons so it's better safe than sorry)
 
 ___
