@@ -20,15 +20,14 @@ Click <a href="https://github.com/NukolLodda/Modussy/tags">here</a> to find all 
 ---
 **Requests**
 
-I am aware that some of you wants me to add specific things into Modussy and for items, blocks, entities/mobs,
-and structures, I will try to get to them as soon as I can. However, since I have other projects I'm making
-at the moment along with the fact that Modussy's complexity has a tendency to require tons of debugging,
-it will take me a bit. However, I will NOT be taking EVERY request thrown my way which I'd do if the request
-in question is too complicated for someone my level or that it just doesn't feel right in Modussy.
+Requests I accept includes: <br>
+| - Addition of new content, ie. blocks, items, entities, ect. (as long as it makes sense for this mod and it isn't too complicated)
+| - Removal of content (as long as the requested content isn't integral to the structure of this mod)
 
-I will however, not be taking any requests for porting Modussy to other versions/editions of Minecraft since
-I would have to basically figure out how to redo entire segments of Modussy's source code, which will take
-me weeks if not months. However, if any of you guys are up for the task, you are all free to fork this project.
+Requests I reject includes: <br>
+| - Porting Modussy to other versions/editions of Minecraft
+| - Porting Modussy to other APIs (though I will still try to make a fabric port)
+| - Addition of music discs sounds in the sounds folder (mostly legal reasons so it's better safe than sorry)
 
 ___
 **Why Modussy Isn't On Curseforge**
@@ -43,7 +42,7 @@ version of Modussy.
 ___
 **Where Are Modussy's Aesthetic Music**
 
-It is noted that the music discs were removed to prevent any copyright claims on to my mod
+The music discs were removed to prevent any legal trouble with my mod
 however, if you want to listen to music using this mod, you have to record a song down and
 convert it to an ogg file using <a href="https://convertio.co/">this link</a>
 
