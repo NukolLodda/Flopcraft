@@ -32,6 +32,9 @@ Requests I reject includes: <br>
 (though I will still try to make a fabric port)<br>
 - Addition of music discs sounds in the sounds folder (mostly legal reasons so it's better safe than sorry)
 
+For anyone who wants inquires on the status of your requests/needs help with downloading Modussy,
+come to <a href="https://discord.gg/6jv8vab9">my discord server</a>
+
 ___
 **Why Modussy Isn't On Curseforge**
 
