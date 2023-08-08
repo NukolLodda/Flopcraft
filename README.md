@@ -5,6 +5,10 @@ A very s3xy and aesthetic Minecraft mod
 As of right now, Modussy currently has support for Minecraft Java versions 1.19.2 and 1.20.1 on forge API.
 A fabric port will likely get made some day however, it will likely be in a separate repository.
 
+<br>
+If you have any questions regarding Modussy, you can cvm to <a href="https://discord.gg/NTwqY3rcvU">my discord server</a>.
+I will also be giving out updates about the project there and my status on certain requests if you are interested of course.
+
 ---
 **Download**
 
@@ -51,6 +55,10 @@ ___
 The music discs were removed to prevent any legal trouble with my mod
 however, if you want to listen to music using this mod, you have to record a song down and
 convert it to an ogg file using <a href="https://convertio.co/">this link</a>
+
+However, as of right now I have a possible solution to this problem which will be done via
+links rather than how things are currently done as to allow for the music discs to have a sound
+without having the sound files in the sourcecode.
 
 ___
 **Downloading Aesthetic Music Files For Modussy**
