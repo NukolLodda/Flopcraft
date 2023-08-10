@@ -6,7 +6,7 @@ As of right now, Modussy currently has support for Minecraft Java versions 1.19.
 A fabric port will likely get made some day however, it will likely be in a separate repository.
 
 <br>
-If you have any questions regarding Modussy, you can cvm to <a href="https://discord.gg/NTwqY3rcvU">my discord server</a>.
+If you have any questions regarding Modussy, you can cvm to <a href="https://discord.gg/NTwqY3rcvU">the Modussy discord server</a>.
 I will also be giving out updates about the project there and my status on certain requests if you are interested of course.
 
 ---
