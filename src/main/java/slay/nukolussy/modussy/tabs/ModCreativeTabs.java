@@ -76,6 +76,7 @@ public class ModCreativeTabs {
                         pOutput.accept(ModItem.JIAFEI_HELMET.get());
                         pOutput.accept(ModItem.DEELDO.get());
                         pOutput.accept(ModItem.BRA.get());
+                        pOutput.accept(ModItem.THONGS.get());
                     })).build());
 
     public static RegistryObject<CreativeModeTab> YASS_DISCS = CREATIVE_MODE_TABS.register("yass_discs", () ->
@@ -141,6 +142,8 @@ public class ModCreativeTabs {
                         pOutput.accept(ModItem.GAGASTONE.get());
                         pOutput.accept(ModItem.GAGINA.get());
                         pOutput.accept(ModItem.HAIRUSSY.get());
+                        pOutput.accept(ModItem.JIAFEI_TRIM_TEMPLATE.get());
+                        pOutput.accept(ModItem.JIAFEI_UPGRADE_TEMPLATE.get());
                         pOutput.accept(ModItem.MYSTICAL_FLOPIUM.get());
                         pOutput.accept(ModItem.SCARUSSY.get());
                         pOutput.accept(ModItem.SLAGINIUM.get());

@@ -211,9 +211,9 @@ public class Twink extends AbstractFlops {
         BLOND(0, "blond"),
         BEACH(1, "beach"),
         FLOWER(2, "flower"),
-        PINK(3, "pink")
+        PINK(3, "pink"),
+        JIAFEIAN(4, "noirette")
         /*
-        NOIRETTE(4, "noirette"),
         TANNED(5, "tanned")
          */;
 

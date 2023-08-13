@@ -25,6 +25,7 @@ public class TwinkRenderer extends MobRenderer<Twink, PlayerModel<Twink>> {
         type.put(Twink.Variant.BEACH, new ResourceLocation("modussy:textures/entities/twink_1.png"));
         type.put(Twink.Variant.FLOWER, new ResourceLocation("modussy:textures/entities/twink_2.png"));
         type.put(Twink.Variant.PINK, new ResourceLocation("modussy:textures/entities/twink_3.png"));
+        type.put(Twink.Variant.JIAFEIAN, new ResourceLocation("modussy:textures/entities/twink_4.png"));
     });
     public TwinkRenderer(EntityRendererProvider.Context context) {
         super(context, new PlayerModel<>(context.bakeLayer(ModelLayers.PLAYER_SLIM), true), 0.5f);

@@ -98,8 +98,7 @@ public class InnerWear extends ArmorItem {
             player.addEffect(new MobEffectInstance(MobEffects.JUMP, 5, 2,true, false));
             player.addEffect(new MobEffectInstance(MobEffects.HERO_OF_THE_VILLAGE, 5, 0,true, false));
             player.addEffect(new MobEffectInstance(MobEffects.MOVEMENT_SPEED, 5, 2,true, false));
-            player.addEffect(new MobEffectInstance(MobEffects.ABSORPTION, 5, 1,true, false));
-            player.addEffect(new MobEffectInstance(MobEffects.HEALTH_BOOST, 5, 1,true, false));
+            player.addEffect(new MobEffectInstance(MobEffects.HEAL, 5, 1,true, false));
             player.addEffect(new MobEffectInstance(MobEffects.SATURATION, 5, 1,true, false));
             player.addEffect(new MobEffectInstance(MobEffects.SLOW_FALLING, 5, 2,true, false));
         }

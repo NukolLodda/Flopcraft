@@ -41,6 +41,16 @@
   "item.modussy.twink_egg": "Huevo de twink",
 
   "item.modussy.bra": "Bra",
+  "item.modussy.thongs": "Tanga",
+
+  "item.modussy.jiafei_upgrade_smithing_template": "Plantilla de herrería",
+  "item.modussy.jiafei_armor_trim_template": "Plantilla de herrería",
+
+  "item.modussy.jiafei_upgrade_smithing_template.desc": "Mejora de Jiafei",
+  "item.modussy.jiafei_upgrade_smithing_template.ingredients": "Producto de Jiafei",
+  "trim_pattern.modussy.jiafei": "Ornamento de Jiafei",
+
+  "item.modussy.jiafei_upgrade_smithing_template.upgrade_material": "Coloca un producto de Jiafei",
 
   "item.modussy.jiafei_shovel": "Jiafei de chanzi",
   "item.modussy.jiafei_axe": "Jiafei de fotou",
@@ -113,8 +123,8 @@
   "item.modussy.music_disc_jc1": "Disco de música",
   "item.modussy.music_disc_jc2": "Disco de música",
   "item.modussy.music_disc_jiafei": "Disco de música",
-  "item.modussy.music_disc_ponmi": "Disco de música",
   "item.modussy.music_disc_pm1": "Disco de música",
+  "item.modussy.music_disc_ponmi": "Disco de música",
   "item.modussy.music_disc_ranvision": "Disco de música",
 
   "item.modussy.music_disc_c1.desc": "IVE - After LIKE; Ranvision - Remix de CupcakKe",
@@ -149,8 +159,8 @@
   "item.modussy.music_disc_cupcakke2.desc": "CupcakKe - Deepthroat",
   "item.modussy.music_disc_cupcakke3.desc": "CupcakKe - Vagina",
   "item.modussy.music_disc_cupcakke4.desc": "CupcakKe - H2hoe",
-  "item.modussy.music_disc_deje_bullying.desc": "Noséporque111 - Deje El Bullying",
   "item.modussy.music_disc_db1.desc": "Doja Cat - Say So; yobani Joestar Clonado - Remix de Deje el Bullying",
+  "item.modussy.music_disc_deje_bullying.desc": "Noséporque111 - Deje El Bullying",
   "item.modussy.music_disc_j1.desc": "Lady Gaga - Bad Romance; Queen Jiafei - Remix de Jiafei",
   "item.modussy.music_disc_j2.desc": "Olivia Rodrigo - Driver's License; Ranvision - Remix de Jiafei",
   "item.modussy.music_disc_j3.desc": "Hallo Aus Berlin - Was Ist Dein Lieblingsfach?; Ranvision - Remix de Jiafei",
@@ -159,9 +169,9 @@
   "item.modussy.music_disc_jc1.desc": "Britney Spears - Gimme More; Treeuitah - Remix de Jiafei y CupcakKe",
   "item.modussy.music_disc_jc2.desc": "Nicki Minaj - Starship; Lawieee - Remix de Jiafei y CupcakKe",
   "item.modussy.music_disc_jiafei.desc": "老猫 - 野花香",
+  "item.modussy.music_disc_pm1.desc": "Joe Hisaishi - Merry-Go-Round of Life; Ranvision - Remix de Pon Mi",
   "item.modussy.music_disc_ponmi.desc": "Shenseea - Pon Mi",
   "item.modussy.music_disc_ranvision.desc": "Ranvision - CupcakKe toma el metro",
-  "item.modussy.music_disc_pm1.desc": "Joe Hisaishi - Merry-Go-Round of Life; Ranvision - Remix de Pon Mi",
 
   "item.modussy.barbie_spawn_egg": "Generar barbie",
   "item.modussy.cupcakke_spawn_egg": "Generar CupcakKe",

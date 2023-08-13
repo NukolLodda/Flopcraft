@@ -1,0 +1,29 @@
+{
+  "type": "modussy:cvm_infusion",
+  "ingredients": [
+    {
+      "item": "minecraft:barrier"
+    },
+    {
+      "item": "minecraft:barrier"
+    },
+    {
+      "item": "minecraft:barrier"
+    },
+    {
+      "item": "modussy:cvmtitplasm"
+    },
+    {
+      "item": "modussy:cupcake"
+    },
+    {
+      "item": "modussy:cvmtitplasm"
+    },
+    {
+      "item": "modussy:cvmtitplasm"
+    }
+  ],
+  "output": {
+    "item": "modussy:thongs"
+  }
+}

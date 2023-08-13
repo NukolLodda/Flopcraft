@@ -1,0 +1,15 @@
+{
+  "type": "minecraft:smithing",
+  "template": {
+    "item": "modussy:jiafei_upgrade_smithing_template"
+  },
+  "base": {
+    "item": "minecraft:diamond_helmet"
+  },
+  "addition": {
+    "item": "modussy:jiafei_product"
+  },
+  "result": {
+    "item": "modussy:jiafei_helmet"
+  }
+}

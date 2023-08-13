@@ -1,5 +1,6 @@
 package slay.nukolussy.modussy.item;
 
+import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.food.FoodProperties;
 import net.minecraft.world.item.*;
 import net.minecraftforge.common.ForgeSpawnEggItem;
@@ -12,6 +13,7 @@ import slay.nukolussy.modussy.entities.ModEntities;
 import slay.nukolussy.modussy.item.types.*;
 import slay.nukolussy.modussy.item.types.jiafei.*;
 import slay.nukolussy.modussy.sound.ModSounds;
+import slay.nukolussy.modussy.tags.ModTrimPatterns;
 import slay.nukolussy.modussy.tiers.ModTiers;
 
 public class ModItem {
@@ -99,6 +101,12 @@ public class ModItem {
     public static final RegistryObject<Item> FLOPTROPICA_TICKET = ITEMS.register("floptropica_ticket", FloptropicaTicket::new);
     public static final RegistryObject<Item> JIAFEI_SEED = ITEMS.register("jiafei_seed", JiafeiSeed::new);
     public static final RegistryObject<Item> BRA = ITEMS.register("bra", InnerWear.Bra::new);
+    public static final RegistryObject<Item> THONGS = ITEMS.register("thongs", InnerWear.Thongs::new);
+    public static final RegistryObject<Item> JIAFEI_TRIM_TEMPLATE = ITEMS.register("jiafei_armor_trim_template",
+            () -> SmithingTemplateItem.createArmorTrimTemplate(ModTrimPatterns.JIAFEI));
+
+    public static final RegistryObject<Item> JIAFEI_UPGRADE_TEMPLATE = ITEMS.register("jiafei_upgrade_smithing_template",
+            ModSmithingTemplates::createJiafeiUpgradeTemplate);
 
     public static final RegistryObject<Item> JIAFEI_AXE = ITEMS.register("jiafei_axe", JiafeiAxe::new);
     public static final RegistryObject<Item> JIAFEI_HAMMER = ITEMS.register("jiafei_hammer", JiafeiHammer::new);

@@ -384,7 +384,7 @@ public class ActivateMethods {
                     yassification(_ent, world, (Player)player);
                     if (isMonster(_ent)) {
                         monsterEffects(_ent, amp * ((int)chargedTime),amp - 1);
-                        _ent.hurt(_ent.level().damageSources().playerAttack((Player) player), power * 2 * (int) chargedTime);
+                        _ent.hurt(_ent.level().damageSources().playerAttack((Player) player), power * 10 * (int)chargedTime);
                         _ent.setSecondsOnFire(flame ? isCvmium ? 420 : 100 : 0);
                     }
                     if (_ent instanceof Cat _cat && Math.random() < 0.16) {
@@ -411,7 +411,7 @@ public class ActivateMethods {
     }
 
     public static void yassification(LivingEntity ent, LevelAccessor world, Player player) {
-        if (ent instanceof Villager villager) villagerYassification(villager, world, player);
+        if (ent instanceof AbstractVillager villager) villagerYassification(villager, world, player);
         if (ent instanceof Witch witch) witchYassification(witch, world, player);
     }
 }

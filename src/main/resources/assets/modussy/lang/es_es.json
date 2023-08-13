@@ -41,6 +41,16 @@
   "item.modussy.twink_egg": "Huevo de twink",
 
   "item.modussy.bra": "Sujetador",
+  "item.modussy.thongs": "Tanga",
+
+  "item.modussy.jiafei_upgrade_smithing_template": "Plantilla de herrería",
+  "item.modussy.jiafei_armor_trim_template": "Plantilla de herrería",
+
+  "item.modussy.jiafei_upgrade_smithing_template.desc": "Mejora de Jiafei",
+  "item.modussy.jiafei_upgrade_smithing_template.ingredients": "Producto de Jiafei",
+  "trim_pattern.modussy.jiafei": "Ornamento de Jiafei",
+
+  "item.modussy.jiafei_upgrade_smithing_template.upgrade_material": "Coloca un producto de Jiafei",
 
   "item.modussy.jiafei_shovel": "Jiafei de chanzi",
   "item.modussy.jiafei_axe": "Jiafei de fotou",

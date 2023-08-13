@@ -41,6 +41,16 @@
   "item.modussy.twink_egg": "Twink Egg",
 
   "item.modussy.bra": "Bra",
+  "item.modussy.thongs": "Thongs",
+
+  "item.modussy.jiafei_upgrade_smithing_template": "Smithing Template",
+  "item.modussy.jiafei_armor_trim_template": "Smithing Template",
+
+  "item.modussy.jiafei_upgrade_smithing_template.desc": "Jiafei Upgrade",
+  "item.modussy.jiafei_upgrade_smithing_template.ingredients": "Jiafei Product",
+  "trim_pattern.modussy.jiafei": "Jiafei Armor Trim",
+
+  "item.modussy.jiafei_upgrade_smithing_template.upgrade_material": "Add Jiafei Product",
 
   "item.modussy.jiafei_shovel": "Jiafei De Chanzi",
   "item.modussy.jiafei_axe": "Jiafei De Fotou",
