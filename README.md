@@ -24,6 +24,14 @@ Click <a href="https://github.com/NukolLodda/Modussy/tags">here</a> to find all 
 ---
 **Requests**
 
+If a request is something I consider achievable, I will try my best to complete it. However, I would
+like to state that depending on the complexity of the request, it may take up from a couple weeks to
+several months before it's out. The version in particular also generally needs months of debugging and
+testing prior to release. This is also along with the fact that I am currently working on other projects,
+and that I may at a time be coding multiple requests in, and that I'm still a high schooler meaning that
+I may not have sufficient experience and that I may also just not have the time for personal reasons. So please be patient
+after I take in a request.
+
 Requests I accept includes: <br>
 - Addition of new content, ie. blocks, items, entities, ect.
 (as long as it makes sense for this mod and it isn't too complicated)<br>
