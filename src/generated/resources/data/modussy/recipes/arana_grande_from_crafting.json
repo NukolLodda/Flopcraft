@@ -1,0 +1,25 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "group": "arana_grande",
+  "key": {
+    "0": {
+      "item": "minecraft:string"
+    },
+    "1": {
+      "item": "minecraft:spider_eye"
+    },
+    "2": {
+      "tag": "forge:yassifers/basic"
+    }
+  },
+  "pattern": [
+    "101",
+    "020",
+    "111"
+  ],
+  "result": {
+    "item": "modussy:arana_grande"
+  },
+  "show_notification": true
+}

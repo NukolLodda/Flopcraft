@@ -1,0 +1,22 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "group": "music_disc_cj1",
+  "ingredients": [
+    {
+      "item": "modussy:jiafei_product"
+    },
+    {
+      "item": "modussy:cupcake"
+    },
+    {
+      "item": "minecraft:leather_chestplate"
+    },
+    {
+      "tag": "forge:yassifers/elite"
+    }
+  ],
+  "result": {
+    "item": "modussy:music_disc_cj1"
+  }
+}

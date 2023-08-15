@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "group": "music_disc_c14",
+  "ingredients": [
+    {
+      "item": "minecraft:fermented_spider_eye"
+    },
+    {
+      "item": "modussy:cupcake"
+    },
+    {
+      "tag": "forge:yassifers/basic"
+    }
+  ],
+  "result": {
+    "item": "modussy:music_disc_c14"
+  }
+}

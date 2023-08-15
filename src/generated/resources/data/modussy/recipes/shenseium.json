@@ -1,0 +1,14 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "group": "shenseium",
+  "ingredients": [
+    {
+      "tag": "forge:storage_blocks/shenseium"
+    }
+  ],
+  "result": {
+    "count": 9,
+    "item": "modussy:shenseium"
+  }
+}

@@ -1,0 +1,28 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "group": "cvm_infusion",
+  "key": {
+    "0": {
+      "tag": "forge:ingots/slaginium"
+    },
+    "1": {
+      "item": "modussy:cvm"
+    },
+    "2": {
+      "item": "minecraft:crafting_table"
+    },
+    "3": {
+      "item": "modussy:cvmtitplasm"
+    }
+  },
+  "pattern": [
+    "010",
+    "020",
+    "030"
+  ],
+  "result": {
+    "item": "modussy:cvm_infusion_alter"
+  },
+  "show_notification": true
+}

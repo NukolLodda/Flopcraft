@@ -1,0 +1,37 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "group": "gagina_block",
+  "ingredients": [
+    {
+      "item": "modussy:gagina"
+    },
+    {
+      "item": "modussy:gagina"
+    },
+    {
+      "item": "modussy:gagina"
+    },
+    {
+      "item": "modussy:gagina"
+    },
+    {
+      "item": "modussy:gagina"
+    },
+    {
+      "item": "modussy:gagina"
+    },
+    {
+      "item": "modussy:gagina"
+    },
+    {
+      "item": "modussy:gagina"
+    },
+    {
+      "item": "modussy:gagina"
+    }
+  ],
+  "result": {
+    "item": "modussy:gagina_block"
+  }
+}

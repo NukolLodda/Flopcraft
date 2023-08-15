@@ -1,0 +1,31 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "group": "cupcakke_spawn",
+  "key": {
+    "0": {
+      "tag": "forge:yassifers/basic"
+    },
+    "1": {
+      "item": "modussy:cupcake"
+    },
+    "2": {
+      "item": "modussy:cvmtitplasm"
+    },
+    "3": {
+      "item": "modussy:posei"
+    },
+    "4": {
+      "item": "modussy:cvm"
+    }
+  },
+  "pattern": [
+    "242",
+    "101",
+    "232"
+  ],
+  "result": {
+    "item": "modussy:cupcakke_spawn_egg"
+  },
+  "show_notification": true
+}

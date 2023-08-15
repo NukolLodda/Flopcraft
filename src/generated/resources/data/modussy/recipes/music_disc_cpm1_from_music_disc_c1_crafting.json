@@ -1,0 +1,22 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "group": "music_disc_cpm1",
+  "ingredients": [
+    {
+      "tag": "forge:gems/shenseium"
+    },
+    {
+      "item": "modussy:cupcake"
+    },
+    {
+      "item": "modussy:music_disc_c1"
+    },
+    {
+      "tag": "forge:yassifers/advanced"
+    }
+  ],
+  "result": {
+    "item": "modussy:music_disc_cpm1"
+  }
+}

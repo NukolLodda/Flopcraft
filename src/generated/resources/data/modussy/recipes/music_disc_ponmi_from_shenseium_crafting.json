@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "group": "music_disc_ponmi",
+  "ingredients": [
+    {
+      "tag": "forge:gems/shenseium"
+    },
+    {
+      "tag": "forge:yassifers/advanced"
+    }
+  ],
+  "result": {
+    "item": "modussy:music_disc_ponmi"
+  }
+}

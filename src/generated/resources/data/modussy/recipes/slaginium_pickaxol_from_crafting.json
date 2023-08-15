@@ -1,0 +1,25 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "group": "slaginium_pickaxol",
+  "key": {
+    "0": {
+      "tag": "forge:ingots/slaginium"
+    },
+    "1": {
+      "item": "modussy:cupcake"
+    },
+    "2": {
+      "item": "minecraft:stick"
+    }
+  },
+  "pattern": [
+    "010",
+    "02 ",
+    " 2 "
+  ],
+  "result": {
+    "item": "modussy:slaginium_pickaxol"
+  },
+  "show_notification": true
+}

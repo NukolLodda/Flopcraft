@@ -1,0 +1,15 @@
+{
+  "type": "minecraft:smithing_transform",
+  "addition": {
+    "item": "modussy:jiafei_product"
+  },
+  "base": {
+    "item": "minecraft:netherite_helmet"
+  },
+  "result": {
+    "item": "modussy:jiafei_helmet"
+  },
+  "template": {
+    "item": "modussy:jiafei_upgrade_smithing_template"
+  }
+}

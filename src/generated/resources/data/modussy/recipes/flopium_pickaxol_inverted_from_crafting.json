@@ -1,0 +1,25 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "group": "flopium_pickaxol",
+  "key": {
+    "0": {
+      "tag": "forge:gems/flopium"
+    },
+    "1": {
+      "item": "modussy:jiafei_product"
+    },
+    "2": {
+      "item": "modussy:gagastone"
+    }
+  },
+  "pattern": [
+    "010",
+    " 20",
+    " 2 "
+  ],
+  "result": {
+    "item": "modussy:flopium_pickaxol"
+  },
+  "show_notification": true
+}

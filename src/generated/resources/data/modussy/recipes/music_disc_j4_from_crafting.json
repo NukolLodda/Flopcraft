@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "group": "music_disc_j4",
+  "ingredients": [
+    {
+      "item": "modussy:music_disc_jiafei"
+    },
+    {
+      "item": "modussy:jiafei_product"
+    },
+    {
+      "tag": "forge:yassifers/elite"
+    }
+  ],
+  "result": {
+    "item": "modussy:music_disc_j4"
+  }
+}

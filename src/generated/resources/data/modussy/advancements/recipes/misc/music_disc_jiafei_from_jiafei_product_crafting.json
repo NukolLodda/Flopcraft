@@ -1,0 +1,35 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_jiafei_product": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "modussy:jiafei_product"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "modussy:music_disc_jiafei_from_jiafei_product_crafting"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_jiafei_product",
+      "has_the_recipe"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "modussy:music_disc_jiafei_from_jiafei_product_crafting"
+    ]
+  },
+  "sends_telemetry_event": false
+}

@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "group": "music_disc_cupcakke4",
+  "ingredients": [
+    {
+      "item": "minecraft:water_bucket"
+    },
+    {
+      "item": "modussy:cupcake"
+    }
+  ],
+  "result": {
+    "item": "modussy:music_disc_cupcakke4"
+  }
+}

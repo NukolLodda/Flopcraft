@@ -1,0 +1,37 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "group": "mystical_flopium_block",
+  "ingredients": [
+    {
+      "tag": "forge:gems/mystical_flopium"
+    },
+    {
+      "tag": "forge:gems/mystical_flopium"
+    },
+    {
+      "tag": "forge:gems/mystical_flopium"
+    },
+    {
+      "tag": "forge:gems/mystical_flopium"
+    },
+    {
+      "tag": "forge:gems/mystical_flopium"
+    },
+    {
+      "tag": "forge:gems/mystical_flopium"
+    },
+    {
+      "tag": "forge:gems/mystical_flopium"
+    },
+    {
+      "tag": "forge:gems/mystical_flopium"
+    },
+    {
+      "tag": "forge:gems/mystical_flopium"
+    }
+  ],
+  "result": {
+    "item": "modussy:mystical_flopium_block"
+  }
+}

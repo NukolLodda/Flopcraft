@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "group": "hairussy",
+  "ingredients": [
+    {
+      "item": "minecraft:leather"
+    },
+    {
+      "item": "minecraft:brown_wool"
+    },
+    {
+      "tag": "forge:yassifers/basic"
+    }
+  ],
+  "result": {
+    "item": "modussy:hairussy"
+  }
+}

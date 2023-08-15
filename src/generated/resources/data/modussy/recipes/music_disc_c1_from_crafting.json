@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "group": "music_disc_c1",
+  "ingredients": [
+    {
+      "item": "minecraft:music_disc_strad"
+    },
+    {
+      "item": "modussy:cupcake"
+    },
+    {
+      "tag": "forge:yassifers/basic"
+    }
+  ],
+  "result": {
+    "item": "modussy:music_disc_c1"
+  }
+}

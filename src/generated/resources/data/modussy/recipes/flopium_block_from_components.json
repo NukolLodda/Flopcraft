@@ -1,0 +1,37 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "group": "flopium_block",
+  "ingredients": [
+    {
+      "tag": "forge:gems/flopium"
+    },
+    {
+      "tag": "forge:gems/flopium"
+    },
+    {
+      "tag": "forge:gems/flopium"
+    },
+    {
+      "tag": "forge:gems/flopium"
+    },
+    {
+      "tag": "forge:gems/flopium"
+    },
+    {
+      "tag": "forge:gems/flopium"
+    },
+    {
+      "tag": "forge:gems/flopium"
+    },
+    {
+      "tag": "forge:gems/flopium"
+    },
+    {
+      "tag": "forge:gems/flopium"
+    }
+  ],
+  "result": {
+    "item": "modussy:flopium_block"
+  }
+}

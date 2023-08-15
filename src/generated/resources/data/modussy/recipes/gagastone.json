@@ -1,0 +1,14 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "group": "gagastone",
+  "ingredients": [
+    {
+      "tag": "forge:storage_blocks/gagastone"
+    }
+  ],
+  "result": {
+    "count": 9,
+    "item": "modussy:gagastone"
+  }
+}

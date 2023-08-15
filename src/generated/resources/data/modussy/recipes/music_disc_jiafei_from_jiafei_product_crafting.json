@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "group": "music_disc_jiafei",
+  "ingredients": [
+    {
+      "item": "modussy:jiafei_product"
+    },
+    {
+      "tag": "forge:yassifers/elite"
+    }
+  ],
+  "result": {
+    "item": "modussy:music_disc_jiafei"
+  }
+}

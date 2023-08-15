@@ -1,0 +1,15 @@
+{
+  "type": "minecraft:smithing_transform",
+  "addition": {
+    "item": "modussy:jiafei_product"
+  },
+  "base": {
+    "item": "minecraft:netherite_pickaxe"
+  },
+  "result": {
+    "item": "modussy:jiafei_pickaxe"
+  },
+  "template": {
+    "item": "modussy:jiafei_upgrade_smithing_template"
+  }
+}

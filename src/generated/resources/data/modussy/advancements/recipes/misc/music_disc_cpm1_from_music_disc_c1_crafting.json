@@ -1,0 +1,35 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_music_disc_c1": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "modussy:music_disc_c1"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "modussy:music_disc_cpm1_from_music_disc_c1_crafting"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_music_disc_c1",
+      "has_the_recipe"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "modussy:music_disc_cpm1_from_music_disc_c1_crafting"
+    ]
+  },
+  "sends_telemetry_event": false
+}

@@ -1,0 +1,33 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "forge:ores/shenseium": {
+      "conditions": {
+        "items": [
+          {
+            "tag": "forge:ores/shenseium"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "modussy:shenseium_from_smeltingores_shenseium"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "forge:ores/shenseium",
+      "has_the_recipe"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "modussy:shenseium_from_smeltingores_shenseium"
+    ]
+  },
+  "sends_telemetry_event": false
+}

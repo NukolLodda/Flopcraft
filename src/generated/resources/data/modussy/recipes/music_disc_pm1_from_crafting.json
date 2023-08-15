@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "group": "music_disc_pm1",
+  "ingredients": [
+    {
+      "item": "minecraft:oak_log"
+    },
+    {
+      "tag": "forge:gems/shenseium"
+    },
+    {
+      "tag": "forge:yassifers/advanced"
+    }
+  ],
+  "result": {
+    "item": "modussy:music_disc_pm1"
+  }
+}

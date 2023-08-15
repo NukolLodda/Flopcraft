@@ -1,0 +1,37 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "group": "slaginium_block",
+  "ingredients": [
+    {
+      "tag": "forge:ingots/slaginium"
+    },
+    {
+      "tag": "forge:ingots/slaginium"
+    },
+    {
+      "tag": "forge:ingots/slaginium"
+    },
+    {
+      "tag": "forge:ingots/slaginium"
+    },
+    {
+      "tag": "forge:ingots/slaginium"
+    },
+    {
+      "tag": "forge:ingots/slaginium"
+    },
+    {
+      "tag": "forge:ingots/slaginium"
+    },
+    {
+      "tag": "forge:ingots/slaginium"
+    },
+    {
+      "tag": "forge:ingots/slaginium"
+    }
+  ],
+  "result": {
+    "item": "modussy:slaginium_block"
+  }
+}

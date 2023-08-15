@@ -1,0 +1,14 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "group": "flopium",
+  "ingredients": [
+    {
+      "tag": "forge:storage_blocks/flopium"
+    }
+  ],
+  "result": {
+    "count": 9,
+    "item": "modussy:flopium"
+  }
+}

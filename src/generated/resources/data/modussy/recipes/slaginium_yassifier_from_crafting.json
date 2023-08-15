@@ -1,0 +1,22 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "group": "slaginium_yassifier",
+  "key": {
+    "0": {
+      "item": "modussy:cvm"
+    },
+    "1": {
+      "tag": "forge:ingots/slaginium"
+    }
+  },
+  "pattern": [
+    "101",
+    "1 1",
+    " 1 "
+  ],
+  "result": {
+    "item": "modussy:slaginium_yassifier"
+  },
+  "show_notification": true
+}

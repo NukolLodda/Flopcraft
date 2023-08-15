@@ -1,0 +1,22 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "group": "scarussy",
+  "ingredients": [
+    {
+      "item": "minecraft:jack_o_lantern"
+    },
+    {
+      "item": "minecraft:ender_pearl"
+    },
+    {
+      "tag": "forge:yassifers/basic"
+    },
+    {
+      "item": "modussy:hairussy"
+    }
+  ],
+  "result": {
+    "item": "modussy:scarussy"
+  }
+}

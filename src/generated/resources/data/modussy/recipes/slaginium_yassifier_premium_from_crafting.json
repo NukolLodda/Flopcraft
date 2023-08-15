@@ -1,0 +1,22 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "group": "slaginium_yassifier_premium",
+  "key": {
+    "0": {
+      "item": "modussy:gagastone"
+    },
+    "1": {
+      "tag": "forge:gems/flopium"
+    }
+  },
+  "pattern": [
+    "101",
+    "1 1",
+    " 1 "
+  ],
+  "result": {
+    "item": "modussy:slaginium_yassifier_premium"
+  },
+  "show_notification": true
+}

@@ -1,0 +1,25 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "group": "infused_slaginium_pickaxol",
+  "key": {
+    "0": {
+      "tag": "forge:ingots/infused_slaginium"
+    },
+    "1": {
+      "tag": "forge:gems/shenseium"
+    },
+    "2": {
+      "item": "minecraft:blaze_rod"
+    }
+  },
+  "pattern": [
+    "010",
+    " 20",
+    " 2 "
+  ],
+  "result": {
+    "item": "modussy:infused_slaginium_pickaxol"
+  },
+  "show_notification": true
+}

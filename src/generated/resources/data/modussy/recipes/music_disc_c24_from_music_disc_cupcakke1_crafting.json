@@ -1,0 +1,13 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "group": "music_disc_c24",
+  "ingredients": [
+    {
+      "item": "modussy:music_disc_cupcakke1"
+    }
+  ],
+  "result": {
+    "item": "modussy:music_disc_c24"
+  }
+}

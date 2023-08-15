@@ -1,0 +1,14 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "group": "infused_slaginium",
+  "ingredients": [
+    {
+      "tag": "forge:storage_blocks/infused_slaginium"
+    }
+  ],
+  "result": {
+    "count": 9,
+    "item": "modussy:infused_slaginium"
+  }
+}

@@ -1,0 +1,35 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_mystical_flopium": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "modussy:mystical_flopium"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "modussy:slaginium_yassifier_deluxe_from_crafting"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_mystical_flopium",
+      "has_the_recipe"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "modussy:slaginium_yassifier_deluxe_from_crafting"
+    ]
+  },
+  "sends_telemetry_event": false
+}

@@ -1,0 +1,37 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "group": "gagastone_block",
+  "ingredients": [
+    {
+      "item": "modussy:gagastone"
+    },
+    {
+      "item": "modussy:gagastone"
+    },
+    {
+      "item": "modussy:gagastone"
+    },
+    {
+      "item": "modussy:gagastone"
+    },
+    {
+      "item": "modussy:gagastone"
+    },
+    {
+      "item": "modussy:gagastone"
+    },
+    {
+      "item": "modussy:gagastone"
+    },
+    {
+      "item": "modussy:gagastone"
+    },
+    {
+      "item": "modussy:gagastone"
+    }
+  ],
+  "result": {
+    "item": "modussy:gagastone_block"
+  }
+}

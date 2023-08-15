@@ -1,0 +1,22 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "group": "music_disc_jc2",
+  "ingredients": [
+    {
+      "item": "modussy:jiafei_product"
+    },
+    {
+      "item": "modussy:cupcake"
+    },
+    {
+      "item": "modussy:slaginium"
+    },
+    {
+      "tag": "forge:yassifers/elite"
+    }
+  ],
+  "result": {
+    "item": "modussy:music_disc_jc2"
+  }
+}

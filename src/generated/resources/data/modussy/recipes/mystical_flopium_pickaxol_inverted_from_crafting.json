@@ -1,0 +1,25 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "group": "mystical_flopium_pickaxol",
+  "key": {
+    "0": {
+      "tag": "forge:gems/mystical_flopium"
+    },
+    "1": {
+      "item": "modussy:cvmium"
+    },
+    "2": {
+      "tag": "forge:ingots/infused_slaginium"
+    }
+  },
+  "pattern": [
+    "010",
+    " 20",
+    " 2 "
+  ],
+  "result": {
+    "item": "modussy:mystical_flopium_pickaxol"
+  },
+  "show_notification": true
+}

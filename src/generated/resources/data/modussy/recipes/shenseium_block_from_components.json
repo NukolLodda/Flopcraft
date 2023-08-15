@@ -1,0 +1,37 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "group": "shenseium_block",
+  "ingredients": [
+    {
+      "tag": "forge:gems/shenseium"
+    },
+    {
+      "tag": "forge:gems/shenseium"
+    },
+    {
+      "tag": "forge:gems/shenseium"
+    },
+    {
+      "tag": "forge:gems/shenseium"
+    },
+    {
+      "tag": "forge:gems/shenseium"
+    },
+    {
+      "tag": "forge:gems/shenseium"
+    },
+    {
+      "tag": "forge:gems/shenseium"
+    },
+    {
+      "tag": "forge:gems/shenseium"
+    },
+    {
+      "tag": "forge:gems/shenseium"
+    }
+  ],
+  "result": {
+    "item": "modussy:shenseium_block"
+  }
+}

@@ -1,0 +1,22 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "group": "slaginium_yassifier_deluxe",
+  "key": {
+    "0": {
+      "item": "modussy:gagina"
+    },
+    "1": {
+      "tag": "forge:gems/mystical_flopium"
+    }
+  },
+  "pattern": [
+    "101",
+    "1 1",
+    " 1 "
+  ],
+  "result": {
+    "item": "modussy:slaginium_yassifier_deluxe"
+  },
+  "show_notification": true
+}

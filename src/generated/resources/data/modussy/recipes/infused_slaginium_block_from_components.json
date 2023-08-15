@@ -1,0 +1,37 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "group": "infused_slaginium_block",
+  "ingredients": [
+    {
+      "tag": "forge:ingots/infused_slaginium"
+    },
+    {
+      "tag": "forge:ingots/infused_slaginium"
+    },
+    {
+      "tag": "forge:ingots/infused_slaginium"
+    },
+    {
+      "tag": "forge:ingots/infused_slaginium"
+    },
+    {
+      "tag": "forge:ingots/infused_slaginium"
+    },
+    {
+      "tag": "forge:ingots/infused_slaginium"
+    },
+    {
+      "tag": "forge:ingots/infused_slaginium"
+    },
+    {
+      "tag": "forge:ingots/infused_slaginium"
+    },
+    {
+      "tag": "forge:ingots/infused_slaginium"
+    }
+  ],
+  "result": {
+    "item": "modussy:infused_slaginium_block"
+  }
+}
