@@ -13,7 +13,7 @@ import slay.nukolussy.modussy.Modussy;
 import slay.nukolussy.modussy.block.entity.CvmInfusionAlter;
 import slay.nukolussy.modussy.block.types.MaterialBlocks;
 import slay.nukolussy.modussy.block.types.SlaginiumBlock;
-import slay.nukolussy.modussy.item.ModItem;
+import slay.nukolussy.modussy.item.ModItems;
 
 import java.util.function.Supplier;
 
@@ -21,7 +21,7 @@ public class ModBlocks {
     public static final DeferredRegister<Block> BLOCKS =
             DeferredRegister.create(ForgeRegistries.BLOCKS, Modussy.MODID);
 
-    public static final RegistryObject<DropExperienceBlock> SHENSEIUM_ORE = registerBlock("shenseium_ore",
+    public static final RegistryObject<Block> SHENSEIUM_ORE = registerBlock("shenseium_ore",
             () -> new DropExperienceBlock(BlockBehaviour.Properties.copy(Blocks.NETHER_QUARTZ_ORE).strength(5f)
                     .destroyTime(12).requiresCorrectToolForDrops().sound(SoundType.NETHERRACK),
                     UniformInt.of(2,6)));
@@ -57,7 +57,7 @@ public class ModBlocks {
     }
 
     private static <T extends Block> RegistryObject<Item> registerBlockItem(String name, RegistryObject<T> block) {
-        return ModItem.ITEMS.register(name, () -> new BlockItem(block.get(), new Item.Properties().fireResistant()));
+        return ModItems.ITEMS.register(name, () -> new BlockItem(block.get(), new Item.Properties().fireResistant()));
     }
 
     public static void register(IEventBus eventBus) {

@@ -18,8 +18,6 @@ import net.minecraft.world.SimpleContainer;
 import net.minecraft.world.damagesource.DamageSource;
 import net.minecraft.world.entity.*;
 import net.minecraft.world.entity.ai.Brain;
-import net.minecraft.world.entity.ai.attributes.AttributeSupplier;
-import net.minecraft.world.entity.ai.attributes.Attributes;
 import net.minecraft.world.entity.ai.goal.*;
 import net.minecraft.world.entity.item.ItemEntity;
 import net.minecraft.world.entity.monster.Monster;
@@ -36,7 +34,7 @@ import org.jetbrains.annotations.NotNull;
 import slay.nukolussy.modussy.entities.ModEntities;
 import slay.nukolussy.modussy.entities.flops.AbstractFlops;
 import slay.nukolussy.modussy.entities.goal.FlopBreedingGoal;
-import slay.nukolussy.modussy.item.ModItem;
+import slay.nukolussy.modussy.item.ModItems;
 
 import javax.annotation.Nullable;
 import java.util.function.IntFunction;
@@ -66,7 +64,7 @@ public class Twink extends AbstractFlops {
     }
 
     protected void holdInOffHand(ItemStack item) {
-        if (item.is(ModItem.CVM.get())) {
+        if (item.is(ModItems.CVM.get())) {
             this.setItemSlot(EquipmentSlot.OFFHAND, item);
             this.setGuaranteedDrop(EquipmentSlot.OFFHAND);
         } else {
@@ -143,7 +141,7 @@ public class Twink extends AbstractFlops {
 
     public boolean wantsToPickUp(ItemStack item) {
         boolean twinkStat = true;
-        if (!item.is(ModItem.CVM.get())) {
+        if (!item.is(ModItems.CVM.get())) {
             twinkStat = this.canReplaceCurrentItem(item);
         }
         return net.minecraftforge.event.ForgeEventFactory.getMobGriefingEvent(this.level(), this) && this.canPickUpLoot() && twinkStat;
@@ -163,10 +161,10 @@ public class Twink extends AbstractFlops {
         else if (!this.level().isClientSide) return TwinkAI.mobInteract(this, player, hand);
         else {
             boolean flag = TwinkAI.canAdmire(this, player.getItemInHand(hand));
-            if (player.isHolding(ModItem.CVM.get()) || player.isHolding(ModItem.CVMIUM.get())) {
+            if (player.isHolding(ModItems.CVM.get()) || player.isHolding(ModItems.CVMIUM.get())) {
                 this.getNavigation().moveTo(player.getX(), player.getY(), player.getZ(), 1);
             }
-            if (item.equals(ModItem.CVMIUM.get())) {
+            if (item.equals(ModItems.CVMIUM.get())) {
                 if (this.getHealth() < this.getMaxHealth()) {
                     this.heal(3f);
                 }

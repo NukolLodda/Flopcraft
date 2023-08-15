@@ -19,7 +19,7 @@ import slay.nukolussy.modussy.entities.ModEntities;
 import slay.nukolussy.modussy.entities.flops.AbstractFlops;
 import slay.nukolussy.modussy.entities.flops.traders.NickiMinaj;
 import slay.nukolussy.modussy.item.ActivateMethods;
-import slay.nukolussy.modussy.item.ModItem;
+import slay.nukolussy.modussy.item.ModItems;
 import slay.nukolussy.modussy.sound.ModSounds;
 
 import java.util.Comparator;
@@ -36,7 +36,7 @@ public class SlaginiumBlock extends MaterialBlocks {
         double x = pPos.getX();
         double y = pPos.getY();
         double z = pPos.getZ();
-        if (pEntity instanceof ItemEntity item && item.getItem().is(ModItem.SCARUSSY.get())
+        if (pEntity instanceof ItemEntity item && item.getItem().is(ModItems.SCARUSSY.get())
            && ActivateMethods.canEntityBecomeNickiMinaj(pLevel, x, y, z)) {
             Player player = null;
             {

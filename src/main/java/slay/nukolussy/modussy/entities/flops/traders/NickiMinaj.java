@@ -31,7 +31,7 @@ import net.minecraftforge.network.PlayMessages;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import slay.nukolussy.modussy.entities.ModEntities;
-import slay.nukolussy.modussy.item.ModItem;
+import slay.nukolussy.modussy.item.ModItems;
 import slay.nukolussy.modussy.sound.ModSounds;
 
 import java.util.Set;
@@ -39,7 +39,7 @@ import java.util.Set;
 public class NickiMinaj extends AbstractFlopTraders {
     private static final EntityDataAccessor<Integer> NICKI_ID_DATATYPE_VARIANT = SynchedEntityData.defineId(NickiMinaj.class, EntityDataSerializers.INT);
     private static final Ingredient FOOD_ITEMS = Ingredient.of(
-            ModItem.HAIRUSSY.get(), ModItem.SLAGINIUM.get(), ModItem.INFUSED_SLAGINIUM.get());
+            ModItems.HAIRUSSY.get(), ModItems.SLAGINIUM.get(), ModItems.INFUSED_SLAGINIUM.get());
     public NickiMinaj(PlayMessages.SpawnEntity spawnEntity, Level world) {
         super(spawnEntity.getEntity().getType(), world);
     }
@@ -154,7 +154,7 @@ public class NickiMinaj extends AbstractFlopTraders {
         Item item = itemStack.getItem();
 
         if (!this.level().isClientSide) {
-            if (!item.equals(ModItem.NICKI_MINAJ_SPAWN_EGG.get()) && this.isAlive() && !this.isTrading() && !player.isSecondaryUseActive()) {
+            if (!item.equals(ModItems.NICKI_MINAJ_SPAWN_EGG.get()) && this.isAlive() && !this.isTrading() && !player.isSecondaryUseActive()) {
                 if (!this.getOffers().isEmpty()) {
                     if (!(this.isTrading() || this.isInsidePortal || this.isUnderWater())) {
                         this.playSound(ModSounds.NICKI_MINAJ_TRADE.get());

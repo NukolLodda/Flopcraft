@@ -9,7 +9,7 @@ import net.minecraft.world.item.enchantment.EnchantmentHelper;
 import net.minecraft.world.item.enchantment.Enchantments;
 import net.minecraft.world.level.Level;
 import slay.nukolussy.modussy.item.ActivateMethods;
-import slay.nukolussy.modussy.item.ModItem;
+import slay.nukolussy.modussy.item.ModItems;
 import slay.nukolussy.modussy.sound.ModSounds;
 
 import java.util.function.Predicate;
@@ -31,7 +31,7 @@ public class Deeldo extends BowItem {
 
             if (!itemstack.isEmpty() || hasInf) {
                 if (itemstack.isEmpty()) {
-                    itemstack = new ItemStack(ModItem.CVM.get());
+                    itemstack = new ItemStack(ModItems.CVM.get());
                 }
 
                 float powerTime = getPowerForTime(useDur);
@@ -39,7 +39,7 @@ public class Deeldo extends BowItem {
                     boolean inf = player.getAbilities().instabuild || (itemstack.getItem() instanceof CvmItem &&
                             ((CvmItem)itemstack.getItem()).isInfinite(itemstack, pStack, player));
                     if (!pLevel.isClientSide) {
-                        boolean isCvmium = itemstack.is(ModItem.CVMIUM.get());
+                        boolean isCvmium = itemstack.is(ModItems.CVMIUM.get());
 
                         double horRot = pEntityLiving.yHeadRotO * Math.PI / 180;
                         double verRot = pEntityLiving.xRotO * Math.PI / -180;
@@ -78,7 +78,7 @@ public class Deeldo extends BowItem {
 
     @Override
     public Predicate<ItemStack> getAllSupportedProjectiles() {
-        return (item) -> item.is(ModItem.CVMIUM.get()) || item.is(ModItem.CVM.get());
+        return (item) -> item.is(ModItems.CVMIUM.get()) || item.is(ModItems.CVM.get());
     }
 
     @Override

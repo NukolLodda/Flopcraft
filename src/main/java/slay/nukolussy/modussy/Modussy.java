@@ -2,8 +2,6 @@ package slay.nukolussy.modussy;
 
 import com.mojang.logging.LogUtils;
 import net.minecraft.client.gui.screens.MenuScreens;
-import net.minecraft.client.renderer.ItemBlockRenderTypes;
-import net.minecraft.client.renderer.RenderType;
 import net.minecraft.world.item.CreativeModeTabs;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.common.MinecraftForge;
@@ -20,7 +18,7 @@ import slay.nukolussy.modussy.block.ModBlocks;
 import slay.nukolussy.modussy.block.entity.ModBlockEntities;
 import slay.nukolussy.modussy.client.gui.CvmInfusionAlterScreen;
 import slay.nukolussy.modussy.entities.ModEntities;
-import slay.nukolussy.modussy.item.ModItem;
+import slay.nukolussy.modussy.item.ModItems;
 import slay.nukolussy.modussy.client.menu.ModMenuTypes;
 import slay.nukolussy.modussy.recipes.ModRecipes;
 import slay.nukolussy.modussy.sound.ModSounds;
@@ -35,7 +33,7 @@ public class Modussy {
         IEventBus modEventBus = FMLJavaModLoadingContext.get().getModEventBus();
 
         ModSounds.register(modEventBus);
-        ModItem.register(modEventBus);
+        ModItems.register(modEventBus);
         ModBlocks.register(modEventBus);
         ModCreativeTabs.register(modEventBus);
         ModEntities.register(modEventBus);
@@ -54,10 +52,10 @@ public class Modussy {
 
     private void addCreative(BuildCreativeModeTabContentsEvent event) {
         if (event.getTabKey() == CreativeModeTabs.SPAWN_EGGS) {
-            event.accept(ModItem.CUPCAKKE_SPAWN_EGG.get());
-            event.accept(ModItem.JIAFEI_SPAWN_EGG.get());
-            event.accept(ModItem.NICKI_MINAJ_SPAWN_EGG.get());
-            event.accept(ModItem.TWINK_SPAWN_EGG.get());
+            event.accept(ModItems.CUPCAKKE_SPAWN_EGG.get());
+            event.accept(ModItems.JIAFEI_SPAWN_EGG.get());
+            event.accept(ModItems.NICKI_MINAJ_SPAWN_EGG.get());
+            event.accept(ModItems.TWINK_SPAWN_EGG.get());
         }
     }
 

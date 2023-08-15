@@ -21,14 +21,13 @@ import net.minecraft.world.level.ServerLevelAccessor;
 import net.minecraft.world.level.gameevent.GameEvent;
 import net.minecraftforge.network.PlayMessages;
 import slay.nukolussy.modussy.entities.ModEntities;
-import slay.nukolussy.modussy.item.ActivateMethods;
-import slay.nukolussy.modussy.item.ModItem;
+import slay.nukolussy.modussy.item.ModItems;
 import slay.nukolussy.modussy.sound.ModSounds;
 
 import java.util.Collection;
 
 public class CupcakKe extends AbstractFlopFigures {
-    public ItemLike item = ModItem.CVMTITPLASM.get();
+    public ItemLike item = ModItems.CVMTITPLASM.get();
 
     public CupcakKe(EntityType<CupcakKe> type, Level world) {
         super(type, world);
@@ -89,7 +88,7 @@ public class CupcakKe extends AbstractFlopFigures {
         int dropChance = (int) (Math.random() * 8400) + 1;
         if (dropChance == 1) {
             if (world.isClientSide()) {
-                ItemEntity entityToSpawn = new ItemEntity(world, this.getX(), this.getY(), this.getZ(), new ItemStack(ModItem.CUPCAKE.get()));
+                ItemEntity entityToSpawn = new ItemEntity(world, this.getX(), this.getY(), this.getZ(), new ItemStack(ModItems.CUPCAKE.get()));
                 entityToSpawn.setPickUpDelay(10);
                 world.addFreshEntity(entityToSpawn);
             }
@@ -104,10 +103,10 @@ public class CupcakKe extends AbstractFlopFigures {
         Item item = itemStack.getItem();
 
         if (this.level().isClientSide) {
-            boolean flag = itemStack.is(ModItem.CVM.get()) || itemStack.is(ModItem.CVMIUM.get());
+            boolean flag = itemStack.is(ModItems.CVM.get()) || itemStack.is(ModItems.CVMIUM.get());
             return flag ? InteractionResult.CONSUME : InteractionResult.PASS;
         } else {
-            if (item.equals(ModItem.CVM.get()) || item.equals(ModItem.CVMIUM.get())) {
+            if (item.equals(ModItems.CVM.get()) || item.equals(ModItems.CVMIUM.get())) {
                 if (this.getHealth() < this.getMaxHealth()) {
                     this.heal(3f);
                 }
@@ -130,40 +129,40 @@ public class CupcakKe extends AbstractFlopFigures {
         if (rand < 1) {
             int discRand = (int) (Math.random() * 26);
             cupcakkeDrops = switch(discRand) {
-                case 1 -> ModItem.DISC_C1.get();
-                case 2 -> ModItem.DISC_C2.get();
-                case 3 -> ModItem.DISC_C3.get();
-                case 4 -> ModItem.DISC_C4.get();
-                case 5 -> ModItem.DISC_C5.get();
-                case 6 -> ModItem.DISC_C6.get();
-                case 7 -> ModItem.DISC_C7.get();
-                case 8 -> ModItem.DISC_C8.get();
-                case 9 -> ModItem.DISC_C9.get();
-                case 10 -> ModItem.DISC_C10.get();
-                case 11 -> ModItem.DISC_C11.get();
-                case 12 -> ModItem.DISC_C12.get();
-                case 13 -> ModItem.DISC_C13.get();
-                case 14 -> ModItem.DISC_C14.get();
-                case 15 -> ModItem.DISC_C15.get();
-                case 16 -> ModItem.DISC_C16.get();
-                case 17 -> ModItem.DISC_C17.get();
-                case 18 -> ModItem.DISC_C18.get();
-                case 19 -> ModItem.DISC_C19.get();
-                case 20 -> ModItem.DISC_C20.get();
-                case 21 -> ModItem.DISC_C21.get();
-                case 22 -> ModItem.DISC_C22.get();
-                case 23 -> ModItem.DISC_C23.get();
-                case 24 -> ModItem.DISC_C24.get();
-                case 25 -> ModItem.DISC_C25.get();
-                default -> ModItem.DISC_C26.get();
+                case 1 -> ModItems.DISC_C1.get();
+                case 2 -> ModItems.DISC_C2.get();
+                case 3 -> ModItems.DISC_C3.get();
+                case 4 -> ModItems.DISC_C4.get();
+                case 5 -> ModItems.DISC_C5.get();
+                case 6 -> ModItems.DISC_C6.get();
+                case 7 -> ModItems.DISC_C7.get();
+                case 8 -> ModItems.DISC_C8.get();
+                case 9 -> ModItems.DISC_C9.get();
+                case 10 -> ModItems.DISC_C10.get();
+                case 11 -> ModItems.DISC_C11.get();
+                case 12 -> ModItems.DISC_C12.get();
+                case 13 -> ModItems.DISC_C13.get();
+                case 14 -> ModItems.DISC_C14.get();
+                case 15 -> ModItems.DISC_C15.get();
+                case 16 -> ModItems.DISC_C16.get();
+                case 17 -> ModItems.DISC_C17.get();
+                case 18 -> ModItems.DISC_C18.get();
+                case 19 -> ModItems.DISC_C19.get();
+                case 20 -> ModItems.DISC_C20.get();
+                case 21 -> ModItems.DISC_C21.get();
+                case 22 -> ModItems.DISC_C22.get();
+                case 23 -> ModItems.DISC_C23.get();
+                case 24 -> ModItems.DISC_C24.get();
+                case 25 -> ModItems.DISC_C25.get();
+                default -> ModItems.DISC_C26.get();
             };
         } else {
             cupcakkeDrops = switch (rand) {
-                case 1 -> ModItem.DISC_CUPCAKKE1.get();
-                case 2 -> ModItem.DISC_CUPCAKKE2.get();
-                case 3 -> ModItem.DISC_CUPCAKKE3.get();
-                case 4 -> ModItem.DISC_CUPCAKKE4.get();
-                default -> ModItem.CVMTITPLASM.get();
+                case 1 -> ModItems.DISC_CUPCAKKE1.get();
+                case 2 -> ModItems.DISC_CUPCAKKE2.get();
+                case 3 -> ModItems.DISC_CUPCAKKE3.get();
+                case 4 -> ModItems.DISC_CUPCAKKE4.get();
+                default -> ModItems.CVMTITPLASM.get();
             };
         }
         return cupcakkeDrops;
@@ -211,7 +210,7 @@ public class CupcakKe extends AbstractFlopFigures {
             newMob.moveTo(cupcakKe.getX(), cupcakKe.getY(), cupcakKe.getZ());
             newMob.setXRot(cupcakKe.getXRot());
             newMob.setYRot(cupcakKe.getYRot());
-            if (item.equals(ModItem.CVM.get())) {
+            if (item.equals(ModItems.CVM.get())) {
                 cupcakKe.hurt(cupcakKe.level().damageSources().freeze(), 10);
             }
             if (cupcakKe.tamedBy != null) {

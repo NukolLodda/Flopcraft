@@ -10,29 +10,29 @@ import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.phys.Vec3;
-import slay.nukolussy.modussy.item.ModItem;
+import slay.nukolussy.modussy.item.ModItems;
 
 import java.util.*;
 
 public class TwinkAI {
-    public static final Item CUM = ModItem.CVM.get();
+    public static final Item CUM = ModItems.CVM.get();
 
     public static ItemStack randItem() {
         Random obj = new Random();
         int randNum = obj.nextInt(1,100);
         if (randNum > 35) {
-            if (randNum < 45) return new ItemStack(ModItem.SCARUSSY.get());
-            else if (randNum < 60) return new ItemStack(ModItem.CUPCAKE.get());
-            else if (randNum < 70) return new ItemStack(ModItem.POSEI.get());
-            else if (randNum < 75) return new ItemStack(ModItem.SLAGINIUM.get());
-            else if (randNum < 80) return new ItemStack(ModItem.SHENSEIUM.get());
-            else if (randNum < 85) return new ItemStack(ModItem.CVMTITPLASM.get());
-            else if (randNum < 90) return new ItemStack(ModItem.DISC_RANVISION.get());
-            else if (randNum < 95) return new ItemStack(ModItem.JIAFEI_SEED.get());
-            else if (randNum < 98) return new ItemStack(ModItem.INFUSED_SLAGINIUM.get());
-            else return new ItemStack(ModItem.JIAFEI_PRODUCT.get());
+            if (randNum < 45) return new ItemStack(ModItems.SCARUSSY.get());
+            else if (randNum < 60) return new ItemStack(ModItems.CUPCAKE.get());
+            else if (randNum < 70) return new ItemStack(ModItems.POSEI.get());
+            else if (randNum < 75) return new ItemStack(ModItems.SLAGINIUM.get());
+            else if (randNum < 80) return new ItemStack(ModItems.SHENSEIUM.get());
+            else if (randNum < 85) return new ItemStack(ModItems.CVMTITPLASM.get());
+            else if (randNum < 90) return new ItemStack(ModItems.DISC_RANVISION.get());
+            else if (randNum < 95) return new ItemStack(ModItems.JIAFEI_SEED.get());
+            else if (randNum < 98) return new ItemStack(ModItems.INFUSED_SLAGINIUM.get());
+            else return new ItemStack(ModItems.JIAFEI_PRODUCT.get());
         }
-        else return new ItemStack(ModItem.HAIRUSSY.get());
+        else return new ItemStack(ModItems.HAIRUSSY.get());
     }
 
     private static void stopWalking(Twink twink) {

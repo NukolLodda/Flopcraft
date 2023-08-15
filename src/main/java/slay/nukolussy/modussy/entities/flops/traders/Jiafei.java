@@ -8,7 +8,6 @@ import net.minecraft.nbt.CompoundTag;
 import net.minecraft.network.syncher.EntityDataAccessor;
 import net.minecraft.network.syncher.EntityDataSerializers;
 import net.minecraft.network.syncher.SynchedEntityData;
-import net.minecraft.resources.ResourceLocation;
 import net.minecraft.sounds.SoundEvent;
 import net.minecraft.util.ByIdMap;
 import net.minecraft.util.RandomSource;
@@ -31,11 +30,10 @@ import net.minecraft.world.level.ServerLevelAccessor;
 import net.minecraft.world.level.gameevent.GameEvent;
 import net.minecraft.world.level.levelgen.Heightmap;
 import net.minecraftforge.network.PlayMessages;
-import net.minecraftforge.registries.ForgeRegistries;
 import org.jetbrains.annotations.NotNull;
 import slay.nukolussy.modussy.entities.ModEntities;
 import slay.nukolussy.modussy.entities.goal.FlopBreedingGoal;
-import slay.nukolussy.modussy.item.ModItem;
+import slay.nukolussy.modussy.item.ModItems;
 import slay.nukolussy.modussy.sound.ModSounds;
 
 import javax.annotation.Nullable;
@@ -45,7 +43,7 @@ import java.util.function.IntFunction;
 public class Jiafei extends AbstractFlopTraders {
     private static final EntityDataAccessor<Integer> JIAFEI_ID_DATATYPE_VARIANT = SynchedEntityData.defineId(Jiafei.class, EntityDataSerializers.INT);
     private static final Ingredient FOOD_ITEMS = Ingredient.of(
-            ModItem.JIAFEI_PRODUCT.get(), ModItem.SLAGINIUM.get(), ModItem.INFUSED_SLAGINIUM.get());
+            ModItems.JIAFEI_PRODUCT.get(), ModItems.SLAGINIUM.get(), ModItems.INFUSED_SLAGINIUM.get());
 
     public Jiafei(PlayMessages.SpawnEntity spawnEntity, Level level) {
         super(spawnEntity.getEntity().getType(), level);
@@ -110,10 +108,10 @@ public class Jiafei extends AbstractFlopTraders {
         Item item = itemStack.getItem();
 
         if (this.level().isClientSide) {
-            boolean flag = itemStack.is(ModItem.JIAFEI_PRODUCT.get());
+            boolean flag = itemStack.is(ModItems.JIAFEI_PRODUCT.get());
             return flag ? InteractionResult.CONSUME : InteractionResult.PASS;
         } else {
-            if (item.equals(ModItem.JIAFEI_PRODUCT.get())) {
+            if (item.equals(ModItems.JIAFEI_PRODUCT.get())) {
                 if (this.getHealth() < this.getMaxHealth()) {
                     this.heal(3f);
                 }
@@ -124,7 +122,7 @@ public class Jiafei extends AbstractFlopTraders {
                 this.setInLove(player);
                 this.gameEvent(GameEvent.EAT, this);
                 return InteractionResult.SUCCESS;
-            } else if (!item.equals(ModItem.JIAFEI_SPAWN_EGG.get()) && this.isAlive() && !this.isTrading() && !player.isSecondaryUseActive()) {
+            } else if (!item.equals(ModItems.JIAFEI_SPAWN_EGG.get()) && this.isAlive() && !this.isTrading() && !player.isSecondaryUseActive()) {
                 if (this.getOffers().isEmpty()) {
                     this.playSound(ModSounds.JIAFEI_PRODUCTLESS.get());
                 } else {

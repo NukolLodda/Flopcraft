@@ -134,9 +134,9 @@ public class ActivateMethods {
         if (up > 3) up = 3;
         int randomNum = (int) (Math.random() * up);
         return switch (randomNum) {
-            case 1 -> new ItemStack(ModItem.SHENSEIUM.get());
-            case 2 -> new ItemStack(ModItem.JIAFEI_PRODUCT.get());
-            default -> new ItemStack(ModItem.CUPCAKE.get());
+            case 1 -> new ItemStack(ModItems.SHENSEIUM.get());
+            case 2 -> new ItemStack(ModItems.JIAFEI_PRODUCT.get());
+            default -> new ItemStack(ModItems.CUPCAKE.get());
         };
     }
 
@@ -240,7 +240,7 @@ public class ActivateMethods {
                         monsterEffects(_ent);
                     }
                     if (_ent instanceof Cat _cat && Math.random() < 0.16) {
-                        _cat.spawnAtLocation(ModItem.POSEI.get());
+                        _cat.spawnAtLocation(ModItems.POSEI.get());
                     }
                     if (_ent instanceof TamableAnimal _tamIsTamedBy && _tamIsTamedBy.isOwnedBy(player)
                             || _ent instanceof AbstractFlops) {
@@ -279,14 +279,14 @@ public class ActivateMethods {
             for (Entity entityiterator : _entfound) {
                 if (entityiterator instanceof Mob _mob && entity instanceof Player player) {
                     if (_mob instanceof Spider _spider) {
-                        _spider.setItemSlot(EquipmentSlot.MAINHAND, new ItemStack(ModItem.ARANA_GRANDE.get()));
+                        _spider.setItemSlot(EquipmentSlot.MAINHAND, new ItemStack(ModItems.ARANA_GRANDE.get()));
                         _spider.setGuaranteedDrop(EquipmentSlot.MAINHAND);
                         _spider.kill();
                     }
                     if (_mob instanceof Slime slime) {
-                        ItemStack cvmItem = new ItemStack(ModItem.CVM.get());
+                        ItemStack cvmItem = new ItemStack(ModItems.CVM.get());
                         if (slime instanceof MagmaCube) {
-                            cvmItem = new ItemStack(ModItem.CVMIUM.get());
+                            cvmItem = new ItemStack(ModItems.CVMIUM.get());
                         }
                         slime.setItemSlot(EquipmentSlot.MAINHAND, cvmItem);
                         slime.setGuaranteedDrop(EquipmentSlot.MAINHAND);
@@ -299,7 +299,7 @@ public class ActivateMethods {
                         itemDura += 80;
                     }
                     if (_mob instanceof Cat _cat && Math.random() < 0.16) {
-                        _cat.spawnAtLocation(ModItem.POSEI.get());
+                        _cat.spawnAtLocation(ModItems.POSEI.get());
                     }
                     if (_mob instanceof TamableAnimal _tamIsTamedBy && _tamIsTamedBy.isOwnedBy(player)
                             || _mob instanceof AbstractFlops) {
@@ -330,9 +330,9 @@ public class ActivateMethods {
         }
 
         if (target instanceof Slime slime) {
-            ItemStack cvmItem = new ItemStack(ModItem.CVM.get());
+            ItemStack cvmItem = new ItemStack(ModItems.CVM.get());
             if (slime instanceof MagmaCube) {
-                cvmItem = new ItemStack(ModItem.CVMIUM.get());
+                cvmItem = new ItemStack(ModItems.CVMIUM.get());
             }
             slime.setItemSlot(EquipmentSlot.MAINHAND, cvmItem);
             slime.setGuaranteedDrop(EquipmentSlot.MAINHAND);
@@ -344,7 +344,7 @@ public class ActivateMethods {
             if (lvl == 1) ((Mob) target).addEffect(new MobEffectInstance(MobEffects.POISON, 1380 * lvl, 0));
             else {
                 if (target instanceof Spider _spider) {
-                    _spider.setItemSlot(EquipmentSlot.MAINHAND, new ItemStack(ModItem.ARANA_GRANDE.get()));
+                    _spider.setItemSlot(EquipmentSlot.MAINHAND, new ItemStack(ModItems.ARANA_GRANDE.get()));
                     _spider.setGuaranteedDrop(EquipmentSlot.MAINHAND);
                 }
                 ((Mob) target).addEffect(new MobEffectInstance(MobEffects.WITHER, 1380 * lvl, amp));
@@ -365,7 +365,7 @@ public class ActivateMethods {
                 Mob newMob = new Jiafei(ModEntities.JIAFEI.get(), lvl);
                 newMob.moveTo(pos.getX(), pos.getY(), pos.getZ());
                 ent.level().addFreshEntity(newMob);
-                ent.spawnAtLocation(ModItem.JIAFEI_PRODUCT.get());
+                ent.spawnAtLocation(ModItems.JIAFEI_PRODUCT.get());
             }
         }
     }
@@ -388,7 +388,7 @@ public class ActivateMethods {
                         _ent.setSecondsOnFire(flame ? isCvmium ? 420 : 100 : 0);
                     }
                     if (_ent instanceof Cat _cat && Math.random() < 0.16) {
-                        _cat.spawnAtLocation(ModItem.POSEI.get());
+                        _cat.spawnAtLocation(ModItems.POSEI.get());
                     }
                     if (_ent instanceof TamableAnimal _tamIsTamedBy && _tamIsTamedBy.isOwnedBy(player)
                             || _ent instanceof AbstractFlops) {
@@ -397,7 +397,7 @@ public class ActivateMethods {
                             if (_ent instanceof Twink)
                                 _ent.spawnAtLocation(TwinkAI.randItem());
                             if (_ent instanceof CupcakKe _cupcakke) {
-                                CupcakKe.cupcakkeDuplication(ModItem.CVM.get(), _cupcakke);
+                                CupcakKe.cupcakkeDuplication(ModItems.CVM.get(), _cupcakke);
                             }
                         }
                     }

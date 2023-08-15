@@ -13,7 +13,7 @@ import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.crafting.Ingredient;
 import net.minecraft.world.level.Level;
 import org.jetbrains.annotations.Nullable;
-import slay.nukolussy.modussy.item.ModItem;
+import slay.nukolussy.modussy.item.ModItems;
 import slay.nukolussy.modussy.sound.ModSounds;
 
 public class InnerWear extends ArmorItem {
@@ -41,7 +41,7 @@ public class InnerWear extends ArmorItem {
 
             @Override
             public Ingredient getRepairIngredient() {
-                return Ingredient.of(ModItem.SLAGINIUM.get());
+                return Ingredient.of(ModItems.SLAGINIUM.get());
             }
 
             @Override

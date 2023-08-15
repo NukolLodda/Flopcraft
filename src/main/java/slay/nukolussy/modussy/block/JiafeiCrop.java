@@ -20,7 +20,7 @@ import org.jetbrains.annotations.NotNull;
 import slay.nukolussy.modussy.entities.ModEntities;
 import slay.nukolussy.modussy.entities.flops.AbstractFlops;
 import slay.nukolussy.modussy.entities.flops.traders.Jiafei;
-import slay.nukolussy.modussy.item.ModItem;
+import slay.nukolussy.modussy.item.ModItems;
 import slay.nukolussy.modussy.sound.ModSoundTypes;
 
 public class JiafeiCrop extends CropBlock {
@@ -42,7 +42,7 @@ public class JiafeiCrop extends CropBlock {
     }
 
     protected ItemLike getBaseSeedId() {
-        return ModItem.JIAFEI_SEED.get();
+        return ModItems.JIAFEI_SEED.get();
     }
 
     public int getAge(@NotNull BlockState state) {

@@ -12,13 +12,13 @@ import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.crafting.Ingredient;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.phys.AABB;
-import slay.nukolussy.modussy.item.ModItem;
+import slay.nukolussy.modussy.item.ModItems;
 
 import javax.annotation.Nullable;
 import java.util.*;
 
 public abstract class AbstractFlops extends PathfinderMob {
-    protected static final Ingredient FOOD_ITEMS = Ingredient.of(ModItem.CVM.get(), ModItem.CVMIUM.get());
+    protected static final Ingredient FOOD_ITEMS = Ingredient.of(ModItems.CVM.get(), ModItems.CVMIUM.get());
     private int inLove;
     @Nullable
     private UUID loveCause;

@@ -12,7 +12,7 @@ import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.*;
 import net.minecraft.world.item.crafting.Ingredient;
 import net.minecraft.world.level.Level;
-import slay.nukolussy.modussy.item.ModItem;
+import slay.nukolussy.modussy.item.ModItems;
 import slay.nukolussy.modussy.sound.ModSounds;
 
 import java.util.List;
@@ -43,7 +43,7 @@ public class JiafeiArmor extends ArmorItem {
 
             @Override
             public Ingredient getRepairIngredient() {
-                return Ingredient.of(ModItem.JIAFEI_PRODUCT.get());
+                return Ingredient.of(ModItems.JIAFEI_PRODUCT.get());
             }
 
             @Override

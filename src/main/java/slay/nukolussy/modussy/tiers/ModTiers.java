@@ -1,25 +1,24 @@
 package slay.nukolussy.modussy.tiers;
 
-import net.minecraft.util.LazyLoadedValue;
 import net.minecraft.world.item.Tier;
 import net.minecraft.world.item.crafting.Ingredient;
-import slay.nukolussy.modussy.item.ModItem;
+import slay.nukolussy.modussy.item.ModItems;
 
 import java.util.function.Supplier;
 
 public enum ModTiers implements Tier {
     SLAGINIUM(3, 1069, 9.8f, 3.0f, 12,
-            () -> Ingredient.of(ModItem.SLAGINIUM.get())),
+            () -> Ingredient.of(ModItems.SLAGINIUM.get())),
     INFUSED_SLAGINIUM(4, 2471, 10.1f, 4.0f, 18,
-            () -> Ingredient.of(ModItem.INFUSED_SLAGINIUM.get())),
+            () -> Ingredient.of(ModItems.INFUSED_SLAGINIUM.get())),
     FLOPIUM(5, 3069, 11.5f, 5.0f, 22,
-            () -> Ingredient.of(ModItem.FLOPIUM.get())
+            () -> Ingredient.of(ModItems.FLOPIUM.get())
     ),
     MYSTICAL_FLOPIUM(6, 6971, 14f, 6.0f, 27,
-            () -> Ingredient.of(ModItem.MYSTICAL_FLOPIUM.get())
+            () -> Ingredient.of(ModItems.MYSTICAL_FLOPIUM.get())
     ),
     JIAFEI(6, 6900, 12.75f, 5.5f, 24,
-            () -> Ingredient.of(ModItem.JIAFEI_PRODUCT.get()));
+            () -> Ingredient.of(ModItems.JIAFEI_PRODUCT.get()));
 
     private final int level;
     private final int uses;

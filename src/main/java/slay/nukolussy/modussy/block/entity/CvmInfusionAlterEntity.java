@@ -1,11 +1,8 @@
 package slay.nukolussy.modussy.block.entity;
 
 import net.minecraft.core.BlockPos;
-import net.minecraft.core.Registry;
-import net.minecraft.core.RegistryAccess;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.network.chat.Component;
-import net.minecraft.sounds.SoundSource;
 import net.minecraft.world.Containers;
 import net.minecraft.world.MenuProvider;
 import net.minecraft.world.SimpleContainer;
@@ -14,7 +11,6 @@ import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.inventory.AbstractContainerMenu;
 import net.minecraft.world.inventory.ContainerData;
 import net.minecraft.world.item.ItemStack;
-import net.minecraft.world.item.crafting.Recipe;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.entity.BlockEntity;
 import net.minecraft.world.level.block.state.BlockState;
@@ -26,12 +22,10 @@ import net.minecraftforge.items.ItemStackHandler;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import slay.nukolussy.modussy.client.menu.CvmInfusionAlterMenu;
-import slay.nukolussy.modussy.item.ModItem;
+import slay.nukolussy.modussy.item.ModItems;
 import slay.nukolussy.modussy.recipes.CvmInfusionAlterRecipe;
 import slay.nukolussy.modussy.recipes.CvmInfusionAlterShapelessRecipe;
-import slay.nukolussy.modussy.sound.ModSounds;
 
-import javax.swing.text.html.Option;
 import java.util.Optional;
 
 public class CvmInfusionAlterEntity extends BlockEntity implements MenuProvider {
@@ -44,7 +38,7 @@ public class CvmInfusionAlterEntity extends BlockEntity implements MenuProvider 
         @Override
         public boolean isItemValid(int slot, @NotNull ItemStack stack) {
             return switch (slot) {
-                case 0 -> stack.is(ModItem.CVM.get()) || stack.is(ModItem.CVMIUM.get());
+                case 0 -> stack.is(ModItems.CVM.get()) || stack.is(ModItems.CVMIUM.get());
                 case 8 -> false;
                 default -> true;
             };
@@ -167,8 +161,8 @@ public class CvmInfusionAlterEntity extends BlockEntity implements MenuProvider 
 
         ItemStack itemFuel = new ItemStack(ent.handler.getStackInSlot(0).getItem());
 
-        if (itemFuel.is(ModItem.CVM.get()) || itemFuel.is(ModItem.CVMIUM.get())) {
-            int addedAmt = itemFuel.is(ModItem.CVMIUM.get()) ? 69 : 30;
+        if (itemFuel.is(ModItems.CVM.get()) || itemFuel.is(ModItems.CVMIUM.get())) {
+            int addedAmt = itemFuel.is(ModItems.CVMIUM.get()) ? 69 : 30;
             if (addedAmt + ent.cvmAmt <= ent.maxCvm) {
                 ent.cvmAmt += addedAmt;
                 ent.handler.extractItem(0, 1,false);

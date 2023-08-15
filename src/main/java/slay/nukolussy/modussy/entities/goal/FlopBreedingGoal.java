@@ -8,7 +8,7 @@ import net.minecraft.world.level.Level;
 import slay.nukolussy.modussy.entities.flops.AbstractFlops;
 import slay.nukolussy.modussy.entities.flops.traders.Jiafei;
 import slay.nukolussy.modussy.entities.flops.twink.Twink;
-import slay.nukolussy.modussy.item.ModItem;
+import slay.nukolussy.modussy.item.ModItems;
 
 import javax.annotation.Nullable;
 import java.util.EnumSet;
@@ -104,9 +104,9 @@ public class FlopBreedingGoal extends Goal {
             this.level.addParticle(ParticleTypes.HEART, x0, y0, z0, dx, dy, dz);
         }
         if (flop instanceof Twink) {
-            flop.spawnAtLocation(ModItem.TWINK_SPAWN_EGG.get());
+            flop.spawnAtLocation(ModItems.TWINK_SPAWN_EGG.get());
         } else if (flop instanceof Jiafei) {
-            flop.spawnAtLocation(ModItem.JIAFEI_SEED.get());
+            flop.spawnAtLocation(ModItems.JIAFEI_SEED.get());
         }
         this.itemSpawned++;
         if (this.itemSpawned > 6) this.stop();

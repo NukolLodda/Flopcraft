@@ -8,7 +8,7 @@ import net.minecraft.world.entity.ai.attributes.Attributes;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.Level;
-import slay.nukolussy.modussy.item.ModItem;
+import slay.nukolussy.modussy.item.ModItems;
 
 import java.util.Random;
 
@@ -19,13 +19,13 @@ public abstract class AbstractFlopFigures extends AbstractFlops {
         Random random = new Random();
         int toolChance = random.nextInt(1, 6971);
         if (toolChance <= 420) {
-            this.setItemSlot(EquipmentSlot.MAINHAND, new ItemStack(ModItem.SLAGINIUM_YASSIFIER.get()));
+            this.setItemSlot(EquipmentSlot.MAINHAND, new ItemStack(ModItems.SLAGINIUM_YASSIFIER.get()));
         } else if (toolChance <= 500) {
-            this.setItemSlot(EquipmentSlot.MAINHAND, new ItemStack(ModItem.SLAGINIUM_YASSIFIER_PLUS.get()));
+            this.setItemSlot(EquipmentSlot.MAINHAND, new ItemStack(ModItems.SLAGINIUM_YASSIFIER_PLUS.get()));
         } else if (toolChance <= 569) {
-            this.setItemSlot(EquipmentSlot.MAINHAND, new ItemStack(ModItem.SLAGINIUM_YASSIFIER_PREMIUM.get()));
+            this.setItemSlot(EquipmentSlot.MAINHAND, new ItemStack(ModItems.SLAGINIUM_YASSIFIER_PREMIUM.get()));
         } else if (toolChance <= 571) {
-            this.setItemSlot(EquipmentSlot.MAINHAND, new ItemStack(ModItem.SLAGINIUM_YASSIFIER_DELUXE.get()));
+            this.setItemSlot(EquipmentSlot.MAINHAND, new ItemStack(ModItems.SLAGINIUM_YASSIFIER_DELUXE.get()));
         }
     }
 
