@@ -1,5 +1,6 @@
 package slay.nukolussy.modussy.datagen.loot;
 
+import net.minecraft.advancements.critereon.StatePropertiesPredicate;
 import net.minecraft.data.loot.BlockLootSubProvider;
 import net.minecraft.world.flag.FeatureFlags;
 import net.minecraft.world.item.Item;
@@ -9,7 +10,10 @@ import net.minecraft.world.level.storage.loot.LootTable;
 import net.minecraft.world.level.storage.loot.entries.LootItem;
 import net.minecraft.world.level.storage.loot.functions.ApplyBonusCount;
 import net.minecraft.world.level.storage.loot.functions.SetItemCountFunction;
+import net.minecraft.world.level.storage.loot.predicates.LootItemBlockStatePropertyCondition;
+import net.minecraft.world.level.storage.loot.predicates.LootItemCondition;
 import net.minecraft.world.level.storage.loot.providers.number.UniformGenerator;
+import slay.nukolussy.modussy.block.JiafeiCrop;
 import slay.nukolussy.modussy.block.ModBlocks;
 import slay.nukolussy.modussy.item.ModItems;
 
@@ -32,7 +36,14 @@ public class ModLootTablesProvider extends BlockLootSubProvider {
         this.dropSelf(ModBlocks.CVM_INFUSION_ALTER.get());
 
         this.add(ModBlocks.SHENSEIUM_ORE.get(), block -> createOreDrops(ModBlocks.SHENSEIUM_ORE.get(), ModItems.SHENSEIUM.get(), 1, 3));
-        this.dropOther(ModBlocks.GROWING_JIAFEI.get(), ModItems.JIAFEI_PRODUCT.get().asItem());
+
+        LootItemCondition.Builder jiafeiLootItemCondition = LootItemBlockStatePropertyCondition
+                .hasBlockStateProperties(ModBlocks.GROWING_JIAFEI.get())
+                .setProperties(StatePropertiesPredicate.Builder.properties()
+                        .hasProperty(JiafeiCrop.AGE, 3));
+        this.add(ModBlocks.GROWING_JIAFEI.get(), block -> createCropDrops(ModBlocks.GROWING_JIAFEI.get(),
+                ModItems.JIAFEI_PRODUCT.get(), ModItems.JIAFEI_SEED.get().asItem(),
+                jiafeiLootItemCondition));
     }
 
     protected LootTable.Builder createOreDrops(Block pBlock, Item pItem, int max, int min) {

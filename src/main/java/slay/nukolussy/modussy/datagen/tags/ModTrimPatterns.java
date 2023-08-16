@@ -10,6 +10,7 @@ public class ModTrimPatterns {
     public static final ResourceKey<TrimPattern> JIAFEI = registryKey("jiafei");
 
     private static ResourceKey<TrimPattern> registryKey(String pKey) {
-        return ResourceKey.create(Registries.TRIM_PATTERN, new ResourceLocation(Modussy.MODID, pKey));
+        return ResourceKey.create(Registries.TRIM_PATTERN,
+                new ResourceLocation(Modussy.MODID, pKey));
     }
 }

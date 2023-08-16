@@ -64,6 +64,8 @@ public class ModItems {
     public static final RegistryObject<Item> SHENSEIUM = ITEMS.register("shenseium",
             () -> new Item(new Item.Properties()));
 
+    public static final RegistryObject<Item> TAMPON = ITEMS.register("tampon", Tampon::new);
+
     public static final RegistryObject<Item> TWINK_EGG = ITEMS.register("twink_egg",
             () -> new Item(new Item.Properties()));
 

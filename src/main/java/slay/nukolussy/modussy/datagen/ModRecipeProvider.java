@@ -89,7 +89,6 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
 
         musicDiscRecipe(pWriter, Ingredient.of(ModItems.JIAFEI_PRODUCT.get()),
                 ModItems.DISC_JIAFEI.get(), ModItems.JIAFEI_PRODUCT.get(), 2);
-        // unparsable files: jiafei music disc, cpm1 music disc
 
         musicDiscRecipe(pWriter, Ingredient.of(ModTags.Items.SHENSEIUM),
                 ModItems.DISC_PONMI.get(), ModItems.SHENSEIUM.get(), 1);
@@ -193,7 +192,7 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
                 .group("scarussy")
                 .save(pWriter, Modussy.MODID + ":scarussy_from_crafting");
 
-        // trimSmithing(pWriter, ModItems.JIAFEI_TRIM_TEMPLATE.get(), ModTrimPatterns.JIAFEI.location());
+        trimSmithing(pWriter, ModItems.JIAFEI_TRIM_TEMPLATE.get(), ModTrimPatterns.JIAFEI.location());
     }
 
     private static TagKey<Item> getYassifierFromComplexity(int pComplexity) {

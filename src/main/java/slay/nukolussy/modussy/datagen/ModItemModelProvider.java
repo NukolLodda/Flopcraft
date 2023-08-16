@@ -102,12 +102,9 @@ public class ModItemModelProvider extends ItemModelProvider {
         simpleItem(ModItems.INFUSED_SLAGINIUM);
         simpleItem(ModItems.POSEI);
         simpleItem(ModItems.SHENSEIUM);
+        simpleItem(ModItems.TAMPON);
         simpleItem(ModItems.TWINK_EGG);
         simpleItem(ModItems.WONYOUNG_ESSENCE);
-        simpleItem(ModItems.CUPCAKKE_SPAWN_EGG);
-        simpleItem(ModItems.JIAFEI_SPAWN_EGG);
-        simpleItem(ModItems.NICKI_MINAJ_SPAWN_EGG);
-        simpleItem(ModItems.TWINK_SPAWN_EGG);
     }
 
     private ItemModelBuilder simpleItem(RegistryObject<Item> item) {
