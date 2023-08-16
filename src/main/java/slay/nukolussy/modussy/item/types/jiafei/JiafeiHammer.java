@@ -13,7 +13,7 @@ import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.state.BlockState;
 import org.jetbrains.annotations.NotNull;
 import slay.nukolussy.modussy.item.ActivateMethods;
-import slay.nukolussy.modussy.tiers.ModTiers;
+import slay.nukolussy.modussy.item.tiers.ModTiers;
 
 import java.util.List;
 

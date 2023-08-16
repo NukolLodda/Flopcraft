@@ -14,6 +14,9 @@ import net.minecraft.world.item.trading.MerchantOffers;
 import net.minecraft.world.level.Level;
 import org.jetbrains.annotations.Nullable;
 import slay.nukolussy.modussy.entities.flops.AbstractFlopFigures;
+import slay.nukolussy.modussy.item.ActivateMethods;
+import slay.nukolussy.modussy.network.yassification.PlayerYassification;
+import slay.nukolussy.modussy.network.yassification.PlayerYassificationProvider;
 
 public abstract class AbstractFlopTraders extends AbstractFlopFigures implements InventoryCarrier, Npc, Merchant {
     protected MerchantOffers offers;
@@ -42,8 +45,14 @@ public abstract class AbstractFlopTraders extends AbstractFlopFigures implements
 
     @Override
     public void setTradingPlayer(@Nullable Player pTradingPlayer) {
-        if (pTradingPlayer != null) pTradingPlayer.stopUsingItem();
-        this.trader = pTradingPlayer;
+        if (pTradingPlayer != null) {
+            pTradingPlayer.stopUsingItem();
+            pTradingPlayer.getCapability(PlayerYassificationProvider.PLAYER_YASSIFICATION).ifPresent(yassification -> {
+                if (!yassification.isNewgen()) {
+                    this.trader = pTradingPlayer;
+                }
+            });
+        }
     }
 
     @Override

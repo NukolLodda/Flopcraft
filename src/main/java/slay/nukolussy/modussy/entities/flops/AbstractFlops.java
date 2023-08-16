@@ -12,7 +12,10 @@ import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.crafting.Ingredient;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.phys.AABB;
+import slay.nukolussy.modussy.entities.flops.traders.AbstractFlopTraders;
+import slay.nukolussy.modussy.item.ActivateMethods;
 import slay.nukolussy.modussy.item.ModItems;
+import slay.nukolussy.modussy.network.yassification.PlayerYassificationProvider;
 
 import javax.annotation.Nullable;
 import java.util.*;
@@ -56,7 +59,13 @@ public abstract class AbstractFlops extends PathfinderMob {
     }
 
     public void setTamed(Player player) {
-        this.tamedBy = player;
+        if (player != null) {
+            player.getCapability(PlayerYassificationProvider.PLAYER_YASSIFICATION).ifPresent(yassification -> {
+                if (!yassification.isNewgen()) {
+                    this.tamedBy = player;
+                }
+            });
+        }
     }
 
     @Override
@@ -77,29 +86,33 @@ public abstract class AbstractFlops extends PathfinderMob {
     }
 
     protected void alertFlops(DamageSource pDamageSource) {
+        Entity attacker = pDamageSource.getEntity();
+        alertFlops(attacker);
+    }
+
+    public void alertFlops(Entity attacker) {
         AABB aabb = AABB.unitCubeFromLowerCorner(this.position()).inflate(10d, 10.0d, 10d);
         List<Entity> list = this.level().getEntitiesOfClass(Entity.class, aabb, e -> true).stream()
                 .sorted(Comparator.comparingDouble(_entcnd ->
                         _entcnd.distanceToSqr(this.getX(), this.getY(), this.getZ()))).toList();
-
         for (Entity ent : list) {
-            if (ent instanceof AbstractFlops flops && pDamageSource.getEntity() instanceof LivingEntity) {
-                LivingEntity entity = (LivingEntity) pDamageSource.getEntity();
+            if (ent instanceof AbstractFlops flops && attacker instanceof LivingEntity entity) {
                 if (entity instanceof Player player) {
                     if (player.equals(flops.tamedBy)) flops.setTamed(null);
                     else if (player.isCreative()) entity = null;
+                    ActivateMethods.addPlayerYassification(player, -2);
                 }
                 if (entity != null) flops.setTarget(entity);
             }
             // if the causer was the player, it would reduce their yassification level
         }
-
     }
 
     @Override
     public void die(DamageSource pDamageSource) {
         if (pDamageSource.getEntity() != null) {
             alertFlops(pDamageSource);
+            // make a function that decreases player yassification level
         }
         super.die(pDamageSource);
     }
@@ -108,6 +121,7 @@ public abstract class AbstractFlops extends PathfinderMob {
     public boolean hurt(DamageSource pSource, float pAmount) {
         if (pSource.getEntity() instanceof Player player && player == this.tamedBy) {
             this.setTamed(null);
+            ActivateMethods.addPlayerYassification(player, -1);
         }
         if (pSource.getEntity() != null) {
             alertFlops(pSource);

@@ -1,0 +1,25 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "group": "tampon",
+  "key": {
+    "0": {
+      "item": "modussy:hairussy"
+    },
+    "1": {
+      "item": "minecraft:string"
+    },
+    "2": {
+      "tag": "forge:ingots/slaginium"
+    }
+  },
+  "pattern": [
+    "020",
+    "010",
+    " 1 "
+  ],
+  "result": {
+    "item": "modussy:tampon"
+  },
+  "show_notification": true
+}

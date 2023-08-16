@@ -3,6 +3,7 @@ package slay.nukolussy.modussy.item.types;
 import net.minecraft.core.BlockPos;
 import net.minecraft.sounds.SoundEvent;
 import net.minecraft.world.InteractionResult;
+import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.Rarity;
 import net.minecraft.world.item.RecordItem;
@@ -13,6 +14,7 @@ import net.minecraft.world.level.block.JukeboxBlock;
 import net.minecraft.world.level.block.entity.BlockEntity;
 import net.minecraft.world.level.block.entity.JukeboxBlockEntity;
 import net.minecraft.world.level.block.state.BlockState;
+import slay.nukolussy.modussy.item.ActivateMethods;
 
 import javax.sound.sampled.*;
 import java.io.IOException;
@@ -37,12 +39,16 @@ public class SoundItems extends RecordItem {
             if (!level.isClientSide) {
                 BlockEntity blockentity = level.getBlockEntity(blockpos);
                 if (blockentity instanceof JukeboxBlockEntity) {
+                    Player player = pContext.getPlayer();
+
+                    if (player != null && ActivateMethods.notDaboyz(player)) {
+                        ActivateMethods.addPlayerYassification(player, 5);
+                    }
                 }
             }
 
             return InteractionResult.sidedSuccess(level.isClientSide);
         }
-
         return super.useOn(pContext);
     }
 }

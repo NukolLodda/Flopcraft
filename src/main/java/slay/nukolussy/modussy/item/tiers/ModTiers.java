@@ -1,4 +1,4 @@
-package slay.nukolussy.modussy.tiers;
+package slay.nukolussy.modussy.item.tiers;
 
 import net.minecraft.world.item.Tier;
 import net.minecraft.world.item.crafting.Ingredient;

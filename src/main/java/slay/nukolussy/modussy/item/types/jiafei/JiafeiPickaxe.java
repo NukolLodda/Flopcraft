@@ -12,7 +12,7 @@ import net.minecraft.world.item.TooltipFlag;
 import net.minecraft.world.level.Level;
 import org.jetbrains.annotations.NotNull;
 import slay.nukolussy.modussy.item.ActivateMethods;
-import slay.nukolussy.modussy.tiers.ModTiers;
+import slay.nukolussy.modussy.item.tiers.ModTiers;
 
 import java.util.List;
 

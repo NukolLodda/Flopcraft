@@ -1,0 +1,12 @@
+// 1.20.1	2023-08-16T06:51:38.5617565	Tags for minecraft:item mod id modussy
+1d5781f7e03a7f3aee81954505c1fe3bf7f1f062 data/forge/tags/items/gems/flopium.json
+ca079048d6ff23981a0c3257cd16baa9b9295601 data/forge/tags/items/gems/mystical_flopium.json
+23ebe2e6888de6346369624738fcd20ca79f876f data/forge/tags/items/gems/shenseium.json
+cb79cf5fe049b9bab63a382941152040ccbc1bd0 data/forge/tags/items/ingots/infused_slaginium.json
+6ee423725e0f57382034cde18f8740e16203645e data/forge/tags/items/ingots/slaginium.json
+10b659c57b086590825ba5948231b028abe12575 data/forge/tags/items/yassifers/advanced.json
+3607fa4ef1d26e314c2997962967ff36e2020e2c data/forge/tags/items/yassifers/basic.json
+abd1f4f41c6d799ebcc480a9700ef5b502f0e609 data/forge/tags/items/yassifers/elite.json
+9a634f984d7868b82951dde66205e84da09edefd data/forge/tags/items/yassifers/ultimate.json
+e78289b66e5dcbfbd2971ce7d5c8f3c81cca993d data/minecraft/tags/items/music_discs.json
+4e9b89c8cff94775069dd34a5ab2fd6d78ef5c29 data/minecraft/tags/items/trim_templates.json

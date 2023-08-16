@@ -14,10 +14,8 @@ import net.minecraftforge.common.crafting.conditions.IConditionBuilder;
 import slay.nukolussy.modussy.Modussy;
 import slay.nukolussy.modussy.block.ModBlocks;
 import slay.nukolussy.modussy.datagen.tags.ModTags;
-import slay.nukolussy.modussy.datagen.tags.ModTrimPatterns;
 import slay.nukolussy.modussy.item.ModItems;
 
-import java.util.List;
 import java.util.function.Consumer;
 
 public class ModRecipeProvider extends RecipeProvider implements IConditionBuilder {
@@ -179,6 +177,15 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
                 .unlockedBy(getHasName(ModItems.SLAGINIUM.get()), has(ModItems.SLAGINIUM.get()))
                 .group("cvm_infusion").save(pWriter, Modussy.MODID + ":cvm_infusion_altar_from_crafting");
 
+        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModItems.TAMPON.get())
+                .pattern("020")
+                .pattern("010")
+                .pattern(" 1 ")
+                .define('0', ModItems.HAIRUSSY.get()).define('1', Items.STRING)
+                .define('2', ModTags.Items.SLAGINIUM_INGOT)
+                .unlockedBy(getHasName(ModItems.SLAGINIUM.get()), has(ModItems.SLAGINIUM.get()))
+                .group("tampon").save(pWriter, Modussy.MODID + ":tampon_from_crafting");
+
         ShapelessRecipeBuilder.shapeless(RecipeCategory.MISC, ModItems.HAIRUSSY.get())
                 .requires(Items.LEATHER).requires(Items.BROWN_WOOL).requires(ModTags.Items.YASSIFER)
                 .unlockedBy(getHasName(ModItems.SLAGINIUM_YASSIFIER.get()), has(ModItems.SLAGINIUM_YASSIFIER.get()))
@@ -192,7 +199,8 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
                 .group("scarussy")
                 .save(pWriter, Modussy.MODID + ":scarussy_from_crafting");
 
-        trimSmithing(pWriter, ModItems.JIAFEI_TRIM_TEMPLATE.get(), ModTrimPatterns.JIAFEI.location());
+        trimSmithing(pWriter, ModItems.JIAFEI_TRIM_TEMPLATE.get(),
+                new ResourceLocation(Modussy.MODID, getItemName(ModItems.JIAFEI_TRIM_TEMPLATE.get()) + "_smithing_trim"));
     }
 
     private static TagKey<Item> getYassifierFromComplexity(int pComplexity) {

@@ -1,0 +1,12 @@
+// 1.20.1	2023-08-16T06:51:38.5617565	Tags for minecraft:block mod id modussy
+6249304126f427b5b227e85249d782a6a1f9e045 data/forge/tags/blocks/ores/shenseium.json
+5aca3d169f80421346062ae2d4b92e8f90cc8bc1 data/forge/tags/blocks/storage_blocks/flopium.json
+a0a9309b936fb2acc54d0aadc498816f307e25bb data/forge/tags/blocks/storage_blocks/gagastone.json
+763ba1d60cb7000b80708b5f72a97f315353f80f data/forge/tags/blocks/storage_blocks/gagina.json
+08e98f02e6f5fd7e5538a74e49b13d13a8d46817 data/forge/tags/blocks/storage_blocks/infused_slaginium.json
+d9b148de81b97f13d864331d59688a7d4c9b3de4 data/forge/tags/blocks/storage_blocks/mystical_flopium.json
+5db0eab0bf6107f2c5053f9adc8a2de2f05e2b3a data/forge/tags/blocks/storage_blocks/shenseium.json
+b39227964f40a35ab4bd36618607ca2f40080e85 data/forge/tags/blocks/storage_blocks/slaginium.json
+296b180e708c02ca1478a8cc18099fb902b6a6e8 data/minecraft/tags/blocks/mineable/pickaxe.json
+ddeb8aa8f6b190cea08f6ee54fab89c98b5818f3 data/minecraft/tags/blocks/needs_diamond_tool.json
+5b0ba87e337d11e0d46fa7f3bd12880396e1d8eb data/minecraft/tags/blocks/needs_iron_tool.json

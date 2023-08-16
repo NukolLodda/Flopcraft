@@ -20,6 +20,7 @@ import slay.nukolussy.modussy.client.gui.CvmInfusionAlterScreen;
 import slay.nukolussy.modussy.entities.ModEntities;
 import slay.nukolussy.modussy.item.ModItems;
 import slay.nukolussy.modussy.client.menu.ModMenuTypes;
+import slay.nukolussy.modussy.network.ModMessages;
 import slay.nukolussy.modussy.recipes.ModRecipes;
 import slay.nukolussy.modussy.sound.ModSounds;
 import slay.nukolussy.modussy.tabs.ModCreativeTabs;
@@ -48,6 +49,10 @@ public class Modussy {
         modEventBus.addListener(this::addCreative);
     }
     private void commonSetup(final FMLCommonSetupEvent event) {
+        event.enqueueWork(() -> {
+            // if the below doesn't work, put it in here
+        });
+        ModMessages.register();
     }
 
     private void addCreative(BuildCreativeModeTabContentsEvent event) {

@@ -1,0 +1,30 @@
+{
+  "type": "modussy:cvm_infusion_shapeless",
+  "ingredients": [
+    {
+      "item": "modussy:hairussy"
+    },
+    {
+      "tag": "forge:ingots/slaginium"
+    },
+    {
+      "item": "modussy:hairussy"
+    },
+    {
+      "item": "modussy:hairussy"
+    },
+    {
+      "item": "minecraft:string"
+    },
+    {
+      "item": "modussy:hairussy"
+    },
+    {
+      "item": "minecraft:string"
+    }
+  ],
+  "output": {
+    "count": 1,
+    "item": "modussy:tampon"
+  }
+}
