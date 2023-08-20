@@ -1,7 +1,6 @@
 Modussy (Aka Flopcraft)
 ---
 A very s3xy and aesthetic Minecraft mod
-<img src="https://images.app.goo.gl/AeGbbYGVFpWnkDZ28">
 
 As of right now, Modussy currently has support for Minecraft Java versions 1.19.2 and 1.20.1 on forge API.
 A fabric port will likely get made some day however, it will likely be in a separate repository.
