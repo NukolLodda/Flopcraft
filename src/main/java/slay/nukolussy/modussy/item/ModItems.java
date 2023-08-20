@@ -9,6 +9,7 @@ import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
 import slay.nukolussy.modussy.Modussy;
+import slay.nukolussy.modussy.datagen.tags.ModTrimPatterns;
 import slay.nukolussy.modussy.entities.ModEntities;
 import slay.nukolussy.modussy.item.types.*;
 import slay.nukolussy.modussy.item.types.jiafei.*;
@@ -104,7 +105,7 @@ public class ModItems {
     public static final RegistryObject<Item> BRA = ITEMS.register("bra", InnerWear.Bra::new);
     public static final RegistryObject<Item> THONGS = ITEMS.register("thongs", InnerWear.Thongs::new);
     public static final RegistryObject<Item> JIAFEI_TRIM_TEMPLATE = ITEMS.register("jiafei_armor_trim_template",
-            () -> SmithingTemplateItem.createArmorTrimTemplate(new ResourceLocation(Modussy.MODID, "jiafei")));
+            () -> SmithingTemplateItem.createArmorTrimTemplate(ModTrimPatterns.JIAFEI));
 
     public static final RegistryObject<Item> JIAFEI_UPGRADE_TEMPLATE = ITEMS.register("jiafei_upgrade_smithing_template",
             ModSmithingTemplates::createJiafeiUpgradeTemplate);

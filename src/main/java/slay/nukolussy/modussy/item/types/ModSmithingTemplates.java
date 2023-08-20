@@ -5,6 +5,8 @@ import net.minecraft.Util;
 import net.minecraft.network.chat.Component;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.SmithingTemplateItem;
+import org.jetbrains.annotations.Contract;
+import org.jetbrains.annotations.NotNull;
 import slay.nukolussy.modussy.Modussy;
 
 import java.util.List;
@@ -22,7 +24,7 @@ public class ModSmithingTemplates {
     private static final ChatFormatting TITLE_FORMAT = ChatFormatting.GRAY;
     private static final ChatFormatting DESC_FORMAT = ChatFormatting.BLUE;
 
-    public static SmithingTemplateItem createJiafeiUpgradeTemplate() {
+    public static @NotNull SmithingTemplateItem createJiafeiUpgradeTemplate() {
         return new SmithingTemplateItem(
                 Component.translatable(Util.makeDescriptionId("item", new ResourceLocation("smithing_template.netherite_upgrade.applies_to"))).withStyle(DESC_FORMAT),
                 Component.translatable("item.modussy.jiafei_upgrade_smithing_template.ingredients").withStyle(DESC_FORMAT),

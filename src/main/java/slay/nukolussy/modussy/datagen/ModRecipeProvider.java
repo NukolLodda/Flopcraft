@@ -186,6 +186,9 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
                 .unlockedBy(getHasName(ModItems.SLAGINIUM.get()), has(ModItems.SLAGINIUM.get()))
                 .group("tampon").save(pWriter, Modussy.MODID + ":tampon_from_crafting");
 
+        jiafeiSmithingRecipe(pWriter, ModItems.JIAFEI_TRIM_TEMPLATE.get(), Ingredient.of(ModItems.JIAFEI_SEED.get()));
+        jiafeiSmithingRecipe(pWriter, ModItems.JIAFEI_UPGRADE_TEMPLATE.get(), Ingredient.of(ModItems.JIAFEI_PERFUME.get()));
+
         ShapelessRecipeBuilder.shapeless(RecipeCategory.MISC, ModItems.HAIRUSSY.get())
                 .requires(Items.LEATHER).requires(Items.BROWN_WOOL).requires(ModTags.Items.YASSIFER)
                 .unlockedBy(getHasName(ModItems.SLAGINIUM_YASSIFIER.get()), has(ModItems.SLAGINIUM_YASSIFIER.get()))
@@ -369,5 +372,16 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
                 .group(getItemName(pResult))
                 .unlockedBy(getHasName(pUnlocker), has(pUnlocker))
                 .save(pWriter, Modussy.MODID + ":" + getItemName(pResult) + "_inverted_from_crafting");
+    }
+
+    protected static void jiafeiSmithingRecipe(Consumer<FinishedRecipe> pWriter, ItemLike pTemplate, Ingredient pUpgrade) {
+        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, pTemplate, 2)
+                .pattern("020")
+                .pattern("010")
+                .pattern("000")
+                .define('0', ModItems.JIAFEI_PRODUCT.get()).define('1', pUpgrade)
+                .define('2', pTemplate)
+                .unlockedBy(getHasName(pTemplate), has(pTemplate))
+                .group(getHasName(pTemplate)).save(pWriter, Modussy.MODID + ":" + getHasName(pTemplate) + "_from_crafting");
     }
 }

@@ -324,8 +324,8 @@ public class ActivateMethods {
                     if (_ent instanceof Spider _spider) {
                         _spider.setItemSlot(EquipmentSlot.MAINHAND, new ItemStack(ModItems.ARANA_GRANDE.get()));
                         _spider.setGuaranteedDrop(EquipmentSlot.MAINHAND);
+                        addPlayerYassification(player, 1);
                         _spider.kill();
-                        addPlayerYassification(player, lvl);
                     }
                     if (_ent instanceof Slime slime) {
                         ItemStack cvmItem = new ItemStack(ModItems.CVM.get());
@@ -334,6 +334,7 @@ public class ActivateMethods {
                         }
                         slime.setItemSlot(EquipmentSlot.MAINHAND, cvmItem);
                         slime.setGuaranteedDrop(EquipmentSlot.MAINHAND);
+                        addPlayerYassification(player, 1);
                         slime.kill();
                     }
                     yassification(_ent, world, player);
@@ -490,40 +491,31 @@ public class ActivateMethods {
                 yassification.subYassification(Math.abs(added));
             }
 
-            if (yassification.isDaboyz()) {
-                if (!yassification.wasDaboyz(added)) {
-                    player.displayClientMessage(Component.translatable("subtitle.is_daboyz")
-                            .withStyle(ChatFormatting.DARK_RED), true);
-                    player.playSound(SoundEvents.VILLAGER_HURT);
-                }
+            if (yassification.isDaboyz() && !yassification.wasDaboyz(added)) {
+                player.displayClientMessage(Component.translatable("subtitle.is_daboyz")
+                        .withStyle(ChatFormatting.DARK_RED), true);
+                player.playSound(SoundEvents.VILLAGER_HURT);
             }
-            if (yassification.isNewgen()) {
-                if (!yassification.wasNewgen(added)) {
-                    player.displayClientMessage(Component.translatable("subtitle.is_newgen")
-                            .withStyle(ChatFormatting.RED), true);
-                    player.playSound(SoundEvents.VILLAGER_NO);
-                }
+            if (yassification.isNewgen() && !yassification.wasNewgen(added)) {
+                player.displayClientMessage(Component.translatable("subtitle.is_newgen")
+                        .withStyle(ChatFormatting.RED), true);
+                player.playSound(SoundEvents.VILLAGER_NO);
+
             }
-            if (yassification.isFlop()) {
-                if (!yassification.wasFlop(added)) {
-                    player.displayClientMessage(Component.translatable("subtitle.is_flop")
-                            .withStyle(ChatFormatting.AQUA), true);
-                    player.playSound(ModSounds.AESTHETIC_3.get());
-                }
+            if (yassification.isFlop() && !yassification.wasFlop(added)) {
+                player.displayClientMessage(Component.translatable("subtitle.is_flop")
+                        .withStyle(ChatFormatting.AQUA), true);
+                player.playSound(ModSounds.AESTHETIC_3.get());
             }
-            if (yassification.isMagicFlop()) {
-                if (!yassification.wasMagicFlop(added)) {
-                    player.displayClientMessage(Component.translatable("subtitle.is_magic_flop")
-                                    .withStyle(ChatFormatting.DARK_PURPLE), true);
-                    player.playSound(ModSounds.AESTHETIC_1.get());
-                }
+            if (yassification.isMagicFlop() && !yassification.wasMagicFlop(added)) {
+                player.displayClientMessage(Component.translatable("subtitle.is_magic_flop")
+                        .withStyle(ChatFormatting.DARK_PURPLE), true);
+                player.playSound(ModSounds.AESTHETIC_1.get());
             }
-            if (yassification.isFlopIcon()) {
-                if (!yassification.wasFlopIcon(added)) {
-                    player.displayClientMessage(Component.translatable("subtitle.is_flop_leader")
-                                    .withStyle(ChatFormatting.LIGHT_PURPLE), true);
-                    player.playSound(ModSounds.AESTHETIC_JIAFEI.get());
-                }
+            if (yassification.isFlopIcon() && !yassification.wasFlopIcon(added)) {
+                player.displayClientMessage(Component.translatable("subtitle.is_flop_leader")
+                        .withStyle(ChatFormatting.LIGHT_PURPLE), true);
+                player.playSound(ModSounds.AESTHETIC_JIAFEI.get());
             }
         });
     }
