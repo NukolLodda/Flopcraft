@@ -7,7 +7,7 @@ import net.minecraft.world.item.armortrim.TrimPattern;
 import slay.nukolussy.modussy.Modussy;
 
 public class ModTrimPatterns {
-    // note, a bootstrap of sorts needs to be made in order to register the entries in this class
+    // note, the trim pattern below needs to be registered somehow
     public static final ResourceKey<TrimPattern> JIAFEI = registryKey("jiafei");
 
     private static ResourceKey<TrimPattern> registryKey(String pKey) {

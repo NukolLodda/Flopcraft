@@ -12,12 +12,12 @@ I will also be giving out updates about the project there and my status on certa
 ---
 **Download**
 
-<a href=https://github.com/NukolLodda/Modussy/releases/download/v1.20.1-0.1.0/modussy-0.1.0.jar>Downlaod latest version here!</a>
+<a href=https://github.com/NukolLodda/Modussy/releases/download/v1.20.1-0.1.1/modussy-0.1.1.jar>Download latest version here!</a>
 
-Information about latest version<br>
+Information about the latest version<br>
 Forge API version: 47.0.43 <br>
 Minecraft Java version: 1.20.1 <br>
-Modussy Version: 0.1.0(pre-release) <br>
+Modussy Version: 0.1.1(pre-release) <br>
 
 Click <a href="https://github.com/NukolLodda/Modussy/tags">here</a> to find all versions of Modussy
 
@@ -25,7 +25,7 @@ Click <a href="https://github.com/NukolLodda/Modussy/tags">here</a> to find all 
 **Requests**
 
 If a request is something I consider achievable, I will try my best to complete it. However, I would
-like to state that depending on the complexity of the request, it may take up from a couple weeks to
+like to state that depending on the complexity of the request, it may take up from a couple of weeks to
 several months before it's out. The version in particular also generally needs months of debugging and
 testing prior to release. This is also along with the fact that I am currently working on other projects,
 and that I may at a time be coding multiple requests in, and that I'm still a high schooler meaning that
@@ -33,8 +33,8 @@ I may not have sufficient experience and that I may also just not have the time 
 after I take in a request.
 
 Requests I accept includes: <br>
-- Addition of new content, ie. blocks, items, entities, ect.
-  (as long as it makes sense for this mod and it isn't too complicated)<br>
+- Addition of new content, i.e. blocks, items, entities, ect.
+  (as long as it makes sense for this mod, and it isn't too complicated)<br>
 - Removal of content (as long as the requested content isn't integral to the structure of this mod)
 
 Requests I reject includes: <br>
@@ -42,7 +42,7 @@ Requests I reject includes: <br>
   (I lack both the time and knowledge for this)<br>
 - Porting Modussy to other APIs
   (though I will still try to make a fabric port)<br>
-- Addition of music discs sounds in the sounds folder (mostly legal reasons so it's better safe than sorry)
+- Addition of music discs sounds in the 'sounds' folder (mostly legal reasons, so it's better safe than sorry)
 
 For anyone who wants inquires on the status of your requests/needs help with downloading Modussy,
 come to <a href="https://discord.gg/NTwqY3rcvU">the official Modussy discord server</a>
@@ -52,8 +52,8 @@ ___
 
 After reading Curseforge's terms of service, I believe that some features of Modussy, namely
 CupcakKe's texture, specific items, and mobs violates it, so the download links are in this
-repository instead. Click <a href=https://github.com/NukolLodda/Modussy/releases/tag/v1.20.1-0.1.0>here</a>
-for the most recent version uploaded (Modussy-0.1.0 for Minecraft 1.20.1 Forge API 47.0.43) and
+repository instead. Click <a href=https://github.com/NukolLodda/Modussy/releases/tag/v1.20.1-0.1.1>here</a>
+for the most recent version uploaded (Modussy-0.1.1 for Minecraft 1.20.1 Forge API 47.0.43) and
 <a href="https://github.com/NukolLodda/Modussy/tags">here</a> for every available
 version of Modussy.
 
@@ -72,7 +72,7 @@ ___
 **Downloading Aesthetic Music Files For Modussy**
 
 When you download the Modussy jar file, you either renamed the extension to .zip or make a texture pack.
-There are plenty of tutorials on how to make texture packs but they aren't really that complicated.
+There are plenty of tutorials on how to make texture packs, but they aren't really that complicated.
 
 In both cases, you must have the sound files go to the following directory:
 "assets/modussy/sounds"

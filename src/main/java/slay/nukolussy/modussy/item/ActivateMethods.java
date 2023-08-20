@@ -500,7 +500,6 @@ public class ActivateMethods {
                 player.displayClientMessage(Component.translatable("subtitle.is_newgen")
                         .withStyle(ChatFormatting.RED), true);
                 player.playSound(SoundEvents.VILLAGER_NO);
-
             }
             if (yassification.isFlop() && !yassification.wasFlop(added)) {
                 player.displayClientMessage(Component.translatable("subtitle.is_flop")

@@ -110,8 +110,7 @@ public abstract class AbstractFlops extends PathfinderMob {
     @Override
     public void die(DamageSource pDamageSource) {
         if (pDamageSource.getEntity() != null) {
-            alertFlops(pDamageSource);
-            // make a function that decreases player yassification level
+            alertFlops(pDamageSource.getEntity());
         }
         super.die(pDamageSource);
     }
