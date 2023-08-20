@@ -13,7 +13,8 @@ import org.jetbrains.annotations.Nullable;
 
 public class PlayerYassificationProvider implements ICapabilityProvider, INBTSerializable<CompoundTag> {
     public static Capability<PlayerYassification> PLAYER_YASSIFICATION =
-            CapabilityManager.get(new CapabilityToken<PlayerYassification>() {});
+            CapabilityManager.get(new CapabilityToken<>() {
+            });
 
     private PlayerYassification yassification = null;
     private final LazyOptional<PlayerYassification> optional = LazyOptional.of(this::createPlayerYassification);

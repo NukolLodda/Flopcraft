@@ -92,19 +92,18 @@ public abstract class AbstractFlops extends PathfinderMob {
 
     public void alertFlops(Entity attacker) {
         AABB aabb = AABB.unitCubeFromLowerCorner(this.position()).inflate(10d, 10.0d, 10d);
-        List<Entity> list = this.level().getEntitiesOfClass(Entity.class, aabb, e -> true).stream()
+        List<AbstractFlops> list = this.level().getEntitiesOfClass(AbstractFlops.class, aabb, e -> true).stream()
                 .sorted(Comparator.comparingDouble(_entcnd ->
                         _entcnd.distanceToSqr(this.getX(), this.getY(), this.getZ()))).toList();
-        for (Entity ent : list) {
-            if (ent instanceof AbstractFlops flops && attacker instanceof LivingEntity entity) {
+        for (AbstractFlops flops : list) {
+            if (attacker instanceof LivingEntity entity) {
                 if (entity instanceof Player player) {
+                    ActivateMethods.addPlayerYassification(player, -5);
                     if (player.equals(flops.tamedBy)) flops.setTamed(null);
                     else if (player.isCreative()) entity = null;
-                    ActivateMethods.addPlayerYassification(player, -2);
                 }
                 if (entity != null) flops.setTarget(entity);
             }
-            // if the causer was the player, it would reduce their yassification level
         }
     }
 

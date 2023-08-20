@@ -46,12 +46,9 @@ public abstract class AbstractFlopTraders extends AbstractFlopFigures implements
     @Override
     public void setTradingPlayer(@Nullable Player pTradingPlayer) {
         if (pTradingPlayer != null) {
-            pTradingPlayer.stopUsingItem();
-            pTradingPlayer.getCapability(PlayerYassificationProvider.PLAYER_YASSIFICATION).ifPresent(yassification -> {
-                if (!yassification.isNewgen()) {
-                    this.trader = pTradingPlayer;
-                }
-            });
+            if (ActivateMethods.notNewgen(pTradingPlayer)) {
+                this.trader = pTradingPlayer;
+            };
         }
     }
 

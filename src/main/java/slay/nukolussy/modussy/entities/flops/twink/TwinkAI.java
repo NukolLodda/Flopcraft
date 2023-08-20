@@ -97,11 +97,7 @@ public class TwinkAI {
 
         boolean throwItems = true;
         if (item.getItem().is(CUM)) {
-            if (item.getOwner() instanceof Player player) {
-                throwItems = ActivateMethods.notNewgen(player);
-            }
-            if (throwItems)
-                throwItemsToDirection(twink, itemStack, getRandomNearbyPos(twink));
+            throwItemsToDirection(twink, itemStack, getRandomNearbyPos(twink));
         } else {
             twink.equipItemIfPossible(itemStack);
             putInInventory(twink, itemStack);

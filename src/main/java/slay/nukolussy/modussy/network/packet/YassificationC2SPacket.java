@@ -1,18 +1,14 @@
 package slay.nukolussy.modussy.network.packet;
 
-import net.minecraft.ChatFormatting;
 import net.minecraft.network.FriendlyByteBuf;
-import net.minecraft.network.chat.Component;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.server.level.ServerPlayer;
 import net.minecraftforge.network.NetworkEvent;
-import slay.nukolussy.modussy.network.yassification.PlayerYassificationProvider;
 
 import java.util.function.Supplier;
 
 public class YassificationC2SPacket {
     public YassificationC2SPacket() {
-
     }
 
     public YassificationC2SPacket(FriendlyByteBuf buf) {

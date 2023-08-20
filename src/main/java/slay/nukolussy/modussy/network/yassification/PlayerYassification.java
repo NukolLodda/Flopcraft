@@ -24,6 +24,22 @@ public class PlayerYassification {
         this.yassification = Math.max(this.yassification - Math.abs(sub), MIN_YASSIFICATION);
     }
 
+    public boolean wasDaboyz(int added) {
+        return yassification - added < DABOYZ;
+    }
+    public boolean wasNewgen(int added) {
+        return yassification - added < NEWGEN;
+    }
+    public boolean wasFlop(int added) {
+        return yassification - added > OFFICIAL_FLOP;
+    }
+    public boolean wasMagicFlop(int added) {
+        return yassification - added > MAGIC_FLOP;
+    }
+    public boolean wasFlopIcon(int added) {
+        return yassification - added > FLOP_ICON;
+    }
+
     public void copyFrom(PlayerYassification source) {
         this.yassification = source.yassification;
     }
