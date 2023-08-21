@@ -50,6 +50,8 @@
 
   "item.modussy.jiafei_upgrade_smithing_template.desc": "Mejora de Jiafei",
   "item.modussy.jiafei_upgrade_smithing_template.ingredients": "Producto de Jiafei",
+  "item.modussy.jiafei_upgrade_smithing_template.applies_to": "Equipamiento de netherita",
+  "item.modussy.jiafei_upgrade_smithing_template.base_desc": "Coloco una armadura, arma, o herramienta de netherita",
   "trim_pattern.modussy.jiafei": "Ornamento de Jiafei",
 
   "item.modussy.jiafei_upgrade_smithing_template.upgrade_material": "Coloca un producto de Jiafei",
@@ -215,7 +217,7 @@
   "itemGroup.yassifying_ingredients": "Ingredientes yasificadores",
 
   "subtitles.aesthetic": "Comienso de la yasificación",
-  "subtitles.cvm": "S3MEN! ♥",
+  "subtitles.cvm": "¡S3MEN! ♥",
   "subtitles.cupcakke": "CupcakKe habla",
   "subtitles.cupcakke_hurt": "CupcakKe gime",
   "subtitles.cupcakke_slurp": "CupcakKe traga",
@@ -240,9 +242,9 @@
 
   "subtitles.music": "Música sopla la peluca lejos",
   "subtitle.aesthetic_warning": "Advertencia estética",
-  "subtitle.is_daboyz": "Puaj! Ahora estas un daboyz",
-  "subtitle.is_newgen": "Puf! Ahora estas un newgen",
-  "subtitle.is_flop": "Felicidades! Ahora estas una flop",
-  "subtitle.is_magic_flop": "Slayyy Reina!!! Ahora estas slay como una flop mágica",
-  "subtitle.is_flop_leader": "YASS REINA! Has COMIDO tan difícil, las flops estan seguiendo en tus pasos!"
+  "subtitle.is_daboyz": "¡Puaj! Ahora estas un daboyz",
+  "subtitle.is_newgen": "¡Puf! Ahora estas un newgen",
+  "subtitle.is_flop": "¡Felicidades! Ahora estas una flop",
+  "subtitle.is_magic_flop": "¡¡¡Slayyy Reina!!! Ahora estas slay como una flop mágica",
+  "subtitle.is_flop_leader": "¡YASS REINA! ¡Has COMIDO tan difícil, las flops estan seguiendo en tus pasos!"
 }

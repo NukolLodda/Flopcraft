@@ -50,6 +50,8 @@
 
   "item.modussy.jiafei_upgrade_smithing_template.desc": "Jiafei Upgrade",
   "item.modussy.jiafei_upgrade_smithing_template.ingredients": "Jiafei Product",
+  "item.modussy.jiafei_upgrade_smithing_template.applies_to": "Netherite Equipment",
+  "item.modussy.jiafei_upgrade_smithing_template.base_desc": "Add netherite armor, weapon, or tool",
   "trim_pattern.modussy.jiafei": "Jiafei Armor Trim",
 
   "item.modussy.jiafei_upgrade_smithing_template.upgrade_material": "Add Jiafei Product",

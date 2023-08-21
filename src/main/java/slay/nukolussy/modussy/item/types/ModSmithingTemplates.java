@@ -26,10 +26,10 @@ public class ModSmithingTemplates {
 
     public static @NotNull SmithingTemplateItem createJiafeiUpgradeTemplate() {
         return new SmithingTemplateItem(
-                Component.translatable(Util.makeDescriptionId("item", new ResourceLocation("smithing_template.netherite_upgrade.applies_to"))).withStyle(DESC_FORMAT),
+                Component.translatable("item.modussy.jiafei_upgrade_smithing_template.applies_to").withStyle(DESC_FORMAT),
                 Component.translatable("item.modussy.jiafei_upgrade_smithing_template.ingredients").withStyle(DESC_FORMAT),
                 Component.translatable("item.modussy.jiafei_upgrade_smithing_template.desc").withStyle(TITLE_FORMAT),
-                Component.translatable(Util.makeDescriptionId("item", new ResourceLocation("smithing_template.netherite_upgrade.base_slot_description"))),
+                Component.translatable("item.modussy.jiafei_upgrade_smithing_template.base_desc"),
                 Component.translatable("item.modussy.jiafei_upgrade_smithing_template.upgrade_material"),
                 createUpgradeIconsList(),
                 List.of(new ResourceLocation(Modussy.MODID,"item/empty_slot_product")));

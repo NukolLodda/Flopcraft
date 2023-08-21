@@ -82,8 +82,10 @@ public class Tampon extends ArrowItem {
                             6, 1, 1, 1, 0.16f);
                 }
                 entity.playSound(ModSounds.SQUIRT.get());
-                entity.setItemSlot(LivingEntity.getEquipmentSlotForItem(new ItemStack(this)),
-                        new ItemStack(ModItems.BLOODY_TAMPON.get()));
+                ItemStack curItem = entity.getItemInHand(hand);
+                curItem.setCount(curItem.getCount() - 1);
+
+                entity.setItemInHand(hand, new ItemStack(ModItems.BLOODY_TAMPON.get()));
             }
         });
         return ar;

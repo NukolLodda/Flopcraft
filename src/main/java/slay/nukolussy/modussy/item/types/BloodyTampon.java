@@ -7,6 +7,7 @@ import net.minecraft.world.entity.projectile.AbstractArrow;
 import net.minecraft.world.entity.projectile.Arrow;
 import net.minecraft.world.item.*;
 import net.minecraft.world.level.Level;
+import net.minecraft.world.phys.HitResult;
 import slay.nukolussy.modussy.item.ModItems;
 
 public class BloodyTampon extends ArrowItem {
@@ -26,7 +27,7 @@ public class BloodyTampon extends ArrowItem {
         arrow.addEffect(new MobEffectInstance(MobEffects.WEAKNESS, 6900, 1, true, false));
         arrow.addEffect(new MobEffectInstance(MobEffects.HUNGER, 6900, 0, true, false));
         arrow.addEffect(new MobEffectInstance(MobEffects.DIG_SLOWDOWN, 6900, 1, true, false));
-        arrow.addEffect(new MobEffectInstance(MobEffects.POISON, 6900, 0, true, false));
+        arrow.addEffect(new MobEffectInstance(MobEffects.HARM, 6900, 0, true, false));
         return arrow;
     }
 }
