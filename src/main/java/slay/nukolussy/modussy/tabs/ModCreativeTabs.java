@@ -150,6 +150,7 @@ public class ModCreativeTabs {
                         pOutput.accept(ModItems.INFUSED_SLAGINIUM.get());
                         pOutput.accept(ModItems.POSEI.get());
                         pOutput.accept(ModItems.SHENSEIUM.get());
+                        pOutput.accept(ModItems.BLOODY_TAMPON.get());
                         pOutput.accept(ModItems.TAMPON.get());
                         pOutput.accept(ModItems.TWINK_EGG.get());
                         pOutput.accept(ModItems.WONYOUNG_ESSENCE.get());

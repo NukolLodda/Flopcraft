@@ -24,9 +24,13 @@ public class ModItemTagGenerator extends ItemTagsProvider {
         this.tag(ModTags.Items.FLOPIUM).add(ModItems.FLOPIUM.get());
         this.tag(ModTags.Items.MYSTICAL_FLOPIUM).add(ModItems.MYSTICAL_FLOPIUM.get());
         this.tag(ModTags.Items.SHENSEIUM).add(ModItems.SHENSEIUM.get());
-        ;
         this.tag(ModTags.Items.SLAGINIUM_INGOT).add(ModItems.SLAGINIUM.get());
         this.tag(ModTags.Items.INFUSED_SLAGINIUM_INGOT).add(ModItems.INFUSED_SLAGINIUM.get());
+
+        this.tag(ItemTags.ARROWS).add(
+                ModItems.TAMPON.get(),
+                ModItems.BLOODY_TAMPON.get()
+        );
 
         this.tag(ModTags.Items.ULTIMATE_YASSIFER).add(
                 ModItems.SLAGINIUM_YASSIFIER_DELUXE.get()

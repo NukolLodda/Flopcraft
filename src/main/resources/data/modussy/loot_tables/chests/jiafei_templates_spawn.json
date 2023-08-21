@@ -9,7 +9,7 @@
       "entries": [
         {
           "type": "minecraft:item",
-          "name": "modussy:jiafei_upgrade_template",
+          "name": "modussy:jiafei_upgrade_smithing_template",
           "weight": 1,
           "functions": [
             {

@@ -1,10 +1,6 @@
 package slay.nukolussy.modussy.event;
 
-
-import net.minecraft.ChatFormatting;
-import net.minecraft.network.chat.Component;
 import net.minecraft.resources.ResourceLocation;
-import net.minecraft.sounds.SoundEvents;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.phys.AABB;
@@ -19,9 +15,10 @@ import net.minecraftforge.fml.common.Mod;
 import slay.nukolussy.modussy.Modussy;
 import slay.nukolussy.modussy.entities.flops.AbstractFlops;
 import slay.nukolussy.modussy.item.ActivateMethods;
+import slay.nukolussy.modussy.network.period.PlayerMenstruation;
+import slay.nukolussy.modussy.network.period.PlayerMenstruationProvider;
 import slay.nukolussy.modussy.network.yassification.PlayerYassification;
 import slay.nukolussy.modussy.network.yassification.PlayerYassificationProvider;
-import slay.nukolussy.modussy.sound.ModSounds;
 
 import java.util.List;
 
@@ -31,8 +28,12 @@ public class ModEvents {
     public static void onAttachCapabilitiesPlayer(AttachCapabilitiesEvent<Entity> event) {
         if (event.getObject() instanceof Player) {
             if (!event.getObject().getCapability(PlayerYassificationProvider.PLAYER_YASSIFICATION).isPresent()) {
-                event.addCapability(new ResourceLocation(Modussy.MODID, "properties"),
+                event.addCapability(new ResourceLocation(Modussy.MODID, "yassificiation"),
                         new PlayerYassificationProvider());
+            }
+            if (!event.getObject().getCapability(PlayerMenstruationProvider.PLAYER_MENSTRUATION).isPresent()) {
+                event.addCapability(new ResourceLocation(Modussy.MODID, "menstruation"),
+                        new PlayerMenstruationProvider());
             }
         }
     }
@@ -45,12 +46,19 @@ public class ModEvents {
                     newStore.copyFrom(oldStore);
                 });
             });
+
+            event.getOriginal().getCapability(PlayerMenstruationProvider.PLAYER_MENSTRUATION).ifPresent(oldStore -> {
+                event.getOriginal().getCapability(PlayerMenstruationProvider.PLAYER_MENSTRUATION).ifPresent(newStore -> {
+                    newStore.copyFrom(oldStore);
+                });
+            });
         }
     }
 
     @SubscribeEvent
     public static void onRegisterCapabilities(RegisterCapabilitiesEvent event) {
         event.register(PlayerYassification.class);
+        event.register(PlayerMenstruation.class);
     }
 
     @SubscribeEvent

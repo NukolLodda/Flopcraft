@@ -17,6 +17,7 @@ public class ModItemModelProvider extends ItemModelProvider {
 
     @Override
     protected void registerModels() {
+        simpleItem(ModItems.BLOODY_TAMPON);
         simpleItem(ModItems.CUPCAKE);
         simpleItem(ModItems.CVM);
         simpleItem(ModItems.CVMIUM);

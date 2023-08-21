@@ -1,0 +1,26 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "group": "has_jiafei_armor_trim_template",
+  "key": {
+    "0": {
+      "item": "modussy:jiafei_product"
+    },
+    "1": {
+      "item": "modussy:jiafei_seed"
+    },
+    "2": {
+      "item": "modussy:jiafei_armor_trim_template"
+    }
+  },
+  "pattern": [
+    "020",
+    "010",
+    "000"
+  ],
+  "result": {
+    "count": 2,
+    "item": "modussy:jiafei_armor_trim_template"
+  },
+  "show_notification": true
+}

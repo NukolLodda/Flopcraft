@@ -31,22 +31,19 @@ public class CvmInfusionAlterShapelessRecipe implements Recipe<SimpleContainer> 
             return false;
         }
 
-        boolean hasIng1 = false, hasIng2 = false, hasIng3 = false,
-        hasIng4 = false, hasIng5 = false, hasIng6 = false, hasIng7 = false;
-        int nullCounter = 0;
-        Ingredient item;
-        for (int i = 0; i < 7; i++) {
-            item = recipeItems.get(i);
-            if (!hasIng1) hasIng1 = item.test(container.getItem(1));
-            if (!hasIng2) hasIng2 = item.test(container.getItem(2));
-            if (!hasIng3) hasIng3 = item.test(container.getItem(3));
-            if (!hasIng4) hasIng4 = item.test(container.getItem(4));
-            if (!hasIng5) hasIng5 = item.test(container.getItem(5));
-            if (!hasIng6) hasIng6 = item.test(container.getItem(6));
-            if (!hasIng7) hasIng7 = item.test(container.getItem(7));
-            if (container.getItem(i+1).isEmpty()) nullCounter++;
-        } // note: there is a null recipe bug here
-        return hasIng1 && hasIng2 && hasIng3 && hasIng4 && hasIng5 && hasIng6 && hasIng7 && nullCounter < 6;
+        boolean hasIng = recipeItems.size() > 0;
+        ItemStack curItem;
+
+        for (Ingredient ing : recipeItems) {
+            for (int j = 1; j < 4; j++) {
+                curItem = container.getItem(j);
+                if (curItem.isEmpty()) {
+                    continue;
+                }
+                hasIng = ing.test(curItem) && hasIng;
+            }
+        }
+        return hasIng;
         // checks if the indices match
         // placeholder code
     }

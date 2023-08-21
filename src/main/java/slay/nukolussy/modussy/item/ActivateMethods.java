@@ -411,7 +411,7 @@ public class ActivateMethods {
                 slime.kill();
             }
         }
-        (item).setDamageValue(item.getDamageValue() + itemDura);
+        item.setDamageValue(item.getDamageValue() + itemDura);
     }
 
     public static void slayBreak(Level lvl, BlockState state, BlockPos pos, LivingEntity ent) {
