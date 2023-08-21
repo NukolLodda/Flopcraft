@@ -1,6 +1,8 @@
 package slay.nukolussy.modussy.event;
 
 import net.minecraft.resources.ResourceLocation;
+import net.minecraft.world.effect.MobEffectInstance;
+import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.phys.AABB;
@@ -89,6 +91,13 @@ public class ModEvents {
                         }
                         // ensures flops will always be nice to you
                     }
+                }
+            });
+
+            player.getCapability(PlayerMenstruationProvider.PLAYER_MENSTRUATION).ifPresent(phase -> {
+                if (phase.getPhase() == player.level().getMoonPhase()) {
+                    player.addEffect(new MobEffectInstance(MobEffects.MOVEMENT_SLOWDOWN, 100));
+                    player.addEffect(new MobEffectInstance(MobEffects.DAMAGE_BOOST, 100));
                 }
             });
         }

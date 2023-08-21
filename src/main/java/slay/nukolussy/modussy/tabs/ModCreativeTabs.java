@@ -56,6 +56,8 @@ public class ModCreativeTabs {
                     .title(Component.translatable("itemGroup.slay_tools"))
                     .withTabsBefore(CreativeModeTabs.SPAWN_EGGS)
                     .displayItems(((pParameters, pOutput) -> {
+                        pOutput.accept(ModItems.ARANA_GRANDE.get());
+                        pOutput.accept(ModItems.DEELDO.get());
                         pOutput.accept(ModItems.SLAGINIUM_YASSIFIER.get());
                         pOutput.accept(ModItems.SLAGINIUM_YASSIFIER_PLUS.get());
                         pOutput.accept(ModItems.SLAGINIUM_YASSIFIER_PREMIUM.get());
@@ -64,19 +66,17 @@ public class ModCreativeTabs {
                         pOutput.accept(ModItems.INFUSED_SLAGINIUM_PICKAXOL.get());
                         pOutput.accept(ModItems.FLOPIUM_PICKAXOL.get());
                         pOutput.accept(ModItems.MYSTICAL_FLOPIUM_PICKAXOL.get());
-                        pOutput.accept(ModItems.ARANA_GRANDE.get());
                         pOutput.accept(ModItems.JIAFEI_AXE.get());
                         pOutput.accept(ModItems.JIAFEI_HAMMER.get());
                         pOutput.accept(ModItems.JIAFEI_SICKLE.get());
                         pOutput.accept(ModItems.JIAFEI_PICKAXE.get());
                         pOutput.accept(ModItems.JIAFEI_SHOVEL.get());
+                        pOutput.accept(ModItems.BRA.get());
+                        pOutput.accept(ModItems.THONGS.get());
                         pOutput.accept(ModItems.JIAFEI_BOOTS.get());
                         pOutput.accept(ModItems.JIAFEI_LEGGINGS.get());
                         pOutput.accept(ModItems.JIAFEI_CHESTPLATE.get());
                         pOutput.accept(ModItems.JIAFEI_HELMET.get());
-                        pOutput.accept(ModItems.DEELDO.get());
-                        pOutput.accept(ModItems.BRA.get());
-                        pOutput.accept(ModItems.THONGS.get());
                     })).build());
 
     public static RegistryObject<CreativeModeTab> YASS_DISCS = CREATIVE_MODE_TABS.register("yass_discs", () ->

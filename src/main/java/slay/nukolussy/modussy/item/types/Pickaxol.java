@@ -113,12 +113,12 @@ public class Pickaxol extends DiggerItem {
         return null;
     }
 
-    @org.jetbrains.annotations.Nullable
+    @Nullable
     public static BlockState getAxeStrippingState(BlockState orgState) {
         return AxeItem.getAxeStrippingState(orgState);
     }
 
-    @org.jetbrains.annotations.Nullable
+    @Nullable
     public static BlockState getShovelPathingState(BlockState orgState) {
         return ShovelItem.getShovelPathingState(orgState);
     }

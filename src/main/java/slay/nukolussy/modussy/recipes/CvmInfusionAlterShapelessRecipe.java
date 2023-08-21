@@ -14,6 +14,9 @@ import net.minecraft.world.level.Level;
 import org.jetbrains.annotations.Nullable;
 import slay.nukolussy.modussy.Modussy;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class CvmInfusionAlterShapelessRecipe implements Recipe<SimpleContainer> {
     private final ResourceLocation id;
     private final ItemStack output;
@@ -32,20 +35,48 @@ public class CvmInfusionAlterShapelessRecipe implements Recipe<SimpleContainer> 
         }
 
         boolean hasIng = recipeItems.size() > 0;
-        ItemStack curItem;
-
-        for (Ingredient ing : recipeItems) {
-            for (int j = 1; j < 4; j++) {
-                curItem = container.getItem(j);
-                if (curItem.isEmpty()) {
-                    continue;
-                }
-                hasIng = ing.test(curItem) && hasIng;
+        int nullCounter = 0, ingNum = 0, itemNum = 0;
+        for (Ingredient item : recipeItems) {
+            if (!item.isEmpty()) {
+                ingNum++;
             }
         }
-        return hasIng;
-        // checks if the indices match
-        // placeholder code
+
+        ItemStack curItem;
+        Ingredient ing;
+        List<Integer> skippedVals = new ArrayList<>(List.of());
+        for (int i = 0; i < recipeItems.size(); i++) {
+            ing = recipeItems.get(i);
+            if (!hasIng) break;
+            for (int j = 1; j < 8; j++) {
+                curItem = container.getItem(j);
+                if (skippedVals.contains(j)) continue;
+                if (curItem.isEmpty()) {
+                    if (i == 0) nullCounter++;
+                    continue;
+                }
+                if (isInvalidItem(curItem)) {
+                    hasIng = false;
+                    break;
+                }
+                if (ing.test(curItem)) {
+                    hasIng = ing.test(curItem);
+                    skippedVals.add(j);
+                    itemNum++;
+                    break;
+                }
+            }
+        }
+        return hasIng && nullCounter < 7 && ingNum == itemNum;
+    }
+
+    protected boolean isInvalidItem(ItemStack pItem) {
+        boolean isCor = false;
+        for (Ingredient ing : recipeItems) {
+            isCor = ing.test(pItem);
+            if (isCor) break;
+        }
+        return !isCor;
     }
 
     @Override

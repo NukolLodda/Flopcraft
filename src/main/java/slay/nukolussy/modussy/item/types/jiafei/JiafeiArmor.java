@@ -17,7 +17,6 @@ import slay.nukolussy.modussy.sound.ModSounds;
 
 import java.util.List;
 
-
 public class JiafeiArmor extends ArmorItem {
     public JiafeiArmor(ArmorItem.Type slot) {
         super(new ArmorMaterial() {

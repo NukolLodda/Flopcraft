@@ -40,7 +40,6 @@ import slay.nukolussy.modussy.entities.flops.traders.Jiafei;
 import slay.nukolussy.modussy.entities.flops.traders.NickiMinaj;
 import slay.nukolussy.modussy.entities.flops.twink.Twink;
 import slay.nukolussy.modussy.entities.flops.twink.TwinkAI;
-import slay.nukolussy.modussy.network.yassification.PlayerYassification;
 import slay.nukolussy.modussy.network.yassification.PlayerYassificationProvider;
 import slay.nukolussy.modussy.sound.ModSounds;
 
@@ -49,6 +48,13 @@ import java.util.List;
 import java.util.concurrent.atomic.AtomicBoolean;
 
 public class ActivateMethods {
+    private static long getGameDayTick(ServerLevel level) {
+        long time = level.getGameTime() / 24000L;
+        if (level.getDayTime() > 6000) {
+            time++;
+        }
+        return time * 24000L;
+    }
     private static SoundEvent AestheticSounds(int up) {
         if (up > 8) up = 8;
         int randomNum = (int) (Math.random() * (up - 1)) + 1;
@@ -116,12 +122,16 @@ public class ActivateMethods {
         ent.addEffect(new MobEffectInstance(MobEffects.NIGHT_VISION, 1710, 0));
     }
 
-    public static boolean notDaboyz(Player player) {
+    public static boolean isDaboyz(Player player) {
         AtomicBoolean isDaboyz = new AtomicBoolean(false);
         player.getCapability(PlayerYassificationProvider.PLAYER_YASSIFICATION).ifPresent(yassification -> {
             isDaboyz.set(yassification.isDaboyz());
         });
-        return !isDaboyz.get();
+        return isDaboyz.get();
+    }
+
+    public static boolean notDaboyz(Player player) {
+        return !isDaboyz(player);
     }
 
     public static boolean notNewgen(Player player) {
@@ -138,6 +148,22 @@ public class ActivateMethods {
             isFlop.set(yassification.isFlop());
         });
         return isFlop.get();
+    }
+
+    public static boolean isMagicFlop(Player player) {
+        AtomicBoolean isMagicFlop = new AtomicBoolean(false);
+        player.getCapability(PlayerYassificationProvider.PLAYER_YASSIFICATION).ifPresent(yassification -> {
+            isMagicFlop.set(yassification.isMagicFlop());
+        });
+        return isMagicFlop.get();
+    }
+
+    public static boolean isFlopIcon(Player player) {
+        AtomicBoolean isFlopIcon = new AtomicBoolean(false);
+        player.getCapability(PlayerYassificationProvider.PLAYER_YASSIFICATION).ifPresent(yassification -> {
+            isFlopIcon.set(yassification.isFlopIcon());
+        });
+        return isFlopIcon.get();
     }
 
     public static boolean canEntityBecomeNickiMinaj(LevelAccessor world, double x, double y, double z) {
@@ -235,20 +261,22 @@ public class ActivateMethods {
             final Vec3 _center = new Vec3(x, y, z);
             List<LivingEntity> _entfound = world.getEntitiesOfClass(LivingEntity.class, new AABB(_center, _center).inflate(32 / 2d), e -> true).stream()
                     .sorted(Comparator.comparingDouble(_entcnd -> _entcnd.distanceToSqr(_center))).toList();
-            for (LivingEntity entityiterator : _entfound) {
-                if (entityiterator instanceof Monster monster) {
-                    monster.addEffect(new MobEffectInstance(MobEffects.MOVEMENT_SLOWDOWN, 2400, 10, true, false));
-                    monster.addEffect(new MobEffectInstance(MobEffects.WITHER, 690, 1));
-                    monster.addEffect(new MobEffectInstance(MobEffects.WEAKNESS, 2400, 10));
+            for (LivingEntity _ent : _entfound) {
+                if (_ent instanceof Monster || (_ent instanceof Player surround && isDaboyz(surround))) {
+                    _ent.addEffect(new MobEffectInstance(MobEffects.MOVEMENT_SLOWDOWN, 2400, 10, true, false));
+                    _ent.addEffect(new MobEffectInstance(MobEffects.WITHER, 690, 1));
+                    _ent.addEffect(new MobEffectInstance(MobEffects.WEAKNESS, 2400, 10));
                 }
-                if (!(entityiterator instanceof Player)) {
-                    entityiterator.addEffect(new MobEffectInstance(MobEffects.MOVEMENT_SLOWDOWN, 690, 5, true, false));
-                    entityiterator.addEffect(new MobEffectInstance(MobEffects.WEAKNESS, 690, 5, true, false));
+                if (!(_ent instanceof Player)) {
+                    _ent.addEffect(new MobEffectInstance(MobEffects.MOVEMENT_SLOWDOWN, 690, 5, true, false));
+                    _ent.addEffect(new MobEffectInstance(MobEffects.WEAKNESS, 690, 5, true, false));
                 }
                 if (entity instanceof Player player) {
-                    if (entityiterator instanceof AbstractFlopFigures) {
-                        addPlayerYassification(player, -5);
-                    } else if (entityiterator instanceof AbstractFlops) {
+                    if (_ent instanceof AbstractFlopFigures ||
+                            (_ent instanceof Player surround && isFlopIcon(surround))) {
+                        addPlayerYassification(player, -3);
+                    } else if (_ent instanceof AbstractFlops ||
+                            (_ent instanceof Player surround && isFlop(surround))) {
                         addPlayerYassification(player, -1);
                     }
                 }
@@ -268,18 +296,18 @@ public class ActivateMethods {
             for (LivingEntity _ent : _entfound) {
                 if (entity instanceof Player player) {
                     yassification(_ent, world, player);
-                    if (isMonster(_ent)) {
+                    if (isMonster(_ent) || (_ent instanceof Player surround && isDaboyz(surround))) {
                         monsterEffects(_ent);
                     }
                     if (_ent instanceof Cat _cat && Math.random() < 0.16) {
                         _cat.spawnAtLocation(ModItems.POSEI.get());
                     }
                     if (_ent instanceof TamableAnimal _tamIsTamedBy && _tamIsTamedBy.isOwnedBy(player)
-                            || _ent instanceof AbstractFlops) {
+                            || _ent instanceof AbstractFlops || (_ent instanceof Player surround && isFlop(surround))) {
                         flopEffects(_ent);
-                        if (_ent instanceof AbstractFlopFigures) {
+                        if (_ent instanceof AbstractFlopFigures || (_ent instanceof Player surround && isFlopIcon(surround))) {
                             addPlayerYassification(player, 7);
-                        } else if (_ent instanceof AbstractFlops) {
+                        } else if (_ent instanceof AbstractFlops || _ent instanceof Player) {
                             addPlayerYassification(player, 1);
                         }
                     }
@@ -339,7 +367,7 @@ public class ActivateMethods {
                     }
                     yassification(_ent, world, player);
                     if (_ent instanceof Villager || _ent instanceof Witch) itemDura += 10;
-                    if (isMonster(_ent) && lvl > 1) {
+                    if (isMonster(_ent) || (_ent instanceof Player surround && isDaboyz(surround)) && lvl > 1) {
                         monsterEffects(_ent, lvl, amp);
                         itemDura += 80;
                     }
@@ -347,13 +375,13 @@ public class ActivateMethods {
                         _cat.spawnAtLocation(ModItems.POSEI.get());
                         addPlayerYassification(player, 1);
                     }
-                    if (_ent instanceof TamableAnimal _tamIsTamedBy && _tamIsTamedBy.isOwnedBy(player)
-                            || _ent instanceof AbstractFlops) {
+                    if ((_ent instanceof TamableAnimal _tamIsTamedBy && _tamIsTamedBy.isOwnedBy(player) && isFlop(player))
+                            || _ent instanceof AbstractFlops || (_ent instanceof Player surround && isFlop(surround))) {
                         flopEffects(_ent, lvl, amp);
                         itemDura += 120;
-                        if (_ent instanceof AbstractFlopFigures) {
+                        if (_ent instanceof AbstractFlopFigures || (_ent instanceof Player surround && isFlopIcon(surround))) {
                             addPlayerYassification(player, 3 * lvl);
-                        } else if (_ent instanceof AbstractFlops) {
+                        } else if (_ent instanceof AbstractFlops || _ent instanceof Player) {
                             addPlayerYassification(player, lvl);
                         }
                     }
@@ -363,11 +391,13 @@ public class ActivateMethods {
         if (world instanceof ServerLevel _level) {
             _level.sendParticles(ParticleTypes.SMOKE, x, y, z, 60 / lvl,5,5, 5, 1.0);
             if (lvl > 2) {
-                _level.getServer().getCommands().performPrefixedCommand(new CommandSourceStack(CommandSource.NULL, new Vec3(x, y, z), Vec2.ZERO, _level,
-                        4, "", Component.literal(""), _level.getServer(), null).withSuppressedOutput(), "time set 1000");
+                _level.getServer().getCommands().performPrefixedCommand(new CommandSourceStack(CommandSource.NULL, new Vec3(x, y, z),
+                        Vec2.ZERO, _level, 4, "", Component.literal(""), _level.getServer(), null)
+                        .withSuppressedOutput(), "time set " + (getGameDayTick(_level) + 6000));
                 if (lvl > 3) {
-                    _level.getServer().getCommands().performPrefixedCommand(new CommandSourceStack(CommandSource.NULL, new Vec3(x, y, z), Vec2.ZERO, _level,
-                            4, "", Component.literal(""), _level.getServer(), null).withSuppressedOutput(), "weather clear");
+                    _level.getServer().getCommands().performPrefixedCommand(new CommandSourceStack(CommandSource.NULL, new Vec3(x, y, z),
+                            Vec2.ZERO, _level, 4, "", Component.literal(""), _level.getServer(), null)
+                            .withSuppressedOutput(), "weather clear");
                 }
             }
         }
@@ -376,13 +406,13 @@ public class ActivateMethods {
 
     public static void slayAttack(ItemStack item, Entity source, Entity target, int lvl) {
         int amp = (lvl + 1) / 2, itemDura = 0;
-        if (source instanceof Player || source instanceof AbstractFlops) {
+        if ((source instanceof Player player && isFlop(player)) || source instanceof AbstractFlops) {
             ((LivingEntity) source).heal(3.0f);
         }
 
         if (target instanceof LivingEntity living) {
             if (lvl == 1) living.addEffect(new MobEffectInstance(MobEffects.POISON, 1380 * lvl, 0));
-            if (isMonster(living) && lvl > 1) {
+            if (isMonster(living) || (living instanceof Player surround && isDaboyz(surround)) && lvl > 1) {
                 if (target instanceof Spider _spider) {
                     _spider.setItemSlot(EquipmentSlot.MAINHAND, new ItemStack(ModItems.ARANA_GRANDE.get()));
                     _spider.setGuaranteedDrop(EquipmentSlot.MAINHAND);
@@ -398,6 +428,10 @@ public class ActivateMethods {
 
             if (living instanceof AbstractFlops && source instanceof Player player) {
                 int subNum = living instanceof AbstractFlopFigures ? -7 : -1;
+                addPlayerYassification(player, subNum * lvl);
+            }
+            if (living instanceof Player player && isFlop(player)) {
+                int subNum = isFlopIcon(player) ? -7 : isMagicFlop(player) ? -3 : 1;
                 addPlayerYassification(player, subNum * lvl);
             }
 
@@ -438,7 +472,7 @@ public class ActivateMethods {
             for (LivingEntity _ent : _entfound) {
                 if (entity instanceof Player player) {
                     yassification(_ent, world, player);
-                    if (isMonster(_ent)) {
+                    if (isMonster(_ent) || (_ent instanceof Player surround && isDaboyz(surround))) {
                         monsterEffects(_ent, amp * ((int)chargedTime),amp - 1);
                         _ent.hurt(_ent.level().damageSources().playerAttack(player), power * 10 * (int)chargedTime);
                         _ent.setSecondsOnFire(flame ? isCvmium ? 420 : 100 : 0);
@@ -448,14 +482,14 @@ public class ActivateMethods {
                         addPlayerYassification(player, 1);
                     }
                     if (_ent instanceof TamableAnimal _tamIsTamedBy && _tamIsTamedBy.isOwnedBy(player)
-                            || _ent instanceof AbstractFlops) {
+                            || _ent instanceof AbstractFlops || (_ent instanceof Player surround && isFlop(surround))) {
                         flopEffects(_ent, amp,amp - 1);
                         if (Math.random() < 0.08333) {
                             if (_ent instanceof Twink && notNewgen(player)) {
                                 _ent.spawnAtLocation(TwinkAI.randItem());
                                 addPlayerYassification(player, 1);
                             }
-                            if (_ent instanceof AbstractFlopFigures) {
+                            if (_ent instanceof AbstractFlopFigures || (_ent instanceof Player surround && isFlopIcon(surround))) {
                                 if (_ent instanceof CupcakKe _cupcakke) {
                                     CupcakKe.cupcakkeDuplication(ModItems.CVM.get(), _cupcakke);
                                 }
