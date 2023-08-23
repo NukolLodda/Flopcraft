@@ -288,6 +288,17 @@ public class ActivateMethods {
         itemStack.shrink(1);
     }
 
+    public static void makeupUse(Entity entity, ItemStack item, int lvl) {
+        if (entity instanceof LivingEntity living) {
+            if (living instanceof AbstractFlops || (living instanceof Player player && isFlop(player))) {
+                flopEffects(living, lvl, lvl / 2);
+            } else if (isMonster(living) || (living instanceof Player player && isDaboyz(player))) {
+                monsterEffects(living);
+            }
+            item.setDamageValue(item.getDamageValue() + 1);
+        }
+    }
+
     public static void jiafeiPerfumeSpray(LevelAccessor world, double x, double y, double z, Entity entity, ItemStack itemStack) {
         {
             final Vec3 _center = new Vec3(x, y, z);
