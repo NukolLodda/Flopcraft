@@ -1,4 +1,4 @@
-package slay.nukolussy.modussy.block.entity;
+package slay.nukolussy.modussy.block.complex;
 
 import net.minecraft.core.BlockPos;
 import net.minecraft.server.level.ServerPlayer;
@@ -17,6 +17,8 @@ import net.minecraft.world.phys.shapes.CollisionContext;
 import net.minecraft.world.phys.shapes.VoxelShape;
 import net.minecraftforge.network.NetworkHooks;
 import org.jetbrains.annotations.Nullable;
+import slay.nukolussy.modussy.block.entity.CvmInfusionAlterEntity;
+import slay.nukolussy.modussy.block.entity.ModBlockEntities;
 
 public class CvmInfusionAlter extends BaseEntityBlock {
     public CvmInfusionAlter() {

@@ -1,5 +1,6 @@
-// 1.20.1	2023-08-21T08:22:09.5190426	Recipes
+// 1.20.1	2023-08-22T09:11:29.6166234	Recipes
 1d74b06d2905ee5a5cbcab7eb17895754948f0a3 data/modussy/advancements/recipes/misc/arana_grande_from_crafting.json
+b702cc9c1c818d124bbe62e7e3e27065ee6871ed data/modussy/advancements/recipes/misc/barbie_lantern_from_crafting.json
 cb7976bb454869d807e30f95d287bbb851c6d98a data/modussy/advancements/recipes/misc/cupcakke_spawn_egg_from_crafting.json
 23c44e2b7f5bca0513f0164dfe226c84e9ecc606 data/modussy/advancements/recipes/misc/cvm_infusion_altar_from_crafting.json
 977b7a8739bb7e078c3456fba142fb3cd3079b87 data/modussy/advancements/recipes/misc/flopium.json
@@ -92,6 +93,7 @@ d2dd725dfd828e50a539e5dc33a479f0c0e9e9cc data/modussy/advancements/recipes/misc/
 325752e9ff15773224a74a3fc932d641313ea967 data/modussy/advancements/recipes/misc/slaginium_yassifier_premium_from_crafting.json
 778ce302a7af63fe2abf581b017d49ae64e6b1d7 data/modussy/advancements/recipes/misc/tampon_from_crafting.json
 e44b5d7363934c6bbddce7827a3ac21c4a62bf3f data/modussy/recipes/arana_grande_from_crafting.json
+345b4cb1055b8a6c2709bf6ccbe90892513d11d1 data/modussy/recipes/barbie_lantern_from_crafting.json
 aaaebf5317d8741ed0b9ed6d336fa6c203b13742 data/modussy/recipes/cupcakke_spawn_egg_from_crafting.json
 dae3206fe47a94f7356e3e59d26bdfb84e733e62 data/modussy/recipes/cvm_infusion_altar_from_crafting.json
 4b40839f6eb05b2effd7fde22f8f447069b9763b data/modussy/recipes/flopium.json

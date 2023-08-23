@@ -1,0 +1,19 @@
+{
+  "variants": {
+    "facing=east": {
+      "model":  "modussy:block/flop_airline_ticket_scanner",
+      "y": 90
+    },
+    "facing=north": {
+      "model":  "modussy:block/flop_airline_ticket_scanner"
+    },
+    "facing=south": {
+      "model":  "modussy:block/flop_airline_ticket_scanner",
+      "y": 180
+    },
+    "facing=west": {
+      "model":  "modussy:block/flop_airline_ticket_scanner",
+      "y": 270
+    }
+  }
+}

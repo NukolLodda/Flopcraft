@@ -25,6 +25,16 @@ public class ModCreativeTabs {
                     .withTabsBefore(CreativeModeTabs.SPAWN_EGGS)
                     .displayItems(((pParameters, pOutput) -> {
                         pOutput.accept(ModBlocks.CVM_INFUSION_ALTER.get());
+                        pOutput.accept(ModBlocks.AESTHETIC_STORE_BLOCK.get());
+                        pOutput.accept(ModBlocks.FLOPBUCKS_BLOCK.get());
+                        pOutput.accept(ModBlocks.FLOPDONALDS_BLOCK.get());
+                        pOutput.accept(ModBlocks.FLOPOTLE_BLOCK.get());
+                        pOutput.accept(ModBlocks.JIAFEI_EXPRESS_BLOCK.get());
+                        pOutput.accept(ModBlocks.LANCVM_BLOCK.get());
+                        pOutput.accept(ModBlocks.RANPAPI_BLOCK.get());
+                        pOutput.accept(ModBlocks.FLOP_AIRLINE_BLOCK.get());
+                        pOutput.accept(ModBlocks.FLOP_AIRLINE_TICKET_SCANNER.get());
+                        pOutput.accept(ModBlocks.BARBIE_LANTERN.get());
                         pOutput.accept(ModBlocks.FLOPIUM_BLOCK.get());
                         pOutput.accept(ModBlocks.GAGASTONE_BLOCK.get());
                         pOutput.accept(ModBlocks.GAGINA_BLOCK.get());
@@ -33,6 +43,7 @@ public class ModCreativeTabs {
                         pOutput.accept(ModBlocks.SHENSEIUM_BLOCK.get());
                         pOutput.accept(ModBlocks.SLAGINIUM_BLOCK.get());
                         pOutput.accept(ModBlocks.SHENSEIUM_ORE.get());
+                        pOutput.accept(ModBlocks.YASSIFICATION_DETECTOR.get());
                     })).build());
 
     public static RegistryObject<CreativeModeTab> CVMSUMABLES = CREATIVE_MODE_TABS.register("cvmsumables", () ->
@@ -47,6 +58,8 @@ public class ModCreativeTabs {
                         pOutput.accept(ModItems.JIAFEI_PRODUCT.get());
                         pOutput.accept(ModItems.JIAFEI_PERFUME.get());
                         pOutput.accept(ModItems.JIAFEI_SEED.get());
+                        pOutput.accept(ModItems.KYLIE_JENNER_LIPSTICK.get());
+                        pOutput.accept(ModItems.LANCVM_CREAM.get());
                         pOutput.accept(ModItems.FLOPTROPICA_TICKET.get());
                     })).build());
 
@@ -137,6 +150,7 @@ public class ModCreativeTabs {
                     .title(Component.translatable("itemGroup.yassifying_ingredients"))
                     .withTabsBefore(CreativeModeTabs.SPAWN_EGGS)
                     .displayItems(((pParameters, pOutput) -> {
+                        pOutput.accept(ModItems.BARBIE_CRYSTALS.get());
                         pOutput.accept(ModItems.CVMTITPLASM.get());
                         pOutput.accept(ModItems.FLOPIUM.get());
                         pOutput.accept(ModItems.GAGASTONE.get());

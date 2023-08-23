@@ -186,6 +186,14 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
                 .unlockedBy(getHasName(ModItems.SLAGINIUM.get()), has(ModItems.SLAGINIUM.get()))
                 .group("tampon").save(pWriter, Modussy.MODID + ":tampon_from_crafting");
 
+        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModBlocks.BARBIE_LANTERN.get())
+                .pattern("010")
+                .pattern("111")
+                .pattern("010")
+                .define('0', ModTags.Items.SLAGINIUM_INGOT).define('1', ModTags.Items.BARBIE_CRYSTALS)
+                .unlockedBy(getHasName(ModItems.BARBIE_CRYSTALS.get()), has(ModItems.BARBIE_CRYSTALS.get()))
+                .group("barbie_lantern").save(pWriter, Modussy.MODID + ":barbie_lantern_from_crafting");
+
         jiafeiSmithingRecipe(pWriter, ModItems.JIAFEI_TRIM_TEMPLATE.get(), Ingredient.of(ModItems.JIAFEI_SEED.get()));
         jiafeiSmithingRecipe(pWriter, ModItems.JIAFEI_UPGRADE_TEMPLATE.get(), Ingredient.of(ModItems.JIAFEI_PERFUME.get()));
 

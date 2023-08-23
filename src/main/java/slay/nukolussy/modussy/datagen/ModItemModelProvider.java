@@ -29,14 +29,17 @@ public class ModItemModelProvider extends ItemModelProvider {
 
     @Override
     protected void registerModels() {
+        simpleItem(ModItems.BARBIE_CRYSTALS);
         simpleItem(ModItems.BLOODY_TAMPON);
         simpleItem(ModItems.CUPCAKE);
         simpleItem(ModItems.CVM);
         simpleItem(ModItems.CVMIUM);
+        simpleItem(ModItems.FLOPTROPICA_TICKET);
         simpleItem(ModItems.JIAFEI_PRODUCT);
         simpleItem(ModItems.JIAFEI_PERFUME);
         simpleItem(ModItems.JIAFEI_SEED);
-        simpleItem(ModItems.FLOPTROPICA_TICKET);
+        simpleItem(ModItems.KYLIE_JENNER_LIPSTICK);
+        simpleItem(ModItems.LANCVM_CREAM);
         simpleItem(ModItems.SLAGINIUM_YASSIFIER);
         simpleItem(ModItems.SLAGINIUM_YASSIFIER_PLUS);
         simpleItem(ModItems.SLAGINIUM_YASSIFIER_PREMIUM);

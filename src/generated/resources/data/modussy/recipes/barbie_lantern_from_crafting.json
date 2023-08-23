@@ -1,0 +1,22 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "group": "barbie_lantern",
+  "key": {
+    "0": {
+      "tag": "forge:ingots/slaginium"
+    },
+    "1": {
+      "tag": "forge:gems/barbie"
+    }
+  },
+  "pattern": [
+    "010",
+    "111",
+    "010"
+  ],
+  "result": {
+    "item": "modussy:barbie_lantern"
+  },
+  "show_notification": true
+}

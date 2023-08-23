@@ -11,6 +11,7 @@ import slay.nukolussy.modussy.Modussy;
 public class ModTags {
 
     public static final class Items {
+        public static final TagKey<Item> BARBIE_CRYSTALS = createForge("gems/barbie");
         public static final TagKey<Item> SLAGINIUM_INGOT = createForge("ingots/slaginium");
         public static final TagKey<Item> INFUSED_SLAGINIUM_INGOT = createForge("ingots/infused_slaginium");
         public static final TagKey<Item> FLOPIUM = createForge("gems/flopium");
@@ -20,6 +21,8 @@ public class ModTags {
         public static final TagKey<Item> ADVANCED_YASSIFER = createForge("yassifers/advanced");
         public static final TagKey<Item> ELITE_YASSIFER = createForge("yassifers/elite");
         public static final TagKey<Item> ULTIMATE_YASSIFER = createForge("yassifers/ultimate");
+
+        public static final TagKey<Item> BARBIE_LANTERN = createForge("blocks/barbie_lantern");
 
         public static final TagKey<Item> SHENSEIUM_ORE = createForge("ores/shenseium");
 
@@ -50,6 +53,7 @@ public class ModTags {
     }
 
     public static final class Blocks {
+        public static final TagKey<Block> BARBIE_LANTERN = createForge("blocks/barbie_lantern");
         public static final TagKey<Block> SHENSEIUM_ORE = createForge("ores/shenseium");
 
         public static final TagKey<Block> FLOPIUM_BLOCK = createForge("storage_blocks/flopium");

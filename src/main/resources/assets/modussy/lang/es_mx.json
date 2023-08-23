@@ -1,4 +1,15 @@
 {
+  "block.modussy.barbie_lantern": "Linterna de Barbie",
+  "block.modussy.aesthetic_store_block": "Bloque de tienda estética",
+  "block.modussy.flop_airline_ticket_scanner": "Escáner de boletos de la Aerolínea de Floptropica",
+  "block.modussy.flop_airline_block": "Bloque de la Aerolínea de Floptropica",
+  "block.modussy.flopbucks_block": "Bloque de Flopbucks",
+  "block.modussy.flopdonalds_block": "Bloque de Flopdonalds",
+  "block.modussy.flopotle_block": "Bloque de Flopotle",
+  "block.modussy.jiafei_express_block": "Bloque del expreso de Jiafei",
+  "block.modussy.lancvm_block": "Bloque de Lancvm",
+  "block.modussy.ranpapi_block": "Bloque de Ranpapi",
+  "block.modussy.yassification_detector": "Detector de yasificador",
   "block.modussy.shenseium_ore": "Mineral de shenseyo",
   "block.modussy.growing_jiafei": "Jiafei zhongzi",
   "block.modussy.cvm_infusion_alter": "Altar de infusión de s3men",
@@ -13,6 +24,7 @@
 
   "block.modussy.growing_jiafei.desc": "宇宙中最性感的种子。嘉菲种子让你种出自己的嘉菲，让你获得源源不断的性感商品。",
 
+  "item.modussy.barbie_crystals": "Cristales de Barbie",
   "item.modussy.slaginium": "Lingote de slaginio",
   "item.modussy.infused_slaginium": "Lingote de slaginio infudido",
   "item.modussy.bloody_tampon": "Tampón ensangrentado",
@@ -39,6 +51,8 @@
   "item.modussy.deeldo": "Cuunsoladora",
   "item.modussy.arana_grande": "Ariana Grande de araña",
   "item.modussy.floptropica_ticket": "Boleto a Floptropica",
+  "item.modussy.lancvm_cream": "Crema de Lancvm",
+  "item.modussy.kylie_jenner_lipstick": "Lápiz labial de Kylie Jenner",
 
   "item.modussy.twink_egg": "Huevo de twink",
 

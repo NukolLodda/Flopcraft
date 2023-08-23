@@ -96,8 +96,8 @@ public class ModEvents {
 
             player.getCapability(PlayerMenstruationProvider.PLAYER_MENSTRUATION).ifPresent(phase -> {
                 if (phase.getPhase() == player.level().getMoonPhase()) {
-                    player.addEffect(new MobEffectInstance(MobEffects.MOVEMENT_SLOWDOWN, 100));
-                    player.addEffect(new MobEffectInstance(MobEffects.DAMAGE_BOOST, 100));
+                    player.addEffect(new MobEffectInstance(MobEffects.MOVEMENT_SLOWDOWN, 100, 0, true, false, false));
+                    player.addEffect(new MobEffectInstance(MobEffects.DAMAGE_BOOST, 100, 0, true, false, false));
                 }
             });
         }

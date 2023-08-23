@@ -21,6 +21,7 @@ public class ModItemTagGenerator extends ItemTagsProvider {
 
     @Override
     protected void addTags(HolderLookup.Provider pProvider) {
+        this.tag(ModTags.Items.BARBIE_CRYSTALS).add(ModItems.BARBIE_CRYSTALS.get());
         this.tag(ModTags.Items.FLOPIUM).add(ModItems.FLOPIUM.get());
         this.tag(ModTags.Items.MYSTICAL_FLOPIUM).add(ModItems.MYSTICAL_FLOPIUM.get());
         this.tag(ModTags.Items.SHENSEIUM).add(ModItems.SHENSEIUM.get());

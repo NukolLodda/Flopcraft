@@ -20,6 +20,8 @@ public class ModItems {
     public static final DeferredRegister<Item> ITEMS =
             DeferredRegister.create(ForgeRegistries.ITEMS, Modussy.MODID);
 
+    public static final RegistryObject<Item> BARBIE_CRYSTALS = ITEMS.register("barbie_crystals",
+            () -> new Item(new Item.Properties().rarity(Rarity.RARE)));
     public static final RegistryObject<Item> CUPCAKE = ITEMS.register("cupcake",
             () -> new Item(new Item.Properties()
                     .food(new FoodProperties.Builder().nutrition(8).saturationMod(10f).build())));
@@ -101,6 +103,8 @@ public class ModItems {
     public static final RegistryObject<Item> JIAFEI_HELMET = ITEMS.register("jiafei_helmet", JiafeiArmor.Helmet::new);
     public static final RegistryObject<Item> ARANA_GRANDE = ITEMS.register("arana_grande", AranaGrande::new);
     public static final RegistryObject<Item> JIAFEI_PERFUME = ITEMS.register("jiafei_perfume", JiafeiPerfume::new);
+    public static final RegistryObject<Item> KYLIE_JENNER_LIPSTICK = ITEMS.register("kylie_jenner_lipstick", KylieJennerLipstick::new);
+    public static final RegistryObject<Item> LANCVM_CREAM = ITEMS.register("lancvm_cream", LancvmCream::new);
     public static final RegistryObject<Item> FLOPTROPICA_TICKET = ITEMS.register("floptropica_ticket", FloptropicaTicket::new);
     public static final RegistryObject<Item> JIAFEI_SEED = ITEMS.register("jiafei_seed", JiafeiSeed::new);
     public static final RegistryObject<Item> BRA = ITEMS.register("bra", InnerWear.Bra::new);
