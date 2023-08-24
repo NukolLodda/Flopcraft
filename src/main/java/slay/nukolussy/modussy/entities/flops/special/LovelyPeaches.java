@@ -4,11 +4,16 @@ import net.minecraft.world.damagesource.DamageSource;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.level.Level;
+import net.minecraftforge.network.PlayMessages;
 import slay.nukolussy.modussy.util.PlayerMethods;
 
 public class LovelyPeaches extends AbstractSpecialFlops {
     public LovelyPeaches(EntityType type, Level world) {
         super(type, world);
+    }
+
+    public LovelyPeaches(PlayMessages.SpawnEntity spawnEntity, Level level) {
+        super(spawnEntity.getEntity().getType(), level);
     }
 
     @Override

@@ -1,4 +1,4 @@
-package slay.nukolussy.modussy.client.renderer.models;
+package slay.nukolussy.modussy.client.models;
 
 import com.mojang.blaze3d.vertex.PoseStack;
 import com.mojang.blaze3d.vertex.VertexConsumer;

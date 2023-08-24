@@ -15,7 +15,9 @@ import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
 import slay.nukolussy.modussy.Modussy;
+import slay.nukolussy.modussy.client.renderer.LovelyPeachesRenderer;
 import slay.nukolussy.modussy.entities.flops.CupcakKe;
+import slay.nukolussy.modussy.entities.flops.special.LovelyPeaches;
 import slay.nukolussy.modussy.entities.flops.traders.Jiafei;
 import slay.nukolussy.modussy.entities.flops.traders.NickiMinaj;
 import slay.nukolussy.modussy.entities.flops.twink.Twink;
@@ -32,6 +34,11 @@ public class ModEntities {
     public static final RegistryObject<EntityType<Jiafei>> JIAFEI = register("jiafei",
             EntityType.Builder.<Jiafei>of(Jiafei::new, MobCategory.AMBIENT).setShouldReceiveVelocityUpdates(true)
                     .setTrackingRange(64).setUpdateInterval(3).setCustomClientFactory(Jiafei::new)
+                    .sized(0.6f,1.8f));
+
+    public static final RegistryObject<EntityType<LovelyPeaches>> LOVELY_PEACHES = register("lovely_peaches",
+            EntityType.Builder.<LovelyPeaches>of(LovelyPeaches::new, MobCategory.AMBIENT).setShouldReceiveVelocityUpdates(true)
+                    .setTrackingRange(64).setUpdateInterval(3).setCustomClientFactory(LovelyPeaches::new)
                     .sized(0.6f,1.8f));
 
     public static final RegistryObject<EntityType<NickiMinaj>> NICKI_MINAJ = register("nicki_minaj",

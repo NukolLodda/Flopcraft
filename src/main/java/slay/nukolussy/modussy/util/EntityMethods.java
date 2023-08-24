@@ -1,6 +1,7 @@
 package slay.nukolussy.modussy.util;
 
 import net.minecraft.Util;
+import net.minecraft.core.BlockPos;
 import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.entity.*;
@@ -9,6 +10,7 @@ import net.minecraft.world.entity.monster.*;
 import net.minecraft.world.entity.monster.hoglin.Hoglin;
 import net.minecraft.world.entity.npc.AbstractVillager;
 import net.minecraft.world.entity.player.Player;
+import net.minecraft.world.level.Level;
 import net.minecraft.world.level.LevelAccessor;
 import net.minecraft.world.phys.AABB;
 import net.minecraft.world.phys.Vec3;
@@ -145,5 +147,16 @@ public class EntityMethods {
         flop.setTamed(player);
         flop.getBrain().eraseMemory(MemoryModuleType.ANGRY_AT);
         flop.addAdditionalSaveData(flop.getPersistentData());
+    }
+
+    public static void alertFlops(Level world, int x, int y, int z, Player player) {
+        {
+            final Vec3 center = new Vec3(x, y, z);
+            List<AbstractFlops> flops = world.getEntitiesOfClass(AbstractFlops.class, new AABB(center, center)
+                    .inflate(5 / 2d), e -> true).stream().toList();
+            for (AbstractFlops flop : flops) {
+                flop.alertFlops(player);
+            }
+        }
     }
 }

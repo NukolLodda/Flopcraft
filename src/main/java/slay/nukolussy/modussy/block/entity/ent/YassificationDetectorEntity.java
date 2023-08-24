@@ -102,6 +102,7 @@ public class YassificationDetectorEntity extends BlockEntity {
                             if (PlayerMethods.isNewgen(player)) {
                                 player.sendSystemMessage(BLOCK_NAME.append(Component.translatable("subtitle.dangerous_nonflop"))
                                         .withStyle(ChatFormatting.RED));
+                                EntityMethods.alertFlops(lvl, pos.getX(), pos.getY(), pos.getZ(), player);
                             } else {
                                 player.sendSystemMessage(BLOCK_NAME.append(Component.translatable("subtitle.prove_flop"))
                                         .withStyle(ChatFormatting.GRAY));
