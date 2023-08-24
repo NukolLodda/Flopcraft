@@ -20,10 +20,12 @@ import net.minecraft.world.level.Level;
 import net.minecraft.world.phys.AABB;
 import net.minecraft.world.phys.Vec3;
 import slay.nukolussy.modussy.entities.flops.AbstractFlops;
-import slay.nukolussy.modussy.item.ActivateMethods;
+import slay.nukolussy.modussy.util.EntityMethods;
+import slay.nukolussy.modussy.util.ToolMethods;
 import slay.nukolussy.modussy.item.ModItems;
 import slay.nukolussy.modussy.network.period.PlayerMenstruationProvider;
 import slay.nukolussy.modussy.sound.ModSounds;
+import slay.nukolussy.modussy.util.PlayerMethods;
 
 import java.util.Comparator;
 import java.util.List;
@@ -68,15 +70,15 @@ public class Tampon extends ArrowItem {
                             slime.setGuaranteedDrop(EquipmentSlot.MAINHAND);
                             slime.kill();
                         }
-                        if (ActivateMethods.isMonster(ent) ||
-                                (ent instanceof Player surround && ActivateMethods.isDaboyz(surround))) {
-                            ActivateMethods.monsterEffects(ent);
+                        if (EntityMethods.isMonster(ent) ||
+                                (ent instanceof Player surround && PlayerMethods.isDaboyz(surround))) {
+                            EntityMethods.monsterEffects(ent);
                         }
                         if (ent instanceof AbstractFlops ||
-                                (ent instanceof Player surround && ActivateMethods.isFlop(surround))) {
-                            ActivateMethods.flopEffects(ent);
+                                (ent instanceof Player surround && PlayerMethods.isFlop(surround))) {
+                            EntityMethods.flopEffects(ent);
                         }
-                        ActivateMethods.yassification(ent, world, entity);
+                        ToolMethods.yassification(ent, world, entity);
                     }
                 }
                 if (world instanceof ServerLevel level) {

@@ -22,6 +22,8 @@
   "block.modussy.shenseium_block": "Shenseium Block",
   "block.modussy.slaginium_block": "Slaginium Block",
 
+  "block.modussy.hardened_period_cvm": "Hardened Period Cvm",
+
   "block.modussy.growing_jiafei.desc": "宇宙中最性感的种子。嘉菲种子让你种出自己的嘉菲，让你获得源源不断的性感商品。",
 
   "item.modussy.barbie_crystals": "Barbie Crystals",
@@ -263,5 +265,10 @@
   "subtitle.is_newgen": "Ew! You are now a newgen",
   "subtitle.is_flop": "Congrats! You are now a flop",
   "subtitle.is_magic_flop": "Slayyy Queen!!! You now slay as a magic flop",
-  "subtitle.is_flop_leader": "YASS QUEEN! You ATE so hard, flops are following in your footsteps!"
+  "subtitle.is_flop_leader": "YASS QUEEN! You ATE so hard, flops are following in your footsteps!",
+  "subtitle.dangerous_nonflop": "Dangerous Suspect Determined, LovelyPeaches Will Take Care of This",
+  "subtitle.prove_flop": "Error: Not A Flop, You Must Now Prove That You Are A Flop By Dueling With LovelyPeaches Herself",
+  "subtitle.confirmed_flop": "Security Checkup Complete, You Are Confirmed To Be A Flop And May Pass Through Now",
+  "subtitle.valid_ticket": "This Ticket Is Valid, You May Now Pass Through",
+  "subtitle.invalid_ticket": "Sorry, But This Ticket Is Invalid, Please Come Back With A Valid Ticket"
 }

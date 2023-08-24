@@ -1,4 +1,4 @@
-package slay.nukolussy.modussy.block.entity;
+package slay.nukolussy.modussy.block.entity.ent;
 
 import net.minecraft.world.level.block.entity.BlockEntityType;
 import net.minecraftforge.eventbus.api.IEventBus;
@@ -16,6 +16,11 @@ public class ModBlockEntities {
                 BLOCK_ENTITIES.register("cvm_infusion_alter",
                         () -> BlockEntityType.Builder.of(CvmInfusionAlterEntity::new,
                                 ModBlocks.CVM_INFUSION_ALTER.get()).build(null));
+
+    public static final RegistryObject<BlockEntityType<YassificationDetectorEntity>> YASSIFICATION_DETECTOR =
+            BLOCK_ENTITIES.register("yassification_detector",
+                    () -> BlockEntityType.Builder.of(YassificationDetectorEntity::new,
+                            ModBlocks.YASSIFICATION_DETECTOR.get()).build(null));
 
     public static void register(IEventBus eventBus) {
         BLOCK_ENTITIES.register(eventBus);

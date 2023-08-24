@@ -177,6 +177,24 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
                 .unlockedBy(getHasName(ModItems.SLAGINIUM.get()), has(ModItems.SLAGINIUM.get()))
                 .group("cvm_infusion").save(pWriter, Modussy.MODID + ":cvm_infusion_altar_from_crafting");
 
+        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModBlocks.HARDENED_PERIOD_CVM.get())
+                .pattern("010")
+                .pattern("232")
+                .pattern("010")
+                .define('0', ModTags.Items.BARBIE_CRYSTALS).define('1', ModItems.CVM.get())
+                .define('2', ModItems.BLOODY_TAMPON.get()).define('3', Items.OBSIDIAN)
+                .unlockedBy(getHasName(ModItems.SLAGINIUM.get()), has(ModItems.SLAGINIUM.get()))
+                .group("hardened_period_cvm").save(pWriter, Modussy.MODID + ":hardened_period_cvm_from_crafting");
+
+        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModBlocks.HARDENED_PERIOD_CVM.get())
+                .pattern("020")
+                .pattern("131")
+                .pattern("020")
+                .define('0', ModTags.Items.BARBIE_CRYSTALS).define('1', ModItems.CVM.get())
+                .define('2', ModItems.BLOODY_TAMPON.get()).define('3', Items.OBSIDIAN)
+                .unlockedBy(getHasName(ModItems.SLAGINIUM.get()), has(ModItems.SLAGINIUM.get()))
+                .group("hardened_period_cvm").save(pWriter, Modussy.MODID + ":hardened_period_cvm_from_crafting_sideways");
+
         ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModItems.TAMPON.get())
                 .pattern("020")
                 .pattern("010")

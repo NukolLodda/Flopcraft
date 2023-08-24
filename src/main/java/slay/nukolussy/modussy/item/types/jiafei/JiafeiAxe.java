@@ -13,7 +13,7 @@ import net.minecraft.world.item.TooltipFlag;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.state.BlockState;
 import org.jetbrains.annotations.NotNull;
-import slay.nukolussy.modussy.item.ActivateMethods;
+import slay.nukolussy.modussy.util.ToolMethods;
 import slay.nukolussy.modussy.item.tiers.ModTiers;
 
 import java.util.List;
@@ -34,14 +34,14 @@ public class JiafeiAxe extends AxeItem {
     @Override
     public boolean hurtEnemy(ItemStack itemStack, @NotNull LivingEntity entity, @NotNull LivingEntity sourceentity) {
         itemStack.hurtAndBreak(2, entity, i -> i.broadcastBreakEvent(EquipmentSlot.MAINHAND));
-        ActivateMethods.slayAttack(itemStack, sourceentity, entity, 2);
+        ToolMethods.slayAttack(itemStack, sourceentity, entity, 2);
         return true;
     }
 
     @Override
     public boolean mineBlock(ItemStack stack, Level world, BlockState state, BlockPos pos, LivingEntity entity) {
         boolean retval = super.mineBlock(stack, world, state, pos, entity);
-        ActivateMethods.slayBreak(world, state, pos, entity);
+        ToolMethods.slayBreak(world, state, pos, entity);
         return retval;
     }
 

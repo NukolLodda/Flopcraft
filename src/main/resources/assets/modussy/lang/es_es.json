@@ -22,6 +22,8 @@
   "block.modussy.shenseium_block": "Bloque de shenseyo",
   "block.modussy.slaginium_block": "Bloque de slaginio",
 
+  "block.modussy.hardened_period_cvm": "S3men curtido de periodo",
+
   "block.modussy.growing_jiafei.desc": "宇宙中最性感的种子。嘉菲种子让你种出自己的嘉菲，让你获得源源不断的性感商品。",
 
   "item.modussy.barbie_crystals": "Cristales de Barbie",
@@ -88,7 +90,7 @@
 
   "item.modussy.jiafei_shovel.desc": "来自嘉菲的产品，嘉菲的情趣铲是一款非常适合挖掘和性爱的魔法铲。",
   "item.modussy.jiafei_axe.desc": "来自嘉菲的产品，嘉菲的性感斧头是一把非常高效的斧头，能够像CupcakKe的嘴一样瞬间砍下一棵树",
-  "item.modussy.jiafei_sickle.desc": "来自嘉菲的产品，嘉非的性感镰刀是一种高效的收割庄稼的方式，也是对付daboyz成员的利器。",
+  "item.modussy.jiafei_sickle.desc": "来自嘉菲的产品，嘉非的性感镰刀是一种高效的收割庄稼的方式，也是对付fife成员的利器。",
   "item.modussy.jiafei_pickaxe.desc": "来自嘉菲的产品，嘉菲的性感镐是挖掘和砍掉石头的强大工具。用于建造Floptropica的矿物是通过嘉菲的镐收集的。",
   "item.modussy.jiafei_hammer.desc": "来自嘉菲的产品，嘉菲的性感锤是从雅致的白宫到第一个嘉菲公司总部打造Floptropica的精美工具。",
   "item.modussy.jiafei_helmet.desc": "来自嘉菲的产品，嘉菲的性感帽子是一款非常时尚的头饰，可以防止所有同性恋恐惧症伤害您的头部",
@@ -259,9 +261,14 @@
 
   "subtitles.music": "Música sopla la peluca lejos",
   "subtitle.aesthetic_warning": "Advertencia estética",
-  "subtitle.is_daboyz": "¡Puaj! Ahora estas un daboyz",
+  "subtitle.is_daboyz": "¡Puaj! Ahora estas un fife",
   "subtitle.is_newgen": "¡Puf! Ahora estas un newgen",
   "subtitle.is_flop": "¡Felicidades! Ahora estas una flop",
   "subtitle.is_magic_flop": "¡¡¡Slayyy Reina!!! Ahora estas slay como una flop mágica",
-  "subtitle.is_flop_leader": "¡YASS REINA! ¡Has COMIDO tan difícil, las flops estan seguiendo en tus pasos!"
+  "subtitle.is_flop_leader": "¡YASS REINA! ¡Has COMIDO tan difícil, las flops estan seguiendo en tus pasos!",
+  "subtitle.dangerous_nonflop": "Sospechoso peligroso determinado, LovelyPeaches se encargará de este",
+  "subtitle.prove_flop": "Fallo: no esta una flop, Ahora debes demostralo que fuiste una flop por duelo con LovelyPeaches ella misma",
+  "subtitle.confirmed_flop": "Chequeo seguridad completo, Estas confirmado que eres una flop y ahora puede pasar a través",
+  "subtitle.valid_ticket": "Esta boleta es válida, ahora puedes pasar a través",
+  "subtitle.invalid_ticket": "Lo siento, pero esta boleta es inválida, regrese con una boleta válida por favor"
 }

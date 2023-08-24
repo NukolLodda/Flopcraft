@@ -1,4 +1,4 @@
-package slay.nukolussy.modussy.block.entity;
+package slay.nukolussy.modussy.block.entity.ent;
 
 import net.minecraft.core.BlockPos;
 import net.minecraft.nbt.CompoundTag;

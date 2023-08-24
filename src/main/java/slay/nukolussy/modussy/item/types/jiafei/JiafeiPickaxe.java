@@ -11,7 +11,7 @@ import net.minecraft.world.item.PickaxeItem;
 import net.minecraft.world.item.TooltipFlag;
 import net.minecraft.world.level.Level;
 import org.jetbrains.annotations.NotNull;
-import slay.nukolussy.modussy.item.ActivateMethods;
+import slay.nukolussy.modussy.util.ToolMethods;
 import slay.nukolussy.modussy.item.tiers.ModTiers;
 
 import java.util.List;
@@ -32,7 +32,7 @@ public class JiafeiPickaxe extends PickaxeItem {
     @Override
     public boolean hurtEnemy(ItemStack itemStack, @NotNull LivingEntity entity, @NotNull LivingEntity sourceentity) {
         itemStack.hurtAndBreak(2, entity, i -> i.broadcastBreakEvent(EquipmentSlot.MAINHAND));
-        ActivateMethods.slayAttack(itemStack, sourceentity, entity, 2);
+        ToolMethods.slayAttack(itemStack, sourceentity, entity, 2);
         return true;
     }
 

@@ -12,10 +12,9 @@ import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.crafting.Ingredient;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.phys.AABB;
-import slay.nukolussy.modussy.entities.flops.traders.AbstractFlopTraders;
-import slay.nukolussy.modussy.item.ActivateMethods;
 import slay.nukolussy.modussy.item.ModItems;
 import slay.nukolussy.modussy.network.yassification.PlayerYassificationProvider;
+import slay.nukolussy.modussy.util.PlayerMethods;
 
 import javax.annotation.Nullable;
 import java.util.*;
@@ -98,7 +97,7 @@ public abstract class AbstractFlops extends PathfinderMob {
         for (AbstractFlops flops : list) {
             if (attacker instanceof LivingEntity entity) {
                 if (entity instanceof Player player) {
-                    ActivateMethods.addPlayerYassification(player, -5);
+                    PlayerMethods.addPlayerYassification(player, -5);
                     if (player.equals(flops.tamedBy)) flops.setTamed(null);
                     else if (player.isCreative()) entity = null;
                 }
@@ -107,23 +106,30 @@ public abstract class AbstractFlops extends PathfinderMob {
         }
     }
 
-    @Override
-    public void die(DamageSource pDamageSource) {
-        if (pDamageSource.getEntity() != null) {
-            alertFlops(pDamageSource.getEntity());
+    protected void onDie(DamageSource pSource) {
+        if (pSource.getEntity() != null) {
+            alertFlops(pSource.getEntity());
         }
-        super.die(pDamageSource);
     }
 
-    @Override
-    public boolean hurt(DamageSource pSource, float pAmount) {
+    protected void onHurt(DamageSource pSource) {
         if (pSource.getEntity() instanceof Player player && player == this.tamedBy) {
             this.setTamed(null);
-            ActivateMethods.addPlayerYassification(player, -1);
+            PlayerMethods.addPlayerYassification(player, -1);
         }
         if (pSource.getEntity() != null) {
             alertFlops(pSource);
         }
+    }
+    @Override
+    public void die(DamageSource pSource) {
+        onDie(pSource);
+        super.die(pSource);
+    }
+
+    @Override
+    public boolean hurt(DamageSource pSource, float pAmount) {
+        onHurt(pSource);
         return super.hurt(pSource, pAmount);
     }
 

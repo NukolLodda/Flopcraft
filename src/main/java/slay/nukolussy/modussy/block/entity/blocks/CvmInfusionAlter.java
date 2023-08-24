@@ -1,4 +1,4 @@
-package slay.nukolussy.modussy.block.complex;
+package slay.nukolussy.modussy.block.entity.blocks;
 
 import net.minecraft.core.BlockPos;
 import net.minecraft.server.level.ServerPlayer;
@@ -17,8 +17,8 @@ import net.minecraft.world.phys.shapes.CollisionContext;
 import net.minecraft.world.phys.shapes.VoxelShape;
 import net.minecraftforge.network.NetworkHooks;
 import org.jetbrains.annotations.Nullable;
-import slay.nukolussy.modussy.block.entity.CvmInfusionAlterEntity;
-import slay.nukolussy.modussy.block.entity.ModBlockEntities;
+import slay.nukolussy.modussy.block.entity.ent.CvmInfusionAlterEntity;
+import slay.nukolussy.modussy.block.entity.ent.ModBlockEntities;
 
 public class CvmInfusionAlter extends BaseEntityBlock {
     public CvmInfusionAlter() {
@@ -76,9 +76,7 @@ public class CvmInfusionAlter extends BaseEntityBlock {
 
     @Nullable
     @Override
-    public <T extends BlockEntity> BlockEntityTicker<T>
-    getTicker(Level lvl, BlockState state, BlockEntityType<T> type) {
-
+    public <T extends BlockEntity> BlockEntityTicker<T> getTicker(Level lvl, BlockState state, BlockEntityType<T> type) {
         return createTickerHelper(type, ModBlockEntities.CVM_INFUSION_ALTER.get(),
                 CvmInfusionAlterEntity::tick);
     }

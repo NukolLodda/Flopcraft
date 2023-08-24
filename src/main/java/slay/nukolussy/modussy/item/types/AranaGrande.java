@@ -6,7 +6,7 @@ import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.Level;
-import slay.nukolussy.modussy.item.ActivateMethods;
+import slay.nukolussy.modussy.util.ToolMethods;
 
 public class AranaGrande extends Item {
     public AranaGrande() {
@@ -20,7 +20,7 @@ public class AranaGrande extends Item {
         double y = entity.getY();
         double z = entity.getZ();
 
-        ActivateMethods.aranaGrandeRightClick(world, x, y, z, entity, entity.getMainHandItem());
+        ToolMethods.aranaGrandeRightClick(world, x, y, z, entity, entity.getMainHandItem());
         return ar;
     }
 

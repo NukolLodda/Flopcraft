@@ -10,7 +10,7 @@ import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.*;
 import net.minecraft.world.level.Level;
 import org.jetbrains.annotations.NotNull;
-import slay.nukolussy.modussy.item.ActivateMethods;
+import slay.nukolussy.modussy.util.ToolMethods;
 
 import java.util.List;
 
@@ -30,7 +30,7 @@ public class JiafeiPerfume extends Item implements Vanishable {
     @Override
     public InteractionResultHolder<ItemStack> use(Level world, Player entity, InteractionHand hand) {
         InteractionResultHolder<ItemStack> ar = super.use(world, entity, hand);
-        ActivateMethods.jiafeiPerfumeSpray(world, entity.getX(), entity.getY(), entity.getZ(), entity, entity.getMainHandItem());
+        ToolMethods.jiafeiPerfumeSpray(world, entity.getX(), entity.getY(), entity.getZ(), entity, entity.getMainHandItem());
         if (entity.getMainHandItem().getDamageValue() >= entity.getMainHandItem().getMaxDamage()) {
             entity.setItemInHand(InteractionHand.MAIN_HAND, new ItemStack(Items.GLASS_BOTTLE));
         }

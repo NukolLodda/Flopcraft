@@ -9,10 +9,8 @@ import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.entity.BlockEntity;
 import net.minecraftforge.common.capabilities.ForgeCapabilities;
 import net.minecraftforge.items.SlotItemHandler;
-import org.jetbrains.annotations.NotNull;
 import slay.nukolussy.modussy.block.ModBlocks;
-import slay.nukolussy.modussy.block.entity.CvmInfusionAlterEntity;
-import slay.nukolussy.modussy.client.menu.ModMenuTypes;
+import slay.nukolussy.modussy.block.entity.ent.CvmInfusionAlterEntity;
 
 public class CvmInfusionAlterMenu extends AbstractContainerMenu {
     public final CvmInfusionAlterEntity blockEntity;

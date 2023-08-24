@@ -21,7 +21,7 @@ import net.minecraftforge.common.ToolAction;
 import net.minecraftforge.common.ToolActions;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
-import slay.nukolussy.modussy.item.ActivateMethods;
+import slay.nukolussy.modussy.util.ToolMethods;
 import slay.nukolussy.modussy.item.ToolsTag;
 
 import java.util.Set;
@@ -44,7 +44,7 @@ public class Pickaxol extends DiggerItem {
     @Override
     public boolean mineBlock(ItemStack stack, Level world, BlockState state, BlockPos pos, LivingEntity entity) {
         boolean retval = super.mineBlock(stack, world, state, pos, entity);
-        ActivateMethods.slayBreak(world, state, pos, entity);
+        ToolMethods.slayBreak(world, state, pos, entity);
         return retval;
     }
 
@@ -126,7 +126,7 @@ public class Pickaxol extends DiggerItem {
     @Override
     public boolean hurtEnemy(ItemStack itemStack, @NotNull LivingEntity entity, @NotNull LivingEntity sourceentity) {
         itemStack.hurtAndBreak(2, entity, i -> i.broadcastBreakEvent(EquipmentSlot.MAINHAND));
-        ActivateMethods.slayAttack(itemStack, sourceentity, entity, this.lvl);
+        ToolMethods.slayAttack(itemStack, sourceentity, entity, this.lvl);
         return true;
     }
 

@@ -8,7 +8,7 @@ import net.minecraft.world.item.*;
 import net.minecraft.world.item.enchantment.EnchantmentHelper;
 import net.minecraft.world.item.enchantment.Enchantments;
 import net.minecraft.world.level.Level;
-import slay.nukolussy.modussy.item.ActivateMethods;
+import slay.nukolussy.modussy.util.ToolMethods;
 import slay.nukolussy.modussy.item.ModItems;
 import slay.nukolussy.modussy.sound.ModSounds;
 
@@ -54,7 +54,7 @@ public class Deeldo extends BowItem {
                         double z = pEntityLiving.getZ();
 
                         for (int i = 0; i < 6; i++) {
-                            ActivateMethods.cvmShoot(pLevel, x - ((radius * i)/6 * xEqu), y + ((radius * i)/6 * yEqu), z + ((radius * i)/6 * zEqu),
+                            ToolMethods.cvmShoot(pLevel, x - ((radius * i)/6 * xEqu), y + ((radius * i)/6 * yEqu), z + ((radius * i)/6 * zEqu),
                                     pEntityLiving, new ItemStack(this), isCvmium,
                                     (10 * i) / 6.0f);
                         }

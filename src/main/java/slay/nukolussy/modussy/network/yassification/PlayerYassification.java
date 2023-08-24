@@ -24,6 +24,14 @@ public class PlayerYassification {
         this.yassification = Math.max(this.yassification - Math.abs(sub), MIN_YASSIFICATION);
     }
 
+    public void setToFlop() {
+        yassification = OFFICIAL_FLOP;
+    }
+
+    public void setToDaboyz() {
+        yassification = DABOYZ;
+    }
+
     public boolean wasDaboyz(int added) {
         return yassification - added < DABOYZ;
     }

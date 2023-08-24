@@ -16,7 +16,7 @@ import net.minecraftforge.fml.LogicalSide;
 import net.minecraftforge.fml.common.Mod;
 import slay.nukolussy.modussy.Modussy;
 import slay.nukolussy.modussy.entities.flops.AbstractFlops;
-import slay.nukolussy.modussy.item.ActivateMethods;
+import slay.nukolussy.modussy.util.EntityMethods;
 import slay.nukolussy.modussy.network.period.PlayerMenstruation;
 import slay.nukolussy.modussy.network.period.PlayerMenstruationProvider;
 import slay.nukolussy.modussy.network.yassification.PlayerYassification;
@@ -71,8 +71,8 @@ public class ModEvents {
             double z = event.player.getZ();
             Player player = event.player;
             player.getCapability(PlayerYassificationProvider.PLAYER_YASSIFICATION).ifPresent(yassification -> {
-                final Vec3 _center = new Vec3(x, y, z);
-                List<AbstractFlops> flops = player.level().getEntitiesOfClass(AbstractFlops.class, new AABB(_center, _center)
+                final Vec3 center = new Vec3(x, y, z);
+                List<AbstractFlops> flops = player.level().getEntitiesOfClass(AbstractFlops.class, new AABB(center, center)
                         .inflate(32 / 2d), e -> true).stream().toList();
                 for (AbstractFlops flop : flops) {
                     if (yassification.isDaboyz()) {
@@ -82,7 +82,7 @@ public class ModEvents {
                         flop.setTamed(null);
                     }
                     if (yassification.isMagicFlop()) {
-                        ActivateMethods.flopEffects(flop);
+                        EntityMethods.flopEffects(flop);
                     }
                     if (yassification.isFlopIcon()) {
                         if (player.getLastDamageSource() != null &&

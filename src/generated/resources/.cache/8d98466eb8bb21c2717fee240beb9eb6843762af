@@ -1,4 +1,4 @@
-// 1.20.1	2023-08-23T08:14:47.1076639	Block States: modussy
+// 1.20.1	2023-08-23T17:16:02.0718206	Block States: modussy
 373fcdb21b9337610fce4b007dffeaf53e9a0b5d assets/modussy/blockstates/aesthetic_store_block.json
 2c00358db442bf4ac7e6f027ac2cb39fe8b5ad37 assets/modussy/blockstates/barbie_lantern.json
 606876ee4e8c765771db48ee8f430886bfffe20d assets/modussy/blockstates/flopbucks_block.json
@@ -8,6 +8,7 @@ bbdb03e1f26b52cb7bc4a01a912f2234248d15ea assets/modussy/blockstates/flopotle_blo
 f80cdbba73e87d9bde23992cf939f3ab8c0b5cc4 assets/modussy/blockstates/flop_airline_block.json
 9cd1fe5af1300fb77e51a08205f9f774476a9ece assets/modussy/blockstates/gagastone_block.json
 44078d01e53a5d2c530d7b8f92fa2dcf0ad0d139 assets/modussy/blockstates/gagina_block.json
+475b98d779f4956deb3fe46c15a8c7322162b1ac assets/modussy/blockstates/hardened_period_cvm.json
 fcd985f360153f2ef83ce59e7145a4124db68c17 assets/modussy/blockstates/infused_slaginium_block.json
 034312c2e20a4ca00a1ac3b185b4c226ffa1a1d8 assets/modussy/blockstates/jiafei_express_block.json
 29aa8ab35a69253bd4ed3d94e1cbec4951e7194d assets/modussy/blockstates/lancvm_block.json
@@ -25,6 +26,7 @@ d38f4a6c378a961ce408f4c835e4a5106666a93d assets/modussy/models/block/flopotle_bl
 3296ca17b11009af5a32b8fb21ef21451700e849 assets/modussy/models/block/flop_airline_block.json
 57d626d53c2de6494ca121a463bc11df441f2a99 assets/modussy/models/block/gagastone_block.json
 3642caca255f1f86d6407967323ac03bfc5f1ec2 assets/modussy/models/block/gagina_block.json
+76e47527a1be1927746b2d22cabb4725eb08c7f4 assets/modussy/models/block/hardened_period_cvm.json
 bd3d56b48d4ceee0b8befa14bf24675c05ab8ed7 assets/modussy/models/block/infused_slaginium_block.json
 8e44d8cb3d2c799b3f6b5bc59d73ac14a968f970 assets/modussy/models/block/jiafei_express_block.json
 adbcb638bd5385d20a2a54bdbdcb5dcc4a9549ac assets/modussy/models/block/lancvm_block.json
@@ -42,6 +44,7 @@ c02f5c05d7b162044e4f1aaaba9e626708fdf827 assets/modussy/models/item/flopotle_blo
 c779031db355d1db6328945f03a841df5ad00309 assets/modussy/models/item/flop_airline_block.json
 2deb8b4a549f090b2adb3ce11bb8b7c8f7f72bc9 assets/modussy/models/item/gagastone_block.json
 e060782fc8a8f7e11f0d7e68b2df26aed5ba98d3 assets/modussy/models/item/gagina_block.json
+272615a9392f0efea64c3a8e46e8e127acfc2276 assets/modussy/models/item/hardened_period_cvm.json
 e15fbb6a08e2362cca0700d6300982ada7661c65 assets/modussy/models/item/infused_slaginium_block.json
 a1a921d01e4a111f7a3cb1f80dbb1c226e7c21c0 assets/modussy/models/item/jiafei_express_block.json
 422248c620be58cf5d00d0296565d3232908b2a3 assets/modussy/models/item/lancvm_block.json

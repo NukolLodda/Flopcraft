@@ -11,7 +11,7 @@ import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.TooltipFlag;
 import net.minecraft.world.item.Vanishable;
 import net.minecraft.world.level.Level;
-import slay.nukolussy.modussy.item.ActivateMethods;
+import slay.nukolussy.modussy.util.ToolMethods;
 
 import java.util.List;
 
@@ -23,7 +23,7 @@ public class LancvmCream extends Item implements Vanishable {
     @Override
     public InteractionResultHolder<ItemStack> use(Level world, Player entity, InteractionHand hand) {
         InteractionResultHolder<ItemStack> ar = super.use(world, entity, hand);
-        ActivateMethods.makeupUse(entity, entity.getMainHandItem(), 2);
+        ToolMethods.makeupUse(entity, entity.getMainHandItem(), 2);
         if (entity.getMainHandItem().getDamageValue() >= entity.getMainHandItem().getMaxDamage()) {
             entity.setItemInHand(InteractionHand.MAIN_HAND, ItemStack.EMPTY);
         }

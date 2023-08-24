@@ -18,9 +18,11 @@ import net.minecraft.world.phys.Vec3;
 import slay.nukolussy.modussy.entities.ModEntities;
 import slay.nukolussy.modussy.entities.flops.AbstractFlops;
 import slay.nukolussy.modussy.entities.flops.traders.NickiMinaj;
-import slay.nukolussy.modussy.item.ActivateMethods;
+import slay.nukolussy.modussy.util.EntityMethods;
+import slay.nukolussy.modussy.util.ToolMethods;
 import slay.nukolussy.modussy.item.ModItems;
 import slay.nukolussy.modussy.sound.ModSounds;
+import slay.nukolussy.modussy.util.PlayerMethods;
 
 import java.util.Comparator;
 import java.util.List;
@@ -37,7 +39,7 @@ public class SlaginiumBlock extends MaterialBlocks {
         double y = pPos.getY();
         double z = pPos.getZ();
         if (pEntity instanceof ItemEntity item && item.getItem().is(ModItems.SCARUSSY.get())
-           && ActivateMethods.canEntityBecomeNickiMinaj(pLevel, x, y, z)) {
+           && EntityMethods.canEntityBecomeNickiMinaj(pLevel, x, y, z)) {
             Player player = null;
             {
                 final Vec3 _center = new Vec3(x, y, z);
@@ -51,14 +53,14 @@ public class SlaginiumBlock extends MaterialBlocks {
                 }
                 for (Entity entity : _entfound) {
                     if (entity instanceof LivingEntity living) {
-                        ActivateMethods.yassification(living, pLevel, player);
-                        if (ActivateMethods.isMonster(living) ||
-                                (living instanceof Player surround && ActivateMethods.isDaboyz(surround))) {
-                            ActivateMethods.monsterEffects(living);
+                        ToolMethods.yassification(living, pLevel, player);
+                        if (EntityMethods.isMonster(living) ||
+                                (living instanceof Player surround && PlayerMethods.isDaboyz(surround))) {
+                            EntityMethods.monsterEffects(living);
                         }
                         if (living instanceof AbstractFlops ||
-                                (living instanceof Player surround && ActivateMethods.isFlop(surround))) {
-                            ActivateMethods.flopEffects(living);
+                                (living instanceof Player surround && PlayerMethods.isFlop(surround))) {
+                            EntityMethods.flopEffects(living);
                         }
                     }
                 }

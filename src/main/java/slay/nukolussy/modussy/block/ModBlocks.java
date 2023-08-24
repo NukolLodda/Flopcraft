@@ -10,9 +10,9 @@ import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
 import slay.nukolussy.modussy.Modussy;
-import slay.nukolussy.modussy.block.complex.CvmInfusionAlter;
-import slay.nukolussy.modussy.block.complex.FlopAirlineTicketScanner;
-import slay.nukolussy.modussy.block.complex.YassificationDetector;
+import slay.nukolussy.modussy.block.entity.blocks.CvmInfusionAlter;
+import slay.nukolussy.modussy.block.entity.blocks.FlopAirlineTicketScanner;
+import slay.nukolussy.modussy.block.entity.blocks.YassificationDetector;
 import slay.nukolussy.modussy.block.types.FlopBrandBlock;
 import slay.nukolussy.modussy.block.types.MaterialBlocks;
 import slay.nukolussy.modussy.block.types.SlaginiumBlock;
@@ -67,16 +67,14 @@ public class ModBlocks {
     public static final RegistryObject<Block> LANCVM_BLOCK = registerBlock("lancvm_block", FlopBrandBlock::new);
     public static final RegistryObject<Block> RANPAPI_BLOCK = registerBlock("ranpapi_block", FlopBrandBlock::new);
     public static final RegistryObject<Block> AESTHETIC_STORE_BLOCK = registerBlock("aesthetic_store_block", FlopBrandBlock::new);
+    public static final RegistryObject<Block> HARDENED_PERIOD_CVM = registerBlock("hardened_period_cvm", () ->
+            new Block(BlockBehaviour.Properties.copy(Blocks.OBSIDIAN).lightLevel(l -> 4)));
     /* Floptropican tree types and biomes
-     * Cupcakkian Pine - Cupcakkia
      * Cupcakkian Balsam - Cupcakkia
      * Jiafeian Fir - Jiafeia
-     * Jiafeian Red Pine - Jiafeia
-     * Potaxie Logwood - Potaxiene
      * Potaxie Avocado - Potaxiene
      * Lovely Peaches - CVM
-     * Lovely Tamaracks - CVM
-     * Barbie Palm - New Barbados
+     * Floptropican Palm - Everywhere
      * Barbie Coconut - New Barbados
      *
      * Minecraft wood stuffs:

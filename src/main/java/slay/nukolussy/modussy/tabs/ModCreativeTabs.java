@@ -25,6 +25,7 @@ public class ModCreativeTabs {
                     .withTabsBefore(CreativeModeTabs.SPAWN_EGGS)
                     .displayItems(((pParameters, pOutput) -> {
                         pOutput.accept(ModBlocks.CVM_INFUSION_ALTER.get());
+                        pOutput.accept(ModBlocks.YASSIFICATION_DETECTOR.get());
                         pOutput.accept(ModBlocks.AESTHETIC_STORE_BLOCK.get());
                         pOutput.accept(ModBlocks.FLOPBUCKS_BLOCK.get());
                         pOutput.accept(ModBlocks.FLOPDONALDS_BLOCK.get());
@@ -43,7 +44,7 @@ public class ModCreativeTabs {
                         pOutput.accept(ModBlocks.SHENSEIUM_BLOCK.get());
                         pOutput.accept(ModBlocks.SLAGINIUM_BLOCK.get());
                         pOutput.accept(ModBlocks.SHENSEIUM_ORE.get());
-                        pOutput.accept(ModBlocks.YASSIFICATION_DETECTOR.get());
+                        pOutput.accept(ModBlocks.HARDENED_PERIOD_CVM.get());
                     })).build());
 
     public static RegistryObject<CreativeModeTab> CVMSUMABLES = CREATIVE_MODE_TABS.register("cvmsumables", () ->

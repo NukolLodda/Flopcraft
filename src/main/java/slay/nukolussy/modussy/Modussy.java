@@ -15,7 +15,7 @@ import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 import org.slf4j.Logger;
 import slay.nukolussy.modussy.block.ModBlocks;
-import slay.nukolussy.modussy.block.entity.ModBlockEntities;
+import slay.nukolussy.modussy.block.entity.ent.ModBlockEntities;
 import slay.nukolussy.modussy.client.gui.CvmInfusionAlterScreen;
 import slay.nukolussy.modussy.entities.ModEntities;
 import slay.nukolussy.modussy.item.ModItems;

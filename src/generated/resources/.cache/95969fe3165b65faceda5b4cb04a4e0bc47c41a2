@@ -1,4 +1,4 @@
-// 1.20.1	2023-08-23T08:14:47.1099796	Tags for minecraft:block mod id modussy
+// 1.20.1	2023-08-23T17:16:02.0774469	Tags for minecraft:block mod id modussy
 1a9b0acc508c669175f95ddaa73098176f8b2977 data/forge/tags/blocks/blocks/barbie_lantern.json
 6249304126f427b5b227e85249d782a6a1f9e045 data/forge/tags/blocks/ores/shenseium.json
 5aca3d169f80421346062ae2d4b92e8f90cc8bc1 data/forge/tags/blocks/storage_blocks/flopium.json
@@ -8,7 +8,7 @@ a0a9309b936fb2acc54d0aadc498816f307e25bb data/forge/tags/blocks/storage_blocks/g
 d9b148de81b97f13d864331d59688a7d4c9b3de4 data/forge/tags/blocks/storage_blocks/mystical_flopium.json
 5db0eab0bf6107f2c5053f9adc8a2de2f05e2b3a data/forge/tags/blocks/storage_blocks/shenseium.json
 b39227964f40a35ab4bd36618607ca2f40080e85 data/forge/tags/blocks/storage_blocks/slaginium.json
-63abc9a3edbe73e934161dc3ab95aa4e2ab2935e data/minecraft/tags/blocks/mineable/pickaxe.json
-84380cca3b34f7bb5499c038d699fcd01a07a466 data/minecraft/tags/blocks/needs_diamond_tool.json
+4c92fee2f6ff12b1e1b4a8818ebb0ebcf9e19fc3 data/minecraft/tags/blocks/mineable/pickaxe.json
+d9f8f945cb30bdf797d7280d632c700556c6be7c data/minecraft/tags/blocks/needs_diamond_tool.json
 5b0ba87e337d11e0d46fa7f3bd12880396e1d8eb data/minecraft/tags/blocks/needs_iron_tool.json
 1a9b0acc508c669175f95ddaa73098176f8b2977 data/minecraft/tags/blocks/needs_stone_tool.json
