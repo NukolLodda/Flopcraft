@@ -1,4 +1,4 @@
-package slay.nukolussy.modussy.entities.flops.special;
+package slay.nukolussy.modussy.entities.flops.bosses;
 
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.MobType;

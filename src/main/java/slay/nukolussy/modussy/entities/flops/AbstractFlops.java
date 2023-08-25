@@ -19,7 +19,7 @@ import slay.nukolussy.modussy.util.PlayerMethods;
 import javax.annotation.Nullable;
 import java.util.*;
 
-public abstract class AbstractFlops extends PathfinderMob {
+public abstract class AbstractFlops extends PathfinderMob implements FlopEntities {
     protected static final Ingredient FOOD_ITEMS = Ingredient.of(ModItems.CVM.get(), ModItems.CVMIUM.get());
     private int inLove;
     @Nullable

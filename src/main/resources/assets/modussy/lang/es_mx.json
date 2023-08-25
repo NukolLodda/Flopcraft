@@ -10,7 +10,7 @@
   "block.modussy.jiafei_express_block": "Bloque del expreso de Jiafei",
   "block.modussy.lancvm_block": "Bloque de Lancvm",
   "block.modussy.ranpapi_block": "Bloque de Ranpapi",
-  "block.modussy.yassification_detector": "Detector de yasificador",
+  "block.modussy.yassification_detector": "Detector de yasificación",
   "block.modussy.shenseium_ore": "Mineral de shenseyo",
   "block.modussy.growing_jiafei": "Jiafei zhongzi",
   "block.modussy.cvm_infusion_alter": "Altar de infusión de s3men",
@@ -214,6 +214,7 @@
   "entity.modussy.gagina": "Araña gagina",
   "entity.modussy.jiafei": "Jiafei",
   "entity.modussy.lovely_peaches": "Lovelypeaches",
+  "entity.modussy.lovely_peaches_boss": "Lovelypeaches",
   "entity.modussy.nicki_minaj": "Nicki Minaj",
   "entity.modussy.twink": "Twink",
   "entity.modussy.megan_stallion": "Megan Thee Stallion",
@@ -271,5 +272,6 @@
   "subtitle.prove_flop": "Fallo: no esta una flop, Ahora debes demostralo que fuiste una flop por duelo con LovelyPeaches ella misma",
   "subtitle.confirmed_flop": "Chequeo seguridad completo, Estas confirmado que eres una flop y ahora puede pasar a través",
   "subtitle.valid_ticket": "Esta boleta es válida, ahora puedes pasar a través",
-  "subtitle.invalid_ticket": "Lo siento, pero esta boleta es inválida, regrese con una boleta válida por favor"
+  "subtitle.invalid_ticket": "Lo siento, pero esta boleta es inválida, regrese con una boleta válida por favor",
+  "subtitle.yassification_level": "Nivel de yasificación"
 }

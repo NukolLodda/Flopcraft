@@ -15,43 +15,51 @@ import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
 import slay.nukolussy.modussy.Modussy;
-import slay.nukolussy.modussy.client.renderer.LovelyPeachesRenderer;
 import slay.nukolussy.modussy.entities.flops.CupcakKe;
-import slay.nukolussy.modussy.entities.flops.special.LovelyPeaches;
+import slay.nukolussy.modussy.entities.flops.bosses.LovelyPeachesBoss;
 import slay.nukolussy.modussy.entities.flops.traders.Jiafei;
 import slay.nukolussy.modussy.entities.flops.traders.NickiMinaj;
 import slay.nukolussy.modussy.entities.flops.twink.Twink;
+import slay.nukolussy.modussy.entities.projectiles.LovelyPeach;
 
 @Mod.EventBusSubscriber(bus = Mod.EventBusSubscriber.Bus.MOD)
 public class ModEntities {
     public static final DeferredRegister<EntityType<?>> Entities
             = DeferredRegister.create(ForgeRegistries.ENTITY_TYPES, Modussy.MODID);
-        public static final RegistryObject<EntityType<CupcakKe>> CUPCAKKE = register("cupcakke",
-                EntityType.Builder.<CupcakKe>of(CupcakKe::new, MobCategory.AMBIENT).setShouldReceiveVelocityUpdates(true)
-                                .setTrackingRange(64).setUpdateInterval(3).setCustomClientFactory(CupcakKe::new)
-                        .sized(0.6f,1.8f));
+    public static final RegistryObject<EntityType<CupcakKe>> CUPCAKKE = register("cupcakke",
+            EntityType.Builder.<CupcakKe>of(CupcakKe::new, MobCategory.AMBIENT).setShouldReceiveVelocityUpdates(true)
+                    .setTrackingRange(64).setUpdateInterval(3).setCustomClientFactory(CupcakKe::new)
+                    .sized(0.6f,1.8f));
 
     public static final RegistryObject<EntityType<Jiafei>> JIAFEI = register("jiafei",
             EntityType.Builder.<Jiafei>of(Jiafei::new, MobCategory.AMBIENT).setShouldReceiveVelocityUpdates(true)
                     .setTrackingRange(64).setUpdateInterval(3).setCustomClientFactory(Jiafei::new)
                     .sized(0.6f,1.8f));
 
-    public static final RegistryObject<EntityType<LovelyPeaches>> LOVELY_PEACHES = register("lovely_peaches",
-            EntityType.Builder.<LovelyPeaches>of(LovelyPeaches::new, MobCategory.AMBIENT).setShouldReceiveVelocityUpdates(true)
-                    .setTrackingRange(64).setUpdateInterval(3).setCustomClientFactory(LovelyPeaches::new)
-                    .sized(0.6f,1.8f));
+    public static final RegistryObject<EntityType<LovelyPeachesBoss>> LOVELY_PEACHES_BOSS = register("lovely_peaches_boss",
+            EntityType.Builder.<LovelyPeachesBoss>of(LovelyPeachesBoss::new, MobCategory.AMBIENT).setShouldReceiveVelocityUpdates(true)
+                    .setTrackingRange(64).setUpdateInterval(3).setCustomClientFactory(LovelyPeachesBoss::new)
+                    .sized(1.0f,6.0f));
 
     public static final RegistryObject<EntityType<NickiMinaj>> NICKI_MINAJ = register("nicki_minaj",
             EntityType.Builder.<NickiMinaj>of(NickiMinaj::new, MobCategory.AMBIENT).setShouldReceiveVelocityUpdates(true)
                     .setTrackingRange(64).setUpdateInterval(3).setCustomClientFactory(NickiMinaj::new)
                     .sized(0.6f,1.8f));
 
-        public static final RegistryObject<EntityType<Twink>> TWINK = register("twink",
-                EntityType.Builder.<Twink>of(Twink::new, MobCategory.AMBIENT).setShouldReceiveVelocityUpdates(true)
-                .setTrackingRange(64).setUpdateInterval(3).setCustomClientFactory(Twink::new)
-                .sized(0.6f,1.8f));
-        private static <T extends Entity> RegistryObject<EntityType<T>> register(String registryname, EntityType.Builder<T> entityTypeBuilder) {
-            return Entities.register(registryname, () -> entityTypeBuilder.build(registryname));
+    public static final RegistryObject<EntityType<Twink>> TWINK = register("twink",
+            EntityType.Builder.<Twink>of(Twink::new, MobCategory.AMBIENT).setShouldReceiveVelocityUpdates(true)
+                    .setTrackingRange(64).setUpdateInterval(3).setCustomClientFactory(Twink::new)
+                    .sized(0.6f,1.8f));
+
+
+
+    public static final RegistryObject<EntityType<LovelyPeach>> LOVELY_PEACH = register("lovely_peach",
+            EntityType.Builder.<LovelyPeach>of(LovelyPeach::new, MobCategory.MISC).sized(0.25f, 0.25f)
+                    .clientTrackingRange(4).updateInterval(10).setCustomClientFactory(LovelyPeach::new));
+
+
+    private static <T extends Entity> RegistryObject<EntityType<T>> register(String registryname, EntityType.Builder<T> entityTypeBuilder) {
+        return Entities.register(registryname, () -> entityTypeBuilder.build(registryname));
     }
 
     @SubscribeEvent
@@ -59,9 +67,10 @@ public class ModEntities {
          event.enqueueWork(() -> {
             CupcakKe.init();
             Jiafei.init();
-            LovelyPeaches.init();
+            LovelyPeachesBoss.init();
             NickiMinaj.init();
             Twink.init();
+            LovelyPeach.init();
           });
     }
 
@@ -69,7 +78,7 @@ public class ModEntities {
     public static void registerAttributes(EntityAttributeCreationEvent event) {
         event.put(CUPCAKKE.get(), CupcakKe.createAttributes().build());
         event.put(JIAFEI.get(), Jiafei.createAttributes().build());
-        event.put(LOVELY_PEACHES.get(), LovelyPeaches.createAttributes().build());
+        event.put(LOVELY_PEACHES_BOSS.get(), LovelyPeachesBoss.createAttributes().build());
         event.put(NICKI_MINAJ.get(), NickiMinaj.createAttributes().build());
         event.put(TWINK.get(), Twink.createAttributes().build());
     }
@@ -99,5 +108,5 @@ public class ModEntities {
         );
     }
 
-    public static void register(IEventBus eventBus) { Entities.register(eventBus); }
+    public static void register(IEventBus eventBus) {Entities.register(eventBus); }
 }

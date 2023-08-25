@@ -49,6 +49,17 @@ public class Twink extends AbstractFlops {
         super(ModEntities.TWINK.get(), world);
     }
 
+    public Twink(EntityType<Twink> type, Level world) {
+        super(type, world);
+        this.setCanPickUpLoot(true);
+
+        this.applyOpenDoorsAbility();
+        xpReward = 0;
+        setNoAi(false);
+
+        setPersistenceRequired();
+    }
+
     public Brain<Twink> getBrain() {
         return (Brain<Twink>) super.getBrain();
     }
@@ -87,17 +98,6 @@ public class Twink extends AbstractFlops {
 
     public void setVariant(Variant variant) {
         this.setTypeVariant(variant.getId());
-    }
-
-    public Twink(EntityType<Twink> type, Level world) {
-        super(type, world);
-        this.setCanPickUpLoot(true);
-
-        this.applyOpenDoorsAbility();
-        xpReward = 0;
-        setNoAi(false);
-
-        setPersistenceRequired();
     }
 
 

@@ -77,7 +77,7 @@ public class ModBlocks {
      * Cupcakkian Balsam - Cupcakkia
      * Jiafeian Fir - Jiafeia
      * Potaxie Avocado - Potaxiene
-     * Lovely Peaches - CVM
+     * Lovely Peach - CVM
      * Floptropican Palm - Everywhere
      * Barbie Coconut - New Barbados
      *

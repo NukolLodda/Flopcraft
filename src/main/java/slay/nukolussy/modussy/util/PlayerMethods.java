@@ -2,6 +2,7 @@ package slay.nukolussy.modussy.util;
 
 import net.minecraft.ChatFormatting;
 import net.minecraft.network.chat.Component;
+import net.minecraft.network.chat.MutableComponent;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.world.entity.player.Player;
 import slay.nukolussy.modussy.network.yassification.PlayerYassification;
@@ -9,6 +10,7 @@ import slay.nukolussy.modussy.network.yassification.PlayerYassificationProvider;
 import slay.nukolussy.modussy.sound.ModSounds;
 
 import java.util.concurrent.atomic.AtomicBoolean;
+import java.util.concurrent.atomic.AtomicInteger;
 
 public class PlayerMethods {
     public static void setToFlop(Player player) {
@@ -92,5 +94,27 @@ public class PlayerMethods {
                 player.playSound(ModSounds.AESTHETIC_JIAFEI.get());
             }
         });
+    }
+
+    public static MutableComponent getYassificationLevel(Player player) {
+        AtomicInteger yassLvl = new AtomicInteger();
+        player.getCapability(PlayerYassificationProvider.PLAYER_YASSIFICATION).ifPresent(yassification -> {
+            yassLvl.set(yassification.getYassification());
+        });
+
+        ChatFormatting format = ChatFormatting.GRAY;
+        if (yassLvl.get() < -3142) {
+            format = ChatFormatting.DARK_RED;
+        } else if (yassLvl.get() < -420) {
+            format = ChatFormatting.RED;
+        } else if (yassLvl.get() > 690) {
+            format = ChatFormatting.AQUA;
+        } else if (yassLvl.get() > 1710) {
+            format = ChatFormatting.DARK_PURPLE;
+        } else if (yassLvl.get() > 4371) {
+            format = ChatFormatting.LIGHT_PURPLE;
+        }
+
+        return Component.translatable("subtitle.yassification_level").append(": " + yassLvl).withStyle(format);
     }
 }

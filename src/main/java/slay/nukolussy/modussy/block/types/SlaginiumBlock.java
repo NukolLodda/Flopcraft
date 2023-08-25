@@ -57,8 +57,7 @@ public class SlaginiumBlock extends MaterialBlocks {
                         if (EntityMethods.isMonster(living)) {
                             EntityMethods.monsterEffects(living);
                         }
-                        if (living instanceof AbstractFlops ||
-                                (living instanceof Player surround && PlayerMethods.isFlop(surround))) {
+                        if (EntityMethods.isFlop(living)) {
                             EntityMethods.flopEffects(living);
                         }
                     }

@@ -14,7 +14,7 @@ import slay.nukolussy.modussy.Modussy;
 // Made with Blockbench 4.8.1
 // Exported for Minecraft version 1.17 or later with Mojang mappings
 
-public class LovelyPeachesModel<LovelyPeaches extends Entity> extends EntityModel<LovelyPeaches> {
+public class LovelyPeachesBossModel<LovelyPeachesBoss extends Entity> extends EntityModel<LovelyPeachesBoss> {
 	// This layer location should be baked with EntityRendererProvider.Context in the entity renderer and passed into this model's constructor
 	public static final ModelLayerLocation LAYER_LOCATION = new ModelLayerLocation(new ResourceLocation(Modussy.MODID, "lovely_peaches"), "main");
 	private final ModelPart top_leaves;
@@ -28,7 +28,7 @@ public class LovelyPeachesModel<LovelyPeaches extends Entity> extends EntityMode
 	private final ModelPart side_leaves4;
 	private final ModelPart bb_main;
 
-	public LovelyPeachesModel(ModelPart root) {
+	public LovelyPeachesBossModel(ModelPart root) {
 		this.top_leaves = root.getChild("top_leaves");
 		this.top_leaves2 = root.getChild("top_leaves2");
 		this.top_leaves3 = root.getChild("top_leaves3");
@@ -117,7 +117,7 @@ public class LovelyPeachesModel<LovelyPeaches extends Entity> extends EntityMode
 	}
 
 	@Override
-	public void setupAnim(LovelyPeaches entity, float limbSwing, float limbSwingAmount, float ageInTicks, float netHeadYaw, float headPitch) {
+	public void setupAnim(LovelyPeachesBoss entity, float limbSwing, float limbSwingAmount, float ageInTicks, float netHeadYaw, float headPitch) {
 
 	}
 

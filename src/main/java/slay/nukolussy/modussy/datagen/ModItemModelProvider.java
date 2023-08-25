@@ -40,6 +40,7 @@ public class ModItemModelProvider extends ItemModelProvider {
         simpleItem(ModItems.JIAFEI_SEED);
         simpleItem(ModItems.KYLIE_JENNER_LIPSTICK);
         simpleItem(ModItems.LANCVM_CREAM);
+        simpleItem(ModItems.LOVELY_PEACH);
         simpleItem(ModItems.SLAGINIUM_YASSIFIER);
         simpleItem(ModItems.SLAGINIUM_YASSIFIER_PLUS);
         simpleItem(ModItems.SLAGINIUM_YASSIFIER_PREMIUM);

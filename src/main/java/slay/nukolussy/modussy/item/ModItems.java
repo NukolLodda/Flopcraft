@@ -26,6 +26,10 @@ public class ModItems {
             () -> new Item(new Item.Properties()
                     .food(new FoodProperties.Builder().nutrition(8).saturationMod(10f).build())));
 
+    public static final RegistryObject<Item> LOVELY_PEACH = ITEMS.register("lovely_peach",
+            () -> new Item(new Item.Properties()
+                    .food(new FoodProperties.Builder().nutrition(4).saturationMod(5f).build())));
+
     public static final RegistryObject<Item> CVM = ITEMS.register("cvm", CvmItem::new);
 
     public static final RegistryObject<Item> CVMIUM = ITEMS.register("cvmium", CvmItem::new);

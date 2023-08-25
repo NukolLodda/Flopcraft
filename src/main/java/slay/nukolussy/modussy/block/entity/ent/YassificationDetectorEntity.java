@@ -16,7 +16,7 @@ import net.minecraft.world.phys.AABB;
 import net.minecraft.world.phys.Vec3;
 import slay.nukolussy.modussy.block.ModBlocks;
 import slay.nukolussy.modussy.entities.ModEntities;
-import slay.nukolussy.modussy.entities.flops.special.LovelyPeaches;
+import slay.nukolussy.modussy.entities.flops.bosses.LovelyPeachesBoss;
 import slay.nukolussy.modussy.util.EntityMethods;
 import slay.nukolussy.modussy.util.PlayerMethods;
 
@@ -105,7 +105,7 @@ public class YassificationDetectorEntity extends BlockEntity {
             List<LivingEntity> entities = lvl.getEntitiesOfClass(LivingEntity.class,
                     new AABB(new Vec3(x-8, y-4, z-8), new Vec3(x+8, y+4, z+8)).inflate(1), e -> true).stream().toList();
             for (LivingEntity entity : entities) {
-                if (entity instanceof LovelyPeaches) {
+                if (entity instanceof LovelyPeachesBoss) {
                     lovelypeachesIsHere = true;
                     break;
                 }
@@ -113,7 +113,7 @@ public class YassificationDetectorEntity extends BlockEntity {
         }
 
         if (!lovelypeachesIsHere) {
-            LovelyPeaches peaches = new LovelyPeaches(ModEntities.LOVELY_PEACHES.get(), lvl);
+            LovelyPeachesBoss peaches = new LovelyPeachesBoss(ModEntities.LOVELY_PEACHES_BOSS.get(), lvl);
             peaches.moveTo(position);
             peaches.setTeleporterLocation(new BlockPos((int)position.get(Direction.Axis.X),
                     (int)position.get(Direction.Axis.Y) - 3,
@@ -147,17 +147,23 @@ public class YassificationDetectorEntity extends BlockEntity {
                         entity.teleportTo(x,y-13, z);
                         if (entity instanceof Player player) {
                             if (PlayerMethods.isNewgen(player)) {
+                                player.sendSystemMessage(PlayerMethods.getYassificationLevel(player));
                                 player.sendSystemMessage(BLOCK_NAME.append(Component.translatable("subtitle.dangerous_nonflop"))
                                         .withStyle(ChatFormatting.RED));
                                 EntityMethods.alertFlops(lvl, pos.getX(), pos.getY(), pos.getZ(), player);
                             } else if (!PlayerMethods.isFlop(player)) {
+                                player.sendSystemMessage(PlayerMethods.getYassificationLevel(player));
                                 player.sendSystemMessage(BLOCK_NAME.append(Component.translatable("subtitle.prove_flop"))
                                         .withStyle(ChatFormatting.GRAY));
                             }
                         }
-                    } else if (entity instanceof Player player && lvl.getServer().getTickCount() % 10 == 0) {
-                        player.sendSystemMessage(BLOCK_NAME.append(Component.translatable("subtitle.confirmed_flop"))
-                                .withStyle(ChatFormatting.LIGHT_PURPLE));
+                    } else if (entity instanceof Player player) {
+                        if (lvl.getServer().getTickCount() % 15 == 0) {
+                            player.sendSystemMessage(BLOCK_NAME.append(Component.translatable("subtitle.confirmed_flop"))
+                                    .withStyle(ChatFormatting.LIGHT_PURPLE));
+                        } else if (lvl.getServer().getTickCount() % 15 == 8) {
+                            player.sendSystemMessage(PlayerMethods.getYassificationLevel(player));
+                        }
                     }
                 }
             }

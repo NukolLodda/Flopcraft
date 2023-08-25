@@ -214,6 +214,7 @@
   "entity.modussy.gagina": "Gagina Spider",
   "entity.modussy.jiafei": "Jiafei",
   "entity.modussy.lovely_peaches": "Lovely Peaches",
+  "entity.modussy.lovely_peaches_boss": "Lovely Peaches",
   "entity.modussy.nicki_minaj": "Nicki Minaj",
   "entity.modussy.twink": "Twink",
   "entity.modussy.megan_stallion": "Megan Thee Stallion",
@@ -271,5 +272,6 @@
   "subtitle.prove_flop": "Error: Not A Flop, You Must Now Prove That You Are A Flop By Dueling With LovelyPeaches Herself",
   "subtitle.confirmed_flop": "Security Checkup Complete, You Are Confirmed To Be A Flop And May Pass Through Now",
   "subtitle.valid_ticket": "This Ticket Is Valid, You May Now Pass Through",
-  "subtitle.invalid_ticket": "Sorry, But This Ticket Is Invalid, Please Come Back With A Valid Ticket"
+  "subtitle.invalid_ticket": "Sorry, But This Ticket Is Invalid, Please Come Back With A Valid Ticket",
+  "subtitle.yassification_level": "Yassification Level"
 }

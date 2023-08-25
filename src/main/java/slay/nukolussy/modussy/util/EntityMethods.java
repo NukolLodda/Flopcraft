@@ -15,6 +15,7 @@ import net.minecraft.world.phys.AABB;
 import net.minecraft.world.phys.Vec3;
 import slay.nukolussy.modussy.entities.ModEntities;
 import slay.nukolussy.modussy.entities.flops.AbstractFlops;
+import slay.nukolussy.modussy.entities.flops.FlopEntities;
 import slay.nukolussy.modussy.entities.flops.traders.Jiafei;
 import slay.nukolussy.modussy.entities.flops.traders.NickiMinaj;
 import slay.nukolussy.modussy.entities.flops.twink.Twink;
@@ -23,7 +24,7 @@ import java.util.List;
 
 public class EntityMethods {
     public static boolean isFlop(Entity entity) {
-        return entity instanceof AbstractFlops || (entity instanceof Player player && PlayerMethods.isFlop(player));
+        return entity instanceof FlopEntities || (entity instanceof Player player && PlayerMethods.isFlop(player));
     }
 
     public static boolean isMonster(Entity ent) {
