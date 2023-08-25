@@ -2,6 +2,7 @@ package slay.nukolussy.modussy.entities.flops.twink;
 
 import com.mojang.serialization.Codec;
 import net.minecraft.Util;
+import net.minecraft.core.BlockPos;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.network.syncher.EntityDataAccessor;
 import net.minecraft.network.syncher.EntityDataSerializers;
@@ -184,8 +185,11 @@ public class Twink extends AbstractFlops {
     }
 
     public static void init() {
-        SpawnPlacements.register(ModEntities.TWINK.get(), SpawnPlacements.Type.NO_RESTRICTIONS, Heightmap.Types.MOTION_BLOCKING_NO_LEAVES,
-                Mob::checkMobSpawnRules);
+    }
+
+    public static boolean canSpawn(EntityType<Twink> entityType, ServerLevelAccessor level, MobSpawnType spawnType,
+                                   BlockPos pos, RandomSource randomSource) {
+        return Mob.checkMobSpawnRules(entityType, level, spawnType, pos, randomSource);
     }
     private void setTypeVariant(int id) {
         this.entityData.set(TWINK_ID_DATATYPE_VARIANT, id);

@@ -11,8 +11,10 @@ import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
 import slay.nukolussy.modussy.Modussy;
 import slay.nukolussy.modussy.block.entity.blocks.CvmInfusionAlter;
+import slay.nukolussy.modussy.block.entity.blocks.FlopAirlineTeleporter;
 import slay.nukolussy.modussy.block.entity.blocks.FlopAirlineTicketScanner;
 import slay.nukolussy.modussy.block.entity.blocks.YassificationDetector;
+import slay.nukolussy.modussy.block.plants.JiafeiCrop;
 import slay.nukolussy.modussy.block.types.FlopBrandBlock;
 import slay.nukolussy.modussy.block.types.MaterialBlocks;
 import slay.nukolussy.modussy.block.types.SlaginiumBlock;
@@ -69,6 +71,8 @@ public class ModBlocks {
     public static final RegistryObject<Block> AESTHETIC_STORE_BLOCK = registerBlock("aesthetic_store_block", FlopBrandBlock::new);
     public static final RegistryObject<Block> HARDENED_PERIOD_CVM = registerBlock("hardened_period_cvm", () ->
             new Block(BlockBehaviour.Properties.copy(Blocks.OBSIDIAN).lightLevel(l -> 4)));
+
+    public static final RegistryObject<Block> FLOP_AIRLINE_TELEPORTER = registerBlock("flop_airline_teleporter", FlopAirlineTeleporter::new);
     /* Floptropican tree types and biomes
      * Cupcakkian Balsam - Cupcakkia
      * Jiafeian Fir - Jiafeia

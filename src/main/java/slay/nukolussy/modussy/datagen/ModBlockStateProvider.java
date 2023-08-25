@@ -22,6 +22,7 @@ public class ModBlockStateProvider extends BlockStateProvider {
         blockWithItem(ModBlocks.FLOPIUM_BLOCK);
         blockWithItem(ModBlocks.FLOPOTLE_BLOCK);
         blockWithItem(ModBlocks.FLOP_AIRLINE_BLOCK);
+        blockWithItem(ModBlocks.FLOP_AIRLINE_TELEPORTER);
         blockWithItem(ModBlocks.GAGASTONE_BLOCK);
         blockWithItem(ModBlocks.GAGINA_BLOCK);
         blockWithItem(ModBlocks.HARDENED_PERIOD_CVM);

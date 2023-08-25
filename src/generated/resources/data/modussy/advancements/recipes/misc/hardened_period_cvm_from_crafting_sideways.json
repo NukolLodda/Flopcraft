@@ -1,0 +1,35 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_slaginium": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "modussy:slaginium"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "modussy:hardened_period_cvm_from_crafting_sideways"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_slaginium",
+      "has_the_recipe"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "modussy:hardened_period_cvm_from_crafting_sideways"
+    ]
+  },
+  "sends_telemetry_event": false
+}

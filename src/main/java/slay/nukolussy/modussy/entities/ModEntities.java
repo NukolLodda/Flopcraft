@@ -59,6 +59,7 @@ public class ModEntities {
          event.enqueueWork(() -> {
             CupcakKe.init();
             Jiafei.init();
+            LovelyPeaches.init();
             NickiMinaj.init();
             Twink.init();
           });
@@ -68,6 +69,7 @@ public class ModEntities {
     public static void registerAttributes(EntityAttributeCreationEvent event) {
         event.put(CUPCAKKE.get(), CupcakKe.createAttributes().build());
         event.put(JIAFEI.get(), Jiafei.createAttributes().build());
+        event.put(LOVELY_PEACHES.get(), LovelyPeaches.createAttributes().build());
         event.put(NICKI_MINAJ.get(), NickiMinaj.createAttributes().build());
         event.put(TWINK.get(), Twink.createAttributes().build());
     }
@@ -79,6 +81,20 @@ public class ModEntities {
                 SpawnPlacements.Type.ON_GROUND,
                 Heightmap.Types.WORLD_SURFACE,
                 CupcakKe::canSpawn,
+                SpawnPlacementRegisterEvent.Operation.OR
+        );
+        event.register(
+                JIAFEI.get(),
+                SpawnPlacements.Type.ON_GROUND,
+                Heightmap.Types.WORLD_SURFACE,
+                Jiafei::canSpawn,
+                SpawnPlacementRegisterEvent.Operation.OR
+        );
+        event.register(
+                TWINK.get(),
+                SpawnPlacements.Type.ON_GROUND,
+                Heightmap.Types.WORLD_SURFACE,
+                Twink::canSpawn,
                 SpawnPlacementRegisterEvent.Operation.OR
         );
     }

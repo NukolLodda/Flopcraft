@@ -13,7 +13,7 @@ import net.minecraft.world.level.storage.loot.functions.SetItemCountFunction;
 import net.minecraft.world.level.storage.loot.predicates.LootItemBlockStatePropertyCondition;
 import net.minecraft.world.level.storage.loot.predicates.LootItemCondition;
 import net.minecraft.world.level.storage.loot.providers.number.UniformGenerator;
-import slay.nukolussy.modussy.block.JiafeiCrop;
+import slay.nukolussy.modussy.block.plants.JiafeiCrop;
 import slay.nukolussy.modussy.block.ModBlocks;
 import slay.nukolussy.modussy.item.ModItems;
 

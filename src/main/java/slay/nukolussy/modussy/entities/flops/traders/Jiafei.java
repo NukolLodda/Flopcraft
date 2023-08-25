@@ -4,6 +4,7 @@ import com.google.common.collect.Sets;
 import com.mojang.serialization.Codec;
 import it.unimi.dsi.fastutil.ints.Int2ObjectMap;
 import net.minecraft.Util;
+import net.minecraft.core.BlockPos;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.network.syncher.EntityDataAccessor;
 import net.minecraft.network.syncher.EntityDataSerializers;
@@ -170,9 +171,13 @@ public class Jiafei extends AbstractFlopTraders {
     }
 
     public static void init() {
-        SpawnPlacements.register(ModEntities.JIAFEI.get(), SpawnPlacements.Type.NO_RESTRICTIONS, Heightmap.Types.MOTION_BLOCKING_NO_LEAVES,
-                Mob::checkMobSpawnRules);
     }
+
+    public static boolean canSpawn(EntityType<Jiafei> entityType, ServerLevelAccessor level, MobSpawnType spawnType,
+                                   BlockPos pos, RandomSource randomSource) {
+        return Mob.checkMobSpawnRules(entityType, level, spawnType, pos, randomSource);
+    }
+
 
     private void setTypeVariant(int id) {
         this.entityData.set(JIAFEI_ID_DATATYPE_VARIANT, id);

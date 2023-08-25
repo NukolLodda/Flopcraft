@@ -1,4 +1,4 @@
-package slay.nukolussy.modussy.block;
+package slay.nukolussy.modussy.block.plants;
 
 import net.minecraft.core.BlockPos;
 import net.minecraft.world.entity.Entity;

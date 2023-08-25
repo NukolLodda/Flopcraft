@@ -25,11 +25,11 @@ public class PlayerYassification {
     }
 
     public void setToFlop() {
-        yassification = OFFICIAL_FLOP;
+        yassification = OFFICIAL_FLOP + 2;
     }
 
     public void setToDaboyz() {
-        yassification = DABOYZ;
+        yassification = DABOYZ - 2;
     }
 
     public boolean wasDaboyz(int added) {

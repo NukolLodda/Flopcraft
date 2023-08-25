@@ -1,0 +1,28 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "group": "hardened_period_cvm",
+  "key": {
+    "0": {
+      "tag": "forge:gems/barbie"
+    },
+    "1": {
+      "item": "modussy:cvm"
+    },
+    "2": {
+      "item": "modussy:bloody_tampon"
+    },
+    "3": {
+      "item": "minecraft:obsidian"
+    }
+  },
+  "pattern": [
+    "010",
+    "232",
+    "010"
+  ],
+  "result": {
+    "item": "modussy:hardened_period_cvm"
+  },
+  "show_notification": true
+}

@@ -70,8 +70,7 @@ public class Tampon extends ArrowItem {
                             slime.setGuaranteedDrop(EquipmentSlot.MAINHAND);
                             slime.kill();
                         }
-                        if (EntityMethods.isMonster(ent) ||
-                                (ent instanceof Player surround && PlayerMethods.isDaboyz(surround))) {
+                        if (EntityMethods.isMonster(ent)) {
                             EntityMethods.monsterEffects(ent);
                         }
                         if (ent instanceof AbstractFlops ||
@@ -85,12 +84,12 @@ public class Tampon extends ArrowItem {
                     level.sendParticles(ParticleTypes.ENTITY_EFFECT, x, y, z,
                             6, 1, 1, 1, 0.16f);
                 }
-                entity.playSound(ModSounds.SQUIRT.get());
-                ItemStack curItem = entity.getItemInHand(hand);
-                curItem.setCount(curItem.getCount() - 1);
-
-                entity.addItem(new ItemStack(ModItems.BLOODY_TAMPON.get()));
             }
+            entity.playSound(ModSounds.SQUIRT.get());
+            ItemStack curItem = entity.getItemInHand(hand);
+            curItem.setCount(curItem.getCount() - 1);
+
+            entity.addItem(new ItemStack(ModItems.BLOODY_TAMPON.get()));
         });
         return ar;
     }

@@ -1,7 +1,6 @@
 package slay.nukolussy.modussy.util;
 
 import net.minecraft.Util;
-import net.minecraft.core.BlockPos;
 import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.entity.*;
@@ -23,6 +22,16 @@ import slay.nukolussy.modussy.entities.flops.twink.Twink;
 import java.util.List;
 
 public class EntityMethods {
+    public static boolean isFlop(Entity entity) {
+        return entity instanceof AbstractFlops || (entity instanceof Player player && PlayerMethods.isFlop(player));
+    }
+
+    public static boolean isMonster(Entity ent) {
+        return ent instanceof Monster || ((ent instanceof Hoglin || ent instanceof Ghast
+                || ent instanceof Shulker || ent instanceof Phantom)) ||
+                (ent instanceof Player player && PlayerMethods.isDaboyz(player));
+    }
+
     public static void monsterEffects(LivingEntity entity, int lvl, int amp) {
         if (entity instanceof Mob) {
             ((Mob) entity).setGuaranteedDrop(EquipmentSlot.MAINHAND);
@@ -89,11 +98,6 @@ public class EntityMethods {
         }
 
         return true;
-    }
-
-    public static boolean isMonster(LivingEntity ent) {
-        return ent instanceof Monster || ((ent instanceof Hoglin || ent instanceof Ghast
-                || ent instanceof Shulker || ent instanceof Phantom));
     }
 
     static void villagerYassification(AbstractVillager entity, LevelAccessor world, Player player) {
