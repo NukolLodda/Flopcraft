@@ -219,8 +219,11 @@ public class ModItems {
             () -> new ForgeSpawnEggItem(ModEntities.CUPCAKKE, -13108, -7328129,  new Item.Properties()));
     public static final RegistryObject<Item> JIAFEI_SPAWN_EGG = ITEMS.register("jiafei_spawn_egg",
             () -> new ForgeSpawnEggItem(ModEntities.JIAFEI,  -5389115, 14354697,  new Item.Properties()));
+
+    public static final RegistryObject<Item> LOVELY_PEACHES_SPAWN_EGG = ITEMS.register("lovely_peaches_spawn_egg",
+            () -> new ForgeSpawnEggItem(ModEntities.LOVELY_PEACHES,  14241460, 16733695,  new Item.Properties()));
     public static final RegistryObject<Item> NICKI_MINAJ_SPAWN_EGG = ITEMS.register("nicki_minaj_spawn_egg",
-            () -> new ForgeSpawnEggItem(ModEntities.NICKI_MINAJ,  43690, 16733695,  new Item.Properties()));
+            () -> new ForgeSpawnEggItem(ModEntities.NICKI_MINAJ,  43690, 15782375,  new Item.Properties()));
     public static final RegistryObject<Item> TWINK_SPAWN_EGG = ITEMS.register("twink_spawn_egg",
             () -> new ForgeSpawnEggItem(ModEntities.TWINK,  170, 5636095,  new Item.Properties()));
 

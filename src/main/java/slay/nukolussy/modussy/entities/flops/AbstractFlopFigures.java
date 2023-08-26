@@ -1,5 +1,6 @@
 package slay.nukolussy.modussy.entities.flops;
 
+import net.minecraft.sounds.SoundEvent;
 import net.minecraft.tags.DamageTypeTags;
 import net.minecraft.world.damagesource.DamageSource;
 import net.minecraft.world.entity.*;
@@ -8,6 +9,7 @@ import net.minecraft.world.entity.ai.attributes.Attributes;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.Level;
+import org.jetbrains.annotations.Nullable;
 import slay.nukolussy.modussy.item.ModItems;
 
 import java.util.Random;
@@ -65,4 +67,16 @@ public abstract class AbstractFlopFigures extends AbstractFlops {
     public boolean canBeLeashed(Player pPlayer) {
         return false;
     }
+
+    @Nullable
+    @Override
+    protected abstract SoundEvent getHurtSound(DamageSource pDamageSource);
+
+    @Nullable
+    @Override
+    protected abstract SoundEvent getDeathSound();
+
+    @Nullable
+    @Override
+    protected abstract SoundEvent getAmbientSound();
 }

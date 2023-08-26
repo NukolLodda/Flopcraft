@@ -1,5 +1,8 @@
 package slay.nukolussy.modussy.sound;
 
+import net.minecraft.core.Holder;
+import net.minecraft.core.Registry;
+import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.sounds.SoundEvent;
 import net.minecraftforge.eventbus.api.IEventBus;
@@ -297,6 +300,33 @@ public class ModSounds {
     public static final RegistryObject<SoundEvent> JIAFEI_TRADE_3 = SOUNDS.register("jiafei_trade_3",
             () -> SoundEvent.createVariableRangeEvent(new ResourceLocation(Modussy.MODID,"jiafei_trade_3")));
 
+    public static final RegistryObject<SoundEvent> LOVELY_PEACHES_1 = SOUNDS.register("lovely_peaches_1",
+            () -> SoundEvent.createVariableRangeEvent(new ResourceLocation(Modussy.MODID,"lovely_peaches_1")));
+
+    public static final RegistryObject<SoundEvent> LOVELY_PEACHES_2 = SOUNDS.register("lovely_peaches_2",
+            () -> SoundEvent.createVariableRangeEvent(new ResourceLocation(Modussy.MODID,"lovely_peaches_2")));
+
+    public static final RegistryObject<SoundEvent> LOVELY_PEACHES_3 = SOUNDS.register("lovely_peaches_3",
+            () -> SoundEvent.createVariableRangeEvent(new ResourceLocation(Modussy.MODID,"lovely_peaches_3")));
+
+    public static final RegistryObject<SoundEvent> LOVELY_PEACHES_4 = SOUNDS.register("lovely_peaches_4",
+            () -> SoundEvent.createVariableRangeEvent(new ResourceLocation(Modussy.MODID,"lovely_peaches_4")));
+
+    public static final RegistryObject<SoundEvent> LOVELY_PEACHES_5 = SOUNDS.register("lovely_peaches_5",
+            () -> SoundEvent.createVariableRangeEvent(new ResourceLocation(Modussy.MODID,"lovely_peaches_5")));
+
+    public static final RegistryObject<SoundEvent> LOVELY_PEACHES_6 = SOUNDS.register("lovely_peaches_6",
+            () -> SoundEvent.createVariableRangeEvent(new ResourceLocation(Modussy.MODID,"lovely_peaches_6")));
+
+    public static final RegistryObject<SoundEvent> LOVELY_PEACHES_7 = SOUNDS.register("lovely_peaches_7",
+            () -> SoundEvent.createVariableRangeEvent(new ResourceLocation(Modussy.MODID,"lovely_peaches_7")));
+
+    public static final RegistryObject<SoundEvent> LOVELY_PEACHES_HURT1 = SOUNDS.register("lovely_peaches_hurt1",
+            () -> SoundEvent.createVariableRangeEvent(new ResourceLocation(Modussy.MODID,"lovely_peaches_hurt1")));
+
+    public static final RegistryObject<SoundEvent> LOVELY_PEACHES_HURT2 = SOUNDS.register("lovely_peaches_hurt2",
+            () -> SoundEvent.createVariableRangeEvent(new ResourceLocation(Modussy.MODID,"lovely_peaches_hurt2")));
+
     public static final RegistryObject<SoundEvent> NICKI_MINAJ_1 = SOUNDS.register("nicki_minaj_1",
             () -> SoundEvent.createVariableRangeEvent(new ResourceLocation(Modussy.MODID,"nicki_minaj_1")));
 
@@ -328,8 +358,6 @@ public class ModSounds {
             () -> SoundEvent.createVariableRangeEvent(new ResourceLocation(Modussy.MODID,"squirt")));
     public static final RegistryObject<SoundEvent> CVM = SOUNDS.register("cvm",
             () -> SoundEvent.createVariableRangeEvent(new ResourceLocation(Modussy.MODID,"cvm")));
-
-
 
     public static void register(IEventBus eventBus) { SOUNDS.register(eventBus); }
 }

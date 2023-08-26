@@ -6,7 +6,7 @@ import net.minecraft.client.renderer.entity.EntityRendererProvider;
 import net.minecraft.client.renderer.entity.HumanoidMobRenderer;
 import net.minecraft.client.renderer.entity.layers.HumanoidArmorLayer;
 import net.minecraft.resources.ResourceLocation;
-import slay.nukolussy.modussy.entities.flops.CupcakKe;
+import slay.nukolussy.modussy.entities.flops.figures.CupcakKe;
 
 public class CupcakKeRenderer extends HumanoidMobRenderer<CupcakKe, HumanoidModel<CupcakKe>> {
     public CupcakKeRenderer(EntityRendererProvider.Context context) {

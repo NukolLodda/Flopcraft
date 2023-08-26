@@ -17,6 +17,11 @@ public class ModBlockEntities {
                         () -> BlockEntityType.Builder.of(CvmInfusionAlterEntity::new,
                                 ModBlocks.CVM_INFUSION_ALTER.get()).build(null));
 
+    public static final RegistryObject<BlockEntityType<SpecialYassificationDetectorEntity>> SPECIAL_YASSIFICATION_DETECTOR =
+            BLOCK_ENTITIES.register("special_yassification_detector",
+                    () -> BlockEntityType.Builder.of(SpecialYassificationDetectorEntity::new,
+                            ModBlocks.SPECIAL_YASSIFICATION_DETECTOR.get()).build(null));
+
     public static final RegistryObject<BlockEntityType<YassificationDetectorEntity>> YASSIFICATION_DETECTOR =
             BLOCK_ENTITIES.register("yassification_detector",
                     () -> BlockEntityType.Builder.of(YassificationDetectorEntity::new,

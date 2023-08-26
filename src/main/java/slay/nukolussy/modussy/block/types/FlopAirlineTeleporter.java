@@ -1,4 +1,4 @@
-package slay.nukolussy.modussy.block.entity.blocks;
+package slay.nukolussy.modussy.block.types;
 
 import net.minecraft.core.BlockPos;
 import net.minecraft.world.InteractionHand;

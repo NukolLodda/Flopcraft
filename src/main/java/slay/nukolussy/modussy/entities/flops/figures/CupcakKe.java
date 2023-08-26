@@ -1,4 +1,4 @@
-package slay.nukolussy.modussy.entities.flops;
+package slay.nukolussy.modussy.entities.flops.figures;
 
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.particles.ParticleTypes;
@@ -21,12 +21,14 @@ import net.minecraft.world.level.ServerLevelAccessor;
 import net.minecraft.world.level.gameevent.GameEvent;
 import net.minecraftforge.network.PlayMessages;
 import slay.nukolussy.modussy.entities.ModEntities;
+import slay.nukolussy.modussy.entities.flops.AbstractFlopFigures;
+import slay.nukolussy.modussy.entities.flops.Merflops;
 import slay.nukolussy.modussy.item.ModItems;
 import slay.nukolussy.modussy.sound.ModSounds;
 
 import java.util.Collection;
 
-public class CupcakKe extends AbstractFlopFigures {
+public class CupcakKe extends AbstractFlopFigures implements Merflops {
     public ItemLike item = ModItems.CVMTITPLASM.get();
 
     public CupcakKe(EntityType<CupcakKe> type, Level world) {

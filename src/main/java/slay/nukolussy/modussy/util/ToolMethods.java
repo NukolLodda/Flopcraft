@@ -27,7 +27,7 @@ import net.minecraft.world.phys.Vec3;
 import slay.nukolussy.modussy.block.plants.JiafeiCrop;
 import slay.nukolussy.modussy.entities.ModEntities;
 import slay.nukolussy.modussy.entities.flops.AbstractFlopFigures;
-import slay.nukolussy.modussy.entities.flops.CupcakKe;
+import slay.nukolussy.modussy.entities.flops.figures.CupcakKe;
 import slay.nukolussy.modussy.entities.flops.AbstractFlops;
 import slay.nukolussy.modussy.entities.flops.traders.Jiafei;
 import slay.nukolussy.modussy.entities.flops.twink.Twink;

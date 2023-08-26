@@ -16,7 +16,7 @@ import slay.nukolussy.modussy.Modussy;
 
 public class LovelyPeachesBossModel<LovelyPeachesBoss extends Entity> extends EntityModel<LovelyPeachesBoss> {
 	// This layer location should be baked with EntityRendererProvider.Context in the entity renderer and passed into this model's constructor
-	public static final ModelLayerLocation LAYER_LOCATION = new ModelLayerLocation(new ResourceLocation(Modussy.MODID, "lovely_peaches"), "main");
+	public static final ModelLayerLocation LAYER_LOCATION = new ModelLayerLocation(new ResourceLocation(Modussy.MODID, "lovely_peaches_boss"), "main");
 	private final ModelPart top_leaves;
 	private final ModelPart top_leaves2;
 	private final ModelPart top_leaves3;

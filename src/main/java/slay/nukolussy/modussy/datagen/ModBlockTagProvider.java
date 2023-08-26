@@ -51,6 +51,7 @@ public class ModBlockTagProvider extends BlockTagsProvider {
                 ModBlocks.SHENSEIUM_BLOCK.get(),
                 ModBlocks.SLAGINIUM_BLOCK.get(),
                 ModBlocks.SHENSEIUM_ORE.get(),
+                ModBlocks.SPECIAL_YASSIFICATION_DETECTOR.get(),
                 ModBlocks.YASSIFICATION_DETECTOR.get()
         );
 
@@ -79,6 +80,7 @@ public class ModBlockTagProvider extends BlockTagsProvider {
                 ModBlocks.RANPAPI_BLOCK.get(),
                 ModBlocks.SHENSEIUM_BLOCK.get(),
                 ModBlocks.SHENSEIUM_ORE.get(),
+                ModBlocks.SPECIAL_YASSIFICATION_DETECTOR.get(),
                 ModBlocks.YASSIFICATION_DETECTOR.get()
         );
     }

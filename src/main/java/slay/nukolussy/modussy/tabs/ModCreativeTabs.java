@@ -60,6 +60,7 @@ public class ModCreativeTabs {
                         pOutput.accept(ModItems.JIAFEI_PRODUCT.get());
                         pOutput.accept(ModItems.JIAFEI_PERFUME.get());
                         pOutput.accept(ModItems.JIAFEI_SEED.get());
+                        pOutput.accept(ModItems.LOVELY_PEACH.get());
                         pOutput.accept(ModItems.KYLIE_JENNER_LIPSTICK.get());
                         pOutput.accept(ModItems.LANCVM_CREAM.get());
                         pOutput.accept(ModItems.FLOPTROPICA_TICKET.get());

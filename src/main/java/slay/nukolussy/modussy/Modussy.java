@@ -21,6 +21,7 @@ import slay.nukolussy.modussy.entities.ModEntities;
 import slay.nukolussy.modussy.item.ModItems;
 import slay.nukolussy.modussy.client.menu.ModMenuTypes;
 import slay.nukolussy.modussy.network.ModMessages;
+import slay.nukolussy.modussy.painting.ModPaintings;
 import slay.nukolussy.modussy.recipes.ModRecipes;
 import slay.nukolussy.modussy.sound.ModSounds;
 import slay.nukolussy.modussy.tabs.ModCreativeTabs;
@@ -38,7 +39,7 @@ public class Modussy {
         ModBlocks.register(modEventBus);
         ModCreativeTabs.register(modEventBus);
         ModEntities.register(modEventBus);
-        // ModParticleTypes.REGISTER.register(modEventBus);
+        ModPaintings.register(modEventBus);
         ModBlockEntities.register(modEventBus);
         ModMenuTypes.register(modEventBus);
         ModRecipes.register(modEventBus);
@@ -59,6 +60,7 @@ public class Modussy {
         if (event.getTabKey() == CreativeModeTabs.SPAWN_EGGS) {
             event.accept(ModItems.CUPCAKKE_SPAWN_EGG.get());
             event.accept(ModItems.JIAFEI_SPAWN_EGG.get());
+            event.accept(ModItems.LOVELY_PEACHES_SPAWN_EGG.get());
             event.accept(ModItems.NICKI_MINAJ_SPAWN_EGG.get());
             event.accept(ModItems.TWINK_SPAWN_EGG.get());
         }

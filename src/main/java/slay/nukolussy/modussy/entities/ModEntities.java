@@ -15,7 +15,8 @@ import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
 import slay.nukolussy.modussy.Modussy;
-import slay.nukolussy.modussy.entities.flops.CupcakKe;
+import slay.nukolussy.modussy.entities.flops.figures.CupcakKe;
+import slay.nukolussy.modussy.entities.flops.figures.LovelyPeaches;
 import slay.nukolussy.modussy.entities.flops.bosses.LovelyPeachesBoss;
 import slay.nukolussy.modussy.entities.flops.traders.Jiafei;
 import slay.nukolussy.modussy.entities.flops.traders.NickiMinaj;
@@ -35,6 +36,11 @@ public class ModEntities {
             EntityType.Builder.<Jiafei>of(Jiafei::new, MobCategory.AMBIENT).setShouldReceiveVelocityUpdates(true)
                     .setTrackingRange(64).setUpdateInterval(3).setCustomClientFactory(Jiafei::new)
                     .sized(0.6f,1.8f));
+
+    public static final RegistryObject<EntityType<LovelyPeaches>> LOVELY_PEACHES = register("lovely_peaches",
+            EntityType.Builder.<LovelyPeaches>of(LovelyPeaches::new, MobCategory.AMBIENT).setShouldReceiveVelocityUpdates(true)
+                    .setTrackingRange(64).setUpdateInterval(3).setCustomClientFactory(LovelyPeaches::new)
+                    .sized(0.5f,0.5f));
 
     public static final RegistryObject<EntityType<LovelyPeachesBoss>> LOVELY_PEACHES_BOSS = register("lovely_peaches_boss",
             EntityType.Builder.<LovelyPeachesBoss>of(LovelyPeachesBoss::new, MobCategory.AMBIENT).setShouldReceiveVelocityUpdates(true)
@@ -67,6 +73,7 @@ public class ModEntities {
          event.enqueueWork(() -> {
             CupcakKe.init();
             Jiafei.init();
+            LovelyPeaches.init();
             LovelyPeachesBoss.init();
             NickiMinaj.init();
             Twink.init();
@@ -78,6 +85,7 @@ public class ModEntities {
     public static void registerAttributes(EntityAttributeCreationEvent event) {
         event.put(CUPCAKKE.get(), CupcakKe.createAttributes().build());
         event.put(JIAFEI.get(), Jiafei.createAttributes().build());
+        event.put(LOVELY_PEACHES.get(), LovelyPeaches.createAttributes().build());
         event.put(LOVELY_PEACHES_BOSS.get(), LovelyPeachesBoss.createAttributes().build());
         event.put(NICKI_MINAJ.get(), NickiMinaj.createAttributes().build());
         event.put(TWINK.get(), Twink.createAttributes().build());

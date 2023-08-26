@@ -10,14 +10,9 @@ import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
 import slay.nukolussy.modussy.Modussy;
-import slay.nukolussy.modussy.block.entity.blocks.CvmInfusionAlter;
-import slay.nukolussy.modussy.block.entity.blocks.FlopAirlineTeleporter;
-import slay.nukolussy.modussy.block.entity.blocks.FlopAirlineTicketScanner;
-import slay.nukolussy.modussy.block.entity.blocks.YassificationDetector;
+import slay.nukolussy.modussy.block.entity.blocks.*;
 import slay.nukolussy.modussy.block.plants.JiafeiCrop;
-import slay.nukolussy.modussy.block.types.FlopBrandBlock;
-import slay.nukolussy.modussy.block.types.MaterialBlocks;
-import slay.nukolussy.modussy.block.types.SlaginiumBlock;
+import slay.nukolussy.modussy.block.types.*;
 import slay.nukolussy.modussy.item.ModItems;
 
 import java.util.function.Supplier;
@@ -56,6 +51,8 @@ public class ModBlocks {
     public static final RegistryObject<Block> CVM_INFUSION_ALTER = registerBlock("cvm_infusion_alter", CvmInfusionAlter::new);
 
     public static final RegistryObject<Block> FLOP_AIRLINE_TICKET_SCANNER = registerBlock("flop_airline_ticket_scanner", FlopAirlineTicketScanner::new);
+    public static final RegistryObject<Block> SPECIAL_YASSIFICATION_DETECTOR = registerBlock("special_yassification_detector", SpecialYassificationDetector::new);
+
     public static final RegistryObject<Block> YASSIFICATION_DETECTOR = registerBlock("yassification_detector", YassificationDetector::new);
     public static final RegistryObject<Block> FLOP_AIRLINE_BLOCK = registerBlock("flop_airline_block", () ->
             new Block(BlockBehaviour.Properties.copy(Blocks.PINK_CONCRETE).strength(0.8f).requiresCorrectToolForDrops()));
@@ -73,13 +70,21 @@ public class ModBlocks {
             new Block(BlockBehaviour.Properties.copy(Blocks.OBSIDIAN).lightLevel(l -> 4)));
 
     public static final RegistryObject<Block> FLOP_AIRLINE_TELEPORTER = registerBlock("flop_airline_teleporter", FlopAirlineTeleporter::new);
+    public static final RegistryObject<Block> PEACHES_STRENGTH = registerBlock("peaches_strength", () ->
+            new LovelyPeachesBossBlocks(LovelyPeachesBossBlocks.Type.STRENGTH));
+
+    public static final RegistryObject<Block> PEACHES_REMOVE = registerBlock("peaches_remove", () ->
+            new LovelyPeachesBossBlocks(LovelyPeachesBossBlocks.Type.EFFECT_REMOVE));
+
+    public static final RegistryObject<Block> PEACHES_HEALTH = registerBlock("peaches_health", () ->
+            new LovelyPeachesBossBlocks(LovelyPeachesBossBlocks.Type.HEALTH));
     /* Floptropican tree types and biomes
      * Cupcakkian Balsam - Cupcakkia
      * Jiafeian Fir - Jiafeia
      * Potaxie Avocado - Potaxiene
-     * Lovely Peach - CVM
-     * Floptropican Palm - Everywhere
+     * Lovely Peach - Contour Vast Minajland
      * Barbie Coconut - New Barbados
+     * Floptropican Palm - Everywhere
      *
      * Minecraft wood stuffs:
      * doors, fences, fence gates, planks, logs, all sided logs, stripped logs, stripped all sided logs, stairs, slabs,

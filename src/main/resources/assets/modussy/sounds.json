@@ -827,6 +827,87 @@
       }
     ]
   },
+  "lovely_peaches_1": {
+    "subtitle": "subtitles.lovely_peaches",
+    "sounds": [
+      {
+        "name": "modussy:lovely_peaches_1",
+        "stream": true
+      }
+    ]
+  },
+  "lovely_peaches_2": {
+    "subtitle": "subtitles.lovely_peaches",
+    "sounds": [
+      {
+        "name": "modussy:lovely_peaches_2",
+        "stream": true
+      }
+    ]
+  },
+  "lovely_peaches_3": {
+    "subtitle": "subtitles.lovely_peaches",
+    "sounds": [
+      {
+        "name": "modussy:lovely_peaches_3",
+        "stream": true
+      }
+    ]
+  },
+  "lovely_peaches_4": {
+    "subtitle": "subtitles.lovely_peaches",
+    "sounds": [
+      {
+        "name": "modussy:lovely_peaches_4",
+        "stream": true
+      }
+    ]
+  },
+  "lovely_peaches_5": {
+    "subtitle": "subtitles.lovely_peaches",
+    "sounds": [
+      {
+        "name": "modussy:lovely_peaches_5",
+        "stream": true
+      }
+    ]
+  },
+  "lovely_peaches_6": {
+    "subtitle": "subtitles.lovely_peaches",
+    "sounds": [
+      {
+        "name": "modussy:lovely_peaches_6",
+        "stream": true
+      }
+    ]
+  },
+  "lovely_peaches_7": {
+    "subtitle": "subtitles.lovely_peaches",
+    "sounds": [
+      {
+        "name": "modussy:lovely_peaches_7",
+        "stream": true
+      }
+    ]
+  },
+  "lovely_peaches_hurt1": {
+    "subtitle": "subtitles.lovely_peaches_hurt",
+    "sounds": [
+      {
+        "name": "modussy:lovely_peaches_hurt1",
+        "stream": true
+      }
+    ]
+  },
+  "lovely_peaches_hurt2": {
+    "subtitle": "subtitles.lovely_peaches_hurt",
+    "sounds": [
+      {
+        "name": "modussy:lovely_peaches_hurt2",
+        "stream": true
+      }
+    ]
+  },
   "nicki_minaj_1": {
     "subtitle": "subtitles.nicki_minaj",
     "sounds": [

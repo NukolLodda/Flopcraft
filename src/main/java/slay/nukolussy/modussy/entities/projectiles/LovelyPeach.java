@@ -14,6 +14,7 @@ import net.minecraft.world.level.Level;
 import net.minecraft.world.phys.HitResult;
 import net.minecraftforge.network.PlayMessages;
 import slay.nukolussy.modussy.entities.ModEntities;
+import slay.nukolussy.modussy.entities.flops.figures.LovelyPeaches;
 import slay.nukolussy.modussy.item.ModItems;
 
 public class LovelyPeach extends AbstractHurtingProjectile implements ItemSupplier {
@@ -49,6 +50,13 @@ public class LovelyPeach extends AbstractHurtingProjectile implements ItemSuppli
             areaeffectcloud.addEffect(new MobEffectInstance(MobEffects.CONFUSION, 200, 0, true, false, false));
 
             this.level().addFreshEntity(areaeffectcloud);
+
+            int chance = (int) (Math.random() * 12);
+            if (chance == 1) {
+                LovelyPeaches peaches = new LovelyPeaches(ModEntities.LOVELY_PEACHES.get(), this.level());
+                peaches.moveTo(areaeffectcloud.getX(), areaeffectcloud.getY(), areaeffectcloud.getZ());
+                this.level().addFreshEntity(peaches);
+            }
 
         }
     }

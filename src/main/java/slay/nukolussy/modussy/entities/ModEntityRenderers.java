@@ -13,6 +13,7 @@ public class ModEntityRenderers {
     public static void registerEntityRenderers(EntityRenderersEvent.RegisterRenderers event) {
         event.registerEntityRenderer(ModEntities.CUPCAKKE.get(), CupcakKeRenderer::new);
         event.registerEntityRenderer(ModEntities.JIAFEI.get(), JiafeiRenderer::new);
+        event.registerEntityRenderer(ModEntities.LOVELY_PEACHES.get(), LovelyPeachesRenderer::new);
         event.registerEntityRenderer(ModEntities.LOVELY_PEACHES_BOSS.get(), LovelyPeachesBossRenderer::new);
         event.registerEntityRenderer(ModEntities.NICKI_MINAJ.get(), NickiMinajRanderer::new);
         event.registerEntityRenderer(ModEntities.TWINK.get(), TwinkRenderer::new);

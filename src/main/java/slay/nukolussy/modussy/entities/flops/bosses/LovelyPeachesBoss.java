@@ -21,17 +21,19 @@ import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.level.Level;
 import net.minecraftforge.network.PlayMessages;
 import slay.nukolussy.modussy.block.ModBlocks;
+import slay.nukolussy.modussy.entities.flops.figures.LovelyPeaches;
 import slay.nukolussy.modussy.entities.projectiles.LovelyPeach;
 import slay.nukolussy.modussy.util.EntityMethods;
 import slay.nukolussy.modussy.util.PlayerMethods;
 
 import javax.annotation.Nullable;
 
-public class LovelyPeachesBoss extends AbstractSpecialFlops implements RangedAttackMob {
+public class LovelyPeachesBoss extends LovelyPeaches implements RangedAttackMob {
     private final ServerBossEvent bossEvent = (ServerBossEvent)(new ServerBossEvent(this.getDisplayName(),
             BossEvent.BossBarColor.PINK, BossEvent.BossBarOverlay.PROGRESS)).setDarkenScreen(true);
 
     private BlockPos teleporterLocation;
+    private boolean wasSummoned = false;
     public LovelyPeachesBoss(EntityType type, Level world) {
         super(type, world);
     }
@@ -62,6 +64,7 @@ public class LovelyPeachesBoss extends AbstractSpecialFlops implements RangedAtt
         tag.putInt("SpawnX", this.teleporterLocation.getX());
         tag.putInt("SpawnY", this.teleporterLocation.getY());
         tag.putInt("SpawnZ", this.teleporterLocation.getZ());
+        tag.putBoolean("was_summon", this.wasSummoned);
     }
 
     @Override
@@ -72,6 +75,7 @@ public class LovelyPeachesBoss extends AbstractSpecialFlops implements RangedAtt
         int z = tag.getInt("SpawnZ");
 
         this.teleporterLocation = new BlockPos(x, y, z);
+        this.wasSummoned = tag.getBoolean("was_summon");
     }
 
     protected void customServerAiStep() {
@@ -89,6 +93,7 @@ public class LovelyPeachesBoss extends AbstractSpecialFlops implements RangedAtt
 
     public void setTeleporterLocation(BlockPos pPos) {
         this.teleporterLocation = pPos;
+        this.wasSummoned = true;
     }
 
     public static void init() {
@@ -112,25 +117,13 @@ public class LovelyPeachesBoss extends AbstractSpecialFlops implements RangedAtt
                     alertFlops(player);
                 } else {
                     PlayerMethods.setToFlop(player);
-                    player.level().setBlock(this.teleporterLocation,
-                            ModBlocks.FLOP_AIRLINE_TELEPORTER.get().defaultBlockState(), 3);
-                }
-            }
-        }
-    }
-
-    @Override
-    protected void onHurt(DamageSource pSource) {
-        if (pSource.getEntity() != null) {
-            if (pSource.getEntity() instanceof Player player) {
-                if (PlayerMethods.isNewgen(player)) {
-                    super.onHurt(pSource);
-                } else if (PlayerMethods.isFlop(player)) {
-                    PlayerMethods.addPlayerYassification(player, -1);
-                    alertFlops(player);
+                    if (wasSummoned) {
+                        player.level().setBlock(this.teleporterLocation,
+                                ModBlocks.FLOP_AIRLINE_TELEPORTER.get().defaultBlockState(), 3);
+                    }
                 }
             } else {
-                super.onHurt(pSource);
+                alertFlops(pSource.getEntity());
             }
         }
     }

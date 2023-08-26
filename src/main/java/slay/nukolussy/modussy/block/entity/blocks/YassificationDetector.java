@@ -1,6 +1,8 @@
 package slay.nukolussy.modussy.block.entity.blocks;
 
 import net.minecraft.core.BlockPos;
+import net.minecraft.network.chat.Component;
+import net.minecraft.network.chat.MutableComponent;
 import net.minecraft.world.item.context.BlockPlaceContext;
 import net.minecraft.world.level.BlockGetter;
 import net.minecraft.world.level.Level;
@@ -19,6 +21,8 @@ import org.jetbrains.annotations.Nullable;
 import slay.nukolussy.modussy.block.entity.ent.YassificationDetectorEntity;
 
 public class YassificationDetector extends BaseEntityBlock {
+    public static final MutableComponent BLOCK_NAME = Component.literal("<")
+            .append(Component.translatable("block.modussy.yassification_detector")).append("> ");
     public static final DirectionProperty FACING = HorizontalDirectionalBlock.FACING;
     public YassificationDetector() {
         super(Properties.copy(Blocks.PINK_CONCRETE).strength(0.8f).requiresCorrectToolForDrops());
