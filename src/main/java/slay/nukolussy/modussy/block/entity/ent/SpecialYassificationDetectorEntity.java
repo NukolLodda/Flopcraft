@@ -9,6 +9,7 @@ import net.minecraft.server.level.ServerLevel;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.level.Level;
+import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.HorizontalDirectionalBlock;
 import net.minecraft.world.level.block.entity.BlockEntity;
 import net.minecraft.world.level.block.state.BlockState;
@@ -48,6 +49,7 @@ public class SpecialYassificationDetectorEntity extends BlockEntity {
                             isStructural = true;
                         }
                         server.destroyBlock(pos, !isStructural);
+                        server.setBlock(pos, Blocks.AIR.defaultBlockState(), 3);
                     }
                 }
             }
@@ -102,7 +104,7 @@ public class SpecialYassificationDetectorEntity extends BlockEntity {
         boolean lovelypeachesIsHere = false;
         {
             List<LivingEntity> entities = lvl.getEntitiesOfClass(LivingEntity.class,
-                    new AABB(new Vec3(x-8, y-4, z-8), new Vec3(x+8, y+4, z+8)).inflate(1), e -> true).stream().toList();
+                    new AABB(new Vec3(x-10, y-4, z-10), new Vec3(x+8, y+4, z+8)).inflate(1), e -> true).stream().toList();
             for (LivingEntity entity : entities) {
                 if (entity instanceof LovelyPeachesBoss) {
                     lovelypeachesIsHere = true;

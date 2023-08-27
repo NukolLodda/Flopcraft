@@ -7,6 +7,7 @@ import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
+import net.minecraft.world.level.block.SoundType;
 import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.phys.BlockHitResult;
@@ -14,7 +15,7 @@ import slay.nukolussy.modussy.util.PlayerMethods;
 
 public class FlopAirlineTeleporter extends Block {
     public FlopAirlineTeleporter() {
-        super(BlockBehaviour.Properties.copy(Blocks.SEA_LANTERN).noLootTable().lightLevel(l -> 10));
+        super(BlockBehaviour.Properties.copy(Blocks.BEDROCK).noLootTable().lightLevel(l -> 10).sound(SoundType.GLASS));
     }
 
     @Override

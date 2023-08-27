@@ -4,7 +4,10 @@ import net.minecraft.ChatFormatting;
 import net.minecraft.network.chat.Component;
 import net.minecraft.network.chat.MutableComponent;
 import net.minecraft.sounds.SoundEvents;
+import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.player.Player;
+import slay.nukolussy.modussy.entities.flops.FlopEntities;
+import slay.nukolussy.modussy.entities.flops.figures.LovelyPeaches;
 import slay.nukolussy.modussy.network.yassification.PlayerYassification;
 import slay.nukolussy.modussy.network.yassification.PlayerYassificationProvider;
 import slay.nukolussy.modussy.sound.ModSounds;
@@ -34,6 +37,18 @@ public class PlayerMethods {
             isNewgen.set(yassification.isNewgen());
         });
         return isNewgen.get();
+    }
+
+    public static boolean isNeutralBossFight(Player player, LivingEntity flop) {
+        return isNeutral(player) && (flop instanceof LovelyPeaches);
+    }
+
+    public static boolean isNeutral(Player player) {
+        AtomicBoolean isNeutral = new AtomicBoolean(false);
+        player.getCapability(PlayerYassificationProvider.PLAYER_YASSIFICATION).ifPresent(yassification -> {
+            isNeutral.set(!yassification.isNewgen() && !yassification.isFlop());
+        });
+        return isNeutral.get();
     }
 
     public static boolean isFlop(Player player) {

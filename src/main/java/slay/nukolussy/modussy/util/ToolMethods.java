@@ -27,8 +27,10 @@ import net.minecraft.world.phys.Vec3;
 import slay.nukolussy.modussy.block.plants.JiafeiCrop;
 import slay.nukolussy.modussy.entities.ModEntities;
 import slay.nukolussy.modussy.entities.flops.AbstractFlopFigures;
+import slay.nukolussy.modussy.entities.flops.FlopEntities;
 import slay.nukolussy.modussy.entities.flops.figures.CupcakKe;
 import slay.nukolussy.modussy.entities.flops.AbstractFlops;
+import slay.nukolussy.modussy.entities.flops.figures.LovelyPeaches;
 import slay.nukolussy.modussy.entities.flops.traders.Jiafei;
 import slay.nukolussy.modussy.entities.flops.twink.Twink;
 import slay.nukolussy.modussy.entities.flops.twink.TwinkAI;
@@ -250,7 +252,8 @@ public class ToolMethods {
                 itemDura += 120;
             }
 
-            if (living instanceof AbstractFlops && source instanceof Player player) {
+            if (living instanceof FlopEntities && source instanceof Player player &&
+                    !(PlayerMethods.isNeutralBossFight(player, living))) {
                 int subNum = living instanceof AbstractFlopFigures ? -7 : -1;
                 PlayerMethods.addPlayerYassification(player, subNum * lvl);
             }
