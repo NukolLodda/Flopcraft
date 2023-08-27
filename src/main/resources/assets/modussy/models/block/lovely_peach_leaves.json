@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:block/leaves",
+  "textures": {
+    "all": "modussy:block/lovely_peach_leaves"
+  }
+}

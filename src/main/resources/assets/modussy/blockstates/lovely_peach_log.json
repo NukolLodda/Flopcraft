@@ -1,0 +1,16 @@
+{
+  "variants": {
+    "axis=x": {
+      "model": "modussy:block/lovely_peach_log_horizontal",
+      "x": 90,
+      "y": 90
+    },
+    "axis=y": {
+      "model": "modussy:block/lovely_peach_log"
+    },
+    "axis=z": {
+      "model": "modussy:block/lovely_peach_log_horizontal",
+      "x": 90
+    }
+  }
+}

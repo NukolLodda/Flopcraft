@@ -10,6 +10,7 @@ import net.minecraft.world.entity.Mob;
 import net.minecraft.world.entity.MobType;
 import net.minecraft.world.entity.ai.attributes.AttributeSupplier;
 import net.minecraft.world.entity.ai.attributes.Attributes;
+import net.minecraft.world.entity.ai.goal.FollowMobGoal;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.Block;
@@ -36,6 +37,11 @@ public class LovelyPeaches extends AbstractFlopFigures {
     }
 
     public static void init() {
+    }
+
+    @Override
+    protected void registerGoals() {
+        super.registerGoals();
     }
 
     @Override
@@ -80,7 +86,7 @@ public class LovelyPeaches extends AbstractFlopFigures {
 
     public static AttributeSupplier.Builder createAttributes() {
         AttributeSupplier.Builder builder = Mob.createMobAttributes();
-        builder = builder.add(Attributes.MOVEMENT_SPEED, 1.6f);
+        builder = builder.add(Attributes.MOVEMENT_SPEED, 1.2f);
         builder = builder.add(Attributes.MAX_HEALTH, 10);
         builder = builder.add(Attributes.ARMOR, 0);
         builder = builder.add(Attributes.ATTACK_DAMAGE, 3);

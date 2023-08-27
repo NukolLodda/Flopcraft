@@ -23,6 +23,7 @@ import net.minecraft.world.entity.ai.Brain;
 import net.minecraft.world.entity.ai.goal.*;
 import net.minecraft.world.entity.item.ItemEntity;
 import net.minecraft.world.entity.monster.Monster;
+import net.minecraft.world.entity.monster.Zombie;
 import net.minecraft.world.entity.npc.Npc;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.Item;
@@ -41,9 +42,8 @@ import slay.nukolussy.modussy.item.ModItems;
 import javax.annotation.Nullable;
 import java.util.function.IntFunction;
 
-public class Twink extends AbstractFlops {
+public class Twink extends AbstractFlops implements Npc {
     // Nukol is following the rule that thou shall always be horknee
-    // For he wants a twink to smack his ass like a drum and slurp that deek till it cvm
     private static final EntityDataAccessor<Integer> TWINK_ID_DATATYPE_VARIANT = SynchedEntityData.defineId(Twink.class, EntityDataSerializers.INT);
     private final SimpleContainer inventory = new SimpleContainer(8);
     public Twink(PlayMessages.SpawnEntity packet, Level world) {
@@ -133,6 +133,14 @@ public class Twink extends AbstractFlops {
     @Override
     public void baseTick() {
         super.baseTick();
+    }
+
+    @Override
+    public void die(DamageSource pSource) {
+        if (pSource.getEntity() != null & pSource.getEntity() instanceof Zombie) {
+            this.convertTo(EntityType.ZOMBIE, true);
+        }
+        super.die(pSource);
     }
 
     @Override

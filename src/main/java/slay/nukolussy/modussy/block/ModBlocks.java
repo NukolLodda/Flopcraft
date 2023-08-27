@@ -77,6 +77,12 @@ public class ModBlocks {
 
     public static final RegistryObject<Block> PEACHES_HEALTH = registerBlock("peaches_health", () ->
             new LovelyPeachesBossBlocks(LovelyPeachesBossBlocks.Type.HEALTH));
+
+    public static final RegistryObject<Block> LOVELY_PEACH_LOG = registerBlock("lovely_peach_log", () ->
+        new RotatedPillarBlock(BlockBehaviour.Properties.copy(Blocks.CRIMSON_STEM)));
+    public static final RegistryObject<Block> LOVELY_PEACH_LEAVES = registerBlock("lovely_peach_leaves", () ->
+            new LeavesBlock(BlockBehaviour.Properties.copy(Blocks.OAK_LEAVES)));
+
     /* Floptropican tree types and biomes
      * Cupcakkian Balsam - Cupcakkia
      * Jiafeian Fir - Jiafeia

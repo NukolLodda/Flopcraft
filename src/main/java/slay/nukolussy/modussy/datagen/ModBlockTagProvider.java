@@ -55,7 +55,13 @@ public class ModBlockTagProvider extends BlockTagsProvider {
                 ModBlocks.YASSIFICATION_DETECTOR.get()
         );
 
-        this.tag(BlockTags.NEEDS_STONE_TOOL).add(ModBlocks.BARBIE_LANTERN.get());
+        this.tag(BlockTags.MINEABLE_WITH_AXE).add(
+                ModBlocks.LOVELY_PEACH_LOG.get()
+        );
+
+        this.tag(BlockTags.NEEDS_STONE_TOOL).add(
+                ModBlocks.BARBIE_LANTERN.get(),
+                ModBlocks.LOVELY_PEACH_LOG.get());
 
         this.tag(BlockTags.NEEDS_IRON_TOOL).add(
                 ModBlocks.CVM_INFUSION_ALTER.get(),
