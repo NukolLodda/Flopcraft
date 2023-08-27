@@ -10,6 +10,7 @@ import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.phys.BlockHitResult;
+import slay.nukolussy.modussy.util.PlayerMethods;
 
 public class FlopAirlineTeleporter extends Block {
     public FlopAirlineTeleporter() {
@@ -18,8 +19,11 @@ public class FlopAirlineTeleporter extends Block {
 
     @Override
     public InteractionResult use(BlockState pState, Level pLevel, BlockPos pPos, Player pPlayer, InteractionHand pHand, BlockHitResult pHit) {
-        pPlayer.teleportTo(pPos.getX(), pPos.getY() + 16, pPos.getZ());
+        pPlayer.teleportTo(pPlayer.getX(), pPos.getY() + 14, pPlayer.getZ());
         pLevel.destroyBlock(pPos, false, pPlayer);
+        if (!PlayerMethods.isNewgen(pPlayer)) {
+            PlayerMethods.setToFlop(pPlayer);
+        }
         return super.use(pState, pLevel, pPos, pPlayer, pHand, pHit);
     }
 }

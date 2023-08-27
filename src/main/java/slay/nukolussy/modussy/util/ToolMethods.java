@@ -132,8 +132,7 @@ public class ToolMethods {
                     if (_ent instanceof Cat _cat && Math.random() < 0.16) {
                         _cat.spawnAtLocation(ModItems.POSEI.get());
                     }
-                    if (_ent instanceof TamableAnimal _tamIsTamedBy && _tamIsTamedBy.isOwnedBy(player) && !PlayerMethods.isNewgen(player) ||
-                            EntityMethods.isFlop(_ent)) {
+                    if (EntityMethods.isFlop(_ent)) {
                         EntityMethods.flopEffects(_ent);
                         if (_ent instanceof AbstractFlopFigures || (_ent instanceof Player surround && PlayerMethods.isFlopIcon(surround))) {
                             PlayerMethods.addPlayerYassification(player, 7);
@@ -205,8 +204,7 @@ public class ToolMethods {
                         _cat.spawnAtLocation(ModItems.POSEI.get());
                         PlayerMethods.addPlayerYassification(player, 1);
                     }
-                    if ((_ent instanceof TamableAnimal _tamIsTamedBy && _tamIsTamedBy.isOwnedBy(player) && PlayerMethods.isFlop(player)) ||
-                            EntityMethods.isFlop(_ent)) {
+                    if (EntityMethods.isFlop(_ent)) {
                         EntityMethods.flopEffects(_ent, lvl, amp);
                         itemDura += 120;
                         if (_ent instanceof AbstractFlopFigures || (_ent instanceof Player surround && PlayerMethods.isFlopIcon(surround))) {
@@ -307,8 +305,7 @@ public class ToolMethods {
                         _cat.spawnAtLocation(ModItems.POSEI.get());
                         PlayerMethods.addPlayerYassification(player, 1);
                     }
-                    if (_ent instanceof TamableAnimal _tamIsTamedBy && _tamIsTamedBy.isOwnedBy(player) ||
-                            EntityMethods.isFlop(_ent)) {
+                    if (EntityMethods.isFlop(_ent)) {
                         EntityMethods.flopEffects(_ent, amp,amp - 1);
                         if (Math.random() < 0.08333) {
                             if (_ent instanceof Twink && PlayerMethods.notNewgen(player)) {

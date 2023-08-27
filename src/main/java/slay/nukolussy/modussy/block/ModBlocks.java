@@ -66,8 +66,7 @@ public class ModBlocks {
     public static final RegistryObject<Block> LANCVM_BLOCK = registerBlock("lancvm_block", FlopBrandBlock::new);
     public static final RegistryObject<Block> RANPAPI_BLOCK = registerBlock("ranpapi_block", FlopBrandBlock::new);
     public static final RegistryObject<Block> AESTHETIC_STORE_BLOCK = registerBlock("aesthetic_store_block", FlopBrandBlock::new);
-    public static final RegistryObject<Block> HARDENED_PERIOD_CVM = registerBlock("hardened_period_cvm", () ->
-            new Block(BlockBehaviour.Properties.copy(Blocks.OBSIDIAN).lightLevel(l -> 4)));
+    public static final RegistryObject<Block> HARDENED_PERIOD_CVM = registerBlock("hardened_period_cvm", HardenedPeriodCvm::new);
 
     public static final RegistryObject<Block> FLOP_AIRLINE_TELEPORTER = registerBlock("flop_airline_teleporter", FlopAirlineTeleporter::new);
     public static final RegistryObject<Block> PEACHES_STRENGTH = registerBlock("peaches_strength", () ->

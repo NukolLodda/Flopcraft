@@ -1,4 +1,4 @@
-package slay.nukolussy.modussy.block.entity.blocks;
+package slay.nukolussy.modussy.block.types;
 
 import net.minecraft.ChatFormatting;
 import net.minecraft.core.BlockPos;
@@ -31,8 +31,6 @@ import slay.nukolussy.modussy.util.PlayerMethods;
 
 public class FlopAirlineTicketScanner extends Block {
     public static final DirectionProperty FACING = HorizontalDirectionalBlock.FACING;
-    private static final MutableComponent NAME = Component.literal("<")
-            .append(Component.translatable("block.modussy.flop_airline_ticket_scanner")).append("> ");
     public FlopAirlineTicketScanner() {
         super(Properties.copy(Blocks.QUARTZ_BLOCK));
     }
@@ -151,24 +149,29 @@ public class FlopAirlineTicketScanner extends Block {
         return false;
     }
 
+    private static MutableComponent ticketScannerName() {
+        return Component.literal("<")
+                .append(Component.translatable("block.modussy.flop_airline_ticket_scanner")).append("> ");
+    }
+
     @Override
     public InteractionResult use(BlockState pState, Level pLevel, BlockPos pPos, Player pPlayer, InteractionHand pHand, BlockHitResult pHit) {
         Item item = pPlayer.getItemInHand(pHand).getItem();
         if (item instanceof FloptropicaTicket) {
             if (PlayerMethods.isNewgen(pPlayer)) {
-                pPlayer.sendSystemMessage(NAME.append(Component.translatable("subtitle.dangerous_nonflop"))
+                pPlayer.sendSystemMessage(ticketScannerName().append(Component.translatable("subtitle.dangerous_nonflop"))
                         .withStyle(ChatFormatting.DARK_RED));
             } else {
-                pPlayer.sendSystemMessage(NAME.append(Component.translatable("subtitle.valid_ticket"))
+                pPlayer.sendSystemMessage(ticketScannerName().append(Component.translatable("subtitle.valid_ticket"))
                         .withStyle(ChatFormatting.GREEN));
             }
         } else {
             if (PlayerMethods.isNewgen(pPlayer)) {
-                pPlayer.sendSystemMessage(NAME.append(Component.translatable("subtitle.dangerous_nonflop"))
+                pPlayer.sendSystemMessage(ticketScannerName().append(Component.translatable("subtitle.dangerous_nonflop"))
                         .withStyle(ChatFormatting.DARK_RED));
                 EntityMethods.alertFlops(pLevel, pPos.getX(), pPos.getY(), pPos.getZ(), pPlayer);
             } else {
-                pPlayer.sendSystemMessage(NAME.append(Component.translatable("subtitle.invalid_ticket"))
+                pPlayer.sendSystemMessage(ticketScannerName().append(Component.translatable("subtitle.invalid_ticket"))
                         .withStyle(ChatFormatting.RED));
             }
         }

@@ -19,12 +19,18 @@ import slay.nukolussy.modussy.entities.flops.FlopEntities;
 import slay.nukolussy.modussy.entities.flops.traders.Jiafei;
 import slay.nukolussy.modussy.entities.flops.traders.NickiMinaj;
 import slay.nukolussy.modussy.entities.flops.twink.Twink;
+import slay.nukolussy.modussy.entities.projectiles.Tampons;
 
 import java.util.List;
 
 public class EntityMethods {
     public static boolean isFlop(Entity entity) {
-        return entity instanceof FlopEntities || (entity instanceof Player player && PlayerMethods.isFlop(player));
+        return isFlop((LivingEntity) entity) ||
+                (entity instanceof TamableAnimal tamable && isFlop(tamable.getOwner()));
+    }
+
+    private static boolean isFlop(LivingEntity living) {
+        return living instanceof FlopEntities || (living instanceof Player player && PlayerMethods.isFlop(player));
     }
 
     public static boolean isMonster(Entity ent) {

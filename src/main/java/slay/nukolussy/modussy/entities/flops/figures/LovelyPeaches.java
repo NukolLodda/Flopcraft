@@ -2,6 +2,7 @@ package slay.nukolussy.modussy.entities.flops.figures;
 
 import net.minecraft.core.BlockPos;
 import net.minecraft.sounds.SoundEvent;
+import net.minecraft.tags.DamageTypeTags;
 import net.minecraft.world.damagesource.DamageSource;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.LivingEntity;
@@ -16,12 +17,14 @@ import net.minecraft.world.phys.AABB;
 import net.minecraftforge.network.PlayMessages;
 import org.jetbrains.annotations.Nullable;
 import slay.nukolussy.modussy.block.ModBlocks;
+import slay.nukolussy.modussy.entities.ModEntities;
 import slay.nukolussy.modussy.entities.flops.AbstractFlopFigures;
 import slay.nukolussy.modussy.sound.ModSounds;
 import slay.nukolussy.modussy.util.PlayerMethods;
 
 import java.util.Comparator;
 import java.util.List;
+import java.util.Objects;
 
 public class LovelyPeaches extends AbstractFlopFigures {
     public LovelyPeaches(EntityType type, Level world) {
@@ -77,7 +80,7 @@ public class LovelyPeaches extends AbstractFlopFigures {
 
     public static AttributeSupplier.Builder createAttributes() {
         AttributeSupplier.Builder builder = Mob.createMobAttributes();
-        builder = builder.add(Attributes.MOVEMENT_SPEED, 0.1f);
+        builder = builder.add(Attributes.MOVEMENT_SPEED, 1.6f);
         builder = builder.add(Attributes.MAX_HEALTH, 10);
         builder = builder.add(Attributes.ARMOR, 0);
         builder = builder.add(Attributes.ATTACK_DAMAGE, 3);
@@ -88,15 +91,12 @@ public class LovelyPeaches extends AbstractFlopFigures {
     }
 
     protected void alertLovelyPeaches(LivingEntity attacker) {
-        AABB aabb = AABB.unitCubeFromLowerCorner(this.position()).inflate(10d, 10.0d, 10d);
+        AABB aabb = AABB.unitCubeFromLowerCorner(this.position()).inflate(10d, 10d, 10d);
         List<LovelyPeaches> list = this.level().getEntitiesOfClass(LovelyPeaches.class, aabb, e -> true).stream()
                 .sorted(Comparator.comparingDouble(_entcnd ->
                         _entcnd.distanceToSqr(this.getX(), this.getY(), this.getZ()))).toList();
         for (LovelyPeaches peaches : list) {
-            if (attacker instanceof Player player) {
-                PlayerMethods.addPlayerYassification(player, -5);
-                if (player.isCreative()) attacker = null;
-            }
+            if (attacker instanceof Player player && player.isCreative()) attacker = null;
             if (attacker != null) peaches.setTarget(attacker);
 
         }

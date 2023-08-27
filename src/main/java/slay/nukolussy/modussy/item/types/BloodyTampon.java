@@ -8,6 +8,9 @@ import net.minecraft.world.entity.projectile.Arrow;
 import net.minecraft.world.item.*;
 import net.minecraft.world.level.Level;
 import org.jetbrains.annotations.NotNull;
+import slay.nukolussy.modussy.entities.ModEntities;
+import slay.nukolussy.modussy.entities.projectiles.BloodyTampons;
+import slay.nukolussy.modussy.entities.projectiles.Tampons;
 import slay.nukolussy.modussy.util.ToolMethods;
 import slay.nukolussy.modussy.item.ModItems;
 
@@ -24,17 +27,6 @@ public class BloodyTampon extends ArrowItem {
 
     @Override
     public AbstractArrow createArrow(Level pLevel, ItemStack pStack, LivingEntity pShooter) {
-        Arrow arrow = new Arrow(pLevel, pShooter) {
-            @Override
-            protected ItemStack getPickupItem() {
-                return new ItemStack(ModItems.TAMPON.get());
-            }
-        };
-        arrow.addEffect(new MobEffectInstance(MobEffects.MOVEMENT_SLOWDOWN, 6900, 0, true, false));
-        arrow.addEffect(new MobEffectInstance(MobEffects.WEAKNESS, 6900, 1, true, false));
-        arrow.addEffect(new MobEffectInstance(MobEffects.HUNGER, 6900, 0, true, false));
-        arrow.addEffect(new MobEffectInstance(MobEffects.DIG_SLOWDOWN, 6900, 1, true, false));
-        arrow.addEffect(new MobEffectInstance(MobEffects.HARM, 6900, 0, true, false));
-        return arrow;
+        return new BloodyTampons(pShooter, pLevel);
     }
 }

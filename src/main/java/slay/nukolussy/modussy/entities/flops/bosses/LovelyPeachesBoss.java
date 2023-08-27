@@ -48,7 +48,7 @@ public class LovelyPeachesBoss extends LovelyPeaches implements RangedAttackMob 
         builder = builder.add(Attributes.MAX_HEALTH, 169);
         builder = builder.add(Attributes.ARMOR, 3);
         builder = builder.add(Attributes.ATTACK_DAMAGE, 30);
-        builder = builder.add(Attributes.FOLLOW_RANGE, 15);
+        builder = builder.add(Attributes.FOLLOW_RANGE, 20);
         builder = builder.add(Attributes.ATTACK_KNOCKBACK, 4);
 
         return builder;
@@ -115,12 +115,9 @@ public class LovelyPeachesBoss extends LovelyPeaches implements RangedAttackMob 
             if (pSource.getEntity() instanceof Player player) {
                 if (PlayerMethods.isNewgen(player)) {
                     alertFlops(player);
-                } else {
-                    PlayerMethods.setToFlop(player);
-                    if (wasSummoned) {
-                        player.level().setBlock(this.teleporterLocation,
-                                ModBlocks.FLOP_AIRLINE_TELEPORTER.get().defaultBlockState(), 3);
-                    }
+                } else if (wasSummoned) {
+                    player.level().setBlock(this.teleporterLocation,
+                            ModBlocks.FLOP_AIRLINE_TELEPORTER.get().defaultBlockState(), 3);
                 }
             } else {
                 alertFlops(pSource.getEntity());
@@ -147,8 +144,7 @@ public class LovelyPeachesBoss extends LovelyPeaches implements RangedAttackMob 
         double z1 = z - z0;
         LovelyPeach peach = new LovelyPeach(this.level(), this, x1, y1, z1);
         peach.setOwner(this);
-
-        peach.setPosRaw(x0, y0, z0);
+        peach.setPos(x0, y0, z0);
         this.level().addFreshEntity(peach);
     }
 

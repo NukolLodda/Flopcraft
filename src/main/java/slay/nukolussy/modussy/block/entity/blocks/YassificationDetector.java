@@ -21,8 +21,6 @@ import org.jetbrains.annotations.Nullable;
 import slay.nukolussy.modussy.block.entity.ent.YassificationDetectorEntity;
 
 public class YassificationDetector extends BaseEntityBlock {
-    public static final MutableComponent BLOCK_NAME = Component.literal("<")
-            .append(Component.translatable("block.modussy.yassification_detector")).append("> ");
     public static final DirectionProperty FACING = HorizontalDirectionalBlock.FACING;
     public YassificationDetector() {
         super(Properties.copy(Blocks.PINK_CONCRETE).strength(0.8f).requiresCorrectToolForDrops());
@@ -68,5 +66,10 @@ public class YassificationDetector extends BaseEntityBlock {
     @Override
     public <T extends BlockEntity> BlockEntityTicker<T> getTicker(Level pLevel, BlockState pState, BlockEntityType<T> pBlockEntityType) {
         return pLevel.isClientSide() ? null : (lvl, pos, state, entity) -> ((YassificationDetectorEntity)entity).tick();
+    }
+
+    public static MutableComponent getBlockName() {
+        return Component.literal("<")
+                .append(Component.translatable("block.modussy.yassification_detector")).append("> ");
     }
 }

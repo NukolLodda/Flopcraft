@@ -11,7 +11,6 @@ import net.minecraft.world.entity.monster.Slime;
 import net.minecraft.world.entity.monster.Spider;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.entity.projectile.AbstractArrow;
-import net.minecraft.world.entity.projectile.Arrow;
 import net.minecraft.world.item.ArrowItem;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
@@ -20,12 +19,14 @@ import net.minecraft.world.level.Level;
 import net.minecraft.world.phys.AABB;
 import net.minecraft.world.phys.Vec3;
 import slay.nukolussy.modussy.entities.flops.AbstractFlops;
+import slay.nukolussy.modussy.entities.projectiles.Tampons;
 import slay.nukolussy.modussy.util.EntityMethods;
 import slay.nukolussy.modussy.util.ToolMethods;
 import slay.nukolussy.modussy.item.ModItems;
 import slay.nukolussy.modussy.network.period.PlayerMenstruationProvider;
 import slay.nukolussy.modussy.sound.ModSounds;
 import slay.nukolussy.modussy.util.PlayerMethods;
+import slay.nukolussy.modussy.entities.ModEntities;
 
 import java.util.Comparator;
 import java.util.List;
@@ -36,12 +37,7 @@ public class Tampon extends ArrowItem {
     }
     @Override
     public AbstractArrow createArrow(Level pLevel, ItemStack pStack, LivingEntity pShooter) {
-        return new Arrow(pLevel, pShooter) {
-            @Override
-            protected ItemStack getPickupItem() {
-                return new ItemStack(ModItems.TAMPON.get());
-            }
-        };
+        return new Tampons(ModEntities.TAMPONS.get(), pShooter, pLevel);
     }
     @Override
     public InteractionResultHolder<ItemStack> use(Level world, Player entity, InteractionHand hand) {

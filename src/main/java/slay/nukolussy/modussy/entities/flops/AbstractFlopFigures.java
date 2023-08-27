@@ -6,11 +6,15 @@ import net.minecraft.world.damagesource.DamageSource;
 import net.minecraft.world.entity.*;
 import net.minecraft.world.entity.ai.attributes.AttributeSupplier;
 import net.minecraft.world.entity.ai.attributes.Attributes;
+import net.minecraft.world.entity.ai.goal.target.HurtByTargetGoal;
+import net.minecraft.world.entity.ai.goal.target.NearestAttackableTargetGoal;
+import net.minecraft.world.entity.monster.AbstractIllager;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.Level;
 import org.jetbrains.annotations.Nullable;
 import slay.nukolussy.modussy.item.ModItems;
+import slay.nukolussy.modussy.util.EntityMethods;
 
 import java.util.Random;
 
@@ -57,6 +61,15 @@ public abstract class AbstractFlopFigures extends AbstractFlops {
         }
         // they can't hit with a trident
         return super.hurt(source, amount);
+    }
+
+    @Override
+    protected void registerGoals() {
+        super.registerGoals();
+
+        this.targetSelector.addGoal(1, new HurtByTargetGoal(this));
+        this.targetSelector.addGoal(2, new NearestAttackableTargetGoal<>(this, LivingEntity.class,
+                0, false, false, ent -> ent.attackable() && (ent instanceof AbstractIllager)));
     }
 
     @Override

@@ -45,7 +45,6 @@ public class ModCreativeTabs {
                         pOutput.accept(ModBlocks.SLAGINIUM_BLOCK.get());
                         pOutput.accept(ModBlocks.SHENSEIUM_ORE.get());
                         pOutput.accept(ModBlocks.HARDENED_PERIOD_CVM.get());
-                        pOutput.accept(ModBlocks.FLOP_AIRLINE_TELEPORTER.get());
                     })).build());
 
     public static RegistryObject<CreativeModeTab> CVMSUMABLES = CREATIVE_MODE_TABS.register("cvmsumables", () ->

@@ -4,12 +4,18 @@ import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.entity.Entity;
+import net.minecraft.world.entity.LivingEntity;
+import net.minecraft.world.entity.Mob;
+import net.minecraft.world.entity.ai.goal.target.NearestAttackableTargetGoal;
+import net.minecraft.world.entity.animal.IronGolem;
+import net.minecraft.world.entity.monster.*;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.phys.AABB;
 import net.minecraft.world.phys.Vec3;
 import net.minecraftforge.common.capabilities.RegisterCapabilitiesEvent;
 import net.minecraftforge.event.AttachCapabilitiesEvent;
 import net.minecraftforge.event.TickEvent;
+import net.minecraftforge.event.entity.EntityJoinLevelEvent;
 import net.minecraftforge.event.entity.player.PlayerEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.LogicalSide;
@@ -100,6 +106,39 @@ public class ModEvents {
                     player.addEffect(new MobEffectInstance(MobEffects.DAMAGE_BOOST, 100, 0, true, false, false));
                 }
             });
+        }
+    }
+
+    @SubscribeEvent
+    public static void onFlopemiesJoinWorld(EntityJoinLevelEvent event) {
+        if (event.getEntity() != null && event.getEntity() instanceof Mob entity) {
+            if (entity instanceof Zombie zombie) {
+                zombie.targetSelector.addGoal(6, new NearestAttackableTargetGoal<>(zombie, AbstractFlops.class, true));
+            }
+            if (entity instanceof Drowned drowned) {
+                drowned.targetSelector.addGoal(6, new NearestAttackableTargetGoal<>(drowned, AbstractFlops.class, true));
+            }
+            if (entity instanceof Husk husk) {
+                husk.targetSelector.addGoal(6, new NearestAttackableTargetGoal<>(husk, AbstractFlops.class, true));
+            }
+            if (entity instanceof Skeleton skeleton) {
+                skeleton.targetSelector.addGoal(6, new NearestAttackableTargetGoal<>(skeleton, AbstractFlops.class, true));
+            }
+            if (entity instanceof Stray stray) {
+                stray.targetSelector.addGoal(6, new NearestAttackableTargetGoal<>(stray, AbstractFlops.class, true));
+            }
+            if (entity instanceof WitherSkeleton witherSkeleton) {
+                witherSkeleton.targetSelector.addGoal(6, new NearestAttackableTargetGoal<>(witherSkeleton, AbstractFlops.class, true));
+            }
+            if (entity instanceof Pillager pillager) {
+                pillager.targetSelector.addGoal(6, new NearestAttackableTargetGoal<>(pillager, AbstractFlops.class, true));
+            }
+            if (entity instanceof Evoker evoker) {
+                evoker.targetSelector.addGoal(6, new NearestAttackableTargetGoal<>(evoker, AbstractFlops.class, true));
+            }
+            if (entity instanceof Vindicator vindicator) {
+                vindicator.targetSelector.addGoal(6, new NearestAttackableTargetGoal<>(vindicator, AbstractFlops.class, true));
+            }
         }
     }
 }

@@ -9,6 +9,7 @@ import net.minecraft.network.syncher.EntityDataSerializers;
 import net.minecraft.network.syncher.SynchedEntityData;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.sounds.SoundEvent;
+import net.minecraft.tags.DamageTypeTags;
 import net.minecraft.util.ByIdMap;
 import net.minecraft.util.RandomSource;
 import net.minecraft.util.StringRepresentable;
@@ -22,13 +23,13 @@ import net.minecraft.world.entity.ai.Brain;
 import net.minecraft.world.entity.ai.goal.*;
 import net.minecraft.world.entity.item.ItemEntity;
 import net.minecraft.world.entity.monster.Monster;
+import net.minecraft.world.entity.npc.Npc;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.ServerLevelAccessor;
 import net.minecraft.world.level.gameevent.GameEvent;
-import net.minecraft.world.level.levelgen.Heightmap;
 import net.minecraftforge.network.PlayMessages;
 import net.minecraftforge.registries.ForgeRegistries;
 import org.jetbrains.annotations.NotNull;
@@ -106,7 +107,7 @@ public class Twink extends AbstractFlops {
         super.registerGoals();
         this.goalSelector.addGoal(2, new TemptGoal(this, 1.2d, FOOD_ITEMS, false));
         this.goalSelector.addGoal(9, new FlopBreedingGoal(this, 1.0d));
-        this.goalSelector.addGoal(1, new AvoidEntityGoal<>(this, Monster.class, 10.0f, 0.5d, 0.5d));
+        this.goalSelector.addGoal(9, new AvoidEntityGoal<>(this, Monster.class, 10.0f, 1.2, 1.2));
 
     }
 
@@ -136,7 +137,9 @@ public class Twink extends AbstractFlops {
 
     @Override
     public boolean hurt(DamageSource source, float amount) {
-        // if (source.is() || source == DamageSource.DROWN) they can't fall nor drown, please think of code for this
+        if (source.is(DamageTypeTags.IS_DROWNING)) {
+            return false;
+        }
         return super.hurt(source, amount);
     }
 

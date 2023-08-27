@@ -1,11 +1,11 @@
-package slay.nukolussy.modussy.entities;
+package slay.nukolussy.modussy.client.renderer;
 
 import net.minecraft.client.renderer.entity.ThrownItemRenderer;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.client.event.EntityRenderersEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
-import slay.nukolussy.modussy.client.renderer.*;
+import slay.nukolussy.modussy.entities.ModEntities;
 
 @Mod.EventBusSubscriber(bus = Mod.EventBusSubscriber.Bus.MOD, value = Dist.CLIENT)
 public class ModEntityRenderers {
@@ -19,6 +19,13 @@ public class ModEntityRenderers {
         event.registerEntityRenderer(ModEntities.TWINK.get(), TwinkRenderer::new);
 
         event.registerEntityRenderer(ModEntities.LOVELY_PEACH.get(), context ->
-             new ThrownItemRenderer<>(context, 3.0F, true));
+             new ThrownItemRenderer<>(context, 3.0f, true));
+
+        event.registerEntityRenderer(ModEntities.TAMPONS.get(), context ->
+                new ThrownItemRenderer<>(context, 3.0f, false));
+
+        event.registerEntityRenderer(ModEntities.BLOODY_TAMPONS.get(), context ->
+                new ThrownItemRenderer<>(context, 3.0f, false));
+
     }
 }

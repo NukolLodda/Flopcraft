@@ -147,18 +147,18 @@ public class SpecialYassificationDetectorEntity extends BlockEntity {
                         if (entity instanceof Player player) {
                             if (PlayerMethods.isNewgen(player)) {
                                 player.sendSystemMessage(PlayerMethods.getYassificationLevel(player));
-                                player.sendSystemMessage(YassificationDetector.BLOCK_NAME.append(Component.translatable("subtitle.dangerous_nonflop"))
+                                player.sendSystemMessage(YassificationDetector.getBlockName().append(Component.translatable("subtitle.dangerous_nonflop"))
                                         .withStyle(ChatFormatting.RED));
                                 EntityMethods.alertFlops(lvl, pos.getX(), pos.getY(), pos.getZ(), player);
                             } else if (!PlayerMethods.isFlop(player)) {
                                 player.sendSystemMessage(PlayerMethods.getYassificationLevel(player));
-                                player.sendSystemMessage(YassificationDetector.BLOCK_NAME.append(Component.translatable("subtitle.prove_flop"))
+                                player.sendSystemMessage(YassificationDetector.getBlockName().append(Component.translatable("subtitle.prove_flop"))
                                         .withStyle(ChatFormatting.GRAY));
                             }
                         }
                     } else if (entity instanceof Player player) {
                         if (lvl.getServer().getTickCount() % 15 == 0) {
-                            player.sendSystemMessage(YassificationDetector.BLOCK_NAME.append(Component.translatable("subtitle.confirmed_flop"))
+                            player.sendSystemMessage(YassificationDetector.getBlockName().append(Component.translatable("subtitle.confirmed_flop"))
                                     .withStyle(ChatFormatting.LIGHT_PURPLE));
                         } else if (lvl.getServer().getTickCount() % 15 == 8) {
                             player.sendSystemMessage(PlayerMethods.getYassificationLevel(player));
