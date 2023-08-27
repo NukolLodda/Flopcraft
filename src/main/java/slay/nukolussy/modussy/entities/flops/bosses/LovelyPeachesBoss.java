@@ -22,7 +22,7 @@ import net.minecraft.world.level.Level;
 import net.minecraftforge.network.PlayMessages;
 import slay.nukolussy.modussy.block.ModBlocks;
 import slay.nukolussy.modussy.entities.flops.figures.LovelyPeaches;
-import slay.nukolussy.modussy.entities.projectiles.LovelyPeach;
+import slay.nukolussy.modussy.entities.projectiles.ChargedLovelyPeach;
 import slay.nukolussy.modussy.util.EntityMethods;
 import slay.nukolussy.modussy.util.PlayerMethods;
 
@@ -142,7 +142,7 @@ public class LovelyPeachesBoss extends LovelyPeaches implements RangedAttackMob 
         double x1 = x - x0;
         double y1 = y - y0;
         double z1 = z - z0;
-        LovelyPeach peach = new LovelyPeach(this.level(), this, x1, y1, z1);
+        ChargedLovelyPeach peach = new ChargedLovelyPeach(this.level(), this, x1, y1, z1);
         peach.setOwner(this);
         peach.setPos(x0, y0, z0);
         this.level().addFreshEntity(peach);

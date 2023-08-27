@@ -19,7 +19,6 @@ import slay.nukolussy.modussy.entities.flops.FlopEntities;
 import slay.nukolussy.modussy.entities.flops.traders.Jiafei;
 import slay.nukolussy.modussy.entities.flops.traders.NickiMinaj;
 import slay.nukolussy.modussy.entities.flops.twink.Twink;
-import slay.nukolussy.modussy.entities.projectiles.Tampons;
 
 import java.util.List;
 

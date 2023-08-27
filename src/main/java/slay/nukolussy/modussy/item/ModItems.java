@@ -1,6 +1,5 @@
 package slay.nukolussy.modussy.item;
 
-import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.food.FoodProperties;
 import net.minecraft.world.item.*;
 import net.minecraftforge.common.ForgeSpawnEggItem;
@@ -73,8 +72,7 @@ public class ModItems {
     public static final RegistryObject<Item> TAMPON = ITEMS.register("tampon", Tampon::new);
     public static final RegistryObject<Item> BLOODY_TAMPON = ITEMS.register("bloody_tampon", BloodyTampon::new);
 
-    public static final RegistryObject<Item> TWINK_EGG = ITEMS.register("twink_egg",
-            () -> new Item(new Item.Properties()));
+    public static final RegistryObject<Item> TWINK_EGG = ITEMS.register("twink_egg", TwinkEgg::new);
 
     public static final RegistryObject<Item> WONYOUNG_ESSENCE = ITEMS.register("wonyoung_essence",
             () -> new Item(new Item.Properties()));

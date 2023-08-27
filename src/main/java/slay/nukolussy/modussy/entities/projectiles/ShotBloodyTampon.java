@@ -20,17 +20,17 @@ import slay.nukolussy.modussy.util.PlayerMethods;
 
 import java.util.List;
 
-public class BloodyTampons extends Tampons {
-    public BloodyTampons(EntityType<BloodyTampons> pEntityType, Level pLevel) {
+public class ShotBloodyTampon extends ShotTampon {
+    public ShotBloodyTampon(EntityType<ShotBloodyTampon> pEntityType, Level pLevel) {
         super(pEntityType, pLevel);
     }
-    public BloodyTampons(double pX, double pY, double pZ, Level pLevel) {
+    public ShotBloodyTampon(double pX, double pY, double pZ, Level pLevel) {
         super(ModEntities.BLOODY_TAMPONS.get(), pX, pY, pZ, pLevel);
     }
-    public BloodyTampons(LivingEntity pShooter, Level pLevel) {
+    public ShotBloodyTampon(LivingEntity pShooter, Level pLevel) {
         super(ModEntities.BLOODY_TAMPONS.get(), pShooter, pLevel);
     }
-    public BloodyTampons(PlayMessages.SpawnEntity packet, Level world) {
+    public ShotBloodyTampon(PlayMessages.SpawnEntity packet, Level world) {
         super(ModEntities.BLOODY_TAMPONS.get(), world);
     }
 

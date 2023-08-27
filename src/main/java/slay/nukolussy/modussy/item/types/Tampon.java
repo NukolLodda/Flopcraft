@@ -19,7 +19,7 @@ import net.minecraft.world.level.Level;
 import net.minecraft.world.phys.AABB;
 import net.minecraft.world.phys.Vec3;
 import slay.nukolussy.modussy.entities.flops.AbstractFlops;
-import slay.nukolussy.modussy.entities.projectiles.Tampons;
+import slay.nukolussy.modussy.entities.projectiles.ShotTampon;
 import slay.nukolussy.modussy.util.EntityMethods;
 import slay.nukolussy.modussy.util.ToolMethods;
 import slay.nukolussy.modussy.item.ModItems;
@@ -37,7 +37,7 @@ public class Tampon extends ArrowItem {
     }
     @Override
     public AbstractArrow createArrow(Level pLevel, ItemStack pStack, LivingEntity pShooter) {
-        return new Tampons(ModEntities.TAMPONS.get(), pShooter, pLevel);
+        return new ShotTampon(ModEntities.TAMPONS.get(), pShooter, pLevel);
     }
     @Override
     public InteractionResultHolder<ItemStack> use(Level world, Player entity, InteractionHand hand) {

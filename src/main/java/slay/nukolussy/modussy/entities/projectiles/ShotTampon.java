@@ -16,18 +16,18 @@ import slay.nukolussy.modussy.item.ModItems;
 import slay.nukolussy.modussy.util.EntityMethods;
 import slay.nukolussy.modussy.util.PlayerMethods;
 
-public class Tampons extends AbstractArrow implements ItemSupplier {
-    public Tampons(EntityType<? extends Tampons> pEntity, Level pLevel) {
+public class ShotTampon extends AbstractArrow implements ItemSupplier {
+    public ShotTampon(EntityType<? extends ShotTampon> pEntity, Level pLevel) {
         super(pEntity, pLevel);
     }
-    public Tampons(EntityType<? extends Tampons> pEntity, double pX, double pY, double pZ, Level pLevel) {
+    public ShotTampon(EntityType<? extends ShotTampon> pEntity, double pX, double pY, double pZ, Level pLevel) {
         super(pEntity, pX, pY, pZ, pLevel);
     }
-    public Tampons(EntityType<? extends Tampons> pEntity, LivingEntity pShooter, Level pLevel) {
+    public ShotTampon(EntityType<? extends ShotTampon> pEntity, LivingEntity pShooter, Level pLevel) {
         super(pEntity, pShooter, pLevel);
     }
 
-    public Tampons(PlayMessages.SpawnEntity packet, Level world) {
+    public ShotTampon(PlayMessages.SpawnEntity packet, Level world) {
         super(ModEntities.TAMPONS.get(), world);
     }
 

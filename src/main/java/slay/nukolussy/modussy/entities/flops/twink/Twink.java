@@ -133,6 +133,17 @@ public class Twink extends AbstractFlops implements Npc {
     @Override
     public void baseTick() {
         super.baseTick();
+        Level world = this.level();
+        int dropChance = (int) (Math.random() * 8400) + 1;
+        if (dropChance == 1) {
+            int randX = (int)((Math.random() - 0.5) * 10);
+            int randZ = (int)((Math.random() - 0.5) * 10);
+            if (world.isClientSide()) {
+                ItemEntity entityToSpawn = new ItemEntity(world, this.getX() + randX, this.getY(), this.getZ() + randZ, new ItemStack(ModItems.TWINK_EGG.get()));
+                entityToSpawn.setPickUpDelay(10);
+                world.addFreshEntity(entityToSpawn);
+            }
+        }
     }
 
     @Override
@@ -225,10 +236,7 @@ public class Twink extends AbstractFlops implements Npc {
         BEACH(1, "beach"),
         FLOWER(2, "flower"),
         PINK(3, "pink"),
-        JIAFEIAN(4, "noirette")
-        /*
-        TANNED(5, "tanned")
-         */;
+        JIAFEIAN(4, "noirette");
 
         public static final Codec<Variant> CODEC = StringRepresentable.fromEnum(Variant::values);
         private static final IntFunction<Variant> BY_ID = ByIdMap.continuous(Variant::getId, values(), ByIdMap.OutOfBoundsStrategy.WRAP);

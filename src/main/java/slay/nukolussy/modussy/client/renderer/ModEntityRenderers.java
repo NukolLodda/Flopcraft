@@ -22,10 +22,13 @@ public class ModEntityRenderers {
              new ThrownItemRenderer<>(context, 3.0f, true));
 
         event.registerEntityRenderer(ModEntities.TAMPONS.get(), context ->
-                new ThrownItemRenderer<>(context, 3.0f, false));
+                new ThrownItemRenderer<>(context, 1.5f, false));
 
         event.registerEntityRenderer(ModEntities.BLOODY_TAMPONS.get(), context ->
-                new ThrownItemRenderer<>(context, 3.0f, false));
+                new ThrownItemRenderer<>(context, 1.5f, false));
+
+        event.registerEntityRenderer(ModEntities.TWINK_EGG.get(), context ->
+                new ThrownItemRenderer<>(context, 1.5f, false));
 
     }
 }

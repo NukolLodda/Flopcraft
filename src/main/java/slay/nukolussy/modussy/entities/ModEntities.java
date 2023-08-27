@@ -21,9 +21,10 @@ import slay.nukolussy.modussy.entities.flops.bosses.LovelyPeachesBoss;
 import slay.nukolussy.modussy.entities.flops.traders.Jiafei;
 import slay.nukolussy.modussy.entities.flops.traders.NickiMinaj;
 import slay.nukolussy.modussy.entities.flops.twink.Twink;
-import slay.nukolussy.modussy.entities.projectiles.BloodyTampons;
-import slay.nukolussy.modussy.entities.projectiles.LovelyPeach;
-import slay.nukolussy.modussy.entities.projectiles.Tampons;
+import slay.nukolussy.modussy.entities.projectiles.ShotBloodyTampon;
+import slay.nukolussy.modussy.entities.projectiles.ChargedLovelyPeach;
+import slay.nukolussy.modussy.entities.projectiles.ShotTampon;
+import slay.nukolussy.modussy.entities.projectiles.ThrownTwinkEgg;
 
 @Mod.EventBusSubscriber(bus = Mod.EventBusSubscriber.Bus.MOD)
 public class ModEntities {
@@ -61,17 +62,21 @@ public class ModEntities {
 
 
 
-    public static final RegistryObject<EntityType<LovelyPeach>> LOVELY_PEACH = register("lovely_peach",
-            EntityType.Builder.<LovelyPeach>of(LovelyPeach::new, MobCategory.MISC).sized(0.25f, 0.25f)
-                    .clientTrackingRange(4).updateInterval(10).setCustomClientFactory(LovelyPeach::new));
+    public static final RegistryObject<EntityType<ChargedLovelyPeach>> LOVELY_PEACH = register("lovely_peach",
+            EntityType.Builder.<ChargedLovelyPeach>of(ChargedLovelyPeach::new, MobCategory.MISC).sized(0.25f, 0.25f)
+                    .clientTrackingRange(4).updateInterval(10).setCustomClientFactory(ChargedLovelyPeach::new));
 
-    public static final RegistryObject<EntityType<Tampons>> TAMPONS = register("tampons",
-            EntityType.Builder.<Tampons>of(Tampons::new, MobCategory.MISC).sized(0.25f, 0.25f)
-                    .clientTrackingRange(4).updateInterval(10).setCustomClientFactory(Tampons::new));
+    public static final RegistryObject<EntityType<ShotTampon>> TAMPONS = register("tampons",
+            EntityType.Builder.<ShotTampon>of(ShotTampon::new, MobCategory.MISC).sized(0.25f, 0.25f)
+                    .clientTrackingRange(4).updateInterval(10).setCustomClientFactory(ShotTampon::new));
 
-    public static final RegistryObject<EntityType<BloodyTampons>> BLOODY_TAMPONS = register("bloody_tampons",
-            EntityType.Builder.<BloodyTampons>of(BloodyTampons::new, MobCategory.MISC).sized(0.25f, 0.25f)
-                    .clientTrackingRange(4).updateInterval(10).setCustomClientFactory(BloodyTampons::new));
+    public static final RegistryObject<EntityType<ShotBloodyTampon>> BLOODY_TAMPONS = register("bloody_tampons",
+            EntityType.Builder.<ShotBloodyTampon>of(ShotBloodyTampon::new, MobCategory.MISC).sized(0.25f, 0.25f)
+                    .clientTrackingRange(4).updateInterval(10).setCustomClientFactory(ShotBloodyTampon::new));
+
+    public static final RegistryObject<EntityType<ThrownTwinkEgg>> TWINK_EGG = register("twink_egg",
+            EntityType.Builder.<ThrownTwinkEgg>of(ThrownTwinkEgg::new, MobCategory.MISC).sized(0.25f, 0.25f)
+                    .clientTrackingRange(4).updateInterval(10).setCustomClientFactory(ThrownTwinkEgg::new));
 
 
     private static <T extends Entity> RegistryObject<EntityType<T>> register(String registryname, EntityType.Builder<T> entityTypeBuilder) {
@@ -87,7 +92,7 @@ public class ModEntities {
             LovelyPeachesBoss.init();
             NickiMinaj.init();
             Twink.init();
-            LovelyPeach.init();
+            ChargedLovelyPeach.init();
           });
     }
 

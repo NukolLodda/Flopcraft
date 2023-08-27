@@ -1,7 +1,6 @@
 package slay.nukolussy.modussy.entities.projectiles;
 
 import net.minecraft.nbt.CompoundTag;
-import net.minecraft.sounds.SoundEvent;
 import net.minecraft.world.damagesource.DamageSource;
 import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.effect.MobEffects;
@@ -18,23 +17,22 @@ import net.minecraft.world.phys.HitResult;
 import net.minecraft.world.phys.Vec3;
 import net.minecraftforge.network.PlayMessages;
 import slay.nukolussy.modussy.entities.ModEntities;
-import slay.nukolussy.modussy.entities.flops.AbstractFlops;
 import slay.nukolussy.modussy.entities.flops.figures.LovelyPeaches;
 import slay.nukolussy.modussy.item.ModItems;
 import slay.nukolussy.modussy.util.EntityMethods;
 
 import java.util.List;
 
-public class LovelyPeach extends AbstractHurtingProjectile implements ItemSupplier {
-    public LovelyPeach(EntityType<LovelyPeach> pEntityType, Level pLevel) {
+public class ChargedLovelyPeach extends AbstractHurtingProjectile implements ItemSupplier {
+    public ChargedLovelyPeach(EntityType<ChargedLovelyPeach> pEntityType, Level pLevel) {
         super(pEntityType, pLevel);
     }
 
-    public LovelyPeach(Level pLevel, LivingEntity pShooter, double pOffsetX, double pOffsetY, double pOffsetZ) {
+    public ChargedLovelyPeach(Level pLevel, LivingEntity pShooter, double pOffsetX, double pOffsetY, double pOffsetZ) {
         super(ModEntities.LOVELY_PEACH.get(), pShooter, pOffsetX, pOffsetY, pOffsetZ, pLevel);
     }
 
-    public LovelyPeach(PlayMessages.SpawnEntity packet, Level world) {
+    public ChargedLovelyPeach(PlayMessages.SpawnEntity packet, Level world) {
         super(ModEntities.LOVELY_PEACH.get(), world);
     }
 
