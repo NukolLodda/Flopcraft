@@ -91,14 +91,14 @@ public abstract class AbstractFlops extends PathfinderMob implements FlopEntitie
 
     public void alertFlops(Entity attacker) {
         AABB aabb = AABB.unitCubeFromLowerCorner(this.position()).inflate(10d, 10.0d, 10d);
-        List<AbstractFlops> list = this.level().getEntitiesOfClass(AbstractFlops.class, aabb, e -> true).stream()
+        List<LivingEntity> list = this.level().getEntitiesOfClass(LivingEntity.class, aabb, e -> true).stream()
                 .sorted(Comparator.comparingDouble(_entcnd ->
                         _entcnd.distanceToSqr(this.getX(), this.getY(), this.getZ()))).toList();
-        for (AbstractFlops flops : list) {
-            if (attacker instanceof LivingEntity entity) {
+        for (LivingEntity living : list) {
+            if (attacker instanceof LivingEntity entity && living instanceof FlopEntities flops) {
                 if (entity instanceof Player player) {
                     PlayerMethods.addPlayerYassification(player, -5);
-                    if (player.equals(flops.tamedBy)) flops.setTamed(null);
+                    if (player.equals(flops.getTamedBy())) flops.setTamed(null);
                     else if (player.isCreative()) entity = null;
                 }
                 if (entity != null) flops.setTarget(entity);
@@ -155,7 +155,7 @@ public abstract class AbstractFlops extends PathfinderMob implements FlopEntitie
             DamageSource lastDmg = this.tamedBy.getLastDamageSource();
             if (this.tamedBy != null && lastDmg != null) {
                 Entity ent = lastDmg.getEntity();
-                if (!(ent instanceof AbstractFlops) && ent instanceof LivingEntity entity) {
+                if (!(ent instanceof FlopEntities) && ent instanceof LivingEntity entity) {
                     this.setTarget(entity);
                     this.alertFlops(lastDmg);
                 }
@@ -181,5 +181,10 @@ public abstract class AbstractFlops extends PathfinderMob implements FlopEntitie
         if (GoalUtils.hasGroundPathNavigation(this)) {
             ((GroundPathNavigation) this.getNavigation()).setCanOpenDoors(true);
         }
+    }
+
+    @Override
+    public Player getTamedBy() {
+        return tamedBy;
     }
 }

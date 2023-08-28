@@ -138,7 +138,7 @@ public class ToolMethods {
                         EntityMethods.flopEffects(_ent);
                         if (_ent instanceof AbstractFlopFigures || (_ent instanceof Player surround && PlayerMethods.isFlopIcon(surround))) {
                             PlayerMethods.addPlayerYassification(player, 7);
-                        } else if (_ent instanceof AbstractFlops || _ent instanceof Player) {
+                        } else if (_ent instanceof FlopEntities || _ent instanceof Player) {
                             PlayerMethods.addPlayerYassification(player, 1);
                         }
                     }
@@ -211,7 +211,7 @@ public class ToolMethods {
                         itemDura += 120;
                         if (_ent instanceof AbstractFlopFigures || (_ent instanceof Player surround && PlayerMethods.isFlopIcon(surround))) {
                             PlayerMethods.addPlayerYassification(player, 3 * lvl);
-                        } else if (_ent instanceof AbstractFlops || _ent instanceof Player) {
+                        } else if (EntityMethods.areFlopFigure(_ent)) {
                             PlayerMethods.addPlayerYassification(player, lvl);
                         }
                     }

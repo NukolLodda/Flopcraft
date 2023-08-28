@@ -101,6 +101,10 @@ public class Twink extends AbstractFlops implements Npc {
         this.setTypeVariant(variant.getId());
     }
 
+    public void setRandomVariant() {
+        this.setTypeVariant((int) (Math.random() * 4));
+    }
+
 
     @Override
     protected void registerGoals() {

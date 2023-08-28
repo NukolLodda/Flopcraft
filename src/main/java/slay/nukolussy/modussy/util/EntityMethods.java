@@ -14,8 +14,11 @@ import net.minecraft.world.level.LevelAccessor;
 import net.minecraft.world.phys.AABB;
 import net.minecraft.world.phys.Vec3;
 import slay.nukolussy.modussy.entities.ModEntities;
+import slay.nukolussy.modussy.entities.flops.AbstractFlopFigures;
 import slay.nukolussy.modussy.entities.flops.AbstractFlops;
 import slay.nukolussy.modussy.entities.flops.FlopEntities;
+import slay.nukolussy.modussy.entities.flops.special.GaginaSpider;
+import slay.nukolussy.modussy.entities.flops.special.MeganTheStallion;
 import slay.nukolussy.modussy.entities.flops.traders.Jiafei;
 import slay.nukolussy.modussy.entities.flops.traders.NickiMinaj;
 import slay.nukolussy.modussy.entities.flops.twink.Twink;
@@ -36,6 +39,11 @@ public class EntityMethods {
         return ent instanceof Monster || ((ent instanceof Hoglin || ent instanceof Ghast
                 || ent instanceof Shulker || ent instanceof Phantom)) ||
                 (ent instanceof Player player && PlayerMethods.isDaboyz(player));
+    }
+
+    public static boolean areFlopFigure(Entity living) {
+        return living instanceof AbstractFlopFigures || living instanceof GaginaSpider || living instanceof MeganTheStallion
+                || (living instanceof Player player && PlayerMethods.isFlopIcon(player));
     }
 
     public static void monsterEffects(LivingEntity entity, int lvl, int amp) {
@@ -120,18 +128,19 @@ public class EntityMethods {
             type = ModEntities.NICKI_MINAJ.get();
         }
         AbstractFlops flop = entity.convertTo(type, true);
-        assert flop != null;
-        if (flop instanceof Twink twink)
-            twink.setVariant(Util.getRandom(Twink.Variant.values(), world.getRandom()));
-        if (flop instanceof Jiafei jiafei)
-            jiafei.setVariant(Util.getRandom(Jiafei.Variant.values(), world.getRandom()));
-        if (flop instanceof NickiMinaj minaj)
-            minaj.setVariant(Util.getRandom(NickiMinaj.Variant.values(), world.getRandom()));
-        flop.setCanPickUpLoot(true);
-        flop.setXRot(xRot);
-        flop.setYRot(yRot);
-        flop.setTamed(player);
-        flop.addAdditionalSaveData(flop.getPersistentData());
+        if (flop != null) {
+            if (flop instanceof Twink twink)
+                twink.setVariant(Util.getRandom(Twink.Variant.values(), world.getRandom()));
+            if (flop instanceof Jiafei jiafei)
+                jiafei.setVariant(Util.getRandom(Jiafei.Variant.values(), world.getRandom()));
+            if (flop instanceof NickiMinaj minaj)
+                minaj.setVariant(Util.getRandom(NickiMinaj.Variant.values(), world.getRandom()));
+            flop.setCanPickUpLoot(true);
+            flop.setXRot(xRot);
+            flop.setYRot(yRot);
+            flop.setTamed(player);
+            flop.addAdditionalSaveData(flop.getPersistentData());
+        }
     }
 
     static void witchYassification(Witch entity, LevelAccessor world, Player player) {
@@ -146,17 +155,18 @@ public class EntityMethods {
         }
             // witches can only turn into female flops, and not into twinks, this will be implemented at a different time
         AbstractFlops flop = entity.convertTo(type, true);
-        assert flop != null;
-        if (flop instanceof Jiafei jiafei) {
-            jiafei.setVariant(Util.getRandom(Jiafei.Variant.values(), world.getRandom()));
-        } if (flop instanceof NickiMinaj minaj)
-            minaj.setVariant(Util.getRandom(NickiMinaj.Variant.values(), world.getRandom()));
-        flop.setCanPickUpLoot(true);
-        flop.setXRot(xRot);
-        flop.setYRot(yRot);
-        flop.setTamed(player);
-        flop.getBrain().eraseMemory(MemoryModuleType.ANGRY_AT);
-        flop.addAdditionalSaveData(flop.getPersistentData());
+        if (flop != null) {
+            if (flop instanceof Jiafei jiafei) {
+                jiafei.setVariant(Util.getRandom(Jiafei.Variant.values(), world.getRandom()));
+            } if (flop instanceof NickiMinaj minaj)
+                minaj.setVariant(Util.getRandom(NickiMinaj.Variant.values(), world.getRandom()));
+            flop.setCanPickUpLoot(true);
+            flop.setXRot(xRot);
+            flop.setYRot(yRot);
+            flop.setTamed(player);
+            flop.getBrain().eraseMemory(MemoryModuleType.ANGRY_AT);
+            flop.addAdditionalSaveData(flop.getPersistentData());
+        }
     }
 
     public static void alertFlops(Level world, int x, int y, int z, Player player) {
