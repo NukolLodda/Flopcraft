@@ -12,10 +12,10 @@ I will also be giving out updates about the project there and my status on certa
 ---
 **Download**
 
-<a href=https://github.com/NukolLodda/Modussy/releases/download/v1.20.1-0.1.2/modussy-0.1.2.jar>Download latest version here!</a>
+<a href="https://github.com/NukolLodda/Modussy/releases/download/v1.20.1-0.1.2/modussy-0.1.2.jar">Download latest version here!</a>
 
 Information about the latest version<br>
-Forge API version: 47.0.43 <br>
+Forge API version: <a href="https://maven.minecraftforge.net/net/minecraftforge/forge/1.20.1-47.0.43/forge-1.20.1-47.0.43-installer.jar">47.0.43</a><br>
 Minecraft Java version: 1.20.1 <br>
 Modussy Version: 0.1.2(pre-release) <br>
 
@@ -53,7 +53,7 @@ ___
 After reading Curseforge's terms of service, I believe that some features of Modussy, namely
 CupcakKe's texture, specific items, and mobs violates it, so the download links are in this
 repository instead. Click <a href=https://github.com/NukolLodda/Modussy/releases/tag/v1.20.1-0.1.2>here</a>
-for the most recent version uploaded (Modussy-0.1.2 for Minecraft 1.20.1 Forge API 47.0.43) and
+for the most recent version uploaded (Modussy-0.1.2 for Minecraft 1.20.1 <a href="https://maven.minecraftforge.net/net/minecraftforge/forge/1.20.1-47.0.43/forge-1.20.1-47.0.43-installer.jar">Forge API 47.0.43</a>) and
 <a href="https://github.com/NukolLodda/Modussy/tags">here</a> for every available
 version of Modussy.
 
