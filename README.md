@@ -21,6 +21,10 @@ Modussy Version: 0.1.2(pre-release) <br>
 
 Click <a href="https://github.com/NukolLodda/Modussy/tags">here</a> to find all versions of Modussy
 
+Note: You need the Minecraft Launcher on PC and Forge API installed prior to placing the Modussy jar
+file in the mods folder. The directory I'm talking about is the .minecraft folder which can either be
+accessed in the launcher itself or in %appdata%.
+
 ---
 **Requests**
 
