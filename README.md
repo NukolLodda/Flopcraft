@@ -5,7 +5,9 @@ Modussy (Aka Flopcraft)
 As of right now, Modussy currently has support for Minecraft Java versions 1.19.2 and 1.20.1 on forge API.
 A fabric port will likely get made some day however, it will likely be in a separate repository.
 <br>
-<b>If you'd like to partake in Modussy's Halloween Special, come to <a href="https://forms.gle/dKxK3KGuaq1kGFR49">this link</a></b>
+<br>
+<b>🎃👄🎃 If you'd like to partake in Modussy's Halloween Special, come to <a href="https://forms.gle/dKxK3KGuaq1kGFR49">this link</a> 🎃👄🎃</b>
+<br>
 <br>
 If you have any questions regarding Modussy, you can cvm to <a href="https://discord.gg/NTwqY3rcvU">the Modussy discord server</a>.
 I will also be giving out updates about the project there and my status on certain requests if you are interested of course.
