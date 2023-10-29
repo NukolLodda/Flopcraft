@@ -394,7 +394,7 @@ public class ToolMethods {
         pLevel.playSound(player, pPos, SoundEvents.GENERIC_EXPLODE, SoundSource.BLOCKS);
         ItemStack book = new ItemStack(Items.WRITTEN_BOOK);
         CompoundTag tag = book.getOrCreateTag();
-        int value = new Random().nextInt(7) + 1; // this will increase as more girl yess comments are made
+        int value = new Random().nextInt(8) + 1; // this will increase as more girl yess comments are made
         ListTag pages = new ListTag();
         pages.addTag(0, StringTag.valueOf("\"" + ModUtil. getGirlYessComment(value).getString() + "\""));
         tag.putString("author", ModUtil.getGirlYessCommentAuthor(value).getString());

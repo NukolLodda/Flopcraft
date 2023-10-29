@@ -11,7 +11,7 @@ import java.util.Random;
 public class ModUtil {
     private static final Random RANDOM = new Random();
     public static Component getFullGirlYessComment() {
-        int value = RANDOM.nextInt(7) + 1; // this will increase as more girl yess comments are made
+        int value = RANDOM.nextInt(8) + 1; // this will increase as more girl yess comments are made
         return getFullGirlYessComment(value);
     }
 
@@ -53,6 +53,8 @@ public class ModUtil {
             case 4 -> Component.literal("Wayer");
             case 5 -> Component.literal("FloweyWave");
             case 6 -> Component.literal("Icy Peach");
+            case 7 -> Component.literal("LoliukasUDris");
+            case 8 -> Component.literal("jethroofthemonthl");
             default -> Component.translatable("subtitle.girl_yas_anonymous_author");
         };
     }
@@ -64,6 +66,8 @@ public class ModUtil {
             case 4 -> ChatFormatting.WHITE;
             case 5 -> ChatFormatting.RED;
             case 6 -> ChatFormatting.LIGHT_PURPLE;
+            case 7 -> ChatFormatting.BLUE;
+            case 8 -> ChatFormatting.DARK_RED;
             default -> ChatFormatting.GOLD;
         };
     }
