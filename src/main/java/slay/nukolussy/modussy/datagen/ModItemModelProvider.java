@@ -30,10 +30,12 @@ public class ModItemModelProvider extends ItemModelProvider {
     @Override
     protected void registerModels() {
         simpleItem(ModItems.BARBIE_CRYSTALS);
+        simpleItem(ModItems.BLOOD_CLUMP);
         simpleItem(ModItems.BLOODY_TAMPON);
         simpleItem(ModItems.CUPCAKE);
         simpleItem(ModItems.CVM);
         simpleItem(ModItems.CVMIUM);
+        simpleItem(ModItems.EXTRA_BLOODY_TAMPON);
         simpleItem(ModItems.FLOPTROPICA_TICKET);
         simpleItem(ModItems.JIAFEI_PRODUCT);
         simpleItem(ModItems.JIAFEI_PERFUME);
@@ -98,10 +100,12 @@ public class ModItemModelProvider extends ItemModelProvider {
         simpleItem(ModItems.DISC_DEJE_BULLYING);
         simpleItem(ModItems.DISC_J1);
         simpleItem(ModItems.DISC_J2);
+        simpleItem(ModItems.DISC_J3);
         simpleItem(ModItems.DISC_J4);
         simpleItem(ModItems.DISC_J5);
         simpleItem(ModItems.DISC_JC1);
         simpleItem(ModItems.DISC_JC2);
+        simpleItem(ModItems.DISC_JC3);
         simpleItem(ModItems.DISC_JIAFEI);
         simpleItem(ModItems.DISC_PM1);
         simpleItem(ModItems.DISC_PONMI);
@@ -121,7 +125,10 @@ public class ModItemModelProvider extends ItemModelProvider {
         simpleItem(ModItems.SHENSEIUM);
         simpleItem(ModItems.TAMPON);
         simpleItem(ModItems.TWINK_EGG);
+        simpleItem(ModItems.TWINK_EGG_SHELLS);
         simpleItem(ModItems.WONYOUNG_ESSENCE);
+        simpleItem(ModItems.CVM_FLUID_BUCKET);
+        simpleItem(ModItems.POOSAY_JUICE_BUCKET);
     }
 
     private ItemModelBuilder simpleItem(RegistryObject<Item> item) {

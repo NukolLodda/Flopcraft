@@ -4,18 +4,25 @@ import net.minecraft.ChatFormatting;
 import net.minecraft.client.Minecraft;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.particles.ParticleTypes;
+import net.minecraft.nbt.CompoundTag;
+import net.minecraft.nbt.ListTag;
+import net.minecraft.nbt.StringTag;
 import net.minecraft.network.chat.Component;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.sounds.SoundEvent;
+import net.minecraft.sounds.SoundEvents;
+import net.minecraft.sounds.SoundSource;
 import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.entity.*;
 import net.minecraft.world.entity.animal.Cat;
+import net.minecraft.world.entity.item.ItemEntity;
 import net.minecraft.world.entity.monster.*;
 import net.minecraft.world.entity.npc.AbstractVillager;
 import net.minecraft.world.entity.npc.Villager;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.item.Items;
 import net.minecraft.world.item.enchantment.EnchantmentHelper;
 import net.minecraft.world.item.enchantment.Enchantments;
 import net.minecraft.world.level.Level;
@@ -27,17 +34,16 @@ import net.minecraft.world.phys.Vec3;
 import slay.nukolussy.modussy.block.plants.JiafeiCrop;
 import slay.nukolussy.modussy.entities.ModEntities;
 import slay.nukolussy.modussy.entities.flops.AbstractFlopFigures;
-import slay.nukolussy.modussy.entities.flops.FlopEntities;
+import slay.nukolussy.modussy.entities.flops.IFlopEntity;
 import slay.nukolussy.modussy.entities.flops.figures.CupcakKe;
-import slay.nukolussy.modussy.entities.flops.AbstractFlops;
-import slay.nukolussy.modussy.entities.flops.figures.LovelyPeaches;
 import slay.nukolussy.modussy.entities.flops.traders.Jiafei;
-import slay.nukolussy.modussy.entities.flops.twink.Twink;
-import slay.nukolussy.modussy.entities.flops.twink.TwinkAI;
+import slay.nukolussy.modussy.entities.twink.AbstractTwink;
+import slay.nukolussy.modussy.entities.twink.Twink;
+import slay.nukolussy.modussy.entities.twink.TwinkAI;
 import slay.nukolussy.modussy.item.ModItems;
 import slay.nukolussy.modussy.sound.ModSounds;
 
-import java.util.List;
+import java.util.*;
 
 public class ToolMethods {
     private static long getGameDayTick(ServerLevel level) {
@@ -76,35 +82,35 @@ public class ToolMethods {
         if (entity == null)
             return;
         if (world.isClientSide()) Minecraft.getInstance().gameRenderer.displayItemActivation(itemStack);
-        if (entity instanceof Player _player) {
-            _player.playSound(ModSounds.YUH.get());
+        if (entity instanceof Player player) {
+            player.playSound(ModSounds.YUH.get());
         }
         {
-            final Vec3 _center = new Vec3(x, y, z);
-            List<LivingEntity> _entfound = world.getEntitiesOfClass(LivingEntity.class, new AABB(_center, _center)
+            final Vec3 center = new Vec3(x, y, z);
+            List<LivingEntity> entities = world.getEntitiesOfClass(LivingEntity.class, new AABB(center, center)
                     .inflate(32 / 2d), e -> true).stream().toList();
-            for (LivingEntity _ent : _entfound) {
-                if (_ent instanceof Monster) {
-                    _ent.addEffect(new MobEffectInstance(MobEffects.MOVEMENT_SLOWDOWN, 2400, 10, true, false));
-                    _ent.addEffect(new MobEffectInstance(MobEffects.WITHER, 690, 1));
-                    _ent.addEffect(new MobEffectInstance(MobEffects.WEAKNESS, 2400, 10));
+            for (LivingEntity ent : entities) {
+                if (ent instanceof Monster) {
+                    ent.addEffect(new MobEffectInstance(MobEffects.MOVEMENT_SLOWDOWN, 2400, 10, true, false));
+                    ent.addEffect(new MobEffectInstance(MobEffects.WITHER, 690, 1));
+                    ent.addEffect(new MobEffectInstance(MobEffects.WEAKNESS, 2400, 10));
                 }
-                if (!(_ent instanceof Player)) {
-                    _ent.addEffect(new MobEffectInstance(MobEffects.MOVEMENT_SLOWDOWN, 690, 5, true, false));
-                    _ent.addEffect(new MobEffectInstance(MobEffects.WEAKNESS, 690, 5, true, false));
+                if (!(ent instanceof Player)) {
+                    ent.addEffect(new MobEffectInstance(MobEffects.MOVEMENT_SLOWDOWN, 690, 5, true, false));
+                    ent.addEffect(new MobEffectInstance(MobEffects.WEAKNESS, 690, 5, true, false));
                 }
                 if (entity instanceof Player player) {
-                    if (_ent instanceof AbstractFlopFigures ||
-                            (_ent instanceof Player surround && PlayerMethods.isFlopIcon(surround))) {
+                    if (ent instanceof AbstractFlopFigures ||
+                            (ent instanceof Player surround && PlayerMethods.isFlopIcon(surround))) {
                         PlayerMethods.addPlayerYassification(player, -3);
-                    } else if (EntityMethods.isFlop(_ent)) {
+                    } else if (EntityMethods.isFlop(ent)) {
                         PlayerMethods.addPlayerYassification(player, -1);
                     }
                 }
             }
         }
-        if (world instanceof ServerLevel _level) {
-            _level.sendParticles(ParticleTypes.CLOUD, x, y, z, 100,5,5, 5, 1.0);
+        if (world instanceof ServerLevel level) {
+            level.sendParticles(ParticleTypes.CLOUD, x, y, z, 100,5,5, 5, 1.0);
         }
         itemStack.shrink(1);
     }
@@ -122,38 +128,38 @@ public class ToolMethods {
 
     public static void jiafeiPerfumeSpray(LevelAccessor world, double x, double y, double z, Entity entity, ItemStack itemStack) {
         {
-            final Vec3 _center = new Vec3(x, y, z);
-            List<LivingEntity> _entfound = world.getEntitiesOfClass(LivingEntity.class, new AABB(_center, _center)
+            final Vec3 center = new Vec3(x, y, z);
+            List<LivingEntity> entities = world.getEntitiesOfClass(LivingEntity.class, new AABB(center, center)
                     .inflate(2 / 2d), e -> true).stream().toList();
-            for (LivingEntity _ent : _entfound) {
+            for (LivingEntity ent : entities) {
                 if (entity instanceof Player player) {
-                    yassification(_ent, world, player);
-                    if (EntityMethods.isMonster(_ent)) {
-                        EntityMethods.monsterEffects(_ent);
+                    yassification(ent, world, player);
+                    if (EntityMethods.isMonster(ent)) {
+                        EntityMethods.monsterEffects(ent);
                     }
-                    if (_ent instanceof Cat _cat && Math.random() < 0.16) {
-                        _cat.spawnAtLocation(ModItems.POSEI.get());
+                    if (ent instanceof Cat cat && Math.random() < 0.16) {
+                        cat.spawnAtLocation(ModItems.POSEI.get());
                     }
-                    if (EntityMethods.isFlop(_ent)) {
-                        EntityMethods.flopEffects(_ent);
-                        if (_ent instanceof AbstractFlopFigures || (_ent instanceof Player surround && PlayerMethods.isFlopIcon(surround))) {
+                    if (EntityMethods.isFlop(ent)) {
+                        EntityMethods.flopEffects(ent);
+                        if (ent instanceof AbstractFlopFigures || (ent instanceof Player surround && PlayerMethods.isFlopIcon(surround))) {
                             PlayerMethods.addPlayerYassification(player, 7);
-                        } else if (_ent instanceof FlopEntities || _ent instanceof Player) {
+                        } else if (ent instanceof IFlopEntity || ent instanceof Player) {
                             PlayerMethods.addPlayerYassification(player, 1);
                         }
                     }
                 }
             }
         }
-        if (world instanceof ServerLevel _level) {
-            _level.sendParticles(ParticleTypes.DRIPPING_WATER, x, y, z, 15,1,1, 1, 1.0);
+        if (world instanceof ServerLevel level) {
+            level.sendParticles(ParticleTypes.DRIPPING_WATER, x, y, z, 15,1,1, 1, 1.0);
         }
         (itemStack).setDamageValue(itemStack.getDamageValue() + 1);
 
-        if (entity instanceof Player _ent) {
-            EntityMethods.flopEffects(_ent);
-            _ent.giveExperiencePoints(5);
-            _ent.playSound(ModSounds.SPRAY.get());
+        if (entity instanceof Player player) {
+            EntityMethods.flopEffects(player);
+            player.giveExperiencePoints(5);
+            player.playSound(ModSounds.SPRAY.get());
         }
     }
 
@@ -161,32 +167,32 @@ public class ToolMethods {
         int itemDura = 104;
         int amp = (lvl + 1) / 2;
         if (entity == null) return;
-        if (entity instanceof Player _player) {
-            (_player).playSound(AestheticSounds(lvl + 5));
-            if (!_player.level().isClientSide()) {
-                _player.displayClientMessage(Component.translatable("subtitle.aesthetic_warning").withStyle(ChatFormatting.LIGHT_PURPLE), true);
+        if (entity instanceof Player player) {
+            (player).playSound(AestheticSounds(lvl + 5));
+            if (!player.level().isClientSide()) {
+                player.displayClientMessage(Component.translatable("subtitle.aesthetic_warning").withStyle(ChatFormatting.LIGHT_PURPLE), true);
                 if (lvl > 2) {
-                    _player.getAbilities().mayfly = (true);
-                    _player.onUpdateAbilities();
+                    player.getAbilities().mayfly = (true);
+                    player.onUpdateAbilities();
                 }
             }
-            _player.getCooldowns().addCooldown(itemStack.getItem(), 100 * lvl);
-            EntityMethods.flopEffects(_player, lvl, amp);
+            player.getCooldowns().addCooldown(itemStack.getItem(), 100 * lvl);
+            EntityMethods.flopEffects(player, lvl, amp);
         }
         if (world.isClientSide()) Minecraft.getInstance().gameRenderer.displayItemActivation(randItem(lvl));
         {
-            final Vec3 _center = new Vec3(x, y, z);
-            List<LivingEntity> _entfound = world.getEntitiesOfClass(LivingEntity.class, new AABB(_center, _center)
+            final Vec3 center = new Vec3(x, y, z);
+            List<LivingEntity> entities = world.getEntitiesOfClass(LivingEntity.class, new AABB(center, center)
                     .inflate(28 + (4 * lvl) / 2d), e -> true).stream().toList();
-            for (LivingEntity _ent : _entfound) {
+            for (LivingEntity ent : entities) {
                 if (entity instanceof Player player) {
-                    if (_ent instanceof Spider _spider) {
-                        _spider.setItemSlot(EquipmentSlot.MAINHAND, new ItemStack(ModItems.ARANA_GRANDE.get()));
-                        _spider.setGuaranteedDrop(EquipmentSlot.MAINHAND);
+                    if (ent instanceof Spider spider) {
+                        spider.setItemSlot(EquipmentSlot.MAINHAND, new ItemStack(ModItems.ARANA_GRANDE.get()));
+                        spider.setGuaranteedDrop(EquipmentSlot.MAINHAND);
                         PlayerMethods.addPlayerYassification(player, 1);
-                        _spider.kill();
+                        spider.kill();
                     }
-                    if (_ent instanceof Slime slime) {
+                    if (ent instanceof Slime slime) {
                         ItemStack cvmItem = new ItemStack(ModItems.CVM.get());
                         if (slime instanceof MagmaCube) {
                             cvmItem = new ItemStack(ModItems.CVMIUM.get());
@@ -196,22 +202,22 @@ public class ToolMethods {
                         PlayerMethods.addPlayerYassification(player, 1);
                         slime.kill();
                     }
-                    yassification(_ent, world, player);
-                    if (_ent instanceof Villager || _ent instanceof Witch) itemDura += 10;
-                    if (EntityMethods.isMonster(_ent) && lvl > 1) {
-                        EntityMethods.monsterEffects(_ent, lvl, amp);
+                    yassification(ent, world, player);
+                    if (ent instanceof Villager || ent instanceof Witch) itemDura += 10;
+                    if (EntityMethods.isMonster(ent) && lvl > 1) {
+                        EntityMethods.monsterEffects(ent, lvl, amp);
                         itemDura += 80;
                     }
-                    if (_ent instanceof Cat _cat && Math.random() < 0.16) {
-                        _cat.spawnAtLocation(ModItems.POSEI.get());
+                    if (ent instanceof Cat cat && Math.random() < 0.16) {
+                        cat.spawnAtLocation(ModItems.POSEI.get());
                         PlayerMethods.addPlayerYassification(player, 1);
                     }
-                    if (EntityMethods.isFlop(_ent)) {
-                        EntityMethods.flopEffects(_ent, lvl, amp);
+                    if (EntityMethods.isFlop(ent)) {
+                        EntityMethods.flopEffects(ent, lvl, amp);
                         itemDura += 120;
-                        if (_ent instanceof AbstractFlopFigures || (_ent instanceof Player surround && PlayerMethods.isFlopIcon(surround))) {
+                        if (ent instanceof AbstractFlopFigures || (ent instanceof Player surround && PlayerMethods.isFlopIcon(surround))) {
                             PlayerMethods.addPlayerYassification(player, 3 * lvl);
-                        } else if (EntityMethods.areFlopFigure(_ent)) {
+                        } else if (EntityMethods.areFlopFigure(ent)) {
                             PlayerMethods.addPlayerYassification(player, lvl);
                         }
                     }
@@ -239,9 +245,9 @@ public class ToolMethods {
         if (target instanceof LivingEntity living) {
             if (lvl == 1) living.addEffect(new MobEffectInstance(MobEffects.POISON, 1380 * lvl, 0));
             if (EntityMethods.isMonster(living) && lvl > 1) {
-                if (target instanceof Spider _spider) {
-                    _spider.setItemSlot(EquipmentSlot.MAINHAND, new ItemStack(ModItems.ARANA_GRANDE.get()));
-                    _spider.setGuaranteedDrop(EquipmentSlot.MAINHAND);
+                if (target instanceof Spider spider) {
+                    spider.setItemSlot(EquipmentSlot.MAINHAND, new ItemStack(ModItems.ARANA_GRANDE.get()));
+                    spider.setGuaranteedDrop(EquipmentSlot.MAINHAND);
                     if (source instanceof Player player) PlayerMethods.addPlayerYassification(player, lvl);
                 }
                 living.addEffect(new MobEffectInstance(MobEffects.WITHER, 1380 * lvl, amp));
@@ -252,7 +258,7 @@ public class ToolMethods {
                 itemDura += 120;
             }
 
-            if (living instanceof FlopEntities && source instanceof Player player &&
+            if (living instanceof IFlopEntity && source instanceof Player player &&
                     !(PlayerMethods.isNeutralBossFight(player, living))) {
                 int subNum = living instanceof AbstractFlopFigures ? -7 : -1;
                 PlayerMethods.addPlayerYassification(player, subNum * lvl);
@@ -287,47 +293,60 @@ public class ToolMethods {
         }
     }
 
-    public static void cvmShoot(LevelAccessor world, double x, double y, double z, Entity entity,
-                                ItemStack deeldo, boolean isCvmium, float chargedTime) {
+    // type 0 - cvm, 1 - cvmium, 2 - blood
+    public static void deeldoShoot(LevelAccessor world, double x, double y, double z, Entity entity,
+                                   ItemStack deeldo, int type, float chargedTime) {
         int power = EnchantmentHelper.getItemEnchantmentLevel(Enchantments.POWER_ARROWS, deeldo);
         boolean flame = EnchantmentHelper.getItemEnchantmentLevel(Enchantments.FLAMING_ARROWS, deeldo) > 0;
-        int amp = isCvmium ? 2 : 1;
+        int amp = type + 1;
         {
-            final Vec3 _center = new Vec3(x, y, z);
-            List<LivingEntity> _entfound = world.getEntitiesOfClass(LivingEntity.class, new AABB(_center, _center)
+            final Vec3 center = new Vec3(x, y, z);
+            List<LivingEntity> entities = world.getEntitiesOfClass(LivingEntity.class, new AABB(center, center)
                     .inflate(2 * chargedTime / 2d), e -> true).stream().toList();
-            for (LivingEntity _ent : _entfound) {
+            for (LivingEntity ent : entities) {
                 if (entity instanceof Player player) {
-                    yassification(_ent, world, player);
-                    if (EntityMethods.isMonster(_ent)) {
-                        EntityMethods.monsterEffects(_ent, amp * ((int)chargedTime),amp - 1);
-                        _ent.hurt(_ent.level().damageSources().playerAttack(player), power * 10 * (int)chargedTime);
-                        _ent.setSecondsOnFire(flame ? isCvmium ? 420 : 100 : 0);
+                    yassification(ent, world, player);
+                    if (EntityMethods.isMonster(ent)) {
+                        EntityMethods.monsterEffects(ent, amp * ((int)chargedTime),amp - 1);
+                        ent.hurt(ent.level().damageSources().playerAttack(player), power * 10 * (int)chargedTime);
+                        ent.setSecondsOnFire(flame ? switch (type) {
+                            case 0 -> 100;
+                            case 1 -> 420;
+                            case 2 -> 690;
+                            default -> 0;
+                        } : 0);
                     }
-                    if (_ent instanceof Cat _cat && Math.random() < 0.16) {
-                        _cat.spawnAtLocation(ModItems.POSEI.get());
+                    if (ent instanceof Cat cat && Math.random() < 0.16) {
+                        cat.spawnAtLocation(ModItems.POSEI.get());
                         PlayerMethods.addPlayerYassification(player, 1);
                     }
-                    if (EntityMethods.isFlop(_ent)) {
-                        EntityMethods.flopEffects(_ent, amp,amp - 1);
+                    if (EntityMethods.isFlop(ent) || (ent instanceof AbstractTwink && type < 2)) {
+                        EntityMethods.flopEffects(ent, amp,amp - 1);
                         if (Math.random() < 0.08333) {
-                            if (_ent instanceof Twink && PlayerMethods.notNewgen(player)) {
-                                _ent.spawnAtLocation(TwinkAI.randItem());
+                            if (ent instanceof Twink && !PlayerMethods.isNewgen(player)) {
+                                ent.spawnAtLocation(TwinkAI.randItem());
                                 PlayerMethods.addPlayerYassification(player, 1);
                             }
-                            if (_ent instanceof AbstractFlopFigures || (_ent instanceof Player surround && PlayerMethods.isFlopIcon(surround))) {
-                                if (_ent instanceof CupcakKe _cupcakke) {
-                                    CupcakKe.cupcakkeDuplication(ModItems.CVM.get(), _cupcakke);
+                            if (ent instanceof AbstractFlopFigures || (ent instanceof Player surround && PlayerMethods.isFlopIcon(surround))) {
+                                if (ent instanceof CupcakKe cupcakke) {
+                                    CupcakKe.cupcakkeDuplication(ModItems.CVM.get(), cupcakke);
                                 }
                                 PlayerMethods.addPlayerYassification(player, 7 * ((int)chargedTime / 2));
                             }
                         }
+                    } else if (type > 1) {
+                        EntityMethods.monsterEffects(ent);
                     }
                 }
             }
         }
-        if (world instanceof ServerLevel _level) {
-            _level.sendParticles(isCvmium ? ParticleTypes.LAVA :ParticleTypes.END_ROD,
+        if (world instanceof ServerLevel level) {
+            level.sendParticles(switch (type) {
+                        case 0 -> ParticleTypes.END_ROD;
+                        case 1 -> ParticleTypes.LAVA;
+                        case 2 -> ParticleTypes.DAMAGE_INDICATOR;
+                        default -> ParticleTypes.POOF;
+                    },
                     x, y, z, ((int) chargedTime * 15),1,1, 1, (chargedTime * 0.16));
         }
     }
@@ -341,5 +360,49 @@ public class ToolMethods {
             EntityMethods.witchYassification(witch, world, player);
             PlayerMethods.addPlayerYassification(player, 71);
         }
+    }
+    public static void makeGirlYessBook(BlockPos pPos, Level pLevel) {
+        int x = pPos.getX();
+        int y = pPos.getY();
+        int z = pPos.getZ();
+        Player player = null;
+        {
+            final Vec3 center = new Vec3(x, y, z);
+            List<Entity> entities = pLevel.getEntitiesOfClass(Entity.class, new AABB(center, center).inflate(8 / 2d), e -> true).stream()
+                    .sorted(Comparator.comparingDouble(entity -> entity.distanceToSqr(center))).toList();
+            for (Entity ent : entities) {
+                if (ent instanceof Player otherPlayer) {
+                    player = otherPlayer;
+                    break;
+                }
+            }
+            for (Entity entity : entities) {
+                if (entity instanceof LivingEntity living) {
+                    ToolMethods.yassification(living, pLevel, player);
+                    if (EntityMethods.isMonster(living)) {
+                        EntityMethods.monsterEffects(living);
+                    }
+                    if (EntityMethods.isFlop(living)) {
+                        EntityMethods.flopEffects(living);
+                    }
+                }
+            }
+        }
+
+        pLevel.destroyBlock(pPos, false);
+        pLevel.playSound(player, pPos, ModSounds.SQUIRT.get(), SoundSource.BLOCKS);
+        pLevel.playSound(player, pPos, SoundEvents.GENERIC_EXPLODE, SoundSource.BLOCKS);
+        ItemStack book = new ItemStack(Items.WRITTEN_BOOK);
+        CompoundTag tag = book.getOrCreateTag();
+        int value = new Random().nextInt(7) + 1; // this will increase as more girl yess comments are made
+        ListTag pages = new ListTag();
+        pages.addTag(0, StringTag.valueOf("\"" + ModUtil. getGirlYessComment(value).getString() + "\""));
+        tag.putString("author", ModUtil.getGirlYessCommentAuthor(value).getString());
+        tag.putString("title", Component.translatable("subtitle.girl_yas_book_title")
+                .append(" #" + value).getString());
+        tag.put("pages", pages);
+        book.setTag(tag);
+        pLevel.explode(null, pPos.getX(), pPos.getY(), pPos.getZ(), 2, Level.ExplosionInteraction.BLOCK);
+        pLevel.addFreshEntity(new ItemEntity(pLevel, x, y, z, book));
     }
 }

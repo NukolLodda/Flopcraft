@@ -1,0 +1,19 @@
+{
+  "variants": {
+    "facing=east": {
+      "model":  "modussy:block/girl_yess_pumpkin",
+      "y": 90
+    },
+    "facing=north": {
+      "model":  "modussy:block/girl_yess_pumpkin"
+    },
+    "facing=south": {
+      "model":  "modussy:block/girl_yess_pumpkin",
+      "y": 180
+    },
+    "facing=west": {
+      "model":  "modussy:block/girl_yess_pumpkin",
+      "y": 270
+    }
+  }
+}

@@ -6,7 +6,6 @@ import net.minecraft.network.chat.MutableComponent;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.player.Player;
-import slay.nukolussy.modussy.entities.flops.FlopEntities;
 import slay.nukolussy.modussy.entities.flops.figures.LovelyPeaches;
 import slay.nukolussy.modussy.network.yassification.PlayerYassification;
 import slay.nukolussy.modussy.network.yassification.PlayerYassificationProvider;
@@ -25,10 +24,6 @@ public class PlayerMethods {
             isDaboyz.set(yassification.isDaboyz());
         });
         return isDaboyz.get();
-    }
-
-    public static boolean notNewgen(Player player) {
-        return !isNewgen(player);
     }
 
     public static boolean isNewgen(Player player) {

@@ -7,10 +7,8 @@ import net.minecraft.world.item.RecordItem;
 
 
 public class SoundItems extends RecordItem {
-    private final String fragment;
-    public SoundItems(SoundEvent loc, int ticks, String fragment) {
+    public SoundItems(SoundEvent loc, int ticks) {
         super(0, () -> loc,
                 new Item.Properties().stacksTo(1).rarity(Rarity.RARE), ticks);
-        this.fragment = fragment;
     }
 }

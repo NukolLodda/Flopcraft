@@ -422,6 +422,15 @@
       }
     ]
   },
+  "music_disc_j3": {
+    "subtitle": "subtitles.music",
+    "sounds": [
+      {
+        "name": "modussy:music_disc_j3",
+        "stream": true
+      }
+    ]
+  },
   "music_disc_j4": {
     "subtitle": "subtitles.music",
     "sounds": [
@@ -454,6 +463,15 @@
     "sounds": [
       {
         "name": "modussy:music_disc_jc2",
+        "stream": true
+      }
+    ]
+  },
+  "music_disc_jc3": {
+    "subtitle": "subtitles.music",
+    "sounds": [
+      {
+        "name": "modussy:music_disc_jc3",
         "stream": true
       }
     ]
@@ -985,6 +1003,24 @@
     "sounds": [
       {
         "name": "modussy:nicki_minaj_trade",
+        "stream": true
+      }
+    ]
+  },
+  "rosetoy_1": {
+    "subtitle": "subtitles.rosetoy",
+    "sounds": [
+      {
+        "name": "modussy:rosetoy_1",
+        "stream": true
+      }
+    ]
+  },
+  "rosetoy_2": {
+    "subtitle": "subtitles.rosetoy",
+    "sounds": [
+      {
+        "name": "modussy:rosetoy_2",
         "stream": true
       }
     ]

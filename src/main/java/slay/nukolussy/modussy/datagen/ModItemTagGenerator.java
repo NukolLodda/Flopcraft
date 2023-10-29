@@ -4,9 +4,11 @@ import net.minecraft.core.HolderLookup;
 import net.minecraft.data.PackOutput;
 import net.minecraft.data.tags.ItemTagsProvider;
 import net.minecraft.tags.ItemTags;
+import net.minecraft.world.item.Item;
 import net.minecraft.world.level.block.Block;
 import net.minecraftforge.common.data.ExistingFileHelper;
 import slay.nukolussy.modussy.Modussy;
+import slay.nukolussy.modussy.block.ModBlocks;
 import slay.nukolussy.modussy.datagen.tags.ModTags;
 import slay.nukolussy.modussy.item.ModItems;
 
@@ -30,7 +32,8 @@ public class ModItemTagGenerator extends ItemTagsProvider {
 
         this.tag(ItemTags.ARROWS).add(
                 ModItems.TAMPON.get(),
-                ModItems.BLOODY_TAMPON.get()
+                ModItems.BLOODY_TAMPON.get(),
+                ModItems.EXTRA_BLOODY_TAMPON.get()
         );
 
         this.tag(ModTags.Items.ULTIMATE_YASSIFER).add(
@@ -92,10 +95,12 @@ public class ModItemTagGenerator extends ItemTagsProvider {
                 ModItems.DISC_DEJE_BULLYING.get(),
                 ModItems.DISC_J1.get(),
                 ModItems.DISC_J2.get(),
+                ModItems.DISC_J3.get(),
                 ModItems.DISC_J4.get(),
                 ModItems.DISC_J5.get(),
                 ModItems.DISC_JC1.get(),
                 ModItems.DISC_JC2.get(),
+                ModItems.DISC_JC3.get(),
                 ModItems.DISC_JIAFEI.get(),
                 ModItems.DISC_PM1.get(),
                 ModItems.DISC_PONMI.get(),

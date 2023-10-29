@@ -182,7 +182,7 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
                 .pattern("232")
                 .pattern("010")
                 .define('0', ModTags.Items.BARBIE_CRYSTALS).define('1', ModItems.CVM.get())
-                .define('2', ModItems.BLOODY_TAMPON.get()).define('3', Items.OBSIDIAN)
+                    .define('2', ModItems.BLOOD_CLUMP.get()).define('3', Items.OBSIDIAN)
                 .unlockedBy(getHasName(ModItems.SLAGINIUM.get()), has(ModItems.SLAGINIUM.get()))
                 .group("hardened_period_cvm").save(pWriter, Modussy.MODID + ":hardened_period_cvm_from_crafting");
 
@@ -191,7 +191,7 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
                 .pattern("131")
                 .pattern("020")
                 .define('0', ModTags.Items.BARBIE_CRYSTALS).define('1', ModItems.CVM.get())
-                .define('2', ModItems.BLOODY_TAMPON.get()).define('3', Items.OBSIDIAN)
+                .define('2', ModItems.BLOOD_CLUMP.get()).define('3', Items.OBSIDIAN)
                 .unlockedBy(getHasName(ModItems.SLAGINIUM.get()), has(ModItems.SLAGINIUM.get()))
                 .group("hardened_period_cvm").save(pWriter, Modussy.MODID + ":hardened_period_cvm_from_crafting_sideways");
 
@@ -212,6 +212,15 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
                 .unlockedBy(getHasName(ModItems.BARBIE_CRYSTALS.get()), has(ModItems.BARBIE_CRYSTALS.get()))
                 .group("barbie_lantern").save(pWriter, Modussy.MODID + ":barbie_lantern_from_crafting");
 
+        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModBlocks.GIRL_YESS_PUMPKIN.get())
+                .pattern("202")
+                .pattern("010")
+                .pattern("020")
+                .define('0', ModItems.LOVELY_PEACH.get()).define('1', ModItems.SCARUSSY.get())
+                .define('2', ModTags.Items.FLOPIUM)
+                .unlockedBy(getHasName(ModItems.LOVELY_PEACH.get()), has(ModItems.LOVELY_PEACH.get()))
+                .group("girl_yas_pumpkin").save(pWriter, Modussy.MODID + ":girl_yas_pumpkin_from_crafting");
+
         jiafeiSmithingRecipe(pWriter, ModItems.JIAFEI_TRIM_TEMPLATE.get(), Ingredient.of(ModItems.JIAFEI_SEED.get()));
         jiafeiSmithingRecipe(pWriter, ModItems.JIAFEI_UPGRADE_TEMPLATE.get(), Ingredient.of(ModItems.JIAFEI_PERFUME.get()));
 
@@ -227,6 +236,49 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
                 .unlockedBy(getHasName(ModItems.HAIRUSSY.get()), has(ModItems.HAIRUSSY.get()))
                 .group("scarussy")
                 .save(pWriter, Modussy.MODID + ":scarussy_from_crafting");
+
+        ShapelessRecipeBuilder.shapeless(RecipeCategory.MISC, ModItems.SLAGINIUM.get())
+                .requires(ModItems.CUPCAKE.get()).requires(Items.GOLD_INGOT, 3)
+                .requires(ModItems.CVM.get(), 3)
+                .unlockedBy(getHasName(ModItems.CUPCAKE.get()), has(ModItems.CUPCAKE.get()))
+                .group("slaginium")
+                .save(pWriter, Modussy.MODID + ":slaginium_from_crafting");
+
+        ShapelessRecipeBuilder.shapeless(RecipeCategory.MISC, ModItems.INFUSED_SLAGINIUM.get())
+                .requires(ModItems.SLAGINIUM.get()).requires(ModItems.SHENSEIUM.get())
+                .unlockedBy(getHasName(ModItems.SHENSEIUM.get()), has(ModItems.SHENSEIUM.get()))
+                .group("infused_slaginium")
+                .save(pWriter, Modussy.MODID + ":infused_slaginium_from_crafting");
+
+        ShapelessRecipeBuilder.shapeless(RecipeCategory.MISC, ModItems.CVM.get(), 3)
+                .requires(Items.BLAZE_ROD).requires(Items.MILK_BUCKET)
+                .unlockedBy(getHasName(Items.BLAZE_ROD), has(Items.BLAZE_ROD))
+                .group("cvm")
+                .save(pWriter, Modussy.MODID + ":cvm_from_crafting");
+
+        ShapelessRecipeBuilder.shapeless(RecipeCategory.MISC, ModItems.CVM_FLUID_BUCKET.get())
+                .requires(Items.BUCKET).requires(ModItems.CVM.get(), 8)
+                .unlockedBy(getHasName(ModItems.CVM.get()), has(ModItems.CVM.get()))
+                .group("cvm_fluid")
+                .save(pWriter, Modussy.MODID + ":cvm_fluid_bucket_from_crafting");
+
+        ShapelessRecipeBuilder.shapeless(RecipeCategory.MISC, ModItems.POOSAY_JUICE_BUCKET.get())
+                .requires(ModItems.POSEI.get(), 4).requires(Items.BUCKET)
+                .unlockedBy(getHasName(ModItems.POSEI.get()), has(ModItems.POSEI.get()))
+                .group("poosay_juice")
+                .save(pWriter, Modussy.MODID + ":poosay_juice_bucket_from_crafting");
+
+        ShapelessRecipeBuilder.shapeless(RecipeCategory.MISC, ModItems.CVM.get(), 8)
+                .requires(ModItems.CVM_FLUID_BUCKET.get())
+                .unlockedBy(getHasName(ModItems.CVM.get()), has(ModItems.CVM.get()))
+                .group("cvm_fluid")
+                .save(pWriter, Modussy.MODID + ":cvm_from_fluid_crafting");
+
+        ShapelessRecipeBuilder.shapeless(RecipeCategory.MISC, ModItems.POSEI.get(), 4)
+                .requires(ModItems.POOSAY_JUICE_BUCKET.get())
+                .unlockedBy(getHasName(ModItems.POOSAY_JUICE_BUCKET.get()), has(ModItems.POOSAY_JUICE_BUCKET.get()))
+                .group("poosay_juice")
+                .save(pWriter, Modussy.MODID + ":posei_from_fluid_crafting");
 
         trimSmithing(pWriter, ModItems.JIAFEI_TRIM_TEMPLATE.get(),
                 new ResourceLocation(Modussy.MODID, getItemName(ModItems.JIAFEI_TRIM_TEMPLATE.get()) + "_smithing_trim"));

@@ -22,13 +22,14 @@ import net.minecraft.world.level.gameevent.GameEvent;
 import net.minecraftforge.network.PlayMessages;
 import slay.nukolussy.modussy.entities.ModEntities;
 import slay.nukolussy.modussy.entities.flops.AbstractFlopFigures;
-import slay.nukolussy.modussy.entities.flops.Merflops;
+import slay.nukolussy.modussy.entities.flops.IMerflop;
 import slay.nukolussy.modussy.item.ModItems;
 import slay.nukolussy.modussy.sound.ModSounds;
 
 import java.util.Collection;
+import java.util.Random;
 
-public class CupcakKe extends AbstractFlopFigures implements Merflops {
+public class CupcakKe extends AbstractFlopFigures implements IMerflop {
     public ItemLike item = ModItems.CVMTITPLASM.get();
 
     public CupcakKe(EntityType<CupcakKe> type, Level world) {
@@ -84,12 +85,17 @@ public class CupcakKe extends AbstractFlopFigures implements Merflops {
     }
 
     @Override
+    public void tick() {
+        super.tick();
+        this.baseTick();
+    }
+
+    @Override
     public void baseTick() {
         super.baseTick();
         Level world = this.level();
-        int dropChance = (int) (Math.random() * 8400) + 1;
-        if (dropChance == 1) {
-            if (world.isClientSide()) {
+        if (this.random.nextInt(4200) == 0) {
+            if (!world.isClientSide()) {
                 ItemEntity entityToSpawn = new ItemEntity(world, this.getX(), this.getY(), this.getZ(), new ItemStack(ModItems.CUPCAKE.get()));
                 entityToSpawn.setPickUpDelay(10);
                 world.addFreshEntity(entityToSpawn);
@@ -126,7 +132,7 @@ public class CupcakKe extends AbstractFlopFigures implements Merflops {
     }
 
     public static Item cupcakkeDrops() {
-        int rand = (int) (Math.random() * 69);
+        int rand = new Random().nextInt(69);
         Item cupcakkeDrops;
         if (rand < 1) {
             int discRand = (int) (Math.random() * 26);
@@ -172,6 +178,7 @@ public class CupcakKe extends AbstractFlopFigures implements Merflops {
 
     @Override
     public boolean hurt(DamageSource source, float amount) {
+        onHurt(source);
         if (source.is(DamageTypeTags.IS_DROWNING)) {
             return false;
         }
@@ -195,6 +202,7 @@ public class CupcakKe extends AbstractFlopFigures implements Merflops {
 
             world.addParticle(ParticleTypes.DRAGON_BREATH, x0, y0, z0, dx, dy, dz);
         }
+        this.baseTick();
     }
 
     public static void init() {

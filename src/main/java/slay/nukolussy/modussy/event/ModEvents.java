@@ -1,13 +1,13 @@
 package slay.nukolussy.modussy.event;
 
+import net.minecraft.ChatFormatting;
+import net.minecraft.network.chat.Component;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.entity.Entity;
-import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.Mob;
 import net.minecraft.world.entity.ai.goal.target.NearestAttackableTargetGoal;
-import net.minecraft.world.entity.animal.IronGolem;
 import net.minecraft.world.entity.monster.*;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.phys.AABB;
@@ -27,8 +27,12 @@ import slay.nukolussy.modussy.network.period.PlayerMenstruation;
 import slay.nukolussy.modussy.network.period.PlayerMenstruationProvider;
 import slay.nukolussy.modussy.network.yassification.PlayerYassification;
 import slay.nukolussy.modussy.network.yassification.PlayerYassificationProvider;
+import slay.nukolussy.modussy.util.ModUtil;
 
+import java.time.LocalDate;
+import java.time.Month;
 import java.util.List;
+import java.util.Random;
 
 @Mod.EventBusSubscriber(modid = Modussy.MODID)
 public class ModEvents {
@@ -110,34 +114,27 @@ public class ModEvents {
     }
 
     @SubscribeEvent
-    public static void onFlopemiesJoinWorld(EntityJoinLevelEvent event) {
-        if (event.getEntity() != null && event.getEntity() instanceof Mob entity) {
+    public static void onWorldLoad(EntityJoinLevelEvent event) {
+        if (event.getEntity() instanceof Mob entity) {
             if (entity instanceof Zombie zombie) {
                 zombie.targetSelector.addGoal(6, new NearestAttackableTargetGoal<>(zombie, AbstractFlops.class, true));
             }
-            if (entity instanceof Drowned drowned) {
-                drowned.targetSelector.addGoal(6, new NearestAttackableTargetGoal<>(drowned, AbstractFlops.class, true));
-            }
-            if (entity instanceof Husk husk) {
-                husk.targetSelector.addGoal(6, new NearestAttackableTargetGoal<>(husk, AbstractFlops.class, true));
-            }
-            if (entity instanceof Skeleton skeleton) {
+            if (entity instanceof AbstractSkeleton skeleton) {
                 skeleton.targetSelector.addGoal(6, new NearestAttackableTargetGoal<>(skeleton, AbstractFlops.class, true));
             }
-            if (entity instanceof Stray stray) {
-                stray.targetSelector.addGoal(6, new NearestAttackableTargetGoal<>(stray, AbstractFlops.class, true));
-            }
-            if (entity instanceof WitherSkeleton witherSkeleton) {
-                witherSkeleton.targetSelector.addGoal(6, new NearestAttackableTargetGoal<>(witherSkeleton, AbstractFlops.class, true));
-            }
-            if (entity instanceof Pillager pillager) {
+            if (entity instanceof AbstractIllager pillager) {
                 pillager.targetSelector.addGoal(6, new NearestAttackableTargetGoal<>(pillager, AbstractFlops.class, true));
             }
-            if (entity instanceof Evoker evoker) {
-                evoker.targetSelector.addGoal(6, new NearestAttackableTargetGoal<>(evoker, AbstractFlops.class, true));
-            }
-            if (entity instanceof Vindicator vindicator) {
-                vindicator.targetSelector.addGoal(6, new NearestAttackableTargetGoal<>(vindicator, AbstractFlops.class, true));
+        }
+        if (event.getEntity() instanceof Player player) {
+            Month month = LocalDate.now().getMonth();
+            int day = LocalDate.now().getDayOfMonth();
+            if (month.equals(Month.OCTOBER) && day == 31) {
+                Component girlYess = ModUtil.getFullGirlYessComment();
+                player.sendSystemMessage(girlYess);
+            } else if (month.equals(Month.DECEMBER) && day >= 24 && day < 26) {
+                player.sendSystemMessage(Component.translatable("subtitle.happy_clitmas")
+                        .withStyle(ChatFormatting.RED));
             }
         }
     }

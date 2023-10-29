@@ -1,0 +1,37 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "group": "cvm_fluid",
+  "ingredients": [
+    {
+      "item": "minecraft:bucket"
+    },
+    {
+      "item": "modussy:cvm"
+    },
+    {
+      "item": "modussy:cvm"
+    },
+    {
+      "item": "modussy:cvm"
+    },
+    {
+      "item": "modussy:cvm"
+    },
+    {
+      "item": "modussy:cvm"
+    },
+    {
+      "item": "modussy:cvm"
+    },
+    {
+      "item": "modussy:cvm"
+    },
+    {
+      "item": "modussy:cvm"
+    }
+  ],
+  "result": {
+    "item": "modussy:cvm_fluid_bucket"
+  }
+}

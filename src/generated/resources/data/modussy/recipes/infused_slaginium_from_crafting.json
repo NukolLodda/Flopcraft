@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "group": "infused_slaginium",
+  "ingredients": [
+    {
+      "item": "modussy:slaginium"
+    },
+    {
+      "item": "modussy:shenseium"
+    }
+  ],
+  "result": {
+    "item": "modussy:infused_slaginium"
+  }
+}

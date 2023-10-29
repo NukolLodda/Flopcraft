@@ -25,6 +25,7 @@ public class ModCreativeTabs {
                     .withTabsBefore(CreativeModeTabs.SPAWN_EGGS)
                     .displayItems(((pParameters, pOutput) -> {
                         pOutput.accept(ModBlocks.CVM_INFUSION_ALTER.get());
+                        pOutput.accept(ModBlocks.GIRL_YESS_PUMPKIN.get());
                         pOutput.accept(ModBlocks.YASSIFICATION_DETECTOR.get());
                         pOutput.accept(ModBlocks.AESTHETIC_STORE_BLOCK.get());
                         pOutput.accept(ModBlocks.FLOPBUCKS_BLOCK.get());
@@ -138,10 +139,12 @@ public class ModCreativeTabs {
                         pOutput.accept(ModItems.DISC_DEJE_BULLYING.get());
                         pOutput.accept(ModItems.DISC_J1.get());
                         pOutput.accept(ModItems.DISC_J2.get());
+                        pOutput.accept(ModItems.DISC_J3.get());
                         pOutput.accept(ModItems.DISC_J4.get());
                         pOutput.accept(ModItems.DISC_J5.get());
                         pOutput.accept(ModItems.DISC_JC1.get());
                         pOutput.accept(ModItems.DISC_JC2.get());
+                        pOutput.accept(ModItems.DISC_JC3.get());
                         pOutput.accept(ModItems.DISC_JIAFEI.get());
                         pOutput.accept(ModItems.DISC_PM1.get());
                         pOutput.accept(ModItems.DISC_PONMI.get());
@@ -155,6 +158,7 @@ public class ModCreativeTabs {
                     .withTabsBefore(CreativeModeTabs.SPAWN_EGGS)
                     .displayItems(((pParameters, pOutput) -> {
                         pOutput.accept(ModItems.BARBIE_CRYSTALS.get());
+                        pOutput.accept(ModItems.BLOOD_CLUMP.get());
                         pOutput.accept(ModItems.CVMTITPLASM.get());
                         pOutput.accept(ModItems.FLOPIUM.get());
                         pOutput.accept(ModItems.GAGASTONE.get());
@@ -169,8 +173,10 @@ public class ModCreativeTabs {
                         pOutput.accept(ModItems.POSEI.get());
                         pOutput.accept(ModItems.SHENSEIUM.get());
                         pOutput.accept(ModItems.BLOODY_TAMPON.get());
+                        pOutput.accept(ModItems.EXTRA_BLOODY_TAMPON.get());
                         pOutput.accept(ModItems.TAMPON.get());
                         pOutput.accept(ModItems.TWINK_EGG.get());
+                        pOutput.accept(ModItems.TWINK_EGG_SHELLS.get());
                         pOutput.accept(ModItems.WONYOUNG_ESSENCE.get());
                     })).build());
 
@@ -178,14 +184,4 @@ public class ModCreativeTabs {
     public static void register(IEventBus eventBus) {
         CREATIVE_MODE_TABS.register(eventBus);
     }
-
-
-    /*
-    papi-blocks - uses shenseium ore
-    cvmsumables - uses cupcakkes
-    slaytools - uses arana grande
-    yass discs - uses see tinh
-    yassifying ingredients - uses cvmtitplasm
-     */
-
 }

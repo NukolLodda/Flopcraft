@@ -5,9 +5,9 @@ import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.animal.horse.AbstractHorse;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.level.Level;
-import slay.nukolussy.modussy.entities.flops.FlopEntities;
+import slay.nukolussy.modussy.entities.flops.IFlopEntity;
 
-public class MeganTheStallion extends AbstractHorse implements FlopEntities {
+public class MeganTheStallion extends AbstractHorse implements IFlopEntity {
     private Player tamedBy;
 
     public MeganTheStallion(EntityType<MeganTheStallion> type, Level world) {

@@ -135,6 +135,11 @@ public class NickiMinaj extends AbstractFlopTraders {
         return ModSounds.NICKI_MINAJ_DEATH.get();
     }
 
+    @Override
+    protected SoundEvent getTradelessSound() {
+        return ModSounds.NICKI_MINAJ_TRADE.get();
+    }
+
     @Nullable
     @Override
     protected SoundEvent getAmbientSound() {
@@ -146,26 +151,9 @@ public class NickiMinaj extends AbstractFlopTraders {
         };
     }
 
-    public InteractionResult mobInteract(Player player, InteractionHand hand) {
-        ItemStack itemStack = player.getItemInHand(hand);
-        InteractionResult result = InteractionResult.sidedSuccess(this.level().isClientSide);
-
-        super.mobInteract(player, hand);
-        Item item = itemStack.getItem();
-
-        if (!this.level().isClientSide) {
-            if (!item.equals(ModItems.NICKI_MINAJ_SPAWN_EGG.get()) && this.isAlive() && !this.isTrading() && !player.isSecondaryUseActive()) {
-                if (!this.getOffers().isEmpty()) {
-                    if (!(this.isTrading() || this.isInsidePortal || this.isUnderWater())) {
-                        this.playSound(ModSounds.NICKI_MINAJ_TRADE.get());
-                        player.stopUsingItem();
-                        this.startTrading(player);
-                    }
-                }
-                return InteractionResult.sidedSuccess(this.level().isClientSide);
-            }
-        }
-        return result;
+    @Override
+    protected boolean itemIsSpawnEgg(Item pItem) {
+        return pItem.equals(ModItems.NICKI_MINAJ_SPAWN_EGG.get());
     }
 
     @Override
@@ -191,13 +179,6 @@ public class NickiMinaj extends AbstractFlopTraders {
         this.offers = new MerchantOffers(tag.getCompound("Offers"));
 
         this.readInventoryFromTag(tag);
-    }
-
-    private void startTrading(Player pPlayer) {
-        this.setTradingPlayer(pPlayer);
-        this.openTradingScreen(pPlayer, this.getDisplayName(), 1);
-        this.getBrain().eraseMemory(MemoryModuleType.WALK_TARGET);
-        this.getNavigation().stop();
     }
 
     public void setVariant(NickiMinaj.Variant variant) {
@@ -237,7 +218,7 @@ public class NickiMinaj extends AbstractFlopTraders {
         return MobType.UNDEFINED;
     }
 
-    public enum Variant implements FlopTraderVariants {
+    public enum Variant implements IFlopTraderVariant {
         VARIANT(0, "variant");
 
         private final int id;

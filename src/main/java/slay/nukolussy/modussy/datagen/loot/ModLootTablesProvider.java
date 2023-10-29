@@ -34,6 +34,7 @@ public class ModLootTablesProvider extends BlockLootSubProvider {
         this.dropSelf(ModBlocks.SHENSEIUM_BLOCK.get());
         this.dropSelf(ModBlocks.SLAGINIUM_BLOCK.get());
         this.dropSelf(ModBlocks.CVM_INFUSION_ALTER.get());
+        this.dropSelf(ModBlocks.GIRL_YESS_PUMPKIN.get());
 
         this.add(ModBlocks.SHENSEIUM_ORE.get(), block -> createOreDrops(ModBlocks.SHENSEIUM_ORE.get(), ModItems.SHENSEIUM.get(), 1, 3));
 

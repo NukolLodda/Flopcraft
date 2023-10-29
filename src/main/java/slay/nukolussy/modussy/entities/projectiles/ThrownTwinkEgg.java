@@ -5,9 +5,11 @@ import net.minecraft.sounds.SoundEvent;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.LivingEntity;
+import net.minecraft.world.entity.item.ItemEntity;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.entity.projectile.AbstractArrow;
 import net.minecraft.world.entity.projectile.ItemSupplier;
+import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.state.BlockState;
@@ -15,9 +17,10 @@ import net.minecraft.world.level.gameevent.GameEvent;
 import net.minecraft.world.phys.BlockHitResult;
 import net.minecraft.world.phys.EntityHitResult;
 import net.minecraft.world.phys.HitResult;
+import net.minecraft.world.phys.Vec3;
 import net.minecraftforge.network.PlayMessages;
 import slay.nukolussy.modussy.entities.ModEntities;
-import slay.nukolussy.modussy.entities.flops.twink.Twink;
+import slay.nukolussy.modussy.entities.twink.Twink;
 import slay.nukolussy.modussy.item.ModItems;
 import slay.nukolussy.modussy.util.EntityMethods;
 import slay.nukolussy.modussy.util.PlayerMethods;
@@ -69,7 +72,9 @@ public class ThrownTwinkEgg extends AbstractArrow implements ItemSupplier {
                     }
                 }
             }
-
+            if (this.random.nextInt( 6) == 0) {
+                this.spawnAtLocation(ModItems.TWINK_EGG_SHELLS.get());
+            }
             this.level().broadcastEntityEvent(this, (byte)3);
             this.discard();
         }
@@ -91,6 +96,10 @@ public class ThrownTwinkEgg extends AbstractArrow implements ItemSupplier {
                 EntityMethods.monsterEffects(living);
             }
         }
+    }
+
+    @Override
+    protected void onHitBlock(BlockHitResult pResult) {
     }
 
     @Override

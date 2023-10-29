@@ -1,10 +1,10 @@
 package slay.nukolussy.modussy.entities.flops;
 
 import net.minecraft.util.StringRepresentable;
-import slay.nukolussy.modussy.entities.flops.traders.FlopTraderVariants;
+import slay.nukolussy.modussy.entities.flops.traders.IFlopTraderVariant;
 
 public class Flop {
-    public enum FlopJobs implements FlopTraderVariants {
+    public enum FlopJobs implements IFlopTraderVariant {
         // determines outer layer && trades, none meaning they don't have a trade
         NONE(0, "none"),
         FLOPDONALDS(1, "flopdonalds"),

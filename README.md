@@ -2,7 +2,7 @@ Modussy (Aka Flopcraft)
 ---
 ![](https://github.com/NukolLodda/Modussy/blob/master/logo.png)A very s3xy and aesthetic Minecraft mod
 
-As of right now, Modussy currently has support for Minecraft Java versions 1.19.2 and 1.20.1 on 
+As of right now, Modussy currently has support for Minecraft Java version 1.20.1 on 
 <a href="https://files.minecraftforge.net/">forge API</a>.
 A fabric port will likely get made some day however, it will likely be in a separate repository.
 
@@ -10,17 +10,19 @@ A fabric port will likely get made some day however, it will likely be in a sepa
 If you have any questions regarding Modussy, you can cvm to <a href="https://discord.gg/NTwqY3rcvU">the Modussy discord server</a>.
 I will also be giving out updates about the project there and my status on certain requests if you are interested of course.
 
+<br>
+If you are interested in helping me with Modussy and you have the sufficient Java knowledge to do so,
+then please come over <a href="https://forms.gle/HN36moxHdA6yRNE3A">here</a> and apply to be part of the Modussy development team.
+
 ---
 **Download**
 
-<a href=https://github.com/NukolLodda/Modussy/releases/download/v1.20.1-0.1.2/modussy-0.1.2.jar>Download latest version here!</a>
+<a href="https://adfoc.us/83601097779891">Download latest version here!</a>
 
 Information about the latest version<br>
 Forge API version: <a href="https://maven.minecraftforge.net/net/minecraftforge/forge/1.20.1-47.0.43/forge-1.20.1-47.0.43-installer.jar">47.0.43</a><br>
 Minecraft Java version: 1.20.1 <br>
-Modussy Version: 0.1.2(pre-release) <br>
-
-Click <a href="https://github.com/NukolLodda/Modussy/tags">here</a> to find all versions of Modussy
+Modussy Version: 0.1.3(pre-release) <br>
 
 ---
 **Requests**
@@ -41,8 +43,7 @@ Requests I accept includes: <br>
 Requests I reject includes: <br>
 - Porting Modussy to other versions/editions of Minecraft
   (I lack both the time and knowledge for this)<br>
-- Porting Modussy to other APIs
-  (though I will still try to make a fabric port)<br>
+- Porting Modussy to other APIs<br>
 - Addition of music discs sounds in the 'sounds' folder (mostly legal reasons, so it's better safe than sorry)
 
 For anyone who wants inquires on the status of your requests/needs help with downloading Modussy,
@@ -53,11 +54,9 @@ ___
 
 After reading Curseforge's terms of service, I believe that some features of Modussy, namely
 CupcakKe's texture, specific items, and mobs violates it, so the download links are in this
-repository instead. Click <a href=https://github.com/NukolLodda/Modussy/releases/tag/v1.20.1-0.1.2>here</a>
-for the most recent version uploaded (Modussy-0.1.2 for Minecraft 1.20.1
-<a href="https://maven.minecraftforge.net/net/minecraftforge/forge/1.20.1-47.0.43/forge-1.20.1-47.0.43-installer.jar">Forge API 47.0.43</a>) and
-<a href="https://github.com/NukolLodda/Modussy/tags">here</a> for every available
-version of Modussy.
+repository instead. Click <a href="http://adfoc.us/83601097779891">here</a>
+for the most recent version uploaded (Modussy-0.1.3 for Minecraft 1.20.1
+<a href="https://maven.minecraftforge.net/net/minecraftforge/forge/1.20.1-47.0.43/forge-1.20.1-47.0.43-installer.jar">Forge API 47.0.43</a>)
 
 ___
 **Where Are Modussy's Aesthetic Music**

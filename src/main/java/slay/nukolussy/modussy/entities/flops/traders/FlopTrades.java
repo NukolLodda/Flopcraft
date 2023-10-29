@@ -21,7 +21,7 @@ public class FlopTrades {
     private static final int COMMON_ITEMS_SUPPLY = 69;
     private static final int UNCOMMON_ITEMS_SUPPLY = 12;
 
-    public static final Map<FlopTraderVariants, Int2ObjectMap<FlopTrades.ItemListing[]>> TRADES =
+    public static final Map<IFlopTraderVariant, Int2ObjectMap<FlopTrades.ItemListing[]>> TRADES =
             Util.make(Maps.newHashMap(), (tag) -> {
                 tag.put(Jiafei.Variant.AESTHETIC, toIntMap(ImmutableMap.of(1, new FlopTrades.ItemListing[]{
                         new FlopTrades.ProductsForSlaginium(ModItems.JIAFEI_PRODUCT.get(), COMMON_ITEMS_SUPPLY, 1),

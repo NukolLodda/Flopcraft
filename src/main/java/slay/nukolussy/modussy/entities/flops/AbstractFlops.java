@@ -12,6 +12,7 @@ import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.crafting.Ingredient;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.phys.AABB;
+import slay.nukolussy.modussy.entities.AbstractModEntity;
 import slay.nukolussy.modussy.item.ModItems;
 import slay.nukolussy.modussy.network.yassification.PlayerYassificationProvider;
 import slay.nukolussy.modussy.util.PlayerMethods;
@@ -19,7 +20,7 @@ import slay.nukolussy.modussy.util.PlayerMethods;
 import javax.annotation.Nullable;
 import java.util.*;
 
-public abstract class AbstractFlops extends PathfinderMob implements FlopEntities {
+public abstract class AbstractFlops extends AbstractModEntity implements IFlopEntity {
     protected static final Ingredient FOOD_ITEMS = Ingredient.of(ModItems.CVM.get(), ModItems.CVMIUM.get());
     private int inLove;
     @Nullable
@@ -70,15 +71,6 @@ public abstract class AbstractFlops extends PathfinderMob implements FlopEntitie
     @Override
     public abstract MobType getMobType();
 
-    public void setInLove(@Nullable Player player) {
-        this.inLove = 600;
-        if (player != null) {
-            this.loveCause = player.getUUID();
-        }
-
-        this.level().broadcastEntityEvent(this, (byte)18);
-    }
-
     @Override
     public void baseTick() {
         super.baseTick();
@@ -95,7 +87,7 @@ public abstract class AbstractFlops extends PathfinderMob implements FlopEntitie
                 .sorted(Comparator.comparingDouble(_entcnd ->
                         _entcnd.distanceToSqr(this.getX(), this.getY(), this.getZ()))).toList();
         for (LivingEntity living : list) {
-            if (attacker instanceof LivingEntity entity && living instanceof FlopEntities flops) {
+            if (attacker instanceof LivingEntity entity && living instanceof IFlopEntity flops) {
                 if (entity instanceof Player player) {
                     PlayerMethods.addPlayerYassification(player, -5);
                     if (player.equals(flops.getTamedBy())) flops.setTamed(null);
@@ -133,20 +125,6 @@ public abstract class AbstractFlops extends PathfinderMob implements FlopEntitie
         return super.hurt(pSource, pAmount);
     }
 
-    public static AttributeSupplier.Builder createAttributes() {
-        AttributeSupplier.Builder builder = Mob.createMobAttributes();
-        builder = builder.add(Attributes.MOVEMENT_SPEED, 0.3);
-        builder = builder.add(Attributes.MAX_HEALTH, 20);
-        builder = builder.add(Attributes.ARMOR, 0);
-        builder = builder.add(Attributes.ATTACK_DAMAGE, 6);
-        builder = builder.add(Attributes.FOLLOW_RANGE, 16);
-        builder = builder.add(Attributes.ATTACK_KNOCKBACK, 2);
-
-        return builder;
-    }
-
-
-
     @Override
     public void tick() {
         super.tick();
@@ -155,7 +133,7 @@ public abstract class AbstractFlops extends PathfinderMob implements FlopEntitie
             DamageSource lastDmg = this.tamedBy.getLastDamageSource();
             if (this.tamedBy != null && lastDmg != null) {
                 Entity ent = lastDmg.getEntity();
-                if (!(ent instanceof FlopEntities) && ent instanceof LivingEntity entity) {
+                if (!(ent instanceof IFlopEntity) && ent instanceof LivingEntity entity) {
                     this.setTarget(entity);
                     this.alertFlops(lastDmg);
                 }
@@ -163,28 +141,7 @@ public abstract class AbstractFlops extends PathfinderMob implements FlopEntitie
         }
     }
 
-    public boolean isInLove() {
-        return this.inLove > 0;
-    }
-
-    public boolean canMate(AbstractFlops flops) {
-        if (flops == this) {
-            return false;
-        } else if (flops.getClass() != this.getClass()) {
-            return false;
-        } else {
-            return this.isInLove() && flops.isInLove();
-        }
-    }
-
-    protected void applyOpenDoorsAbility() {
-        if (GoalUtils.hasGroundPathNavigation(this)) {
-            ((GroundPathNavigation) this.getNavigation()).setCanOpenDoors(true);
-        }
-    }
-
-    @Override
-    public Player getTamedBy() {
-        return tamedBy;
+    public boolean canMate(AbstractModEntity flops) {
+        return false;
     }
 }

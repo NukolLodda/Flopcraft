@@ -1,0 +1,25 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "group": "poosay_juice",
+  "ingredients": [
+    {
+      "item": "modussy:posei"
+    },
+    {
+      "item": "modussy:posei"
+    },
+    {
+      "item": "modussy:posei"
+    },
+    {
+      "item": "modussy:posei"
+    },
+    {
+      "item": "minecraft:bucket"
+    }
+  ],
+  "result": {
+    "item": "modussy:poosay_juice_bucket"
+  }
+}

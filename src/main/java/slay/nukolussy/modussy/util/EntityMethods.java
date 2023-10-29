@@ -13,15 +13,16 @@ import net.minecraft.world.level.Level;
 import net.minecraft.world.level.LevelAccessor;
 import net.minecraft.world.phys.AABB;
 import net.minecraft.world.phys.Vec3;
+import slay.nukolussy.modussy.entities.AbstractModEntity;
 import slay.nukolussy.modussy.entities.ModEntities;
 import slay.nukolussy.modussy.entities.flops.AbstractFlopFigures;
 import slay.nukolussy.modussy.entities.flops.AbstractFlops;
-import slay.nukolussy.modussy.entities.flops.FlopEntities;
-import slay.nukolussy.modussy.entities.flops.special.GaginaSpider;
+import slay.nukolussy.modussy.entities.flops.IFlopEntity;
+import slay.nukolussy.modussy.entities.flops.special.AranaGrande;
 import slay.nukolussy.modussy.entities.flops.special.MeganTheStallion;
 import slay.nukolussy.modussy.entities.flops.traders.Jiafei;
 import slay.nukolussy.modussy.entities.flops.traders.NickiMinaj;
-import slay.nukolussy.modussy.entities.flops.twink.Twink;
+import slay.nukolussy.modussy.entities.twink.Twink;
 
 import java.util.List;
 
@@ -32,7 +33,7 @@ public class EntityMethods {
     }
 
     private static boolean isFlop(LivingEntity living) {
-        return living instanceof FlopEntities || (living instanceof Player player && PlayerMethods.isFlop(player));
+        return living instanceof IFlopEntity || (living instanceof Player player && PlayerMethods.isFlop(player));
     }
 
     public static boolean isMonster(Entity ent) {
@@ -42,7 +43,7 @@ public class EntityMethods {
     }
 
     public static boolean areFlopFigure(Entity living) {
-        return living instanceof AbstractFlopFigures || living instanceof GaginaSpider || living instanceof MeganTheStallion
+        return living instanceof AbstractFlopFigures || living instanceof AranaGrande || living instanceof MeganTheStallion
                 || (living instanceof Player player && PlayerMethods.isFlopIcon(player));
     }
 
@@ -57,17 +58,20 @@ public class EntityMethods {
         } else {
             entity.addEffect(new MobEffectInstance(MobEffects.WITHER, 1380 * lvl, amp));
             entity.addEffect(new MobEffectInstance(MobEffects.GLOWING, 1380 * lvl, amp));
-            if (lvl > 2)  entity.addEffect(new MobEffectInstance(MobEffects.LEVITATION, 600, 0));
+            if (lvl > 2) entity.addEffect(new MobEffectInstance(MobEffects.LEVITATION, 600, 0));
         }
+
+        removeFlopEffects(entity, lvl);
     }
 
-    public static void monsterEffects(LivingEntity ent) {
-        ent.addEffect(new MobEffectInstance(MobEffects.MOVEMENT_SLOWDOWN, 1000, 0));
-        ent.addEffect(new MobEffectInstance(MobEffects.WITHER, 6900, 1));
-        ent.addEffect(new MobEffectInstance(MobEffects.DIG_SLOWDOWN, 1690, 0));
-        ent.addEffect(new MobEffectInstance(MobEffects.WEAKNESS, 1690, 1));
-        ent.addEffect(new MobEffectInstance(MobEffects.BLINDNESS, 1710, 0));
+    public static void monsterEffects(LivingEntity entity) {
+        entity.addEffect(new MobEffectInstance(MobEffects.MOVEMENT_SLOWDOWN, 1000, 0));
+        entity.addEffect(new MobEffectInstance(MobEffects.WITHER, 6900, 1));
+        entity.addEffect(new MobEffectInstance(MobEffects.DIG_SLOWDOWN, 1690, 0));
+        entity.addEffect(new MobEffectInstance(MobEffects.WEAKNESS, 1690, 1));
+        entity.addEffect(new MobEffectInstance(MobEffects.BLINDNESS, 1710, 0));
 
+        removeFlopEffects(entity);
     }
 
     public static void flopEffects(LivingEntity entity, int lvl, int amp) {
@@ -83,29 +87,73 @@ public class EntityMethods {
             entity.addEffect(new MobEffectInstance(MobEffects.LUCK, 600 * lvl, 2 * amp));
             entity.addEffect(new MobEffectInstance(MobEffects.SATURATION, 600 * lvl, amp));
             entity.addEffect(new MobEffectInstance(MobEffects.SLOW_FALLING, 600 * lvl, 0));
-            if (lvl > 2) entity.addEffect(new MobEffectInstance(MobEffects.HEALTH_BOOST, 600 * lvl, amp));
+            if (lvl > 2) {
+                entity.addEffect(new MobEffectInstance(MobEffects.HEALTH_BOOST, 600 * lvl, amp));
+            }
+        }
+
+        removeMonsterEffects(entity, lvl);
+    }
+
+    public static void flopEffects(LivingEntity entity) {
+        entity.addEffect(new MobEffectInstance(MobEffects.MOVEMENT_SPEED, 1000, 0));
+        entity.addEffect(new MobEffectInstance(MobEffects.REGENERATION, 6900, 1));
+        entity.addEffect(new MobEffectInstance(MobEffects.ABSORPTION, 1710, 1));
+        entity.addEffect(new MobEffectInstance(MobEffects.FIRE_RESISTANCE, 1710, 0));
+        entity.addEffect(new MobEffectInstance(MobEffects.DAMAGE_RESISTANCE, 6900, 1));
+        entity.addEffect(new MobEffectInstance(MobEffects.DIG_SPEED, 1690, 0));
+        entity.addEffect(new MobEffectInstance(MobEffects.DAMAGE_BOOST, 1690, 1));
+        entity.addEffect(new MobEffectInstance(MobEffects.WATER_BREATHING, 1710, 0));
+        entity.addEffect(new MobEffectInstance(MobEffects.NIGHT_VISION, 1710, 0));
+
+        removeMonsterEffects(entity);
+    }
+
+    public static void removeMonsterEffects(LivingEntity entity, int lvl) {
+        entity.removeEffect(MobEffects.MOVEMENT_SLOWDOWN);
+        entity.removeEffect(MobEffects.DIG_SLOWDOWN);
+        entity.removeEffect(MobEffects.WEAKNESS);
+        entity.removeEffect(MobEffects.BLINDNESS);
+        entity.removeEffect(MobEffects.POISON);
+        if (lvl > 1) {
+            entity.removeEffect(MobEffects.WITHER);
+            if (lvl > 2) {
+                entity.removeEffect(MobEffects.LEVITATION);
+            }
         }
     }
 
-    public static void flopEffects(LivingEntity ent) {
-        ent.addEffect(new MobEffectInstance(MobEffects.MOVEMENT_SPEED, 1000, 0));
-        ent.addEffect(new MobEffectInstance(MobEffects.REGENERATION, 6900, 1));
-        ent.addEffect(new MobEffectInstance(MobEffects.ABSORPTION, 1710, 1));
-        ent.addEffect(new MobEffectInstance(MobEffects.FIRE_RESISTANCE, 1710, 0));
-        ent.addEffect(new MobEffectInstance(MobEffects.DAMAGE_RESISTANCE, 6900, 1));
-        ent.addEffect(new MobEffectInstance(MobEffects.DIG_SPEED, 1690, 0));
-        ent.addEffect(new MobEffectInstance(MobEffects.DAMAGE_BOOST, 1690, 1));
-        ent.addEffect(new MobEffectInstance(MobEffects.WATER_BREATHING, 1710, 0));
-        ent.addEffect(new MobEffectInstance(MobEffects.NIGHT_VISION, 1710, 0));
+    public static void removeMonsterEffects(LivingEntity entity) {
+        entity.removeEffect(MobEffects.MOVEMENT_SLOWDOWN);
+        entity.removeEffect(MobEffects.WITHER);
+        entity.removeEffect(MobEffects.DIG_SLOWDOWN);
+        entity.removeEffect(MobEffects.WEAKNESS);
+        entity.removeEffect(MobEffects.BLINDNESS);
+    }
+
+    public static void removeFlopEffects(LivingEntity entity, int lvl) {
+        removeFlopEffects(entity);
+        if (lvl > 2) entity.removeEffect(MobEffects.HEALTH_BOOST);
+    }
+    public static void removeFlopEffects(LivingEntity entity) {
+        entity.removeEffect(MobEffects.MOVEMENT_SPEED);
+        entity.removeEffect(MobEffects.REGENERATION);
+        entity.removeEffect(MobEffects.ABSORPTION);
+        entity.removeEffect(MobEffects.FIRE_RESISTANCE);
+        entity.removeEffect(MobEffects.DAMAGE_RESISTANCE);
+        entity.removeEffect(MobEffects.DIG_SPEED);
+        entity.removeEffect(MobEffects.DAMAGE_BOOST);
+        entity.removeEffect(MobEffects.WATER_BREATHING);
+        entity.removeEffect(MobEffects.NIGHT_VISION);
     }
 
     public static boolean canEntityBecomeNickiMinaj(LevelAccessor world, double x, double y, double z) {
         {
-            final Vec3 _center = new Vec3(x, y, z);
-            List<Entity> _entfound = world.getEntitiesOfClass(Entity.class, new AABB(_center, _center)
+            final Vec3 center = new Vec3(x, y, z);
+            List<Entity> entities = world.getEntitiesOfClass(Entity.class, new AABB(center, center)
                     .inflate(256 / 2d), e -> true).stream().toList();
-            for (Entity entityiterator : _entfound) {
-                if (entityiterator instanceof NickiMinaj) {
+            for (Entity ent : entities) {
+                if (ent instanceof NickiMinaj) {
                     return false;
                 }
             }
@@ -118,7 +166,7 @@ public class EntityMethods {
         int randval = (int) (Math.random() * 6971);
         float xRot = entity.getXRot();
         float yRot = entity.getYRot();
-        EntityType<? extends AbstractFlops> type = ModEntities.TWINK.get();
+        EntityType<? extends AbstractModEntity> type = ModEntities.TWINK.get();
         // the villager should have a 50/50 chance of either becoming a female flop or a twink
         if (randval < 34)
             type = ModEntities.CUPCAKKE.get();
@@ -127,19 +175,19 @@ public class EntityMethods {
         else if (randval < 90 && canEntityBecomeNickiMinaj(world, entity.getX(), entity.getY(), entity.getZ())) {
             type = ModEntities.NICKI_MINAJ.get();
         }
-        AbstractFlops flop = entity.convertTo(type, true);
-        if (flop != null) {
-            if (flop instanceof Twink twink)
+        AbstractModEntity modEntity = entity.convertTo(type, true);
+        if (modEntity != null) {
+            if (modEntity instanceof Twink twink)
                 twink.setVariant(Util.getRandom(Twink.Variant.values(), world.getRandom()));
-            if (flop instanceof Jiafei jiafei)
+            if (modEntity instanceof Jiafei jiafei)
                 jiafei.setVariant(Util.getRandom(Jiafei.Variant.values(), world.getRandom()));
-            if (flop instanceof NickiMinaj minaj)
+            if (modEntity instanceof NickiMinaj minaj)
                 minaj.setVariant(Util.getRandom(NickiMinaj.Variant.values(), world.getRandom()));
-            flop.setCanPickUpLoot(true);
-            flop.setXRot(xRot);
-            flop.setYRot(yRot);
-            flop.setTamed(player);
-            flop.addAdditionalSaveData(flop.getPersistentData());
+            modEntity.setCanPickUpLoot(true);
+            modEntity.setXRot(xRot);
+            modEntity.setYRot(yRot);
+            modEntity.setTamed(player);
+            modEntity.addAdditionalSaveData(modEntity.getPersistentData());
         }
     }
 

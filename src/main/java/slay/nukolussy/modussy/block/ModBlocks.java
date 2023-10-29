@@ -11,6 +11,7 @@ import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
 import slay.nukolussy.modussy.Modussy;
 import slay.nukolussy.modussy.block.entity.blocks.*;
+import slay.nukolussy.modussy.block.fluids.ModFluids;
 import slay.nukolussy.modussy.block.plants.JiafeiCrop;
 import slay.nukolussy.modussy.block.types.*;
 import slay.nukolussy.modussy.item.ModItems;
@@ -83,6 +84,8 @@ public class ModBlocks {
     public static final RegistryObject<Block> LOVELY_PEACH_LEAVES = registerBlock("lovely_peach_leaves", () ->
             new LeavesBlock(BlockBehaviour.Properties.copy(Blocks.OAK_LEAVES)));
 
+    public static final RegistryObject<Block> GIRL_YESS_PUMPKIN = registerBlock("girl_yess_pumpkin", GirlYessPumpkin::new);
+
     /* Floptropican tree types and biomes
      * Cupcakkian Balsam - Cupcakkia
      * Jiafeian Fir - Jiafeia
@@ -95,6 +98,12 @@ public class ModBlocks {
      * doors, fences, fence gates, planks, logs, all sided logs, stripped logs, stripped all sided logs, stairs, slabs,
      * buttons, pressure plates
      */
+
+    public static final RegistryObject<LiquidBlock> CVM_FLUID = BLOCKS.register("cvm_fluid",
+            () -> new LiquidBlock(ModFluids.SOURCE_CVM_FLUID, BlockBehaviour.Properties.copy(Blocks.WATER)));
+
+    public static final RegistryObject<LiquidBlock> POOSAY_JUICE = BLOCKS.register("poosay_juice",
+            () -> new LiquidBlock(ModFluids.SOURCE_POOSAY_JUICE, BlockBehaviour.Properties.copy(Blocks.WATER)));
 
     private static <T extends Block> RegistryObject<T> registerBlock(String name, Supplier<T> block) {
         RegistryObject<T> toReturn = BLOCKS.register(name, block);

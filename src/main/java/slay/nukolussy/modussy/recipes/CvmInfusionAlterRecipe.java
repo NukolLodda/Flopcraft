@@ -42,6 +42,11 @@ public class CvmInfusionAlterRecipe implements Recipe<SimpleContainer> {
     }
 
     @Override
+    public NonNullList<Ingredient> getIngredients() {
+        return this.recipeItems;
+    }
+
+    @Override
     public ItemStack assemble(SimpleContainer container, RegistryAccess access) {
         return this.output;
     }

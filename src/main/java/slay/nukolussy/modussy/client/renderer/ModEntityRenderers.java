@@ -27,6 +27,9 @@ public class ModEntityRenderers {
         event.registerEntityRenderer(ModEntities.BLOODY_TAMPONS.get(), context ->
                 new ThrownItemRenderer<>(context, 1.5f, false));
 
+        event.registerEntityRenderer(ModEntities.EXTRA_BLOODY_TAMPONS.get(), context ->
+                new ThrownItemRenderer<>(context, 1.5f, false));
+
         event.registerEntityRenderer(ModEntities.TWINK_EGG.get(), context ->
                 new ThrownItemRenderer<>(context, 1.5f, false));
 

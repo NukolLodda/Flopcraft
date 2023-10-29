@@ -2,6 +2,8 @@ package slay.nukolussy.modussy;
 
 import com.mojang.logging.LogUtils;
 import net.minecraft.client.gui.screens.MenuScreens;
+import net.minecraft.client.renderer.ItemBlockRenderTypes;
+import net.minecraft.client.renderer.RenderType;
 import net.minecraft.world.item.CreativeModeTabs;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.common.MinecraftForge;
@@ -16,6 +18,8 @@ import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 import org.slf4j.Logger;
 import slay.nukolussy.modussy.block.ModBlocks;
 import slay.nukolussy.modussy.block.entity.ent.ModBlockEntities;
+import slay.nukolussy.modussy.block.fluids.ModFluidTypes;
+import slay.nukolussy.modussy.block.fluids.ModFluids;
 import slay.nukolussy.modussy.client.gui.CvmInfusionAlterScreen;
 import slay.nukolussy.modussy.entities.ModEntities;
 import slay.nukolussy.modussy.item.ModItems;
@@ -42,6 +46,8 @@ public class Modussy {
         ModEntities.register(modEventBus);
         ModPaintings.register(modEventBus);
         ModBlockEntities.register(modEventBus);
+        ModFluids.register(modEventBus);
+        ModFluidTypes.register(modEventBus);
         ModMenuTypes.register(modEventBus);
         ModRecipes.register(modEventBus);
 
@@ -67,6 +73,11 @@ public class Modussy {
             event.accept(ModItems.NICKI_MINAJ_SPAWN_EGG.get());
             event.accept(ModItems.TWINK_SPAWN_EGG.get());
         }
+
+        if (event.getTabKey() == CreativeModeTabs.TOOLS_AND_UTILITIES) {
+            event.accept(ModItems.CVM_FLUID_BUCKET);
+            event.accept(ModItems.POOSAY_JUICE_BUCKET);
+        }
     }
 
     @SubscribeEvent
@@ -78,7 +89,11 @@ public class Modussy {
     public static class ClientModEvents {
         @SubscribeEvent
         public static void onClientSetup(FMLClientSetupEvent event) {
-            // ItemBlockRenderTypes.setRenderLayer(ModBlocks.GROWING_JIAFEI.get(), RenderType.cutout());
+            ItemBlockRenderTypes.setRenderLayer(ModFluids.SOURCE_CVM_FLUID.get(), RenderType.solid());
+            ItemBlockRenderTypes.setRenderLayer(ModFluids.SOURCE_POOSAY_JUICE.get(), RenderType.translucent());
+
+            ItemBlockRenderTypes.setRenderLayer(ModFluids.FLOWING_CVM_FLUID.get(), RenderType.solid());
+            ItemBlockRenderTypes.setRenderLayer(ModFluids.FLOWING_POOSAY_JUICE.get(), RenderType.translucent());
 
             MenuScreens.register(ModMenuTypes.CVM_INFUSION_ALTER_MENU.get(), CvmInfusionAlterScreen::new);
         }

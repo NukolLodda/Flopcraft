@@ -70,6 +70,11 @@ public class CvmInfusionAlterShapelessRecipe implements Recipe<SimpleContainer> 
         return hasIng && nullCounter < 7 && ingNum == itemNum;
     }
 
+    @Override
+    public NonNullList<Ingredient> getIngredients() {
+        return this.recipeItems;
+    }
+
     protected boolean isInvalidItem(ItemStack pItem) {
         boolean isCor = false;
         for (Ingredient ing : recipeItems) {

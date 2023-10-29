@@ -14,7 +14,7 @@ import net.minecraft.resources.ResourceLocation;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.api.distmarker.OnlyIn;
 import org.jetbrains.annotations.NotNull;
-import slay.nukolussy.modussy.entities.flops.twink.Twink;
+import slay.nukolussy.modussy.entities.twink.Twink;
 
 import java.util.Map;
 

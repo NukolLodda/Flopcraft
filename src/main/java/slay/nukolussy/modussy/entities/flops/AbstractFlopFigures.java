@@ -54,6 +54,7 @@ public abstract class AbstractFlopFigures extends AbstractFlops {
 
     @Override
     public boolean hurt(DamageSource source, float amount) {
+        onHurt(source);
         if (source.is(DamageTypeTags.IS_FIRE) || source.is(DamageTypeTags.IS_LIGHTNING) || source.is(DamageTypeTags.IS_FALL)
                 || source.is(DamageTypeTags.IS_PROJECTILE) || source.is(DamageTypeTags.IS_EXPLOSION) || source.equals(this.damageSources().dragonBreath())
         || source.equals(this.damageSources().anvil(this))) {

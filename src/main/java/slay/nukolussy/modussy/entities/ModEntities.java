@@ -20,11 +20,8 @@ import slay.nukolussy.modussy.entities.flops.figures.LovelyPeaches;
 import slay.nukolussy.modussy.entities.flops.bosses.LovelyPeachesBoss;
 import slay.nukolussy.modussy.entities.flops.traders.Jiafei;
 import slay.nukolussy.modussy.entities.flops.traders.NickiMinaj;
-import slay.nukolussy.modussy.entities.flops.twink.Twink;
-import slay.nukolussy.modussy.entities.projectiles.ShotBloodyTampon;
-import slay.nukolussy.modussy.entities.projectiles.ChargedLovelyPeach;
-import slay.nukolussy.modussy.entities.projectiles.ShotTampon;
-import slay.nukolussy.modussy.entities.projectiles.ThrownTwinkEgg;
+import slay.nukolussy.modussy.entities.projectiles.*;
+import slay.nukolussy.modussy.entities.twink.Twink;
 
 @Mod.EventBusSubscriber(bus = Mod.EventBusSubscriber.Bus.MOD)
 public class ModEntities {
@@ -73,6 +70,10 @@ public class ModEntities {
     public static final RegistryObject<EntityType<ShotBloodyTampon>> BLOODY_TAMPONS = register("bloody_tampons",
             EntityType.Builder.<ShotBloodyTampon>of(ShotBloodyTampon::new, MobCategory.MISC).sized(0.25f, 0.25f)
                     .clientTrackingRange(4).updateInterval(10).setCustomClientFactory(ShotBloodyTampon::new));
+
+    public static final RegistryObject<EntityType<ShotExtraBloodyTampon>> EXTRA_BLOODY_TAMPONS = register("extra_bloody_tampons",
+            EntityType.Builder.<ShotExtraBloodyTampon>of(ShotExtraBloodyTampon::new, MobCategory.MISC).sized(0.25f, 0.25f)
+                    .clientTrackingRange(4).updateInterval(10).setCustomClientFactory(ShotExtraBloodyTampon::new));
 
     public static final RegistryObject<EntityType<ThrownTwinkEgg>> TWINK_EGG = register("twink_egg",
             EntityType.Builder.<ThrownTwinkEgg>of(ThrownTwinkEgg::new, MobCategory.MISC).sized(0.25f, 0.25f)
@@ -131,5 +132,7 @@ public class ModEntities {
         );
     }
 
-    public static void register(IEventBus eventBus) {Entities.register(eventBus); }
+    public static void register(IEventBus eventBus) {
+        Entities.register(eventBus);
+    }
 }

@@ -137,6 +137,9 @@ public class ModSounds {
     public static final RegistryObject<SoundEvent> DISC_J2 = SOUNDS.register("music_disc_j2",
             () -> SoundEvent.createVariableRangeEvent(new ResourceLocation(Modussy.MODID,"music_disc_j2")));
 
+    public static final RegistryObject<SoundEvent> DISC_J3 = SOUNDS.register("music_disc_j3",
+            () -> SoundEvent.createVariableRangeEvent(new ResourceLocation(Modussy.MODID,"music_disc_j3")));
+
     public static final RegistryObject<SoundEvent> DISC_J4 = SOUNDS.register("music_disc_j4",
             () -> SoundEvent.createVariableRangeEvent(new ResourceLocation(Modussy.MODID,"music_disc_j4")));
 
@@ -148,6 +151,9 @@ public class ModSounds {
 
     public static final RegistryObject<SoundEvent> DISC_JC2 = SOUNDS.register("music_disc_jc2",
             () -> SoundEvent.createVariableRangeEvent(new ResourceLocation(Modussy.MODID,"music_disc_jc2")));
+
+    public static final RegistryObject<SoundEvent> DISC_JC3 = SOUNDS.register("music_disc_jc3",
+            () -> SoundEvent.createVariableRangeEvent(new ResourceLocation(Modussy.MODID,"music_disc_jc3")));
 
     public static final RegistryObject<SoundEvent> DISC_JIAFEI = SOUNDS.register("music_disc_jiafei",
             () -> SoundEvent.createVariableRangeEvent(new ResourceLocation(Modussy.MODID,"music_disc_jiafei")));
@@ -185,6 +191,12 @@ public class ModSounds {
 
     public static final RegistryObject<SoundEvent> AESTHETIC_JIAFEI = SOUNDS.register("aesthetic_jiafei",
             () -> SoundEvent.createVariableRangeEvent(new ResourceLocation(Modussy.MODID,"aesthetic_jiafei")));
+
+    public static final RegistryObject<SoundEvent> ROSETOY_1 = SOUNDS.register("rosetoy_1",
+            () -> SoundEvent.createVariableRangeEvent(new ResourceLocation(Modussy.MODID,"rosetoy_1")));
+
+    public static final RegistryObject<SoundEvent> ROSETOY_2 = SOUNDS.register("rosetoy_2",
+            () -> SoundEvent.createVariableRangeEvent(new ResourceLocation(Modussy.MODID,"rosetoy_2")));
 
     public static final RegistryObject<SoundEvent> SPRAY = SOUNDS.register("spray",
             () -> SoundEvent.createVariableRangeEvent(new ResourceLocation(Modussy.MODID,"spray")));

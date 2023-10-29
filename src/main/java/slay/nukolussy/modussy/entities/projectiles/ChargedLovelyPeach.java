@@ -72,6 +72,9 @@ public class ChargedLovelyPeach extends AbstractHurtingProjectile implements Ite
                     }
                 }
             }
+            if (this.random.nextInt(6) == 0) {
+                this.spawnAtLocation(ModItems.LOVELY_PEACH.get());
+            }
         }
     }
 
