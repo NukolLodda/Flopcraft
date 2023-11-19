@@ -9,7 +9,7 @@ import java.util.ArrayList;
 import java.util.Random;
 
 public class ModUtil {
-    private static final Random RANDOM = new Random();
+    protected static final Random RANDOM = new Random();
     public static Component getFullGirlYessComment() {
         int value = RANDOM.nextInt(8) + 1; // this will increase as more girl yess comments are made
         return getFullGirlYessComment(value);

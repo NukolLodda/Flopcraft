@@ -1,4 +1,9 @@
 package slay.nukolussy.modussy.item.types.sextoys;
 
-public abstract class AbstractButtplug {
+import net.minecraft.world.item.Item;
+
+public abstract class AbstractButtplug extends Item {
+    public AbstractButtplug() {
+        super(new Properties());
+    }
 }

@@ -10,6 +10,7 @@ import net.minecraft.world.entity.Mob;
 import net.minecraft.world.entity.ai.goal.target.NearestAttackableTargetGoal;
 import net.minecraft.world.entity.monster.*;
 import net.minecraft.world.entity.player.Player;
+import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.phys.AABB;
 import net.minecraft.world.phys.Vec3;
 import net.minecraftforge.common.capabilities.RegisterCapabilitiesEvent;
@@ -22,6 +23,7 @@ import net.minecraftforge.fml.LogicalSide;
 import net.minecraftforge.fml.common.Mod;
 import slay.nukolussy.modussy.Modussy;
 import slay.nukolussy.modussy.entities.flops.AbstractFlops;
+import slay.nukolussy.modussy.item.ModItems;
 import slay.nukolussy.modussy.util.EntityMethods;
 import slay.nukolussy.modussy.network.period.PlayerMenstruation;
 import slay.nukolussy.modussy.network.period.PlayerMenstruationProvider;
@@ -132,6 +134,7 @@ public class ModEvents {
             if (month.equals(Month.OCTOBER) && day == 31) {
                 Component girlYess = ModUtil.getFullGirlYessComment();
                 player.sendSystemMessage(girlYess);
+                player.addItem(new ItemStack(ModItems.LOVELY_PEACH.get()));
             } else if (month.equals(Month.DECEMBER) && day >= 24 && day < 26) {
                 player.sendSystemMessage(Component.translatable("subtitle.happy_clitmas")
                         .withStyle(ChatFormatting.RED));

@@ -13,6 +13,13 @@ I will also be giving out updates about the project there and my status on certa
 <br>
 If you are interested in helping me with Modussy and you have the sufficient Java knowledge to do so,
 then please come over <a href="https://forms.gle/HN36moxHdA6yRNE3A">here</a> and apply to be part of the Modussy development team.
+<br>
+<br>
+To all the girls, gays, and theys of Floptok and Potaxies de Corazón here to partake in the Modussy Clitmas Special 🎄👄🎄,
+you may partake in this festive event <a href="https://forms.gle/ekaPTXRGEACPMSxH6">here.</a>
+<br>
+<br>
+<a href="https://www.tiktok.com/@nukollodda/video/7204148779816160554">Here</a> is a short introduction video to Modussy
 
 ---
 **Download**

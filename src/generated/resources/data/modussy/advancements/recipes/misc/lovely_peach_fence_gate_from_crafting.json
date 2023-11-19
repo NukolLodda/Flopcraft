@@ -1,0 +1,35 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_lovely_peach_fence_gate": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "modussy:lovely_peach_fence_gate"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "modussy:lovely_peach_fence_gate_from_crafting"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_lovely_peach_fence_gate",
+      "has_the_recipe"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "modussy:lovely_peach_fence_gate_from_crafting"
+    ]
+  },
+  "sends_telemetry_event": false
+}

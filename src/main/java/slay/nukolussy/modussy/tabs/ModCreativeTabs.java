@@ -48,6 +48,15 @@ public class ModCreativeTabs {
                         pOutput.accept(ModBlocks.HARDENED_PERIOD_CVM.get());
                         pOutput.accept(ModBlocks.LOVELY_PEACH_LOG.get());
                         pOutput.accept(ModBlocks.LOVELY_PEACH_LEAVES.get());
+                        pOutput.accept(ModBlocks.LOVELY_PEACH_PLANKS.get());
+                        pOutput.accept(ModBlocks.LOVELY_PEACH_STAIRS.get());
+                        pOutput.accept(ModBlocks.LOVELY_PEACH_SLABS.get());
+                        pOutput.accept(ModBlocks.LOVELY_PEACH_BUTTON.get());
+                        pOutput.accept(ModBlocks.LOVELY_PEACH_PRESSURE_PLATE.get());
+                        pOutput.accept(ModBlocks.LOVELY_PEACH_DOOR.get());
+                        pOutput.accept(ModBlocks.LOVELY_PEACH_TRAPDOOR.get());
+                        pOutput.accept(ModBlocks.LOVELY_PEACH_FENCE.get());
+                        pOutput.accept(ModBlocks.LOVELY_PEACH_FENCE_GATE.get());
                     })).build());
 
     public static RegistryObject<CreativeModeTab> CVMSUMABLES = CREATIVE_MODE_TABS.register("cvmsumables", () ->
@@ -129,6 +138,7 @@ public class ModCreativeTabs {
                         pOutput.accept(ModItems.DISC_C24.get());
                         pOutput.accept(ModItems.DISC_C25.get());
                         pOutput.accept(ModItems.DISC_C26.get());
+                        pOutput.accept(ModItems.DISC_C27.get());
                         pOutput.accept(ModItems.DISC_CJ1.get());
                         pOutput.accept(ModItems.DISC_CPM1.get());
                         pOutput.accept(ModItems.DISC_CUPCAKKE1.get());

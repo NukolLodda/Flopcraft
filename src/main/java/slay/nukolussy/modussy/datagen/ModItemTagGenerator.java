@@ -85,6 +85,7 @@ public class ModItemTagGenerator extends ItemTagsProvider {
                 ModItems.DISC_C24.get(),
                 ModItems.DISC_C25.get(),
                 ModItems.DISC_C26.get(),
+                ModItems.DISC_C27.get(),
                 ModItems.DISC_CJ1.get(),
                 ModItems.DISC_CPM1.get(),
                 ModItems.DISC_CUPCAKKE1.get(),

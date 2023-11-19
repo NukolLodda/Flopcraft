@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:block/button_pressed",
+  "textures": {
+    "texture": "modussy:block/lovely_peach_planks"
+  }
+}

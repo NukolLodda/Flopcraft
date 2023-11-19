@@ -332,6 +332,15 @@
       }
     ]
   },
+  "music_disc_c27": {
+    "subtitle": "subtitles.music",
+    "sounds": [
+      {
+        "name": "modussy:music_disc_c27",
+        "stream": true
+      }
+    ]
+  },
   "music_disc_cj1": {
     "subtitle": "subtitles.music",
     "sounds": [

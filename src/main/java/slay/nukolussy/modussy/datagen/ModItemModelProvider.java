@@ -1,26 +1,17 @@
 package slay.nukolussy.modussy.datagen;
 
-import com.google.gson.JsonArray;
-import com.google.gson.JsonObject;
 import net.minecraft.data.PackOutput;
-import net.minecraft.data.models.ItemModelGenerators;
-import net.minecraft.data.models.model.ModelLocationUtils;
-import net.minecraft.data.models.model.ModelTemplates;
-import net.minecraft.data.models.model.TextureMapping;
-import net.minecraft.data.models.model.TextureSlot;
 import net.minecraft.resources.ResourceLocation;
-import net.minecraft.world.item.ArmorItem;
-import net.minecraft.world.item.ArmorMaterial;
-import net.minecraft.world.item.ArmorMaterials;
 import net.minecraft.world.item.Item;
+import net.minecraft.world.level.block.Block;
 import net.minecraftforge.client.model.generators.ItemModelBuilder;
 import net.minecraftforge.client.model.generators.ItemModelProvider;
 import net.minecraftforge.common.data.ExistingFileHelper;
+import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
 import slay.nukolussy.modussy.Modussy;
+import slay.nukolussy.modussy.block.ModBlocks;
 import slay.nukolussy.modussy.item.ModItems;
-
-import java.util.Map;
 
 public class ModItemModelProvider extends ItemModelProvider {
     public ModItemModelProvider(PackOutput output, ExistingFileHelper existingFileHelper) {
@@ -90,6 +81,7 @@ public class ModItemModelProvider extends ItemModelProvider {
         simpleItem(ModItems.DISC_C24);
         simpleItem(ModItems.DISC_C25);
         simpleItem(ModItems.DISC_C26);
+        simpleItem(ModItems.DISC_C27);
         simpleItem(ModItems.DISC_CJ1);
         simpleItem(ModItems.DISC_CPM1);
         simpleItem(ModItems.DISC_CUPCAKKE1);
@@ -129,11 +121,27 @@ public class ModItemModelProvider extends ItemModelProvider {
         simpleItem(ModItems.WONYOUNG_ESSENCE);
         simpleItem(ModItems.CVM_FLUID_BUCKET);
         simpleItem(ModItems.POOSAY_JUICE_BUCKET);
+
+        fenceItem(ModBlocks.LOVELY_PEACH_FENCE, ModBlocks.LOVELY_PEACH_PLANKS);
+        buttonItem(ModBlocks.LOVELY_PEACH_BUTTON, ModBlocks.LOVELY_PEACH_PLANKS);
     }
 
     private ItemModelBuilder simpleItem(RegistryObject<Item> item) {
         return withExistingParent(item.getId().getPath(),
                 new ResourceLocation("item/generated")).texture("layer0",
                 new ResourceLocation(Modussy.MODID,"item/" + item.getId().getPath()));
+    }
+
+    public void fenceItem(RegistryObject<Block> pBlock, RegistryObject<Block> pBase) {
+        this.withExistingParent(ForgeRegistries.BLOCKS.getKey(pBlock.get()).getPath(), mcLoc("block/fence_inventory"))
+                .texture("texture", new ResourceLocation(Modussy.MODID, "block/" + ForgeRegistries.BLOCKS.getKey(pBase.get()).getPath()));
+    }
+    public void buttonItem(RegistryObject<Block> pBlock, RegistryObject<Block> pBase) {
+        this.withExistingParent(ForgeRegistries.BLOCKS.getKey(pBlock.get()).getPath(), mcLoc("block/button_inventory"))
+                .texture("texture", new ResourceLocation(Modussy.MODID, "block/" + ForgeRegistries.BLOCKS.getKey(pBase.get()).getPath()));
+    }
+    public void wallItem(RegistryObject<Block> pBlock, RegistryObject<Block> pBase) {
+        this.withExistingParent(ForgeRegistries.BLOCKS.getKey(pBlock.get()).getPath(), mcLoc("block/wall_inventory"))
+                .texture("texture", new ResourceLocation(Modussy.MODID, "block/" + ForgeRegistries.BLOCKS.getKey(pBase.get()).getPath()));
     }
 }

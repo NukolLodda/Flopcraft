@@ -1,0 +1,14 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "group": "lovely_peach_planks",
+  "ingredients": [
+    {
+      "item": "modussy:lovely_peach_log"
+    }
+  ],
+  "result": {
+    "count": 4,
+    "item": "modussy:lovely_peach_planks"
+  }
+}

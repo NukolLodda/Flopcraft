@@ -282,6 +282,16 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
 
         trimSmithing(pWriter, ModItems.JIAFEI_TRIM_TEMPLATE.get(),
                 new ResourceLocation(Modussy.MODID, getItemName(ModItems.JIAFEI_TRIM_TEMPLATE.get()) + "_smithing_trim"));
+
+        planksRecipe(pWriter, ModBlocks.LOVELY_PEACH_PLANKS.get(), Ingredient.of(ModBlocks.LOVELY_PEACH_LOG.get()));
+        fenceRecipe(pWriter, ModBlocks.LOVELY_PEACH_FENCE.get(), Ingredient.of(ModBlocks.LOVELY_PEACH_PLANKS.get()));
+        fenceGateRecipe(pWriter, ModBlocks.LOVELY_PEACH_FENCE_GATE.get(), Ingredient.of(ModBlocks.LOVELY_PEACH_PLANKS.get()));
+        doorRecipe(pWriter, ModBlocks.LOVELY_PEACH_DOOR.get(), Ingredient.of(ModBlocks.LOVELY_PEACH_PLANKS.get()));
+        trapdoorRecipe(pWriter, ModBlocks.LOVELY_PEACH_TRAPDOOR.get(), Ingredient.of(ModBlocks.LOVELY_PEACH_PLANKS.get()));
+        stairRecipe(pWriter, ModBlocks.LOVELY_PEACH_STAIRS.get(), Ingredient.of(ModBlocks.LOVELY_PEACH_PLANKS.get()));
+        slabRecipe(pWriter, ModBlocks.LOVELY_PEACH_SLABS.get(), Ingredient.of(ModBlocks.LOVELY_PEACH_PLANKS.get()));
+        pressurePlate(pWriter, ModBlocks.LOVELY_PEACH_PRESSURE_PLATE.get(), Ingredient.of(ModBlocks.LOVELY_PEACH_PLANKS.get()));
+        buttonRecipe(pWriter, ModBlocks.LOVELY_PEACH_BUTTON.get(), Ingredient.of(ModBlocks.LOVELY_PEACH_PLANKS.get()));
     }
 
     private static TagKey<Item> getYassifierFromComplexity(int pComplexity) {
@@ -461,5 +471,91 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
                 .define('2', pTemplate)
                 .unlockedBy(getHasName(pTemplate), has(pTemplate))
                 .group(getHasName(pTemplate)).save(pWriter, Modussy.MODID + ":" + getHasName(pTemplate) + "_from_crafting");
+    }
+
+    protected static void fenceRecipe(Consumer<FinishedRecipe> pWriter, ItemLike pResult, Ingredient pMaterial) {
+        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, pResult, 3)
+                .pattern("010")
+                .pattern("010")
+                .define('0', pMaterial).define('1', Items.STICK)
+                .group(getItemName(pResult))
+                .unlockedBy(getHasName(pResult), has(pResult))
+                .save(pWriter, Modussy.MODID + ":" + getItemName(pResult) + "_from_crafting");
+    }
+
+    protected static void fenceGateRecipe(Consumer<FinishedRecipe> pWriter, ItemLike pResult, Ingredient pMaterial) {
+        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, pResult)
+                .pattern("101")
+                .pattern("101")
+                .define('0', pMaterial).define('1', Items.STICK)
+                .group(getItemName(pResult))
+                .unlockedBy(getHasName(pResult), has(pResult))
+                .save(pWriter, Modussy.MODID + ":" + getItemName(pResult) + "_from_crafting");
+    }
+
+    protected static void doorRecipe(Consumer<FinishedRecipe> pWriter, ItemLike pResult, Ingredient pMaterial) {
+        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, pResult, 3)
+                .pattern("00")
+                .pattern("00")
+                .pattern("00")
+                .define('0', pMaterial)
+                .group(getItemName(pResult))
+                .unlockedBy(getHasName(pResult), has(pResult))
+                .save(pWriter, Modussy.MODID + ":" + getItemName(pResult) + "_from_crafting");
+    }
+
+    protected static void trapdoorRecipe(Consumer<FinishedRecipe> pWriter, ItemLike pResult, Ingredient pMaterial) {
+        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, pResult, 2)
+                .pattern("000")
+                .pattern("000")
+                .define('0', pMaterial)
+                .group(getItemName(pResult))
+                .unlockedBy(getHasName(pResult), has(pResult))
+                .save(pWriter, Modussy.MODID + ":" + getItemName(pResult) + "_from_crafting");
+    }
+
+    protected static void stairRecipe(Consumer<FinishedRecipe> pWriter, ItemLike pResult, Ingredient pMaterial) {
+        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, pResult, 4)
+                .pattern("0  ")
+                .pattern("00 ")
+                .pattern("000")
+                .define('0', pMaterial)
+                .group(getItemName(pResult))
+                .unlockedBy(getHasName(pResult), has(pResult))
+                .save(pWriter, Modussy.MODID + ":" + getItemName(pResult) + "_from_crafting");
+    }
+
+    protected static void slabRecipe(Consumer<FinishedRecipe> pWriter, ItemLike pResult, Ingredient pMaterial) {
+        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, pResult, 6)
+                .pattern("000")
+                .define('0', pMaterial)
+                .group(getItemName(pResult))
+                .unlockedBy(getHasName(pResult), has(pResult))
+                .save(pWriter, Modussy.MODID + ":" + getItemName(pResult) + "_from_crafting");
+    }
+
+    protected static void pressurePlate(Consumer<FinishedRecipe> pWriter, ItemLike pResult, Ingredient pMaterial) {
+        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, pResult)
+                .pattern("00")
+                .define('0', pMaterial)
+                .group(getItemName(pResult))
+                .unlockedBy(getHasName(pResult), has(pResult))
+                .save(pWriter, Modussy.MODID + ":" + getItemName(pResult) + "_from_crafting");
+    }
+
+    protected static void planksRecipe(Consumer<FinishedRecipe> pWriter, ItemLike pResult, Ingredient pMaterial) {
+        ShapelessRecipeBuilder.shapeless(RecipeCategory.MISC, pResult, 4)
+                .requires(pMaterial)
+                .unlockedBy(getHasName(pResult), has(pResult))
+                .group(getItemName(pResult))
+                .save(pWriter, Modussy.MODID + ":" + getItemName(pResult) + "_from_crafting");
+    }
+
+    protected static void buttonRecipe(Consumer<FinishedRecipe> pWriter, ItemLike pResult, Ingredient pMaterial) {
+        ShapelessRecipeBuilder.shapeless(RecipeCategory.MISC, pResult)
+                .requires(pMaterial)
+                .unlockedBy(getHasName(pResult), has(pResult))
+                .group(getItemName(pResult))
+                .save(pWriter, Modussy.MODID + ":" + getItemName(pResult) + "_from_crafting");
     }
 }

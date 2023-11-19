@@ -91,5 +91,8 @@ public class ModBlockTagProvider extends BlockTagsProvider {
                 ModBlocks.SPECIAL_YASSIFICATION_DETECTOR.get(),
                 ModBlocks.YASSIFICATION_DETECTOR.get()
         );
+
+        this.tag(BlockTags.FENCES).add(ModBlocks.LOVELY_PEACH_FENCE.get());
+        this.tag(BlockTags.FENCE_GATES).add(ModBlocks.LOVELY_PEACH_FENCE_GATE.get());
     }
 }

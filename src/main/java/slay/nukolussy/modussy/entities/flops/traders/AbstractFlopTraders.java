@@ -164,10 +164,4 @@ public abstract class AbstractFlopTraders extends AbstractFlopFigures implements
     protected abstract void updateTrades();
     protected abstract SoundEvent getTradelessSound();
     protected abstract boolean itemIsSpawnEgg(Item pItem);
-
-    /*
-     * Mobs under this category:
-     * Jiafei
-     * Nicki Minaj
-     */
 }

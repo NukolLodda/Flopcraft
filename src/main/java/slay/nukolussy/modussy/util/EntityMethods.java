@@ -22,8 +22,12 @@ import slay.nukolussy.modussy.entities.flops.special.AranaGrande;
 import slay.nukolussy.modussy.entities.flops.special.MeganTheStallion;
 import slay.nukolussy.modussy.entities.flops.traders.Jiafei;
 import slay.nukolussy.modussy.entities.flops.traders.NickiMinaj;
+import slay.nukolussy.modussy.entities.flops.traders.Ranvision;
 import slay.nukolussy.modussy.entities.twink.Twink;
 
+import java.time.LocalDate;
+import java.time.Month;
+import java.util.Date;
 import java.util.List;
 
 public class EntityMethods {
@@ -163,7 +167,7 @@ public class EntityMethods {
     }
 
     static void villagerYassification(AbstractVillager entity, LevelAccessor world, Player player) {
-        int randval = (int) (Math.random() * 6971);
+        int randval = ModUtil.RANDOM.nextInt(6971);
         float xRot = entity.getXRot();
         float yRot = entity.getYRot();
         EntityType<? extends AbstractModEntity> type = ModEntities.TWINK.get();
@@ -172,7 +176,9 @@ public class EntityMethods {
             type = ModEntities.CUPCAKKE.get();
         else if (randval < 69)
             type = ModEntities.JIAFEI.get();
-        else if (randval < 90 && canEntityBecomeNickiMinaj(world, entity.getX(), entity.getY(), entity.getZ())) {
+        else if (randval < 90)
+            type = ModEntities.RANVISION.get();
+        else if (randval < 120 && canEntityBecomeNickiMinaj(world, entity.getX(), entity.getY(), entity.getZ())) {
             type = ModEntities.NICKI_MINAJ.get();
         }
         AbstractModEntity modEntity = entity.convertTo(type, true);
@@ -183,6 +189,8 @@ public class EntityMethods {
                 jiafei.setVariant(Util.getRandom(Jiafei.Variant.values(), world.getRandom()));
             if (modEntity instanceof NickiMinaj minaj)
                 minaj.setVariant(Util.getRandom(NickiMinaj.Variant.values(), world.getRandom()));
+            if (modEntity instanceof Ranvision ranvision)
+                ranvision.setVariant(Util.getRandom(Ranvision.Variant.values(), world.getRandom()));
             modEntity.setCanPickUpLoot(true);
             modEntity.setXRot(xRot);
             modEntity.setYRot(yRot);
@@ -192,7 +200,7 @@ public class EntityMethods {
     }
 
     static void witchYassification(Witch entity, LevelAccessor world, Player player) {
-        int randval = (int) (Math.random() * 2);
+        int randval = ModUtil.RANDOM.nextInt(3);
         float xRot = entity.getXRot();
         float yRot = entity.getYRot();
         EntityType<? extends AbstractFlops> type;
@@ -226,5 +234,9 @@ public class EntityMethods {
                 flop.alertFlops(player);
             }
         }
+    }
+
+    public static boolean canMariahCareySpawn() {
+        return LocalDate.now().getMonth().equals(Month.DECEMBER);
     }
 }

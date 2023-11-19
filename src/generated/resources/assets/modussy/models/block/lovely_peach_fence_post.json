@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:block/fence_post",
+  "textures": {
+    "texture": "modussy:block/lovely_peach_planks"
+  }
+}

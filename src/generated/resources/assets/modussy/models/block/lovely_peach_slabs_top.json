@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/slab_top",
+  "textures": {
+    "bottom": "modussy:block/lovely_peach_planks",
+    "side": "modussy:block/lovely_peach_planks",
+    "top": "modussy:block/lovely_peach_planks"
+  }
+}

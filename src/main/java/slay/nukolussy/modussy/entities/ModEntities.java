@@ -18,8 +18,10 @@ import slay.nukolussy.modussy.Modussy;
 import slay.nukolussy.modussy.entities.flops.figures.CupcakKe;
 import slay.nukolussy.modussy.entities.flops.figures.LovelyPeaches;
 import slay.nukolussy.modussy.entities.flops.bosses.LovelyPeachesBoss;
+import slay.nukolussy.modussy.entities.flops.figures.MariahCarey;
 import slay.nukolussy.modussy.entities.flops.traders.Jiafei;
 import slay.nukolussy.modussy.entities.flops.traders.NickiMinaj;
+import slay.nukolussy.modussy.entities.flops.traders.Ranvision;
 import slay.nukolussy.modussy.entities.projectiles.*;
 import slay.nukolussy.modussy.entities.twink.Twink;
 
@@ -46,6 +48,16 @@ public class ModEntities {
             EntityType.Builder.<LovelyPeachesBoss>of(LovelyPeachesBoss::new, MobCategory.AMBIENT).setShouldReceiveVelocityUpdates(true)
                     .setTrackingRange(64).setUpdateInterval(3).setCustomClientFactory(LovelyPeachesBoss::new)
                     .sized(1.0f,6.0f));
+
+    public static final RegistryObject<EntityType<MariahCarey>> MARIAH_CAREY = register("mariah_carey",
+            EntityType.Builder.<MariahCarey>of(MariahCarey::new, MobCategory.AMBIENT).setShouldReceiveVelocityUpdates(true)
+                    .setTrackingRange(64).setUpdateInterval(3).setCustomClientFactory(MariahCarey::new)
+                    .sized(1f,2f));
+
+    public static final RegistryObject<EntityType<Ranvision>> RANVISION = register("ranvision",
+            EntityType.Builder.<Ranvision>of(Ranvision::new, MobCategory.AMBIENT).setShouldReceiveVelocityUpdates(true)
+                    .setTrackingRange(64).setUpdateInterval(3).setCustomClientFactory(Ranvision::new)
+                    .sized(0.6f,1.8f));
 
     public static final RegistryObject<EntityType<NickiMinaj>> NICKI_MINAJ = register("nicki_minaj",
             EntityType.Builder.<NickiMinaj>of(NickiMinaj::new, MobCategory.AMBIENT).setShouldReceiveVelocityUpdates(true)
@@ -91,7 +103,9 @@ public class ModEntities {
             Jiafei.init();
             LovelyPeaches.init();
             LovelyPeachesBoss.init();
+            MariahCarey.init();
             NickiMinaj.init();
+            Ranvision.init();
             Twink.init();
             ChargedLovelyPeach.init();
           });
@@ -103,7 +117,9 @@ public class ModEntities {
         event.put(JIAFEI.get(), Jiafei.createAttributes().build());
         event.put(LOVELY_PEACHES.get(), LovelyPeaches.createAttributes().build());
         event.put(LOVELY_PEACHES_BOSS.get(), LovelyPeachesBoss.createAttributes().build());
+        event.put(MARIAH_CAREY.get(), Ranvision.createAttributes().build());
         event.put(NICKI_MINAJ.get(), NickiMinaj.createAttributes().build());
+        event.put(RANVISION.get(), Ranvision.createAttributes().build());
         event.put(TWINK.get(), Twink.createAttributes().build());
     }
 
@@ -121,6 +137,13 @@ public class ModEntities {
                 SpawnPlacements.Type.ON_GROUND,
                 Heightmap.Types.WORLD_SURFACE,
                 Jiafei::canSpawn,
+                SpawnPlacementRegisterEvent.Operation.OR
+        );
+        event.register(
+                RANVISION.get(),
+                SpawnPlacements.Type.ON_GROUND,
+                Heightmap.Types.WORLD_SURFACE,
+                Ranvision::canSpawn,
                 SpawnPlacementRegisterEvent.Operation.OR
         );
         event.register(

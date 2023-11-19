@@ -1,0 +1,20 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "group": "lovely_peach_stairs",
+  "key": {
+    "0": {
+      "item": "modussy:lovely_peach_planks"
+    }
+  },
+  "pattern": [
+    "0  ",
+    "00 ",
+    "000"
+  ],
+  "result": {
+    "count": 4,
+    "item": "modussy:lovely_peach_stairs"
+  },
+  "show_notification": true
+}

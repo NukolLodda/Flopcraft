@@ -15,7 +15,9 @@ public class ModEntityRenderers {
         event.registerEntityRenderer(ModEntities.JIAFEI.get(), JiafeiRenderer::new);
         event.registerEntityRenderer(ModEntities.LOVELY_PEACHES.get(), LovelyPeachesRenderer::new);
         event.registerEntityRenderer(ModEntities.LOVELY_PEACHES_BOSS.get(), LovelyPeachesBossRenderer::new);
+        event.registerEntityRenderer(ModEntities.MARIAH_CAREY.get(), MariahCareyRenderer::new);
         event.registerEntityRenderer(ModEntities.NICKI_MINAJ.get(), NickiMinajRanderer::new);
+        event.registerEntityRenderer(ModEntities.RANVISION.get(), RanvisionRenderer::new);
         event.registerEntityRenderer(ModEntities.TWINK.get(), TwinkRenderer::new);
 
         event.registerEntityRenderer(ModEntities.LOVELY_PEACH.get(), context ->

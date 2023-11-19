@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "group": "lovely_peach_pressure_plate",
+  "key": {
+    "0": {
+      "item": "modussy:lovely_peach_planks"
+    }
+  },
+  "pattern": [
+    "00"
+  ],
+  "result": {
+    "item": "modussy:lovely_peach_pressure_plate"
+  },
+  "show_notification": true
+}

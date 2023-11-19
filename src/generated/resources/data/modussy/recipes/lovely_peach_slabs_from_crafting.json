@@ -1,0 +1,18 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "group": "lovely_peach_slabs",
+  "key": {
+    "0": {
+      "item": "modussy:lovely_peach_planks"
+    }
+  },
+  "pattern": [
+    "000"
+  ],
+  "result": {
+    "count": 6,
+    "item": "modussy:lovely_peach_slabs"
+  },
+  "show_notification": true
+}

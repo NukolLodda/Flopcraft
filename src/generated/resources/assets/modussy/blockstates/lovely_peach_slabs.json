@@ -1,0 +1,13 @@
+{
+  "variants": {
+    "type=bottom": {
+      "model": "modussy:block/lovely_peach_slabs"
+    },
+    "type=double": {
+      "model": "modussy:block/lovely_peach_planks"
+    },
+    "type=top": {
+      "model": "modussy:block/lovely_peach_slabs_top"
+    }
+  }
+}

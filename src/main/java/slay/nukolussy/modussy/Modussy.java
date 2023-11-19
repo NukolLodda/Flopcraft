@@ -70,7 +70,9 @@ public class Modussy {
             event.accept(ModItems.CUPCAKKE_SPAWN_EGG.get());
             event.accept(ModItems.JIAFEI_SPAWN_EGG.get());
             event.accept(ModItems.LOVELY_PEACHES_SPAWN_EGG.get());
+            event.accept(ModItems.MARIAH_CAREY_SPAWN_EGG.get());
             event.accept(ModItems.NICKI_MINAJ_SPAWN_EGG.get());
+            event.accept(ModItems.RANVISION_SPAWN_EGG.get());
             event.accept(ModItems.TWINK_SPAWN_EGG.get());
         }
 

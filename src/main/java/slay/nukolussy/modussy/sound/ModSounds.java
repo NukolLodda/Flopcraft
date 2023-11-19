@@ -106,9 +106,10 @@ public class ModSounds {
 
     public static final RegistryObject<SoundEvent> DISC_C25 = SOUNDS.register("music_disc_c25",
             () -> SoundEvent.createVariableRangeEvent(new ResourceLocation(Modussy.MODID,"music_disc_c25")));
-
     public static final RegistryObject<SoundEvent> DISC_C26 = SOUNDS.register("music_disc_c26",
             () -> SoundEvent.createVariableRangeEvent(new ResourceLocation(Modussy.MODID,"music_disc_c26")));
+    public static final RegistryObject<SoundEvent> DISC_C27 = SOUNDS.register("music_disc_c27",
+            () -> SoundEvent.createVariableRangeEvent(new ResourceLocation(Modussy.MODID,"music_disc_c27")));
 
     public static final RegistryObject<SoundEvent> DISC_CPM1 = SOUNDS.register("music_disc_cpm1",
             () -> SoundEvent.createVariableRangeEvent(new ResourceLocation(Modussy.MODID,"music_disc_cpm1")));

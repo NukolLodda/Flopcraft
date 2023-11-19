@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "group": "lovely_peach_fence_gate",
+  "key": {
+    "0": {
+      "item": "modussy:lovely_peach_planks"
+    },
+    "1": {
+      "item": "minecraft:stick"
+    }
+  },
+  "pattern": [
+    "101",
+    "101"
+  ],
+  "result": {
+    "item": "modussy:lovely_peach_fence_gate"
+  },
+  "show_notification": true
+}

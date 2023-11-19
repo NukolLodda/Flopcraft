@@ -59,6 +59,42 @@ public class FlopTrades {
                         new FlopTrades.InfusedSlaginiumForProducts(ModItems.DISC_JC2.get(), 6, UNCOMMON_ITEMS_SUPPLY, 6),
                         new FlopTrades.InfusedSlaginiumForProducts(ModItems.DEELDO.get(), 6, UNCOMMON_ITEMS_SUPPLY, 6)
                 })));
+                tag.put(Ranvision.Variant.KPOP, toIntMap(ImmutableMap.of(1, new FlopTrades.ItemListing[]{
+                        new FlopTrades.ProductsForSlaginium(ModItems.JIAFEI_PRODUCT.get(), COMMON_ITEMS_SUPPLY, 1),
+                        new FlopTrades.SlaginiumForProducts(ModItems.DISC_C1.get(), 2, COMMON_ITEMS_SUPPLY, 2),
+                        new FlopTrades.SlaginiumForProducts(ModItems.DISC_C5.get(), 4, COMMON_ITEMS_SUPPLY, 2),
+                        new FlopTrades.SlaginiumForProducts(ModItems.DISC_C10.get(), 4, COMMON_ITEMS_SUPPLY, 2),
+                        new FlopTrades.SlaginiumForProducts(ModItems.DISC_C14.get(), 4, COMMON_ITEMS_SUPPLY, 2),
+                        new FlopTrades.InfusedSlaginiumForProducts(ModItems.DISC_CPM1.get(), 6, UNCOMMON_ITEMS_SUPPLY, 6),
+                        new FlopTrades.InfusedSlaginiumForProducts(ModItems.WONYOUNG_ESSENCE.get(), 6, UNCOMMON_ITEMS_SUPPLY, 6)
+                })));
+                tag.put(Ranvision.Variant.CULTURAL, toIntMap(ImmutableMap.of(1, new FlopTrades.ItemListing[]{
+                        new FlopTrades.ProductsForSlaginium(ModItems.CUPCAKE.get(), COMMON_ITEMS_SUPPLY, 1),
+                        new FlopTrades.SlaginiumForProducts(ModItems.DISC_C4.get(), 2, COMMON_ITEMS_SUPPLY, 2),
+                        new FlopTrades.SlaginiumForProducts(ModItems.DISC_C8.get(), 4, COMMON_ITEMS_SUPPLY, 2),
+                        new FlopTrades.SlaginiumForProducts(ModItems.DISC_C11.get(), 4, COMMON_ITEMS_SUPPLY, 2),
+                        new FlopTrades.SlaginiumForProducts(ModItems.DISC_C17.get(), 4, COMMON_ITEMS_SUPPLY, 2),
+                        new FlopTrades.InfusedSlaginiumForProducts(ModItems.DISC_C18.get(), 6, UNCOMMON_ITEMS_SUPPLY, 6),
+                        new FlopTrades.InfusedSlaginiumForProducts(ModItems.CVMTITPLASM.get(), 6, UNCOMMON_ITEMS_SUPPLY, 6)
+                })));
+                tag.put(Ranvision.Variant.POP, toIntMap(ImmutableMap.of(1, new FlopTrades.ItemListing[]{
+                        new FlopTrades.ProductsForSlaginium(ModItems.ARANA_GRANDE.get(), COMMON_ITEMS_SUPPLY, 1),
+                        new FlopTrades.SlaginiumForProducts(ModItems.DISC_C6.get(), 2, COMMON_ITEMS_SUPPLY, 2),
+                        new FlopTrades.SlaginiumForProducts(ModItems.DISC_C7.get(), 4, COMMON_ITEMS_SUPPLY, 2),
+                        new FlopTrades.SlaginiumForProducts(ModItems.DISC_C9.get(), 4, COMMON_ITEMS_SUPPLY, 2),
+                        new FlopTrades.SlaginiumForProducts(ModItems.DISC_CJ1.get(), 4, COMMON_ITEMS_SUPPLY, 2),
+                        new FlopTrades.InfusedSlaginiumForProducts(ModItems.DISC_J3.get(), 6, UNCOMMON_ITEMS_SUPPLY, 6),
+                        new FlopTrades.InfusedSlaginiumForProducts(ModItems.SLAGINIUM_YASSIFIER_PREMIUM.get(), 6, UNCOMMON_ITEMS_SUPPLY, 6)
+                })));
+                tag.put(Ranvision.Variant.EVENT, toIntMap(ImmutableMap.of(1, new FlopTrades.ItemListing[]{
+                        new FlopTrades.ProductsForSlaginium(ModItems.CVMTITPLASM.get(), COMMON_ITEMS_SUPPLY, 1),
+                        new FlopTrades.SlaginiumForProducts(ModItems.DISC_C23.get(), 2, COMMON_ITEMS_SUPPLY, 2),
+                        new FlopTrades.SlaginiumForProducts(ModItems.DISC_C24.get(), 4, COMMON_ITEMS_SUPPLY, 2),
+                        new FlopTrades.SlaginiumForProducts(ModItems.DISC_J5.get(), 4, COMMON_ITEMS_SUPPLY, 2),
+                        new FlopTrades.SlaginiumForProducts(ModItems.DISC_PM1.get(), 4, COMMON_ITEMS_SUPPLY, 2),
+                        new FlopTrades.InfusedSlaginiumForProducts(ModItems.DISC_RANVISION.get(), 6, UNCOMMON_ITEMS_SUPPLY, 6),
+                        new FlopTrades.InfusedSlaginiumForProducts(ModItems.KYLIE_JENNER_LIPSTICK.get(), 6, UNCOMMON_ITEMS_SUPPLY, 6)
+                })));
             });
 
     private static Int2ObjectMap<FlopTrades.ItemListing[]> toIntMap(ImmutableMap<Integer, FlopTrades.ItemListing[]> pMap) {

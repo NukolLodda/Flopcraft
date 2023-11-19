@@ -1,10 +1,12 @@
 package slay.nukolussy.modussy.block;
 
+import net.minecraft.sounds.SoundEvents;
 import net.minecraft.util.valueproviders.UniformInt;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.level.block.*;
 import net.minecraft.world.level.block.state.BlockBehaviour;
+import net.minecraft.world.level.block.state.properties.BlockSetType;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
@@ -83,6 +85,36 @@ public class ModBlocks {
         new RotatedPillarBlock(BlockBehaviour.Properties.copy(Blocks.CRIMSON_STEM)));
     public static final RegistryObject<Block> LOVELY_PEACH_LEAVES = registerBlock("lovely_peach_leaves", () ->
             new LeavesBlock(BlockBehaviour.Properties.copy(Blocks.OAK_LEAVES)));
+
+    public static final RegistryObject<Block> LOVELY_PEACH_PLANKS = registerBlock("lovely_peach_planks", () ->
+            new Block(BlockBehaviour.Properties.copy(Blocks.CRIMSON_PLANKS)));
+
+    public static final RegistryObject<Block> LOVELY_PEACH_STAIRS = registerBlock("lovely_peach_stairs", () ->
+            new StairBlock(() -> ModBlocks.LOVELY_PEACH_PLANKS.get().defaultBlockState(),
+                    BlockBehaviour.Properties.copy(Blocks.CRIMSON_STAIRS)));
+
+    public static final RegistryObject<Block> LOVELY_PEACH_SLABS = registerBlock("lovely_peach_slabs", () ->
+            new SlabBlock(BlockBehaviour.Properties.copy(Blocks.CRIMSON_SLAB)));
+
+    public static final RegistryObject<Block> LOVELY_PEACH_FENCE = registerBlock("lovely_peach_fence", () ->
+            new FenceBlock(BlockBehaviour.Properties.copy(Blocks.CRIMSON_FENCE)));
+
+    public static final RegistryObject<Block> LOVELY_PEACH_FENCE_GATE = registerBlock("lovely_peach_fence_gate", () ->
+            new FenceGateBlock(BlockBehaviour.Properties.copy(Blocks.CRIMSON_FENCE_GATE), SoundEvents.FENCE_GATE_OPEN, SoundEvents.FENCE_GATE_CLOSE));
+
+    public static final RegistryObject<Block> LOVELY_PEACH_DOOR = registerBlock("lovely_peach_door", () ->
+            new DoorBlock(BlockBehaviour.Properties.copy(Blocks.CRIMSON_DOOR).noOcclusion(), BlockSetType.CRIMSON));
+
+    public static final RegistryObject<Block> LOVELY_PEACH_TRAPDOOR = registerBlock("lovely_peach_trapdoor", () ->
+            new TrapDoorBlock(BlockBehaviour.Properties.copy(Blocks.CRIMSON_TRAPDOOR).noOcclusion(), BlockSetType.CRIMSON));
+
+    public static final RegistryObject<Block> LOVELY_PEACH_PRESSURE_PLATE = registerBlock("lovely_peach_pressure_plate", () ->
+            new PressurePlateBlock(PressurePlateBlock.Sensitivity.EVERYTHING,
+                    BlockBehaviour.Properties.copy(Blocks.CRIMSON_PRESSURE_PLATE), BlockSetType.CRIMSON));
+
+    public static final RegistryObject<Block> LOVELY_PEACH_BUTTON = registerBlock("lovely_peach_button", () ->
+            new ButtonBlock(BlockBehaviour.Properties.copy(Blocks.CRIMSON_BUTTON),
+                    BlockSetType.CRIMSON, 10, true));
 
     public static final RegistryObject<Block> GIRL_YESS_PUMPKIN = registerBlock("girl_yess_pumpkin", GirlYessPumpkin::new);
 
