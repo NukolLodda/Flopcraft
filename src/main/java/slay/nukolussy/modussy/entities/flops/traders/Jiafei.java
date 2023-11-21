@@ -122,19 +122,7 @@ public class Jiafei extends AbstractFlopTraders {
     @Override
     protected void newYearsGifting(Player pPlayer) {
         if (ModUtil.isNewYears() && !PlayerMethods.isNewgen(pPlayer)) {
-            int max = 2;
-            if (PlayerMethods.isFlop(pPlayer)) {
-                max++;
-                if (PlayerMethods.isMagicFlop(pPlayer)) {
-                    max++;
-                    if (PlayerMethods.isFlopIcon(pPlayer)) {
-                        max++;
-                    }
-                }
-            }
-            int count = this.random.nextInt(1, max);
-            ItemStack hunbao = new ItemStack(ModItems.HUNBAO.get(), count);
-            this.spawnAtLocation(hunbao);
+            this.spawnAtLocation(ModItems.HUNBAO.get());
             this.level().playSound(null, new BlockPos(this.getBlockX(), this.getBlockY(), this.getBlockZ()),
                     ModSounds.JIAFEI_NEW_YEARS_TRADE.get(), SoundSource.AMBIENT);
         }

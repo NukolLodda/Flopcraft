@@ -263,9 +263,6 @@ public class ModSounds {
     public static final RegistryObject<SoundEvent> CUPCAkKE_NEW_YEARS_3 = SOUNDS.register("cupcakke_new_years_3",
             () -> SoundEvent.createVariableRangeEvent(new ResourceLocation(Modussy.MODID,"cupcakke_new_years_3")));
 
-    public static final RegistryObject<SoundEvent> CUPCAkKE_NEW_YEARS_4 = SOUNDS.register("cupcakke_new_years_4",
-            () -> SoundEvent.createVariableRangeEvent(new ResourceLocation(Modussy.MODID,"cupcakke_new_years_4")));
-
     public static final RegistryObject<SoundEvent> CUPCAkKE_SLURP = SOUNDS.register("cupcakke_slurp",
             () -> SoundEvent.createVariableRangeEvent(new ResourceLocation(Modussy.MODID,"cupcakke_slurp")));
 
