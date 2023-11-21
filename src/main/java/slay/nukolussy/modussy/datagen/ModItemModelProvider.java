@@ -23,10 +23,12 @@ public class ModItemModelProvider extends ItemModelProvider {
         simpleItem(ModItems.BARBIE_CRYSTALS);
         simpleItem(ModItems.BLOOD_CLUMP);
         simpleItem(ModItems.BLOODY_TAMPON);
+        simpleItem(ModItems.CLITMAS_BUTTPLUG);
         simpleItem(ModItems.CUPCAKE);
         simpleItem(ModItems.CVM);
         simpleItem(ModItems.CVMIUM);
         simpleItem(ModItems.EXTRA_BLOODY_TAMPON);
+        simpleItem(ModItems.CLITMAS_PRESENT);
         simpleItem(ModItems.FLOPTROPICA_TICKET);
         simpleItem(ModItems.JIAFEI_PRODUCT);
         simpleItem(ModItems.JIAFEI_PERFUME);
@@ -39,6 +41,7 @@ public class ModItemModelProvider extends ItemModelProvider {
         simpleItem(ModItems.SLAGINIUM_YASSIFIER_PREMIUM);
         simpleItem(ModItems.SLAGINIUM_YASSIFIER_DELUXE);
         simpleItem(ModItems.SLAGINIUM_PICKAXOL);
+        simpleItem(ModItems.ROSETOY);
         simpleItem(ModItems.INFUSED_SLAGINIUM_PICKAXOL);
         simpleItem(ModItems.FLOPIUM_PICKAXOL);
         simpleItem(ModItems.MYSTICAL_FLOPIUM_PICKAXOL);
@@ -107,6 +110,7 @@ public class ModItemModelProvider extends ItemModelProvider {
         simpleItem(ModItems.GAGASTONE);
         simpleItem(ModItems.GAGINA);
         simpleItem(ModItems.HAIRUSSY);
+        simpleItem(ModItems.HUNBAO);
         simpleItem(ModItems.JIAFEI_TRIM_TEMPLATE);
         simpleItem(ModItems.JIAFEI_UPGRADE_TEMPLATE);
         simpleItem(ModItems.MYSTICAL_FLOPIUM);

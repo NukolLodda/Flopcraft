@@ -5,19 +5,31 @@ import net.minecraft.core.BlockPos;
 import net.minecraft.network.chat.Component;
 import net.minecraft.network.chat.MutableComponent;
 
+import java.time.LocalDate;
+import java.time.Month;
 import java.util.ArrayList;
 import java.util.Random;
 
 public class ModUtil {
     protected static final Random RANDOM = new Random();
+    private static final LocalDate DATE = LocalDate.now();
     public static Component getFullGirlYessComment() {
-        int value = RANDOM.nextInt(8) + 1; // this will increase as more girl yess comments are made
+        int value = RANDOM.nextInt(1, 9); // this will increase as more girl yess comments are made
         return getFullGirlYessComment(value);
     }
 
     public static Component getFullGirlYessComment(int pVal) {
         return getGirlYessComment(pVal).append(" - ").append(getGirlYessCommentAuthor(pVal))
                 .withStyle(getGirlYessCommentStyle(pVal));
+    }
+
+    public static boolean itemsEqualsEachother(Object obj, Object... objects) {
+        for (Object val : objects) {
+            if (!obj.equals(val)) {
+                return false;
+            }
+        }
+        return true;
     }
 
     public static MutableComponent getGirlYessComment(int pVal) {
@@ -70,5 +82,29 @@ public class ModUtil {
             case 8 -> ChatFormatting.DARK_RED;
             default -> ChatFormatting.GOLD;
         };
+    }
+
+    public static Month getMonth() {
+        return DATE.getMonth();
+    }
+
+    public static int getDayOfMonth() {
+        return DATE.getDayOfMonth();
+    }
+
+    public static boolean isHumploween() {
+        return getMonth().equals(Month.OCTOBER) && getDayOfMonth() == 30;
+    }
+
+    public static boolean isClitmas() {
+        return getMonth().equals(Month.DECEMBER) && (getDayOfMonth() == 24 || getDayOfMonth() == 25);
+    }
+
+    public static boolean isNewYears() {
+        return DATE.getDayOfYear() == 1;
+    }
+
+    public static boolean isValicktines() {
+        return getMonth().equals(Month.FEBRUARY) && (getDayOfMonth() == 14);
     }
 }

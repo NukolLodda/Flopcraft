@@ -117,11 +117,7 @@ public class ToolMethods {
 
     public static void makeupUse(Entity entity, ItemStack item, int lvl) {
         if (entity instanceof LivingEntity living) {
-            if (EntityMethods.isFlop(living)) {
-                EntityMethods.flopEffects(living, lvl, lvl / 2);
-            } else if (EntityMethods.isMonster(living)) {
-                EntityMethods.monsterEffects(living);
-            }
+            EntityMethods.addEffects(living, lvl, lvl / 2);
             item.setDamageValue(item.getDamageValue() + 1);
         }
     }
@@ -204,23 +200,11 @@ public class ToolMethods {
                     }
                     yassification(ent, world, player);
                     if (ent instanceof Villager || ent instanceof Witch) itemDura += 10;
-                    if (EntityMethods.isMonster(ent) && lvl > 1) {
-                        EntityMethods.monsterEffects(ent, lvl, amp);
-                        itemDura += 80;
-                    }
                     if (ent instanceof Cat cat && Math.random() < 0.16) {
                         cat.spawnAtLocation(ModItems.POSEI.get());
                         PlayerMethods.addPlayerYassification(player, 1);
                     }
-                    if (EntityMethods.isFlop(ent)) {
-                        EntityMethods.flopEffects(ent, lvl, amp);
-                        itemDura += 120;
-                        if (ent instanceof AbstractFlopFigures || (ent instanceof Player surround && PlayerMethods.isFlopIcon(surround))) {
-                            PlayerMethods.addPlayerYassification(player, 3 * lvl);
-                        } else if (EntityMethods.areFlopFigure(ent)) {
-                            PlayerMethods.addPlayerYassification(player, lvl);
-                        }
-                    }
+                    EntityMethods.addEffects(ent, lvl, amp);
                 }
             }
         }
@@ -348,6 +332,24 @@ public class ToolMethods {
                         default -> ParticleTypes.POOF;
                     },
                     x, y, z, ((int) chargedTime * 15),1,1, 1, (chargedTime * 0.16));
+        }
+    }
+
+
+    public static void mariahCvmreyShoot(LevelAccessor world, double x, double y, double z, float velocity) {
+        {
+            final Vec3 center = new Vec3(x, y, z);
+            List<LivingEntity> entities = world.getEntitiesOfClass(LivingEntity.class, new AABB(center, center)
+                    .inflate(2 * velocity / 2d), e -> true).stream().toList();
+            for (LivingEntity ent : entities) {
+                EntityMethods.addEffects(ent, (int)velocity * 20, (int)velocity);
+            }
+        }
+        if (world instanceof ServerLevel level) {
+            level.sendParticles(ParticleTypes.COMPOSTER,
+                    x, y, z, ((int) velocity * 15),1,1, 1, (velocity * 0.16));
+            level.sendParticles(ParticleTypes.CRIMSON_SPORE,
+                    x, y, z, ((int) velocity * 15),1,1, 1, (velocity * 0.16));
         }
     }
 

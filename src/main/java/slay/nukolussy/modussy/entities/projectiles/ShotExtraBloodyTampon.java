@@ -46,11 +46,7 @@ public class ShotExtraBloodyTampon extends ShotTampon {
             List<LivingEntity> entities = level().getEntitiesOfClass(LivingEntity.class, new AABB(center, center)
                     .inflate(2.5 / 2d), e -> true).stream().toList();
             for (LivingEntity entity : entities) {
-                if (EntityMethods.isMonster(entity)) {
-                    EntityMethods.monsterEffects(entity, 3, 2);
-                } else if (EntityMethods.isFlop(entity)) {
-                    EntityMethods.flopEffects(entity, 3, 2);
-                }
+                EntityMethods.addEffects(entity, 3, 2);
             }
         }
         this.level().explode(null, this.getX(), this.getY(), this.getZ(), 3, Level.ExplosionInteraction.BLOCK);
@@ -64,16 +60,7 @@ public class ShotExtraBloodyTampon extends ShotTampon {
     @Override
     protected void onHitEntity(EntityHitResult pResult) {
         if (pResult.getEntity() instanceof LivingEntity living) {
-            if (EntityMethods.isFlop(living)) {
-                EntityMethods.flopEffects(living, 3, 2);
-                if (living instanceof Player player) {
-                    PlayerMethods.addPlayerYassification(player, 3);
-                }
-            }
-
-            if (EntityMethods.isMonster(living)) {
-                EntityMethods.monsterEffects(living, 3, 2);
-            }
+            EntityMethods.addEffects(living, 3, 2);
         }
         super.onHitEntity(pResult);
     }

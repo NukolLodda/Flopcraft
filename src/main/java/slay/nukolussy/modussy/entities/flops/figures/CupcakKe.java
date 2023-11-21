@@ -25,6 +25,7 @@ import slay.nukolussy.modussy.entities.flops.AbstractFlopFigures;
 import slay.nukolussy.modussy.entities.flops.IMerflop;
 import slay.nukolussy.modussy.item.ModItems;
 import slay.nukolussy.modussy.sound.ModSounds;
+import slay.nukolussy.modussy.util.ModUtil;
 
 import java.util.Collection;
 import java.util.Random;
@@ -53,7 +54,15 @@ public class CupcakKe extends AbstractFlopFigures implements IMerflop {
 
     @Override
     public SoundEvent getAmbientSound() {
-        int randNum = (int) (Math.random() * 10);
+        if (ModUtil.isNewYears()) {
+            int randVal = this.random.nextInt();
+            return switch (randVal) {
+                case 1 -> ModSounds.CUPCAkKE_NEW_YEARS_1.get();
+                case 2 -> ModSounds.CUPCAkKE_NEW_YEARS_2.get();
+                default -> ModSounds.CUPCAkKE_NEW_YEARS_3.get();
+            };
+        }
+        int randNum = this.random.nextInt(10);
         return switch (randNum) {
             case 1 -> ModSounds.CUPCAkKE_1.get();
             case 2 -> ModSounds.CUPCAkKE_2.get();
@@ -70,7 +79,7 @@ public class CupcakKe extends AbstractFlopFigures implements IMerflop {
 
     @Override
     public SoundEvent getHurtSound(DamageSource ds) {
-        int hurtNum = (int) (Math.random() * 4);
+        int hurtNum = this.random.nextInt(4);
         return switch (hurtNum) {
             case 1 -> ModSounds.CUPCAkKE_HURT1.get();
             case 2 -> ModSounds.CUPCAkKE_HURT2.get();
@@ -232,7 +241,9 @@ public class CupcakKe extends AbstractFlopFigures implements IMerflop {
             }
             cupcakKe.level().addFreshEntity(newMob);
             cupcakKe.spawnAtLocation(cupcakkeDrops());
+            if (ModUtil.isNewYears()) {
+                cupcakKe.spawnAtLocation(ModItems.HUNBAO.get());
+            }
         }
-
     }
 }

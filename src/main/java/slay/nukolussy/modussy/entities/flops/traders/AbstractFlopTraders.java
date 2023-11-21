@@ -21,6 +21,7 @@ import net.minecraft.world.level.Level;
 import net.minecraft.world.level.gameevent.GameEvent;
 import org.jetbrains.annotations.Nullable;
 import slay.nukolussy.modussy.entities.flops.AbstractFlopFigures;
+import slay.nukolussy.modussy.util.ModUtil;
 import slay.nukolussy.modussy.util.PlayerMethods;
 
 public abstract class AbstractFlopTraders extends AbstractFlopFigures implements InventoryCarrier, Npc, Merchant {
@@ -76,6 +77,9 @@ public abstract class AbstractFlopTraders extends AbstractFlopFigures implements
                     pPlayer.stopUsingItem();
                     this.playSound(getNotifyTradeSound());
                     this.startTrading(pPlayer);
+                    if (ModUtil.isNewYears() && !PlayerMethods.isNewgen(pPlayer)) {
+                        newYearsGifting(pPlayer);
+                    }
                 }
                 return InteractionResult.sidedSuccess(this.level().isClientSide);
             }
@@ -164,4 +168,5 @@ public abstract class AbstractFlopTraders extends AbstractFlopFigures implements
     protected abstract void updateTrades();
     protected abstract SoundEvent getTradelessSound();
     protected abstract boolean itemIsSpawnEgg(Item pItem);
+    protected abstract void newYearsGifting(Player pPlayer);
 }

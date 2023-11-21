@@ -674,6 +674,33 @@
       }
     ]
   },
+  "cupcakke_new_years_1": {
+    "subtitle": "subtitles.cupcakke_new_years",
+    "sounds": [
+      {
+        "name": "modussy:cupcakke_new_years_1",
+        "stream": true
+      }
+    ]
+  },
+  "cupcakke_new_years_2": {
+    "subtitle": "subtitles.cupcakke_new_years",
+    "sounds": [
+      {
+        "name": "modussy:cupcakke_new_years_2",
+        "stream": true
+      }
+    ]
+  },
+  "cupcakke_new_years_3": {
+    "subtitle": "subtitles.cupcakke_new_years",
+    "sounds": [
+      {
+        "name": "modussy:cupcakke_new_years_3",
+        "stream": true
+      }
+    ]
+  },
   "cupcakke_slurp": {
     "subtitle": "subtitles.cupcakke_slurp",
     "sounds": [
@@ -854,6 +881,24 @@
       }
     ]
   },
+  "jiafei_new_years": {
+    "subtitle": "subtitles.jiafei_new_years",
+    "sounds": [
+      {
+        "name": "modussy:jiafei_new_years",
+        "stream": true
+      }
+    ]
+  },
+  "jiafei_new_years_trade": {
+    "subtitle": "subtitles.jiafei_new_years_trade",
+    "sounds": [
+      {
+        "name": "modussy:jiafei_new_years_trade",
+        "stream": true
+      }
+    ]
+  },
   "lovely_peaches_1": {
     "subtitle": "subtitles.lovely_peaches",
     "sounds": [
@@ -931,6 +976,15 @@
     "sounds": [
       {
         "name": "modussy:lovely_peaches_hurt2",
+        "stream": true
+      }
+    ]
+  },
+  "mariah_carey_defrosting": {
+    "subtitle": "subtitles.mariah_carey_defrosting",
+    "sounds": [
+      {
+        "name": "modussy:mariah_carey_defrosting",
         "stream": true
       }
     ]
@@ -1030,6 +1084,105 @@
     "sounds": [
       {
         "name": "modussy:rosetoy_2",
+        "stream": true
+      }
+    ]
+  },
+  "ranvision_1": {
+    "subtitle": "subtitles.ranvision",
+    "sounds": [
+      {
+        "name": "modussy:ranvision_1",
+        "stream": true
+      }
+    ]
+  },
+  "ranvision_2": {
+    "subtitle": "subtitles.ranvision",
+    "sounds": [
+      {
+        "name": "modussy:ranvision_2",
+        "stream": true
+      }
+    ]
+  },
+  "ranvision_3": {
+    "subtitle": "subtitles.ranvision",
+    "sounds": [
+      {
+        "name": "modussy:ranvision_3",
+        "stream": true
+      }
+    ]
+  },
+  "ranvision_4": {
+    "subtitle": "subtitles.ranvision",
+    "sounds": [
+      {
+        "name": "modussy:ranvision_4",
+        "stream": true
+      }
+    ]
+  },
+  "ranvision_5": {
+    "subtitle": "subtitles.ranvision",
+    "sounds": [
+      {
+        "name": "modussy:ranvision_5",
+        "stream": true
+      }
+    ]
+  },
+  "ranvision_bought_1": {
+    "subtitle": "subtitles.ranvision_bought",
+    "sounds": [
+      {
+        "name": "modussy:ranvision_bought_1",
+        "stream": true
+      }
+    ]
+  },
+  "ranvision_bought_2": {
+    "subtitle": "subtitles.ranvision_bought",
+    "sounds": [
+      {
+        "name": "modussy:ranvision_bought_2",
+        "stream": true
+      }
+    ]
+  },
+  "ranvision_eat": {
+    "subtitle": "subtitles.ranvision_eat",
+    "sounds": [
+      {
+        "name": "modussy:ranvision_eat",
+        "stream": true
+      }
+    ]
+  },
+  "ranvision_trade_1": {
+    "subtitle": "subtitles.ranvision_trade",
+    "sounds": [
+      {
+        "name": "modussy:ranvision_trade_1",
+        "stream": true
+      }
+    ]
+  },
+  "ranvision_trade_2": {
+    "subtitle": "subtitles.ranvision_trade",
+    "sounds": [
+      {
+        "name": "modussy:ranvision_trade_2",
+        "stream": true
+      }
+    ]
+  },
+  "ranvision_tradeless": {
+    "subtitle": "subtitles.ranvision_tradeless",
+    "sounds": [
+      {
+        "name": "modussy:ranvision_tradeless",
         "stream": true
       }
     ]

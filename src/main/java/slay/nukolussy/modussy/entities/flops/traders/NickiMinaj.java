@@ -10,14 +10,11 @@ import net.minecraft.network.syncher.SynchedEntityData;
 import net.minecraft.sounds.SoundEvent;
 import net.minecraft.util.RandomSource;
 import net.minecraft.world.DifficultyInstance;
-import net.minecraft.world.InteractionHand;
-import net.minecraft.world.InteractionResult;
 import net.minecraft.world.damagesource.DamageSource;
 import net.minecraft.world.entity.*;
 import net.minecraft.world.entity.ai.attributes.AttributeSupplier;
 import net.minecraft.world.entity.ai.attributes.Attributes;
 import net.minecraft.world.entity.ai.goal.TemptGoal;
-import net.minecraft.world.entity.ai.memory.MemoryModuleType;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
@@ -114,8 +111,8 @@ public class NickiMinaj extends AbstractFlopTraders {
         }
 
         for(Integer integer : set) {
-            FlopTrades.ItemListing floptrades$itemlisting = pNewTrades[integer];
-            MerchantOffer merchantoffer = floptrades$itemlisting.getOffer(this, this.random);
+            FlopTrades.ItemListing tradelisting = pNewTrades[integer];
+            MerchantOffer merchantoffer = tradelisting.getOffer(this, this.random);
             if (merchantoffer != null) {
                 pGivenMerchantOffers.add(merchantoffer);
             }
@@ -143,7 +140,7 @@ public class NickiMinaj extends AbstractFlopTraders {
     @Nullable
     @Override
     protected SoundEvent getAmbientSound() {
-        int randVal = (int) (Math.random() * 3);
+        int randVal = this.random.nextInt(3);
         return switch (randVal) {
             case 1 -> ModSounds.NICKI_MINAJ_1.get();
             case 2 -> ModSounds.NICKI_MINAJ_2.get();
@@ -154,6 +151,10 @@ public class NickiMinaj extends AbstractFlopTraders {
     @Override
     protected boolean itemIsSpawnEgg(Item pItem) {
         return pItem.equals(ModItems.NICKI_MINAJ_SPAWN_EGG.get());
+    }
+
+    @Override
+    protected void newYearsGifting(Player pPlayer) {
     }
 
     @Override

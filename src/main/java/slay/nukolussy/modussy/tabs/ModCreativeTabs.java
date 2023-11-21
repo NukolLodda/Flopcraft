@@ -26,6 +26,7 @@ public class ModCreativeTabs {
                     .displayItems(((pParameters, pOutput) -> {
                         pOutput.accept(ModBlocks.CVM_INFUSION_ALTER.get());
                         pOutput.accept(ModBlocks.GIRL_YESS_PUMPKIN.get());
+                        pOutput.accept(ModBlocks.MARIAH_CAREY_ICE_BLOCK.get());
                         pOutput.accept(ModBlocks.YASSIFICATION_DETECTOR.get());
                         pOutput.accept(ModBlocks.AESTHETIC_STORE_BLOCK.get());
                         pOutput.accept(ModBlocks.FLOPBUCKS_BLOCK.get());
@@ -59,24 +60,6 @@ public class ModCreativeTabs {
                         pOutput.accept(ModBlocks.LOVELY_PEACH_FENCE_GATE.get());
                     })).build());
 
-    public static RegistryObject<CreativeModeTab> CVMSUMABLES = CREATIVE_MODE_TABS.register("cvmsumables", () ->
-            CreativeModeTab.builder()
-                    .icon(() -> ModItems.CUPCAKE.get().getDefaultInstance())
-                    .title(Component.translatable("itemGroup.cvmsumables"))
-                    .withTabsBefore(CreativeModeTabs.SPAWN_EGGS)
-                    .displayItems(((pParameters, pOutput) -> {
-                        pOutput.accept(ModItems.CUPCAKE.get());
-                        pOutput.accept(ModItems.CVM.get());
-                        pOutput.accept(ModItems.CVMIUM.get());
-                        pOutput.accept(ModItems.JIAFEI_PRODUCT.get());
-                        pOutput.accept(ModItems.JIAFEI_PERFUME.get());
-                        pOutput.accept(ModItems.JIAFEI_SEED.get());
-                        pOutput.accept(ModItems.LOVELY_PEACH.get());
-                        pOutput.accept(ModItems.KYLIE_JENNER_LIPSTICK.get());
-                        pOutput.accept(ModItems.LANCVM_CREAM.get());
-                        pOutput.accept(ModItems.FLOPTROPICA_TICKET.get());
-                    })).build());
-
     public static RegistryObject<CreativeModeTab> SLAY_TOOLS = CREATIVE_MODE_TABS.register("slay_tools", () ->
             CreativeModeTab.builder()
                     .icon(() -> ModItems.ARANA_GRANDE.get().getDefaultInstance())
@@ -84,7 +67,9 @@ public class ModCreativeTabs {
                     .withTabsBefore(CreativeModeTabs.SPAWN_EGGS)
                     .displayItems(((pParameters, pOutput) -> {
                         pOutput.accept(ModItems.ARANA_GRANDE.get());
+                        pOutput.accept(ModItems.CLITMAS_BUTTPLUG.get());
                         pOutput.accept(ModItems.DEELDO.get());
+                        pOutput.accept(ModItems.ROSETOY.get());
                         pOutput.accept(ModItems.SLAGINIUM_YASSIFIER.get());
                         pOutput.accept(ModItems.SLAGINIUM_YASSIFIER_PLUS.get());
                         pOutput.accept(ModItems.SLAGINIUM_YASSIFIER_PREMIUM.get());
@@ -169,13 +154,24 @@ public class ModCreativeTabs {
                     .displayItems(((pParameters, pOutput) -> {
                         pOutput.accept(ModItems.BARBIE_CRYSTALS.get());
                         pOutput.accept(ModItems.BLOOD_CLUMP.get());
+                        pOutput.accept(ModItems.CLITMAS_PRESENT.get());
+                        pOutput.accept(ModItems.CUPCAKE.get());
+                        pOutput.accept(ModItems.CVM.get());
+                        pOutput.accept(ModItems.CVMIUM.get());
                         pOutput.accept(ModItems.CVMTITPLASM.get());
                         pOutput.accept(ModItems.FLOPIUM.get());
+                        pOutput.accept(ModItems.FLOPTROPICA_TICKET.get());
                         pOutput.accept(ModItems.GAGASTONE.get());
                         pOutput.accept(ModItems.GAGINA.get());
                         pOutput.accept(ModItems.HAIRUSSY.get());
+                        pOutput.accept(ModItems.JIAFEI_PRODUCT.get());
+                        pOutput.accept(ModItems.JIAFEI_PERFUME.get());
+                        pOutput.accept(ModItems.JIAFEI_SEED.get());
                         pOutput.accept(ModItems.JIAFEI_TRIM_TEMPLATE.get());
                         pOutput.accept(ModItems.JIAFEI_UPGRADE_TEMPLATE.get());
+                        pOutput.accept(ModItems.LANCVM_CREAM.get());
+                        pOutput.accept(ModItems.LOVELY_PEACH.get());
+                        pOutput.accept(ModItems.KYLIE_JENNER_LIPSTICK.get());
                         pOutput.accept(ModItems.MYSTICAL_FLOPIUM.get());
                         pOutput.accept(ModItems.SCARUSSY.get());
                         pOutput.accept(ModItems.SLAGINIUM.get());

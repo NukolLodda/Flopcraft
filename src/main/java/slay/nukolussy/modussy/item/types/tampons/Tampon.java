@@ -67,13 +67,7 @@ public class Tampon extends ArrowItem {
                             slime.setGuaranteedDrop(EquipmentSlot.MAINHAND);
                             slime.kill();
                         }
-                        if (EntityMethods.isMonster(ent)) {
-                            EntityMethods.monsterEffects(ent);
-                        }
-                        if (ent instanceof AbstractFlops ||
-                                (ent instanceof Player surround && PlayerMethods.isFlop(surround))) {
-                            EntityMethods.flopEffects(ent);
-                        }
+                        EntityMethods.addEffects(ent);
                         ToolMethods.yassification(ent, world, entity);
                     }
                 }

@@ -7,11 +7,11 @@ import net.minecraft.Util;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.particles.ParticleTypes;
 import net.minecraft.nbt.CompoundTag;
-import net.minecraft.network.chat.Component;
 import net.minecraft.network.syncher.EntityDataAccessor;
 import net.minecraft.network.syncher.EntityDataSerializers;
 import net.minecraft.network.syncher.SynchedEntityData;
 import net.minecraft.sounds.SoundEvent;
+import net.minecraft.sounds.SoundSource;
 import net.minecraft.util.ByIdMap;
 import net.minecraft.util.RandomSource;
 import net.minecraft.util.StringRepresentable;
@@ -19,7 +19,7 @@ import net.minecraft.world.DifficultyInstance;
 import net.minecraft.world.damagesource.DamageSource;
 import net.minecraft.world.entity.*;
 import net.minecraft.world.entity.ai.goal.TemptGoal;
-import net.minecraft.world.entity.item.ItemEntity;
+import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.crafting.Ingredient;
@@ -33,6 +33,8 @@ import slay.nukolussy.modussy.entities.AbstractModEntity;
 import slay.nukolussy.modussy.entities.goal.ModussyBreedingGoal;
 import slay.nukolussy.modussy.item.ModItems;
 import slay.nukolussy.modussy.sound.ModSounds;
+import slay.nukolussy.modussy.util.ModUtil;
+import slay.nukolussy.modussy.util.PlayerMethods;
 
 import javax.annotation.Nullable;
 import java.util.Set;
@@ -52,11 +54,11 @@ public class Jiafei extends AbstractFlopTraders {
     }
 
     protected SoundEvent getEatSound() {
-        int randVal = (int) (Math.random() * 3);
+        int randVal = this.random.nextInt(3);
         return switch (randVal) {
-            case 0 -> ModSounds.JIAFEI_EAT_3.get();
             case 1 -> ModSounds.JIAFEI_EAT_1.get();
-            default -> ModSounds.JIAFEI_EAT_2.get();
+            case 2 -> ModSounds.JIAFEI_EAT_2.get();
+            default -> ModSounds.JIAFEI_EAT_3.get();
         };
     }
 
@@ -74,7 +76,10 @@ public class Jiafei extends AbstractFlopTraders {
 
     @Override
     public SoundEvent getAmbientSound() {
-        int hurtNum = (int) (Math.random() * 3 + 1);
+        if (ModUtil.isNewYears()) {
+            return ModSounds.JIAFEI_NEW_YEARS.get();
+        }
+        int hurtNum = this.random.nextInt(3);
         return switch(hurtNum) {
             case 1 -> ModSounds.JIAFEI_1.get();
             case 2 -> ModSounds.JIAFEI_2.get();
@@ -94,7 +99,7 @@ public class Jiafei extends AbstractFlopTraders {
 
     @Override
     public SoundEvent getDeathSound() {
-        int dedNum = (int) (Math.random() * 2 + 1);
+        int dedNum = this.random.nextInt(2);
         return dedNum == 1 ? ModSounds.JIAFEI_DEATH_1.get() : ModSounds.JIAFEI_DEATH_2.get();
     }
 
@@ -112,6 +117,27 @@ public class Jiafei extends AbstractFlopTraders {
     @Override
     protected boolean itemIsSpawnEgg(Item pItem) {
         return pItem.equals(ModItems.JIAFEI_SPAWN_EGG.get());
+    }
+
+    @Override
+    protected void newYearsGifting(Player pPlayer) {
+        if (ModUtil.isNewYears() && !PlayerMethods.isNewgen(pPlayer)) {
+            int max = 2;
+            if (PlayerMethods.isFlop(pPlayer)) {
+                max++;
+                if (PlayerMethods.isMagicFlop(pPlayer)) {
+                    max++;
+                    if (PlayerMethods.isFlopIcon(pPlayer)) {
+                        max++;
+                    }
+                }
+            }
+            int count = this.random.nextInt(1, max);
+            ItemStack hunbao = new ItemStack(ModItems.HUNBAO.get(), count);
+            this.spawnAtLocation(hunbao);
+            this.level().playSound(null, new BlockPos(this.getBlockX(), this.getBlockY(), this.getBlockZ()),
+                    ModSounds.JIAFEI_NEW_YEARS_TRADE.get(), SoundSource.AMBIENT);
+        }
     }
 
     @Override
@@ -197,8 +223,8 @@ public class Jiafei extends AbstractFlopTraders {
         }
 
         for(Integer integer : set) {
-            FlopTrades.ItemListing floptrades$itemlisting = pNewTrades[integer];
-            MerchantOffer merchantoffer = floptrades$itemlisting.getOffer(this, this.random);
+            FlopTrades.ItemListing tradelisting = pNewTrades[integer];
+            MerchantOffer merchantoffer = tradelisting.getOffer(this, this.random);
             if (merchantoffer != null) {
                 pGivenMerchantOffers.add(merchantoffer);
             }
@@ -222,7 +248,10 @@ public class Jiafei extends AbstractFlopTraders {
 
     @Override
     public @NotNull SoundEvent getNotifyTradeSound() {
-        int rand = (int)(Math.random() * 3);
+        if (ModUtil.isNewYears()) {
+            return ModSounds.JIAFEI_NEW_YEARS_TRADE.get();
+        }
+        int rand = this.random.nextInt(3);
         return switch(rand) {
             case 1 -> ModSounds.JIAFEI_TRADE_1.get();
             case 2 -> ModSounds.JIAFEI_TRADE_2.get();

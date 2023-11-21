@@ -86,8 +86,7 @@ public class ModBlocks {
     public static final RegistryObject<Block> LOVELY_PEACH_LEAVES = registerBlock("lovely_peach_leaves", () ->
             new LeavesBlock(BlockBehaviour.Properties.copy(Blocks.OAK_LEAVES)));
 
-    public static final RegistryObject<Block> LOVELY_PEACH_PLANKS = registerBlock("lovely_peach_planks", () ->
-            new Block(BlockBehaviour.Properties.copy(Blocks.CRIMSON_PLANKS)));
+    public static final RegistryObject<Block> LOVELY_PEACH_PLANKS = registerBlock("lovely_peach_planks", ModPlanks::new);
 
     public static final RegistryObject<Block> LOVELY_PEACH_STAIRS = registerBlock("lovely_peach_stairs", () ->
             new StairBlock(() -> ModBlocks.LOVELY_PEACH_PLANKS.get().defaultBlockState(),
@@ -116,8 +115,6 @@ public class ModBlocks {
             new ButtonBlock(BlockBehaviour.Properties.copy(Blocks.CRIMSON_BUTTON),
                     BlockSetType.CRIMSON, 10, true));
 
-    public static final RegistryObject<Block> GIRL_YESS_PUMPKIN = registerBlock("girl_yess_pumpkin", GirlYessPumpkin::new);
-
     /* Floptropican tree types and biomes
      * Cupcakkian Balsam - Cupcakkia
      * Jiafeian Fir - Jiafeia
@@ -130,6 +127,9 @@ public class ModBlocks {
      * doors, fences, fence gates, planks, logs, all sided logs, stripped logs, stripped all sided logs, stairs, slabs,
      * buttons, pressure plates
      */
+    public static final RegistryObject<Block> GIRL_YESS_PUMPKIN = registerBlock("girl_yess_pumpkin", GirlYessPumpkin::new);
+    public static final RegistryObject<Block> MARIAH_CAREY_ICE_BLOCK = registerBlock("mariah_carey_ice_block", MariahCareyIceBlock::new);
+
 
     public static final RegistryObject<LiquidBlock> CVM_FLUID = BLOCKS.register("cvm_fluid",
             () -> new LiquidBlock(ModFluids.SOURCE_CVM_FLUID, BlockBehaviour.Properties.copy(Blocks.WATER)));

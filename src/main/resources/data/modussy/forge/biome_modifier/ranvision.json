@@ -3,7 +3,7 @@
   "biomes": "#minecraft:is_nether",
   "spawners": {
     "type": "modussy:ranvision",
-    "weight": 5,
+    "weight": 0.5,
     "minCount": 1,
     "maxCount": 1
   }

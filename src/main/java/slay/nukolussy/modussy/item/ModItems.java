@@ -13,7 +13,9 @@ import slay.nukolussy.modussy.datagen.tags.ModTrimPatterns;
 import slay.nukolussy.modussy.entities.ModEntities;
 import slay.nukolussy.modussy.item.types.*;
 import slay.nukolussy.modussy.item.types.jiafei.*;
+import slay.nukolussy.modussy.item.types.sextoys.ClitmasButtplug;
 import slay.nukolussy.modussy.item.types.sextoys.Deeldo;
+import slay.nukolussy.modussy.item.types.sextoys.Rosetoy;
 import slay.nukolussy.modussy.item.types.tampons.BloodyTampon;
 import slay.nukolussy.modussy.item.types.tampons.ExtraBloodyTampon;
 import slay.nukolussy.modussy.item.types.tampons.Tampon;
@@ -57,10 +59,12 @@ public class ModItems {
     public static final RegistryObject<Item> HAIRUSSY = ITEMS.register("hairussy",
             () -> new Item(new Item.Properties()));
 
+    public static final RegistryObject<Item> HUNBAO = ITEMS.register("hunbao", Hunbao::new);
+
     public static final RegistryObject<Item> JIAFEI_PRODUCT = ITEMS.register("jiafei_product",
             () -> new Item(new Item.Properties()));
 
-    public static final RegistryObject<Item> BUSSIAN_DOLLAR = ITEMS.register("bussian_dollaar",
+    public static final RegistryObject<Item> BUSSIAN_DOLLAR = ITEMS.register("bussian_dollar",
             () -> new Item(new Item.Properties().fireResistant()));
 
     public static final RegistryObject<Item> MYSTICAL_FLOPIUM = ITEMS.register("mystical_flopium",
@@ -125,6 +129,7 @@ public class ModItems {
     public static final RegistryObject<Item> LANCVM_CREAM = ITEMS.register("lancvm_cream", LancvmCream::new);
     public static final RegistryObject<Item> FLOPTROPICA_TICKET = ITEMS.register("floptropica_ticket", FloptropicaTicket::new);
     public static final RegistryObject<Item> JIAFEI_SEED = ITEMS.register("jiafei_seed", JiafeiSeed::new);
+    public static final RegistryObject<Item> CLITMAS_PRESENT = ITEMS.register("clitmas_present", ClitmasPresent::new);
     public static final RegistryObject<Item> BRA = ITEMS.register("bra", InnerWear.Bra::new);
     public static final RegistryObject<Item> THONGS = ITEMS.register("thongs", InnerWear.Thongs::new);
     public static final RegistryObject<Item> JIAFEI_TRIM_TEMPLATE = ITEMS.register("jiafei_armor_trim_template",
@@ -138,7 +143,9 @@ public class ModItems {
     public static final RegistryObject<Item> JIAFEI_PICKAXE = ITEMS.register("jiafei_pickaxe", JiafeiPickaxe::new);
     public static final RegistryObject<Item> JIAFEI_SICKLE = ITEMS.register("jiafei_sickle", JiafeiSickle::new);
     public static final RegistryObject<Item> JIAFEI_SHOVEL = ITEMS.register("jiafei_shovel", JiafeiShovel::new);
+    public static final RegistryObject<Item> CLITMAS_BUTTPLUG = ITEMS.register("clitmas_buttplug", ClitmasButtplug::new);
     public static final RegistryObject<Item> DEELDO = ITEMS.register("deeldo", Deeldo::new);
+    public static final RegistryObject<Item> ROSETOY = ITEMS.register("rosetoy", Rosetoy::new);
 
     public static final RegistryObject<Item> CVM_FLUID_BUCKET = ITEMS.register("cvm_fluid_bucket",
             () -> new BucketItem(ModFluids.SOURCE_CVM_FLUID, new Item.Properties().stacksTo(1).craftRemainder(Items.BUCKET)));

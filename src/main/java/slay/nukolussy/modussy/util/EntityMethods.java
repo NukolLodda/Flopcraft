@@ -127,6 +127,32 @@ public class EntityMethods {
         }
     }
 
+    public static void addEffects(LivingEntity entity) {
+        if (entity instanceof Player player) {
+            PlayerMethods.addPlayerYassification(player, 1);
+        }
+        if (isFlop(entity)) {
+            flopEffects(entity);
+            removeMonsterEffects(entity);
+        } else if (isMonster(entity)) {
+            monsterEffects(entity);
+            removeFlopEffects(entity);
+        }
+    }
+
+    public static void addEffects(LivingEntity entity, int lvl, int amp) {
+        if (entity instanceof Player player) {
+            PlayerMethods.addPlayerYassification(player, lvl);
+        }
+        if (isFlop(entity)) {
+            flopEffects(entity, lvl, amp);
+            removeMonsterEffects(entity, lvl);
+        } else if (isMonster(entity)) {
+            monsterEffects(entity, lvl, amp);
+            removeFlopEffects(entity, lvl);
+        }
+    }
+
     public static void removeMonsterEffects(LivingEntity entity) {
         entity.removeEffect(MobEffects.MOVEMENT_SLOWDOWN);
         entity.removeEffect(MobEffects.WITHER);
@@ -152,18 +178,10 @@ public class EntityMethods {
     }
 
     public static boolean canEntityBecomeNickiMinaj(LevelAccessor world, double x, double y, double z) {
-        {
-            final Vec3 center = new Vec3(x, y, z);
-            List<Entity> entities = world.getEntitiesOfClass(Entity.class, new AABB(center, center)
-                    .inflate(256 / 2d), e -> true).stream().toList();
-            for (Entity ent : entities) {
-                if (ent instanceof NickiMinaj) {
-                    return false;
-                }
-            }
-        }
-
-        return true;
+        final Vec3 center = new Vec3(x, y, z);
+        List<NickiMinaj> entities = world.getEntitiesOfClass(NickiMinaj.class, new AABB(center, center)
+                .inflate(256 / 2d), e -> true).stream().toList();
+        return entities.size() == 0;
     }
 
     static void villagerYassification(AbstractVillager entity, LevelAccessor world, Player player) {
@@ -237,6 +255,6 @@ public class EntityMethods {
     }
 
     public static boolean canMariahCareySpawn() {
-        return LocalDate.now().getMonth().equals(Month.DECEMBER);
+        return ModUtil.getMonth().equals(Month.DECEMBER);
     }
 }

@@ -57,7 +57,7 @@ public class FlopTrades {
                         new FlopTrades.SlaginiumForProducts(ModItems.DISC_C23.get(), 4, COMMON_ITEMS_SUPPLY, 2),
                         new FlopTrades.SlaginiumForProducts(ModItems.DISC_C26.get(), 4, COMMON_ITEMS_SUPPLY, 2),
                         new FlopTrades.InfusedSlaginiumForProducts(ModItems.DISC_JC2.get(), 6, UNCOMMON_ITEMS_SUPPLY, 6),
-                        new FlopTrades.InfusedSlaginiumForProducts(ModItems.DEELDO.get(), 6, UNCOMMON_ITEMS_SUPPLY, 6)
+                        new FlopTrades.InfusedSlaginiumForProducts(ModItems.ROSETOY.get(), 6, UNCOMMON_ITEMS_SUPPLY, 6)
                 })));
                 tag.put(Ranvision.Variant.KPOP, toIntMap(ImmutableMap.of(1, new FlopTrades.ItemListing[]{
                         new FlopTrades.ProductsForSlaginium(ModItems.JIAFEI_PRODUCT.get(), COMMON_ITEMS_SUPPLY, 1),

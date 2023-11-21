@@ -22,6 +22,11 @@ public class ModBlockEntities {
                     () -> BlockEntityType.Builder.of(SpecialYassificationDetectorEntity::new,
                             ModBlocks.SPECIAL_YASSIFICATION_DETECTOR.get()).build(null));
 
+    public static final RegistryObject<BlockEntityType<MariahCareyIceBlockEntity>> MARIAH_CAREY_ICE_BLOCK =
+            BLOCK_ENTITIES.register("mariah_carey_ice_block",
+                    () -> BlockEntityType.Builder.of(MariahCareyIceBlockEntity::new,
+                            ModBlocks.MARIAH_CAREY_ICE_BLOCK.get()).build(null));
+
     public static final RegistryObject<BlockEntityType<YassificationDetectorEntity>> YASSIFICATION_DETECTOR =
             BLOCK_ENTITIES.register("yassification_detector",
                     () -> BlockEntityType.Builder.of(YassificationDetectorEntity::new,

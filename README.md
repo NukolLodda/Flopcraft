@@ -16,7 +16,7 @@ then please come over <a href="https://forms.gle/HN36moxHdA6yRNE3A">here</a> and
 <br>
 <br>
 To all the girls, gays, and theys of Floptok and Potaxies de Corazón here to partake in the Modussy Clitmas Special 🎄👄🎄,
-you may partake in this festive event <a href="https://forms.gle/ekaPTXRGEACPMSxH6">here.</a>
+Click <a href="https://forms.gle/ekaPTXRGEACPMSxH6">here</a> to partake in the festivities.
 <br>
 <br>
 <a href="https://www.tiktok.com/@nukollodda/video/7204148779816160554">Here</a> is a short introduction video to Modussy
@@ -38,9 +38,8 @@ If a request is something I consider achievable, I will try my best to complete 
 like to state that depending on the complexity of the request, it may take up from a couple of weeks to
 several months before it's out. The version in particular also generally needs months of debugging and
 testing prior to release. This is also along with the fact that I am currently working on other projects,
-and that I may at a time be coding multiple requests in, and that I'm still a high schooler meaning that
-I may not have sufficient experience and that I may also just not have the time for personal reasons. So please be patient
-after I take in a request.
+and that I may at a time be coding multiple requests in, and that I'm still in school meaning that
+I may just not have the time. So please be patient after I take in a request.
 
 Requests I accept includes: <br>
 - Addition of new content, i.e. blocks, items, entities, ect.
@@ -71,10 +70,6 @@ ___
 The music discs were removed to prevent any legal trouble with my mod
 however, if you want to listen to music using this mod, you have to record a song down and
 convert it to an ogg file using <a href="https://convertio.co/">this link</a>
-
-However, as of right now I have a possible solution to this problem which will be done via
-links rather than how things are currently done as to allow for the music discs to have a sound
-without having the sound files in the sourcecode.
 
 ___
 **Downloading Aesthetic Music Files For Modussy**

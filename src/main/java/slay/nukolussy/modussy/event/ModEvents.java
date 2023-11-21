@@ -129,8 +129,8 @@ public class ModEvents {
             }
         }
         if (event.getEntity() instanceof Player player) {
-            Month month = LocalDate.now().getMonth();
-            int day = LocalDate.now().getDayOfMonth();
+            Month month = ModUtil.getMonth();
+            int day = ModUtil.getDayOfMonth();
             if (month.equals(Month.OCTOBER) && day == 31) {
                 Component girlYess = ModUtil.getFullGirlYessComment();
                 player.sendSystemMessage(girlYess);

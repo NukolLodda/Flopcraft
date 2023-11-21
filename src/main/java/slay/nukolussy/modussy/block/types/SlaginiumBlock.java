@@ -54,12 +54,7 @@ public class SlaginiumBlock extends MaterialBlocks {
                 for (Entity entity : _entfound) {
                     if (entity instanceof LivingEntity living) {
                         ToolMethods.yassification(living, pLevel, player);
-                        if (EntityMethods.isMonster(living)) {
-                            EntityMethods.monsterEffects(living);
-                        }
-                        if (EntityMethods.isFlop(living)) {
-                            EntityMethods.flopEffects(living);
-                        }
+                        EntityMethods.addEffects(living);
                     }
                 }
             }

@@ -14,7 +14,7 @@ import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.Level;
 import org.jetbrains.annotations.Nullable;
 import slay.nukolussy.modussy.item.ModItems;
-import slay.nukolussy.modussy.util.EntityMethods;
+import slay.nukolussy.modussy.util.ModUtil;
 
 import java.util.Random;
 
@@ -37,6 +37,9 @@ public abstract class AbstractFlopFigures extends AbstractFlops {
 
     @Override
     public void baseTick() {
+        if (ModUtil.isClitmas() && this.tickCount % 2000 == 0) {
+            this.spawnAtLocation(ModItems.CLITMAS_PRESENT.get());
+        }
         super.baseTick();
     }
 

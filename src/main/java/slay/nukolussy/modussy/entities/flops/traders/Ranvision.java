@@ -7,7 +7,6 @@ import it.unimi.dsi.fastutil.ints.Int2ObjectMap;
 import net.minecraft.Util;
 import net.minecraft.core.BlockPos;
 import net.minecraft.nbt.CompoundTag;
-import net.minecraft.network.chat.Component;
 import net.minecraft.network.syncher.EntityDataAccessor;
 import net.minecraft.network.syncher.EntityDataSerializers;
 import net.minecraft.network.syncher.SynchedEntityData;
@@ -20,6 +19,7 @@ import net.minecraft.world.DifficultyInstance;
 import net.minecraft.world.damagesource.DamageSource;
 import net.minecraft.world.entity.*;
 import net.minecraft.world.entity.ai.goal.TemptGoal;
+import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.crafting.Ingredient;
@@ -30,6 +30,9 @@ import net.minecraft.world.level.ServerLevelAccessor;
 import net.minecraftforge.network.PlayMessages;
 import org.jetbrains.annotations.NotNull;
 import slay.nukolussy.modussy.item.ModItems;
+import slay.nukolussy.modussy.sound.ModSounds;
+import slay.nukolussy.modussy.util.ModUtil;
+import slay.nukolussy.modussy.util.PlayerMethods;
 
 import javax.annotation.Nullable;
 import java.util.Set;
@@ -50,7 +53,7 @@ public class Ranvision extends AbstractFlopTraders {
 
 
     protected SoundEvent getEatSound() {
-        return null; // wip
+        return ModSounds.RANVISION_EAT.get();
     }
 
     @Override
@@ -66,22 +69,29 @@ public class Ranvision extends AbstractFlopTraders {
 
     @Override
     public SoundEvent getAmbientSound() {
-        return null; // wip
+        int randVal = this.random.nextInt(5);
+        return switch (randVal) {
+            case 1 -> ModSounds.RANVISION_1.get();
+            case 2 -> ModSounds.RANVISION_2.get();
+            case 3 -> ModSounds.RANVISION_3.get();
+            case 4 -> ModSounds.RANVISION_4.get();
+            default -> ModSounds.RANVISION_5.get();
+        };
     }
 
     @Override
     protected SoundEvent getTradelessSound() {
-        return null; // wip
+        return ModSounds.RANVISION_TRADELESS.get();
     }
 
     @Override
     public SoundEvent getHurtSound(DamageSource ds) {
-        return null; // wip
+        return SoundEvents.PLAYER_HURT;
     }
 
     @Override
     public SoundEvent getDeathSound() {
-        return null; // wip
+        return SoundEvents.PLAYER_DEATH;
     }
 
     @Override
@@ -92,12 +102,31 @@ public class Ranvision extends AbstractFlopTraders {
 
     @Override
     protected boolean itemIsFood(Item pItem) {
-        return false; // wip
+        return false;
     }
 
     @Override
     protected boolean itemIsSpawnEgg(Item pItem) {
         return pItem.equals(ModItems.RANVISION_SPAWN_EGG.get());
+    }
+
+    @Override
+    protected void newYearsGifting(Player pPlayer) {
+        if (ModUtil.isNewYears() && !PlayerMethods.isNewgen(pPlayer)) {
+            int max = 2;
+            if (PlayerMethods.isFlop(pPlayer)) {
+                max++;
+                if (PlayerMethods.isMagicFlop(pPlayer)) {
+                    max++;
+                    if (PlayerMethods.isFlopIcon(pPlayer)) {
+                        max++;
+                    }
+                }
+            }
+            int count = this.random.nextInt(1, max);
+            ItemStack hunbao = new ItemStack(ModItems.HUNBAO.get(), count);
+            this.spawnAtLocation(hunbao);
+        }
     }
 
     @Override
@@ -160,12 +189,12 @@ public class Ranvision extends AbstractFlopTraders {
 
     protected void updateTrades() {
         int data = getRanvisionData();
-        Int2ObjectMap<FlopTrades.ItemListing[]> int2objectmap = FlopTrades.TRADES.get(Variant.byId(data));
-        if (int2objectmap != null && !int2objectmap.isEmpty()) {
-            FlopTrades.ItemListing[] afloptrades$itemlisting = int2objectmap.get(1);
-            if (afloptrades$itemlisting != null) {
+        Int2ObjectMap<FlopTrades.ItemListing[]> trades = FlopTrades.TRADES.get(Variant.byId(data));
+        if (trades != null && !trades.isEmpty()) {
+            FlopTrades.ItemListing[] tradelisting = trades.get(1);
+            if (tradelisting != null) {
                 MerchantOffers merchantoffers = this.getOffers();
-                this.addOffersFromItemListings(merchantoffers, afloptrades$itemlisting, 7);
+                this.addOffersFromItemListings(merchantoffers, tradelisting, 7);
             }
         }
     }
@@ -208,7 +237,7 @@ public class Ranvision extends AbstractFlopTraders {
 
     @Override
     public @NotNull SoundEvent getNotifyTradeSound() {
-        return SoundEvents.VILLAGER_TRADE; // wip
+        return this.random.nextInt(2) == 1 ? ModSounds.RANVISION_TRADE_1.get() : ModSounds.RANVISION_TRADE_2.get();
     }
 
     @Nullable
@@ -220,12 +249,10 @@ public class Ranvision extends AbstractFlopTraders {
     }
 
     public enum Variant implements IFlopTraderVariant {
-        KPOP(0, "kpop"), // modussy discs c1, c5, c10, c14, cpm1
-        CULTURAL(1, "cultural"), // modussy discs c4, c8, c11, c17, c18
-        POP(2, "pop"), // modussy discs c6, c7, c9, cj1, j3
-        EVENT(3, "event"); // modussy discs c23, c24, j5, pm1, ranvision
-        // the first two trades will be iron in exchange for slaginium and
-        // slaginium in exchange for the ranpapi tablet - the musical tablet
+        KPOP(0, "kpop"),
+        CULTURAL(1, "cultural"),
+        POP(2, "pop"),
+        EVENT(3, "event");
 
         public static final Codec<Ranvision.Variant> CODEC = StringRepresentable.fromEnum(Ranvision.Variant::values);
         private static final IntFunction<Ranvision.Variant> BY_ID = ByIdMap.continuous(Ranvision.Variant::getId, values(), ByIdMap.OutOfBoundsStrategy.WRAP);

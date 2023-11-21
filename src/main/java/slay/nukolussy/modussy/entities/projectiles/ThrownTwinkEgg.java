@@ -83,18 +83,8 @@ public class ThrownTwinkEgg extends AbstractArrow implements ItemSupplier {
     @Override
     protected void onHitEntity(EntityHitResult pResult) {
         if (pResult.getEntity() instanceof LivingEntity living) {
-            if (EntityMethods.isFlop(living)) {
-                if (this.getOwner() instanceof Player player) {
-                    PlayerMethods.addPlayerYassification(player, 1);
-                }
-                EntityMethods.flopEffects(living);
-                this.discard();
-            } else if (EntityMethods.isMonster(living)) {
-                if (this.getOwner() instanceof Player player) {
-                    PlayerMethods.addPlayerYassification(player, 1);
-                }
-                EntityMethods.monsterEffects(living);
-            }
+            EntityMethods.addEffects(living);
+            this.discard();
         }
     }
 

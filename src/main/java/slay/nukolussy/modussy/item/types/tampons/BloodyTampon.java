@@ -74,11 +74,7 @@ public class BloodyTampon extends ArrowItem {
                             slime.setGuaranteedDrop(EquipmentSlot.MAINHAND);
                             slime.kill();
                         }
-                        if (EntityMethods.isFlop(ent)) {
-                            EntityMethods.flopEffects(ent);
-                        } else {
-                            EntityMethods.monsterEffects(ent);
-                        }
+                        EntityMethods.addEffects(ent);
                     }
                     EntityMethods.monsterEffects(pPlayer);
                     pPlayer.hurt(pPlayer.level().damageSources().generic(), 3);

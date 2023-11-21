@@ -93,6 +93,7 @@ public class Modussy {
         public static void onClientSetup(FMLClientSetupEvent event) {
             ItemBlockRenderTypes.setRenderLayer(ModFluids.SOURCE_CVM_FLUID.get(), RenderType.solid());
             ItemBlockRenderTypes.setRenderLayer(ModFluids.SOURCE_POOSAY_JUICE.get(), RenderType.translucent());
+            ItemBlockRenderTypes.setRenderLayer(ModBlocks.MARIAH_CAREY_ICE_BLOCK.get(), RenderType.translucent());
 
             ItemBlockRenderTypes.setRenderLayer(ModFluids.FLOWING_CVM_FLUID.get(), RenderType.solid());
             ItemBlockRenderTypes.setRenderLayer(ModFluids.FLOWING_POOSAY_JUICE.get(), RenderType.translucent());

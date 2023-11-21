@@ -1,5 +1,6 @@
 package slay.nukolussy.modussy.sound;
 
+import ca.weblite.objc.Proxy;
 import net.minecraft.core.Holder;
 import net.minecraft.core.Registry;
 import net.minecraft.core.registries.BuiltInRegistries;
@@ -253,6 +254,18 @@ public class ModSounds {
     public static final RegistryObject<SoundEvent> CUPCAkKE_HURT4 = SOUNDS.register("cupcakke_hurt4",
             () -> SoundEvent.createVariableRangeEvent(new ResourceLocation(Modussy.MODID,"cupcakke_hurt4")));
 
+    public static final RegistryObject<SoundEvent> CUPCAkKE_NEW_YEARS_1 = SOUNDS.register("cupcakke_new_years_1",
+            () -> SoundEvent.createVariableRangeEvent(new ResourceLocation(Modussy.MODID,"cupcakke_new_years_1")));
+
+    public static final RegistryObject<SoundEvent> CUPCAkKE_NEW_YEARS_2 = SOUNDS.register("cupcakke_new_years_2",
+            () -> SoundEvent.createVariableRangeEvent(new ResourceLocation(Modussy.MODID,"cupcakke_new_years_2")));
+
+    public static final RegistryObject<SoundEvent> CUPCAkKE_NEW_YEARS_3 = SOUNDS.register("cupcakke_new_years_3",
+            () -> SoundEvent.createVariableRangeEvent(new ResourceLocation(Modussy.MODID,"cupcakke_new_years_3")));
+
+    public static final RegistryObject<SoundEvent> CUPCAkKE_NEW_YEARS_4 = SOUNDS.register("cupcakke_new_years_4",
+            () -> SoundEvent.createVariableRangeEvent(new ResourceLocation(Modussy.MODID,"cupcakke_new_years_4")));
+
     public static final RegistryObject<SoundEvent> CUPCAkKE_SLURP = SOUNDS.register("cupcakke_slurp",
             () -> SoundEvent.createVariableRangeEvent(new ResourceLocation(Modussy.MODID,"cupcakke_slurp")));
 
@@ -286,9 +299,6 @@ public class ModSounds {
     public static final RegistryObject<SoundEvent> JIAFEI_DEATH_2 = SOUNDS.register("jiafei_death_2",
             () -> SoundEvent.createVariableRangeEvent(new ResourceLocation(Modussy.MODID,"jiafei_death_2")));
 
-    public static final RegistryObject<SoundEvent> JIAFEI_DEATH_3 = SOUNDS.register("jiafei_death_3",
-            () -> SoundEvent.createVariableRangeEvent(new ResourceLocation(Modussy.MODID,"jiafei_death_3")));
-
     public static final RegistryObject<SoundEvent> JIAFEI_EAT_1 = SOUNDS.register("jiafei_eat_1",
             () -> SoundEvent.createVariableRangeEvent(new ResourceLocation(Modussy.MODID,"jiafei_eat_1")));
 
@@ -300,6 +310,12 @@ public class ModSounds {
 
     public static final RegistryObject<SoundEvent> JIAFEI_HURT = SOUNDS.register("jiafei_hurt",
             () -> SoundEvent.createVariableRangeEvent(new ResourceLocation(Modussy.MODID,"jiafei_hurt")));
+
+    public static final RegistryObject<SoundEvent> JIAFEI_NEW_YEARS = SOUNDS.register("jiafei_new_years",
+            () -> SoundEvent.createVariableRangeEvent(new ResourceLocation(Modussy.MODID,"jiafei_new_years")));
+
+    public static final RegistryObject<SoundEvent> JIAFEI_NEW_YEARS_TRADE = SOUNDS.register("jiafei_new_years_trade",
+            () -> SoundEvent.createVariableRangeEvent(new ResourceLocation(Modussy.MODID,"jiafei_new_years_trade")));
 
     public static final RegistryObject<SoundEvent> JIAFEI_PRODUCTLESS = SOUNDS.register("jiafei_productless",
             () -> SoundEvent.createVariableRangeEvent(new ResourceLocation(Modussy.MODID,"jiafei_productless")));
@@ -339,6 +355,8 @@ public class ModSounds {
 
     public static final RegistryObject<SoundEvent> LOVELY_PEACHES_HURT2 = SOUNDS.register("lovely_peaches_hurt2",
             () -> SoundEvent.createVariableRangeEvent(new ResourceLocation(Modussy.MODID,"lovely_peaches_hurt2")));
+    public static final RegistryObject<SoundEvent> MARIAH_CAREY_DEFROSTING = SOUNDS.register("mariah_carey_defrosting",
+            () -> SoundEvent.createVariableRangeEvent(new ResourceLocation(Modussy.MODID,"mariah_carey_defrosting")));
 
     public static final RegistryObject<SoundEvent> NICKI_MINAJ_1 = SOUNDS.register("nicki_minaj_1",
             () -> SoundEvent.createVariableRangeEvent(new ResourceLocation(Modussy.MODID,"nicki_minaj_1")));
@@ -366,6 +384,28 @@ public class ModSounds {
 
     public static final RegistryObject<SoundEvent> NICKI_MINAJ_TRADE = SOUNDS.register("nicki_minaj_trade",
             () -> SoundEvent.createVariableRangeEvent(new ResourceLocation(Modussy.MODID,"nicki_minaj_trade")));
+    public static final RegistryObject<SoundEvent> RANVISION_1 = SOUNDS.register("ranvision_1",
+            () -> SoundEvent.createVariableRangeEvent(new ResourceLocation(Modussy.MODID, "ranvision_1")));
+    public static final RegistryObject<SoundEvent> RANVISION_2 = SOUNDS.register("ranvision_2",
+            () -> SoundEvent.createVariableRangeEvent(new ResourceLocation(Modussy.MODID, "ranvision_2")));
+    public static final RegistryObject<SoundEvent> RANVISION_3 = SOUNDS.register("ranvision_3",
+            () -> SoundEvent.createVariableRangeEvent(new ResourceLocation(Modussy.MODID, "ranvision_3")));
+    public static final RegistryObject<SoundEvent> RANVISION_4 = SOUNDS.register("ranvision_4",
+            () -> SoundEvent.createVariableRangeEvent(new ResourceLocation(Modussy.MODID, "ranvision_4")));
+    public static final RegistryObject<SoundEvent> RANVISION_5 = SOUNDS.register("ranvision_5",
+            () -> SoundEvent.createVariableRangeEvent(new ResourceLocation(Modussy.MODID, "ranvision_5")));
+    public static final RegistryObject<SoundEvent> RANVISION_BOUGHT_1 = SOUNDS.register("ranvision_bought_1",
+            () -> SoundEvent.createVariableRangeEvent(new ResourceLocation(Modussy.MODID, "ranvision_bought_1")));
+    public static final RegistryObject<SoundEvent> RANVISION_BOUGHT_2 = SOUNDS.register("ranvision_bought_2",
+            () -> SoundEvent.createVariableRangeEvent(new ResourceLocation(Modussy.MODID, "ranvision_bought_2")));
+    public static final RegistryObject<SoundEvent> RANVISION_EAT = SOUNDS.register("ranvision_eat",
+            () -> SoundEvent.createVariableRangeEvent(new ResourceLocation(Modussy.MODID, "ranvision_eat")));
+    public static final RegistryObject<SoundEvent> RANVISION_TRADE_1 = SOUNDS.register("ranvision_trade_1",
+            () -> SoundEvent.createVariableRangeEvent(new ResourceLocation(Modussy.MODID, "ranvision_trade_1")));
+    public static final RegistryObject<SoundEvent> RANVISION_TRADE_2 = SOUNDS.register("ranvision_trade_2",
+            () -> SoundEvent.createVariableRangeEvent(new ResourceLocation(Modussy.MODID, "ranvision_trade_2")));
+    public static final RegistryObject<SoundEvent> RANVISION_TRADELESS = SOUNDS.register("ranvision_tradeless",
+            () -> SoundEvent.createVariableRangeEvent(new ResourceLocation(Modussy.MODID, "ranvision_tradeless")));
 
     public static final RegistryObject<SoundEvent> SQUIRT = SOUNDS.register("squirt",
             () -> SoundEvent.createVariableRangeEvent(new ResourceLocation(Modussy.MODID,"squirt")));
