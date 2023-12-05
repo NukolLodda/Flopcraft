@@ -2,6 +2,8 @@ package slay.nukolussy.modussy.entities.flops;
 
 import net.minecraft.sounds.SoundEvent;
 import net.minecraft.tags.DamageTypeTags;
+import net.minecraft.world.InteractionHand;
+import net.minecraft.world.InteractionResult;
 import net.minecraft.world.damagesource.DamageSource;
 import net.minecraft.world.entity.*;
 import net.minecraft.world.entity.ai.attributes.AttributeSupplier;
@@ -15,10 +17,14 @@ import net.minecraft.world.level.Level;
 import org.jetbrains.annotations.Nullable;
 import slay.nukolussy.modussy.item.ModItems;
 import slay.nukolussy.modussy.util.ModUtil;
+import slay.nukolussy.modussy.util.PlayerMethods;
 
+import java.util.ArrayList;
 import java.util.Random;
+import java.util.UUID;
 
 public abstract class AbstractFlopFigures extends AbstractFlops {
+    private ArrayList<UUID> uuids;
     public AbstractFlopFigures(EntityType type, Level world) {
         super(type, world);
 
@@ -37,9 +43,6 @@ public abstract class AbstractFlopFigures extends AbstractFlops {
 
     @Override
     public void baseTick() {
-        if (ModUtil.isClitmas() && this.tickCount % 2000 == 0) {
-            this.spawnAtLocation(ModItems.CLITMAS_PRESENT.get());
-        }
         super.baseTick();
     }
 
@@ -53,6 +56,38 @@ public abstract class AbstractFlopFigures extends AbstractFlops {
         builder = builder.add(Attributes.ATTACK_KNOCKBACK, 2);
 
         return builder;
+    }
+
+    @Override
+    protected InteractionResult mobInteract(Player pPlayer, InteractionHand pHand) {
+        InteractionResult result = InteractionResult.sidedSuccess(this.level().isClientSide);
+        super.mobInteract(pPlayer, pHand);
+        if (this.level().isClientSide) {
+            return InteractionResult.PASS;
+        } else {
+            if (ModUtil.isClitmas()) {
+                for (UUID uuid : this.uuids) {
+                    if (!uuid.equals(pPlayer.getUUID())) {
+                        int max = 3;
+                        if (PlayerMethods.isFlop(pPlayer)) {
+                            max++;
+                            if (PlayerMethods.isMagicFlop(pPlayer)) {
+                                max++;
+                                if (PlayerMethods.isFlopIcon(pPlayer)) {
+                                    max++;
+                                }
+                            }
+                        }
+                        int rand = this.random.nextInt(max);
+                        pPlayer.spawnAtLocation(new ItemStack(ModItems.CLITMAS_PRESENT.get(), rand));
+                    }
+                }
+                this.uuids.add(pPlayer.getUUID());
+            } else {
+                uuids.clear();
+            }
+        }
+        return result;
     }
 
     @Override

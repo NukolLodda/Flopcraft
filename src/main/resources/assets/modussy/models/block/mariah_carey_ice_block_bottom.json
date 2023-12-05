@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/orientable",
+  "textures": {
+    "front": "modussy:block/mariah_carey_bottom",
+    "side": "minecraft:block/ice",
+    "top": "minecraft:block/ice"
+  }
+}

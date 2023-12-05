@@ -14,7 +14,7 @@ import slay.nukolussy.modussy.util.ToolMethods;
 
 import java.util.List;
 
-public class JiafeiPerfume extends Item implements Vanishable {
+public class JiafeiPerfume extends Item implements Vanishable, IJiafeiProducts {
     public JiafeiPerfume() {
         super(new Item.Properties().durability(20));
     }
@@ -38,11 +38,12 @@ public class JiafeiPerfume extends Item implements Vanishable {
     }
 
     public void appendHoverText(ItemStack stack, Level lvl, List<Component> components, TooltipFlag tip) {
-        components.add(this.getDisplayName().withStyle(ChatFormatting.LIGHT_PURPLE));
+        components.add(getDisplayName().withStyle(ChatFormatting.LIGHT_PURPLE));
     }
 
-    public MutableComponent getDisplayName() {
-        return Component.translatable(this.getDescriptionId() + ".desc");
+    @Override
+    public String getEnding() {
+        return "这种香水能够让你摆脱难闻的汗味并治愈你。";
     }
 
     @Override

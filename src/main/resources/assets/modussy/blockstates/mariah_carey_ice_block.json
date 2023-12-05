@@ -1,18 +1,33 @@
 {
   "variants": {
-    "facing=east": {
-      "model":  "modussy:block/mariah_carey_ice_block",
+    "facing=east,istop=false": {
+      "model": "modussy:block/mariah_carey_ice_block_bottom",
       "y": 90
     },
-    "facing=north": {
-      "model":  "modussy:block/mariah_carey_ice_block"
+    "facing=east,istop=true": {
+      "model": "modussy:block/mariah_carey_ice_block_top",
+      "y": 90
     },
-    "facing=south": {
-      "model":  "modussy:block/mariah_carey_ice_block",
+    "facing=north,istop=false": {
+      "model": "modussy:block/mariah_carey_ice_block_bottom"
+    },
+    "facing=north,istop=true": {
+      "model": "modussy:block/mariah_carey_ice_block_top"
+    },
+    "facing=south,istop=false": {
+      "model": "modussy:block/mariah_carey_ice_block_bottom",
       "y": 180
     },
-    "facing=west": {
-      "model":  "modussy:block/mariah_carey_ice_block",
+    "facing=south,istop=true": {
+      "model": "modussy:block/mariah_carey_ice_block_top",
+      "y": 180
+    },
+    "facing=west,istop=false": {
+      "model": "modussy:block/mariah_carey_ice_block_bottom",
+      "y": 270
+    },
+    "facing=west,istop=true": {
+      "model": "modussy:block/mariah_carey_ice_block_top",
       "y": 270
     }
   }

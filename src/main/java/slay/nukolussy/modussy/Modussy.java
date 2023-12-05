@@ -21,6 +21,7 @@ import slay.nukolussy.modussy.block.entity.ent.ModBlockEntities;
 import slay.nukolussy.modussy.block.fluids.ModFluidTypes;
 import slay.nukolussy.modussy.block.fluids.ModFluids;
 import slay.nukolussy.modussy.client.gui.CvmInfusionAlterScreen;
+import slay.nukolussy.modussy.effect.ModEffects;
 import slay.nukolussy.modussy.entities.ModEntities;
 import slay.nukolussy.modussy.item.ModItems;
 import slay.nukolussy.modussy.client.menu.ModMenuTypes;
@@ -45,6 +46,7 @@ public class Modussy {
         ModCreativeTabs.register(modEventBus);
         ModEntities.register(modEventBus);
         ModPaintings.register(modEventBus);
+        ModEffects.register(modEventBus);
         ModBlockEntities.register(modEventBus);
         ModFluids.register(modEventBus);
         ModFluidTypes.register(modEventBus);

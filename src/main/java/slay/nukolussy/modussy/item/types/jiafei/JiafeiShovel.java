@@ -18,17 +18,17 @@ import slay.nukolussy.modussy.item.tiers.ModTiers;
 
 import java.util.List;
 
-public class JiafeiShovel extends ShovelItem {
+public class JiafeiShovel extends ShovelItem implements IJiafeiProducts {
     public JiafeiShovel() {
         super(ModTiers.JIAFEI, 1.5f, -3.0f, new Item.Properties().fireResistant());
     }
 
     public void appendHoverText(ItemStack stack, Level lvl, List<Component> components, TooltipFlag tip) {
-        components.add(this.getDisplayName().withStyle(ChatFormatting.LIGHT_PURPLE));
+        components.add(getDisplayName().withStyle(ChatFormatting.LIGHT_PURPLE));
     }
 
-    public MutableComponent getDisplayName() {
-        return Component.translatable(this.getDescriptionId() + ".desc");
+    public String getEnding() {
+        return "嘉菲的情趣铲是一款非常适合挖掘和性爱的魔法铲。";
     }
 
     @Override

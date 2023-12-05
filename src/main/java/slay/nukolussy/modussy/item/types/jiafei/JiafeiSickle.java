@@ -18,7 +18,7 @@ import slay.nukolussy.modussy.item.tiers.ModTiers;
 
 import java.util.List;
 
-public class JiafeiSickle extends HoeItem {
+public class JiafeiSickle extends HoeItem implements IJiafeiProducts {
     public JiafeiSickle() {
         super(ModTiers.JIAFEI, 3, -2.0f, new Item.Properties().fireResistant());
     }
@@ -27,8 +27,9 @@ public class JiafeiSickle extends HoeItem {
         components.add(this.getDisplayName().withStyle(ChatFormatting.LIGHT_PURPLE));
     }
 
-    public MutableComponent getDisplayName() {
-        return Component.translatable(this.getDescriptionId() + ".desc");
+    @Override
+    public String getEnding() {
+        return "嘉非的性感镰刀是一种高效的收割庄稼的方式，也是对付daboyz成员的利器。";
     }
 
     @Override

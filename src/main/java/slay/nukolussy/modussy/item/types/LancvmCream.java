@@ -22,6 +22,7 @@ public class LancvmCream extends Item implements Vanishable {
 
     @Override
     public InteractionResultHolder<ItemStack> use(Level world, Player entity, InteractionHand hand) {
+        // upon use, cvm will spawn on the player and the player will get a variety of effects
         InteractionResultHolder<ItemStack> ar = super.use(world, entity, hand);
         ToolMethods.makeupUse(entity, entity.getMainHandItem(), 2);
         if (entity.getMainHandItem().getDamageValue() >= entity.getMainHandItem().getMaxDamage()) {

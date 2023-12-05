@@ -16,17 +16,18 @@ import slay.nukolussy.modussy.item.tiers.ModTiers;
 
 import java.util.List;
 
-public class JiafeiPickaxe extends PickaxeItem {
+public class JiafeiPickaxe extends PickaxeItem implements IJiafeiProducts {
     public JiafeiPickaxe() {
         super(ModTiers.JIAFEI, 1, -2.8f, new Item.Properties().fireResistant());
     }
 
     public void appendHoverText(ItemStack stack, Level lvl, List<Component> components, TooltipFlag tip) {
-        components.add(this.getDisplayName().withStyle(ChatFormatting.LIGHT_PURPLE));
+        components.add(getDisplayName().withStyle(ChatFormatting.LIGHT_PURPLE));
     }
 
-    public MutableComponent getDisplayName() {
-        return Component.translatable(this.getDescriptionId() + ".desc");
+    @Override
+    public String getEnding() {
+        return "嘉菲的性感镐是挖掘和砍掉石头的强大工具。用于建造Floptropica的矿物是通过嘉菲的镐收集的。";
     }
 
     @Override

@@ -20,6 +20,12 @@ Click <a href="https://forms.gle/ekaPTXRGEACPMSxH6">here</a> to partake in the f
 <br>
 <a href="https://www.tiktok.com/@nukollodda/video/7204148779816160554">Here</a> is a short introduction video to Modussy
 
+I've gotten this request before many times, so I will come out and say it here
+that **I do not plan to make a bedrock edition ever for this mod since I may not have the time to do so.**
+This mod is a solo project, meaning from day one, I've been one-manning this whole thing,
+so I hope this doesn't come off too much as a surprise. However, to anyone already familiar with bedrock modding
+you are free to make your own port of this mod to bedrock edition using the code uploaded on this site.
+
 ---
 **Download**
 

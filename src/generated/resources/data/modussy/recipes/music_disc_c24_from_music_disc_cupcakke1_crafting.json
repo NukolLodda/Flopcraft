@@ -5,6 +5,9 @@
   "ingredients": [
     {
       "item": "modussy:music_disc_cupcakke1"
+    },
+    {
+      "tag": "forge:yassifers/advanced"
     }
   ],
   "result": {

@@ -18,17 +18,18 @@ import slay.nukolussy.modussy.item.tiers.ModTiers;
 
 import java.util.List;
 
-public class JiafeiAxe extends AxeItem {
+public class JiafeiAxe extends AxeItem implements IJiafeiProducts {
     public JiafeiAxe() {
         super(ModTiers.JIAFEI, 6.0f, -3.1f, new Item.Properties().fireResistant());
     }
 
     public void appendHoverText(ItemStack stack, Level lvl, List<Component> components, TooltipFlag tip) {
-        components.add(this.getDisplayName().withStyle(ChatFormatting.LIGHT_PURPLE));
+        components.add(getDisplayName().withStyle(ChatFormatting.LIGHT_PURPLE));
     }
 
-    public MutableComponent getDisplayName() {
-        return Component.translatable(this.getDescriptionId() + ".desc");
+    @Override
+    public String getEnding() {
+        return "嘉菲的性感斧头是一把非常高效的斧头，能够像CupcakKe的嘴一样瞬间砍下一棵树。";
     }
 
     @Override

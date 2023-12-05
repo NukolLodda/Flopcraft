@@ -1,0 +1,14 @@
+{
+  "type": "modussy:cvm_infusion_shapeless",
+  "ingredients": [
+    {
+      "item": "minecraft:ice"
+    },
+    {
+      "item": "modussy:mystical_flopium"
+    }
+  ],
+  "output": {
+    "item": "modussy:mariah_carey_ice_block"
+  }
+}

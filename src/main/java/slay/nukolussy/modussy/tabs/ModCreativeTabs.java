@@ -77,6 +77,8 @@ public class ModCreativeTabs {
                         pOutput.accept(ModItems.SLAGINIUM_PICKAXOL.get());
                         pOutput.accept(ModItems.INFUSED_SLAGINIUM_PICKAXOL.get());
                         pOutput.accept(ModItems.FLOPIUM_PICKAXOL.get());
+                        pOutput.accept(ModItems.KYLIE_JENNER_LIPSTICK.get());
+                        pOutput.accept(ModItems.LANCVM_CREAM.get());
                         pOutput.accept(ModItems.MYSTICAL_FLOPIUM_PICKAXOL.get());
                         pOutput.accept(ModItems.JIAFEI_AXE.get());
                         pOutput.accept(ModItems.JIAFEI_HAMMER.get());
@@ -154,7 +156,6 @@ public class ModCreativeTabs {
                     .displayItems(((pParameters, pOutput) -> {
                         pOutput.accept(ModItems.BARBIE_CRYSTALS.get());
                         pOutput.accept(ModItems.BLOOD_CLUMP.get());
-                        pOutput.accept(ModItems.CLITMAS_PRESENT.get());
                         pOutput.accept(ModItems.CUPCAKE.get());
                         pOutput.accept(ModItems.CVM.get());
                         pOutput.accept(ModItems.CVMIUM.get());
@@ -169,9 +170,7 @@ public class ModCreativeTabs {
                         pOutput.accept(ModItems.JIAFEI_SEED.get());
                         pOutput.accept(ModItems.JIAFEI_TRIM_TEMPLATE.get());
                         pOutput.accept(ModItems.JIAFEI_UPGRADE_TEMPLATE.get());
-                        pOutput.accept(ModItems.LANCVM_CREAM.get());
                         pOutput.accept(ModItems.LOVELY_PEACH.get());
-                        pOutput.accept(ModItems.KYLIE_JENNER_LIPSTICK.get());
                         pOutput.accept(ModItems.MYSTICAL_FLOPIUM.get());
                         pOutput.accept(ModItems.SCARUSSY.get());
                         pOutput.accept(ModItems.SLAGINIUM.get());

@@ -9,6 +9,7 @@ import net.minecraft.world.level.Level;
 public class ClitmasButtplug extends AbstractButtplug {
     @Override
     public InteractionResultHolder<ItemStack> use(Level pLevel, Player pPlayer, InteractionHand pUsedHand) {
+        // upon use, the player will moan and spawn poosay juice on the ground
         return super.use(pLevel, pPlayer, pUsedHand);
     }
 }

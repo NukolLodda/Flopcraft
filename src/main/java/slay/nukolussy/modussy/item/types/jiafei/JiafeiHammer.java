@@ -17,17 +17,18 @@ import slay.nukolussy.modussy.item.tiers.ModTiers;
 
 import java.util.List;
 
-public class JiafeiHammer extends PickaxeItem {
+public class JiafeiHammer extends PickaxeItem implements IJiafeiProducts{
     public JiafeiHammer() {
         super(ModTiers.JIAFEI, 2, -5f, new Item.Properties().fireResistant());
     }
 
     public void appendHoverText(ItemStack stack, Level lvl, List<Component> components, TooltipFlag tip) {
-        components.add(this.getDisplayName().withStyle(ChatFormatting.LIGHT_PURPLE));
+        components.add(getDisplayName().withStyle(ChatFormatting.LIGHT_PURPLE));
     }
 
-    public MutableComponent getDisplayName() {
-        return Component.translatable(this.getDescriptionId() + ".desc");
+    @Override
+    public String getEnding() {
+        return "嘉菲的性感锤是从雅致的白宫到第一个嘉菲公司总部打造Floptropica的精美工具。";
     }
 
     @Override

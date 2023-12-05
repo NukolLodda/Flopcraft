@@ -47,13 +47,16 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
         cupcakkeDiscRecipe(pWriter, Items.IRON_INGOT, ModItems.DISC_C19.get());
         cupcakkeDiscRecipe(pWriter, Items.GLASS, ModItems.DISC_C20.get());
         cupcakkeDiscRecipe(pWriter, ModItems.GAGASTONE.get(), ModItems.DISC_C21.get());
+        cupcakkeDiscRecipe(pWriter, ModItems.CVM_FLUID_BUCKET.get(), ModItems.DISC_C22.get());
         cupcakkeDiscRecipe(pWriter, ItemTags.SAND, ModItems.DISC_C23.get());
         cupcakkeDiscRecipe(pWriter, ModItems.SCARUSSY.get(), ModItems.DISC_C24.get());
         cupcakkeDiscRecipe(pWriter, Items.SNOWBALL, ModItems.DISC_C25.get());
         cupcakkeDiscRecipe(pWriter, ModItems.SLAGINIUM.get(), ModItems.DISC_C26.get());
+        cupcakkeDiscRecipe(pWriter, ModBlocks.MARIAH_CAREY_ICE_BLOCK.get(), ModItems.DISC_C27.get());
         ponmiDiscRecipe(pWriter, Items.OAK_LOG, ModItems.DISC_PM1.get());
         jiafeiDiscRecipe(pWriter, ModItems.HAIRUSSY.get() ,ModItems.DISC_J1.get());
         jiafeiDiscRecipe(pWriter, Items.MINECART,ModItems.DISC_J2.get());
+        jiafeiDiscRecipe(pWriter, ModItems.TWINK_EGG_SHELLS.get(),ModItems.DISC_J3.get());
         jiafeiDiscRecipe(pWriter, ModItems.DISC_JIAFEI.get(),ModItems.DISC_J4.get());
         jiafeiDiscRecipe(pWriter, Items.ENDER_PEARL,ModItems.DISC_J5.get());
         dejeBullyingDiscRecipe(pWriter, Items.MUSIC_DISC_CAT,ModItems.DISC_DB1.get());
@@ -94,13 +97,13 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
         jiafeiDiscRecipe(pWriter, ModItems.DISC_C26.get(), ModItems.DISC_JC2.get());
 
         musicDiscRecipe(pWriter, Ingredient.of(ModItems.DISC_CUPCAKKE1.get()),
-                ModItems.DISC_C24.get(), ModItems.DISC_CUPCAKKE1.get(), 0);
+                ModItems.DISC_C24.get(), ModItems.DISC_CUPCAKKE1.get(), 1);
 
         musicDiscRecipe(pWriter, Ingredient.of(ModItems.DISC_CUPCAKKE2.get()),
-                ModItems.DISC_C15.get(), ModItems.DISC_CUPCAKKE2.get(), 0);
+                ModItems.DISC_C15.get(), ModItems.DISC_CUPCAKKE2.get(), 1);
 
         musicDiscRecipe(pWriter, Ingredient.of(ModItems.DISC_CUPCAKKE3.get()),
-                ModItems.DISC_C2.get(), ModItems.DISC_CUPCAKKE3.get(), 0);
+                ModItems.DISC_C2.get(), ModItems.DISC_CUPCAKKE3.get(), 1);
 
         nineBlockStorageRecipes(pWriter, ModItems.FLOPIUM.get(), ModTags.Items.FLOPIUM_BLOCK);
         nineBlockStorageRecipes(pWriter, ModItems.GAGASTONE.get(), ModTags.Items.GAGASTONE_BLOCK);

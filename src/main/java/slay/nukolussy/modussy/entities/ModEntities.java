@@ -133,6 +133,13 @@ public class ModEntities {
                 SpawnPlacementRegisterEvent.Operation.OR
         );
         event.register(
+                MARIAH_CAREY.get(),
+                SpawnPlacements.Type.ON_GROUND,
+                Heightmap.Types.WORLD_SURFACE,
+                MariahCarey::canSpawn,
+                SpawnPlacementRegisterEvent.Operation.OR
+        );
+        event.register(
                 JIAFEI.get(),
                 SpawnPlacements.Type.ON_GROUND,
                 Heightmap.Types.WORLD_SURFACE,

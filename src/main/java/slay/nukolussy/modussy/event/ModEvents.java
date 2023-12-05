@@ -118,7 +118,7 @@ public class ModEvents {
     @SubscribeEvent
     public static void onWorldLoad(EntityJoinLevelEvent event) {
         if (event.getEntity() instanceof Mob entity) {
-            if (entity instanceof Zombie zombie) {
+            if (entity instanceof Zombie zombie && !(zombie instanceof ZombifiedPiglin)) {
                 zombie.targetSelector.addGoal(6, new NearestAttackableTargetGoal<>(zombie, AbstractFlops.class, true));
             }
             if (entity instanceof AbstractSkeleton skeleton) {
@@ -129,13 +129,12 @@ public class ModEvents {
             }
         }
         if (event.getEntity() instanceof Player player) {
-            Month month = ModUtil.getMonth();
-            int day = ModUtil.getDayOfMonth();
-            if (month.equals(Month.OCTOBER) && day == 31) {
+            if (ModUtil.isHumploween()) {
                 Component girlYess = ModUtil.getFullGirlYessComment();
                 player.sendSystemMessage(girlYess);
                 player.addItem(new ItemStack(ModItems.LOVELY_PEACH.get()));
-            } else if (month.equals(Month.DECEMBER) && day >= 24 && day < 26) {
+                player.addItem(new ItemStack(ModItems.SCARUSSY.get()));
+            } else if (ModUtil.isClitmas()) {
                 player.sendSystemMessage(Component.translatable("subtitle.happy_clitmas")
                         .withStyle(ChatFormatting.RED));
             }

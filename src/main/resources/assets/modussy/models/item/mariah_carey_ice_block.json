@@ -1,3 +1,6 @@
 {
-  "parent": "modussy:block/mariah_carey_ice_block"
+  "parent": "minecraft:item/generated",
+  "textures": {
+    "layer0": "modussy:item/mariah_carey_ice_block"
+  }
 }

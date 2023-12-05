@@ -23,6 +23,7 @@ public class KylieJennerLipstick extends Item implements Vanishable {
 
     @Override
     public InteractionResultHolder<ItemStack> use(Level world, Player entity, InteractionHand hand) {
+        // upon use, CupcakKe will be summoned
         InteractionResultHolder<ItemStack> ar = super.use(world, entity, hand);
         ToolMethods.makeupUse(entity, entity.getMainHandItem(), 2);
         if (entity.getMainHandItem().getDamageValue() >= entity.getMainHandItem().getMaxDamage()) {

@@ -32,6 +32,7 @@ import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.phys.AABB;
 import net.minecraft.world.phys.Vec3;
 import slay.nukolussy.modussy.block.plants.JiafeiCrop;
+import slay.nukolussy.modussy.effect.ModEffects;
 import slay.nukolussy.modussy.entities.ModEntities;
 import slay.nukolussy.modussy.entities.flops.AbstractFlopFigures;
 import slay.nukolussy.modussy.entities.flops.IFlopEntity;
@@ -90,23 +91,7 @@ public class ToolMethods {
             List<LivingEntity> entities = world.getEntitiesOfClass(LivingEntity.class, new AABB(center, center)
                     .inflate(32 / 2d), e -> true).stream().toList();
             for (LivingEntity ent : entities) {
-                if (ent instanceof Monster) {
-                    ent.addEffect(new MobEffectInstance(MobEffects.MOVEMENT_SLOWDOWN, 2400, 10, true, false));
-                    ent.addEffect(new MobEffectInstance(MobEffects.WITHER, 690, 1));
-                    ent.addEffect(new MobEffectInstance(MobEffects.WEAKNESS, 2400, 10));
-                }
-                if (!(ent instanceof Player)) {
-                    ent.addEffect(new MobEffectInstance(MobEffects.MOVEMENT_SLOWDOWN, 690, 5, true, false));
-                    ent.addEffect(new MobEffectInstance(MobEffects.WEAKNESS, 690, 5, true, false));
-                }
-                if (entity instanceof Player player) {
-                    if (ent instanceof AbstractFlopFigures ||
-                            (ent instanceof Player surround && PlayerMethods.isFlopIcon(surround))) {
-                        PlayerMethods.addPlayerYassification(player, -3);
-                    } else if (EntityMethods.isFlop(ent)) {
-                        PlayerMethods.addPlayerYassification(player, -1);
-                    }
-                }
+                ent.addEffect(new MobEffectInstance(ModEffects.YUH.get(), 1000, 0));
             }
         }
         if (world instanceof ServerLevel level) {
@@ -278,7 +263,7 @@ public class ToolMethods {
     }
 
     // type 0 - cvm, 1 - cvmium, 2 - blood
-    public static void deeldoShoot(LevelAccessor world, double x, double y, double z, Entity entity,
+    public static void deeldoShoot(LevelAccessor world, double x, double y, double z, LivingEntity entity,
                                    ItemStack deeldo, int type, float chargedTime) {
         int power = EnchantmentHelper.getItemEnchantmentLevel(Enchantments.POWER_ARROWS, deeldo);
         boolean flame = EnchantmentHelper.getItemEnchantmentLevel(Enchantments.FLAMING_ARROWS, deeldo) > 0;
@@ -288,25 +273,25 @@ public class ToolMethods {
             List<LivingEntity> entities = world.getEntitiesOfClass(LivingEntity.class, new AABB(center, center)
                     .inflate(2 * chargedTime / 2d), e -> true).stream().toList();
             for (LivingEntity ent : entities) {
+                if (EntityMethods.isMonster(ent)) {
+                    EntityMethods.monsterEffects(ent, amp * ((int)chargedTime),amp - 1);
+                    ent.hurt(ent.level().damageSources().mobAttack(entity), power * 10 * (int)chargedTime);
+                    ent.setSecondsOnFire(flame ? switch (type) {
+                        case 0 -> 100;
+                        case 1 -> 420;
+                        case 2 -> 690;
+                        default -> 0;
+                    } : 0);
+                }
                 if (entity instanceof Player player) {
                     yassification(ent, world, player);
-                    if (EntityMethods.isMonster(ent)) {
-                        EntityMethods.monsterEffects(ent, amp * ((int)chargedTime),amp - 1);
-                        ent.hurt(ent.level().damageSources().playerAttack(player), power * 10 * (int)chargedTime);
-                        ent.setSecondsOnFire(flame ? switch (type) {
-                            case 0 -> 100;
-                            case 1 -> 420;
-                            case 2 -> 690;
-                            default -> 0;
-                        } : 0);
-                    }
-                    if (ent instanceof Cat cat && Math.random() < 0.16) {
+                    if (ent instanceof Cat cat && player.getRandom().nextInt(0, 25) < 4) {
                         cat.spawnAtLocation(ModItems.POSEI.get());
                         PlayerMethods.addPlayerYassification(player, 1);
                     }
                     if (EntityMethods.isFlop(ent) || (ent instanceof AbstractTwink && type < 2)) {
                         EntityMethods.flopEffects(ent, amp,amp - 1);
-                        if (Math.random() < 0.08333) {
+                        if (player.getRandom().nextInt(0, 12) == 1) {
                             if (ent instanceof Twink && !PlayerMethods.isNewgen(player)) {
                                 ent.spawnAtLocation(TwinkAI.randItem());
                                 PlayerMethods.addPlayerYassification(player, 1);
@@ -321,6 +306,9 @@ public class ToolMethods {
                     } else if (type > 1) {
                         EntityMethods.monsterEffects(ent);
                     }
+                }
+                if (type < 2) {
+                    ent.addEffect(new MobEffectInstance(ModEffects.CVMMED.get(), 1000, amp));
                 }
             }
         }

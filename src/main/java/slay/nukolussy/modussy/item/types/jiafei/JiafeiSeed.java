@@ -20,6 +20,6 @@ public class JiafeiSeed extends BlockItem {
     }
 
     public MutableComponent getDisplayName() {
-        return Component.translatable(this.getDescriptionId() + ".desc");
+        return Component.literal("宇宙中最性感的种子，嘉菲种子让你种出自己的嘉菲，让你获得源源不断的性感商品。");
     }
 }

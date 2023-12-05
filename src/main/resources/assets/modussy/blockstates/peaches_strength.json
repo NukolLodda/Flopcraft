@@ -1,18 +1,18 @@
 {
   "variants": {
     "facing=east": {
-      "model":  "modussy:block/peaches_strength",
+      "model": "modussy:block/peaches_strength",
       "y": 90
     },
     "facing=north": {
-      "model":  "modussy:block/peaches_strength"
+      "model": "modussy:block/peaches_strength"
     },
     "facing=south": {
-      "model":  "modussy:block/peaches_strength",
+      "model": "modussy:block/peaches_strength",
       "y": 180
     },
     "facing=west": {
-      "model":  "modussy:block/peaches_strength",
+      "model": "modussy:block/peaches_strength",
       "y": 270
     }
   }

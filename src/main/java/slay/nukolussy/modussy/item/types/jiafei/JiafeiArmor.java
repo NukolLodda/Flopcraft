@@ -17,7 +17,7 @@ import slay.nukolussy.modussy.sound.ModSounds;
 
 import java.util.List;
 
-public class JiafeiArmor extends ArmorItem {
+public class JiafeiArmor extends ArmorItem implements IJiafeiProducts {
     public JiafeiArmor(ArmorItem.Type slot) {
         super(new ArmorMaterial() {
             @Override
@@ -63,13 +63,13 @@ public class JiafeiArmor extends ArmorItem {
     }
 
     public void appendHoverText(ItemStack stack, Level lvl, List<Component> components, TooltipFlag tip) {
-        components.add(this.getDisplayName().withStyle(ChatFormatting.LIGHT_PURPLE));
+        components.add(getDisplayName().withStyle(ChatFormatting.LIGHT_PURPLE));
     }
 
-    public MutableComponent getDisplayName() {
-        return Component.translatable(this.getDescriptionId() + ".desc");
+    @Override
+    public String getEnding() {
+        return "";
     }
-
 
     public static class Helmet extends JiafeiArmor {
         public Helmet() {
@@ -85,6 +85,11 @@ public class JiafeiArmor extends ArmorItem {
         public void onArmorTick(ItemStack stack, Level world, Player ent) {
             ent.addEffect(new MobEffectInstance(MobEffects.NIGHT_VISION, 15, 0,true, false));
             ent.addEffect(new MobEffectInstance(MobEffects.WATER_BREATHING, 5, 0,true, false));
+        }
+
+        @Override
+        public String getEnding() {
+            return "嘉菲的性感帽子是一款非常时尚的头饰，可以防止所有同性恋恐惧症伤害您的头部";
         }
     }
 
@@ -105,6 +110,11 @@ public class JiafeiArmor extends ArmorItem {
             ent.addEffect(new MobEffectInstance(MobEffects.DAMAGE_BOOST, 5, 1,true, false));
             ent.addEffect(new MobEffectInstance(MobEffects.DIG_SPEED, 5, 1,true, false));
         }
+
+        @Override
+        public String getEnding() {
+            return "嘉菲的性感露脐上衣是一款完美时尚的服装，像CupcakKe的丁字裤一样柔软，但又像神秘的氟一样具有保护作用";
+        }
     }
 
     public static class Leggings extends JiafeiArmor {
@@ -124,6 +134,11 @@ public class JiafeiArmor extends ArmorItem {
             ent.addEffect(new MobEffectInstance(MobEffects.FIRE_RESISTANCE, 5, 0,true, false));
             ent.addEffect(new MobEffectInstance(MobEffects.SATURATION, 5, 0,true, false));
         }
+
+        @Override
+        public String getEnding() {
+            return "嘉菲的性感打底裤是一款完美的造型师打底裤，适合所有活动。";
+        }
     }
 
     public static class Boots extends JiafeiArmor {
@@ -141,6 +156,11 @@ public class JiafeiArmor extends ArmorItem {
             ent.addEffect(new MobEffectInstance(MobEffects.MOVEMENT_SPEED, 5, 0, true, false));
             ent.addEffect(new MobEffectInstance(MobEffects.JUMP, 5, 0,true, false));
             ent.addEffect(new MobEffectInstance(MobEffects.ABSORPTION, 5, 0,true, false));
+        }
+
+        @Override
+        public String getEnding() {
+            return "嘉菲的性感靴子舒适保暖，非常适合Floptropica冬季";
         }
     }
 }

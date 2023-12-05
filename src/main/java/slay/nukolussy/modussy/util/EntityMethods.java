@@ -13,6 +13,7 @@ import net.minecraft.world.level.Level;
 import net.minecraft.world.level.LevelAccessor;
 import net.minecraft.world.phys.AABB;
 import net.minecraft.world.phys.Vec3;
+import slay.nukolussy.modussy.effect.ModEffects;
 import slay.nukolussy.modussy.entities.AbstractModEntity;
 import slay.nukolussy.modussy.entities.ModEntities;
 import slay.nukolussy.modussy.entities.flops.AbstractFlopFigures;
@@ -138,6 +139,7 @@ public class EntityMethods {
             monsterEffects(entity);
             removeFlopEffects(entity);
         }
+        entity.addEffect(new MobEffectInstance(ModEffects.YASSIFIED.get(), 1000, 0));
     }
 
     public static void addEffects(LivingEntity entity, int lvl, int amp) {
@@ -151,6 +153,7 @@ public class EntityMethods {
             monsterEffects(entity, lvl, amp);
             removeFlopEffects(entity, lvl);
         }
+        entity.addEffect(new MobEffectInstance(ModEffects.YASSIFIED.get(), 1000, amp));
     }
 
     public static void removeMonsterEffects(LivingEntity entity) {
@@ -213,6 +216,7 @@ public class EntityMethods {
             modEntity.setXRot(xRot);
             modEntity.setYRot(yRot);
             modEntity.setTamed(player);
+            modEntity.addEffect(new MobEffectInstance(ModEffects.YASSIFIED.get()));
             modEntity.addAdditionalSaveData(modEntity.getPersistentData());
         }
     }
@@ -227,7 +231,7 @@ public class EntityMethods {
         else {
             type = randval == 1 ? ModEntities.CUPCAKKE.get() : ModEntities.JIAFEI.get();
         }
-            // witches can only turn into female flops, and not into twinks, this will be implemented at a different time
+        // witches can only turn into female flops, and not into twinks, this will be implemented at a different time
         AbstractFlops flop = entity.convertTo(type, true);
         if (flop != null) {
             if (flop instanceof Jiafei jiafei) {
@@ -239,6 +243,7 @@ public class EntityMethods {
             flop.setYRot(yRot);
             flop.setTamed(player);
             flop.getBrain().eraseMemory(MemoryModuleType.ANGRY_AT);
+            flop.addEffect(new MobEffectInstance(ModEffects.YASSIFIED.get()));
             flop.addAdditionalSaveData(flop.getPersistentData());
         }
     }

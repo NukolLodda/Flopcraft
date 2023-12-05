@@ -16,6 +16,7 @@ public class Rosetoy extends Item {
 
     @Override
     public InteractionResultHolder<ItemStack> use(Level pLevel, Player pPlayer, InteractionHand pUsedHand) {
+        // upon use, poosay juice will spawn on the player while particles get summoned
         EntityMethods.addEffects(pPlayer);
         pPlayer.playSound(pLevel.random.nextInt(2) == 0 ? ModSounds.ROSETOY_2.get() : ModSounds.ROSETOY_1.get());
         return super.use(pLevel, pPlayer, pUsedHand);
