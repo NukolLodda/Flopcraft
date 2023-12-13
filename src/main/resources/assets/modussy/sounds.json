@@ -98,6 +98,15 @@
       }
     ]
   },
+  "intense_moaning": {
+    "subtitle": "subtitles.intense_moaning",
+    "sounds": [
+      {
+        "name": "modussy:intense_moaning",
+        "stream": true
+      }
+    ]
+  },
   "music_disc_c1": {
     "subtitle": "subtitles.music",
     "sounds": [

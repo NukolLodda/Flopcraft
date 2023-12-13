@@ -8,7 +8,7 @@ As of right now, Modussy currently has support for Minecraft Java version 1.20.1
 <br>
 If you have any questions regarding Modussy, you can cvm to <a href="https://discord.gg/NTwqY3rcvU">the Modussy discord server</a>.
 I will also be giving out updates about the project there and my status on certain requests if you are interested of course.
-
+<br>
 <br>
 If you are interested in helping me with Modussy and you have the sufficient Java knowledge to do so,
 then please come over <a href="https://forms.gle/HN36moxHdA6yRNE3A">here</a> and apply to be part of the Modussy development team.
@@ -19,11 +19,14 @@ Click <a href="https://forms.gle/ekaPTXRGEACPMSxH6">here</a> to partake in the f
 <br>
 <br>
 <a href="https://www.tiktok.com/@nukollodda/video/7204148779816160554">Here</a> is a short introduction video to Modussy
-
+<br>
+<br>
+**PLEASE READ BELOW**
+<br>
 I've gotten this request before many times, so I will come out and say it here
 that **I do not plan to make a bedrock edition ever for this mod since I may not have the time to do so.**
 This mod is a solo project, meaning from day one, I've been one-manning this whole thing,
-so I hope this doesn't come off too much as a surprise. However, to anyone already familiar with bedrock modding
+so I hope this doesn't come off too much as a surprise. However, to anyone already familiar with bedrock modding,
 you are free to make your own port of this mod to bedrock edition using the code uploaded on this site.
 
 ---

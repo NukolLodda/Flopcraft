@@ -1,0 +1,35 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "modussy:cvm_pie_from_crafting"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    },
+    "has_twink_egg": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "modussy:twink_egg"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "requirements": [
+    [
+      "has_twink_egg",
+      "has_the_recipe"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "modussy:cvm_pie_from_crafting"
+    ]
+  },
+  "sends_telemetry_event": false
+}

@@ -25,7 +25,6 @@ import slay.nukolussy.modussy.effect.ModEffects;
 import slay.nukolussy.modussy.entities.ModEntities;
 import slay.nukolussy.modussy.item.ModItems;
 import slay.nukolussy.modussy.client.menu.ModMenuTypes;
-import slay.nukolussy.modussy.loot.ModLootModifiers;
 import slay.nukolussy.modussy.network.ModMessages;
 import slay.nukolussy.modussy.painting.ModPaintings;
 import slay.nukolussy.modussy.recipes.ModRecipes;
@@ -52,8 +51,6 @@ public class Modussy {
         ModFluidTypes.register(modEventBus);
         ModMenuTypes.register(modEventBus);
         ModRecipes.register(modEventBus);
-
-        ModLootModifiers.register(modEventBus);
 
         modEventBus.addListener(this::commonSetup);
 

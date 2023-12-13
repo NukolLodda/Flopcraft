@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "group": "cvm_pie",
+  "ingredients": [
+    {
+      "item": "minecraft:pumpkin"
+    },
+    {
+      "item": "modussy:cvm"
+    },
+    {
+      "item": "modussy:twink_egg"
+    }
+  ],
+  "result": {
+    "item": "modussy:cvm_pie"
+  }
+}

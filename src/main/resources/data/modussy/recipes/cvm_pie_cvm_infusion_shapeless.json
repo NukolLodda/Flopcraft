@@ -1,0 +1,17 @@
+{
+  "type": "modussy:cvm_infusion_shapeless",
+  "ingredients": [
+    {
+      "item": "minecraft:pumpkin"
+    },
+    {
+      "item": "modussy:cvm"
+    },
+    {
+      "item": "modussy:twink_egg"
+    }
+  ],
+  "output": {
+    "item": "modussy:cvm_pie"
+  }
+}

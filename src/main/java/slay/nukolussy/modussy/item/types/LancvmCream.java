@@ -5,12 +5,15 @@ import net.minecraft.network.chat.Component;
 import net.minecraft.network.chat.MutableComponent;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResultHolder;
+import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.TooltipFlag;
 import net.minecraft.world.item.Vanishable;
 import net.minecraft.world.level.Level;
+import slay.nukolussy.modussy.effect.ModEffects;
+import slay.nukolussy.modussy.sound.ModSounds;
 import slay.nukolussy.modussy.util.ToolMethods;
 
 import java.util.List;
@@ -22,12 +25,13 @@ public class LancvmCream extends Item implements Vanishable {
 
     @Override
     public InteractionResultHolder<ItemStack> use(Level world, Player entity, InteractionHand hand) {
-        // upon use, cvm will spawn on the player and the player will get a variety of effects
         InteractionResultHolder<ItemStack> ar = super.use(world, entity, hand);
         ToolMethods.makeupUse(entity, entity.getMainHandItem(), 2);
         if (entity.getMainHandItem().getDamageValue() >= entity.getMainHandItem().getMaxDamage()) {
             entity.setItemInHand(InteractionHand.MAIN_HAND, ItemStack.EMPTY);
         }
+        entity.playSound(ModSounds.SQUIRT.get());
+        entity.addEffect(new MobEffectInstance(ModEffects.CVMMED.get(), 1000, 1));
         return ar;
     }
     public void appendHoverText(ItemStack stack, Level lvl, List<Component> components, TooltipFlag tip) {

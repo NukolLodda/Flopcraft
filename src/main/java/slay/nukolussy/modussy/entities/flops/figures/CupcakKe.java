@@ -20,6 +20,7 @@ import net.minecraft.world.level.Level;
 import net.minecraft.world.level.ServerLevelAccessor;
 import net.minecraft.world.level.gameevent.GameEvent;
 import net.minecraftforge.network.PlayMessages;
+import slay.nukolussy.modussy.block.ModBlocks;
 import slay.nukolussy.modussy.entities.ModEntities;
 import slay.nukolussy.modussy.entities.flops.AbstractFlopFigures;
 import slay.nukolussy.modussy.entities.flops.IMerflop;
@@ -108,6 +109,9 @@ public class CupcakKe extends AbstractFlopFigures implements IMerflop {
                 ItemEntity entityToSpawn = new ItemEntity(world, this.getX(), this.getY(), this.getZ(), new ItemStack(ModItems.CUPCAKE.get()));
                 entityToSpawn.setPickUpDelay(10);
                 world.addFreshEntity(entityToSpawn);
+            }
+            if (world.getBlockState(this.getOnPos().above()).getBlock().equals(ModBlocks.CVM_FLUID.get())) {
+                cupcakkeDuplication(ModItems.CVM.get(), this);
             }
         }
     }

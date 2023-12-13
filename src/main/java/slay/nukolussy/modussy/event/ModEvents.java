@@ -22,6 +22,7 @@ import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.LogicalSide;
 import net.minecraftforge.fml.common.Mod;
 import slay.nukolussy.modussy.Modussy;
+import slay.nukolussy.modussy.entities.AbstractModEntity;
 import slay.nukolussy.modussy.entities.flops.AbstractFlops;
 import slay.nukolussy.modussy.item.ModItems;
 import slay.nukolussy.modussy.util.EntityMethods;
@@ -119,13 +120,13 @@ public class ModEvents {
     public static void onWorldLoad(EntityJoinLevelEvent event) {
         if (event.getEntity() instanceof Mob entity) {
             if (entity instanceof Zombie zombie && !(zombie instanceof ZombifiedPiglin)) {
-                zombie.targetSelector.addGoal(6, new NearestAttackableTargetGoal<>(zombie, AbstractFlops.class, true));
+                zombie.targetSelector.addGoal(6, new NearestAttackableTargetGoal<>(zombie, AbstractModEntity.class, true));
             }
             if (entity instanceof AbstractSkeleton skeleton) {
-                skeleton.targetSelector.addGoal(6, new NearestAttackableTargetGoal<>(skeleton, AbstractFlops.class, true));
+                skeleton.targetSelector.addGoal(6, new NearestAttackableTargetGoal<>(skeleton, AbstractModEntity.class, true));
             }
             if (entity instanceof AbstractIllager pillager) {
-                pillager.targetSelector.addGoal(6, new NearestAttackableTargetGoal<>(pillager, AbstractFlops.class, true));
+                pillager.targetSelector.addGoal(6, new NearestAttackableTargetGoal<>(pillager, AbstractModEntity.class, true));
             }
         }
         if (event.getEntity() instanceof Player player) {

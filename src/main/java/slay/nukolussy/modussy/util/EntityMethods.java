@@ -56,10 +56,8 @@ public class EntityMethods {
         if (entity instanceof Mob) {
             ((Mob) entity).setGuaranteedDrop(EquipmentSlot.MAINHAND);
         }
-        entity.addEffect(new MobEffectInstance(MobEffects.MOVEMENT_SLOWDOWN, 8400 * lvl, amp));
-        entity.addEffect(new MobEffectInstance(MobEffects.WEAKNESS, 8400 * lvl, amp));
         if (lvl == 1) {
-            entity.addEffect(new MobEffectInstance(MobEffects.POISON, 1380 * lvl, 0));
+            entity.addEffect(new MobEffectInstance(MobEffects.BLINDNESS, 1380 * lvl, 0));
         } else {
             entity.addEffect(new MobEffectInstance(MobEffects.WITHER, 1380 * lvl, amp));
             entity.addEffect(new MobEffectInstance(MobEffects.GLOWING, 1380 * lvl, amp));
@@ -70,27 +68,22 @@ public class EntityMethods {
     }
 
     public static void monsterEffects(LivingEntity entity) {
-        entity.addEffect(new MobEffectInstance(MobEffects.MOVEMENT_SLOWDOWN, 1000, 0));
         entity.addEffect(new MobEffectInstance(MobEffects.WITHER, 6900, 1));
-        entity.addEffect(new MobEffectInstance(MobEffects.DIG_SLOWDOWN, 1690, 0));
-        entity.addEffect(new MobEffectInstance(MobEffects.WEAKNESS, 1690, 1));
         entity.addEffect(new MobEffectInstance(MobEffects.BLINDNESS, 1710, 0));
 
         removeFlopEffects(entity);
     }
 
     public static void flopEffects(LivingEntity entity, int lvl, int amp) {
-        entity.addEffect(new MobEffectInstance(MobEffects.REGENERATION, 300 * lvl, amp));
+        if (entity instanceof Player player) {
+            PlayerMethods.addPlayerYassification(player, amp + lvl);
+        }
+        entity.addEffect(new MobEffectInstance(ModEffects.YASSIFIED.get(), 600 * lvl, amp));
         entity.addEffect(new MobEffectInstance(MobEffects.WATER_BREATHING, 600 * lvl, 0));
         entity.addEffect(new MobEffectInstance(MobEffects.FIRE_RESISTANCE, 600 * lvl, amp));
-        entity.addEffect(new MobEffectInstance(MobEffects.DAMAGE_RESISTANCE, 400 * lvl, amp));
-        entity.addEffect(new MobEffectInstance(MobEffects.DIG_SPEED, 600 * lvl, 2 * amp));
-        entity.addEffect(new MobEffectInstance(MobEffects.DAMAGE_BOOST, 600 * lvl, 2 * amp));
         entity.addEffect(new MobEffectInstance(MobEffects.NIGHT_VISION, 300 * lvl, 0));
         if (lvl > 1) {
             entity.addEffect(new MobEffectInstance(MobEffects.ABSORPTION, 600 * lvl, amp));
-            entity.addEffect(new MobEffectInstance(MobEffects.LUCK, 600 * lvl, 2 * amp));
-            entity.addEffect(new MobEffectInstance(MobEffects.SATURATION, 600 * lvl, amp));
             entity.addEffect(new MobEffectInstance(MobEffects.SLOW_FALLING, 600 * lvl, 0));
             if (lvl > 2) {
                 entity.addEffect(new MobEffectInstance(MobEffects.HEALTH_BOOST, 600 * lvl, amp));
@@ -101,13 +94,12 @@ public class EntityMethods {
     }
 
     public static void flopEffects(LivingEntity entity) {
-        entity.addEffect(new MobEffectInstance(MobEffects.MOVEMENT_SPEED, 1000, 0));
-        entity.addEffect(new MobEffectInstance(MobEffects.REGENERATION, 6900, 1));
-        entity.addEffect(new MobEffectInstance(MobEffects.ABSORPTION, 1710, 1));
+        if (entity instanceof Player player) {
+            PlayerMethods.addPlayerYassification(player, 2);
+        }
+        entity.addEffect(new MobEffectInstance(ModEffects.YASSIFIED.get(), 1000, 0));
         entity.addEffect(new MobEffectInstance(MobEffects.FIRE_RESISTANCE, 1710, 0));
         entity.addEffect(new MobEffectInstance(MobEffects.DAMAGE_RESISTANCE, 6900, 1));
-        entity.addEffect(new MobEffectInstance(MobEffects.DIG_SPEED, 1690, 0));
-        entity.addEffect(new MobEffectInstance(MobEffects.DAMAGE_BOOST, 1690, 1));
         entity.addEffect(new MobEffectInstance(MobEffects.WATER_BREATHING, 1710, 0));
         entity.addEffect(new MobEffectInstance(MobEffects.NIGHT_VISION, 1710, 0));
 
@@ -116,8 +108,6 @@ public class EntityMethods {
 
     public static void removeMonsterEffects(LivingEntity entity, int lvl) {
         entity.removeEffect(MobEffects.MOVEMENT_SLOWDOWN);
-        entity.removeEffect(MobEffects.DIG_SLOWDOWN);
-        entity.removeEffect(MobEffects.WEAKNESS);
         entity.removeEffect(MobEffects.BLINDNESS);
         entity.removeEffect(MobEffects.POISON);
         if (lvl > 1) {
@@ -153,7 +143,6 @@ public class EntityMethods {
             monsterEffects(entity, lvl, amp);
             removeFlopEffects(entity, lvl);
         }
-        entity.addEffect(new MobEffectInstance(ModEffects.YASSIFIED.get(), 1000, amp));
     }
 
     public static void removeMonsterEffects(LivingEntity entity) {

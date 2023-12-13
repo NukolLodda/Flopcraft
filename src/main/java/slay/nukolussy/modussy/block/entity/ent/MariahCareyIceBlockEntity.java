@@ -27,7 +27,7 @@ public class MariahCareyIceBlockEntity extends BlockEntity {
 
     public static void tick(Level lvl, BlockPos pos, BlockState state, MariahCareyIceBlockEntity ent) {
         // if it's December, she will defrost
-        BlockState above = lvl.getBlockState(new BlockPos(pos.getX(), pos.getY() + 1, pos.getZ()));
+        BlockState above = lvl.getBlockState(pos.above());
         if (!state.getValue(MariahCareyIceBlock.IS_TOP) && above.getBlock() instanceof MariahCareyIceBlock) {
             if (ModUtil.getMonth().equals(Month.DECEMBER) && above.getValue(MariahCareyIceBlock.IS_TOP)) {
                 ent.tickAfterSpawn++;

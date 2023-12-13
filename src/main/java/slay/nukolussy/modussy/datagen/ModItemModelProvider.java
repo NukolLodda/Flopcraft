@@ -27,6 +27,7 @@ public class ModItemModelProvider extends ItemModelProvider {
         simpleItem(ModItems.CUPCAKE);
         simpleItem(ModItems.CVM);
         simpleItem(ModItems.CVMIUM);
+        simpleItem(ModItems.CVM_PIE);
         simpleItem(ModItems.EXTRA_BLOODY_TAMPON);
         simpleItem(ModItems.CLITMAS_PRESENT);
         simpleItem(ModItems.FLOPTROPICA_TICKET);
@@ -56,6 +57,7 @@ public class ModItemModelProvider extends ItemModelProvider {
         simpleItem(ModItems.JIAFEI_CHESTPLATE);
         simpleItem(ModItems.JIAFEI_HELMET);
         simpleItem(ModItems.DEELDO);
+        simpleItem(ModItems.ENDER_DRAGON_DEELDO);
         simpleItem(ModItems.BRA);
         simpleItem(ModItems.THONGS);
         simpleItem(ModItems.DISC_C1);
@@ -128,12 +130,19 @@ public class ModItemModelProvider extends ItemModelProvider {
 
         fenceItem(ModBlocks.LOVELY_PEACH_FENCE, ModBlocks.LOVELY_PEACH_PLANKS);
         buttonItem(ModBlocks.LOVELY_PEACH_BUTTON, ModBlocks.LOVELY_PEACH_PLANKS);
+        saplingItem(ModBlocks.LOVELY_PEACH_SAPLING);
     }
 
     private ItemModelBuilder simpleItem(RegistryObject<Item> item) {
         return withExistingParent(item.getId().getPath(),
                 new ResourceLocation("item/generated")).texture("layer0",
                 new ResourceLocation(Modussy.MODID,"item/" + item.getId().getPath()));
+    }
+
+    private ItemModelBuilder saplingItem(RegistryObject<Block> item) {
+        return withExistingParent(item.getId().getPath(),
+                new ResourceLocation("item/generated"))
+                .texture("layer0", new ResourceLocation(Modussy.MODID, "block/" + item.getId().getPath()));
     }
 
     public void fenceItem(RegistryObject<Block> pBlock, RegistryObject<Block> pBase) {

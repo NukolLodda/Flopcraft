@@ -12,6 +12,7 @@ import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.*;
 import net.minecraft.world.item.crafting.Ingredient;
 import net.minecraft.world.level.Level;
+import slay.nukolussy.modussy.effect.ModEffects;
 import slay.nukolussy.modussy.item.ModItems;
 import slay.nukolussy.modussy.sound.ModSounds;
 
@@ -130,7 +131,7 @@ public class JiafeiArmor extends ArmorItem implements IJiafeiProducts {
         @Override
         public void onArmorTick(ItemStack stack, Level world, Player ent) {
             ent.addEffect(new MobEffectInstance(MobEffects.SLOW_FALLING, 5, 1,true, false));
-            ent.addEffect(new MobEffectInstance(MobEffects.LUCK, 5, 1,true, false));
+            ent.addEffect(new MobEffectInstance(ModEffects.YASSIFIED.get(), 5, 1,true, false));
             ent.addEffect(new MobEffectInstance(MobEffects.FIRE_RESISTANCE, 5, 0,true, false));
             ent.addEffect(new MobEffectInstance(MobEffects.SATURATION, 5, 0,true, false));
         }

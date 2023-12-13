@@ -404,6 +404,8 @@ public class ModSounds {
     public static final RegistryObject<SoundEvent> RANVISION_TRADELESS = SOUNDS.register("ranvision_tradeless",
             () -> SoundEvent.createVariableRangeEvent(new ResourceLocation(Modussy.MODID, "ranvision_tradeless")));
 
+    public static final RegistryObject<SoundEvent> INTENSE_MOANING = SOUNDS.register("intense_moaning",
+            () -> SoundEvent.createVariableRangeEvent(new ResourceLocation(Modussy.MODID,"intense_moaning")));
     public static final RegistryObject<SoundEvent> SQUIRT = SOUNDS.register("squirt",
             () -> SoundEvent.createVariableRangeEvent(new ResourceLocation(Modussy.MODID,"squirt")));
     public static final RegistryObject<SoundEvent> CVM = SOUNDS.register("cvm",

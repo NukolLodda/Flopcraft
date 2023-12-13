@@ -4,6 +4,7 @@ import net.minecraft.data.PackOutput;
 import net.minecraft.world.level.block.*;
 import net.minecraftforge.client.model.generators.BlockStateProvider;
 import net.minecraftforge.common.data.ExistingFileHelper;
+import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
 import slay.nukolussy.modussy.Modussy;
 import slay.nukolussy.modussy.block.ModBlocks;
@@ -36,6 +37,8 @@ public class ModBlockStateProvider extends BlockStateProvider {
         blockWithItem(ModBlocks.SHENSEIUM_ORE);
         blockWithItem(ModBlocks.LOVELY_PEACH_PLANKS);
 
+        saplingBlock(ModBlocks.LOVELY_PEACH_SAPLING);
+
         stairsBlock((StairBlock) ModBlocks.LOVELY_PEACH_STAIRS.get(), blockTexture(ModBlocks.LOVELY_PEACH_PLANKS.get()));
         slabBlock((SlabBlock) ModBlocks.LOVELY_PEACH_SLABS.get(),
                 blockTexture(ModBlocks.LOVELY_PEACH_PLANKS.get()), blockTexture(ModBlocks.LOVELY_PEACH_PLANKS.get()));
@@ -49,7 +52,12 @@ public class ModBlockStateProvider extends BlockStateProvider {
                 modLoc("block/lovely_peach_trapdoor"), true, "cutout");
     }
     
-    private void blockWithItem(RegistryObject<Block> registryObject) {
-        simpleBlockWithItem(registryObject.get(), cubeAll(registryObject.get()));
+    private void blockWithItem(RegistryObject<Block> registryBlock) {
+        simpleBlockWithItem(registryBlock.get(), cubeAll(registryBlock.get()));
+    }
+
+    private void saplingBlock(RegistryObject<Block> registryBlock) {
+        simpleBlock(registryBlock.get(),
+                models().crop(ForgeRegistries.BLOCKS.getKey(registryBlock.get()).getPath(), blockTexture(registryBlock.get())).renderType("cutout"));
     }
 }

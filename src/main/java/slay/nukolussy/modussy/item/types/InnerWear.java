@@ -13,6 +13,7 @@ import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.crafting.Ingredient;
 import net.minecraft.world.level.Level;
 import org.jetbrains.annotations.Nullable;
+import slay.nukolussy.modussy.effect.ModEffects;
 import slay.nukolussy.modussy.item.ModItems;
 import slay.nukolussy.modussy.sound.ModSounds;
 
@@ -73,14 +74,8 @@ public class InnerWear extends ArmorItem {
 
         @Override
         public void onArmorTick(ItemStack stack, Level level, Player player) {
-            player.addEffect(new MobEffectInstance(MobEffects.REGENERATION, 5, 0,true, false));
-            player.addEffect(new MobEffectInstance(MobEffects.DAMAGE_RESISTANCE, 5, 0,true, false));
-            player.addEffect(new MobEffectInstance(MobEffects.DAMAGE_BOOST, 5, 2,true, false));
-            player.addEffect(new MobEffectInstance(MobEffects.DIG_SPEED, 5, 2,true, false));
-            player.addEffect(new MobEffectInstance(MobEffects.DOLPHINS_GRACE, 5, 2,true, false));
+            player.addEffect(new MobEffectInstance(ModEffects.YASSIFIED.get(), 5, 0,true, false));
             player.addEffect(new MobEffectInstance(MobEffects.ABSORPTION, 5, 0,true, false));
-            player.addEffect(new MobEffectInstance(MobEffects.SATURATION, 5, 0,true, false));
-            player.addEffect(new MobEffectInstance(MobEffects.LUCK, 5, 0,true, false));
         }
     }
     public static class Thongs extends InnerWear {

@@ -283,6 +283,12 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
                 .group("poosay_juice")
                 .save(pWriter, Modussy.MODID + ":posei_from_fluid_crafting");
 
+        ShapelessRecipeBuilder.shapeless(RecipeCategory.MISC, ModItems.CVM_PIE.get(), 1)
+                .requires(Items.PUMPKIN).requires(ModItems.CVM.get())
+                .requires(ModItems.TWINK_EGG.get()).unlockedBy(getHasName(ModItems.TWINK_EGG.get()), has(ModItems.TWINK_EGG.get()))
+                .group("cvm_pie")
+                .save(pWriter, Modussy.MODID + ":cvm_pie_from_crafting");
+
         trimSmithing(pWriter, ModItems.JIAFEI_TRIM_TEMPLATE.get(),
                 new ResourceLocation(Modussy.MODID, getItemName(ModItems.JIAFEI_TRIM_TEMPLATE.get()) + "_smithing_trim"));
 

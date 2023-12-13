@@ -2,6 +2,7 @@ package slay.nukolussy.modussy.entities.flops;
 
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.world.damagesource.DamageSource;
+import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.entity.*;
 import net.minecraft.world.entity.ai.attributes.AttributeSupplier;
 import net.minecraft.world.entity.ai.attributes.Attributes;
@@ -12,6 +13,7 @@ import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.crafting.Ingredient;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.phys.AABB;
+import slay.nukolussy.modussy.effect.ModEffects;
 import slay.nukolussy.modussy.entities.AbstractModEntity;
 import slay.nukolussy.modussy.item.ModItems;
 import slay.nukolussy.modussy.network.yassification.PlayerYassificationProvider;

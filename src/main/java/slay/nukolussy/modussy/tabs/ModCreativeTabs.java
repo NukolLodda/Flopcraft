@@ -58,6 +58,7 @@ public class ModCreativeTabs {
                         pOutput.accept(ModBlocks.LOVELY_PEACH_TRAPDOOR.get());
                         pOutput.accept(ModBlocks.LOVELY_PEACH_FENCE.get());
                         pOutput.accept(ModBlocks.LOVELY_PEACH_FENCE_GATE.get());
+                        pOutput.accept(ModBlocks.LOVELY_PEACH_SAPLING.get());
                     })).build());
 
     public static RegistryObject<CreativeModeTab> SLAY_TOOLS = CREATIVE_MODE_TABS.register("slay_tools", () ->
@@ -69,6 +70,7 @@ public class ModCreativeTabs {
                         pOutput.accept(ModItems.ARANA_GRANDE.get());
                         pOutput.accept(ModItems.CLITMAS_BUTTPLUG.get());
                         pOutput.accept(ModItems.DEELDO.get());
+                        pOutput.accept(ModItems.ENDER_DRAGON_DEELDO.get());
                         pOutput.accept(ModItems.ROSETOY.get());
                         pOutput.accept(ModItems.SLAGINIUM_YASSIFIER.get());
                         pOutput.accept(ModItems.SLAGINIUM_YASSIFIER_PLUS.get());
@@ -159,6 +161,7 @@ public class ModCreativeTabs {
                         pOutput.accept(ModItems.CUPCAKE.get());
                         pOutput.accept(ModItems.CVM.get());
                         pOutput.accept(ModItems.CVMIUM.get());
+                        pOutput.accept(ModItems.CVM_PIE.get());
                         pOutput.accept(ModItems.CVMTITPLASM.get());
                         pOutput.accept(ModItems.FLOPIUM.get());
                         pOutput.accept(ModItems.FLOPTROPICA_TICKET.get());

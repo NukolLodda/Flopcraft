@@ -19,7 +19,7 @@ public class ClitmasPresent extends Item {
     }
 
     private Item randomGiftItem() {
-        int val = new Random().nextInt(20);
+        int val = new Random().nextInt(22);
         return switch (val) {
             case 1 -> ModItems.INFUSED_SLAGINIUM.get();
             case 2 -> ModItems.FLOPIUM.get();
@@ -39,7 +39,9 @@ public class ClitmasPresent extends Item {
             case 16 -> ModItems.WONYOUNG_ESSENCE.get();
             case 17 -> ModItems.POSEI.get();
             case 18 -> ModItems.HAIRUSSY.get();
-            case 19 -> ModItems.DISC_DEJE_BULLYING.get();
+            case 19 -> ModItems.DEELDO.get();
+            case 20 -> ModItems.ENDER_DRAGON_DEELDO.get();
+            case 21 -> ModItems.CVM_PIE.get();
             default -> ModItems.SLAGINIUM.get();
         };
     }

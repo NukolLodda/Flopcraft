@@ -3,8 +3,8 @@
     {
       "type": "paletted_permutations",
       "textures": [
-        "modussy:trims/models/armor/jiafei",
-        "modussy:trims/models/armor/jiafei_leggings"
+        "trims/models/armor/jiafei",
+        "trims/models/armor/jiafei_leggings"
       ],
       "palette_key": "trims/color_palettes/trim_palette",
       "permutations": {

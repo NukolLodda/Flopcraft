@@ -17,6 +17,7 @@ import slay.nukolussy.modussy.block.fluids.ModFluids;
 import slay.nukolussy.modussy.block.plants.JiafeiCrop;
 import slay.nukolussy.modussy.block.types.*;
 import slay.nukolussy.modussy.item.ModItems;
+import slay.nukolussy.modussy.worldgen.tree.LovelyPeachTreeGrower;
 
 import java.util.function.Supplier;
 
@@ -80,6 +81,9 @@ public class ModBlocks {
 
     public static final RegistryObject<Block> PEACHES_HEALTH = registerBlock("peaches_health", () ->
             new LovelyPeachesBossBlocks(LovelyPeachesBossBlocks.Type.HEALTH));
+
+    public static final RegistryObject<Block> LOVELY_PEACH_SAPLING = registerBlock("lovely_peach_sapling", () ->
+            new SaplingBlock(new LovelyPeachTreeGrower(), BlockBehaviour.Properties.copy(Blocks.OAK_SAPLING)));
 
     public static final RegistryObject<Block> LOVELY_PEACH_LOG = registerBlock("lovely_peach_log", () ->
         new RotatedPillarBlock(BlockBehaviour.Properties.copy(Blocks.CRIMSON_STEM)));

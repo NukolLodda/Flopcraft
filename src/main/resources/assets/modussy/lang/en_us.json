@@ -90,6 +90,7 @@
   "block.modussy.lovely_peach_pressure_plate": "Lovely Peach Pressure Plate",
   "block.modussy.lovely_peach_button": "Lovely Peach Button",
   "block.modussy.lovely_peach_leaves": "Lovely Peach Leaves",
+  "block.modussy.lovely_peach_sapling": "Lovely Peach Sapling",
 
   "block.modussy.jiafeian_fir_log": "Jiafeian Fir Log",
   "block.modussy.jiafeian_fir_stripped_log": "Jiafeian Fir Stripped Log",
@@ -105,6 +106,7 @@
   "block.modussy.jiafeian_fir_pressure_plate": "Jiafeian Fir Pressure Plate",
   "block.modussy.jiafeian_fir_button": "Jiafeian Fir Button",
   "block.modussy.jiafeian_fir_leaves": "Jiafeian Fir Leaves",
+  "block.modussy.jiafeian_fir_sapling": "Jiafeian Fir Sapling",
 
   "block.modussy.floptropican_palm_log": "Floptropican Palm Log",
   "block.modussy.floptropican_palm_stripped_log": "Floptropican Palm Stripped Log",
@@ -120,6 +122,7 @@
   "block.modussy.floptropican_palm_pressure_plate": "Floptropican Palm Pressure Plate",
   "block.modussy.floptropican_palm_button": "Floptropican Palm Button",
   "block.modussy.floptropican_palm_leaves": "Floptropican Palm Leaves",
+  "block.modussy.floptropican_palm_sapling": "Floptropican Palm Sapling",
 
   "block.modussy.flopium_block": "Flopium Block",
   "block.modussy.gagastone_block": "Gagastone Block",
@@ -143,6 +146,7 @@
   "item.modussy.clitmas_buttplug": "Cl!tmas Buttplug",
   "item.modussy.cvm": "Cvm",
   "item.modussy.cvmium": "Cvmium",
+  "item.modussy.cvm_pie": "Cvm Pie",
   "item.modussy.cvmtitplasm": "Cvmt!tplasm",
   "item.modussy.extra_bloody_tampon": "Extra Bloody Tampon",
   "item.modussy.flopium": "Flopium",
@@ -165,6 +169,7 @@
   "item.modussy.slaginium_yassifier_premium": "Slaginium Yassifier Premium",
   "item.modussy.slaginium_yassifier_deluxe": "Slaginium Yassifier Premium Deluxe",
   "item.modussy.clitmas_present": "Cl!tmas Present",
+  "item.modussy.ender_dragon_deeldo": "Ender Dragon Deeldo",
   "item.modussy.deeldo": "Deeldo",
   "item.modussy.hunbao": "Hunbao",
   "item.modussy.arana_grande": "Araña Grande",
@@ -318,6 +323,7 @@
   "subtitles.cupcakke_slurp": "CupcakKe gulps",
   "subtitles.cupcakke_new_years": "CupcakKe wishes luck on New Years",
   "subtitles.flop_death": "A tragedy for Floptropica",
+  "subtitles.intense_moaning": "Someone moans intensely",
   "subtitles.jiafei": "Jiafei talks",
   "subtitles.jiafei_angry": "Jiafei gets mad",
   "subtitles.jiafei_armor": "Wears aesthetic armor",
