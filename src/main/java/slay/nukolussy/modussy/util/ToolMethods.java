@@ -1,9 +1,6 @@
 package slay.nukolussy.modussy.util;
 
-import net.minecraft.ChatFormatting;
-import net.minecraft.client.Minecraft;
 import net.minecraft.core.BlockPos;
-import net.minecraft.core.particles.ParticleTypes;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.nbt.ListTag;
 import net.minecraft.nbt.StringTag;
@@ -15,16 +12,12 @@ import net.minecraft.sounds.SoundSource;
 import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.entity.*;
-import net.minecraft.world.entity.animal.Cat;
 import net.minecraft.world.entity.item.ItemEntity;
 import net.minecraft.world.entity.monster.*;
 import net.minecraft.world.entity.npc.AbstractVillager;
-import net.minecraft.world.entity.npc.Villager;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Items;
-import net.minecraft.world.item.enchantment.EnchantmentHelper;
-import net.minecraft.world.item.enchantment.Enchantments;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.LevelAccessor;
 import net.minecraft.world.level.block.Block;
@@ -32,33 +25,26 @@ import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.phys.AABB;
 import net.minecraft.world.phys.Vec3;
 import slay.nukolussy.modussy.block.plants.JiafeiCrop;
-import slay.nukolussy.modussy.effect.ModEffects;
 import slay.nukolussy.modussy.entities.ModEntities;
 import slay.nukolussy.modussy.entities.flops.AbstractFlopFigures;
 import slay.nukolussy.modussy.entities.flops.IFlopEntity;
-import slay.nukolussy.modussy.entities.flops.figures.CupcakKe;
 import slay.nukolussy.modussy.entities.flops.traders.Jiafei;
-import slay.nukolussy.modussy.entities.twink.AbstractTwink;
-import slay.nukolussy.modussy.entities.twink.Twink;
-import slay.nukolussy.modussy.entities.twink.TwinkAI;
 import slay.nukolussy.modussy.item.ModItems;
 import slay.nukolussy.modussy.sound.ModSounds;
 
 import java.util.*;
 
 public class ToolMethods {
-    private static long getGameDayTick(ServerLevel level) {
+    public static long getGameDayTick(ServerLevel level) {
         long time = level.getGameTime() / 24000L;
         if (level.getDayTime() > 6000) {
             time++;
         }
         return time * 24000L;
     }
-    private static SoundEvent AestheticSounds(int up) {
+    public static SoundEvent aestheticSounds(int up) {
         if (up > 8) up = 8;
-        int randomNum = (int) (Math.random() * (up - 1)) + 1;
-
-        return switch (randomNum) {
+        return switch (ModUtil.RANDOM.nextInt(1, up-1)) {
             case 1 -> ModSounds.AESTHETIC_1.get();
             case 2 -> ModSounds.AESTHETIC_2.get();
             case 3 -> ModSounds.AESTHETIC_3.get();
@@ -69,37 +55,13 @@ public class ToolMethods {
         };
     }
 
-    private static ItemStack randItem(int up) {
+    public static ItemStack randItem(int up) {
         if (up > 3) up = 3;
-        int randomNum = (int) (Math.random() * up);
-        return switch (randomNum) {
+        return switch (ModUtil.RANDOM.nextInt(up)) {
             case 1 -> new ItemStack(ModItems.SHENSEIUM.get());
             case 2 -> new ItemStack(ModItems.JIAFEI_PRODUCT.get());
             default -> new ItemStack(ModItems.CUPCAKE.get());
         };
-    }
-
-    public static void aranaGrandeRightClick(LevelAccessor world, double x, double y, double z, Entity entity, ItemStack itemStack) {
-        if (entity == null)
-            return;
-        if (world.isClientSide()) Minecraft.getInstance().gameRenderer.displayItemActivation(itemStack);
-        if (entity instanceof Player player) {
-            player.playSound(ModSounds.YUH.get());
-        }
-        {
-            final Vec3 center = new Vec3(x, y, z);
-            List<LivingEntity> entities = world.getEntitiesOfClass(LivingEntity.class, new AABB(center, center)
-                    .inflate(32 / 2d), e -> true).stream().toList();
-            for (LivingEntity ent : entities) {
-                if (!ent.equals(entity)) {
-                    ent.addEffect(new MobEffectInstance(ModEffects.YUH.get(), 1000, 0));
-                }
-            }
-        }
-        if (world instanceof ServerLevel level) {
-            level.sendParticles(ParticleTypes.CLOUD, x, y, z, 100,5,5, 5, 1.0);
-        }
-        itemStack.shrink(1);
     }
 
     public static void makeupUse(Entity entity, ItemStack item, int lvl) {
@@ -107,94 +69,6 @@ public class ToolMethods {
             EntityMethods.addEffects(living, lvl, lvl / 2);
             item.setDamageValue(item.getDamageValue() + 1);
         }
-    }
-
-    public static void jiafeiPerfumeSpray(LevelAccessor world, double x, double y, double z, Entity entity, ItemStack itemStack) {
-        {
-            final Vec3 center = new Vec3(x, y, z);
-            List<LivingEntity> entities = world.getEntitiesOfClass(LivingEntity.class, new AABB(center, center)
-                    .inflate(2 / 2d), e -> true).stream().toList();
-            for (LivingEntity ent : entities) {
-                if (entity instanceof Player player) {
-                    yassification(ent, world, player);
-                }
-                if (ent instanceof Cat cat && Math.random() < 0.16) {
-                    cat.spawnAtLocation(ModItems.POSEI.get());
-                }
-                ent.addEffect(new MobEffectInstance(ModEffects.YASSIFIED.get(), 1000, 1));
-            }
-        }
-        if (world instanceof ServerLevel level) {
-            level.sendParticles(ParticleTypes.DRIPPING_WATER, x, y, z, 15,1,1, 1, 1.0);
-        }
-        (itemStack).setDamageValue(itemStack.getDamageValue() + 1);
-
-        if (entity instanceof Player player) {
-            EntityMethods.flopEffects(player);
-            player.giveExperiencePoints(5);
-            player.playSound(ModSounds.SPRAY.get());
-        }
-    }
-
-    public static void yassifierRightClick(LevelAccessor world, double x, double y, double z, Entity entity, ItemStack itemStack, int lvl) {
-        int itemDura = 104;
-        int amp = (lvl + 1) / 2;
-        if (entity == null) return;
-        if (entity instanceof Player player) {
-            (player).playSound(AestheticSounds(lvl + 5));
-            if (!player.level().isClientSide()) {
-                player.displayClientMessage(Component.translatable("subtitle.aesthetic_warning").withStyle(ChatFormatting.LIGHT_PURPLE), true);
-                if (lvl > 2) {
-                    player.getAbilities().mayfly = (true);
-                    player.onUpdateAbilities();
-                }
-            }
-            player.getCooldowns().addCooldown(itemStack.getItem(), 100 * lvl);
-            EntityMethods.flopEffects(player, lvl, amp);
-        }
-        if (world.isClientSide()) Minecraft.getInstance().gameRenderer.displayItemActivation(randItem(lvl));
-        {
-            final Vec3 center = new Vec3(x, y, z);
-            List<LivingEntity> entities = world.getEntitiesOfClass(LivingEntity.class, new AABB(center, center)
-                    .inflate(28 + (4 * lvl) / 2d), e -> true).stream().toList();
-            for (LivingEntity ent : entities) {
-                if (entity instanceof Player player) {
-                    if (ent instanceof Spider spider) {
-                        spider.setItemSlot(EquipmentSlot.MAINHAND, new ItemStack(ModItems.ARANA_GRANDE.get()));
-                        spider.setGuaranteedDrop(EquipmentSlot.MAINHAND);
-                        PlayerMethods.addPlayerYassification(player, 1);
-                        spider.kill();
-                    }
-                    if (ent instanceof Slime slime) {
-                        ItemStack cvmItem = new ItemStack(ModItems.CVM.get());
-                        if (slime instanceof MagmaCube) {
-                            cvmItem = new ItemStack(ModItems.CVMIUM.get());
-                        }
-                        slime.setItemSlot(EquipmentSlot.MAINHAND, cvmItem);
-                        slime.setGuaranteedDrop(EquipmentSlot.MAINHAND);
-                        PlayerMethods.addPlayerYassification(player, 1);
-                        slime.kill();
-                    }
-                    yassification(ent, world, player);
-                    if (ent instanceof Villager || ent instanceof Witch) itemDura += 10;
-                    if (ent instanceof Cat cat && Math.random() < 0.16) {
-                        cat.spawnAtLocation(ModItems.POSEI.get());
-                        PlayerMethods.addPlayerYassification(player, 1);
-                    }
-                    EntityMethods.addEffects(ent, lvl, amp);
-                }
-            }
-        }
-        if (world instanceof ServerLevel server) {
-            server.sendParticles(ParticleTypes.SMOKE, x, y, z, 60 / lvl,5,5, 5, 1.0);
-            if (lvl > 2) {
-                server.setDayTime(getGameDayTick(server) + 6000);
-                if (lvl > 3) {
-                    server.setWeatherParameters(69000,69,false,false);
-                }
-            }
-        }
-        itemStack.setDamageValue(itemStack.getDamageValue() + itemDura);
     }
 
     public static void slayAttack(ItemStack item, Entity source, Entity target, int lvl) {
@@ -260,24 +134,6 @@ public class ToolMethods {
 
     // type 0 - cvm, 1 - cvmium, 2 - blood
 
-
-    public static void mariahCvmreyShoot(LevelAccessor world, double x, double y, double z, float velocity) {
-        {
-            final Vec3 center = new Vec3(x, y, z);
-            List<LivingEntity> entities = world.getEntitiesOfClass(LivingEntity.class, new AABB(center, center)
-                    .inflate(2 * velocity / 2d), e -> true).stream().toList();
-            for (LivingEntity ent : entities) {
-                EntityMethods.addEffects(ent, (int)velocity * 20, (int)velocity);
-            }
-        }
-        if (world instanceof ServerLevel level) {
-            level.sendParticles(ParticleTypes.COMPOSTER,
-                    x, y, z, ((int) velocity * 15),1,1, 1, (velocity * 0.16));
-            level.sendParticles(ParticleTypes.CRIMSON_SPORE,
-                    x, y, z, ((int) velocity * 15),1,1, 1, (velocity * 0.16));
-        }
-    }
-
     public static void yassification(LivingEntity ent, LevelAccessor world, Player player) {
         if (ent instanceof AbstractVillager villager) {
             EntityMethods.villagerYassification(villager, world, player);
@@ -289,6 +145,7 @@ public class ToolMethods {
         }
     }
     public static void makeGirlYessBook(BlockPos pPos, Level pLevel) {
+        // don't move this method, will be used for the haunted house code.
         int x = pPos.getX();
         int y = pPos.getY();
         int z = pPos.getZ();

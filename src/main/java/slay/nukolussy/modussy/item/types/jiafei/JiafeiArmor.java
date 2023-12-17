@@ -19,7 +19,7 @@ import slay.nukolussy.modussy.sound.ModSounds;
 import java.util.List;
 
 public class JiafeiArmor extends ArmorItem implements IJiafeiProducts {
-    public JiafeiArmor(ArmorItem.Type slot) {
+    public JiafeiArmor(Type slot) {
         super(new ArmorMaterial() {
             @Override
             public int getDurabilityForType(Type type) {
@@ -60,7 +60,7 @@ public class JiafeiArmor extends ArmorItem implements IJiafeiProducts {
             public float getKnockbackResistance() {
                 return 0.5f;
             }
-        }, slot, new Item.Properties().fireResistant());
+        }, slot, new Properties().fireResistant());
     }
 
     public void appendHoverText(ItemStack stack, Level lvl, List<Component> components, TooltipFlag tip) {

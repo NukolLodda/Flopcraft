@@ -122,8 +122,7 @@ public class NickiMinaj extends AbstractFlopTraders {
     @Nullable
     @Override
     protected SoundEvent getHurtSound(DamageSource pDamageSource) {
-        int hurtVal = (int) (Math.random() * 2);
-        return hurtVal == 1 ? ModSounds.NICKI_MINAJ_HURT1.get() : ModSounds.NICKI_MINAJ_HURT2.get();
+        return this.random.nextBoolean() ? ModSounds.NICKI_MINAJ_HURT1.get() : ModSounds.NICKI_MINAJ_HURT2.get();
     }
 
     @Nullable
@@ -182,7 +181,7 @@ public class NickiMinaj extends AbstractFlopTraders {
         this.readInventoryFromTag(tag);
     }
 
-    public void setVariant(NickiMinaj.Variant variant) {
+    public void setVariant(Variant variant) {
         this.setTypeVariant(variant.getId());
     }
 
@@ -204,7 +203,7 @@ public class NickiMinaj extends AbstractFlopTraders {
     @javax.annotation.Nullable
     public SpawnGroupData finalizeSpawn(ServerLevelAccessor level, @NotNull DifficultyInstance instance, @NotNull MobSpawnType type, SpawnGroupData data, CompoundTag tag) {
         RandomSource randomSource = level.getRandom();
-        NickiMinaj.Variant variant = Util.getRandom(NickiMinaj.Variant.values(), randomSource);
+        Variant variant = Util.getRandom(Variant.values(), randomSource);
         setVariant(variant);
         return super.finalizeSpawn(level, instance, type, data, tag);
     }

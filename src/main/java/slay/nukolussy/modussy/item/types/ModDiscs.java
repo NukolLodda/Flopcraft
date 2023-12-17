@@ -13,7 +13,7 @@ import org.jetbrains.annotations.NotNull;
 public class ModDiscs extends RecordItem {
     public ModDiscs(SoundEvent loc, int ticks) {
         super(0, () -> loc,
-                new Item.Properties().stacksTo(1).rarity(Rarity.RARE), ticks);
+                new Properties().stacksTo(1).rarity(Rarity.RARE), ticks);
     }
     @Override
     public Component getName(ItemStack pStack) {

@@ -1,6 +1,8 @@
 package slay.nukolussy.modussy.item;
 
+import net.minecraft.world.effect.MobEffect;
 import net.minecraft.world.effect.MobEffectInstance;
+import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.food.FoodProperties;
 import net.minecraft.world.item.*;
 import net.minecraftforge.common.ForgeSpawnEggItem;
@@ -41,7 +43,9 @@ public class ModItems {
             () -> new Item(new Item.Properties()
                     .food(new FoodProperties.Builder().nutrition(4).saturationMod(5f).build())));
 
-    public static final RegistryObject<Item> BLOOD_CLUMP = ITEMS.register("blood_clump", BloodClump::new);
+    public static final RegistryObject<Item> BLOOD_CLUMP = ITEMS.register("blood_clump", () ->
+            new Item(new Item.Properties().food(new FoodProperties.Builder().nutrition(1).saturationMod(1f)
+                    .effect(() -> new MobEffectInstance(MobEffects.WITHER, 1000, 2), 1).build())));
 
     public static final RegistryObject<Item> CVM = ITEMS.register("cvm", CvmItem::new);
 
@@ -138,6 +142,7 @@ public class ModItems {
     public static final RegistryObject<Item> FLOPTROPICA_TICKET = ITEMS.register("floptropica_ticket", FloptropicaTicket::new);
     public static final RegistryObject<Item> JIAFEI_SEED = ITEMS.register("jiafei_seed", JiafeiSeed::new);
     public static final RegistryObject<Item> CLITMAS_PRESENT = ITEMS.register("clitmas_present", ClitmasPresent::new);
+    public static final RegistryObject<Item> REMIX_PRESENT = ITEMS.register("remix_present", RemixPresent::new);
     public static final RegistryObject<Item> BRA = ITEMS.register("bra", InnerWear.Bra::new);
     public static final RegistryObject<Item> THONGS = ITEMS.register("thongs", InnerWear.Thongs::new);
     public static final RegistryObject<Item> JIAFEI_TRIM_TEMPLATE = ITEMS.register("jiafei_armor_trim_template",

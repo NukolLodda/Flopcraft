@@ -7,7 +7,7 @@ import net.minecraft.world.level.block.state.BlockBehaviour;
 
 public class MaterialBlocks extends Block {
     public MaterialBlocks(Block block, SoundType sound, float strength) {
-        super(BlockBehaviour.Properties.copy(block).strength(strength * 1.5f)
+        super(Properties.copy(block).strength(strength * 1.5f)
                 .destroyTime(strength).requiresCorrectToolForDrops().sound(sound));
     }
     public MaterialBlocks(float strength) {

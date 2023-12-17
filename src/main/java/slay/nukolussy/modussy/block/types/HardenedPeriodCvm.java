@@ -8,6 +8,6 @@ import net.minecraft.world.level.block.state.BlockBehaviour;
 public class HardenedPeriodCvm extends Block {
 
     public HardenedPeriodCvm() {
-        super(BlockBehaviour.Properties.copy(Blocks.OBSIDIAN).lightLevel(l -> 4));
+        super(Properties.copy(Blocks.OBSIDIAN).lightLevel(l -> 4));
     }
 }

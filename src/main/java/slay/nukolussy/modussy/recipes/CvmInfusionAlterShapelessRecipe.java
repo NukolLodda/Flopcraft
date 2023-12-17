@@ -117,12 +117,12 @@ public class CvmInfusionAlterShapelessRecipe implements Recipe<SimpleContainer> 
     public static class Type implements RecipeType<CvmInfusionAlterShapelessRecipe> {
         private Type() {}
 
-        public static final CvmInfusionAlterShapelessRecipe.Type INSTANCE = new CvmInfusionAlterShapelessRecipe.Type();
+        public static final Type INSTANCE = new Type();
         public static final String ID = "cvm_infusion_shapeless";
     }
 
     public static class Serializer implements RecipeSerializer<CvmInfusionAlterShapelessRecipe> {
-        public static final CvmInfusionAlterShapelessRecipe.Serializer INSTANCE = new CvmInfusionAlterShapelessRecipe.Serializer();
+        public static final Serializer INSTANCE = new Serializer();
         public static final ResourceLocation ID = new ResourceLocation(Modussy.MODID, "cvm_infusion_shapeless");
 
         @Override

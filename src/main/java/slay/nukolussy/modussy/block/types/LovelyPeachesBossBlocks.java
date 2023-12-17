@@ -27,7 +27,7 @@ public class LovelyPeachesBossBlocks extends Block {
     private final Type type;
 
     public LovelyPeachesBossBlocks(Type type) {
-        super(BlockBehaviour.Properties.copy(Blocks.SLIME_BLOCK).noLootTable());
+        super(Properties.copy(Blocks.SLIME_BLOCK).noLootTable());
         this.type = type;
     }
 

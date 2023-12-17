@@ -21,83 +21,83 @@ public class FlopTrades {
     private static final int COMMON_ITEMS_SUPPLY = 69;
     private static final int UNCOMMON_ITEMS_SUPPLY = 12;
 
-    public static final Map<IFlopTraderVariant, Int2ObjectMap<FlopTrades.ItemListing[]>> TRADES =
+    public static final Map<IFlopTraderVariant, Int2ObjectMap<ItemListing[]>> TRADES =
             Util.make(Maps.newHashMap(), (tag) -> {
-                tag.put(Jiafei.Variant.AESTHETIC, toIntMap(ImmutableMap.of(1, new FlopTrades.ItemListing[]{
-                        new FlopTrades.ProductsForSlaginium(ModItems.JIAFEI_PRODUCT.get(), COMMON_ITEMS_SUPPLY, 1),
-                        new FlopTrades.SlaginiumForProducts(ModItems.JIAFEI_HELMET.get(), 4, DEFAULT_SUPPLY, 2),
-                        new FlopTrades.SlaginiumForProducts(ModItems.JIAFEI_CHESTPLATE.get(), 5, DEFAULT_SUPPLY, 2),
-                        new FlopTrades.SlaginiumForProducts(ModItems.JIAFEI_LEGGINGS.get(), 5, DEFAULT_SUPPLY, 2),
-                        new FlopTrades.SlaginiumForProducts(ModItems.JIAFEI_BOOTS.get(), 4, DEFAULT_SUPPLY, 2),
-                        new FlopTrades.InfusedSlaginiumForProducts(ModItems.JIAFEI_PERFUME.get(), 4, UNCOMMON_ITEMS_SUPPLY, 6),
-                        new FlopTrades.InfusedSlaginiumForProducts(ModItems.DEELDO.get(), 3, UNCOMMON_ITEMS_SUPPLY, 6) // temporary. will be replaced with jiafei jetpacks
+                tag.put(Jiafei.Variant.AESTHETIC, toIntMap(ImmutableMap.of(1, new ItemListing[]{
+                        new ProductsForSlaginium(ModItems.JIAFEI_PRODUCT.get(), COMMON_ITEMS_SUPPLY, 1),
+                        new SlaginiumForProducts(ModItems.JIAFEI_HELMET.get(), 4, DEFAULT_SUPPLY, 2),
+                        new SlaginiumForProducts(ModItems.JIAFEI_CHESTPLATE.get(), 5, DEFAULT_SUPPLY, 2),
+                        new SlaginiumForProducts(ModItems.JIAFEI_LEGGINGS.get(), 5, DEFAULT_SUPPLY, 2),
+                        new SlaginiumForProducts(ModItems.JIAFEI_BOOTS.get(), 4, DEFAULT_SUPPLY, 2),
+                        new InfusedSlaginiumForProducts(ModItems.JIAFEI_PERFUME.get(), 4, UNCOMMON_ITEMS_SUPPLY, 6),
+                        new InfusedSlaginiumForProducts(ModItems.DEELDO.get(), 3, UNCOMMON_ITEMS_SUPPLY, 6) // temporary. will be replaced with jiafei jetpacks
                 })));
-                tag.put(Jiafei.Variant.MUSICIAN, toIntMap(ImmutableMap.of(1, new FlopTrades.ItemListing[]{
-                        new FlopTrades.ProductsForSlaginium(ModItems.JIAFEI_PRODUCT.get(), COMMON_ITEMS_SUPPLY, 1),
-                        new FlopTrades.SlaginiumForProducts(ModItems.DISC_CJ1.get(), 2, DEFAULT_SUPPLY, 2),
-                        new FlopTrades.SlaginiumForProducts(ModItems.DISC_JIAFEI.get(), 3, DEFAULT_SUPPLY, 2),
-                        new FlopTrades.SlaginiumForProducts(ModItems.DISC_J1.get(), 3, UNCOMMON_ITEMS_SUPPLY, 6),
-                        new FlopTrades.SlaginiumForProducts(ModItems.DISC_J2.get(), 3, UNCOMMON_ITEMS_SUPPLY, 6),
-                        new FlopTrades.InfusedSlaginiumForProducts(ModItems.DISC_J4.get(), 3, DEFAULT_SUPPLY, 2),
-                        new FlopTrades.InfusedSlaginiumForProducts(ModItems.DISC_J5.get(), 5, UNCOMMON_ITEMS_SUPPLY, 12)
+                tag.put(Jiafei.Variant.MUSICIAN, toIntMap(ImmutableMap.of(1, new ItemListing[]{
+                        new ProductsForSlaginium(ModItems.JIAFEI_PRODUCT.get(), COMMON_ITEMS_SUPPLY, 1),
+                        new SlaginiumForProducts(ModItems.DISC_CJ1.get(), 2, DEFAULT_SUPPLY, 2),
+                        new SlaginiumForProducts(ModItems.DISC_JIAFEI.get(), 3, DEFAULT_SUPPLY, 2),
+                        new SlaginiumForProducts(ModItems.DISC_J1.get(), 3, UNCOMMON_ITEMS_SUPPLY, 6),
+                        new SlaginiumForProducts(ModItems.DISC_J2.get(), 3, UNCOMMON_ITEMS_SUPPLY, 6),
+                        new InfusedSlaginiumForProducts(ModItems.DISC_J4.get(), 3, DEFAULT_SUPPLY, 2),
+                        new InfusedSlaginiumForProducts(ModItems.DISC_J5.get(), 5, UNCOMMON_ITEMS_SUPPLY, 12)
                 })));
-                tag.put(Jiafei.Variant.UTILITIES, toIntMap(ImmutableMap.of(1, new FlopTrades.ItemListing[]{
-                        new FlopTrades.ProductsForSlaginium(ModItems.JIAFEI_PRODUCT.get(), COMMON_ITEMS_SUPPLY, 1),
-                        new FlopTrades.SlaginiumForProducts(ModItems.CVM.get(), 2, UNCOMMON_ITEMS_SUPPLY, 6),
-                        new FlopTrades.SlaginiumForProducts(ModItems.JIAFEI_AXE.get(), 2, DEFAULT_SUPPLY, 2),
-                        new FlopTrades.SlaginiumForProducts(ModItems.JIAFEI_SHOVEL.get(), 1,DEFAULT_SUPPLY,2),
-                        new FlopTrades.SlaginiumForProducts(ModItems.JIAFEI_PICKAXE.get(), 2, DEFAULT_SUPPLY, 2),
-                        new FlopTrades.InfusedSlaginiumForProducts(ModItems.JIAFEI_HAMMER.get(), 3, DEFAULT_SUPPLY, 2),
-                        new FlopTrades.InfusedSlaginiumForProducts(ModItems.JIAFEI_SICKLE.get(), 2, DEFAULT_SUPPLY, 2)
+                tag.put(Jiafei.Variant.UTILITIES, toIntMap(ImmutableMap.of(1, new ItemListing[]{
+                        new ProductsForSlaginium(ModItems.JIAFEI_PRODUCT.get(), COMMON_ITEMS_SUPPLY, 1),
+                        new SlaginiumForProducts(ModItems.CVM.get(), 2, UNCOMMON_ITEMS_SUPPLY, 6),
+                        new SlaginiumForProducts(ModItems.JIAFEI_AXE.get(), 2, DEFAULT_SUPPLY, 2),
+                        new SlaginiumForProducts(ModItems.JIAFEI_SHOVEL.get(), 1,DEFAULT_SUPPLY,2),
+                        new SlaginiumForProducts(ModItems.JIAFEI_PICKAXE.get(), 2, DEFAULT_SUPPLY, 2),
+                        new InfusedSlaginiumForProducts(ModItems.JIAFEI_HAMMER.get(), 3, DEFAULT_SUPPLY, 2),
+                        new InfusedSlaginiumForProducts(ModItems.JIAFEI_SICKLE.get(), 2, DEFAULT_SUPPLY, 2)
                 })));
-                tag.put(NickiMinaj.Variant.VARIANT, toIntMap(ImmutableMap.of(1, new FlopTrades.ItemListing[]{
-                        new FlopTrades.ProductsForSlaginium(ModItems.HAIRUSSY.get(), COMMON_ITEMS_SUPPLY, 1),
-                        new FlopTrades.SlaginiumForProducts(ModItems.BRA.get(), 2, COMMON_ITEMS_SUPPLY, 2),
-                        new FlopTrades.SlaginiumForProducts(ModItems.DISC_C16.get(), 4, COMMON_ITEMS_SUPPLY, 2),
-                        new FlopTrades.SlaginiumForProducts(ModItems.DISC_C23.get(), 4, COMMON_ITEMS_SUPPLY, 2),
-                        new FlopTrades.SlaginiumForProducts(ModItems.DISC_C26.get(), 4, COMMON_ITEMS_SUPPLY, 2),
-                        new FlopTrades.InfusedSlaginiumForProducts(ModItems.DISC_JC2.get(), 6, UNCOMMON_ITEMS_SUPPLY, 6),
-                        new FlopTrades.InfusedSlaginiumForProducts(ModItems.ROSETOY.get(), 6, UNCOMMON_ITEMS_SUPPLY, 6)
+                tag.put(NickiMinaj.Variant.VARIANT, toIntMap(ImmutableMap.of(1, new ItemListing[]{
+                        new ProductsForSlaginium(ModItems.HAIRUSSY.get(), COMMON_ITEMS_SUPPLY, 1),
+                        new SlaginiumForProducts(ModItems.BRA.get(), 2, COMMON_ITEMS_SUPPLY, 2),
+                        new SlaginiumForProducts(ModItems.DISC_C16.get(), 4, COMMON_ITEMS_SUPPLY, 2),
+                        new SlaginiumForProducts(ModItems.DISC_C23.get(), 4, COMMON_ITEMS_SUPPLY, 2),
+                        new SlaginiumForProducts(ModItems.DISC_C26.get(), 4, COMMON_ITEMS_SUPPLY, 2),
+                        new InfusedSlaginiumForProducts(ModItems.DISC_JC2.get(), 6, UNCOMMON_ITEMS_SUPPLY, 6),
+                        new InfusedSlaginiumForProducts(ModItems.ROSETOY.get(), 6, UNCOMMON_ITEMS_SUPPLY, 6)
                 })));
-                tag.put(Ranvision.Variant.KPOP, toIntMap(ImmutableMap.of(1, new FlopTrades.ItemListing[]{
-                        new FlopTrades.ProductsForSlaginium(ModItems.JIAFEI_PRODUCT.get(), COMMON_ITEMS_SUPPLY, 1),
-                        new FlopTrades.SlaginiumForProducts(ModItems.DISC_C1.get(), 2, COMMON_ITEMS_SUPPLY, 2),
-                        new FlopTrades.SlaginiumForProducts(ModItems.DISC_C5.get(), 4, COMMON_ITEMS_SUPPLY, 2),
-                        new FlopTrades.SlaginiumForProducts(ModItems.DISC_C10.get(), 4, COMMON_ITEMS_SUPPLY, 2),
-                        new FlopTrades.SlaginiumForProducts(ModItems.DISC_C14.get(), 4, COMMON_ITEMS_SUPPLY, 2),
-                        new FlopTrades.InfusedSlaginiumForProducts(ModItems.DISC_CPM1.get(), 6, UNCOMMON_ITEMS_SUPPLY, 6),
-                        new FlopTrades.InfusedSlaginiumForProducts(ModItems.WONYOUNG_ESSENCE.get(), 6, UNCOMMON_ITEMS_SUPPLY, 6)
+                tag.put(Ranvision.Variant.KPOP, toIntMap(ImmutableMap.of(1, new ItemListing[]{
+                        new ProductsForSlaginium(ModItems.JIAFEI_PRODUCT.get(), COMMON_ITEMS_SUPPLY, 1),
+                        new SlaginiumForProducts(ModItems.DISC_C1.get(), 2, COMMON_ITEMS_SUPPLY, 2),
+                        new SlaginiumForProducts(ModItems.DISC_C5.get(), 4, COMMON_ITEMS_SUPPLY, 2),
+                        new SlaginiumForProducts(ModItems.DISC_C10.get(), 4, COMMON_ITEMS_SUPPLY, 2),
+                        new SlaginiumForProducts(ModItems.DISC_C14.get(), 4, COMMON_ITEMS_SUPPLY, 2),
+                        new InfusedSlaginiumForProducts(ModItems.DISC_CPM1.get(), 6, UNCOMMON_ITEMS_SUPPLY, 6),
+                        new InfusedSlaginiumForProducts(ModItems.WONYOUNG_ESSENCE.get(), 6, UNCOMMON_ITEMS_SUPPLY, 6)
                 })));
-                tag.put(Ranvision.Variant.CULTURAL, toIntMap(ImmutableMap.of(1, new FlopTrades.ItemListing[]{
-                        new FlopTrades.ProductsForSlaginium(ModItems.CUPCAKE.get(), COMMON_ITEMS_SUPPLY, 1),
-                        new FlopTrades.SlaginiumForProducts(ModItems.DISC_C4.get(), 2, COMMON_ITEMS_SUPPLY, 2),
-                        new FlopTrades.SlaginiumForProducts(ModItems.DISC_C8.get(), 4, COMMON_ITEMS_SUPPLY, 2),
-                        new FlopTrades.SlaginiumForProducts(ModItems.DISC_C11.get(), 4, COMMON_ITEMS_SUPPLY, 2),
-                        new FlopTrades.SlaginiumForProducts(ModItems.DISC_C17.get(), 4, COMMON_ITEMS_SUPPLY, 2),
-                        new FlopTrades.InfusedSlaginiumForProducts(ModItems.DISC_C18.get(), 6, UNCOMMON_ITEMS_SUPPLY, 6),
-                        new FlopTrades.InfusedSlaginiumForProducts(ModItems.CVMTITPLASM.get(), 6, UNCOMMON_ITEMS_SUPPLY, 6)
+                tag.put(Ranvision.Variant.CULTURAL, toIntMap(ImmutableMap.of(1, new ItemListing[]{
+                        new ProductsForSlaginium(ModItems.CUPCAKE.get(), COMMON_ITEMS_SUPPLY, 1),
+                        new SlaginiumForProducts(ModItems.DISC_C4.get(), 2, COMMON_ITEMS_SUPPLY, 2),
+                        new SlaginiumForProducts(ModItems.DISC_C8.get(), 4, COMMON_ITEMS_SUPPLY, 2),
+                        new SlaginiumForProducts(ModItems.DISC_C11.get(), 4, COMMON_ITEMS_SUPPLY, 2),
+                        new SlaginiumForProducts(ModItems.DISC_C17.get(), 4, COMMON_ITEMS_SUPPLY, 2),
+                        new InfusedSlaginiumForProducts(ModItems.DISC_C18.get(), 6, UNCOMMON_ITEMS_SUPPLY, 6),
+                        new InfusedSlaginiumForProducts(ModItems.CVMTITPLASM.get(), 6, UNCOMMON_ITEMS_SUPPLY, 6)
                 })));
-                tag.put(Ranvision.Variant.POP, toIntMap(ImmutableMap.of(1, new FlopTrades.ItemListing[]{
-                        new FlopTrades.ProductsForSlaginium(ModItems.ARANA_GRANDE.get(), COMMON_ITEMS_SUPPLY, 1),
-                        new FlopTrades.SlaginiumForProducts(ModItems.DISC_C6.get(), 2, COMMON_ITEMS_SUPPLY, 2),
-                        new FlopTrades.SlaginiumForProducts(ModItems.DISC_C7.get(), 4, COMMON_ITEMS_SUPPLY, 2),
-                        new FlopTrades.SlaginiumForProducts(ModItems.DISC_C9.get(), 4, COMMON_ITEMS_SUPPLY, 2),
-                        new FlopTrades.SlaginiumForProducts(ModItems.DISC_CJ1.get(), 4, COMMON_ITEMS_SUPPLY, 2),
-                        new FlopTrades.InfusedSlaginiumForProducts(ModItems.DISC_J3.get(), 6, UNCOMMON_ITEMS_SUPPLY, 6),
-                        new FlopTrades.InfusedSlaginiumForProducts(ModItems.SLAGINIUM_YASSIFIER_PREMIUM.get(), 6, UNCOMMON_ITEMS_SUPPLY, 6)
+                tag.put(Ranvision.Variant.POP, toIntMap(ImmutableMap.of(1, new ItemListing[]{
+                        new ProductsForSlaginium(ModItems.ARANA_GRANDE.get(), COMMON_ITEMS_SUPPLY, 1),
+                        new SlaginiumForProducts(ModItems.DISC_C6.get(), 2, COMMON_ITEMS_SUPPLY, 2),
+                        new SlaginiumForProducts(ModItems.DISC_C7.get(), 4, COMMON_ITEMS_SUPPLY, 2),
+                        new SlaginiumForProducts(ModItems.DISC_C9.get(), 4, COMMON_ITEMS_SUPPLY, 2),
+                        new SlaginiumForProducts(ModItems.DISC_CJ1.get(), 4, COMMON_ITEMS_SUPPLY, 2),
+                        new InfusedSlaginiumForProducts(ModItems.DISC_J3.get(), 6, UNCOMMON_ITEMS_SUPPLY, 6),
+                        new InfusedSlaginiumForProducts(ModItems.SLAGINIUM_YASSIFIER_PREMIUM.get(), 6, UNCOMMON_ITEMS_SUPPLY, 6)
                 })));
-                tag.put(Ranvision.Variant.EVENT, toIntMap(ImmutableMap.of(1, new FlopTrades.ItemListing[]{
-                        new FlopTrades.ProductsForSlaginium(ModItems.CVMTITPLASM.get(), COMMON_ITEMS_SUPPLY, 1),
-                        new FlopTrades.SlaginiumForProducts(ModItems.DISC_C23.get(), 2, COMMON_ITEMS_SUPPLY, 2),
-                        new FlopTrades.SlaginiumForProducts(ModItems.DISC_C24.get(), 4, COMMON_ITEMS_SUPPLY, 2),
-                        new FlopTrades.SlaginiumForProducts(ModItems.DISC_J5.get(), 4, COMMON_ITEMS_SUPPLY, 2),
-                        new FlopTrades.SlaginiumForProducts(ModItems.DISC_PM1.get(), 4, COMMON_ITEMS_SUPPLY, 2),
-                        new FlopTrades.InfusedSlaginiumForProducts(ModItems.DISC_RANVISION.get(), 6, UNCOMMON_ITEMS_SUPPLY, 6),
-                        new FlopTrades.InfusedSlaginiumForProducts(ModItems.KYLIE_JENNER_LIPSTICK.get(), 6, UNCOMMON_ITEMS_SUPPLY, 6)
+                tag.put(Ranvision.Variant.EVENT, toIntMap(ImmutableMap.of(1, new ItemListing[]{
+                        new ProductsForSlaginium(ModItems.CVMTITPLASM.get(), COMMON_ITEMS_SUPPLY, 1),
+                        new SlaginiumForProducts(ModItems.DISC_C23.get(), 2, COMMON_ITEMS_SUPPLY, 2),
+                        new SlaginiumForProducts(ModItems.DISC_C24.get(), 4, COMMON_ITEMS_SUPPLY, 2),
+                        new SlaginiumForProducts(ModItems.DISC_J5.get(), 4, COMMON_ITEMS_SUPPLY, 2),
+                        new SlaginiumForProducts(ModItems.DISC_PM1.get(), 4, COMMON_ITEMS_SUPPLY, 2),
+                        new InfusedSlaginiumForProducts(ModItems.DISC_RANVISION.get(), 6, UNCOMMON_ITEMS_SUPPLY, 6),
+                        new InfusedSlaginiumForProducts(ModItems.KYLIE_JENNER_LIPSTICK.get(), 6, UNCOMMON_ITEMS_SUPPLY, 6)
                 })));
             });
 
-    private static Int2ObjectMap<FlopTrades.ItemListing[]> toIntMap(ImmutableMap<Integer, FlopTrades.ItemListing[]> pMap) {
+    private static Int2ObjectMap<ItemListing[]> toIntMap(ImmutableMap<Integer, ItemListing[]> pMap) {
         return new Int2ObjectOpenHashMap<>(pMap);
     }
 

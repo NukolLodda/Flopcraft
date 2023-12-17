@@ -15,7 +15,7 @@ import slay.nukolussy.modussy.util.PlayerMethods;
 
 public class FlopAirlineTeleporter extends Block {
     public FlopAirlineTeleporter() {
-        super(BlockBehaviour.Properties.copy(Blocks.BEDROCK).noLootTable().lightLevel(l -> 10).sound(SoundType.GLASS));
+        super(Properties.copy(Blocks.BEDROCK).noLootTable().lightLevel(l -> 10).sound(SoundType.GLASS));
     }
 
     @Override

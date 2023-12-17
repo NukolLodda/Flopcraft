@@ -108,6 +108,52 @@ public class ModItemTagGenerator extends ItemTagsProvider {
                 ModItems.DISC_RANVISION.get()
         );
 
+        this.tag(ModTags.Items.CUPCAKKE_REMIXES).add(
+                ModItems.DISC_C1.get(),
+                ModItems.DISC_C2.get(),
+                ModItems.DISC_C3.get(),
+                ModItems.DISC_C4.get(),
+                ModItems.DISC_C5.get(),
+                ModItems.DISC_C6.get(),
+                ModItems.DISC_C7.get(),
+                ModItems.DISC_C8.get(),
+                ModItems.DISC_C9.get(),
+                ModItems.DISC_C10.get(),
+                ModItems.DISC_C11.get(),
+                ModItems.DISC_C12.get(),
+                ModItems.DISC_C13.get(),
+                ModItems.DISC_C14.get(),
+                ModItems.DISC_C15.get(),
+                ModItems.DISC_C16.get(),
+                ModItems.DISC_C17.get(),
+                ModItems.DISC_C18.get(),
+                ModItems.DISC_C19.get(),
+                ModItems.DISC_C20.get(),
+                ModItems.DISC_C21.get(),
+                ModItems.DISC_C22.get(),
+                ModItems.DISC_C23.get(),
+                ModItems.DISC_C24.get(),
+                ModItems.DISC_C25.get(),
+                ModItems.DISC_C26.get(),
+                ModItems.DISC_C27.get(),
+                ModItems.DISC_JC1.get(),
+                ModItems.DISC_JC2.get(),
+                ModItems.DISC_JC3.get(),
+                ModItems.DISC_CJ1.get()
+        );
+
+        this.tag(ModTags.Items.JIAFEI_REMIXES).add(
+                ModItems.DISC_J1.get(),
+                ModItems.DISC_J2.get(),
+                ModItems.DISC_J3.get(),
+                ModItems.DISC_J4.get(),
+                ModItems.DISC_J5.get(),
+                ModItems.DISC_JC1.get(),
+                ModItems.DISC_JC2.get(),
+                ModItems.DISC_JC3.get(),
+                ModItems.DISC_CJ1.get()
+        );
+
         this.tag(ItemTags.TRIM_TEMPLATES).add(ModItems.JIAFEI_TRIM_TEMPLATE.get());
     }
 }

@@ -15,6 +15,7 @@ import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.Level;
 import org.jetbrains.annotations.Nullable;
+import slay.nukolussy.modussy.entities.flops.traders.Ranvision;
 import slay.nukolussy.modussy.item.ModItems;
 import slay.nukolussy.modussy.util.ModUtil;
 import slay.nukolussy.modussy.util.PlayerMethods;
@@ -80,6 +81,9 @@ public abstract class AbstractFlopFigures extends AbstractFlops {
                         }
                         int rand = this.random.nextInt(max);
                         pPlayer.spawnAtLocation(new ItemStack(ModItems.CLITMAS_PRESENT.get(), rand));
+                        if (this instanceof Ranvision) {
+                            pPlayer.spawnAtLocation(new ItemStack(ModItems.REMIX_PRESENT.get(), rand));
+                        }
                     }
                 }
                 this.uuids.add(pPlayer.getUUID());

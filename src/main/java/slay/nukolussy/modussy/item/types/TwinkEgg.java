@@ -14,7 +14,7 @@ import slay.nukolussy.modussy.entities.projectiles.ThrownTwinkEgg;
 
 public class TwinkEgg extends Item {
     public TwinkEgg() {
-        super(new Item.Properties());
+        super(new Properties());
     }
 
     /** The method copied below is copied directly from the

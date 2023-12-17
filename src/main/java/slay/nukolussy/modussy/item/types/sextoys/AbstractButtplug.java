@@ -15,8 +15,8 @@ import slay.nukolussy.modussy.util.EntityMethods;
 import java.util.List;
 
 public abstract class AbstractButtplug extends Item {
-    public AbstractButtplug() {
-        super(new Properties().fireResistant().durability(690));
+    public AbstractButtplug(int durability) {
+        super(new Properties().fireResistant().durability(durability));
     }
 
     @Override

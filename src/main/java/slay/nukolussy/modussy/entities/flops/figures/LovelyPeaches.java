@@ -51,9 +51,9 @@ public class LovelyPeaches extends AbstractFlopFigures {
                 if (PlayerMethods.isNewgen(player)) {
                     alertFlops(player);
                 } else {
-                    int exRand = (int)(Math.random() * 12);
+                    int exRand = this.random.nextInt(12);
                     if (exRand == 1) {
-                        int rand = (int) (Math.random() * 3);
+                        int rand = this.random.nextInt(3);
                         Block block = switch (rand) {
                             case 1 -> ModBlocks.PEACHES_HEALTH.get();
                             case 2 -> ModBlocks.PEACHES_STRENGTH.get();
@@ -115,17 +115,17 @@ public class LovelyPeaches extends AbstractFlopFigures {
 
     @Override
     protected @Nullable SoundEvent getHurtSound(DamageSource pDamageSource) {
-        return (int) (Math.random() * 2) == 1 ? ModSounds.LOVELY_PEACHES_HURT1.get() : ModSounds.LOVELY_PEACHES_HURT2.get();
+        return this.random.nextBoolean() ? ModSounds.LOVELY_PEACHES_HURT1.get() : ModSounds.LOVELY_PEACHES_HURT2.get();
     }
 
     @Override
     protected @Nullable SoundEvent getDeathSound() {
-        return (int) (Math.random() * 2) == 1 ? ModSounds.LOVELY_PEACHES_HURT1.get() : ModSounds.LOVELY_PEACHES_HURT2.get();
+        return this.random.nextBoolean() ? ModSounds.LOVELY_PEACHES_HURT1.get() : ModSounds.LOVELY_PEACHES_HURT2.get();
     }
 
     @Override
     protected @Nullable SoundEvent getAmbientSound() {
-        int rand = (int) (Math.random() * 7);
+        int rand = this.random.nextInt(7);
         return switch (rand) {
             case 1 -> ModSounds.LOVELY_PEACHES_1.get();
             case 2 -> ModSounds.LOVELY_PEACHES_2.get();

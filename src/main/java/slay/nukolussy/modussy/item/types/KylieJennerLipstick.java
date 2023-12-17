@@ -18,7 +18,7 @@ import java.util.List;
 
 public class KylieJennerLipstick extends Item implements Vanishable {
     public KylieJennerLipstick() {
-        super(new Item.Properties().durability(40));
+        super(new Properties().durability(40));
     }
 
     public void appendHoverText(ItemStack stack, Level lvl, List<Component> components, TooltipFlag tip) {
@@ -29,7 +29,7 @@ public class KylieJennerLipstick extends Item implements Vanishable {
     public InteractionResultHolder<ItemStack> use(Level world, Player entity, InteractionHand hand) {
         InteractionResultHolder<ItemStack> ar = super.use(world, entity, hand);
         ToolMethods.makeupUse(entity, entity.getMainHandItem(), 2);
-        if (entity.getRandom().nextInt(0, 69) == 0) {
+        if (entity.getRandom().nextInt(69) == 0) {
             CupcakKe cupcakKe = new CupcakKe(ModEntities.CUPCAKKE.get(), world);
             cupcakKe.teleportTo(entity.getX(), entity.getY(), entity.getZ());
             world.addFreshEntity(cupcakKe);

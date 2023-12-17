@@ -36,7 +36,7 @@ import java.util.function.Predicate;
 
 public abstract class AbstractDeeldo extends BowItem {
     public AbstractDeeldo(int durability) {
-        super(new Item.Properties().fireResistant()
+        super(new Properties().fireResistant()
                 .durability(durability).rarity(Rarity.RARE));
     }
 
@@ -112,13 +112,13 @@ public abstract class AbstractDeeldo extends BowItem {
                 }
                 if (entity instanceof Player player) {
                     ToolMethods.yassification(ent, world, player);
-                    if (ent instanceof Cat cat && player.getRandom().nextInt(0, 25) < 4) {
+                    if (ent instanceof Cat cat && player.getRandom().nextInt(25) < 4) {
                         cat.spawnAtLocation(ModItems.POSEI.get());
                         PlayerMethods.addPlayerYassification(player, 2);
                     }
                     if (EntityMethods.isFlop(ent) || (ent instanceof AbstractTwink && type < 2)) {
                         EntityMethods.flopEffects(ent, amp,amp - 1);
-                        if (player.getRandom().nextInt(0, 12) == 1) {
+                        if (player.getRandom().nextInt(12) == 1) {
                             if (ent instanceof Twink && !PlayerMethods.isNewgen(player)) {
                                 ent.spawnAtLocation(TwinkAI.randItem());
                                 PlayerMethods.addPlayerYassification(player, 1);

@@ -56,7 +56,7 @@ public class CupcakKe extends AbstractFlopFigures implements IMerflop {
     @Override
     public SoundEvent getAmbientSound() {
         if (ModUtil.isNewYears()) {
-            int randVal = this.random.nextInt();
+            int randVal = this.random.nextInt(3);
             return switch (randVal) {
                 case 1 -> ModSounds.CUPCAkKE_NEW_YEARS_1.get();
                 case 2 -> ModSounds.CUPCAkKE_NEW_YEARS_2.get();

@@ -5,6 +5,6 @@ import net.minecraft.world.item.Rarity;
 
 public class FloptropicaTicket extends Item {
     public FloptropicaTicket() {
-        super(new Item.Properties().rarity(Rarity.RARE));
+        super(new Properties().rarity(Rarity.RARE));
     }
 }

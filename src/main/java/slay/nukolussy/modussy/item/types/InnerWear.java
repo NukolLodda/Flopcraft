@@ -59,7 +59,7 @@ public class InnerWear extends ArmorItem {
             public float getKnockbackResistance() {
                 return 0;
             }
-        }, pType, new Item.Properties());
+        }, pType, new Properties());
     }
 
     public static class Bra extends InnerWear {

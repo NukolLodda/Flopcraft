@@ -11,6 +11,8 @@ import slay.nukolussy.modussy.Modussy;
 public class ModTags {
 
     public static final class Items {
+        public static final TagKey<Item> CUPCAKKE_REMIXES = createForge("discs/cupcakke");
+        public static final TagKey<Item> JIAFEI_REMIXES = createForge("discs/jiafei");
         public static final TagKey<Item> BARBIE_CRYSTALS = createForge("gems/barbie");
         public static final TagKey<Item> SLAGINIUM_INGOT = createForge("ingots/slaginium");
         public static final TagKey<Item> INFUSED_SLAGINIUM_INGOT = createForge("ingots/infused_slaginium");

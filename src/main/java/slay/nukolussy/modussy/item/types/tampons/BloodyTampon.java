@@ -33,7 +33,7 @@ import java.util.Random;
 
 public class BloodyTampon extends ArrowItem {
     public BloodyTampon() {
-        super(new Item.Properties().fireResistant().rarity(Rarity.RARE));
+        super(new Properties().fireResistant().rarity(Rarity.RARE));
     }
 
     @Override

@@ -31,7 +31,7 @@ public class MariahCareyIceBlock extends BaseEntityBlock {
     public static final BooleanProperty IS_TOP = BooleanProperty.create("istop");
 
     public MariahCareyIceBlock() {
-        super(BlockBehaviour.Properties.copy(Blocks.ICE).friction(0.98f));
+        super(Properties.copy(Blocks.ICE).friction(0.98f));
     }
 
     @Override

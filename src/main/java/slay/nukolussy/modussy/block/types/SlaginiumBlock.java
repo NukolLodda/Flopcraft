@@ -43,19 +43,17 @@ public class SlaginiumBlock extends MaterialBlocks {
             Player player = null;
             {
                 final Vec3 _center = new Vec3(x, y, z);
-                List<Entity> _entfound = pLevel.getEntitiesOfClass(Entity.class, new AABB(_center, _center).inflate(8 / 2d), e -> true).stream()
+                List<LivingEntity> livingEntities = pLevel.getEntitiesOfClass(LivingEntity.class, new AABB(_center, _center).inflate(8 / 2d), e -> true).stream()
                         .sorted(Comparator.comparingDouble(_entcnd -> _entcnd.distanceToSqr(_center))).toList();
-                for (Entity iterator : _entfound) {
-                    if (iterator instanceof Player _player) {
-                        player = _player;
+                for (LivingEntity iterator : livingEntities) {
+                    if (iterator instanceof Player closest) {
+                        player = closest;
                         break;
                     }
                 }
-                for (Entity entity : _entfound) {
-                    if (entity instanceof LivingEntity living) {
-                        ToolMethods.yassification(living, pLevel, player);
-                        EntityMethods.addEffects(living);
-                    }
+                for (LivingEntity entity : livingEntities) {
+                    ToolMethods.yassification(entity, pLevel, player);
+                    EntityMethods.addEffects(entity);
                 }
             }
             pLevel.destroyBlock(pPos, false, item);

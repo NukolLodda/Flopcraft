@@ -225,7 +225,7 @@ public class Ranvision extends AbstractFlopTraders {
 
     @Override
     public @NotNull SoundEvent getNotifyTradeSound() {
-        return this.random.nextInt(2) == 1 ? ModSounds.RANVISION_TRADE_1.get() : ModSounds.RANVISION_TRADE_2.get();
+        return this.random.nextBoolean() ? ModSounds.RANVISION_TRADE_1.get() : ModSounds.RANVISION_TRADE_2.get();
     }
 
     @Nullable
@@ -242,8 +242,8 @@ public class Ranvision extends AbstractFlopTraders {
         POP(2, "pop"),
         EVENT(3, "event");
 
-        public static final Codec<Ranvision.Variant> CODEC = StringRepresentable.fromEnum(Ranvision.Variant::values);
-        private static final IntFunction<Ranvision.Variant> BY_ID = ByIdMap.continuous(Ranvision.Variant::getId, values(), ByIdMap.OutOfBoundsStrategy.WRAP);
+        public static final Codec<Variant> CODEC = StringRepresentable.fromEnum(Variant::values);
+        private static final IntFunction<Variant> BY_ID = ByIdMap.continuous(Variant::getId, values(), ByIdMap.OutOfBoundsStrategy.WRAP);
         final int id;
         final String name;
         Variant(int pId, String pName) {
@@ -260,7 +260,7 @@ public class Ranvision extends AbstractFlopTraders {
         public String getSerializedName() {
             return this.name;
         }
-        public static Ranvision.Variant byId(int id) {
+        public static Variant byId(int id) {
             return BY_ID.apply(id);
         }
     }

@@ -326,6 +326,33 @@ public class ModSounds {
     public static final RegistryObject<SoundEvent> JIAFEI_TRADE_3 = SOUNDS.register("jiafei_trade_3",
             () -> SoundEvent.createVariableRangeEvent(new ResourceLocation(Modussy.MODID,"jiafei_trade_3")));
 
+    public static final RegistryObject<SoundEvent> KEVIN_LEONARDO_1 = SOUNDS.register("kevin_leonardo_1",
+            () -> SoundEvent.createVariableRangeEvent(new ResourceLocation(Modussy.MODID,"kevin_leonardo_1")));
+
+    public static final RegistryObject<SoundEvent> KEVIN_LEONARDO_2 = SOUNDS.register("kevin_leonardo_2",
+            () -> SoundEvent.createVariableRangeEvent(new ResourceLocation(Modussy.MODID,"kevin_leonardo_2")));
+
+    public static final RegistryObject<SoundEvent> KEVIN_LEONARDO_3 = SOUNDS.register("kevin_leonardo_3",
+            () -> SoundEvent.createVariableRangeEvent(new ResourceLocation(Modussy.MODID,"kevin_leonardo_3")));
+
+    public static final RegistryObject<SoundEvent> KEVIN_LEONARDO_4 = SOUNDS.register("kevin_leonardo_4",
+            () -> SoundEvent.createVariableRangeEvent(new ResourceLocation(Modussy.MODID,"kevin_leonardo_4")));
+
+    public static final RegistryObject<SoundEvent> KEVIN_LEONARDO_5 = SOUNDS.register("kevin_leonardo_5",
+            () -> SoundEvent.createVariableRangeEvent(new ResourceLocation(Modussy.MODID,"kevin_leonardo_5")));
+
+    public static final RegistryObject<SoundEvent> KEVIN_LEONARDO_6 = SOUNDS.register("kevin_leonardo_6",
+            () -> SoundEvent.createVariableRangeEvent(new ResourceLocation(Modussy.MODID,"kevin_leonardo_6")));
+
+    public static final RegistryObject<SoundEvent> KEVIN_LEONARDO_HURT1 = SOUNDS.register("kevin_leonardo_hurt1",
+            () -> SoundEvent.createVariableRangeEvent(new ResourceLocation(Modussy.MODID,"kevin_leonardo_hurt1")));
+
+    public static final RegistryObject<SoundEvent> KEVIN_LEONARDO_HURT2 = SOUNDS.register("kevin_leonardo_hurt2",
+            () -> SoundEvent.createVariableRangeEvent(new ResourceLocation(Modussy.MODID,"kevin_leonardo_hurt2")));
+
+    public static final RegistryObject<SoundEvent> KEVIN_LEONARDO_DEATH = SOUNDS.register("kevin_leonardo_death",
+            () -> SoundEvent.createVariableRangeEvent(new ResourceLocation(Modussy.MODID,"kevin_leonardo_death")));
+
     public static final RegistryObject<SoundEvent> LOVELY_PEACHES_1 = SOUNDS.register("lovely_peaches_1",
             () -> SoundEvent.createVariableRangeEvent(new ResourceLocation(Modussy.MODID,"lovely_peaches_1")));
 
@@ -403,6 +430,19 @@ public class ModSounds {
             () -> SoundEvent.createVariableRangeEvent(new ResourceLocation(Modussy.MODID, "ranvision_trade_2")));
     public static final RegistryObject<SoundEvent> RANVISION_TRADELESS = SOUNDS.register("ranvision_tradeless",
             () -> SoundEvent.createVariableRangeEvent(new ResourceLocation(Modussy.MODID, "ranvision_tradeless")));
+
+    public static final RegistryObject<SoundEvent> TWINK_SIVAN_1 = SOUNDS.register("twink_sivan_1",
+            () -> SoundEvent.createVariableRangeEvent(new ResourceLocation(Modussy.MODID, "twink_sivan_1")));
+    public static final RegistryObject<SoundEvent> TWINK_SIVAN_2 = SOUNDS.register("twink_sivan_2",
+            () -> SoundEvent.createVariableRangeEvent(new ResourceLocation(Modussy.MODID, "twink_sivan_2")));
+    public static final RegistryObject<SoundEvent> TWINK_SIVAN_3 = SOUNDS.register("twink_sivan_3",
+            () -> SoundEvent.createVariableRangeEvent(new ResourceLocation(Modussy.MODID, "twink_sivan_3")));
+    public static final RegistryObject<SoundEvent> TWINK_SIVAN_4 = SOUNDS.register("twink_sivan_4",
+            () -> SoundEvent.createVariableRangeEvent(new ResourceLocation(Modussy.MODID, "twink_sivan_4")));
+    public static final RegistryObject<SoundEvent> TWINK_SIVAN_HURT1 = SOUNDS.register("twink_sivan_hurt1",
+            () -> SoundEvent.createVariableRangeEvent(new ResourceLocation(Modussy.MODID, "twink_sivan_hurt1")));
+    public static final RegistryObject<SoundEvent> TWINK_SIVAN_HURT2 = SOUNDS.register("twink_sivan_hur2t",
+            () -> SoundEvent.createVariableRangeEvent(new ResourceLocation(Modussy.MODID, "twink_sivan_hurt2")));
 
     public static final RegistryObject<SoundEvent> INTENSE_MOANING = SOUNDS.register("intense_moaning",
             () -> SoundEvent.createVariableRangeEvent(new ResourceLocation(Modussy.MODID,"intense_moaning")));

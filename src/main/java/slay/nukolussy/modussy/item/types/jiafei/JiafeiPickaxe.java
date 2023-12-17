@@ -18,7 +18,7 @@ import java.util.List;
 
 public class JiafeiPickaxe extends PickaxeItem implements IJiafeiProducts {
     public JiafeiPickaxe() {
-        super(ModTiers.JIAFEI, 1, -2.8f, new Item.Properties().fireResistant());
+        super(ModTiers.JIAFEI, 1, -2.8f, new Properties().fireResistant());
     }
 
     public void appendHoverText(ItemStack stack, Level lvl, List<Component> components, TooltipFlag tip) {

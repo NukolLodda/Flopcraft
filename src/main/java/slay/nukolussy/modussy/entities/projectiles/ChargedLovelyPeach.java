@@ -86,7 +86,7 @@ public class ChargedLovelyPeach extends AbstractHurtingProjectile implements Ite
     @Override
     protected void onHit(HitResult pResult) {
         this.explode();
-        int chance = (int) (Math.random() * 12);
+        int chance = this.random.nextInt(12);
         if (chance == 1) {
             LovelyPeaches peaches = new LovelyPeaches(ModEntities.LOVELY_PEACHES.get(), this.level());
             peaches.moveTo(this.getX(), this.getY(), this.getZ());

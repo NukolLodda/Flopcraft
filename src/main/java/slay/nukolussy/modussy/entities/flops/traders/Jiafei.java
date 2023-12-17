@@ -99,8 +99,7 @@ public class Jiafei extends AbstractFlopTraders {
 
     @Override
     public SoundEvent getDeathSound() {
-        int dedNum = this.random.nextInt(2);
-        return dedNum == 1 ? ModSounds.JIAFEI_DEATH_1.get() : ModSounds.JIAFEI_DEATH_2.get();
+        return this.random.nextBoolean() ? ModSounds.JIAFEI_DEATH_1.get() : ModSounds.JIAFEI_DEATH_2.get();
     }
 
     @Override

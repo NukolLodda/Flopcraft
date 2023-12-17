@@ -12,7 +12,7 @@ import java.util.List;
 public class JiafeiSeed extends BlockItem {
 
     public JiafeiSeed() {
-        super(ModBlocks.GROWING_JIAFEI.get(), new Item.Properties());
+        super(ModBlocks.GROWING_JIAFEI.get(), new Properties());
     }
 
     public void appendHoverText(ItemStack stack, Level lvl, List<Component> components, TooltipFlag tip) {

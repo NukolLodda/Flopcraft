@@ -19,7 +19,7 @@ import java.util.List;
 
 public class JiafeiHammer extends PickaxeItem implements IJiafeiProducts{
     public JiafeiHammer() {
-        super(ModTiers.JIAFEI, 2, -5f, new Item.Properties().fireResistant());
+        super(ModTiers.JIAFEI, 2, -5f, new Properties().fireResistant());
     }
 
     public void appendHoverText(ItemStack stack, Level lvl, List<Component> components, TooltipFlag tip) {

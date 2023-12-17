@@ -30,6 +30,7 @@ public class ModItemModelProvider extends ItemModelProvider {
         simpleItem(ModItems.CVM_PIE);
         simpleItem(ModItems.EXTRA_BLOODY_TAMPON);
         simpleItem(ModItems.CLITMAS_PRESENT);
+        simpleItem(ModItems.REMIX_PRESENT);
         simpleItem(ModItems.FLOPTROPICA_TICKET);
         simpleItem(ModItems.JIAFEI_PRODUCT);
         simpleItem(ModItems.JIAFEI_PERFUME);

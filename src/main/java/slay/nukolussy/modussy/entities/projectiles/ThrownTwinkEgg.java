@@ -72,7 +72,7 @@ public class ThrownTwinkEgg extends AbstractArrow implements ItemSupplier {
                     }
                 }
             }
-            if (this.random.nextInt( 6) == 0) {
+            if (this.random.nextInt(6) == 0) {
                 this.spawnAtLocation(ModItems.TWINK_EGG_SHELLS.get());
             }
             this.level().broadcastEntityEvent(this, (byte)3);

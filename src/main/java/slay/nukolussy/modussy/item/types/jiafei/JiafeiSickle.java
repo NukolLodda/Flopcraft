@@ -20,7 +20,7 @@ import java.util.List;
 
 public class JiafeiSickle extends HoeItem implements IJiafeiProducts {
     public JiafeiSickle() {
-        super(ModTiers.JIAFEI, 3, -2.0f, new Item.Properties().fireResistant());
+        super(ModTiers.JIAFEI, 3, -2.0f, new Properties().fireResistant());
     }
 
     public void appendHoverText(ItemStack stack, Level lvl, List<Component> components, TooltipFlag tip) {

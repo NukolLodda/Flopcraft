@@ -20,7 +20,7 @@ import java.util.List;
 
 public class LancvmCream extends Item implements Vanishable {
     public LancvmCream() {
-        super(new Item.Properties().durability(20));
+        super(new Properties().durability(20));
     }
 
     @Override

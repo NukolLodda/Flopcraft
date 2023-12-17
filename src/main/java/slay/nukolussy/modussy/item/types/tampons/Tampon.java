@@ -34,7 +34,7 @@ import java.util.Random;
 
 public class Tampon extends ArrowItem {
     public Tampon() {
-        super(new Item.Properties().fireResistant().rarity(Rarity.RARE));
+        super(new Properties().fireResistant().rarity(Rarity.RARE));
     }
     @Override
     public AbstractArrow createArrow(Level pLevel, ItemStack pStack, LivingEntity pShooter) {

@@ -36,7 +36,7 @@ public class Pickaxol extends DiggerItem {
 
     public Pickaxol(Tier tier, int atkbase, float speed, Rarity rare) {
         super((float) atkbase, speed, tier, ToolsTag.MINEABLE_WITH_PICKAXOL,
-                new Item.Properties().fireResistant()
+                new Properties().fireResistant()
                         .durability(tier.getLevel() * 6900).rarity(rare));
         this.lvl = tier.getLevel() - 2;
     }

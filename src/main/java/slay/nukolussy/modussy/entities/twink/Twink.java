@@ -98,7 +98,7 @@ public class Twink extends AbstractTwink {
     }
 
     public void setRandomVariant() {
-        this.setTypeVariant((int) (Math.random() * 5));
+        this.setTypeVariant(this.random.nextInt(5));
     }
 
     @Override
@@ -130,10 +130,10 @@ public class Twink extends AbstractTwink {
     public void baseTick() {
         super.baseTick();
         Level world = this.level();
-        int dropChance = (int) (Math.random() * 8400) + 1;
+        int dropChance = this.random.nextInt(8400);
         if (dropChance == 1) {
-            int randX = (int)((Math.random() - 0.5) * 10);
-            int randZ = (int)((Math.random() - 0.5) * 10);
+            int randX = this.random.nextInt(-5, 5);
+            int randZ = this.random.nextInt(-5, 5);
             if (world.isClientSide()) {
                 ItemEntity entityToSpawn = new ItemEntity(world, this.getX() + randX, this.getY(), this.getZ() + randZ, new ItemStack(ModItems.TWINK_EGG.get()));
                 entityToSpawn.setPickUpDelay(10);

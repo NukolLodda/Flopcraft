@@ -2,6 +2,8 @@ package slay.nukolussy.modussy.entities.flops.figures;
 
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
+import net.minecraft.core.particles.ParticleTypes;
+import net.minecraft.server.level.ServerLevel;
 import net.minecraft.sounds.SoundEvent;
 import net.minecraft.util.Mth;
 import net.minecraft.util.RandomSource;
@@ -25,6 +27,7 @@ import slay.nukolussy.modussy.block.entity.blocks.MariahCareyIceBlock;
 import slay.nukolussy.modussy.datagen.tags.ModTags;
 import slay.nukolussy.modussy.entities.flops.AbstractFlopFigures;
 import slay.nukolussy.modussy.item.ModItems;
+import slay.nukolussy.modussy.util.EntityMethods;
 import slay.nukolussy.modussy.util.ModUtil;
 import slay.nukolussy.modussy.util.ToolMethods;
 
@@ -135,7 +138,16 @@ public class MariahCarey extends AbstractFlopFigures implements RangedAttackMob 
             int inX = (int)((i * xDif / 6) + this.getX());
             int inY = (int)((i * yDif / 6) + this.getY());
             int inZ = (int)((i * zDif / 6) + this.getZ());
-            ToolMethods.mariahCvmreyShoot(this.level(), inX, inY, inZ, pVelocity);
+            final Vec3 center = new Vec3(inX, inY, inZ);
+            this.level().getEntitiesOfClass(LivingEntity.class, new AABB(center, center)
+                    .inflate(2 * pVelocity / 2d), e -> true).stream().toList().forEach(ent ->
+                    EntityMethods.addEffects(ent, (int)pVelocity * 20, (int)pVelocity));
+            if (this.level() instanceof ServerLevel level) {
+                level.sendParticles(ParticleTypes.COMPOSTER,
+                        inX, inY, inZ, ((int) pVelocity * 15),1,1, 1, (pVelocity * 0.16));
+                level.sendParticles(ParticleTypes.CRIMSON_SPORE,
+                        inX, inY, inZ, ((int) pVelocity * 15),1,1, 1, (pVelocity * 0.16));
+            }
         }
     }
 }

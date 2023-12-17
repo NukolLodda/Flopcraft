@@ -31,7 +31,7 @@ import java.util.List;
 
 public class ExtraBloodyTampon extends ArrowItem {
     public ExtraBloodyTampon() {
-        super(new Item.Properties().fireResistant().rarity(Rarity.EPIC));
+        super(new Properties().fireResistant().rarity(Rarity.EPIC));
     }
 
     @Override

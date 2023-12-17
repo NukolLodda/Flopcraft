@@ -20,7 +20,7 @@ import java.time.Month;
 
 public class ModPlanks extends Block {
     public ModPlanks() {
-        super(BlockBehaviour.Properties.copy(Blocks.CRIMSON_PLANKS));
+        super(Properties.copy(Blocks.CRIMSON_PLANKS));
     }
 
     @Override

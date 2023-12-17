@@ -26,10 +26,7 @@ import slay.nukolussy.modussy.entities.flops.traders.NickiMinaj;
 import slay.nukolussy.modussy.entities.flops.traders.Ranvision;
 import slay.nukolussy.modussy.entities.twink.Twink;
 
-import java.time.LocalDate;
 import java.time.Month;
-import java.util.Date;
-import java.util.List;
 
 public class EntityMethods {
     public static boolean isFlop(Entity entity) {
@@ -171,9 +168,8 @@ public class EntityMethods {
 
     public static boolean canEntityBecomeNickiMinaj(LevelAccessor world, double x, double y, double z) {
         final Vec3 center = new Vec3(x, y, z);
-        List<NickiMinaj> entities = world.getEntitiesOfClass(NickiMinaj.class, new AABB(center, center)
-                .inflate(256 / 2d), e -> true).stream().toList();
-        return entities.size() == 0;
+        return world.getEntitiesOfClass(NickiMinaj.class, new AABB(center, center)
+                .inflate(256 / 2d), e -> true).stream().toList().isEmpty();
     }
 
     static void villagerYassification(AbstractVillager entity, LevelAccessor world, Player player) {
@@ -215,11 +211,10 @@ public class EntityMethods {
         float xRot = entity.getXRot();
         float yRot = entity.getYRot();
         EntityType<? extends AbstractFlops> type;
-        if (Math.random() < (1f / 3) && canEntityBecomeNickiMinaj(world, entity.getX(), entity.getY(), entity.getZ()))
+        if (ModUtil.RANDOM.nextInt(3) == 0 && canEntityBecomeNickiMinaj(world, entity.getX(), entity.getY(), entity.getZ()))
             type = ModEntities.NICKI_MINAJ.get();
-        else {
+        else
             type = randval == 1 ? ModEntities.CUPCAKKE.get() : ModEntities.JIAFEI.get();
-        }
         // witches can only turn into female flops, and not into twinks, this will be implemented at a different time
         AbstractFlops flop = entity.convertTo(type, true);
         if (flop != null) {
@@ -238,14 +233,9 @@ public class EntityMethods {
     }
 
     public static void alertFlops(Level world, int x, int y, int z, Player player) {
-        {
-            final Vec3 center = new Vec3(x, y, z);
-            List<AbstractFlops> flops = world.getEntitiesOfClass(AbstractFlops.class, new AABB(center, center)
-                    .inflate(5 / 2d), e -> true).stream().toList();
-            for (AbstractFlops flop : flops) {
-                flop.alertFlops(player);
-            }
-        }
+        final Vec3 center = new Vec3(x, y, z);
+        world.getEntitiesOfClass(AbstractFlops.class, new AABB(center, center)
+                .inflate(5 / 2d), e -> true).stream().toList().forEach(flop -> flop.alertFlops(player));
     }
 
     public static boolean canMariahCareySpawn() {

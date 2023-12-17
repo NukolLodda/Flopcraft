@@ -28,7 +28,7 @@ public class ModussyBreedingGoal extends Goal {
         this.level = entity.level();
         this.partnerClass = pClass;
         this.speedModifier = speed;
-        this.setFlags(EnumSet.of(Goal.Flag.MOVE, Goal.Flag.LOOK));
+        this.setFlags(EnumSet.of(Flag.MOVE, Flag.LOOK));
     }
 
     public boolean canUse() {
