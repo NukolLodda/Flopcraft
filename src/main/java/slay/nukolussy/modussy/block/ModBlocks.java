@@ -6,6 +6,7 @@ import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.level.block.*;
 import net.minecraft.world.level.block.state.BlockBehaviour;
+import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.state.properties.BlockSetType;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.registries.DeferredRegister;
@@ -88,7 +89,12 @@ public class ModBlocks {
     public static final RegistryObject<Block> LOVELY_PEACH_LOG = registerBlock("lovely_peach_log", () ->
         new RotatedPillarBlock(BlockBehaviour.Properties.copy(Blocks.CRIMSON_STEM)));
     public static final RegistryObject<Block> LOVELY_PEACH_LEAVES = registerBlock("lovely_peach_leaves", () ->
-            new LeavesBlock(BlockBehaviour.Properties.copy(Blocks.OAK_LEAVES)));
+            new LeavesBlock(BlockBehaviour.Properties.copy(Blocks.OAK_LEAVES)) {
+                @Override
+                protected boolean decaying(BlockState pState) {
+                    return false;
+                }
+    });
 
     public static final RegistryObject<Block> LOVELY_PEACH_PLANKS = registerBlock("lovely_peach_planks", ModPlanks::new);
 
@@ -112,12 +118,23 @@ public class ModBlocks {
             new TrapDoorBlock(BlockBehaviour.Properties.copy(Blocks.CRIMSON_TRAPDOOR).noOcclusion(), BlockSetType.CRIMSON));
 
     public static final RegistryObject<Block> LOVELY_PEACH_PRESSURE_PLATE = registerBlock("lovely_peach_pressure_plate", () ->
-            new PressurePlateBlock(PressurePlateBlock.Sensitivity.EVERYTHING,
-                    BlockBehaviour.Properties.copy(Blocks.CRIMSON_PRESSURE_PLATE), BlockSetType.CRIMSON));
+            new FlopPlates(Blocks.CRIMSON_PRESSURE_PLATE, BlockSetType.CRIMSON));
 
     public static final RegistryObject<Block> LOVELY_PEACH_BUTTON = registerBlock("lovely_peach_button", () ->
             new ButtonBlock(BlockBehaviour.Properties.copy(Blocks.CRIMSON_BUTTON),
                     BlockSetType.CRIMSON, 10, true));
+
+    public static final RegistryObject<Block> LOVELY_PEACH_SIGN = BLOCKS.register("lovely_peach_sign", () ->
+            new ModStandingSignBlock(BlockBehaviour.Properties.copy(Blocks.CRIMSON_SIGN), ModWoodTypes.LOVELY_PEACH));
+
+    public static final RegistryObject<Block> LOVELY_PEACH_WALL_SIGN = BLOCKS.register("lovely_peach_wall_sign", () ->
+            new ModWallSignBlock(BlockBehaviour.Properties.copy(Blocks.CRIMSON_WALL_SIGN), ModWoodTypes.LOVELY_PEACH));
+
+    public static final RegistryObject<Block> LOVELY_PEACH_HANGING_SIGN = BLOCKS.register("lovely_peach_hanging_sign", () ->
+            new ModHangingSignBlock(BlockBehaviour.Properties.copy(Blocks.CRIMSON_HANGING_SIGN), ModWoodTypes.LOVELY_PEACH));
+
+    public static final RegistryObject<Block> LOVELY_PEACH_WALL_HANGING_SIGN = BLOCKS.register("lovely_peach_wall_hanging_sign", () ->
+            new ModWallHangingSignBlock(BlockBehaviour.Properties.copy(Blocks.CRIMSON_WALL_HANGING_SIGN), ModWoodTypes.LOVELY_PEACH));
 
     /* Floptropican tree types and biomes
      * Cupcakkian Balsam - Cupcakkia

@@ -19,6 +19,7 @@ import slay.nukolussy.modussy.entities.ModEntities;
 import slay.nukolussy.modussy.entities.flops.AbstractFlops;
 import slay.nukolussy.modussy.entities.flops.traders.NickiMinaj;
 import slay.nukolussy.modussy.util.EntityMethods;
+import slay.nukolussy.modussy.util.ModUtil;
 import slay.nukolussy.modussy.util.ToolMethods;
 import slay.nukolussy.modussy.item.ModItems;
 import slay.nukolussy.modussy.sound.ModSounds;
@@ -39,22 +40,18 @@ public class SlaginiumBlock extends MaterialBlocks {
         double y = pPos.getY();
         double z = pPos.getZ();
         if (pEntity instanceof ItemEntity item && item.getItem().is(ModItems.SCARUSSY.get())
-           && EntityMethods.canEntityBecomeNickiMinaj(pLevel, x, y, z)) {
+           && EntityMethods.canEntityBecomeNickiMinaj(pLevel, pPos.getCenter())) {
             Player player = null;
-            {
-                final Vec3 _center = new Vec3(x, y, z);
-                List<LivingEntity> livingEntities = pLevel.getEntitiesOfClass(LivingEntity.class, new AABB(_center, _center).inflate(8 / 2d), e -> true).stream()
-                        .sorted(Comparator.comparingDouble(_entcnd -> _entcnd.distanceToSqr(_center))).toList();
-                for (LivingEntity iterator : livingEntities) {
-                    if (iterator instanceof Player closest) {
-                        player = closest;
-                        break;
-                    }
+            List<LivingEntity> entities = ModUtil.getEntityListOfDist(pLevel, LivingEntity.class, pPos.getCenter(), 4);
+            for (LivingEntity iterator : entities) {
+                if (iterator instanceof Player closest) {
+                    player = closest;
+                    break;
                 }
-                for (LivingEntity entity : livingEntities) {
-                    ToolMethods.yassification(entity, pLevel, player);
-                    EntityMethods.addEffects(entity);
-                }
+            }
+            for (LivingEntity entity : entities) {
+                ToolMethods.yassification(entity, pLevel, player);
+                EntityMethods.addEffects(entity);
             }
             pLevel.destroyBlock(pPos, false, item);
 

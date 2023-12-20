@@ -9,7 +9,6 @@ import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.ItemStack;
 import slay.nukolussy.modussy.entities.flops.figures.CupcakKe;
 import slay.nukolussy.modussy.entities.twink.AbstractTwink;
-import slay.nukolussy.modussy.entities.twink.TwinkSivan;
 import slay.nukolussy.modussy.item.ModItems;
 import slay.nukolussy.modussy.util.EntityMethods;
 import slay.nukolussy.modussy.util.PlayerMethods;
@@ -40,7 +39,7 @@ public class CvmmedEffect extends MobEffect {
                 mult += 2;
             }
             if (pLivingEntity instanceof CupcakKe cupcakKe) {
-                if (cupcakKe.getHealth() == cupcakKe.getMaxHealth()) {
+                if (cupcakKe.getHealth() == cupcakKe.getMaxHealth() && cupcakKe.getRandom().nextInt(690) == 0) {
                     CupcakKe.cupcakkeDuplication(ModItems.CVM.get(), cupcakKe);
                 } else {
                     cupcakKe.heal(pAmplifier);

@@ -89,35 +89,7 @@ public class SlaginiumYassifier extends TieredItem {
                     case 2 -> new ItemStack(ModItems.JIAFEI_PRODUCT.get());
                     default -> new ItemStack(ModItems.CUPCAKE.get());
         });
-        {
-            final Vec3 center = new Vec3(x, y, z);
-            world.getEntitiesOfClass(LivingEntity.class, new AABB(center, center)
-                    .inflate(28 + (4 * lvl) / 2d), e -> true).stream().toList().forEach(ent -> {
-                if (ent instanceof Spider spider) {
-                    spider.setItemSlot(EquipmentSlot.MAINHAND, new ItemStack(ModItems.ARANA_GRANDE.get()));
-                    spider.setGuaranteedDrop(EquipmentSlot.MAINHAND);
-                    PlayerMethods.addPlayerYassification(entity, 1);
-                    spider.kill();
-                }
-                if (ent instanceof Slime slime) {
-                    ItemStack cvmItem = new ItemStack(ModItems.CVM.get());
-                    if (slime instanceof MagmaCube) {
-                        cvmItem = new ItemStack(ModItems.CVMIUM.get());
-                    }
-                    slime.setItemSlot(EquipmentSlot.MAINHAND, cvmItem);
-                    slime.setGuaranteedDrop(EquipmentSlot.MAINHAND);
-                    PlayerMethods.addPlayerYassification(entity, 1);
-                    slime.kill();
-                }
-                ToolMethods.yassification(ent, world, entity);
-                if (ent instanceof Villager || ent instanceof Witch) itemDura.addAndGet(10);
-                if (ent instanceof Cat cat && entity.getRandom().nextInt(25) < 4) {
-                    cat.spawnAtLocation(ModItems.POSEI.get());
-                    PlayerMethods.addPlayerYassification(entity, 1);
-                }
-                EntityMethods.addEffects(ent, lvl, amp);
-            });
-        }
+        ToolMethods.yassifySurronding(world, entity, 28 * (2 * lvl), lvl, amp);
         if (world instanceof ServerLevel server) {
             server.sendParticles(ParticleTypes.SMOKE, x, y, z, 60 / lvl,5,5, 5, 1.0);
             if (lvl > 2) {

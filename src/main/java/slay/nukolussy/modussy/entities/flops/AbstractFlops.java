@@ -13,10 +13,12 @@ import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.crafting.Ingredient;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.phys.AABB;
+import net.minecraft.world.phys.Vec3;
 import slay.nukolussy.modussy.effect.ModEffects;
 import slay.nukolussy.modussy.entities.AbstractModEntity;
 import slay.nukolussy.modussy.item.ModItems;
 import slay.nukolussy.modussy.network.yassification.PlayerYassificationProvider;
+import slay.nukolussy.modussy.util.ModUtil;
 import slay.nukolussy.modussy.util.PlayerMethods;
 
 import javax.annotation.Nullable;
@@ -85,9 +87,7 @@ public abstract class AbstractFlops extends AbstractModEntity implements IFlopEn
 
     public void alertFlops(Entity attacker) {
         AABB aabb = AABB.unitCubeFromLowerCorner(this.position()).inflate(10d, 10.0d, 10d);
-        List<LivingEntity> list = this.level().getEntitiesOfClass(LivingEntity.class, aabb, e -> true).stream()
-                .sorted(Comparator.comparingDouble(_entcnd ->
-                        _entcnd.distanceToSqr(this.getX(), this.getY(), this.getZ()))).toList();
+        List<LivingEntity> list = ModUtil.getEntityListOfDist(this.level(), LivingEntity.class, this.position(), 10);
         for (LivingEntity living : list) {
             if (attacker instanceof LivingEntity entity && living instanceof IFlopEntity flops) {
                 if (entity instanceof Player player) {

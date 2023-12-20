@@ -21,6 +21,7 @@ import slay.nukolussy.modussy.block.ModBlocks;
 import slay.nukolussy.modussy.entities.ModEntities;
 import slay.nukolussy.modussy.entities.flops.AbstractFlopFigures;
 import slay.nukolussy.modussy.sound.ModSounds;
+import slay.nukolussy.modussy.util.ModUtil;
 import slay.nukolussy.modussy.util.PlayerMethods;
 
 import java.util.Comparator;
@@ -97,10 +98,7 @@ public class LovelyPeaches extends AbstractFlopFigures {
     }
 
     protected void alertLovelyPeaches(LivingEntity attacker) {
-        AABB aabb = AABB.unitCubeFromLowerCorner(this.position()).inflate(10d, 10d, 10d);
-        List<LovelyPeaches> list = this.level().getEntitiesOfClass(LovelyPeaches.class, aabb, e -> true).stream()
-                .sorted(Comparator.comparingDouble(_entcnd ->
-                        _entcnd.distanceToSqr(this.getX(), this.getY(), this.getZ()))).toList();
+        List<LovelyPeaches> list = ModUtil.getEntityListOfDist(this.level(), LovelyPeaches.class, this.position(), 10);
         for (LovelyPeaches peaches : list) {
             if (attacker instanceof Player player && player.isCreative()) attacker = null;
             if (attacker != null) peaches.setTarget(attacker);

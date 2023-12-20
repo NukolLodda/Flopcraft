@@ -1,11 +1,14 @@
 package slay.nukolussy.modussy.entities.flops.bosses;
 
+import net.minecraft.client.resources.sounds.BiomeAmbientSoundsHandler;
+import net.minecraft.client.resources.sounds.SimpleSoundInstance;
 import net.minecraft.core.BlockPos;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.network.chat.Component;
 import net.minecraft.server.level.ServerBossEvent;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.server.level.ServerPlayer;
+import net.minecraft.sounds.SoundSource;
 import net.minecraft.world.BossEvent;
 import net.minecraft.world.damagesource.DamageSource;
 import net.minecraft.world.entity.EntityType;
@@ -26,6 +29,7 @@ import net.minecraftforge.network.PlayMessages;
 import slay.nukolussy.modussy.block.ModBlocks;
 import slay.nukolussy.modussy.entities.flops.figures.LovelyPeaches;
 import slay.nukolussy.modussy.entities.projectiles.ChargedLovelyPeach;
+import slay.nukolussy.modussy.sound.ModSounds;
 import slay.nukolussy.modussy.util.EntityMethods;
 import slay.nukolussy.modussy.util.PlayerMethods;
 
@@ -37,6 +41,9 @@ public class LovelyPeachesBoss extends LovelyPeaches implements RangedAttackMob 
 
     private BlockPos teleporterLocation;
     private boolean wasSummoned = false;
+    private static final BiomeAmbientSoundsHandler.LoopSoundInstance loop =
+            new BiomeAmbientSoundsHandler.LoopSoundInstance(ModSounds.LOVELY_PEACHES_BOSS_BATTLE.get());
+    private int spawnTick;
     public LovelyPeachesBoss(EntityType type, Level world) {
         super(type, world);
     }
@@ -85,6 +92,10 @@ public class LovelyPeachesBoss extends LovelyPeaches implements RangedAttackMob 
         super.customServerAiStep();
         if (this.tickCount % 20 == 0) {
             this.heal(1.0f);
+        }
+
+        if (this.tickCount % 115 == this.spawnTick) {
+            this.level().playSound(null, this.blockPosition(), ModSounds.LOVELY_PEACHES_BOSS_BATTLE.get(), SoundSource.AMBIENT);
         }
         this.bossEvent.setProgress(this.getHealth() / this.getMaxHealth());
     }
@@ -138,7 +149,6 @@ public class LovelyPeachesBoss extends LovelyPeaches implements RangedAttackMob 
         if (!this.isSilent()) {
             this.level().levelEvent((Player)null, 1024, this.blockPosition(), 0);
         }
-
         double x0 = this.getX();
         double y0 = this.getY() + 1;
         double z0 = this.getZ();
@@ -155,6 +165,7 @@ public class LovelyPeachesBoss extends LovelyPeaches implements RangedAttackMob 
         super.startSeenByPlayer(pPlayer);
         if (!PlayerMethods.isFlop(pPlayer)) {
             this.bossEvent.addPlayer(pPlayer);
+            this.spawnTick = pPlayer.tickCount;
         }
     }
     public void stopSeenByPlayer(ServerPlayer pPlayer) {

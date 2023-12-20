@@ -8,6 +8,7 @@ import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.EquipmentSlot;
+import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.*;
 import net.minecraft.world.item.crafting.Ingredient;
@@ -65,6 +66,13 @@ public class JiafeiArmor extends ArmorItem implements IJiafeiProducts {
 
     public void appendHoverText(ItemStack stack, Level lvl, List<Component> components, TooltipFlag tip) {
         components.add(getDisplayName().withStyle(ChatFormatting.LIGHT_PURPLE));
+    }
+
+    @Override
+    public void inventoryTick(ItemStack pStack, Level pLevel, Entity pEntity, int pSlotId, boolean pIsSelected) {
+        if (pEntity instanceof LivingEntity living && pSlotId > 36 && pSlotId < 41) {
+            living.addEffect(new MobEffectInstance(ModEffects.YASSIFIED.get(), 5, 1,true, false));
+        }
     }
 
     @Override
@@ -131,7 +139,6 @@ public class JiafeiArmor extends ArmorItem implements IJiafeiProducts {
         @Override
         public void onArmorTick(ItemStack stack, Level world, Player ent) {
             ent.addEffect(new MobEffectInstance(MobEffects.SLOW_FALLING, 5, 1,true, false));
-            ent.addEffect(new MobEffectInstance(ModEffects.YASSIFIED.get(), 5, 1,true, false));
             ent.addEffect(new MobEffectInstance(MobEffects.FIRE_RESISTANCE, 5, 0,true, false));
             ent.addEffect(new MobEffectInstance(MobEffects.SATURATION, 5, 0,true, false));
         }

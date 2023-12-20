@@ -59,6 +59,7 @@ public class ModItemModelProvider extends ItemModelProvider {
         simpleItem(ModItems.JIAFEI_HELMET);
         simpleItem(ModItems.DEELDO);
         simpleItem(ModItems.ENDER_DRAGON_DEELDO);
+        simpleItem(ModItems.RANPAPI_TABLET);
         simpleItem(ModItems.BRA);
         simpleItem(ModItems.THONGS);
         simpleItem(ModItems.DISC_C1);
@@ -128,6 +129,9 @@ public class ModItemModelProvider extends ItemModelProvider {
         simpleItem(ModItems.WONYOUNG_ESSENCE);
         simpleItem(ModItems.CVM_FLUID_BUCKET);
         simpleItem(ModItems.POOSAY_JUICE_BUCKET);
+
+        //simpleItem(ModItems.LOVELY_PEACH_SIGN);
+        //simpleItem(ModItems.LOVELY_PEACH_HANGING_SIGN);
 
         fenceItem(ModBlocks.LOVELY_PEACH_FENCE, ModBlocks.LOVELY_PEACH_PLANKS);
         buttonItem(ModBlocks.LOVELY_PEACH_BUTTON, ModBlocks.LOVELY_PEACH_PLANKS);

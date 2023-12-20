@@ -908,6 +908,14 @@
       }
     ]
   },
+  "lovely_peaches_boss_battle": {
+    "sounds": [
+      {
+        "name": "modussy:lovely_peaches_boss_battle",
+        "stream": true
+      }
+    ]
+  },
   "lovely_peaches_1": {
     "subtitle": "subtitles.lovely_peaches",
     "sounds": [
@@ -1309,6 +1317,42 @@
     "sounds": [
       {
         "name": "modussy:twink_sivan_4",
+        "stream": true
+      }
+    ]
+  },
+  "twink_sivan_5": {
+    "subtitle": "subtitles.twink_sivan",
+    "sounds": [
+      {
+        "name": "modussy:twink_sivan_5",
+        "stream": true
+      }
+    ]
+  },
+  "twink_sivan_6": {
+    "subtitle": "subtitles.twink_sivan",
+    "sounds": [
+      {
+        "name": "modussy:twink_sivan_6",
+        "stream": true
+      }
+    ]
+  },
+  "twink_sivan_death1": {
+    "subtitle": "subtitles.twink_sivan_death",
+    "sounds": [
+      {
+        "name": "modussy:twink_sivan_death1",
+        "stream": true
+      }
+    ]
+  },
+  "twink_sivan_death2": {
+    "subtitle": "subtitles.twink_sivan_death",
+    "sounds": [
+      {
+        "name": "modussy:twink_sivan_death2",
         "stream": true
       }
     ]

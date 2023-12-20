@@ -169,7 +169,7 @@ public class FlopAirlineTicketScanner extends Block {
             if (PlayerMethods.isNewgen(pPlayer)) {
                 pPlayer.sendSystemMessage(ticketScannerName().append(Component.translatable("subtitle.dangerous_nonflop"))
                         .withStyle(ChatFormatting.DARK_RED));
-                EntityMethods.alertFlops(pLevel, pPos.getX(), pPos.getY(), pPos.getZ(), pPlayer);
+                EntityMethods.alertFlops(pLevel, pPos.getCenter(), pPlayer);
             } else {
                 pPlayer.sendSystemMessage(ticketScannerName().append(Component.translatable("subtitle.invalid_ticket"))
                         .withStyle(ChatFormatting.RED));

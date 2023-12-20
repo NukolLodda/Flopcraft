@@ -2,14 +2,13 @@
   "type": "modussy:cvm_infusion_shapeless",
   "ingredients": [
     {
-      "item": "modussy:jiafei_product"
+      "item": "modussy:music_disc_jiafei"
     },
     {
-      "item": "minecraft:ender_pearl"
+      "item": "modussy:jiafei_product"
     }
   ],
   "output": {
-    "count": 1,
     "item": "modussy:music_disc_j4"
   }
 }

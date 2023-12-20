@@ -20,7 +20,9 @@ import slay.nukolussy.modussy.block.entity.blocks.YassificationDetector;
 import slay.nukolussy.modussy.entities.ModEntities;
 import slay.nukolussy.modussy.entities.flops.bosses.LovelyPeachesBoss;
 import slay.nukolussy.modussy.util.EntityMethods;
+import slay.nukolussy.modussy.util.ModUtil;
 import slay.nukolussy.modussy.util.PlayerMethods;
+import slay.nukolussy.modussy.util.ToolMethods;
 
 import java.util.List;
 
@@ -100,19 +102,15 @@ public class SpecialYassificationDetectorEntity extends BlockEntity {
                         ModBlocks.HARDENED_PERIOD_CVM.get().defaultBlockState(), 3);
             }
         }
-
         boolean lovelypeachesIsHere = false;
-        {
-            List<LivingEntity> entities = lvl.getEntitiesOfClass(LivingEntity.class,
-                    new AABB(new Vec3(x-10, y-4, z-10), new Vec3(x+8, y+4, z+8)).inflate(1), e -> true).stream().toList();
-            for (LivingEntity entity : entities) {
-                if (entity instanceof LovelyPeachesBoss) {
-                    lovelypeachesIsHere = true;
-                    break;
-                }
+        List<LivingEntity> entities = ModUtil.getEntityListOfDist(lvl, LivingEntity.class,
+                new Vec3(x-10, y-4, z-10), new Vec3(x+8, y+4, z+8), 1);
+        for (LivingEntity entity : entities) {
+            if (entity instanceof LovelyPeachesBoss) {
+                lovelypeachesIsHere = true;
+                break;
             }
         }
-
         if (!lovelypeachesIsHere) {
             LovelyPeachesBoss peaches = new LovelyPeachesBoss(ModEntities.LOVELY_PEACHES_BOSS.get(), lvl);
             peaches.moveTo(position);
@@ -139,35 +137,35 @@ public class SpecialYassificationDetectorEntity extends BlockEntity {
                 case SOUTH -> z++;
                 case NORTH -> z--;
             }
-            {
-                List<LivingEntity> entities = lvl.getEntitiesOfClass(LivingEntity.class,
-                        new AABB(new Vec3(x, y+1, z), new Vec3(x, y+3, z)).inflate(1), e -> true).stream().toList();
-                for (LivingEntity entity : entities) {
-                    if (EntityMethods.isMonster(entity) || (entity instanceof Player player && !PlayerMethods.isFlop(player))) {
-                        makeLovelyPeachesChamber(lvl, new Vec3(x, y-12, z));
-                        entity.teleportTo(x,y-13, z);
-                        if (entity instanceof Player player) {
-                            if (PlayerMethods.isNewgen(player)) {
-                                player.sendSystemMessage(PlayerMethods.getYassificationLevel(player));
-                                player.sendSystemMessage(YassificationDetector.getBlockName().append(Component.translatable("subtitle.dangerous_nonflop"))
-                                        .withStyle(ChatFormatting.RED));
-                                EntityMethods.alertFlops(lvl, pos.getX(), pos.getY(), pos.getZ(), player);
-                            } else if (!PlayerMethods.isFlop(player)) {
-                                player.sendSystemMessage(PlayerMethods.getYassificationLevel(player));
-                                player.sendSystemMessage(YassificationDetector.getBlockName().append(Component.translatable("subtitle.prove_flop"))
-                                        .withStyle(ChatFormatting.GRAY));
-                            }
-                        }
-                    } else if (entity instanceof Player player) {
-                        if (lvl.getServer().getTickCount() % 15 == 0) {
-                            player.sendSystemMessage(YassificationDetector.getBlockName().append(Component.translatable("subtitle.confirmed_flop"))
-                                    .withStyle(ChatFormatting.LIGHT_PURPLE));
-                        } else if (lvl.getServer().getTickCount() % 15 == 8) {
+
+            int finalX = x;
+            int finalZ = z;
+            ModUtil.getEntityListOfDist(lvl, LivingEntity.class, new Vec3(x, y+1, z), new Vec3(x, y+3, z), 1)
+                    .forEach(entity -> {
+                if (EntityMethods.isMonster(entity) || (entity instanceof Player player && !PlayerMethods.isFlop(player))) {
+                    makeLovelyPeachesChamber(lvl, new Vec3(finalX, y-12, finalZ));
+                    entity.teleportTo(finalX,y-13, finalZ);
+                    if (entity instanceof Player player) {
+                        if (PlayerMethods.isNewgen(player)) {
                             player.sendSystemMessage(PlayerMethods.getYassificationLevel(player));
+                            player.sendSystemMessage(YassificationDetector.getBlockName().append(Component.translatable("subtitle.dangerous_nonflop"))
+                                    .withStyle(ChatFormatting.RED));
+                            EntityMethods.alertFlops(lvl, pos.getCenter(), player);
+                        } else if (!PlayerMethods.isFlop(player)) {
+                            player.sendSystemMessage(PlayerMethods.getYassificationLevel(player));
+                            player.sendSystemMessage(YassificationDetector.getBlockName().append(Component.translatable("subtitle.prove_flop"))
+                                    .withStyle(ChatFormatting.GRAY));
                         }
                     }
+                } else if (entity instanceof Player player) {
+                    if (lvl.getServer().getTickCount() % 15 == 0) {
+                        player.sendSystemMessage(YassificationDetector.getBlockName().append(Component.translatable("subtitle.confirmed_flop"))
+                                .withStyle(ChatFormatting.LIGHT_PURPLE));
+                    } else if (lvl.getServer().getTickCount() % 15 == 8) {
+                        player.sendSystemMessage(PlayerMethods.getYassificationLevel(player));
+                    }
                 }
-            }
+            });
         }
     }
 }

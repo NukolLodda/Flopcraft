@@ -44,16 +44,12 @@ public class JiafeiPerfume extends Item implements Vanishable, IJiafeiProducts {
         double x = entity.getX();
         double y = entity.getY();
         double z = entity.getZ();
-        {
-            final Vec3 center = new Vec3(x, y, z);
-            world.getEntitiesOfClass(LivingEntity.class, new AABB(center, center)
-                    .inflate(2 / 2d), e -> true).stream().toList().forEach(ent -> {
-                if (ent instanceof Cat cat && entity.getRandom().nextInt(25) < 4)
-                    cat.spawnAtLocation(ModItems.POSEI.get());
-                ToolMethods.yassification(ent, world, entity);
-                ent.addEffect(new MobEffectInstance(ModEffects.YASSIFIED.get(), 1000, 1));
-            });
-        }
+        ModUtil.getEntityListOfDist(world, LivingEntity.class, entity.position(), 1).forEach(ent -> {
+            if (ent instanceof Cat cat && entity.getRandom().nextInt(25) < 4)
+                cat.spawnAtLocation(ModItems.POSEI.get());
+            ToolMethods.yassification(ent, world, entity);
+            ent.addEffect(new MobEffectInstance(ModEffects.YASSIFIED.get(), 1000, 1));
+        });
         if (world instanceof ServerLevel level)
             level.sendParticles(ParticleTypes.DRIPPING_WATER, x, y, z, 15,1,1, 1, 1.0);
         entity.getMainHandItem().setDamageValue(entity.getMainHandItem().getDamageValue() + 1);

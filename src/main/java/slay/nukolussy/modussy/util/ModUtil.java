@@ -3,9 +3,15 @@ package slay.nukolussy.modussy.util;
 import net.minecraft.ChatFormatting;
 import net.minecraft.network.chat.Component;
 import net.minecraft.network.chat.MutableComponent;
+import net.minecraft.world.entity.Entity;
+import net.minecraft.world.level.LevelAccessor;
+import net.minecraft.world.phys.AABB;
+import net.minecraft.world.phys.Vec3;
+import org.jetbrains.annotations.NotNull;
 
 import java.time.LocalDate;
 import java.time.Month;
+import java.util.List;
 import java.util.Random;
 
 public class ModUtil {
@@ -82,27 +88,50 @@ public class ModUtil {
         };
     }
 
+    public static <T extends Entity> List<T> getEntityListOfDist(LevelAccessor pLevel, Class<T> pEntClass, Vec3 pLoc, double pSize) {
+        return getEntityListOfDist(pLevel, pEntClass, pLoc, pLoc, pSize);
+    }
+
+    public static <T extends Entity> List<T> getEntityListOfDist(@NotNull LevelAccessor pLevel, Class<T> pEntClass, Vec3 pLoc, Vec3 pBound, double pSize) {
+        return pLevel.getEntitiesOfClass(pEntClass, new AABB(pLoc, pBound)
+                .inflate(pSize), e -> true).stream().toList();
+    }
+
+    @Deprecated
     public static Month getMonth() {
         return DATE.getMonth();
     }
 
+    public static boolean monthIs(Month pMonth) {
+        return DATE.getMonth().equals(pMonth);
+    }
+
+    @Deprecated
     public static int getDayOfMonth() {
         return DATE.getDayOfMonth();
     }
 
+    public static boolean dayIs(int pDay) {
+        return DATE.getDayOfMonth() == pDay;
+    }
+
+    public static boolean dateIs(Month pMonth, int pDay) {
+        return DATE.getMonth().equals(pMonth) && DATE.getDayOfMonth() == pDay;
+    }
+
+    public static boolean dateInRange(Month pMonth, int pFirst, int pFinal) {
+        return DATE.getMonth().equals(pMonth) && DATE.getDayOfMonth() >= pFirst && DATE.getDayOfMonth() < pFinal;
+    }
+
     public static boolean isHumploween() {
-        return getMonth().equals(Month.OCTOBER) && getDayOfMonth() == 30;
+        return dateIs(Month.OCTOBER, 31);
     }
 
     public static boolean isClitmas() {
-        return getMonth().equals(Month.DECEMBER) && (getDayOfMonth() == 24 || getDayOfMonth() == 25);
+        return dateInRange(Month.DECEMBER, 24, 26);
     }
 
     public static boolean isNewYears() {
         return DATE.getDayOfYear() == 1;
-    }
-
-    public static boolean isValicktines() {
-        return getMonth().equals(Month.FEBRUARY) && (getDayOfMonth() == 14);
     }
 }

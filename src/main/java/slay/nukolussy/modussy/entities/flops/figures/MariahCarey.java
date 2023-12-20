@@ -95,7 +95,7 @@ public class MariahCarey extends AbstractFlopFigures implements RangedAttackMob 
 
     @Override
     public void tick() {
-        if (!ModUtil.getMonth().equals(Month.DECEMBER)) {
+        if (!ModUtil.monthIs(Month.DECEMBER)) {
             int x = this.getBlockX();
             int y = this.getBlockY();
             int z = this.getBlockZ();
@@ -139,9 +139,8 @@ public class MariahCarey extends AbstractFlopFigures implements RangedAttackMob 
             int inY = (int)((i * yDif / 6) + this.getY());
             int inZ = (int)((i * zDif / 6) + this.getZ());
             final Vec3 center = new Vec3(inX, inY, inZ);
-            this.level().getEntitiesOfClass(LivingEntity.class, new AABB(center, center)
-                    .inflate(2 * pVelocity / 2d), e -> true).stream().toList().forEach(ent ->
-                    EntityMethods.addEffects(ent, (int)pVelocity * 20, (int)pVelocity));
+            ModUtil.getEntityListOfDist(this.level(), LivingEntity.class, center, 2 * pVelocity / 2d)
+                    .forEach(ent -> EntityMethods.addEffects(ent, (int)pVelocity * 20, (int)pVelocity));
             if (this.level() instanceof ServerLevel level) {
                 level.sendParticles(ParticleTypes.COMPOSTER,
                         inX, inY, inZ, ((int) pVelocity * 15),1,1, 1, (pVelocity * 0.16));

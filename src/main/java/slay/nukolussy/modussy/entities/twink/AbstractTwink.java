@@ -24,9 +24,11 @@ import net.minecraft.world.phys.Vec3;
 import net.minecraftforge.fluids.FluidType;
 import slay.nukolussy.modussy.block.fluids.ModFluidTypes;
 import slay.nukolussy.modussy.entities.AbstractModEntity;
+import slay.nukolussy.modussy.entities.ModEntities;
 import slay.nukolussy.modussy.entities.flops.IFlopEntity;
 import slay.nukolussy.modussy.item.ModItems;
 import slay.nukolussy.modussy.util.EntityMethods;
+import slay.nukolussy.modussy.util.ModUtil;
 import slay.nukolussy.modussy.util.PlayerMethods;
 
 import java.util.Comparator;
@@ -52,13 +54,8 @@ public abstract class AbstractTwink extends AbstractModEntity implements Npc {
                     stack.shrink(1);
                 }
                 this.gameEvent(GameEvent.EAT, this);
-                int x = (int)this.getX();
-                int y = (int)this.getY();
-                int z = (int)this.getZ();
-                final Vec3 center = new Vec3(x, y, z);
-                List<AbstractTwink> entities = this.level().getEntitiesOfClass(AbstractTwink.class, new AABB(center, center).inflate(2 / 2d), e -> true).stream()
-                        .sorted(Comparator.comparingDouble(entity -> entity.distanceToSqr(center))).toList();
-                if (this.random.nextInt(69) == 0 || entities.size() > 0) {
+                List<AbstractTwink> entities = ModUtil.getEntityListOfDist(this.level(), AbstractTwink.class, this.position(), 1);
+                if (this.random.nextInt(69) == 0 || !entities.isEmpty()) {
                     this.spawnAtLocation(ModItems.TWINK_EGG.get());
                 }
                 return InteractionResult.SUCCESS;
@@ -105,11 +102,7 @@ public abstract class AbstractTwink extends AbstractModEntity implements Npc {
     }
 
     public void alertTwinks(Entity attacker) {
-        AABB aabb = AABB.unitCubeFromLowerCorner(this.position()).inflate(10d, 10.0d, 10d);
-        List<AbstractTwink> list = this.level().getEntitiesOfClass(AbstractTwink.class, aabb, e -> true).stream()
-                .sorted(Comparator.comparingDouble(_entcnd ->
-                        _entcnd.distanceToSqr(this.getX(), this.getY(), this.getZ()))).toList();
-        for (AbstractTwink twink : list) {
+        ModUtil.getEntityListOfDist(this.level(), AbstractTwink.class, this.position(), 10).forEach(twink -> {
             if (attacker instanceof LivingEntity entity) {
                 if (entity instanceof Player player) {
                     PlayerMethods.addPlayerYassification(player, -1);
@@ -117,7 +110,7 @@ public abstract class AbstractTwink extends AbstractModEntity implements Npc {
                 }
                 if (entity != null) twink.setTarget(entity);
             }
-        }
+        });
     }
 
     @Override

@@ -66,6 +66,7 @@ public abstract class AbstractFlopFigures extends AbstractFlops {
         if (this.level().isClientSide) {
             return InteractionResult.PASS;
         } else {
+            if (this.uuids == null) this.uuids = new ArrayList<>();
             if (ModUtil.isClitmas()) {
                 for (UUID uuid : this.uuids) {
                     if (!uuid.equals(pPlayer.getUUID())) {
@@ -87,7 +88,7 @@ public abstract class AbstractFlopFigures extends AbstractFlops {
                     }
                 }
                 this.uuids.add(pPlayer.getUUID());
-            } else {
+            } else if (!this.uuids.isEmpty()) {
                 uuids.clear();
             }
         }

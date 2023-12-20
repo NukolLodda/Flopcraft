@@ -41,16 +41,23 @@ import java.util.function.IntFunction;
 
 public class Twink extends AbstractTwink {
     private static final EntityDataAccessor<Integer> TWINK_ID_DATATYPE_VARIANT = SynchedEntityData.defineId(Twink.class, EntityDataSerializers.INT);
+    private final boolean summonedByTroye;
 
     public Twink(PlayMessages.SpawnEntity packet, Level world) {
         super(ModEntities.TWINK.get(), world);
+        this.summonedByTroye = false;
     }
 
     public Twink(EntityType<Twink> type, Level world) {
+        this(type, world, false);
+    }
+
+    Twink(EntityType<Twink> type, Level world, boolean summonedByTroye) {
         super(type, world);
         this.setCanPickUpLoot(true);
 
         this.applyOpenDoorsAbility();
+        this.summonedByTroye = summonedByTroye;
         xpReward = 0;
         setNoAi(false);
 
@@ -105,6 +112,11 @@ public class Twink extends AbstractTwink {
     protected void registerGoals() {
         super.registerGoals();
         this.goalSelector.addGoal(9, new ModussyBreedingGoal(this, 1.0d));
+        // add a follow twink sivan part
+    }
+
+    public boolean isSummonedByTroye() {
+        return summonedByTroye;
     }
 
     public ItemStack addToInventory(ItemStack item) {
@@ -132,8 +144,8 @@ public class Twink extends AbstractTwink {
         Level world = this.level();
         int dropChance = this.random.nextInt(8400);
         if (dropChance == 1) {
-            int randX = this.random.nextInt(-5, 5);
-            int randZ = this.random.nextInt(-5, 5);
+            int randX = (int)((Math.random() - 0.5) * 10);
+            int randZ = (int)((Math.random() - 0.5) * 10);
             if (world.isClientSide()) {
                 ItemEntity entityToSpawn = new ItemEntity(world, this.getX() + randX, this.getY(), this.getZ() + randZ, new ItemStack(ModItems.TWINK_EGG.get()));
                 entityToSpawn.setPickUpDelay(10);

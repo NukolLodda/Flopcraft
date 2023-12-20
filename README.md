@@ -14,10 +14,6 @@ If you are interested in helping me with Modussy and you have the sufficient Jav
 then please come over <a href="https://forms.gle/HN36moxHdA6yRNE3A">here</a> and apply to be part of the Modussy development team.
 <br>
 <br>
-To all the girls, gays, and theys of Floptok and Potaxies de Corazón here to partake in the Modussy Clitmas Special 🎄👄🎄,
-Click <a href="https://forms.gle/ekaPTXRGEACPMSxH6">here</a> to partake in the festivities.
-<br>
-<br>
 <a href="https://www.tiktok.com/@nukollodda/video/7204148779816160554">Here</a> is a short introduction video to Modussy
 <br>
 <br>
@@ -35,12 +31,17 @@ you are free to make your own port of this mod to bedrock edition using the code
 <a href="https://adfoc.us/83601097779891">Download latest version here!</a>
 
 Information about the latest version<br>
-Forge API version: <a href="https://maven.minecraftforge.net/net/minecraftforge/forge/1.20.1-47.0.43/forge-1.20.1-47.0.43-installer.jar">47.0.43</a><br>
+Forge API version: <a href="https://adfoc.us/serve/sitelinks/?id=271228&url=https://maven.minecraftforge.net/net/minecraftforge/forge/1.20.1-47.2.0/forge-1.20.1-47.2.0-installer.jar">47.2.0</a><br>
 Minecraft Java version: 1.20.1 <br>
-Modussy Version: 0.1.3(pre-release) <br>
+Modussy Version: 0.1.4 <br>
 
 ---
 **Requests**
+
+<b>Please Read</b>
+<br>
+I will no longer be taking any requests for this mod after March, 10, 2024.
+I'll be starting on the final version of Modussy after that date.
 
 If a request is something I consider achievable, I will try my best to complete it. However, I would
 like to state that depending on the complexity of the request, it may take up from a couple of weeks to
@@ -52,7 +53,8 @@ I may just not have the time. So please be patient after I take in a request.
 Requests I accept includes: <br>
 - Addition of new content, i.e. blocks, items, entities, ect.
   (as long as it makes sense for this mod, and it isn't too complicated)<br>
-- Removal of content (as long as the requested content isn't integral to the structure of this mod)
+- Removal of content (as long as the requested content isn't integral to the structure of this mod)<br>
+- Modification of existing content (as long as both the addition and removal of content rules are followed)
 
 Requests I reject includes: <br>
 - Porting Modussy to other versions/editions of Minecraft
@@ -69,8 +71,8 @@ ___
 After reading Curseforge's terms of service, I believe that some features of Modussy, namely
 CupcakKe's texture, specific items, and mobs violates it, so the download links are in this
 repository instead. Click <a href="http://adfoc.us/83601097779891">here</a>
-for the most recent version uploaded (Modussy-0.1.3 for Minecraft 1.20.1
-<a href="https://maven.minecraftforge.net/net/minecraftforge/forge/1.20.1-47.0.43/forge-1.20.1-47.0.43-installer.jar">Forge API 47.0.43</a>)
+for the most recent version uploaded (Modussy-0.1.4 for Minecraft 1.20.1
+<a href="https://adfoc.us/serve/sitelinks/?id=271228&url=https://maven.minecraftforge.net/net/minecraftforge/forge/1.20.1-47.2.0/forge-1.20.1-47.2.0-installer.jar">Forge API 47.2.0</a>)
 
 ___
 **Where Are Modussy's Aesthetic Music**

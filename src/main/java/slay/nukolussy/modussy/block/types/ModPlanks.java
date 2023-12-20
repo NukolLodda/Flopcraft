@@ -25,7 +25,7 @@ public class ModPlanks extends Block {
 
     @Override
     public void stepOn(Level pLevel, BlockPos pPos, BlockState pState, Entity pEntity) {
-        if (ModUtil.getMonth().equals(Month.DECEMBER) && pEntity instanceof ItemEntity item
+        if (ModUtil.monthIs(Month.DECEMBER) && pEntity instanceof ItemEntity item
                 && ModUtil.itemsEqualsEachother(item, ModItems.LANCVM_CREAM.get(), Items.COOKIE, ModItems.CVM.get())) {
                 MariahCarey carey = new MariahCarey(ModEntities.MARIAH_CAREY.get(), pLevel);
                 carey.moveTo(pPos, 0, 0);

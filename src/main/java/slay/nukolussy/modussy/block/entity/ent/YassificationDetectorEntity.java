@@ -17,7 +17,9 @@ import net.minecraft.world.phys.AABB;
 import net.minecraft.world.phys.Vec3;
 import slay.nukolussy.modussy.block.entity.blocks.YassificationDetector;
 import slay.nukolussy.modussy.util.EntityMethods;
+import slay.nukolussy.modussy.util.ModUtil;
 import slay.nukolussy.modussy.util.PlayerMethods;
+import slay.nukolussy.modussy.util.ToolMethods;
 
 import java.util.List;
 
@@ -43,19 +45,15 @@ public class YassificationDetectorEntity extends BlockEntity {
                 case NORTH -> z--;
             }
             if (this.level != null && this.level.getServer() != null){
-                List<LivingEntity> entities = lvl.getEntitiesOfClass(LivingEntity.class,
-                        new AABB(new Vec3(x, y+1, z), new Vec3(x, y+3, z)).inflate(1), e -> true).stream().toList();
-                for (LivingEntity entity : entities) {
-                    if (EntityMethods.isMonster(entity)) {
-                        entity.addEffect(new MobEffectInstance(MobEffects.MOVEMENT_SLOWDOWN, 500, 0, true, false, false));
-                        entity.addEffect(new MobEffectInstance(MobEffects.DIG_SLOWDOWN, 1000, 4, true, false, false));
-                        entity.addEffect(new MobEffectInstance(MobEffects.WEAKNESS, 500, 1, true, false, false));
-                        entity.addEffect(new MobEffectInstance(MobEffects.CONFUSION, 100, 0, true, false, false));
-                    }
-                    if (entity instanceof Player player && this.level.getServer().getTickCount() % 5 == 0) {
-                        player.sendSystemMessage(PlayerMethods.getYassificationLevel(player));
-                    }
-                }
+                ModUtil.getEntityListOfDist(lvl, LivingEntity.class, new Vec3(x, y+1, z), new Vec3(x, y+3, z), 1)
+                        .forEach(entity -> {
+                            if (EntityMethods.isMonster(entity)) {
+                                EntityMethods.monsterEffects(entity);
+                            }
+                            if (entity instanceof Player player && this.level.getServer().getTickCount() % 5 == 0) {
+                                player.sendSystemMessage(PlayerMethods.getYassificationLevel(player));
+                            }
+                        });
             }
         }
     }

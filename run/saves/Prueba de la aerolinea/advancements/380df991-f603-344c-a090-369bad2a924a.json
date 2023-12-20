@@ -1,0 +1,281 @@
+{
+  "minecraft:recipes/decorations/crafting_table": {
+    "criteria": {
+      "unlock_right_away": "2023-12-19 12:56:35 -0600"
+    },
+    "done": true
+  },
+  "minecraft:adventure/adventuring_time": {
+    "criteria": {
+      "minecraft:plains": "2023-12-19 12:56:38 -0600"
+    },
+    "done": false
+  },
+  "minecraft:adventure/root": {
+    "criteria": {
+      "killed_something": "2023-12-19 12:57:38 -0600"
+    },
+    "done": true
+  },
+  "minecraft:adventure/kill_all_mobs": {
+    "criteria": {
+      "minecraft:spider": "2023-12-19 13:13:28 -0600",
+      "minecraft:creeper": "2023-12-19 13:19:46 -0600",
+      "minecraft:enderman": "2023-12-19 12:57:38 -0600"
+    },
+    "done": false
+  },
+  "minecraft:adventure/kill_a_mob": {
+    "criteria": {
+      "minecraft:enderman": "2023-12-19 12:57:38 -0600"
+    },
+    "done": true
+  },
+  "modussy:recipes/misc/cvm_from_fluid_crafting": {
+    "criteria": {
+      "has_cvm": "2023-12-19 12:58:02 -0600"
+    },
+    "done": true
+  },
+  "modussy:recipes/misc/cvm_fluid_bucket_from_crafting": {
+    "criteria": {
+      "has_cvm": "2023-12-19 12:58:02 -0600"
+    },
+    "done": true
+  },
+  "minecraft:recipes/redstone/lever": {
+    "criteria": {
+      "has_cobblestone": "2023-12-19 13:00:36 -0600"
+    },
+    "done": true
+  },
+  "minecraft:recipes/combat/stone_sword": {
+    "criteria": {
+      "has_cobblestone": "2023-12-19 13:00:36 -0600"
+    },
+    "done": true
+  },
+  "minecraft:recipes/decorations/cobblestone_wall": {
+    "criteria": {
+      "has_cobblestone": "2023-12-19 13:00:36 -0600"
+    },
+    "done": true
+  },
+  "minecraft:recipes/tools/stone_pickaxe": {
+    "criteria": {
+      "has_cobblestone": "2023-12-19 13:00:36 -0600"
+    },
+    "done": true
+  },
+  "minecraft:recipes/tools/stone_axe": {
+    "criteria": {
+      "has_cobblestone": "2023-12-19 13:00:36 -0600"
+    },
+    "done": true
+  },
+  "minecraft:story/mine_stone": {
+    "criteria": {
+      "get_stone": "2023-12-19 13:00:36 -0600"
+    },
+    "done": true
+  },
+  "minecraft:recipes/decorations/furnace": {
+    "criteria": {
+      "has_cobblestone": "2023-12-19 13:00:36 -0600"
+    },
+    "done": true
+  },
+  "minecraft:recipes/building_blocks/cobblestone_slab": {
+    "criteria": {
+      "has_cobblestone": "2023-12-19 13:00:36 -0600"
+    },
+    "done": true
+  },
+  "minecraft:recipes/building_blocks/cobblestone_slab_from_cobblestone_stonecutting": {
+    "criteria": {
+      "has_cobblestone": "2023-12-19 13:00:36 -0600"
+    },
+    "done": true
+  },
+  "minecraft:recipes/building_blocks/stone": {
+    "criteria": {
+      "has_cobblestone": "2023-12-19 13:00:36 -0600"
+    },
+    "done": true
+  },
+  "minecraft:recipes/decorations/cobblestone_wall_from_cobblestone_stonecutting": {
+    "criteria": {
+      "has_cobblestone": "2023-12-19 13:00:36 -0600"
+    },
+    "done": true
+  },
+  "minecraft:recipes/building_blocks/cobblestone_stairs_from_cobblestone_stonecutting": {
+    "criteria": {
+      "has_cobblestone": "2023-12-19 13:00:36 -0600"
+    },
+    "done": true
+  },
+  "minecraft:recipes/building_blocks/cobblestone_stairs": {
+    "criteria": {
+      "has_cobblestone": "2023-12-19 13:00:36 -0600"
+    },
+    "done": true
+  },
+  "minecraft:recipes/tools/stone_hoe": {
+    "criteria": {
+      "has_cobblestone": "2023-12-19 13:00:36 -0600"
+    },
+    "done": true
+  },
+  "minecraft:recipes/tools/stone_shovel": {
+    "criteria": {
+      "has_cobblestone": "2023-12-19 13:00:36 -0600"
+    },
+    "done": true
+  },
+  "minecraft:recipes/decorations/chest": {
+    "criteria": {
+      "has_lots_of_items": "2023-12-19 13:01:05 -0600"
+    },
+    "done": true
+  },
+  "minecraft:recipes/decorations/campfire": {
+    "criteria": {
+      "has_coal": "2023-12-19 13:01:14 -0600"
+    },
+    "done": true
+  },
+  "minecraft:recipes/building_blocks/coal_block": {
+    "criteria": {
+      "has_coal": "2023-12-19 13:01:14 -0600"
+    },
+    "done": true
+  },
+  "minecraft:recipes/decorations/ladder": {
+    "criteria": {
+      "has_stick": "2023-12-19 13:02:28 -0600"
+    },
+    "done": true
+  },
+  "minecraft:recipes/tools/wooden_hoe": {
+    "criteria": {
+      "has_stick": "2023-12-19 13:02:28 -0600"
+    },
+    "done": true
+  },
+  "minecraft:recipes/tools/wooden_pickaxe": {
+    "criteria": {
+      "has_stick": "2023-12-19 13:02:28 -0600"
+    },
+    "done": true
+  },
+  "minecraft:recipes/tools/wooden_axe": {
+    "criteria": {
+      "has_stick": "2023-12-19 13:02:28 -0600"
+    },
+    "done": true
+  },
+  "minecraft:recipes/tools/wooden_shovel": {
+    "criteria": {
+      "has_stick": "2023-12-19 13:02:28 -0600"
+    },
+    "done": true
+  },
+  "minecraft:recipes/combat/wooden_sword": {
+    "criteria": {
+      "has_stick": "2023-12-19 13:02:28 -0600"
+    },
+    "done": true
+  },
+  "modussy:recipes/misc/music_disc_c13_from_crafting": {
+    "criteria": {
+      "has_cvmtitplasm": "2023-12-19 13:06:38 -0600"
+    },
+    "done": true
+  },
+  "modussy:recipes/misc/cupcakke_spawn_egg_from_crafting": {
+    "criteria": {
+      "has_cvmtitplasm": "2023-12-19 13:06:38 -0600"
+    },
+    "done": true
+  },
+  "modussy:recipes/misc/slaginium_from_crafting": {
+    "criteria": {
+      "has_cupcake": "2023-12-19 13:13:13 -0600"
+    },
+    "done": true
+  },
+  "minecraft:recipes/misc/firework_rocket_simple": {
+    "criteria": {
+      "has_gunpowder": "2023-12-19 13:19:54 -0600"
+    },
+    "done": true
+  },
+  "minecraft:recipes/redstone/tnt": {
+    "criteria": {
+      "has_gunpowder": "2023-12-19 13:19:54 -0600"
+    },
+    "done": true
+  },
+  "minecraft:recipes/brewing/cauldron": {
+    "criteria": {
+      "has_water_bucket": "2023-12-19 13:35:22 -0600"
+    },
+    "done": true
+  },
+  "modussy:recipes/misc/music_disc_cupcakke4_from_crafting": {
+    "criteria": {
+      "has_water_bucket": "2023-12-19 13:35:22 -0600"
+    },
+    "done": true
+  },
+  "minecraft:recipes/redstone/dispenser": {
+    "criteria": {
+      "has_bow": "2023-12-19 13:39:20 -0600"
+    },
+    "done": true
+  },
+  "minecraft:recipes/misc/bone_meal": {
+    "criteria": {
+      "has_bone": "2023-12-19 13:39:20 -0600"
+    },
+    "done": true
+  },
+  "minecraft:recipes/misc/white_dye": {
+    "criteria": {
+      "has_bone_meal": "2023-12-19 13:49:42 -0600"
+    },
+    "done": true
+  },
+  "minecraft:recipes/building_blocks/bone_block": {
+    "criteria": {
+      "has_bone_meal": "2023-12-19 13:49:42 -0600"
+    },
+    "done": true
+  },
+  "modussy:recipes/misc/lovely_peach_pressure_plate_from_crafting": {
+    "criteria": {
+      "has_lovely_peach_pressure_plate": "2023-12-19 16:52:23 -0600"
+    },
+    "done": true
+  },
+  "modussy:recipes/misc/music_disc_c22_from_crafting": {
+    "criteria": {
+      "has_cvm_fluid_bucket": "2023-12-19 16:52:27 -0600"
+    },
+    "done": true
+  },
+  "modussy:recipes/misc/hairussy_from_crafting": {
+    "criteria": {
+      "has_slaginium_yassifier": "2023-12-19 18:07:12 -0600"
+    },
+    "done": true
+  },
+  "modussy:recipes/misc/girl_yas_pumpkin_from_crafting": {
+    "criteria": {
+      "has_lovely_peach": "2023-12-19 18:14:29 -0600"
+    },
+    "done": true
+  },
+  "DataVersion": 3465
+}

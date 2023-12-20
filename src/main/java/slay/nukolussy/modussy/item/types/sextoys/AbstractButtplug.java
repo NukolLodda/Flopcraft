@@ -7,12 +7,11 @@ import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.Level;
-import net.minecraft.world.phys.AABB;
-import net.minecraft.world.phys.Vec3;
 import slay.nukolussy.modussy.sound.ModSounds;
 import slay.nukolussy.modussy.util.EntityMethods;
+import slay.nukolussy.modussy.util.ModUtil;
 
-import java.util.List;
+import java.util.concurrent.atomic.AtomicInteger;
 
 public abstract class AbstractButtplug extends Item {
     public AbstractButtplug(int durability) {
@@ -22,19 +21,14 @@ public abstract class AbstractButtplug extends Item {
     @Override
     public InteractionResultHolder<ItemStack> use(Level pLevel, Player pPlayer, InteractionHand pUsedHand) {
         ItemStack item = pPlayer.getItemInHand(pUsedHand);
-        int dura = 0;
+        AtomicInteger dura = new AtomicInteger();
         EntityMethods.addEffects(pPlayer);
         pPlayer.playSound(ModSounds.SQUIRT.get());
-        {
-            final Vec3 center = new Vec3(pPlayer.getX(), pPlayer.getY(), pPlayer.getZ());
-            List<LivingEntity> entites = pLevel.getEntitiesOfClass(LivingEntity.class, new AABB(center, center)
-                    .inflate(8 / 2d), e -> true).stream().toList();
-            for (LivingEntity entity : entites) {
-                EntityMethods.addEffects(entity);
-                dura++;
-            }
-        }
-        item.setDamageValue(item.getDamageValue() + dura);
+        ModUtil.getEntityListOfDist(pLevel, LivingEntity.class, pPlayer.position(), 4).forEach(entity -> {
+            EntityMethods.addEffects(entity);
+            dura.getAndIncrement();
+        });
+        item.setDamageValue(item.getDamageValue() + dura.get());
         return super.use(pLevel, pPlayer, pUsedHand);
     }
 }

@@ -1,0 +1,14 @@
+{
+  "type": "modussy:add_item",
+  "conditions": [
+    {
+      "condition": "forge:loot_table_id",
+      "loot_table_id": "modussy:chests/floptropica_airport"
+    },
+    {
+      "chance": 0.69,
+      "condition": "minecraft:random_chance"
+    }
+  ],
+  "item": "modussy:cupcake"
+}

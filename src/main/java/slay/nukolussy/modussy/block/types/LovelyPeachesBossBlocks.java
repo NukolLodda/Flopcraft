@@ -19,6 +19,7 @@ import net.minecraft.world.phys.shapes.Shapes;
 import net.minecraft.world.phys.shapes.VoxelShape;
 import org.jetbrains.annotations.NotNull;
 import slay.nukolussy.modussy.util.EntityMethods;
+import slay.nukolussy.modussy.util.ModUtil;
 
 import java.util.List;
 
@@ -63,21 +64,16 @@ public class LovelyPeachesBossBlocks extends Block {
 
     @Override
     public void destroy(LevelAccessor pLevel, BlockPos pPos, BlockState pState) {
-        {
-            final Vec3 center = new Vec3(pPos.getX(), pPos.getY(), pPos.getZ());
-            List<LivingEntity> _entfound = pLevel.getEntitiesOfClass(LivingEntity.class, new AABB(center, center)
-                    .inflate(2 / 2d), e -> true).stream().toList();
-            for (LivingEntity entity : _entfound) {
-                if (!EntityMethods.isMonster(entity)) {
-                    if (this.type == Type.EFFECT_REMOVE) {
-                        entity.removeAllEffects();
-                    }
-                    for (MobEffectInstance instance : type.getEffects()) {
-                        entity.addEffect(instance);
-                    }
+        ModUtil.getEntityListOfDist(pLevel, LivingEntity.class, pPos.getCenter(), 1).forEach(entity -> {
+            if (!EntityMethods.isMonster(entity)) {
+                if (this.type == Type.EFFECT_REMOVE) {
+                    entity.removeAllEffects();
+                }
+                for (MobEffectInstance instance : type.getEffects()) {
+                    entity.addEffect(instance);
                 }
             }
-        }
+        });
         super.destroy(pLevel, pPos, pState);
     }
 

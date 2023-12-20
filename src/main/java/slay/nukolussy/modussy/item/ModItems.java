@@ -11,6 +11,7 @@ import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
 import slay.nukolussy.modussy.Modussy;
+import slay.nukolussy.modussy.block.ModBlocks;
 import slay.nukolussy.modussy.block.fluids.ModFluids;
 import slay.nukolussy.modussy.datagen.tags.ModTrimPatterns;
 import slay.nukolussy.modussy.effect.ModEffects;
@@ -25,6 +26,7 @@ import slay.nukolussy.modussy.item.types.tampons.BloodyTampon;
 import slay.nukolussy.modussy.item.types.tampons.ExtraBloodyTampon;
 import slay.nukolussy.modussy.item.types.tampons.Tampon;
 import slay.nukolussy.modussy.item.types.tools.Pickaxol;
+import slay.nukolussy.modussy.item.types.tools.RanpapiTablet;
 import slay.nukolussy.modussy.item.types.tools.SlaginiumYassifier;
 import slay.nukolussy.modussy.sound.ModSounds;
 import slay.nukolussy.modussy.item.tiers.ModTiers;
@@ -159,6 +161,7 @@ public class ModItems {
     public static final RegistryObject<Item> CLITMAS_BUTTPLUG = ITEMS.register("clitmas_buttplug", ClitmasButtplug::new);
     public static final RegistryObject<Item> ENDER_DRAGON_DEELDO = ITEMS.register("ender_dragon_deeldo", EnderDragonDeeldo::new);
     public static final RegistryObject<Item> DEELDO = ITEMS.register("deeldo", Deeldo::new);
+    public static final RegistryObject<Item> RANPAPI_TABLET = ITEMS.register("ranpapi_tablet", RanpapiTablet::new);
     public static final RegistryObject<Item> ROSETOY = ITEMS.register("rosetoy", Rosetoy::new);
 
     public static final RegistryObject<Item> CVM_FLUID_BUCKET = ITEMS.register("cvm_fluid_bucket",
@@ -229,6 +232,14 @@ public class ModItems {
             () -> new ForgeSpawnEggItem(ModEntities.RANVISION,  16757057, 12538804,  new Item.Properties()));
     public static final RegistryObject<Item> TWINK_SPAWN_EGG = ITEMS.register("twink_spawn_egg",
             () -> new ForgeSpawnEggItem(ModEntities.TWINK,  170, 5636095,  new Item.Properties()));
+
+    public static final RegistryObject<Item> LOVELY_PEACH_SIGN = ITEMS.register("lovely_peach_sign",
+            () -> new SignItem(new Item.Properties().stacksTo(16), ModBlocks.LOVELY_PEACH_SIGN.get(),
+                    ModBlocks.LOVELY_PEACH_WALL_SIGN.get()));
+
+    public static final RegistryObject<Item> LOVELY_PEACH_HANGING_SIGN = ITEMS.register("lovely_peach_hanging_sign",
+            () -> new HangingSignItem(ModBlocks.LOVELY_PEACH_HANGING_SIGN.get(), ModBlocks.LOVELY_PEACH_WALL_HANGING_SIGN.get(),
+                    new Item.Properties().stacksTo(16)));
 
     public static void register(IEventBus eventBus) {
         ITEMS.register(eventBus);

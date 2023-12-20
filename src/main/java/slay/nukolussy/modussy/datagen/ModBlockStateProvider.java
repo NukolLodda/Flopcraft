@@ -1,13 +1,17 @@
 package slay.nukolussy.modussy.datagen;
 
 import net.minecraft.data.PackOutput;
+import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.level.block.*;
 import net.minecraftforge.client.model.generators.BlockStateProvider;
+import net.minecraftforge.client.model.generators.ModelFile;
 import net.minecraftforge.common.data.ExistingFileHelper;
 import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
 import slay.nukolussy.modussy.Modussy;
 import slay.nukolussy.modussy.block.ModBlocks;
+
+import java.util.Objects;
 
 public class ModBlockStateProvider extends BlockStateProvider {
     public ModBlockStateProvider(PackOutput output, ExistingFileHelper exFileHelper) {
@@ -50,6 +54,25 @@ public class ModBlockStateProvider extends BlockStateProvider {
                 modLoc("block/lovely_peach_door_bottom"), modLoc("block/lovely_peach_door_top"), "cutout");
         trapdoorBlockWithRenderType((TrapDoorBlock) ModBlocks.LOVELY_PEACH_TRAPDOOR.get(),
                 modLoc("block/lovely_peach_trapdoor"), true, "cutout");
+
+        signBlock((StandingSignBlock) ModBlocks.LOVELY_PEACH_SIGN.get(), (WallSignBlock) ModBlocks.LOVELY_PEACH_WALL_SIGN.get(),
+                blockTexture(ModBlocks.LOVELY_PEACH_PLANKS.get()));
+        hangingSignBlock(ModBlocks.LOVELY_PEACH_HANGING_SIGN.get(), ModBlocks.LOVELY_PEACH_WALL_HANGING_SIGN.get(),
+                blockTexture(ModBlocks.LOVELY_PEACH_PLANKS.get()));
+    }
+
+    private void hangingSignBlock(Block signBlock, Block wallSignBlock, ResourceLocation texture) {
+        ModelFile sign = models().sign(name(signBlock), texture);
+        hangingSignBlock(signBlock, wallSignBlock, sign);
+    }
+
+    private void hangingSignBlock(Block signBlock, Block wallSignBlock, ModelFile sign) {
+        simpleBlock(signBlock, sign);
+        simpleBlock(wallSignBlock, sign);
+    }
+
+    private String name(Block block) {
+        return Objects.requireNonNull(ForgeRegistries.BLOCKS.getKey(block)).getPath();
     }
     
     private void blockWithItem(RegistryObject<Block> registryBlock) {

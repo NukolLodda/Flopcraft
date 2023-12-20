@@ -41,14 +41,8 @@ public class ShotExtraBloodyTampon extends ShotTampon {
         cloud.setWaitTime(10);
         cloud.setDuration(cloud.getDuration() / 2);
         cloud.setRadiusPerTick(-cloud.getRadius() / (float) cloud.getDuration());
-        {
-            final Vec3 center = new Vec3(this.getX(), this.getY(), this.getZ());
-            List<LivingEntity> entities = level().getEntitiesOfClass(LivingEntity.class, new AABB(center, center)
-                    .inflate(2.5 / 2d), e -> true).stream().toList();
-            for (LivingEntity entity : entities) {
-                EntityMethods.addEffects(entity, 3, 2);
-            }
-        }
+        ModUtil.getEntityListOfDist(this.level(), LivingEntity.class, this.position(), 1.25)
+                .forEach(entity -> EntityMethods.addEffects(entity, 3, 2));
         this.level().explode(null, this.getX(), this.getY(), this.getZ(), 3, Level.ExplosionInteraction.BLOCK);
     }
 

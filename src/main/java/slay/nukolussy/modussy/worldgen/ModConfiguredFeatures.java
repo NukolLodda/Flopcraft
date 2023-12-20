@@ -36,7 +36,7 @@ public class ModConfiguredFeatures {
                 BlockStateProvider.simple(ModBlocks.LOVELY_PEACH_LOG.get()),
                 new StraightTrunkPlacer(4, 2, 0),
                 BlockStateProvider.simple(ModBlocks.LOVELY_PEACH_LEAVES.get()),
-                new BlobFoliagePlacer(ConstantInt.of(2), ConstantInt.of(0), 4),
+                new BlobFoliagePlacer(ConstantInt.of(2), ConstantInt.of(0), 3),
                 new TwoLayersFeatureSize(1, 0, 1)).ignoreVines().build());
     }
 

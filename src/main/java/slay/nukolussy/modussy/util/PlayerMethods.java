@@ -70,6 +70,12 @@ public class PlayerMethods {
         return isFlopIcon.get();
     }
 
+    public static void addPlayerYassificationIfPossible(LivingEntity ent, int added) {
+        if (ent instanceof Player player) {
+            addPlayerYassification(player, added);
+        }
+    }
+
     public static void addPlayerYassification(Player player, int added) {
         player.getCapability(PlayerYassificationProvider.PLAYER_YASSIFICATION).ifPresent(yassification -> {
             if (added > 0) {

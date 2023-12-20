@@ -14,6 +14,7 @@ import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResult;
 import net.minecraft.world.SimpleContainer;
 import net.minecraft.world.damagesource.DamageSource;
+import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.MobType;
 import net.minecraft.world.entity.player.Player;
@@ -24,6 +25,7 @@ import net.minecraft.world.level.gameevent.GameEvent;
 import org.jetbrains.annotations.Nullable;
 import slay.nukolussy.modussy.effect.ModEffects;
 import slay.nukolussy.modussy.entities.AbstractModEntity;
+import slay.nukolussy.modussy.entities.ModEntities;
 import slay.nukolussy.modussy.item.ModItems;
 import slay.nukolussy.modussy.sound.ModSounds;
 
@@ -38,19 +40,20 @@ public class TwinkSivan extends AbstractTwink {
     @Nullable
     @Override
     protected SoundEvent getAmbientSound() {
-        return switch (this.random.nextInt(4)) {
+        return switch (this.random.nextInt(6)) {
             case 1 -> ModSounds.TWINK_SIVAN_1.get();
             case 2 -> ModSounds.TWINK_SIVAN_2.get();
             case 3 -> ModSounds.TWINK_SIVAN_3.get();
-            default -> ModSounds.TWINK_SIVAN_4.get();
+            case 4 -> ModSounds.TWINK_SIVAN_4.get();
+            case 5 -> ModSounds.TWINK_SIVAN_5.get();
+            default -> ModSounds.TWINK_SIVAN_6.get();
         };
     }
 
     @Nullable
     @Override
     protected SoundEvent getDeathSound() {
-        // link here - https://youtu.be/0vArIdzT4K4?feature=shared
-        return super.getDeathSound();
+        return this.random.nextBoolean() ? ModSounds.TWINK_SIVAN_DEATH1.get() : ModSounds.TWINK_SIVAN_DEATH2.get();
     }
 
     @Nullable
@@ -63,15 +66,12 @@ public class TwinkSivan extends AbstractTwink {
     protected InteractionResult mobInteract(Player player, InteractionHand hand) {
         ItemStack itemStack = player.getItemInHand(hand);
         InteractionResult result = InteractionResult.sidedSuccess(this.level().isClientSide);
-
         super.mobInteract(player, hand);
-        Item item = itemStack.getItem();
-
+        boolean isCvm = itemStack.is(ModItems.CVM.get()) || itemStack.is(ModItems.CVMIUM.get());
         if (this.level().isClientSide) {
-            boolean flag = itemStack.is(ModItems.CVM.get()) || itemStack.is(ModItems.CVMIUM.get());
-            return flag ? InteractionResult.CONSUME : InteractionResult.PASS;
+            return isCvm ? InteractionResult.CONSUME : InteractionResult.PASS;
         } else {
-            if (item.equals(ModItems.CVM.get()) || item.equals(ModItems.CVMIUM.get())) {
+            if (isCvm) {
                 if (this.getHealth() < this.getMaxHealth()) {
                     this.heal(3f);
                 }
@@ -79,7 +79,6 @@ public class TwinkSivan extends AbstractTwink {
                     itemStack.shrink(1);
                 }
                 player.spawnAtLocation(ModItems.TWINK_EGG.get());
-
                 this.playSound(ModSounds.CUPCAkKE_SLURP.get());
                 this.gameEvent(GameEvent.EAT, this);
                 return InteractionResult.SUCCESS;
@@ -90,21 +89,20 @@ public class TwinkSivan extends AbstractTwink {
 
     @Override
     public boolean hurt(DamageSource source, float amount) {
+        if (source.getEntity() != null) {
+            alertTwinks(source);
+        }
+        if (this.getRandom().nextBoolean()) {
+            Twink twink = new Twink(ModEntities.TWINK.get(), this.level(), true);
+            twink.teleportTo(this.getX(), this.getY(), this.getZ());
+            this.level().addFreshEntity(twink);
+        }
         if (source.is(DamageTypeTags.IS_DROWNING) || source.is(DamageTypeTags.IS_FIRE) ||
                 source.is(DamageTypeTags.IS_FIRE) || source.is(DamageTypeTags.IS_LIGHTNING) ||
                 source.is(DamageTypeTags.IS_EXPLOSION) || source.is(DamageTypeTags.IS_FREEZING)) {
             return false;
         }
         return super.hurt(source, amount);
-    }
-
-    @Override
-    public void aiStep() {
-        if (this.hasEffect(ModEffects.CVMMED.get()) && this.random.nextInt(6971) == 0) {
-            this.sendSystemMessage(Component.literal("Twink Sivan - ").append(Component.translatable("subtitle.twink_sivan_sex")
-                    .append(": https://youtu.be/K1TtnxaPRms?feature=shared")));
-        }
-        super.aiStep();
     }
 
     @Override

@@ -55,33 +55,11 @@ public class BloodyTampon extends ArrowItem {
                 double x = pPlayer.getX();
                 double y = pPlayer.getY();
                 double z = pPlayer.getZ();
-                {
-                    final Vec3 _center = new Vec3(x, y, z);
-                    List<LivingEntity> _entfound = pLevel.getEntitiesOfClass(LivingEntity.class, new AABB(_center, _center).inflate(6 / 2d), e -> true).stream()
-                            .sorted(Comparator.comparingDouble(_entcnd -> _entcnd.distanceToSqr(_center))).toList();
-                    for (LivingEntity ent : _entfound) {
-                        if (ent instanceof Spider spider) {
-                            spider.setItemSlot(EquipmentSlot.MAINHAND, new ItemStack(ModItems.ARANA_GRANDE.get()));
-                            spider.setGuaranteedDrop(EquipmentSlot.MAINHAND);
-                            spider.kill();
-                        }
-                        if (ent instanceof Slime slime) {
-                            ItemStack cvmItem = new ItemStack(ModItems.CVM.get());
-                            if (slime instanceof MagmaCube) {
-                                cvmItem = new ItemStack(ModItems.CVMIUM.get());
-                            }
-                            slime.setItemSlot(EquipmentSlot.MAINHAND, cvmItem);
-                            slime.setGuaranteedDrop(EquipmentSlot.MAINHAND);
-                            slime.kill();
-                        }
-                        EntityMethods.addEffects(ent);
-                    }
-                    EntityMethods.monsterEffects(pPlayer);
-                    pPlayer.hurt(pPlayer.level().damageSources().generic(), 3);
-                    if (pLevel instanceof ServerLevel level) {
-                        level.sendParticles(ParticleTypes.ENTITY_EFFECT, x, y, z,
-                                6, 1, 1, 1, 0.16f);
-                    }
+                ToolMethods.yassifySurronding(pLevel, pPlayer, 4, 1, 2);
+                pPlayer.hurt(pPlayer.level().damageSources().generic(), 3);
+                if (pLevel instanceof ServerLevel level) {
+                    level.sendParticles(ParticleTypes.ENTITY_EFFECT, x, y, z,
+                            6, 1, 1, 1, 0.16f);
                 }
                 pPlayer.playSound(ModSounds.SQUIRT.get());
                 ItemStack curItem = pPlayer.getItemInHand(pHand);

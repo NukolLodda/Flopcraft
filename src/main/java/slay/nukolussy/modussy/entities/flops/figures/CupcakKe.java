@@ -119,15 +119,13 @@ public class CupcakKe extends AbstractFlopFigures implements IMerflop {
     public InteractionResult mobInteract(Player player, InteractionHand hand) {
         ItemStack itemStack = player.getItemInHand(hand);
         InteractionResult result = InteractionResult.sidedSuccess(this.level().isClientSide);
-
         super.mobInteract(player, hand);
         Item item = itemStack.getItem();
-
+        boolean isCvm = itemStack.is(ModItems.CVM.get()) || itemStack.is(ModItems.CVMIUM.get());
         if (this.level().isClientSide) {
-            boolean flag = itemStack.is(ModItems.CVM.get()) || itemStack.is(ModItems.CVMIUM.get());
-            return flag ? InteractionResult.CONSUME : InteractionResult.PASS;
+            return isCvm ? InteractionResult.CONSUME : InteractionResult.PASS;
         } else {
-            if (item.equals(ModItems.CVM.get()) || item.equals(ModItems.CVMIUM.get())) {
+            if (isCvm) {
                 if (this.getHealth() < this.getMaxHealth()) {
                     this.heal(3f);
                 }
@@ -135,7 +133,6 @@ public class CupcakKe extends AbstractFlopFigures implements IMerflop {
                     itemStack.shrink(1);
                 }
                 cupcakkeDuplication(item, this);
-
                 this.playSound(ModSounds.CUPCAkKE_SLURP.get());
                 this.gameEvent(GameEvent.EAT, this);
                 return InteractionResult.SUCCESS;

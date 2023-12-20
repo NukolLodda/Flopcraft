@@ -15,7 +15,7 @@ import slay.nukolussy.modussy.recipes.CvmInfusionAlterShapelessRecipe;
 
 import java.util.List;
 
-// this will be annotated for v0.1.4
+@JeiPlugin
 public class JEIModussyPlugin implements IModPlugin {
     @Override
     public ResourceLocation getPluginUid() {
@@ -25,7 +25,7 @@ public class JEIModussyPlugin implements IModPlugin {
     @Override
     public void registerCategories(IRecipeCategoryRegistration registration) {
         registration.addRecipeCategories(new CvmInfusionCategory(registration.getJeiHelpers().getGuiHelper()));
-        registration.addRecipeCategories(new CvmInfusionShapelessCategory(registration.getJeiHelpers().getGuiHelper()));
+        // registration.addRecipeCategories(new CvmInfusionShapelessCategory(registration.getJeiHelpers().getGuiHelper()));
     }
 
     @Override
@@ -33,15 +33,15 @@ public class JEIModussyPlugin implements IModPlugin {
         RecipeManager manager = Minecraft.getInstance().level.getRecipeManager();
 
         List<CvmInfusionAlterRecipe> cvmInfusionRecipes = manager.getAllRecipesFor(CvmInfusionAlterRecipe.Type.INSTANCE);
-        List<CvmInfusionAlterShapelessRecipe> cvmInfusionShapelessRecipes = manager.getAllRecipesFor(CvmInfusionAlterShapelessRecipe.Type.INSTANCE);
+        // List<CvmInfusionAlterShapelessRecipe> cvmInfusionShapelessRecipes = manager.getAllRecipesFor(CvmInfusionAlterShapelessRecipe.Type.INSTANCE);
 
         registration.addRecipes(CvmInfusionCategory.CVM_INFUSION_TYPE, cvmInfusionRecipes);
-        registration.addRecipes(CvmInfusionShapelessCategory.CVM_INFUSION_TYPE, cvmInfusionShapelessRecipes);
+        // registration.addRecipes(CvmInfusionShapelessCategory.CVM_INFUSION_TYPE, cvmInfusionShapelessRecipes);
     }
 
     @Override
     public void registerGuiHandlers(IGuiHandlerRegistration registration) {
         registration.addRecipeClickArea(CvmInfusionAlterScreen.class, 60, 30, 20, 30,
-                CvmInfusionCategory.CVM_INFUSION_TYPE, CvmInfusionShapelessCategory.CVM_INFUSION_TYPE);
+                CvmInfusionCategory.CVM_INFUSION_TYPE/*, CvmInfusionShapelessCategory.CVM_INFUSION_TYPE*/);
     }
 }

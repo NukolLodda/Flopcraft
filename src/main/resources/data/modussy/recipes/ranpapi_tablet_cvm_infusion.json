@@ -1,0 +1,29 @@
+{
+  "type": "modussy:cvm_infusion",
+  "ingredients": [
+    {
+      "item": "modussy:mystical_flopium"
+    },
+    {
+      "item": "modussy:cvmium"
+    },
+    {
+      "item": "modussy:mystical_flopium"
+    },
+    {
+      "item": "modussy:infused_slaginium"
+    },
+    {
+      "item": "minecraft:copper_ingot"
+    },
+    {
+      "item": "modussy:infused_slaginium"
+    },
+    {
+      "item": "modussy:slaginium_yassifier"
+    }
+  ],
+  "output": {
+    "item": "modussy:ranpapi_tablet"
+  }
+}

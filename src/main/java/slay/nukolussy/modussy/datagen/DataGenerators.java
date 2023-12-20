@@ -19,20 +19,22 @@ public class DataGenerators {
         PackOutput output = generator.getPackOutput();
         ExistingFileHelper fileHelper = event.getExistingFileHelper();
         CompletableFuture<HolderLookup.Provider> lookup = event.getLookupProvider();
+        boolean includeServer = event.includeServer();
 
-        ModBlockTagProvider blockTagGenerator = generator.addProvider(event.includeServer(),
+        ModBlockTagProvider blockTagGenerator = generator.addProvider(includeServer,
                 new ModBlockTagProvider(output, lookup, fileHelper));
 
-        generator.addProvider(event.includeServer(),
+        generator.addProvider(includeServer,
                 new ModItemTagGenerator(output, lookup, blockTagGenerator.contentsGetter(), fileHelper));
 
-        generator.addProvider(event.includeServer(), new ModRecipeProvider(output));
+        generator.addProvider(includeServer, new ModRecipeProvider(output));
 
-        generator.addProvider(event.includeClient(), new ModBlockStateProvider(output, fileHelper));
-        generator.addProvider(event.includeClient(), new ModItemModelProvider(output, fileHelper));
+        generator.addProvider(includeServer, new ModBlockStateProvider(output, fileHelper));
+        generator.addProvider(includeServer, new ModItemModelProvider(output, fileHelper));
 
-        generator.addProvider(event.includeServer(), new ModWorldGenProvider(output, lookup));
+        generator.addProvider(includeServer, new ModWorldGenProvider(output, lookup));
+        generator.addProvider(includeServer, new ModGlobalLootModifiersProvider(output));
 
-        // generator.addProvider(event.includeServer(), ModLootTableProvider.create(output));
+        // generator.addProvider(includeServer, ModLootTableProvider.create(output));
     }
 }

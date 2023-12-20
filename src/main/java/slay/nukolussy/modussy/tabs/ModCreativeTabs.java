@@ -59,6 +59,8 @@ public class ModCreativeTabs {
                         pOutput.accept(ModBlocks.LOVELY_PEACH_FENCE.get());
                         pOutput.accept(ModBlocks.LOVELY_PEACH_FENCE_GATE.get());
                         pOutput.accept(ModBlocks.LOVELY_PEACH_SAPLING.get());
+                        //pOutput.accept(ModBlocks.LOVELY_PEACH_WALL_SIGN.get());
+                        //pOutput.accept(ModBlocks.LOVELY_PEACH_WALL_HANGING_SIGN.get());
                     })).build());
 
     public static RegistryObject<CreativeModeTab> SLAY_TOOLS = CREATIVE_MODE_TABS.register("slay_tools", () ->
@@ -93,6 +95,7 @@ public class ModCreativeTabs {
                         pOutput.accept(ModItems.JIAFEI_LEGGINGS.get());
                         pOutput.accept(ModItems.JIAFEI_CHESTPLATE.get());
                         pOutput.accept(ModItems.JIAFEI_HELMET.get());
+                        pOutput.accept(ModItems.RANPAPI_TABLET.get());
                     })).build());
 
     public static RegistryObject<CreativeModeTab> YASS_DISCS = CREATIVE_MODE_TABS.register("yass_discs", () ->

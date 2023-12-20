@@ -166,10 +166,8 @@ public class EntityMethods {
         entity.removeEffect(MobEffects.NIGHT_VISION);
     }
 
-    public static boolean canEntityBecomeNickiMinaj(LevelAccessor world, double x, double y, double z) {
-        final Vec3 center = new Vec3(x, y, z);
-        return world.getEntitiesOfClass(NickiMinaj.class, new AABB(center, center)
-                .inflate(256 / 2d), e -> true).stream().toList().isEmpty();
+    public static boolean canEntityBecomeNickiMinaj(LevelAccessor world, Vec3 center) {
+        return ModUtil.getEntityListOfDist(world, NickiMinaj.class, center, 128).isEmpty();
     }
 
     static void villagerYassification(AbstractVillager entity, LevelAccessor world, Player player) {
@@ -184,7 +182,7 @@ public class EntityMethods {
             type = ModEntities.JIAFEI.get();
         else if (randval < 90)
             type = ModEntities.RANVISION.get();
-        else if (randval < 120 && canEntityBecomeNickiMinaj(world, entity.getX(), entity.getY(), entity.getZ())) {
+        else if (randval < 120 && canEntityBecomeNickiMinaj(world, entity.position())) {
             type = ModEntities.NICKI_MINAJ.get();
         }
         AbstractModEntity modEntity = entity.convertTo(type, true);
@@ -207,14 +205,13 @@ public class EntityMethods {
     }
 
     static void witchYassification(Witch entity, LevelAccessor world, Player player) {
-        int randval = ModUtil.RANDOM.nextInt(3);
         float xRot = entity.getXRot();
         float yRot = entity.getYRot();
         EntityType<? extends AbstractFlops> type;
-        if (ModUtil.RANDOM.nextInt(3) == 0 && canEntityBecomeNickiMinaj(world, entity.getX(), entity.getY(), entity.getZ()))
+        if (ModUtil.RANDOM.nextInt(3) == 0 && canEntityBecomeNickiMinaj(world, entity.position()))
             type = ModEntities.NICKI_MINAJ.get();
         else
-            type = randval == 1 ? ModEntities.CUPCAKKE.get() : ModEntities.JIAFEI.get();
+            type = ModUtil.RANDOM.nextBoolean() ? ModEntities.CUPCAKKE.get() : ModEntities.JIAFEI.get();
         // witches can only turn into female flops, and not into twinks, this will be implemented at a different time
         AbstractFlops flop = entity.convertTo(type, true);
         if (flop != null) {
@@ -232,13 +229,11 @@ public class EntityMethods {
         }
     }
 
-    public static void alertFlops(Level world, int x, int y, int z, Player player) {
-        final Vec3 center = new Vec3(x, y, z);
-        world.getEntitiesOfClass(AbstractFlops.class, new AABB(center, center)
-                .inflate(5 / 2d), e -> true).stream().toList().forEach(flop -> flop.alertFlops(player));
+    public static void alertFlops(Level world, Vec3 pos, Player player) {
+        ModUtil.getEntityListOfDist(world, AbstractFlops.class, pos, 2.5).forEach(flop -> flop.alertFlops(player));
     }
 
     public static boolean canMariahCareySpawn() {
-        return ModUtil.getMonth().equals(Month.DECEMBER);
+        return ModUtil.monthIs(Month.DECEMBER);
     }
 }

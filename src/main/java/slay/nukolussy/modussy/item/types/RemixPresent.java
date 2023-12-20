@@ -51,9 +51,12 @@ public class RemixPresent extends Item {
             pPlayer.addItem(new ItemStack(randomGiftItem()));
             if (PlayerMethods.isMagicFlop(pPlayer)) {
                 pPlayer.addItem(new ItemStack(ModItems.DISC_RANVISION.get()));
+                if (PlayerMethods.isFlopIcon(pPlayer)) {
+                    pPlayer.addItem(new ItemStack(ModItems.DISC_DEJE_BULLYING.get()));
+                }
             }
-            if (PlayerMethods.isFlopIcon(pPlayer)) {
-                pPlayer.addItem(new ItemStack(ModItems.DISC_DEJE_BULLYING.get()));
+            if (pPlayer.getRandom().nextInt(69) == 0) {
+                pPlayer.addItem(new ItemStack(ModItems.RANPAPI_TABLET.get()));
             }
         } else if (PlayerMethods.isNewgen(pPlayer)) {
             pPlayer.addEffect(new MobEffectInstance(MobEffects.WITHER, 1000, 2));

@@ -32,6 +32,16 @@ public class ModBlockEntities {
                     () -> BlockEntityType.Builder.of(YassificationDetectorEntity::new,
                             ModBlocks.YASSIFICATION_DETECTOR.get()).build(null));
 
+    public static final RegistryObject<BlockEntityType<ModSignBlockEntity>> MOD_SIGN =
+            BLOCK_ENTITIES.register("mod_sign",
+                    () -> BlockEntityType.Builder.of(ModSignBlockEntity::new,
+                            ModBlocks.LOVELY_PEACH_SIGN.get(), ModBlocks.LOVELY_PEACH_WALL_SIGN.get()).build(null));
+
+    public static final RegistryObject<BlockEntityType<ModHangingSignBlockEntity>> MOD_HANGING_SIGN =
+            BLOCK_ENTITIES.register("mod_hanging_sign",
+                    () -> BlockEntityType.Builder.of(ModHangingSignBlockEntity::new,
+                            ModBlocks.LOVELY_PEACH_HANGING_SIGN.get(), ModBlocks.LOVELY_PEACH_WALL_HANGING_SIGN.get()).build(null));
+
     public static void register(IEventBus eventBus) {
         BLOCK_ENTITIES.register(eventBus);
     }

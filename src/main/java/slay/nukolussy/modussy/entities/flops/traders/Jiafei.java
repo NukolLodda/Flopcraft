@@ -208,7 +208,6 @@ public class Jiafei extends AbstractFlopTraders {
                 set.add(i);
             }
         }
-
         for(Integer integer : set) {
             FlopTrades.ItemListing tradelisting = pNewTrades[integer];
             MerchantOffer merchantoffer = tradelisting.getOffer(this, this.random);

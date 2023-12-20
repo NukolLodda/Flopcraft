@@ -19,7 +19,6 @@ import slay.nukolussy.modussy.item.ModItems;
 import slay.nukolussy.modussy.sound.ModSounds;
 
 public class KevinLeonardo extends AbstractTwink implements IFlopEntity {
-    // lang localization will be "Kevin 'Nair Guy/Chico del Nelo' Leonardo"
     public KevinLeonardo(EntityType type, Level world) {
         super(type, world);
     }
@@ -46,7 +45,7 @@ public class KevinLeonardo extends AbstractTwink implements IFlopEntity {
     @Nullable
     @Override
     protected SoundEvent getHurtSound(DamageSource pDamageSource) {
-        return this.random.nextBoolean() ? ModSounds.KEVIN_LEONARDO_HURT1.get() : ModSounds.KEVIN_LEONARDO_2.get();
+        return this.random.nextBoolean() ? ModSounds.KEVIN_LEONARDO_HURT1.get() : ModSounds.KEVIN_LEONARDO_HURT2.get();
     }
 
     @Override
@@ -80,7 +79,6 @@ public class KevinLeonardo extends AbstractTwink implements IFlopEntity {
 
     @Override
     public void aiStep() {
-        // will randomely spew out hairussy
         if (this.random.nextInt(690) == 0) {
             this.spawnAtLocation(ModItems.HAIRUSSY.get());
         }

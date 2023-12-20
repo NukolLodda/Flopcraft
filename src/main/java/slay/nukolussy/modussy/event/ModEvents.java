@@ -3,6 +3,7 @@ package slay.nukolussy.modussy.event;
 import net.minecraft.ChatFormatting;
 import net.minecraft.network.chat.Component;
 import net.minecraft.resources.ResourceLocation;
+import net.minecraft.server.level.ServerBossEvent;
 import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.entity.Entity;
@@ -79,15 +80,9 @@ public class ModEvents {
     @SubscribeEvent
     public static void onPlayerTick(TickEvent.PlayerTickEvent event) {
         if (event.side == LogicalSide.SERVER) {
-            double x = event.player.getX();
-            double y = event.player.getY();
-            double z = event.player.getZ();
             Player player = event.player;
             player.getCapability(PlayerYassificationProvider.PLAYER_YASSIFICATION).ifPresent(yassification -> {
-                final Vec3 center = new Vec3(x, y, z);
-                List<AbstractFlops> flops = player.level().getEntitiesOfClass(AbstractFlops.class, new AABB(center, center)
-                        .inflate(32 / 2d), e -> true).stream().toList();
-                for (AbstractFlops flop : flops) {
+                ModUtil.getEntityListOfDist(player.level(), AbstractFlops.class, player.position(), 16).forEach(flop -> {
                     if (yassification.isDaboyz()) {
                         flop.alertFlops(player);
                     }
@@ -102,9 +97,8 @@ public class ModEvents {
                                 player.getLastDamageSource().getEntity() != null) {
                             flop.alertFlops(player.getLastDamageSource().getEntity());
                         }
-                        // ensures flops will always be nice to you
                     }
-                }
+                });
             });
 
             player.getCapability(PlayerMenstruationProvider.PLAYER_MENSTRUATION).ifPresent(phase -> {

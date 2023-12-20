@@ -12,6 +12,7 @@ import net.minecraft.sounds.SoundSource;
 import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.entity.*;
+import net.minecraft.world.entity.animal.Cat;
 import net.minecraft.world.entity.item.ItemEntity;
 import net.minecraft.world.entity.monster.*;
 import net.minecraft.world.entity.npc.AbstractVillager;
@@ -76,46 +77,8 @@ public class ToolMethods {
         if (EntityMethods.isFlop(source)) {
             ((LivingEntity) source).heal(3.0f);
         }
-
-        if (target instanceof LivingEntity living) {
-            if (lvl == 1) living.addEffect(new MobEffectInstance(MobEffects.POISON, 1380 * lvl, 0));
-            if (EntityMethods.isMonster(living) && lvl > 1) {
-                int added = 0;
-                if (target instanceof Spider spider) {
-                    spider.setItemSlot(EquipmentSlot.MAINHAND, new ItemStack(ModItems.ARANA_GRANDE.get()));
-                    spider.setGuaranteedDrop(EquipmentSlot.MAINHAND);
-                    added++;
-                }
-                living.addEffect(new MobEffectInstance(MobEffects.WITHER, 1380 * lvl, amp));
-                living.addEffect(new MobEffectInstance(MobEffects.GLOWING, 1380 * lvl, amp));
-                if (lvl > 2) ((Mob) target).addEffect(new MobEffectInstance(MobEffects.LEVITATION, 600, 0));
-                living.addEffect(new MobEffectInstance(MobEffects.MOVEMENT_SLOWDOWN, 8400 * lvl, amp));
-                living.addEffect(new MobEffectInstance(MobEffects.WEAKNESS, 8400 * lvl, amp));
-                if (source instanceof Player player) {
-                    PlayerMethods.addPlayerYassification(player, lvl + added);
-                }
-                itemDura += 120;
-            }
-
-            if (living instanceof IFlopEntity && source instanceof Player player &&
-                    !(PlayerMethods.isNeutralBossFight(player, living))) {
-                int subNum = living instanceof AbstractFlopFigures ? -7 : -1;
-                PlayerMethods.addPlayerYassification(player, subNum * lvl);
-            }
-            if (living instanceof Player player && PlayerMethods.isFlop(player)) {
-                int subNum = PlayerMethods.isFlopIcon(player) ? -7 : PlayerMethods.isMagicFlop(player) ? -3 : 1;
-                PlayerMethods.addPlayerYassification(player, subNum * lvl);
-            }
-
-            if (living instanceof Slime slime) {
-                ItemStack cvmItem = new ItemStack(ModItems.CVM.get());
-                if (slime instanceof MagmaCube) {
-                    cvmItem = new ItemStack(ModItems.CVMIUM.get());
-                }
-                slime.setItemSlot(EquipmentSlot.MAINHAND, cvmItem);
-                slime.setGuaranteedDrop(EquipmentSlot.MAINHAND);
-                slime.kill();
-            }
+        if (source instanceof LivingEntity livingSource && target instanceof LivingEntity livingTarget) {
+            yassifyEntity(source.level(), livingTarget, livingSource, lvl, amp);
         }
         item.setDamageValue(item.getDamageValue() + itemDura);
     }
@@ -144,35 +107,37 @@ public class ToolMethods {
             PlayerMethods.addPlayerYassification(player, 71);
         }
     }
+
+    public static void yassifyIfPlayer(LivingEntity ent, LevelAccessor world, LivingEntity other) {
+        if (other instanceof Player player) {
+            yassification(ent, world, player);
+        }
+    }
+
     public static void makeGirlYessBook(BlockPos pPos, Level pLevel) {
         // don't move this method, will be used for the haunted house code.
         int x = pPos.getX();
         int y = pPos.getY();
         int z = pPos.getZ();
         Player player = null;
-        {
-            final Vec3 center = new Vec3(x, y, z);
-            List<Entity> entities = pLevel.getEntitiesOfClass(Entity.class, new AABB(center, center).inflate(8 / 2d), e -> true).stream()
-                    .sorted(Comparator.comparingDouble(entity -> entity.distanceToSqr(center))).toList();
-            for (Entity ent : entities) {
-                if (ent instanceof Player otherPlayer) {
-                    player = otherPlayer;
-                    break;
-                }
-            }
-            for (Entity entity : entities) {
-                if (entity instanceof LivingEntity living) {
-                    ToolMethods.yassification(living, pLevel, player);
-                    if (EntityMethods.isMonster(living)) {
-                        EntityMethods.monsterEffects(living);
-                    }
-                    if (EntityMethods.isFlop(living)) {
-                        EntityMethods.flopEffects(living);
-                    }
-                }
+
+        final Vec3 center = new Vec3(x, y, z);
+        List<LivingEntity> entities = ModUtil.getEntityListOfDist(pLevel, LivingEntity.class, pPos.getCenter(), 4);
+        for (LivingEntity ent : entities) {
+            if (ent instanceof Player otherPlayer) {
+                player = otherPlayer;
+                break;
             }
         }
-
+        for (LivingEntity entity : entities) {
+            ToolMethods.yassification(entity, pLevel, player);
+            if (EntityMethods.isMonster(entity)) {
+                EntityMethods.monsterEffects(entity);
+            }
+            if (EntityMethods.isFlop(entity)) {
+                EntityMethods.flopEffects(entity);
+            }
+        }
         pLevel.destroyBlock(pPos, false);
         pLevel.playSound(player, pPos, ModSounds.SQUIRT.get(), SoundSource.BLOCKS);
         pLevel.playSound(player, pPos, SoundEvents.GENERIC_EXPLODE, SoundSource.BLOCKS);
@@ -188,5 +153,32 @@ public class ToolMethods {
         book.setTag(tag);
         pLevel.explode(null, pPos.getX(), pPos.getY(), pPos.getZ(), 2, Level.ExplosionInteraction.BLOCK);
         pLevel.addFreshEntity(new ItemEntity(pLevel, x, y, z, book));
+    }
+
+    public static void yassifySurronding(Level pLevel, LivingEntity pSource, double pSize, int lvl, int amp) {
+        ModUtil.getEntityListOfDist(pLevel, LivingEntity.class, pSource.position(), pSize)
+                .forEach(ent -> yassifyEntity(pLevel, ent, pSource, lvl, amp));
+    }
+
+    public static void yassifyEntity(Level pLevel, LivingEntity pTarget, LivingEntity pSource, int lvl, int amp) {
+        if (pTarget instanceof Spider spider) {
+            spider.setItemSlot(EquipmentSlot.MAINHAND, new ItemStack(ModItems.ARANA_GRANDE.get()));
+            spider.setGuaranteedDrop(EquipmentSlot.MAINHAND);
+            PlayerMethods.addPlayerYassificationIfPossible(pSource, amp);
+            spider.kill();
+        }
+        if (pTarget instanceof Slime slime) {
+            ItemStack cvmItem = new ItemStack(slime instanceof MagmaCube ? ModItems.CVMIUM.get() : ModItems.CVM.get());
+            slime.setItemSlot(EquipmentSlot.MAINHAND, cvmItem);
+            slime.setGuaranteedDrop(EquipmentSlot.MAINHAND);
+            PlayerMethods.addPlayerYassificationIfPossible(pSource, amp);
+            slime.kill();
+        }
+        yassifyIfPlayer(pTarget, pLevel, pSource);
+        if (pTarget instanceof Cat cat && cat.getRandom().nextInt(25) < 4) {
+            cat.spawnAtLocation(ModItems.POSEI.get());
+            PlayerMethods.addPlayerYassificationIfPossible(pSource, amp);
+        }
+        EntityMethods.addEffects(pTarget, lvl, amp);
     }
 }
