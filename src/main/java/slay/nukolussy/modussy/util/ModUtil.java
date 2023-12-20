@@ -97,18 +97,8 @@ public class ModUtil {
                 .inflate(pSize), e -> true).stream().toList();
     }
 
-    @Deprecated
-    public static Month getMonth() {
-        return DATE.getMonth();
-    }
-
     public static boolean monthIs(Month pMonth) {
         return DATE.getMonth().equals(pMonth);
-    }
-
-    @Deprecated
-    public static int getDayOfMonth() {
-        return DATE.getDayOfMonth();
     }
 
     public static boolean dayIs(int pDay) {
