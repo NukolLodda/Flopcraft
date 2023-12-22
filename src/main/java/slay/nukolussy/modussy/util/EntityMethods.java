@@ -60,14 +60,12 @@ public class EntityMethods {
             entity.addEffect(new MobEffectInstance(MobEffects.GLOWING, 1380 * lvl, amp));
             if (lvl > 2) entity.addEffect(new MobEffectInstance(MobEffects.LEVITATION, 600, 0));
         }
-
         removeFlopEffects(entity, lvl);
     }
 
     public static void monsterEffects(LivingEntity entity) {
         entity.addEffect(new MobEffectInstance(MobEffects.WITHER, 6900, 1));
         entity.addEffect(new MobEffectInstance(MobEffects.BLINDNESS, 1710, 0));
-
         removeFlopEffects(entity);
     }
 
@@ -82,9 +80,6 @@ public class EntityMethods {
         if (lvl > 1) {
             entity.addEffect(new MobEffectInstance(MobEffects.ABSORPTION, 600 * lvl, amp));
             entity.addEffect(new MobEffectInstance(MobEffects.SLOW_FALLING, 600 * lvl, 0));
-            if (lvl > 2) {
-                entity.addEffect(new MobEffectInstance(MobEffects.HEALTH_BOOST, 600 * lvl, amp));
-            }
         }
 
         removeMonsterEffects(entity, lvl);
@@ -166,8 +161,12 @@ public class EntityMethods {
         entity.removeEffect(MobEffects.NIGHT_VISION);
     }
 
-    public static boolean canEntityBecomeNickiMinaj(LevelAccessor world, Vec3 center) {
-        return ModUtil.getEntityListOfDist(world, NickiMinaj.class, center, 128).isEmpty();
+    public static boolean canCertainEntitySpawn(Class<? extends Entity> pEntClass, LevelAccessor pLevel, Vec3 pCenter) {
+        return canCertainEntitySpawn(pEntClass, pLevel, 128, pCenter);
+    }
+
+    public static boolean canCertainEntitySpawn(Class<? extends Entity> pEntClass, LevelAccessor pLevel, int pForbidden, Vec3 pCenter) {
+        return ModUtil.getEntityListOfDist(pLevel, pEntClass, pCenter, pForbidden).isEmpty();
     }
 
     static void villagerYassification(AbstractVillager entity, LevelAccessor world, Player player) {
@@ -182,7 +181,7 @@ public class EntityMethods {
             type = ModEntities.JIAFEI.get();
         else if (randval < 90)
             type = ModEntities.RANVISION.get();
-        else if (randval < 120 && canEntityBecomeNickiMinaj(world, entity.position())) {
+        else if (randval < 120 && canCertainEntitySpawn(NickiMinaj.class ,world, entity.position())) {
             type = ModEntities.NICKI_MINAJ.get();
         }
         AbstractModEntity modEntity = entity.convertTo(type, true);
@@ -208,7 +207,7 @@ public class EntityMethods {
         float xRot = entity.getXRot();
         float yRot = entity.getYRot();
         EntityType<? extends AbstractFlops> type;
-        if (ModUtil.RANDOM.nextInt(3) == 0 && canEntityBecomeNickiMinaj(world, entity.position()))
+        if (ModUtil.RANDOM.nextInt(3) == 0 && canCertainEntitySpawn(NickiMinaj.class, world, entity.position()))
             type = ModEntities.NICKI_MINAJ.get();
         else
             type = ModUtil.RANDOM.nextBoolean() ? ModEntities.CUPCAKKE.get() : ModEntities.JIAFEI.get();
@@ -233,7 +232,7 @@ public class EntityMethods {
         ModUtil.getEntityListOfDist(world, AbstractFlops.class, pos, 2.5).forEach(flop -> flop.alertFlops(player));
     }
 
-    public static boolean canMariahCareySpawn() {
-        return ModUtil.monthIs(Month.DECEMBER);
+    public static void twinkification() {
+        // todo
     }
 }

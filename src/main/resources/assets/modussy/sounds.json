@@ -350,6 +350,15 @@
       }
     ]
   },
+  "music_disc_c28": {
+    "subtitle": "subtitles.music",
+    "sounds": [
+      {
+        "name": "modussy:music_disc_c28",
+        "stream": true
+      }
+    ]
+  },
   "music_disc_cj1": {
     "subtitle": "subtitles.music",
     "sounds": [
@@ -463,6 +472,15 @@
     "sounds": [
       {
         "name": "modussy:music_disc_j5",
+        "stream": true
+      }
+    ]
+  },
+  "music_disc_j6": {
+    "subtitle": "subtitles.music",
+    "sounds": [
+      {
+        "name": "modussy:music_disc_j6",
         "stream": true
       }
     ]

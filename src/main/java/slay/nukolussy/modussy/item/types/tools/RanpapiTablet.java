@@ -46,12 +46,14 @@ public class RanpapiTablet extends Item {
             case 11 -> "c18";
             case 12 -> "c23";
             case 13 -> "c24";
-            case 14 -> "cj1";
-            case 15 -> "cpm1";
-            case 16 -> "j2";
-            case 17 -> "j3";
-            case 18 -> "j5";
-            case 19 -> "pm1";
+            case 14 -> "c28";
+            case 15 -> "cj1";
+            case 16 -> "cpm1";
+            case 17 -> "j2";
+            case 18 -> "j3";
+            case 19 -> "j5";
+            case 20 -> "j6";
+            case 21 -> "pm1";
             default -> "ranvision";
         };
         ChatFormatting format = ChatFormatting.GOLD;
@@ -88,12 +90,14 @@ public class RanpapiTablet extends Item {
             case 11 -> ModItems.DISC_C18.get();
             case 12 -> ModItems.DISC_C23.get();
             case 13 -> ModItems.DISC_C24.get();
-            case 14 -> ModItems.DISC_CJ1.get();
-            case 15 -> ModItems.DISC_CPM1.get();
-            case 16 -> ModItems.DISC_J2.get();
-            case 17 -> ModItems.DISC_J3.get();
-            case 18 -> ModItems.DISC_J5.get();
-            case 19 -> ModItems.DISC_PM1.get();
+            case 14 -> ModItems.DISC_C28.get();
+            case 15 -> ModItems.DISC_CJ1.get();
+            case 16 -> ModItems.DISC_CPM1.get();
+            case 17 -> ModItems.DISC_J2.get();
+            case 18 -> ModItems.DISC_J3.get();
+            case 19 -> ModItems.DISC_J5.get();
+            case 20 -> ModItems.DISC_J6.get();
+            case 21 -> ModItems.DISC_PM1.get();
             default -> ModItems.DISC_RANVISION.get();
         };
         // temp solution, needs to make this a broadcasted event
@@ -102,7 +106,7 @@ public class RanpapiTablet extends Item {
         pPlayer.displayClientMessage(Component.translatable("subtitle.currently_playing").append(": ")
                 .append(discItem.getDisplayName()).withStyle(ChatFormatting.GOLD), true);
         pPlayer.getCooldowns().addCooldown(item.getItem(), discItem.getLengthInTicks());
-        tag.putInt("disc", pPlayer.getRandom().nextInt(20));
+        tag.putInt("disc", pPlayer.getRandom().nextInt(22));
         ToolMethods.yassifySurronding(pLevel, pPlayer, 15, 1, 1);
         pLevel.addParticle(ParticleTypes.DRIPPING_LAVA, pPlayer.getX(), pPlayer.getY(), pPlayer.getZ(), 1d, 1d, 1d);
         return super.use(pLevel, pPlayer, pUsedHand);

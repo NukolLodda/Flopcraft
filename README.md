@@ -35,6 +35,20 @@ Forge API version: <a href="https://adfoc.us/serve/sitelinks/?id=271228&url=http
 Minecraft Java version: 1.20.1 <br>
 Modussy Version: 0.1.4 <br>
 
+Changelog:
++ Rosetoy
++ Cl!tmas Buttplug
++ Lancvm cream functionality
++ Kylie Jenner lipstick functionality
++ Ender dragon deeldos
++ Yassified, yuh, and cvmmed effects
++ Lovely Peaches tree, planks, and saplings
++ Ranvision
++ Cvm pie
++ Mariah Cvmrey
++ New music disc
++ Ranpapi Tablet
+
 ---
 **Requests**
 
@@ -70,7 +84,7 @@ ___
 
 After reading Curseforge's terms of service, I believe that some features of Modussy, namely
 CupcakKe's texture, specific items, and mobs violates it, so the download links are in this
-repository instead. Click <a href="http://adfoc.us/83601097779891">here</a>
+repository instead. Click <a href="http://adfoc.us/83601097790792">here</a>
 for the most recent version uploaded (Modussy-0.1.4 for Minecraft 1.20.1
 <a href="https://adfoc.us/serve/sitelinks/?id=271228&url=https://maven.minecraftforge.net/net/minecraftforge/forge/1.20.1-47.2.0/forge-1.20.1-47.2.0-installer.jar">Forge API 47.2.0</a>)
 

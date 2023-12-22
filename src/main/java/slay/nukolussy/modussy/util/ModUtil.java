@@ -1,10 +1,13 @@
 package slay.nukolussy.modussy.util;
 
 import net.minecraft.ChatFormatting;
+import net.minecraft.core.BlockPos;
 import net.minecraft.network.chat.Component;
 import net.minecraft.network.chat.MutableComponent;
 import net.minecraft.world.entity.Entity;
+import net.minecraft.world.level.Level;
 import net.minecraft.world.level.LevelAccessor;
+import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.phys.AABB;
 import net.minecraft.world.phys.Vec3;
 import org.jetbrains.annotations.NotNull;
@@ -13,6 +16,7 @@ import java.time.LocalDate;
 import java.time.Month;
 import java.util.List;
 import java.util.Random;
+import java.util.function.Consumer;
 
 public class ModUtil {
     protected static final Random RANDOM = new Random();
@@ -96,13 +100,26 @@ public class ModUtil {
         return pLevel.getEntitiesOfClass(pEntClass, new AABB(pLoc, pBound)
                 .inflate(pSize), e -> true).stream().toList();
     }
+    public static <T extends Entity> void forEachEntityOfDist(LevelAccessor pLevel, Class<T> pEntClass, Vec3 pLoc, double pSize, Consumer<T> pSup) {
+        forEachEntityOfDist(pLevel, pEntClass, pLoc, pLoc, pSize, pSup);
+    }
+
+    public static <T extends Entity> void forEachEntityOfDist(LevelAccessor pLevel, Class<T> pEntClass, Vec3 pLoc, Vec3 pBound, double pSize, Consumer<T> pSup) {
+        pLevel.getEntitiesOfClass(pEntClass, new AABB(pLoc, pBound)
+                .inflate(pSize), e -> true).stream().toList().forEach(pSup);
+    }
+
+    public static boolean blocksAboveAreAir(Level pLevel, int x, int y, int z, int maxY) {
+        for (int i = y + 1; i <= maxY + y; i++) {
+            if (!pLevel.getBlockState(new BlockPos(x, i, z)).is(Blocks.AIR)) {
+                return false;
+            }
+        }
+        return true;
+    }
 
     public static boolean monthIs(Month pMonth) {
         return DATE.getMonth().equals(pMonth);
-    }
-
-    public static boolean dayIs(int pDay) {
-        return DATE.getDayOfMonth() == pDay;
     }
 
     public static boolean dateIs(Month pMonth, int pDay) {
@@ -117,11 +134,11 @@ public class ModUtil {
         return dateIs(Month.OCTOBER, 31);
     }
 
-    public static boolean isClitmas() {
+    public static boolean isClitmas() { // yes, eve is counted
         return dateInRange(Month.DECEMBER, 24, 26);
     }
 
-    public static boolean isNewYears() {
-        return DATE.getDayOfYear() == 1;
+    public static boolean isNewYears() { // yes, eve is counted
+        return DATE.getDayOfYear() == 1 || dateIs(Month.DECEMBER, 31);
     }
 }

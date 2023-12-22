@@ -111,10 +111,8 @@ public class Ranvision extends AbstractFlopTraders {
     }
 
     @Override
-    protected void newYearsGifting(Player pPlayer) {
-        if (ModUtil.isNewYears() && !PlayerMethods.isNewgen(pPlayer)) {
-            this.spawnAtLocation(ModItems.HUNBAO.get());
-        }
+    protected boolean newYearsGifting(Player pPlayer) {
+        return true;
     }
 
     @Override

@@ -96,7 +96,8 @@ public class ModBlocks {
                 }
     });
 
-    public static final RegistryObject<Block> LOVELY_PEACH_PLANKS = registerBlock("lovely_peach_planks", ModPlanks::new);
+    public static final RegistryObject<Block> LOVELY_PEACH_PLANKS = registerBlock("lovely_peach_planks", () ->
+            new Block(BlockBehaviour.Properties.copy(Blocks.CRIMSON_PLANKS)));
 
     public static final RegistryObject<Block> LOVELY_PEACH_STAIRS = registerBlock("lovely_peach_stairs", () ->
             new StairBlock(() -> ModBlocks.LOVELY_PEACH_PLANKS.get().defaultBlockState(),

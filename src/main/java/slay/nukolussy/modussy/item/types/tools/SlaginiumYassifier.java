@@ -8,6 +8,7 @@ import net.minecraft.core.BlockPos;
 import net.minecraft.core.particles.ParticleTypes;
 import net.minecraft.network.chat.Component;
 import net.minecraft.server.level.ServerLevel;
+import net.minecraft.sounds.SoundEvent;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResultHolder;
 import net.minecraft.world.entity.EquipmentSlot;
@@ -29,11 +30,13 @@ import net.minecraft.world.phys.AABB;
 import net.minecraft.world.phys.Vec3;
 import org.jetbrains.annotations.NotNull;
 import slay.nukolussy.modussy.item.ModItems;
+import slay.nukolussy.modussy.sound.ModSounds;
 import slay.nukolussy.modussy.util.EntityMethods;
 import slay.nukolussy.modussy.util.ModUtil;
 import slay.nukolussy.modussy.util.PlayerMethods;
 import slay.nukolussy.modussy.util.ToolMethods;
 
+import java.util.Random;
 import java.util.concurrent.atomic.AtomicInteger;
 
 public class SlaginiumYassifier extends TieredItem {
@@ -73,7 +76,7 @@ public class SlaginiumYassifier extends TieredItem {
         ItemStack itemStack = entity.getMainHandItem();
         AtomicInteger itemDura = new AtomicInteger(104);
         int amp = (lvl + 1) / 2;
-        entity.playSound(ToolMethods.aestheticSounds(lvl + 5));
+        entity.playSound(aestheticSounds(lvl + 5));
         if (!entity.level().isClientSide()) {
             entity.displayClientMessage(Component.translatable("subtitle.aesthetic_warning").withStyle(ChatFormatting.LIGHT_PURPLE), true);
             if (lvl > 2) {
@@ -93,7 +96,7 @@ public class SlaginiumYassifier extends TieredItem {
         if (world instanceof ServerLevel server) {
             server.sendParticles(ParticleTypes.SMOKE, x, y, z, 60 / lvl,5,5, 5, 1.0);
             if (lvl > 2) {
-                server.setDayTime(ToolMethods.getGameDayTick(server) + 6000);
+                server.setDayTime(getGameDayTick(server) + 6000);
                 if (lvl > 3) {
                     server.setWeatherParameters(69000,69,false,false);
                 }
@@ -142,5 +145,34 @@ public class SlaginiumYassifier extends TieredItem {
     @Override
     public boolean isRepairable(@NotNull ItemStack itemstack) {
         return false;
+    }
+    private static SoundEvent aestheticSounds(int up) {
+        if (up > 8) up = 8;
+        return switch (new Random().nextInt( 1, up-1)) {
+            case 1 -> ModSounds.AESTHETIC_1.get();
+            case 2 -> ModSounds.AESTHETIC_2.get();
+            case 3 -> ModSounds.AESTHETIC_3.get();
+            case 4 -> ModSounds.AESTHETIC_4.get();
+            case 5 -> ModSounds.AESTHETIC_5.get();
+            case 6 -> ModSounds.AESTHETIC_SHENSEEA.get();
+            default -> ModSounds.AESTHETIC_JIAFEI.get();
+        };
+    }
+
+    private static ItemStack randItem(int up) {
+        if (up > 3) up = 3;
+        return switch (new Random().nextInt(up)) {
+            case 1 -> new ItemStack(ModItems.SHENSEIUM.get());
+            case 2 -> new ItemStack(ModItems.JIAFEI_PRODUCT.get());
+            default -> new ItemStack(ModItems.CUPCAKE.get());
+        };
+    }
+
+    private static long getGameDayTick(ServerLevel level) {
+        long time = level.getGameTime() / 24000L;
+        if (level.getDayTime() > 6000) {
+            time++;
+        }
+        return time * 24000L;
     }
 }

@@ -3,12 +3,13 @@ package slay.nukolussy.modussy.entities.flops.figures;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.core.particles.ParticleTypes;
-import net.minecraft.server.level.ServerLevel;
 import net.minecraft.sounds.SoundEvent;
 import net.minecraft.util.Mth;
 import net.minecraft.util.RandomSource;
 import net.minecraft.world.damagesource.DamageSource;
+import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.entity.*;
+import net.minecraft.world.entity.item.ItemEntity;
 import net.minecraft.world.entity.monster.RangedAttackMob;
 import net.minecraft.world.entity.player.Inventory;
 import net.minecraft.world.entity.player.Player;
@@ -18,13 +19,11 @@ import net.minecraft.world.level.ServerLevelAccessor;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.gameevent.GameEvent;
-import net.minecraft.world.phys.AABB;
 import net.minecraft.world.phys.Vec3;
 import net.minecraftforge.network.PlayMessages;
 import org.jetbrains.annotations.Nullable;
 import slay.nukolussy.modussy.block.ModBlocks;
 import slay.nukolussy.modussy.block.entity.blocks.MariahCareyIceBlock;
-import slay.nukolussy.modussy.datagen.tags.ModTags;
 import slay.nukolussy.modussy.entities.flops.AbstractFlopFigures;
 import slay.nukolussy.modussy.item.ModItems;
 import slay.nukolussy.modussy.util.EntityMethods;
@@ -32,7 +31,6 @@ import slay.nukolussy.modussy.util.ModUtil;
 import slay.nukolussy.modussy.util.ToolMethods;
 
 import java.time.Month;
-import java.util.List;
 
 public class MariahCarey extends AbstractFlopFigures implements RangedAttackMob {
     public MariahCarey(EntityType<MariahCarey> type, Level world) {
@@ -87,8 +85,8 @@ public class MariahCarey extends AbstractFlopFigures implements RangedAttackMob 
         if (ModUtil.isClitmas() && this.random.nextInt(1020) == 0) {
             this.spawnAtLocation(ModItems.CLITMAS_PRESENT.get());
         }
-        if (ModUtil.isNewYears() && this.random.nextInt(1690) == 0) {
-            this.spawnAtLocation(ModItems.HUNBAO.get());
+        if (this.hasEffect(MobEffects.SLOW_FALLING) && this.level().getBlockState(this.blockPosition().below()).is(Blocks.AIR)) {
+            sendParticles(this.getX(), this.getY() - 1, this.getZ(), 10, 0.16);
         }
         super.aiStep();
     }
@@ -114,19 +112,26 @@ public class MariahCarey extends AbstractFlopFigures implements RangedAttackMob 
                             .setValue(MariahCareyIceBlock.FACING, facing).setValue(MariahCareyIceBlock.IS_TOP, true), 3);
             this.remove(RemovalReason.DISCARDED);
         }
-        {
-            final Vec3 center = new Vec3(this.getX(), this.getY(), this.getZ());
-            List<Player> players = this.level().getEntitiesOfClass(Player.class, new AABB(center, center).inflate(64)).stream().toList();
-            final ItemStack slaginium = new ItemStack(ModItems.SLAGINIUM.get());
-            for (Player player : players) {
+        final ItemStack slaginium = new ItemStack(ModItems.SLAGINIUM.get());
+        ModUtil.getEntityListOfDist(this.level(), Entity.class, this.position(), 16).forEach(entity -> {
+            if (entity instanceof Player player) {
                 Inventory inv = player.getInventory();
                 if (inv.contains(slaginium)) {
                     int slot = inv.findSlotMatchingItem(slaginium);
                     player.getInventory().removeItem(slot, inv.getItem(slot).getCount());
+                    sendParticles(player.getX(), player.getY(), player.getZ(), 15, 0.16);
                 }
             }
-        }
+            if (entity instanceof ItemEntity item && item.getItem().is(ModItems.SLAGINIUM.get())) {
+                sendParticles(item.getX(), item.getY(), item.getZ(), 15, 0.16);
+                item.remove(RemovalReason.DISCARDED);
+            }
+        });
         super.tick();
+    }
+
+    private void sendParticles(double x, double y, double z, int count, double speed) {
+        ToolMethods.emitParticles(this.level(), x, y, z, count, speed, ParticleTypes.COMPOSTER, ParticleTypes.CRIMSON_SPORE);
     }
 
     @Override
@@ -141,12 +146,7 @@ public class MariahCarey extends AbstractFlopFigures implements RangedAttackMob 
             final Vec3 center = new Vec3(inX, inY, inZ);
             ModUtil.getEntityListOfDist(this.level(), LivingEntity.class, center, 2 * pVelocity / 2d)
                     .forEach(ent -> EntityMethods.addEffects(ent, (int)pVelocity * 20, (int)pVelocity));
-            if (this.level() instanceof ServerLevel level) {
-                level.sendParticles(ParticleTypes.COMPOSTER,
-                        inX, inY, inZ, ((int) pVelocity * 15),1,1, 1, (pVelocity * 0.16));
-                level.sendParticles(ParticleTypes.CRIMSON_SPORE,
-                        inX, inY, inZ, ((int) pVelocity * 15),1,1, 1, (pVelocity * 0.16));
-            }
+            sendParticles(inX, inY, inZ, (int)(pVelocity * 15),  pVelocity * 0.16);
         }
     }
 }

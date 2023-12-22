@@ -53,12 +53,14 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
         cupcakkeDiscRecipe(pWriter, Items.SNOWBALL, ModItems.DISC_C25.get());
         cupcakkeDiscRecipe(pWriter, ModItems.SLAGINIUM.get(), ModItems.DISC_C26.get());
         cupcakkeDiscRecipe(pWriter, ModBlocks.MARIAH_CAREY_ICE_BLOCK.get(), ModItems.DISC_C27.get());
+        cupcakkeDiscRecipe(pWriter, Items.SPRUCE_LEAVES, ModItems.DISC_C28.get());
         ponmiDiscRecipe(pWriter, Items.OAK_LOG, ModItems.DISC_PM1.get());
         jiafeiDiscRecipe(pWriter, ModItems.HAIRUSSY.get() ,ModItems.DISC_J1.get());
         jiafeiDiscRecipe(pWriter, Items.MINECART,ModItems.DISC_J2.get());
         jiafeiDiscRecipe(pWriter, ModItems.TWINK_EGG_SHELLS.get(),ModItems.DISC_J3.get());
         jiafeiDiscRecipe(pWriter, ModItems.DISC_JIAFEI.get(),ModItems.DISC_J4.get());
         jiafeiDiscRecipe(pWriter, Items.ENDER_PEARL,ModItems.DISC_J5.get());
+        jiafeiDiscRecipe(pWriter, Items.TINTED_GLASS,ModItems.DISC_J6.get());
         dejeBullyingDiscRecipe(pWriter, Items.MUSIC_DISC_CAT,ModItems.DISC_DB1.get());
 
         musicDiscRecipe(pWriter, Ingredient.of(ModItems.JIAFEI_PRODUCT.get()), Ingredient.of(ModItems.CUPCAKE.get()),

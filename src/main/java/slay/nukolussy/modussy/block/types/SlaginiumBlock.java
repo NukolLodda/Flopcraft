@@ -40,7 +40,7 @@ public class SlaginiumBlock extends MaterialBlocks {
         double y = pPos.getY();
         double z = pPos.getZ();
         if (pEntity instanceof ItemEntity item && item.getItem().is(ModItems.SCARUSSY.get())
-           && EntityMethods.canEntityBecomeNickiMinaj(pLevel, pPos.getCenter())) {
+           && EntityMethods.canCertainEntitySpawn(NickiMinaj.class, pLevel, pPos.getCenter())) {
             Player player = null;
             List<LivingEntity> entities = ModUtil.getEntityListOfDist(pLevel, LivingEntity.class, pPos.getCenter(), 4);
             for (LivingEntity iterator : entities) {

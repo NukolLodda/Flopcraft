@@ -89,6 +89,7 @@ public class ModItemModelProvider extends ItemModelProvider {
         simpleItem(ModItems.DISC_C25);
         simpleItem(ModItems.DISC_C26);
         simpleItem(ModItems.DISC_C27);
+        simpleItem(ModItems.DISC_C28);
         simpleItem(ModItems.DISC_CJ1);
         simpleItem(ModItems.DISC_CPM1);
         simpleItem(ModItems.DISC_CUPCAKKE1);
@@ -102,6 +103,7 @@ public class ModItemModelProvider extends ItemModelProvider {
         simpleItem(ModItems.DISC_J3);
         simpleItem(ModItems.DISC_J4);
         simpleItem(ModItems.DISC_J5);
+        simpleItem(ModItems.DISC_J6);
         simpleItem(ModItems.DISC_JC1);
         simpleItem(ModItems.DISC_JC2);
         simpleItem(ModItems.DISC_JC3);

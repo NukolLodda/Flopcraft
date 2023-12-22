@@ -1,0 +1,35 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_spruce_leaves": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "minecraft:spruce_leaves"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "modussy:music_disc_c28_from_crafting"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_spruce_leaves",
+      "has_the_recipe"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "modussy:music_disc_c28_from_crafting"
+    ]
+  },
+  "sends_telemetry_event": false
+}

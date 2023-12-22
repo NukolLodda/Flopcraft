@@ -111,6 +111,8 @@ public class ModSounds {
             () -> SoundEvent.createVariableRangeEvent(new ResourceLocation(Modussy.MODID,"music_disc_c26")));
     public static final RegistryObject<SoundEvent> DISC_C27 = SOUNDS.register("music_disc_c27",
             () -> SoundEvent.createVariableRangeEvent(new ResourceLocation(Modussy.MODID,"music_disc_c27")));
+    public static final RegistryObject<SoundEvent> DISC_C28 = SOUNDS.register("music_disc_c28",
+            () -> SoundEvent.createVariableRangeEvent(new ResourceLocation(Modussy.MODID,"music_disc_c28")));
 
     public static final RegistryObject<SoundEvent> DISC_CPM1 = SOUNDS.register("music_disc_cpm1",
             () -> SoundEvent.createVariableRangeEvent(new ResourceLocation(Modussy.MODID,"music_disc_cpm1")));
@@ -147,6 +149,9 @@ public class ModSounds {
 
     public static final RegistryObject<SoundEvent> DISC_J5 = SOUNDS.register("music_disc_j5",
             () -> SoundEvent.createVariableRangeEvent(new ResourceLocation(Modussy.MODID,"music_disc_j5")));
+
+    public static final RegistryObject<SoundEvent> DISC_J6 = SOUNDS.register("music_disc_j6",
+            () -> SoundEvent.createVariableRangeEvent(new ResourceLocation(Modussy.MODID,"music_disc_j6")));
 
     public static final RegistryObject<SoundEvent> DISC_JC1 = SOUNDS.register("music_disc_jc1",
             () -> SoundEvent.createVariableRangeEvent(new ResourceLocation(Modussy.MODID,"music_disc_jc1")));

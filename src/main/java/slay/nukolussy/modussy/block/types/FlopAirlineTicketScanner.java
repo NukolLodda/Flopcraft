@@ -156,23 +156,19 @@ public class FlopAirlineTicketScanner extends Block {
 
     @Override
     public InteractionResult use(BlockState pState, Level pLevel, BlockPos pPos, Player pPlayer, InteractionHand pHand, BlockHitResult pHit) {
-        Item item = pPlayer.getItemInHand(pHand).getItem();
-        if (item instanceof FloptropicaTicket) {
-            if (PlayerMethods.isNewgen(pPlayer)) {
-                pPlayer.sendSystemMessage(ticketScannerName().append(Component.translatable("subtitle.dangerous_nonflop"))
-                        .withStyle(ChatFormatting.DARK_RED));
-            } else {
-                pPlayer.sendSystemMessage(ticketScannerName().append(Component.translatable("subtitle.valid_ticket"))
-                        .withStyle(ChatFormatting.GREEN));
-            }
-        } else {
+        if (pPlayer.tickCount % 4 == 0) {
+            Item item = pPlayer.getItemInHand(pHand).getItem();
             if (PlayerMethods.isNewgen(pPlayer)) {
                 pPlayer.sendSystemMessage(ticketScannerName().append(Component.translatable("subtitle.dangerous_nonflop"))
                         .withStyle(ChatFormatting.DARK_RED));
                 EntityMethods.alertFlops(pLevel, pPos.getCenter(), pPlayer);
+            } else if (item instanceof FloptropicaTicket) {
+                pPlayer.sendSystemMessage(ticketScannerName().append(Component.translatable("subtitle.valid_ticket"))
+                        .withStyle(ChatFormatting.GREEN));
             } else {
                 pPlayer.sendSystemMessage(ticketScannerName().append(Component.translatable("subtitle.invalid_ticket"))
                         .withStyle(ChatFormatting.RED));
+
             }
         }
         return super.use(pState, pLevel, pPos, pPlayer, pHand, pHit);

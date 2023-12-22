@@ -1,9 +1,8 @@
 package slay.nukolussy.modussy.entities.flops;
 
+import net.minecraft.core.particles.ParticleTypes;
 import net.minecraft.sounds.SoundEvent;
 import net.minecraft.tags.DamageTypeTags;
-import net.minecraft.world.InteractionHand;
-import net.minecraft.world.InteractionResult;
 import net.minecraft.world.damagesource.DamageSource;
 import net.minecraft.world.entity.*;
 import net.minecraft.world.entity.ai.attributes.AttributeSupplier;
@@ -19,13 +18,15 @@ import slay.nukolussy.modussy.entities.flops.traders.Ranvision;
 import slay.nukolussy.modussy.item.ModItems;
 import slay.nukolussy.modussy.util.ModUtil;
 import slay.nukolussy.modussy.util.PlayerMethods;
+import slay.nukolussy.modussy.util.ToolMethods;
 
 import java.util.ArrayList;
+import java.util.List;
 import java.util.Random;
 import java.util.UUID;
 
 public abstract class AbstractFlopFigures extends AbstractFlops {
-    private ArrayList<UUID> uuids;
+    private ArrayList<UUID> uuids = new ArrayList<>();
     public AbstractFlopFigures(EntityType type, Level world) {
         super(type, world);
 
@@ -44,6 +45,44 @@ public abstract class AbstractFlopFigures extends AbstractFlops {
 
     @Override
     public void baseTick() {
+        if (this.random.nextInt(690) == 0) {
+            if (ModUtil.isClitmas()) {
+                List<Player> players = ModUtil.getEntityListOfDist(this.level(), Player.class, this.position(), 8);
+                for (Player player : players) {
+                    if (!this.uuids.contains(player.getUUID())) {
+                        int max = 3;
+                        if (PlayerMethods.isFlop(player)) {
+                            max++;
+                            if (PlayerMethods.isMagicFlop(player)) {
+                                max++;
+                                if (PlayerMethods.isFlopIcon(player)) {
+                                    max++;
+                                }
+                            }
+                        }
+                        int rand = this.random.nextInt(max);
+                        if (rand != 0) {
+                            double iX = this.getX();
+                            double iY = this.getY();
+                            double iZ = this.getZ();
+                            double dX = player.getX() - this.getX();
+                            double dY = player.getY() - this.getY();
+                            double dZ = player.getZ() - this.getZ();
+                            for (int i = 0; i < 6; i++) {
+                                ToolMethods.emitParticles(this.level(), iX + (i*dX/6), iY + (i*dY/6), iZ + (i*dZ/6),
+                                        15, 0.16, ParticleTypes.CRIMSON_SPORE, ParticleTypes.COMPOSTER);
+                            }
+                        }
+                        player.spawnAtLocation(new ItemStack(ModItems.CLITMAS_PRESENT.get(), rand));
+                        if (this instanceof Ranvision) {
+                            player.spawnAtLocation(new ItemStack(ModItems.REMIX_PRESENT.get(), rand));
+                        }
+                    }
+                }
+            } else if (!this.uuids.isEmpty()) {
+                uuids.clear();
+            }
+        }
         super.baseTick();
     }
 
@@ -57,42 +96,6 @@ public abstract class AbstractFlopFigures extends AbstractFlops {
         builder = builder.add(Attributes.ATTACK_KNOCKBACK, 2);
 
         return builder;
-    }
-
-    @Override
-    protected InteractionResult mobInteract(Player pPlayer, InteractionHand pHand) {
-        InteractionResult result = InteractionResult.sidedSuccess(this.level().isClientSide);
-        super.mobInteract(pPlayer, pHand);
-        if (this.level().isClientSide) {
-            return InteractionResult.PASS;
-        } else {
-            if (this.uuids == null) this.uuids = new ArrayList<>();
-            if (ModUtil.isClitmas()) {
-                for (UUID uuid : this.uuids) {
-                    if (!uuid.equals(pPlayer.getUUID())) {
-                        int max = 3;
-                        if (PlayerMethods.isFlop(pPlayer)) {
-                            max++;
-                            if (PlayerMethods.isMagicFlop(pPlayer)) {
-                                max++;
-                                if (PlayerMethods.isFlopIcon(pPlayer)) {
-                                    max++;
-                                }
-                            }
-                        }
-                        int rand = this.random.nextInt(max);
-                        pPlayer.spawnAtLocation(new ItemStack(ModItems.CLITMAS_PRESENT.get(), rand));
-                        if (this instanceof Ranvision) {
-                            pPlayer.spawnAtLocation(new ItemStack(ModItems.REMIX_PRESENT.get(), rand));
-                        }
-                    }
-                }
-                this.uuids.add(pPlayer.getUUID());
-            } else if (!this.uuids.isEmpty()) {
-                uuids.clear();
-            }
-        }
-        return result;
     }
 
     @Override

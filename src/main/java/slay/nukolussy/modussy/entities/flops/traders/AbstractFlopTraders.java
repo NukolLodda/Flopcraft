@@ -1,5 +1,10 @@
 package slay.nukolussy.modussy.entities.flops.traders;
 
+import net.minecraft.core.particles.ParticleTypes;
+import net.minecraft.nbt.CompoundTag;
+import net.minecraft.nbt.ListTag;
+import net.minecraft.nbt.StringTag;
+import net.minecraft.nbt.Tag;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.sounds.SoundEvent;
 import net.minecraft.world.InteractionHand;
@@ -21,12 +26,19 @@ import net.minecraft.world.level.Level;
 import net.minecraft.world.level.gameevent.GameEvent;
 import org.jetbrains.annotations.Nullable;
 import slay.nukolussy.modussy.entities.flops.AbstractFlopFigures;
+import slay.nukolussy.modussy.item.ModItems;
 import slay.nukolussy.modussy.util.ModUtil;
 import slay.nukolussy.modussy.util.PlayerMethods;
+import slay.nukolussy.modussy.util.ToolMethods;
+
+import java.util.ArrayList;
+import java.util.List;
+import java.util.UUID;
 
 public abstract class AbstractFlopTraders extends AbstractFlopFigures implements InventoryCarrier, Npc, Merchant {
     protected MerchantOffers offers;
     private Player trader;
+    private List<UUID> newYearsUuids = new ArrayList<>();
 
     private final SimpleContainer inventory = new SimpleContainer(8);
     public AbstractFlopTraders(EntityType type, Level world) {
@@ -77,9 +89,6 @@ public abstract class AbstractFlopTraders extends AbstractFlopFigures implements
                     pPlayer.stopUsingItem();
                     this.playSound(getNotifyTradeSound());
                     this.startTrading(pPlayer);
-                    if (ModUtil.isNewYears() && !PlayerMethods.isNewgen(pPlayer)) {
-                        newYearsGifting(pPlayer);
-                    }
                 }
                 return InteractionResult.sidedSuccess(this.level().isClientSide);
             }
@@ -95,6 +104,9 @@ public abstract class AbstractFlopTraders extends AbstractFlopFigures implements
         if (pTradingPlayer != null) {
             if (!PlayerMethods.isNewgen(pTradingPlayer)) {
                 this.trader = pTradingPlayer;
+                if (newYearsGifting(pTradingPlayer)) {
+                    pTradingPlayer.spawnAtLocation(ModItems.HUNBAO.get());
+                }
             }
         } else {
             this.trader = null;
@@ -138,6 +150,29 @@ public abstract class AbstractFlopTraders extends AbstractFlopFigures implements
         if (this.trader != null && !this.trader.hasContainerOpen()) {
             this.stopTrading();
         }
+        if (ModUtil.isNewYears()) {
+            List<Player> players = ModUtil.getEntityListOfDist(this.level(), Player.class, this.position(), 16);
+            for (Player player : players) {
+                if (!PlayerMethods.isNewgen(player) && !this.newYearsUuids.contains(player.getUUID())) {
+                    if (newYearsGifting(player)) {
+                        double iX = this.getX();
+                        double iY = this.getY();
+                        double iZ = this.getZ();
+                        double dX = player.getX() - this.getX();
+                        double dY = player.getY() - this.getY();
+                        double dZ = player.getZ() - this.getZ();
+                        player.spawnAtLocation(ModItems.HUNBAO.get());
+                        for (int i = 0; i < 6; i++) {
+                            ToolMethods.emitParticles(this.level(), iX + (i*dX/6), iY + (i*dY/6), iZ + (i*dZ/6),
+                                    15, 0.16, ParticleTypes.FALLING_HONEY, ParticleTypes.CRIMSON_SPORE);
+                        }
+                        this.newYearsUuids.add(player.getUUID());
+                    }
+                }
+            }
+        } else if (!this.newYearsUuids.isEmpty()) {
+            this.newYearsUuids.clear();
+        }
         super.baseTick();
     }
 
@@ -168,5 +203,5 @@ public abstract class AbstractFlopTraders extends AbstractFlopFigures implements
     protected abstract void updateTrades();
     protected abstract SoundEvent getTradelessSound();
     protected abstract boolean itemIsSpawnEgg(Item pItem);
-    protected abstract void newYearsGifting(Player pPlayer);
+    protected abstract boolean newYearsGifting(Player pPlayer);
 }

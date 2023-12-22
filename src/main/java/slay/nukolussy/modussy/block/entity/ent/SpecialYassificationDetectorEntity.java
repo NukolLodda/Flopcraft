@@ -140,8 +140,8 @@ public class SpecialYassificationDetectorEntity extends BlockEntity {
 
             int finalX = x;
             int finalZ = z;
-            ModUtil.getEntityListOfDist(lvl, LivingEntity.class, new Vec3(x, y+1, z), new Vec3(x, y+3, z), 1)
-                    .forEach(entity -> {
+            List<LivingEntity> entities = ModUtil.getEntityListOfDist(lvl, LivingEntity.class, new Vec3(x, y+1, z), new Vec3(x, y+3, z), 1);
+            for (LivingEntity entity : entities) {
                 if (EntityMethods.isMonster(entity) || (entity instanceof Player player && !PlayerMethods.isFlop(player))) {
                     makeLovelyPeachesChamber(lvl, new Vec3(finalX, y-12, finalZ));
                     entity.teleportTo(finalX,y-13, finalZ);
@@ -165,7 +165,7 @@ public class SpecialYassificationDetectorEntity extends BlockEntity {
                         player.sendSystemMessage(PlayerMethods.getYassificationLevel(player));
                     }
                 }
-            });
+            }
         }
     }
 }

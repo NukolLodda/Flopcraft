@@ -92,7 +92,7 @@ public class FlopTrades {
                         new SlaginiumForProducts(ModItems.DISC_C24.get(), 4, COMMON_ITEMS_SUPPLY, 2),
                         new SlaginiumForProducts(ModItems.DISC_J5.get(), 4, COMMON_ITEMS_SUPPLY, 2),
                         new SlaginiumForProducts(ModItems.DISC_PM1.get(), 4, COMMON_ITEMS_SUPPLY, 2),
-                        new InfusedSlaginiumForProducts(ModItems.DISC_RANVISION.get(), 6, UNCOMMON_ITEMS_SUPPLY, 6),
+                        new InfusedSlaginiumForProducts(ModItems.DISC_C28.get(), 6, UNCOMMON_ITEMS_SUPPLY, 6),
                         new InfusedSlaginiumForProducts(ModItems.KYLIE_JENNER_LIPSTICK.get(), 6, UNCOMMON_ITEMS_SUPPLY, 6)
                 })));
             });

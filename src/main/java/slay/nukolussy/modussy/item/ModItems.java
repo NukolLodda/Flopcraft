@@ -197,6 +197,7 @@ public class ModItems {
     public static final RegistryObject<Item> DISC_C25 = ITEMS.register("music_disc_c25",  () -> new ModDiscs(ModSounds.DISC_C25.get(), 4880));
     public static final RegistryObject<Item> DISC_C26 = ITEMS.register("music_disc_c26",  () -> new ModDiscs(ModSounds.DISC_C26.get(), 4000));
     public static final RegistryObject<Item> DISC_C27 = ITEMS.register("music_disc_c27",  () -> new ModDiscs(ModSounds.DISC_C27.get(), 3800));// only obtainable from christmas
+    public static final RegistryObject<Item> DISC_C28 = ITEMS.register("music_disc_c28",  () -> new ModDiscs(ModSounds.DISC_C28.get(), 3600));
     public static final RegistryObject<Item> DISC_CJ1 = ITEMS.register("music_disc_cj1",  () -> new ModDiscs(ModSounds.DISC_CJ1.get(), 5100));
     public static final RegistryObject<Item> DISC_CPM1 = ITEMS.register("music_disc_cpm1",  () -> new ModDiscs(ModSounds.DISC_CPM1.get(), 3300));
     public static final RegistryObject<Item> DISC_CUPCAKKE1 = ITEMS.register("music_disc_cupcakke1",  () -> new ModDiscs(ModSounds.DISC_CUPCAKKE1.get(), 4160));
@@ -210,6 +211,7 @@ public class ModItems {
     public static final RegistryObject<Item> DISC_J3 = ITEMS.register("music_disc_j3",  () -> new ModDiscs(ModSounds.DISC_J3.get(), 1420));
     public static final RegistryObject<Item> DISC_J4 = ITEMS.register("music_disc_j4",  () -> new ModDiscs(ModSounds.DISC_J4.get(), 1760));
     public static final RegistryObject<Item> DISC_J5 = ITEMS.register("music_disc_j5",  () -> new ModDiscs(ModSounds.DISC_J5.get(), 4060));
+    public static final RegistryObject<Item> DISC_J6 = ITEMS.register("music_disc_j6",  () -> new ModDiscs(ModSounds.DISC_J6.get(), 3000));
     public static final RegistryObject<Item> DISC_JC1 = ITEMS.register("music_disc_jc1",  () -> new ModDiscs(ModSounds.DISC_JC1.get(), 3340));
     public static final RegistryObject<Item> DISC_JC2 = ITEMS.register("music_disc_jc2",  () -> new ModDiscs(ModSounds.DISC_JC2.get(), 4160));
     public static final RegistryObject<Item> DISC_JC3 = ITEMS.register("music_disc_jc3",  () -> new ModDiscs(ModSounds.DISC_JC3.get(), 1300));

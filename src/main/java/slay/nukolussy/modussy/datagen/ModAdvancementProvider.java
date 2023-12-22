@@ -45,7 +45,7 @@ public class ModAdvancementProvider implements ForgeAdvancementProvider.Advancem
                         ModItems.DISC_C15.get(), ModItems.DISC_C16.get(), ModItems.DISC_C17.get(), ModItems.DISC_C18.get(),
                         ModItems.DISC_C19.get(), ModItems.DISC_C20.get(), ModItems.DISC_C21.get(), ModItems.DISC_C22.get(),
                         ModItems.DISC_C23.get(), ModItems.DISC_C24.get(), ModItems.DISC_C25.get(), ModItems.DISC_C26.get(),
-                        ModItems.DISC_C27.get(), ModItems.DISC_JC1.get(), ModItems.DISC_JC2.get(), ModItems.DISC_JC3.get(),
+                        ModItems.DISC_C27.get(), ModItems.DISC_C28.get(), ModItems.DISC_JC1.get(), ModItems.DISC_JC2.get(), ModItems.DISC_JC3.get(),
                         ModItems.DISC_CJ1.get()));
         Advancement fallenWig = makeAdvancement(consumer, existingFileHelper, ModItems.HAIRUSSY.get(), "fallen_wig",
                 "textures/item/hairussy.png", "has_hairussy",

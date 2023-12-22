@@ -1,6 +1,8 @@
 package slay.nukolussy.modussy.util;
 
 import net.minecraft.core.BlockPos;
+import net.minecraft.core.particles.ParticleOptions;
+import net.minecraft.core.particles.ParticleTypes;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.nbt.ListTag;
 import net.minecraft.nbt.StringTag;
@@ -36,34 +38,6 @@ import slay.nukolussy.modussy.sound.ModSounds;
 import java.util.*;
 
 public class ToolMethods {
-    public static long getGameDayTick(ServerLevel level) {
-        long time = level.getGameTime() / 24000L;
-        if (level.getDayTime() > 6000) {
-            time++;
-        }
-        return time * 24000L;
-    }
-    public static SoundEvent aestheticSounds(int up) {
-        if (up > 8) up = 8;
-        return switch (ModUtil.RANDOM.nextInt(1, up-1)) {
-            case 1 -> ModSounds.AESTHETIC_1.get();
-            case 2 -> ModSounds.AESTHETIC_2.get();
-            case 3 -> ModSounds.AESTHETIC_3.get();
-            case 4 -> ModSounds.AESTHETIC_4.get();
-            case 5 -> ModSounds.AESTHETIC_5.get();
-            case 6 -> ModSounds.AESTHETIC_SHENSEEA.get();
-            default -> ModSounds.AESTHETIC_JIAFEI.get();
-        };
-    }
-
-    public static ItemStack randItem(int up) {
-        if (up > 3) up = 3;
-        return switch (ModUtil.RANDOM.nextInt(up)) {
-            case 1 -> new ItemStack(ModItems.SHENSEIUM.get());
-            case 2 -> new ItemStack(ModItems.JIAFEI_PRODUCT.get());
-            default -> new ItemStack(ModItems.CUPCAKE.get());
-        };
-    }
 
     public static void makeupUse(Entity entity, ItemStack item, int lvl) {
         if (entity instanceof LivingEntity living) {
@@ -95,8 +69,16 @@ public class ToolMethods {
         }
     }
 
-    // type 0 - cvm, 1 - cvmium, 2 - blood
+    public static void emitParticles(Level pLevel, double x, double y, double z, int pCount, double pSpeed, ParticleOptions... pOptions) {
+        if (pLevel instanceof ServerLevel level) {
+            for (ParticleOptions particle : pOptions) {
+                level.sendParticles(particle, x, y, z, pCount, 1, 1, 1, pSpeed);
+            }
+        }
+    }
 
+    // all code below this line will be moved to EntityMethods
+    // type 0 - cvm, 1 - cvmium, 2 - blood
     public static void yassification(LivingEntity ent, LevelAccessor world, Player player) {
         if (ent instanceof AbstractVillager villager) {
             EntityMethods.villagerYassification(villager, world, player);

@@ -153,7 +153,8 @@ public class NickiMinaj extends AbstractFlopTraders {
     }
 
     @Override
-    protected void newYearsGifting(Player pPlayer) {
+    protected boolean newYearsGifting(Player pPlayer) {
+        return false;
     }
 
     @Override
