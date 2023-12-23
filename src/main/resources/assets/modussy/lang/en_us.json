@@ -419,5 +419,6 @@
   "subtitle.play_sound": "Playing Next",
   "subtitle.currently_playing": "Currently Playing",
   "subtitle.destination": "Destination",
-  "subtitle.invalid": "Invalid"
+  "subtitle.invalid": "Invalid",
+  "subtitle.twink_here": "The twink has arrived!"
 }

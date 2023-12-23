@@ -28,7 +28,7 @@ you are free to make your own port of this mod to bedrock edition using the code
 ---
 **Download**
 
-<a href="https://adfoc.us/83601097779891">Download latest version here!</a>
+<a href="https://adfoc.us/83601097790792">Download latest version here!</a>
 
 Information about the latest version<br>
 Forge API version: <a href="https://adfoc.us/serve/sitelinks/?id=271228&url=https://maven.minecraftforge.net/net/minecraftforge/forge/1.20.1-47.2.0/forge-1.20.1-47.2.0-installer.jar">47.2.0</a><br>

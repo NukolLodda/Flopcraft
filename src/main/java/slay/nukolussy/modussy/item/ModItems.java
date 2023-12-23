@@ -234,6 +234,8 @@ public class ModItems {
             () -> new ForgeSpawnEggItem(ModEntities.RANVISION,  16757057, 12538804,  new Item.Properties()));
     public static final RegistryObject<Item> TWINK_SPAWN_EGG = ITEMS.register("twink_spawn_egg",
             () -> new ForgeSpawnEggItem(ModEntities.TWINK,  170, 5636095,  new Item.Properties()));
+    public static final RegistryObject<Item> TWINK_SIVAN_SPAWN_EGG = ITEMS.register("twink_sivan_spawn_egg",
+            () -> new ForgeSpawnEggItem(ModEntities.TWINK_SIVAN,  14693145, 2364032,  new Item.Properties()));
 
     public static final RegistryObject<Item> LOVELY_PEACH_SIGN = ITEMS.register("lovely_peach_sign",
             () -> new SignItem(new Item.Properties().stacksTo(16), ModBlocks.LOVELY_PEACH_SIGN.get(),

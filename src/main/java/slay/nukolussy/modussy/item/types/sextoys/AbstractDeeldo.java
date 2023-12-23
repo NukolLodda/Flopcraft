@@ -7,8 +7,10 @@ import net.minecraft.sounds.SoundEvent;
 import net.minecraft.sounds.SoundSource;
 import net.minecraft.stats.Stats;
 import net.minecraft.world.effect.MobEffectInstance;
+import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.animal.Cat;
+import net.minecraft.world.entity.item.ItemEntity;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.BowItem;
 import net.minecraft.world.item.Item;
@@ -18,9 +20,16 @@ import net.minecraft.world.item.enchantment.EnchantmentHelper;
 import net.minecraft.world.item.enchantment.Enchantments;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.LevelAccessor;
+import net.minecraft.world.level.block.Blocks;
+import net.minecraft.world.level.block.entity.BlockEntity;
+import net.minecraft.world.level.block.entity.JukeboxBlockEntity;
+import net.minecraft.world.level.block.state.BlockState;
+import net.minecraft.world.level.block.state.properties.BlockStateProperties;
 import net.minecraft.world.phys.AABB;
 import net.minecraft.world.phys.Vec3;
+import slay.nukolussy.modussy.block.ModBlocks;
 import slay.nukolussy.modussy.effect.ModEffects;
+import slay.nukolussy.modussy.entities.ModEntities;
 import slay.nukolussy.modussy.entities.flops.AbstractFlopFigures;
 import slay.nukolussy.modussy.entities.flops.figures.CupcakKe;
 import slay.nukolussy.modussy.entities.twink.AbstractTwink;
@@ -98,49 +107,64 @@ public abstract class AbstractDeeldo extends BowItem {
             }
         }
     }
-    protected void deeldoShoot(LevelAccessor world, double x, double y, double z, LivingEntity entity,
+    protected void deeldoShoot(Level world, double x, double y, double z, LivingEntity entity,
                                ItemStack deeldo, int type, float chargedTime) {
         int power = EnchantmentHelper.getItemEnchantmentLevel(Enchantments.POWER_ARROWS, deeldo);
         boolean flame = EnchantmentHelper.getItemEnchantmentLevel(Enchantments.FLAMING_ARROWS, deeldo) > 0;
         int amp = type + 1;
-        ModUtil.getEntityListOfDist(world, LivingEntity.class, new Vec3(x, y, z), multiplier() * chargedTime).forEach(ent -> {
-            if (EntityMethods.isMonster(ent)) {
-                EntityMethods.monsterEffects(ent, amp * ((int)chargedTime),amp - 1);
-                ent.hurt(ent.level().damageSources().mobAttack(entity), power * 10 * (int)chargedTime * multiplier());
-                ent.setSecondsOnFire(secOnFire(type, flame));
-            }
-            if (entity instanceof Player player) {
-                ToolMethods.yassification(ent, world, player);
-                if (ent instanceof Cat cat && player.getRandom().nextInt(25) < 4) {
-                    cat.spawnAtLocation(ModItems.POSEI.get());
-                    PlayerMethods.addPlayerYassification(player, 2);
+        List<Entity> entities = ModUtil.getEntityListOfDist(world, Entity.class, new Vec3(x, y, z), multiplier() * chargedTime);
+        for (Entity ent : entities) {
+            if (ent instanceof LivingEntity living) {
+                if (EntityMethods.isMonster(living)) {
+                    EntityMethods.monsterEffects(living, amp * ((int)chargedTime),amp - 1);
+                    living.hurt(living.level().damageSources().mobAttack(entity), power * 10 * (int)chargedTime * multiplier());
+                    living.setSecondsOnFire(secOnFire(type, flame));
                 }
-                if (EntityMethods.isFlop(ent) || (ent instanceof AbstractTwink && type < 2)) {
-                    EntityMethods.flopEffects(ent, amp,amp - 1);
-                    if (player.getRandom().nextInt(12) == 1) {
-                        if (ent instanceof Twink && !PlayerMethods.isNewgen(player)) {
-                            ent.spawnAtLocation(TwinkAI.randItem());
-                            PlayerMethods.addPlayerYassification(player, 1);
-                        }
-                        if (ent instanceof AbstractFlopFigures || (ent instanceof Player surround && PlayerMethods.isFlopIcon(surround))) {
-                            if (ent instanceof CupcakKe cupcakke) {
-                                CupcakKe.cupcakkeDuplication(ModItems.CVM.get(), cupcakke);
-                            }
-                            PlayerMethods.addPlayerYassification(player, 7 * ((int)chargedTime / 2));
-                        }
+                if (entity instanceof Player player) {
+                    ToolMethods.yassification(living, world, player);
+                    if (living instanceof Cat cat && player.getRandom().nextInt(25) < 4) {
+                        cat.spawnAtLocation(ModItems.POSEI.get());
+                        PlayerMethods.addPlayerYassification(player, 2);
                     }
-                } else if (type > 1) {
-                    EntityMethods.monsterEffects(ent);
+                    if (EntityMethods.isFlop(living) || (living instanceof AbstractTwink && type < 2)) {
+                        EntityMethods.flopEffects(living, amp,amp - 1);
+                        if (player.getRandom().nextInt(12) == 1) {
+                            if (living instanceof Twink && !PlayerMethods.isNewgen(player)) {
+                                living.spawnAtLocation(TwinkAI.randItem());
+                                PlayerMethods.addPlayerYassification(player, 1);
+                            }
+                            if (living instanceof AbstractFlopFigures || (living instanceof Player surround && PlayerMethods.isFlopIcon(surround))) {
+                                if (living instanceof CupcakKe cupcakke) {
+                                    CupcakKe.cupcakkeDuplication(ModItems.CVM.get(), cupcakke);
+                                }
+                                PlayerMethods.addPlayerYassification(player, 7 * ((int)chargedTime / 2));
+                            }
+                        }
+                    } else if (type > 1) {
+                        EntityMethods.monsterEffects(living);
+                    }
+                }
+                if (type < 2) {
+                    living.addEffect(new MobEffectInstance(ModEffects.CVMMED.get(), 1000 * multiplier(), amp));
+                    if (living instanceof TwinkSivan troye) {
+                        troye.sendSystemMessage(Component.literal("<Twink Sivan>").append(Component.translatable("subtitle.twink_sivan_sex")
+                                .append(": https://youtu.be/K1TtnxaPRms?feature=shared")));
+                    }
+                }
+            } else if (ent instanceof ItemEntity item && item.getItem().is(ModItems.TWINK_EGG_SHELLS.get())) {
+                BlockEntity below = world.getBlockEntity(item.blockPosition().below());
+                if (below instanceof JukeboxBlockEntity jukebox && jukebox.getItem(0).is(ModItems.DISC_J3.get())) {
+                    world.setBlock(below.getBlockPos().below(2), ModBlocks.CVM_FLUID.get().defaultBlockState(), 3);
+                    world.setBlock(below.getBlockPos().below(), ModBlocks.CVM_FLUID.get().defaultBlockState(), 3);
+                    world.setBlock(below.getBlockPos(), ModBlocks.CVM_FLUID.get().defaultBlockState(), 3);
+                    TwinkSivan troye = new TwinkSivan(ModEntities.TWINK_SIVAN.get(), world);
+                    troye.setPos(below.getBlockPos().below().getCenter());
+                    troye.sendSystemMessage(Component.translatable("subtitle.twink_here"));
+                    world.addFreshEntity(troye);
+                    item.discard();
                 }
             }
-            if (type < 2) {
-                ent.addEffect(new MobEffectInstance(ModEffects.CVMMED.get(), 1000 * multiplier(), amp));
-                if (ent instanceof TwinkSivan troye) {
-                    troye.sendSystemMessage(Component.literal("<Twink Sivan>").append(Component.translatable("subtitle.twink_sivan_sex")
-                            .append(": https://youtu.be/K1TtnxaPRms?feature=shared")));
-                }
-            }
-        });
+        }
         if (world instanceof ServerLevel level) {
             level.sendParticles(switch (type) {
                         case 0 -> getCvmParticle();

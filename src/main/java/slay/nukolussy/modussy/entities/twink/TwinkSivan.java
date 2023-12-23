@@ -1,6 +1,7 @@
 package slay.nukolussy.modussy.entities.twink;
 
 import com.mojang.serialization.Codec;
+import net.minecraft.Util;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.network.chat.Component;
 import net.minecraft.network.syncher.EntityDataAccessor;
@@ -9,19 +10,22 @@ import net.minecraft.network.syncher.SynchedEntityData;
 import net.minecraft.sounds.SoundEvent;
 import net.minecraft.tags.DamageTypeTags;
 import net.minecraft.util.ByIdMap;
+import net.minecraft.util.RandomSource;
 import net.minecraft.util.StringRepresentable;
+import net.minecraft.world.DifficultyInstance;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResult;
 import net.minecraft.world.SimpleContainer;
 import net.minecraft.world.damagesource.DamageSource;
-import net.minecraft.world.entity.Entity;
-import net.minecraft.world.entity.EntityType;
-import net.minecraft.world.entity.MobType;
+import net.minecraft.world.entity.*;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.Level;
+import net.minecraft.world.level.ServerLevelAccessor;
 import net.minecraft.world.level.gameevent.GameEvent;
+import net.minecraftforge.network.PlayMessages;
+import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import slay.nukolussy.modussy.effect.ModEffects;
 import slay.nukolussy.modussy.entities.AbstractModEntity;
@@ -33,8 +37,14 @@ import java.util.function.IntFunction;
 
 public class TwinkSivan extends AbstractTwink {
     private static final EntityDataAccessor<Integer> TWINK_ID_DATATYPE_VARIANT = SynchedEntityData.defineId(TwinkSivan.class, EntityDataSerializers.INT);
+    public TwinkSivan(PlayMessages.SpawnEntity packet, Level world) {
+        super(ModEntities.TWINK_SIVAN.get(), world);
+    }
     public TwinkSivan(EntityType<TwinkSivan> type, Level world) {
         super(type, world);
+    }
+
+    public static void init() {
     }
 
     @Nullable
@@ -79,7 +89,7 @@ public class TwinkSivan extends AbstractTwink {
                     itemStack.shrink(1);
                 }
                 player.spawnAtLocation(ModItems.TWINK_EGG.get());
-                this.playSound(ModSounds.CUPCAkKE_SLURP.get());
+                this.playSound(ModSounds.CUPCAkKE_SLURP.get()); // may change in the future
                 this.gameEvent(GameEvent.EAT, this);
                 return InteractionResult.SUCCESS;
             }
@@ -127,21 +137,36 @@ public class TwinkSivan extends AbstractTwink {
         this.inventory.fromTag(tag.getList("Inventory",10));
     }
 
-    public void setVariant(Twink.Variant variant) {
+    public void setVariant(TwinkSivan.Variant variant) {
         this.setTypeVariant(variant.getId());
     }
 
     public void setRandomVariant() {
         this.setTypeVariant(this.random.nextInt(4));
     }
+
+    @Override
+    protected void defineSynchedData() {
+        super.defineSynchedData();
+        this.entityData.define(TWINK_ID_DATATYPE_VARIANT, 0);
+    }
+
     private void setTypeVariant(int id) {
         this.entityData.set(TWINK_ID_DATATYPE_VARIANT, id);
     }
     private int getTypeVariant() {
         return this.entityData.get(TWINK_ID_DATATYPE_VARIANT);
     }
-    public Twink.Variant getVariant() {
-        return Twink.Variant.byId(this.getTypeVariant() & 255);
+    public TwinkSivan.Variant getVariant() {
+        return TwinkSivan.Variant.byId(this.getTypeVariant() & 255);
+    }
+
+    @Nullable
+    public SpawnGroupData finalizeSpawn(ServerLevelAccessor level, @NotNull DifficultyInstance instance, @NotNull MobSpawnType type, SpawnGroupData data, CompoundTag tag) {
+        RandomSource randomSource = level.getRandom();
+        TwinkSivan.Variant variant = Util.getRandom(TwinkSivan.Variant.values(), randomSource);
+        setVariant(variant);
+        return super.finalizeSpawn(level, instance, type, data, tag);
     }
 
     public enum Variant implements StringRepresentable {

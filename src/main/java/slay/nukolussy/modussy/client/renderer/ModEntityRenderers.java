@@ -19,6 +19,7 @@ public class ModEntityRenderers {
         event.registerEntityRenderer(ModEntities.NICKI_MINAJ.get(), NickiMinajRanderer::new);
         event.registerEntityRenderer(ModEntities.RANVISION.get(), RanvisionRenderer::new);
         event.registerEntityRenderer(ModEntities.TWINK.get(), TwinkRenderer::new);
+        event.registerEntityRenderer(ModEntities.TWINK_SIVAN.get(), TwinkSivanRenderer::new);
 
         event.registerEntityRenderer(ModEntities.LOVELY_PEACH.get(), context ->
              new ThrownItemRenderer<>(context, 3.0f, true));

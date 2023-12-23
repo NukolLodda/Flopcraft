@@ -24,6 +24,7 @@ import slay.nukolussy.modussy.entities.flops.traders.NickiMinaj;
 import slay.nukolussy.modussy.entities.flops.traders.Ranvision;
 import slay.nukolussy.modussy.entities.projectiles.*;
 import slay.nukolussy.modussy.entities.twink.Twink;
+import slay.nukolussy.modussy.entities.twink.TwinkSivan;
 
 @Mod.EventBusSubscriber(bus = Mod.EventBusSubscriber.Bus.MOD)
 public class ModEntities {
@@ -69,6 +70,11 @@ public class ModEntities {
                     .setTrackingRange(64).setUpdateInterval(3).setCustomClientFactory(Twink::new)
                     .sized(0.6f,1.8f));
 
+    public static final RegistryObject<EntityType<TwinkSivan>> TWINK_SIVAN = register("twink_sivan",
+            EntityType.Builder.<TwinkSivan>of(TwinkSivan::new, MobCategory.AMBIENT).setShouldReceiveVelocityUpdates(true)
+                    .setTrackingRange(64).setUpdateInterval(3).setCustomClientFactory(TwinkSivan::new)
+                    .sized(0.6f,1.8f));
+
 
 
     public static final RegistryObject<EntityType<ChargedLovelyPeach>> LOVELY_PEACH = register("lovely_peach",
@@ -107,6 +113,7 @@ public class ModEntities {
             NickiMinaj.init();
             Ranvision.init();
             Twink.init();
+            TwinkSivan.init();
             ChargedLovelyPeach.init();
           });
     }
@@ -121,6 +128,7 @@ public class ModEntities {
         event.put(NICKI_MINAJ.get(), NickiMinaj.createAttributes().build());
         event.put(RANVISION.get(), Ranvision.createAttributes().build());
         event.put(TWINK.get(), Twink.createAttributes().build());
+        event.put(TWINK_SIVAN.get(), Twink.createAttributes().build());
     }
 
     @SubscribeEvent

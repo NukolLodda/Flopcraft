@@ -77,6 +77,7 @@ public class Modussy {
             event.accept(ModItems.NICKI_MINAJ_SPAWN_EGG.get());
             event.accept(ModItems.RANVISION_SPAWN_EGG.get());
             event.accept(ModItems.TWINK_SPAWN_EGG.get());
+            // event.accept(ModItems.TWINK_SIVAN_SPAWN_EGG.get());
         }
 
         if (event.getTabKey() == CreativeModeTabs.TOOLS_AND_UTILITIES) {

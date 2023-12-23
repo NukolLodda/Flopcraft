@@ -42,12 +42,6 @@ public class YassifiedEffect extends AbstractSlayEffect {
             addAttributeModifier(Attributes.ATTACK_SPEED, "320803d7-9782-47b4-9bb0-f14ea3dd772b", Math.ceil(modifiedVal * 20), AttributeModifier.Operation.ADDITION);
             addAttributeModifier(Attributes.ATTACK_KNOCKBACK, "6bebae1c-0836-45f6-a07c-99dafd02fd52", Math.ceil(modifiedVal * 5), AttributeModifier.Operation.ADDITION);
             addAttributeModifier(Attributes.LUCK, "49909a69-702e-4588-8310-944229e47fde", val, AttributeModifier.Operation.ADDITION);
-            pLivingEntity.setAbsorptionAmount(pLivingEntity.getAbsorptionAmount() * (val + multiplier));
-
-            // temp code to avoid weirdness
-            if (pLivingEntity.getMaxHealth() <= 0) {
-                pLivingEntity.remove(Entity.RemovalReason.DISCARDED);
-            }
         }
         // must cause a new glorified face upon activation
         super.applyEffectTick(pLivingEntity, pAmplifier);
