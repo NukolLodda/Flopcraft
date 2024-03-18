@@ -19,11 +19,7 @@ then please come over <a href="https://forms.gle/HN36moxHdA6yRNE3A">here</a> and
 <br>
 <b>PLEASE READ BELOW</b>
 <br>
-I've gotten this request before many times, so I will come out and say it here
-that <b>I do not plan to make a bedrock edition ever for this mod since I may not have the time to do so.</b>
-This mod is a solo project, meaning from day one, I've been one-manning this whole thing,
-so I hope this doesn't come off too much as a surprise. However, to anyone already familiar with bedrock modding,
-you are free to make your own port of this mod to bedrock edition using the code uploaded on this site.
+Modussy is currently no-longer <b>worked on</b> I will not make any nee updates to this mod in the foreseeable future.
 
 ---
 **Download**
@@ -52,29 +48,7 @@ Changelog:
 ---
 **Requests**
 
-<b>Please Read</b>
-<br>
-I will no longer be taking any requests for this mod after March, 10, 2024.
-I'll be starting on the final version of Modussy after that date.
-
-If a request is something I consider achievable, I will try my best to complete it. However, I would
-like to state that depending on the complexity of the request, it may take up from a couple of weeks to
-several months before it's out. The version in particular also generally needs months of debugging and
-testing prior to release. This is also along with the fact that I am currently working on other projects,
-and that I may at a time be coding multiple requests in, and that I'm still in school meaning that
-I may just not have the time. So please be patient after I take in a request.
-
-Requests I accept includes: <br>
-- Addition of new content, i.e. blocks, items, entities, ect.
-  (as long as it makes sense for this mod, and it isn't too complicated)<br>
-- Removal of content (as long as the requested content isn't integral to the structure of this mod)<br>
-- Modification of existing content (as long as both the addition and removal of content rules are followed)
-
-Requests I reject includes: <br>
-- Porting Modussy to other versions/editions of Minecraft
-  (I lack both the time and knowledge for this)<br>
-- Porting Modussy to other APIs<br>
-- Addition of music discs sounds in the 'sounds' folder (mostly legal reasons, so it's better safe than sorry)
+I will no longer be taking requests for this mod.
 
 For anyone who wants inquires on the status of your requests/needs help with downloading Modussy,
 come to <a href="https://discord.gg/NTwqY3rcvU">the official Modussy discord server</a>
