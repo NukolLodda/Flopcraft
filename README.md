@@ -19,7 +19,7 @@ then please come over <a href="https://forms.gle/HN36moxHdA6yRNE3A">here</a> and
 <br>
 <b>PLEASE READ BELOW</b>
 <br>
-Modussy is currently no-longer <b>worked on</b> I will not make any nee updates to this mod in the foreseeable future.
+Modussy is currently no-longer <b>worked on</b> I will not make any new updates to this mod in the foreseeable future.
 
 ---
 **Download**
