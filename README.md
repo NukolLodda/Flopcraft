@@ -6,10 +6,6 @@ As of right now, Modussy currently has support for Minecraft Java version 1.20.1
 <a href="https://files.minecraftforge.net/">forge API</a>.
 
 <br>
-If you have any questions regarding Modussy, you can cvm to <a href="https://discord.gg/NTwqY3rcvU">the Modussy discord server</a>.
-I will also be giving out updates about the project there and my status on certain requests if you are interested of course.
-<br>
-<br>
 If you are interested in helping me with Modussy and you have the sufficient Java knowledge to do so,
 then please come over <a href="https://forms.gle/HN36moxHdA6yRNE3A">here</a> and apply to be part of the Modussy development team.
 <br>
@@ -50,8 +46,7 @@ Changelog:
 
 I will no longer be taking requests for this mod.
 
-For anyone who wants inquires on the status of your requests/needs help with downloading Modussy,
-come to <a href="https://discord.gg/NTwqY3rcvU">the official Modussy discord server</a>
+The Modussy discord server is down so if anyone wants to request, please use this github page itself.
 
 ___
 **Why Modussy Isn't On Curseforge**
