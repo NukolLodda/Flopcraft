@@ -17,7 +17,7 @@ then please come over <a href="https://forms.gle/HN36moxHdA6yRNE3A">here</a> and
 ---
 **Download**
 
-<a href="https://adfoc.us/83601097790792">Download latest version here!</a>
+<a href="https://github.com/NukolLodda/Modussy/releases/tag/v1.20.1-0.1.5">Download latest version here!</a>
 
 Information about the latest version<br>
 Forge API version: <a href="https://adfoc.us/serve/sitelinks/?id=271228&url=https://maven.minecraftforge.net/net/minecraftforge/forge/1.20.1-47.2.0/forge-1.20.1-47.2.0-installer.jar">47.2.0</a><br>
@@ -48,7 +48,7 @@ ___
 
 After reading Curseforge's terms of service, I believe that some features of Modussy, namely
 CupcakKe's texture, specific items, and mobs violates it, so the download links are in this
-repository instead. Click <a href="http://adfoc.us/83601097790792">here</a>
+repository instead. Click <a href="https://github.com/NukolLodda/Modussy/releases/tag/v1.20.1-0.1.5">here</a>
 for the most recent version uploaded (Modussy-0.1.5 for Minecraft 1.20.1
 <a href="https://adfoc.us/serve/sitelinks/?id=271228&url=https://maven.minecraftforge.net/net/minecraftforge/forge/1.20.1-47.2.0/forge-1.20.1-47.2.0-installer.jar">Forge API 47.2.0</a>)
 
