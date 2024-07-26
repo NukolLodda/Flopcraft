@@ -24,6 +24,7 @@ public class ModItemModelProvider extends ItemModelProvider {
         simpleItem(ModItems.BLOOD_CLUMP);
         simpleItem(ModItems.BLOODY_TAMPON);
         simpleItem(ModItems.BRAT);
+        simpleItem(ModItems.BRAT_APPLE);
         simpleItem(ModItems.CLITMAS_BUTTPLUG);
         simpleItem(ModItems.CUPCAKE);
         simpleItem(ModItems.CVM);

@@ -38,6 +38,12 @@ public class ModItems {
     public static final RegistryObject<Item> BRAT = ITEMS.register("brat",
             () -> new Item(new Item.Properties().rarity(Rarity.UNCOMMON)));
 
+    public static final RegistryObject<Item> BRAT_APPLE = ITEMS.register("brat_apple",
+            () -> new Item(new Item.Properties()
+                    .food(new FoodProperties.Builder().nutrition(1).saturationMod(1f)
+                            .effect(() -> new MobEffectInstance(ModEffects.BRATIFIED.get(), 800, 2), 1)
+                            .build())));
+
     public static final RegistryObject<Item> CUPCAKE = ITEMS.register("cupcake",
             () -> new Item(new Item.Properties()
                     .food(new FoodProperties.Builder().nutrition(8).saturationMod(10f).build())));

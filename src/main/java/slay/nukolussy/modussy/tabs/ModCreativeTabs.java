@@ -194,6 +194,7 @@ public class ModCreativeTabs {
                         pOutput.accept(ModItems.BARBIE_CRYSTALS.get());
                         pOutput.accept(ModItems.BLOOD_CLUMP.get());
                         pOutput.accept(ModItems.BRAT.get());
+                        pOutput.accept(ModItems.BRAT_APPLE.get());
                         pOutput.accept(ModItems.CUPCAKE.get());
                         pOutput.accept(ModItems.CVM.get());
                         pOutput.accept(ModItems.CVMIUM.get());

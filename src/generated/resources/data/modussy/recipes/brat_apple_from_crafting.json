@@ -1,0 +1,22 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "group": "brat_apple",
+  "key": {
+    "0": {
+      "tag": "forge:gems/brat"
+    },
+    "1": {
+      "item": "minecraft:apple"
+    }
+  },
+  "pattern": [
+    "000",
+    "010",
+    "000"
+  ],
+  "result": {
+    "item": "modussy:brat_apple"
+  },
+  "show_notification": true
+}

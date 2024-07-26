@@ -201,6 +201,15 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
                 .unlockedBy(getHasName(ModItems.CVMTITPLASM.get()), has(ModItems.CVMTITPLASM.get()))
                 .save(pWriter, Modussy.MODID + ":cupcakke_spawn_egg_from_crafting");
 
+        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModItems.BRAT_APPLE.get())
+                .pattern("000")
+                .pattern("010")
+                .pattern("000")
+                .define('0', ModTags.Items.BRAT).define('1', Items.APPLE)
+                .group("brat_apple")
+                .unlockedBy(getHasName(ModItems.BRAT.get()), has(ModItems.BRAT.get()))
+                .save(pWriter, Modussy.MODID + ":brat_apple_from_crafting");
+
         ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModItems.BRATIFICATIONER.get())
                 .pattern(" 0 ")
                 .pattern("010")
