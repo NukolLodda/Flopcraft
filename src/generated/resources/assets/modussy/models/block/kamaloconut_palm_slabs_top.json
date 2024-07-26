@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/slab_top",
+  "textures": {
+    "bottom": "modussy:block/kamaloconut_palm_planks",
+    "side": "modussy:block/kamaloconut_palm_planks",
+    "top": "modussy:block/kamaloconut_palm_planks"
+  }
+}

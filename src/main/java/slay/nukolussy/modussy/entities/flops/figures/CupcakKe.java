@@ -145,7 +145,7 @@ public class CupcakKe extends AbstractFlopFigures implements IMerflop {
         int rand = new Random().nextInt(69);
         Item cupcakkeDrops;
         if (rand < 1) {
-            int discRand = new Random().nextInt(28);
+            int discRand = new Random().nextInt(29);
             cupcakkeDrops = switch(discRand) {
                 case 1 -> ModItems.DISC_C1.get();
                 case 2 -> ModItems.DISC_C2.get();
@@ -174,7 +174,8 @@ public class CupcakKe extends AbstractFlopFigures implements IMerflop {
                 case 25 -> ModItems.DISC_C25.get();
                 case 26 -> ModItems.DISC_C26.get();
                 case 27 -> ModItems.DISC_C27.get();
-                default -> ModItems.DISC_C28.get();
+                case 28 -> ModItems.DISC_C28.get();
+                default -> ModItems.DISC_C29.get();
             };
         } else {
             cupcakkeDrops = switch (rand) {
@@ -182,6 +183,8 @@ public class CupcakKe extends AbstractFlopFigures implements IMerflop {
                 case 2 -> ModItems.DISC_CUPCAKKE2.get();
                 case 3 -> ModItems.DISC_CUPCAKKE3.get();
                 case 4 -> ModItems.DISC_CUPCAKKE4.get();
+                case 5 -> ModItems.DISC_CUPCAKKE5.get();
+                case 6 -> ModItems.DISC_CUPCAKKE6.get();
                 default -> ModItems.CVMTITPLASM.get();
             };
         }

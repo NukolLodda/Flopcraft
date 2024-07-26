@@ -2,13 +2,11 @@ package slay.nukolussy.modussy.entities.flops.traders;
 
 import com.google.common.collect.Sets;
 import it.unimi.dsi.fastutil.ints.Int2ObjectMap;
-import net.minecraft.Util;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.network.syncher.EntityDataAccessor;
 import net.minecraft.network.syncher.EntityDataSerializers;
 import net.minecraft.network.syncher.SynchedEntityData;
 import net.minecraft.sounds.SoundEvent;
-import net.minecraft.util.RandomSource;
 import net.minecraft.world.DifficultyInstance;
 import net.minecraft.world.damagesource.DamageSource;
 import net.minecraft.world.entity.*;
@@ -37,10 +35,10 @@ public class NickiMinaj extends AbstractFlopTraders {
     private static final EntityDataAccessor<Integer> NICKI_ID_DATATYPE_VARIANT = SynchedEntityData.defineId(NickiMinaj.class, EntityDataSerializers.INT);
     private static final Ingredient FOOD_ITEMS = Ingredient.of(
             ModItems.HAIRUSSY.get(), ModItems.SLAGINIUM.get(), ModItems.INFUSED_SLAGINIUM.get());
+
     public NickiMinaj(PlayMessages.SpawnEntity spawnEntity, Level world) {
         super(spawnEntity.getEntity().getType(), world);
     }
-
 
     public NickiMinaj(EntityType<NickiMinaj> type, Level world) {
         super(type, world);
@@ -203,9 +201,7 @@ public class NickiMinaj extends AbstractFlopTraders {
 
     @javax.annotation.Nullable
     public SpawnGroupData finalizeSpawn(ServerLevelAccessor level, @NotNull DifficultyInstance instance, @NotNull MobSpawnType type, SpawnGroupData data, CompoundTag tag) {
-        RandomSource randomSource = level.getRandom();
-        Variant variant = Util.getRandom(Variant.values(), randomSource);
-        setVariant(variant);
+        setVariant(Variant.VARIANT);
         return super.finalizeSpawn(level, instance, type, data, tag);
     }
 

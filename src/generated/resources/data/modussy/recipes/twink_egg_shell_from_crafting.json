@@ -1,0 +1,25 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "group": "twink_egg_shell",
+  "ingredients": [
+    {
+      "item": "modussy:twink_egg_shells"
+    },
+    {
+      "item": "modussy:twink_egg_shells"
+    },
+    {
+      "item": "modussy:twink_egg_shells"
+    },
+    {
+      "item": "modussy:twink_egg_shells"
+    },
+    {
+      "item": "modussy:cvm_fluid_bucket"
+    }
+  ],
+  "result": {
+    "item": "modussy:twink_egg_pile"
+  }
+}

@@ -1,0 +1,14 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "group": "kamaloconut_palm_planks",
+  "ingredients": [
+    {
+      "item": "modussy:kamaloconut_palm_log"
+    }
+  ],
+  "result": {
+    "count": 4,
+    "item": "modussy:kamaloconut_palm_planks"
+  }
+}

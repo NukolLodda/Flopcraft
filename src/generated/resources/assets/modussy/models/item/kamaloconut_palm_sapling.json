@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:item/generated",
+  "textures": {
+    "layer0": "modussy:block/kamaloconut_palm_sapling"
+  }
+}

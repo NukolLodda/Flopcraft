@@ -70,14 +70,16 @@ public class Modussy {
 
     private void addCreative(BuildCreativeModeTabContentsEvent event) {
         if (event.getTabKey() == CreativeModeTabs.SPAWN_EGGS) {
+            event.accept(ModItems.CHARLI_XCX_SPAWN_EGG.get());
             event.accept(ModItems.CUPCAKKE_SPAWN_EGG.get());
             event.accept(ModItems.JIAFEI_SPAWN_EGG.get());
             event.accept(ModItems.LOVELY_PEACHES_SPAWN_EGG.get());
+            event.accept(ModItems.KAMALA_HARRIS_SPAWN_EGG.get());
             event.accept(ModItems.MARIAH_CAREY_SPAWN_EGG.get());
             event.accept(ModItems.NICKI_MINAJ_SPAWN_EGG.get());
             event.accept(ModItems.RANVISION_SPAWN_EGG.get());
             event.accept(ModItems.TWINK_SPAWN_EGG.get());
-            // event.accept(ModItems.TWINK_SIVAN_SPAWN_EGG.get());
+            event.accept(ModItems.TWINK_SIVAN_SPAWN_EGG.get());
         }
 
         if (event.getTabKey() == CreativeModeTabs.TOOLS_AND_UTILITIES) {

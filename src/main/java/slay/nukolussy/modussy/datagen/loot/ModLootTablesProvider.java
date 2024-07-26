@@ -26,6 +26,7 @@ public class ModLootTablesProvider extends BlockLootSubProvider {
 
     @Override
     protected void generate() {
+        this.dropSelf(ModBlocks.BRAT_BLOCK.get());
         this.dropSelf(ModBlocks.FLOPIUM_BLOCK.get());
         this.dropSelf(ModBlocks.GAGASTONE_BLOCK.get());
         this.dropSelf(ModBlocks.GAGINA_BLOCK.get());
@@ -37,6 +38,8 @@ public class ModLootTablesProvider extends BlockLootSubProvider {
         this.dropSelf(ModBlocks.GIRL_YESS_PUMPKIN.get());
 
         this.add(ModBlocks.SHENSEIUM_ORE.get(), block -> createOreDrops(ModBlocks.SHENSEIUM_ORE.get(), ModItems.SHENSEIUM.get(), 1, 3));
+        this.add(ModBlocks.BRAT_ORE.get(), block -> createOreDrops(ModBlocks.BRAT_ORE.get(), ModItems.BRAT.get(), 1, 2));
+        this.add(ModBlocks.DEEPSLATE_BRAT_ORE.get(), block -> createOreDrops(ModBlocks.DEEPSLATE_BRAT_ORE.get(), ModItems.BRAT.get(), 1, 2));
 
         LootItemCondition.Builder jiafeiLootItemCondition = LootItemBlockStatePropertyCondition
                 .hasBlockStateProperties(ModBlocks.GROWING_JIAFEI.get())

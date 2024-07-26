@@ -1,10 +1,6 @@
 package slay.nukolussy.modussy.entities.flops.traders;
 
 import net.minecraft.core.particles.ParticleTypes;
-import net.minecraft.nbt.CompoundTag;
-import net.minecraft.nbt.ListTag;
-import net.minecraft.nbt.StringTag;
-import net.minecraft.nbt.Tag;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.sounds.SoundEvent;
 import net.minecraft.world.InteractionHand;
@@ -104,7 +100,7 @@ public abstract class AbstractFlopTraders extends AbstractFlopFigures implements
         if (pTradingPlayer != null) {
             if (!PlayerMethods.isNewgen(pTradingPlayer)) {
                 this.trader = pTradingPlayer;
-                if (newYearsGifting(pTradingPlayer)) {
+                if (ModUtil.isNewYears() && newYearsGifting(pTradingPlayer)) {
                     pTradingPlayer.spawnAtLocation(ModItems.HUNBAO.get());
                 }
             }

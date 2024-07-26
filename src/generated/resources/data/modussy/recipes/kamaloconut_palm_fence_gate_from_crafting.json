@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "group": "kamaloconut_palm_fence_gate",
+  "key": {
+    "0": {
+      "item": "modussy:kamaloconut_palm_planks"
+    },
+    "1": {
+      "item": "minecraft:stick"
+    }
+  },
+  "pattern": [
+    "101",
+    "101"
+  ],
+  "result": {
+    "item": "modussy:kamaloconut_palm_fence_gate"
+  },
+  "show_notification": true
+}

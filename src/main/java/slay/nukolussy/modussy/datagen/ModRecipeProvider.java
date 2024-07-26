@@ -10,6 +10,8 @@ import net.minecraft.world.item.Items;
 import net.minecraft.world.item.crafting.Ingredient;
 import net.minecraft.world.item.crafting.RecipeSerializer;
 import net.minecraft.world.level.ItemLike;
+import net.minecraft.world.level.block.Blocks;
+import net.minecraftforge.common.Tags;
 import net.minecraftforge.common.crafting.conditions.IConditionBuilder;
 import slay.nukolussy.modussy.Modussy;
 import slay.nukolussy.modussy.block.ModBlocks;
@@ -26,6 +28,7 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
     @Override
     protected void buildRecipes(Consumer<FinishedRecipe> pWriter) {
         oreBlasting(pWriter, ModTags.Items.SHENSEIUM_ORE, ModItems.SHENSEIUM.get());
+        oreBlasting(pWriter, ModTags.Items.BRAT_ORE, ModItems.BRAT.get());
         cupcakkeDiscRecipe(pWriter, Items.MUSIC_DISC_STRAD, ModItems.DISC_C1.get());
         cupcakkeDiscRecipe(pWriter, ModItems.DISC_CUPCAKKE3.get(), ModItems.DISC_C2.get());
         cupcakkeDiscRecipe(pWriter, ModItems.DISC_C15.get(), ModItems.DISC_C3.get());
@@ -54,13 +57,21 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
         cupcakkeDiscRecipe(pWriter, ModItems.SLAGINIUM.get(), ModItems.DISC_C26.get());
         cupcakkeDiscRecipe(pWriter, ModBlocks.MARIAH_CAREY_ICE_BLOCK.get(), ModItems.DISC_C27.get());
         cupcakkeDiscRecipe(pWriter, Items.SPRUCE_LEAVES, ModItems.DISC_C28.get());
+        cupcakkeDiscRecipe(pWriter, ModItems.TWINK_EGG_SHELLS.get(), ModItems.DISC_C29.get());
+        cupcakkeDiscRecipe(pWriter, ModItems.KYLIE_JENNER_LIPSTICK.get(), ModItems.DISC_C30.get());
+        cupcakkeDiscRecipe(pWriter, ModItems.BRAT.get(), ModItems.DISC_C31.get());
+        cupcakkeDiscRecipe(pWriter, ModItems.LANCVM_CREAM.get(), ModItems.DISC_C32.get());
         ponmiDiscRecipe(pWriter, Items.OAK_LOG, ModItems.DISC_PM1.get());
-        jiafeiDiscRecipe(pWriter, ModItems.HAIRUSSY.get() ,ModItems.DISC_J1.get());
-        jiafeiDiscRecipe(pWriter, Items.MINECART,ModItems.DISC_J2.get());
-        jiafeiDiscRecipe(pWriter, ModItems.TWINK_EGG_SHELLS.get(),ModItems.DISC_J3.get());
-        jiafeiDiscRecipe(pWriter, ModItems.DISC_JIAFEI.get(),ModItems.DISC_J4.get());
-        jiafeiDiscRecipe(pWriter, Items.ENDER_PEARL,ModItems.DISC_J5.get());
-        jiafeiDiscRecipe(pWriter, Items.TINTED_GLASS,ModItems.DISC_J6.get());
+        jiafeiDiscRecipe(pWriter, ModItems.HAIRUSSY.get(), ModItems.DISC_J1.get());
+        jiafeiDiscRecipe(pWriter, Items.MINECART, ModItems.DISC_J2.get());
+        jiafeiDiscRecipe(pWriter, ModItems.TWINK_EGG_SHELLS.get(), ModItems.DISC_J3.get());
+        jiafeiDiscRecipe(pWriter, ModItems.DISC_JIAFEI.get(), ModItems.DISC_J4.get());
+        jiafeiDiscRecipe(pWriter, Items.ENDER_PEARL, ModItems.DISC_J5.get());
+        jiafeiDiscRecipe(pWriter, Items.TINTED_GLASS, ModItems.DISC_J6.get());
+        jiafeiDiscRecipe(pWriter, Blocks.STONE_PRESSURE_PLATE, ModItems.DISC_J7.get());
+        kamalaDiscRecipe(pWriter, ModItems.BRATIFICATIONER.get(), ModItems.DISC_K1.get());
+        kamalaDiscRecipe(pWriter, Blocks.COBBLESTONE, ModItems.DISC_K2.get());
+        kamalaDiscRecipe(pWriter, ModItems.DISC_CUPCAKKE3.get(), ModItems.DISC_K3.get());
         dejeBullyingDiscRecipe(pWriter, Items.MUSIC_DISC_CAT,ModItems.DISC_DB1.get());
 
         musicDiscRecipe(pWriter, Ingredient.of(ModItems.JIAFEI_PRODUCT.get()), Ingredient.of(ModItems.CUPCAKE.get()),
@@ -90,6 +101,12 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
         musicDiscRecipe(pWriter, Ingredient.of(Items.WATER_BUCKET), Ingredient.of(ModItems.CUPCAKE.get()),
                 ModItems.DISC_CUPCAKKE4.get(), Items.WATER_BUCKET, -1);
 
+        musicDiscRecipe(pWriter, Ingredient.of(Items.DARK_OAK_LOG), Ingredient.of(ModItems.CUPCAKE.get()),
+                ModItems.DISC_CUPCAKKE5.get(), Items.DARK_OAK_LOG, -1);
+
+        musicDiscRecipe(pWriter, Ingredient.of(Items.GLASS_BOTTLE), Ingredient.of(ModItems.CUPCAKE.get()),
+                ModItems.DISC_CUPCAKKE6.get(), Items.GLASS_BOTTLE, -1); // todo change this to breeze rods for 1.21
+
         musicDiscRecipe(pWriter, Ingredient.of(ModItems.JIAFEI_PRODUCT.get()),
                 ModItems.DISC_JIAFEI.get(), ModItems.JIAFEI_PRODUCT.get(), 2);
 
@@ -107,6 +124,7 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
         musicDiscRecipe(pWriter, Ingredient.of(ModItems.DISC_CUPCAKKE3.get()),
                 ModItems.DISC_C2.get(), ModItems.DISC_CUPCAKKE3.get(), 1);
 
+        nineBlockStorageRecipes(pWriter, ModItems.BRAT.get(), ModTags.Items.BRAT_BLOCK);
         nineBlockStorageRecipes(pWriter, ModItems.FLOPIUM.get(), ModTags.Items.FLOPIUM_BLOCK);
         nineBlockStorageRecipes(pWriter, ModItems.GAGASTONE.get(), ModTags.Items.GAGASTONE_BLOCK);
         nineBlockStorageRecipes(pWriter, ModItems.GAGINA.get(), ModTags.Items.GAGINA_BLOCK);
@@ -114,6 +132,7 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
         nineBlockStorageRecipes(pWriter, ModItems.MYSTICAL_FLOPIUM.get(), ModTags.Items.MYSTICAL_FLOPIUM_BLOCK);
         nineBlockStorageRecipes(pWriter, ModItems.SLAGINIUM.get(), ModTags.Items.SLAGINIUM_BLOCK);
         nineBlockStorageRecipes(pWriter, ModItems.SHENSEIUM.get(), ModTags.Items.SHENSEIUM_BLOCK);
+        storageBlockRecipe(pWriter, ModBlocks.BRAT_BLOCK.get(), ModTags.Items.BRAT);
         storageBlockRecipe(pWriter, ModBlocks.FLOPIUM_BLOCK.get(), ModTags.Items.FLOPIUM);
         storageBlockRecipe(pWriter, ModBlocks.GAGASTONE_BLOCK.get(), ModItems.GAGASTONE.get());
         storageBlockRecipe(pWriter, ModBlocks.GAGINA_BLOCK.get(), ModItems.GAGINA.get());
@@ -151,6 +170,15 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
                 .unlockedBy(getHasName(Items.STRING), has(Items.STRING))
                 .group("arana_grande").save(pWriter, Modussy.MODID + ":arana_grande_from_crafting");
 
+        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModItems.TWINK_TRANSFORMER.get())
+                .pattern(" 0 ")
+                .pattern(" 1 ")
+                .pattern(" 2 ")
+                .define('0', ModTags.Items.BRAT).define('1', ModItems.TWINK_EGG_PILE.get())
+                .define('2', Tags.Items.RODS_WOODEN)
+                .unlockedBy(getHasName(ModItems.TWINK_EGG_PILE.get()), has(ModItems.TWINK_EGG_PILE.get()))
+                .group("twink_transformer").save(pWriter, Modussy.MODID + ":twink_transformer_from_crafting");
+
         pickaxolRecipe(pWriter, Ingredient.of(ModTags.Items.SLAGINIUM_INGOT), Ingredient.of(ModItems.CUPCAKE.get()),
                 Ingredient.of(Items.STICK), ModItems.SLAGINIUM_PICKAXOL.get(), ModItems.SLAGINIUM.get());
 
@@ -172,6 +200,15 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
                 .define('4', ModItems.CVM.get()).group("cupcakke_spawn")
                 .unlockedBy(getHasName(ModItems.CVMTITPLASM.get()), has(ModItems.CVMTITPLASM.get()))
                 .save(pWriter, Modussy.MODID + ":cupcakke_spawn_egg_from_crafting");
+
+        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModItems.BRATIFICATIONER.get())
+                .pattern(" 0 ")
+                .pattern("010")
+                .pattern("20 ")
+                .define('0', ModTags.Items.BRAT).define('1', ModItems.DISC_C30.get())
+                .define('2', Tags.Items.RODS_WOODEN).group("bratificationer")
+                .unlockedBy(getHasName(ModItems.BRAT.get()), has(ModItems.BRAT.get()))
+                .save(pWriter, Modussy.MODID + ":bratificationer_from_crafting");
 
         ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModBlocks.CVM_INFUSION_ALTER.get())
                 .pattern("010")
@@ -229,11 +266,24 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
         jiafeiSmithingRecipe(pWriter, ModItems.JIAFEI_TRIM_TEMPLATE.get(), Ingredient.of(ModItems.JIAFEI_SEED.get()));
         jiafeiSmithingRecipe(pWriter, ModItems.JIAFEI_UPGRADE_TEMPLATE.get(), Ingredient.of(ModItems.JIAFEI_PERFUME.get()));
 
+        ShapelessRecipeBuilder.shapeless(RecipeCategory.MISC, ModItems.TWINK_EGG_PILE.get())
+                .requires(ModItems.TWINK_EGG_SHELLS.get()).requires(ModItems.TWINK_EGG_SHELLS.get())
+                .requires(ModItems.TWINK_EGG_SHELLS.get()).requires(ModItems.TWINK_EGG_SHELLS.get()).requires(ModItems.CVM_FLUID_BUCKET.get())
+                .unlockedBy(getHasName(ModItems.TWINK_EGG_SHELLS.get()), has(ModItems.TWINK_EGG_SHELLS.get()))
+                .group("twink_egg_shell")
+                .save(pWriter, Modussy.MODID + ":twink_egg_shell_from_crafting");
+
         ShapelessRecipeBuilder.shapeless(RecipeCategory.MISC, ModItems.HAIRUSSY.get())
                 .requires(Items.LEATHER).requires(Items.BROWN_WOOL).requires(ModTags.Items.YASSIFER)
                 .unlockedBy(getHasName(ModItems.SLAGINIUM_YASSIFIER.get()), has(ModItems.SLAGINIUM_YASSIFIER.get()))
                 .group("hairussy")
                 .save(pWriter, Modussy.MODID + ":hairussy_from_crafting");
+
+        ShapelessRecipeBuilder.shapeless(RecipeCategory.MISC, ModBlocks.KAMALOCONUT_PALM_SAPLING.get())
+                .requires(ModTags.Items.BRAT).requires(ModItems.KAMALOCONUT.get()).requires(ModTags.Items.YASSIFER)
+                .unlockedBy(getHasName(ModItems.SLAGINIUM_YASSIFIER.get()), has(ModItems.SLAGINIUM_YASSIFIER.get()))
+                .group("hairussy")
+                .save(pWriter, Modussy.MODID + ":kamaloconut_sapling_from_crafting");
 
         ShapelessRecipeBuilder.shapeless(RecipeCategory.MISC, ModItems.SCARUSSY.get())
                 .requires(Items.JACK_O_LANTERN).requires(Items.ENDER_PEARL)
@@ -286,7 +336,7 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
                 .save(pWriter, Modussy.MODID + ":posei_from_fluid_crafting");
 
         ShapelessRecipeBuilder.shapeless(RecipeCategory.MISC, ModItems.CVM_PIE.get(), 1)
-                .requires(Items.PUMPKIN).requires(ModItems.CVM.get())
+                .requires(ModItems.SCARUSSY.get()).requires(ModItems.CVM.get())
                 .requires(ModItems.TWINK_EGG.get()).unlockedBy(getHasName(ModItems.TWINK_EGG.get()), has(ModItems.TWINK_EGG.get()))
                 .group("cvm_pie")
                 .save(pWriter, Modussy.MODID + ":cvm_pie_from_crafting");
@@ -303,6 +353,16 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
         slabRecipe(pWriter, ModBlocks.LOVELY_PEACH_SLABS.get(), Ingredient.of(ModBlocks.LOVELY_PEACH_PLANKS.get()));
         pressurePlate(pWriter, ModBlocks.LOVELY_PEACH_PRESSURE_PLATE.get(), Ingredient.of(ModBlocks.LOVELY_PEACH_PLANKS.get()));
         buttonRecipe(pWriter, ModBlocks.LOVELY_PEACH_BUTTON.get(), Ingredient.of(ModBlocks.LOVELY_PEACH_PLANKS.get()));
+
+        planksRecipe(pWriter, ModBlocks.KAMALOCONUT_PALM_PLANKS.get(), Ingredient.of(ModBlocks.KAMALOCONUT_PALM_LOG.get()));
+        fenceRecipe(pWriter, ModBlocks.KAMALOCONUT_PALM_FENCE.get(), Ingredient.of(ModBlocks.KAMALOCONUT_PALM_PLANKS.get()));
+        fenceGateRecipe(pWriter, ModBlocks.KAMALOCONUT_PALM_FENCE_GATE.get(), Ingredient.of(ModBlocks.KAMALOCONUT_PALM_PLANKS.get()));
+        doorRecipe(pWriter, ModBlocks.KAMALOCONUT_PALM_DOOR.get(), Ingredient.of(ModBlocks.KAMALOCONUT_PALM_PLANKS.get()));
+        trapdoorRecipe(pWriter, ModBlocks.KAMALOCONUT_PALM_TRAPDOOR.get(), Ingredient.of(ModBlocks.KAMALOCONUT_PALM_PLANKS.get()));
+        stairRecipe(pWriter, ModBlocks.KAMALOCONUT_PALM_STAIRS.get(), Ingredient.of(ModBlocks.KAMALOCONUT_PALM_PLANKS.get()));
+        slabRecipe(pWriter, ModBlocks.KAMALOCONUT_PALM_SLABS.get(), Ingredient.of(ModBlocks.KAMALOCONUT_PALM_PLANKS.get()));
+        pressurePlate(pWriter, ModBlocks.KAMALOCONUT_PALM_PRESSURE_PLATE.get(), Ingredient.of(ModBlocks.KAMALOCONUT_PALM_PLANKS.get()));
+        buttonRecipe(pWriter, ModBlocks.KAMALOCONUT_PALM_BUTTON.get(), Ingredient.of(ModBlocks.KAMALOCONUT_PALM_PLANKS.get()));
     }
 
     private static TagKey<Item> getYassifierFromComplexity(int pComplexity) {
@@ -394,6 +454,15 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
     protected static void jiafeiDiscRecipe(Consumer<FinishedRecipe> pWriter, TagKey<Item> pInput, ItemLike pResult) {
         musicDiscRecipe(pWriter, Ingredient.of(pInput), Ingredient.of(ModItems.JIAFEI_PRODUCT.get()), pResult,
                 Ingredient.of(pInput).getItems()[0].getItem(), 2);
+    }
+
+    protected static void kamalaDiscRecipe(Consumer<FinishedRecipe> pWriter, ItemLike pInput, ItemLike pResult) {
+        musicDiscRecipe(pWriter, Ingredient.of(pInput), Ingredient.of(ModItems.KAMALOCONUT.get()), pResult, pInput, 1);
+    }
+
+    protected static void kamalaDiscRecipe(Consumer<FinishedRecipe> pWriter, TagKey<Item> pInput, ItemLike pResult) {
+        musicDiscRecipe(pWriter, Ingredient.of(pInput), Ingredient.of(ModItems.KAMALOCONUT.get()), pResult,
+                Ingredient.of(pInput).getItems()[0].getItem(), 1);
     }
 
     protected static void ponmiDiscRecipe(Consumer<FinishedRecipe> pWriter, ItemLike pInput, ItemLike pResult) {

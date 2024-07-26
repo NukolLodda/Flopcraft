@@ -1,0 +1,35 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_kylie_jenner_lipstick": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "modussy:kylie_jenner_lipstick"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "modussy:music_disc_c30_from_crafting"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_kylie_jenner_lipstick",
+      "has_the_recipe"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "modussy:music_disc_c30_from_crafting"
+    ]
+  },
+  "sends_telemetry_event": false
+}

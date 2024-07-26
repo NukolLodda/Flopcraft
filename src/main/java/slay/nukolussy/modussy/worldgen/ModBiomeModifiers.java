@@ -14,6 +14,7 @@ import slay.nukolussy.modussy.Modussy;
 
 public class ModBiomeModifiers {
     public static final ResourceKey<BiomeModifier> ADD_SHENSEIUM_ORE = registerKey("add_shenseium_ore");
+    public static final ResourceKey<BiomeModifier> ADD_BRAT_ORE = registerKey("add_brat_ore");
 
     public static void bootstrap(BootstapContext<BiomeModifier> context) {
         var placedFeatures = context.lookup(Registries.PLACED_FEATURE);
@@ -22,6 +23,11 @@ public class ModBiomeModifiers {
         context.register(ADD_SHENSEIUM_ORE, new ForgeBiomeModifiers
                 .AddFeaturesBiomeModifier(biomes.getOrThrow(BiomeTags.IS_NETHER),
                 HolderSet.direct(placedFeatures.getOrThrow(ModPlacedFeatures.SHENSEIUM_ORE)),
+                GenerationStep.Decoration.UNDERGROUND_ORES));
+
+        context.register(ADD_BRAT_ORE, new ForgeBiomeModifiers
+                .AddFeaturesBiomeModifier(biomes.getOrThrow(BiomeTags.IS_OVERWORLD),
+                HolderSet.direct(placedFeatures.getOrThrow(ModPlacedFeatures.BRAT_ORE)),
                 GenerationStep.Decoration.UNDERGROUND_ORES));
     }
     private static ResourceKey<BiomeModifier> registerKey(String name) {

@@ -4,7 +4,6 @@ import net.minecraft.world.effect.MobEffectCategory;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.ai.attributes.AttributeModifier;
 import net.minecraft.world.entity.ai.attributes.Attributes;
-import slay.nukolussy.modussy.sound.ModSounds;
 import slay.nukolussy.modussy.util.EntityMethods;
 
 public class YuhEffect extends AbstractSlayEffect {
@@ -16,11 +15,9 @@ public class YuhEffect extends AbstractSlayEffect {
     }
     @Override
     public void applyEffectTick(LivingEntity pLivingEntity, int pAmplifier) {
-        if (!pLivingEntity.level().isClientSide) {
-            addAttributeModifier(Attributes.MOVEMENT_SPEED, "489a445e-e349-4958-9ad0-3f1c752b198c", 0, AttributeModifier.Operation.MULTIPLY_TOTAL);
-            if (EntityMethods.isMonster(pLivingEntity)) {
-                addAttributeModifier(Attributes.ATTACK_DAMAGE, "cf3ee172-b543-4f0a-9136-25109b9ec057", -pAmplifier, AttributeModifier.Operation.ADDITION);
-            }
+        addAttributeModifier(Attributes.MOVEMENT_SPEED, "489a445e-e349-4958-9ad0-3f1c752b198c", 0, AttributeModifier.Operation.MULTIPLY_TOTAL);
+        if (EntityMethods.isMonster(pLivingEntity)) {
+            addAttributeModifier(Attributes.ATTACK_DAMAGE, "cf3ee172-b543-4f0a-9136-25109b9ec057", -pAmplifier, AttributeModifier.Operation.ADDITION);
         }
         super.applyEffectTick(pLivingEntity, pAmplifier);
     }

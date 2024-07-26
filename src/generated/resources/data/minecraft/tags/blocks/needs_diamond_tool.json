@@ -1,6 +1,9 @@
 {
   "values": [
     "modussy:aesthetic_store_block",
+    "modussy:brat_ore",
+    "modussy:brat_block",
+    "modussy:deepslate_brat_ore",
     "modussy:flop_airline_ticket_scanner",
     "modussy:flopbucks_block",
     "modussy:flopdonalds_block",
@@ -17,6 +20,7 @@
     "modussy:ranpapi_block",
     "modussy:shenseium_block",
     "modussy:shenseium_ore",
+    "modussy:special_yassification_detector",
     "modussy:yassification_detector"
   ]
 }

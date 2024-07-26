@@ -25,6 +25,9 @@ public class ModCreativeTabs {
                     .withTabsBefore(CreativeModeTabs.SPAWN_EGGS)
                     .displayItems(((pParameters, pOutput) -> {
                         pOutput.accept(ModBlocks.CVM_INFUSION_ALTER.get());
+                        pOutput.accept(ModBlocks.BRAT_ORE.get());
+                        pOutput.accept(ModBlocks.DEEPSLATE_BRAT_ORE.get());
+                        pOutput.accept(ModBlocks.SHENSEIUM_ORE.get());
                         pOutput.accept(ModBlocks.GIRL_YESS_PUMPKIN.get());
                         pOutput.accept(ModBlocks.MARIAH_CAREY_ICE_BLOCK.get());
                         pOutput.accept(ModBlocks.YASSIFICATION_DETECTOR.get());
@@ -38,6 +41,7 @@ public class ModCreativeTabs {
                         pOutput.accept(ModBlocks.FLOP_AIRLINE_BLOCK.get());
                         pOutput.accept(ModBlocks.FLOP_AIRLINE_TICKET_SCANNER.get());
                         pOutput.accept(ModBlocks.BARBIE_LANTERN.get());
+                        pOutput.accept(ModBlocks.BRAT_BLOCK.get());
                         pOutput.accept(ModBlocks.FLOPIUM_BLOCK.get());
                         pOutput.accept(ModBlocks.GAGASTONE_BLOCK.get());
                         pOutput.accept(ModBlocks.GAGINA_BLOCK.get());
@@ -45,7 +49,6 @@ public class ModCreativeTabs {
                         pOutput.accept(ModBlocks.MYSTICAL_FLOPIUM_BLOCK.get());
                         pOutput.accept(ModBlocks.SHENSEIUM_BLOCK.get());
                         pOutput.accept(ModBlocks.SLAGINIUM_BLOCK.get());
-                        pOutput.accept(ModBlocks.SHENSEIUM_ORE.get());
                         pOutput.accept(ModBlocks.HARDENED_PERIOD_CVM.get());
                         pOutput.accept(ModBlocks.LOVELY_PEACH_LOG.get());
                         pOutput.accept(ModBlocks.LOVELY_PEACH_LEAVES.get());
@@ -61,6 +64,21 @@ public class ModCreativeTabs {
                         pOutput.accept(ModBlocks.LOVELY_PEACH_SAPLING.get());
                         //pOutput.accept(ModBlocks.LOVELY_PEACH_WALL_SIGN.get());
                         //pOutput.accept(ModBlocks.LOVELY_PEACH_WALL_HANGING_SIGN.get());
+
+                        pOutput.accept(ModBlocks.KAMALOCONUT_PALM_LOG.get());
+                        pOutput.accept(ModBlocks.KAMALOCONUT_PALM_LEAVES.get());
+                        pOutput.accept(ModBlocks.KAMALOCONUT_PALM_PLANKS.get());
+                        pOutput.accept(ModBlocks.KAMALOCONUT_PALM_STAIRS.get());
+                        pOutput.accept(ModBlocks.KAMALOCONUT_PALM_SLABS.get());
+                        pOutput.accept(ModBlocks.KAMALOCONUT_PALM_BUTTON.get());
+                        pOutput.accept(ModBlocks.KAMALOCONUT_PALM_PRESSURE_PLATE.get());
+                        pOutput.accept(ModBlocks.KAMALOCONUT_PALM_DOOR.get());
+                        pOutput.accept(ModBlocks.KAMALOCONUT_PALM_TRAPDOOR.get());
+                        pOutput.accept(ModBlocks.KAMALOCONUT_PALM_FENCE.get());
+                        pOutput.accept(ModBlocks.KAMALOCONUT_PALM_FENCE_GATE.get());
+                        pOutput.accept(ModBlocks.KAMALOCONUT_PALM_SAPLING.get());
+                        //pOutput.accept(ModBlocks.KAMALOCONUT_PALM_WALL_SIGN.get());
+                        //pOutput.accept(ModBlocks.KAMALOCONUT_PALM_WALL_HANGING_SIGN.get());
                     })).build());
 
     public static RegistryObject<CreativeModeTab> SLAY_TOOLS = CREATIVE_MODE_TABS.register("slay_tools", () ->
@@ -70,6 +88,7 @@ public class ModCreativeTabs {
                     .withTabsBefore(CreativeModeTabs.SPAWN_EGGS)
                     .displayItems(((pParameters, pOutput) -> {
                         pOutput.accept(ModItems.ARANA_GRANDE.get());
+                        pOutput.accept(ModItems.BRATIFICATIONER.get());
                         pOutput.accept(ModItems.CLITMAS_BUTTPLUG.get());
                         pOutput.accept(ModItems.DEELDO.get());
                         pOutput.accept(ModItems.ENDER_DRAGON_DEELDO.get());
@@ -96,6 +115,7 @@ public class ModCreativeTabs {
                         pOutput.accept(ModItems.JIAFEI_CHESTPLATE.get());
                         pOutput.accept(ModItems.JIAFEI_HELMET.get());
                         pOutput.accept(ModItems.RANPAPI_TABLET.get());
+                        pOutput.accept(ModItems.TWINK_TRANSFORMER.get());
                     })).build());
 
     public static RegistryObject<CreativeModeTab> YASS_DISCS = CREATIVE_MODE_TABS.register("yass_discs", () ->
@@ -132,12 +152,18 @@ public class ModCreativeTabs {
                         pOutput.accept(ModItems.DISC_C26.get());
                         pOutput.accept(ModItems.DISC_C27.get());
                         pOutput.accept(ModItems.DISC_C28.get());
+                        pOutput.accept(ModItems.DISC_C29.get());
+                        pOutput.accept(ModItems.DISC_C30.get());
+                        pOutput.accept(ModItems.DISC_C31.get());
+                        pOutput.accept(ModItems.DISC_C32.get());
                         pOutput.accept(ModItems.DISC_CJ1.get());
                         pOutput.accept(ModItems.DISC_CPM1.get());
                         pOutput.accept(ModItems.DISC_CUPCAKKE1.get());
                         pOutput.accept(ModItems.DISC_CUPCAKKE2.get());
                         pOutput.accept(ModItems.DISC_CUPCAKKE3.get());
                         pOutput.accept(ModItems.DISC_CUPCAKKE4.get());
+                        pOutput.accept(ModItems.DISC_CUPCAKKE5.get());
+                        pOutput.accept(ModItems.DISC_CUPCAKKE6.get());
                         pOutput.accept(ModItems.DISC_DB1.get());
                         pOutput.accept(ModItems.DISC_DEJE_BULLYING.get());
                         pOutput.accept(ModItems.DISC_J1.get());
@@ -146,10 +172,14 @@ public class ModCreativeTabs {
                         pOutput.accept(ModItems.DISC_J4.get());
                         pOutput.accept(ModItems.DISC_J5.get());
                         pOutput.accept(ModItems.DISC_J6.get());
+                        pOutput.accept(ModItems.DISC_J7.get());
                         pOutput.accept(ModItems.DISC_JC1.get());
                         pOutput.accept(ModItems.DISC_JC2.get());
                         pOutput.accept(ModItems.DISC_JC3.get());
                         pOutput.accept(ModItems.DISC_JIAFEI.get());
+                        pOutput.accept(ModItems.DISC_K1.get());
+                        pOutput.accept(ModItems.DISC_K2.get());
+                        pOutput.accept(ModItems.DISC_K3.get());
                         pOutput.accept(ModItems.DISC_PM1.get());
                         pOutput.accept(ModItems.DISC_PONMI.get());
                         pOutput.accept(ModItems.DISC_RANVISION.get());
@@ -163,6 +193,7 @@ public class ModCreativeTabs {
                     .displayItems(((pParameters, pOutput) -> {
                         pOutput.accept(ModItems.BARBIE_CRYSTALS.get());
                         pOutput.accept(ModItems.BLOOD_CLUMP.get());
+                        pOutput.accept(ModItems.BRAT.get());
                         pOutput.accept(ModItems.CUPCAKE.get());
                         pOutput.accept(ModItems.CVM.get());
                         pOutput.accept(ModItems.CVMIUM.get());
@@ -179,6 +210,7 @@ public class ModCreativeTabs {
                         pOutput.accept(ModItems.JIAFEI_TRIM_TEMPLATE.get());
                         pOutput.accept(ModItems.JIAFEI_UPGRADE_TEMPLATE.get());
                         pOutput.accept(ModItems.LOVELY_PEACH.get());
+                        pOutput.accept(ModItems.KAMALOCONUT.get());
                         pOutput.accept(ModItems.MYSTICAL_FLOPIUM.get());
                         pOutput.accept(ModItems.SCARUSSY.get());
                         pOutput.accept(ModItems.SLAGINIUM.get());
@@ -190,6 +222,7 @@ public class ModCreativeTabs {
                         pOutput.accept(ModItems.TAMPON.get());
                         pOutput.accept(ModItems.TWINK_EGG.get());
                         pOutput.accept(ModItems.TWINK_EGG_SHELLS.get());
+                        pOutput.accept(ModItems.TWINK_EGG_PILE.get());
                         pOutput.accept(ModItems.WONYOUNG_ESSENCE.get());
                     })).build());
 

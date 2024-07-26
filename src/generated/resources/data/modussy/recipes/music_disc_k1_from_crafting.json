@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "group": "music_disc_k1",
+  "ingredients": [
+    {
+      "item": "modussy:bratificationer"
+    },
+    {
+      "item": "modussy:kamaloconut"
+    },
+    {
+      "tag": "forge:yassifers/advanced"
+    }
+  ],
+  "result": {
+    "item": "modussy:music_disc_k1"
+  }
+}

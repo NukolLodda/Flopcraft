@@ -2,8 +2,9 @@ package slay.nukolussy.modussy.entities.twink;
 
 import com.mojang.serialization.Codec;
 import net.minecraft.Util;
+import net.minecraft.client.Minecraft;
+import net.minecraft.core.particles.ParticleTypes;
 import net.minecraft.nbt.CompoundTag;
-import net.minecraft.network.chat.Component;
 import net.minecraft.network.syncher.EntityDataAccessor;
 import net.minecraft.network.syncher.EntityDataSerializers;
 import net.minecraft.network.syncher.SynchedEntityData;
@@ -15,23 +16,29 @@ import net.minecraft.util.StringRepresentable;
 import net.minecraft.world.DifficultyInstance;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResult;
-import net.minecraft.world.SimpleContainer;
 import net.minecraft.world.damagesource.DamageSource;
-import net.minecraft.world.entity.*;
+import net.minecraft.world.effect.MobEffectInstance;
+import net.minecraft.world.entity.EntityType;
+import net.minecraft.world.entity.MobSpawnType;
+import net.minecraft.world.entity.MobType;
+import net.minecraft.world.entity.SpawnGroupData;
 import net.minecraft.world.entity.player.Player;
-import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.ServerLevelAccessor;
 import net.minecraft.world.level.gameevent.GameEvent;
+import net.minecraft.world.phys.Vec3;
 import net.minecraftforge.network.PlayMessages;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import slay.nukolussy.modussy.effect.ModEffects;
 import slay.nukolussy.modussy.entities.AbstractModEntity;
 import slay.nukolussy.modussy.entities.ModEntities;
+import slay.nukolussy.modussy.entities.flops.bosses.GirlbossSivan;
 import slay.nukolussy.modussy.item.ModItems;
+import slay.nukolussy.modussy.item.types.tools.TwinkTransformer;
 import slay.nukolussy.modussy.sound.ModSounds;
+import slay.nukolussy.modussy.util.ModUtil;
 
 import java.util.function.IntFunction;
 
@@ -40,7 +47,7 @@ public class TwinkSivan extends AbstractTwink {
     public TwinkSivan(PlayMessages.SpawnEntity packet, Level world) {
         super(ModEntities.TWINK_SIVAN.get(), world);
     }
-    public TwinkSivan(EntityType<TwinkSivan> type, Level world) {
+    public TwinkSivan(EntityType<? extends TwinkSivan> type, Level world) {
         super(type, world);
     }
 
@@ -92,6 +99,29 @@ public class TwinkSivan extends AbstractTwink {
                 this.playSound(ModSounds.CUPCAkKE_SLURP.get()); // may change in the future
                 this.gameEvent(GameEvent.EAT, this);
                 return InteractionResult.SUCCESS;
+            }
+            double x = getX();
+            double y = getY();
+            double z = getZ();
+            if (itemStack.getItem() instanceof TwinkTransformer &&
+                    ModUtil.getEntityListOfDist(level(), GirlbossSivan.class, new Vec3(x, y, z), 128).isEmpty()) {
+                this.addEffect(new MobEffectInstance(ModEffects.YASSIFIED.get()));
+                this.playSound(ModSounds.TROYE_TRANSFORMATION.get());
+                Level level = Minecraft.getInstance().level;
+                if (level != null) {
+                    for (int i = 0; i < 16; i++) {
+                        double x0 = x + random.nextFloat();
+                        double y0 = y + random.nextFloat();
+                        double z0 = z + random.nextFloat();
+                        double dx = (random.nextFloat() - 0.5) * 0.5;
+                        double dy = (random.nextFloat() - 0.5) * 0.5;
+                        double dz = (random.nextFloat() - 0.5) * 0.5;
+
+                        level.addParticle(ParticleTypes.HEART, x0, y0, z0, dx, dy, dz);
+                        level.addParticle(ParticleTypes.POOF, x0, y0, z0, dx, dy, dz);
+                    }
+                }
+                this.convertTo(ModEntities.GIRLBOSS_SIVAN.get(), true);
             }
         }
         return result;
@@ -166,6 +196,10 @@ public class TwinkSivan extends AbstractTwink {
         RandomSource randomSource = level.getRandom();
         TwinkSivan.Variant variant = Util.getRandom(TwinkSivan.Variant.values(), randomSource);
         setVariant(variant);
+        return super.finalizeSpawn(level, instance, type, data, tag);
+    }
+
+    protected SpawnGroupData superFinalize(ServerLevelAccessor level, DifficultyInstance instance, MobSpawnType type, SpawnGroupData data, CompoundTag tag) {
         return super.finalizeSpawn(level, instance, type, data, tag);
     }
 

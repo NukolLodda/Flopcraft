@@ -13,7 +13,10 @@ public class ModTags {
     public static final class Items {
         public static final TagKey<Item> CUPCAKKE_REMIXES = createForge("discs/cupcakke");
         public static final TagKey<Item> JIAFEI_REMIXES = createForge("discs/jiafei");
+        public static final TagKey<Item> KAMALA_REMIXES = createForge("discs/kamala");
+        public static final TagKey<Item> TROYE_REMIXES = createForge("discs/troye");
         public static final TagKey<Item> BARBIE_CRYSTALS = createForge("gems/barbie");
+        public static final TagKey<Item> BRAT = createForge("gems/brat");
         public static final TagKey<Item> SLAGINIUM_INGOT = createForge("ingots/slaginium");
         public static final TagKey<Item> INFUSED_SLAGINIUM_INGOT = createForge("ingots/infused_slaginium");
         public static final TagKey<Item> FLOPIUM = createForge("gems/flopium");
@@ -27,7 +30,9 @@ public class ModTags {
         public static final TagKey<Item> BARBIE_LANTERN = createForge("blocks/barbie_lantern");
 
         public static final TagKey<Item> SHENSEIUM_ORE = createForge("ores/shenseium");
+        public static final TagKey<Item> BRAT_ORE = createForge("ores/brat");
 
+        public static final TagKey<Item> BRAT_BLOCK = createForge("storage_blocks/brat");
         public static final TagKey<Item> FLOPIUM_BLOCK = createForge("storage_blocks/flopium");
         public static final TagKey<Item> GAGASTONE_BLOCK = createForge("storage_blocks/gagastone");
         public static final TagKey<Item> GAGINA_BLOCK = createForge("storage_blocks/gagina");
@@ -57,7 +62,9 @@ public class ModTags {
     public static final class Blocks {
         public static final TagKey<Block> BARBIE_LANTERN = createForge("blocks/barbie_lantern");
         public static final TagKey<Block> SHENSEIUM_ORE = createForge("ores/shenseium");
+        public static final TagKey<Block> BRAT_ORE = createForge("ores/brat");
 
+        public static final TagKey<Block> BRAT_BLOCK = createForge("storage_blocks/brat");
         public static final TagKey<Block> FLOPIUM_BLOCK = createForge("storage_blocks/flopium");
         public static final TagKey<Block> GAGASTONE_BLOCK = createForge("storage_blocks/gagastone");
         public static final TagKey<Block> GAGINA_BLOCK = createForge("storage_blocks/gagina");

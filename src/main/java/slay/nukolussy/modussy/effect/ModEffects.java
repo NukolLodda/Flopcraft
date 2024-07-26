@@ -11,6 +11,7 @@ public class ModEffects {
     public static final DeferredRegister<MobEffect> MOB_EFFECTS =
             DeferredRegister.create(ForgeRegistries.MOB_EFFECTS, Modussy.MODID);
 
+    public static final RegistryObject<MobEffect> BRATIFIED = MOB_EFFECTS.register("bratified", BratifiedEffect::new);
     public static final RegistryObject<MobEffect> CVMMED = MOB_EFFECTS.register("cvmmed", CvmmedEffect::new);
     public static final RegistryObject<MobEffect> YASSIFIED = MOB_EFFECTS.register("yassified", YassifiedEffect::new);
     public static final RegistryObject<MobEffect> YUH = MOB_EFFECTS.register("yuh", YuhEffect::new);

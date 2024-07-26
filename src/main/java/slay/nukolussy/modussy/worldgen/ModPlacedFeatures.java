@@ -16,10 +16,15 @@ import slay.nukolussy.modussy.Modussy;
 import java.util.List;
 
 public class ModPlacedFeatures {
+    public static final ResourceKey<PlacedFeature> BRAT_ORE = registerKey("brat_ore_placed");
     public static final ResourceKey<PlacedFeature> SHENSEIUM_ORE = registerKey("shenseium_ore_placed");
 
     public static void bootstrap(BootstapContext<PlacedFeature> context) {
         HolderGetter<ConfiguredFeature<?, ?>> configured = context.lookup(Registries.CONFIGURED_FEATURE);
+        register(context, BRAT_ORE, configured.getOrThrow(ModConfiguredFeatures.BRAT_ORE_KEY),
+                ModOrePlacement.commonOrePlacement(8,
+                        HeightRangePlacement.uniform(VerticalAnchor.absolute(-50), VerticalAnchor.absolute(50))));
+
         register(context, SHENSEIUM_ORE, configured.getOrThrow(ModConfiguredFeatures.SHENSEIUM_ORE_KEY),
                 ModOrePlacement.commonOrePlacement(12,
                         HeightRangePlacement.uniform(VerticalAnchor.absolute(0), VerticalAnchor.absolute(128))));

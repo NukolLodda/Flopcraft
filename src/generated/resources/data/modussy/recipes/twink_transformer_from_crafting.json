@@ -1,0 +1,25 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "group": "twink_transformer",
+  "key": {
+    "0": {
+      "tag": "forge:gems/brat"
+    },
+    "1": {
+      "item": "modussy:twink_egg_pile"
+    },
+    "2": {
+      "tag": "forge:rods/wooden"
+    }
+  },
+  "pattern": [
+    " 0 ",
+    " 1 ",
+    " 2 "
+  ],
+  "result": {
+    "item": "modussy:twink_transformer"
+  },
+  "show_notification": true
+}

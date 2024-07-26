@@ -1,0 +1,35 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "modussy:music_disc_c29_from_crafting"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    },
+    "has_twink_egg_shells": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "modussy:twink_egg_shells"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "requirements": [
+    [
+      "has_twink_egg_shells",
+      "has_the_recipe"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "modussy:music_disc_c29_from_crafting"
+    ]
+  },
+  "sends_telemetry_event": false
+}

@@ -1,0 +1,37 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "group": "brat_block",
+  "ingredients": [
+    {
+      "tag": "forge:gems/brat"
+    },
+    {
+      "tag": "forge:gems/brat"
+    },
+    {
+      "tag": "forge:gems/brat"
+    },
+    {
+      "tag": "forge:gems/brat"
+    },
+    {
+      "tag": "forge:gems/brat"
+    },
+    {
+      "tag": "forge:gems/brat"
+    },
+    {
+      "tag": "forge:gems/brat"
+    },
+    {
+      "tag": "forge:gems/brat"
+    },
+    {
+      "tag": "forge:gems/brat"
+    }
+  ],
+  "result": {
+    "item": "modussy:brat_block"
+  }
+}

@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "group": "music_disc_k2",
+  "ingredients": [
+    {
+      "item": "minecraft:cobblestone"
+    },
+    {
+      "item": "modussy:kamaloconut"
+    },
+    {
+      "tag": "forge:yassifers/advanced"
+    }
+  ],
+  "result": {
+    "item": "modussy:music_disc_k2"
+  }
+}

@@ -4,11 +4,9 @@ import net.minecraft.core.HolderLookup;
 import net.minecraft.data.PackOutput;
 import net.minecraft.data.tags.ItemTagsProvider;
 import net.minecraft.tags.ItemTags;
-import net.minecraft.world.item.Item;
 import net.minecraft.world.level.block.Block;
 import net.minecraftforge.common.data.ExistingFileHelper;
 import slay.nukolussy.modussy.Modussy;
-import slay.nukolussy.modussy.block.ModBlocks;
 import slay.nukolussy.modussy.datagen.tags.ModTags;
 import slay.nukolussy.modussy.item.ModItems;
 
@@ -24,6 +22,7 @@ public class ModItemTagGenerator extends ItemTagsProvider {
     @Override
     protected void addTags(HolderLookup.Provider pProvider) {
         this.tag(ModTags.Items.BARBIE_CRYSTALS).add(ModItems.BARBIE_CRYSTALS.get());
+        this.tag(ModTags.Items.BRAT).add(ModItems.BRAT.get());
         this.tag(ModTags.Items.FLOPIUM).add(ModItems.FLOPIUM.get());
         this.tag(ModTags.Items.MYSTICAL_FLOPIUM).add(ModItems.MYSTICAL_FLOPIUM.get());
         this.tag(ModTags.Items.SHENSEIUM).add(ModItems.SHENSEIUM.get());
@@ -87,12 +86,18 @@ public class ModItemTagGenerator extends ItemTagsProvider {
                 ModItems.DISC_C26.get(),
                 ModItems.DISC_C27.get(),
                 ModItems.DISC_C28.get(),
+                ModItems.DISC_C29.get(),
+                ModItems.DISC_C30.get(),
+                ModItems.DISC_C31.get(),
+                ModItems.DISC_C32.get(),
                 ModItems.DISC_CJ1.get(),
                 ModItems.DISC_CPM1.get(),
                 ModItems.DISC_CUPCAKKE1.get(),
                 ModItems.DISC_CUPCAKKE2.get(),
                 ModItems.DISC_CUPCAKKE3.get(),
                 ModItems.DISC_CUPCAKKE4.get(),
+                ModItems.DISC_CUPCAKKE5.get(),
+                ModItems.DISC_CUPCAKKE6.get(),
                 ModItems.DISC_DB1.get(),
                 ModItems.DISC_DEJE_BULLYING.get(),
                 ModItems.DISC_J1.get(),
@@ -101,10 +106,14 @@ public class ModItemTagGenerator extends ItemTagsProvider {
                 ModItems.DISC_J4.get(),
                 ModItems.DISC_J5.get(),
                 ModItems.DISC_J6.get(),
+                ModItems.DISC_J7.get(),
                 ModItems.DISC_JC1.get(),
                 ModItems.DISC_JC2.get(),
                 ModItems.DISC_JC3.get(),
                 ModItems.DISC_JIAFEI.get(),
+                ModItems.DISC_K1.get(),
+                ModItems.DISC_K2.get(),
+                ModItems.DISC_K3.get(),
                 ModItems.DISC_PM1.get(),
                 ModItems.DISC_PONMI.get(),
                 ModItems.DISC_RANVISION.get()
@@ -139,6 +148,10 @@ public class ModItemTagGenerator extends ItemTagsProvider {
                 ModItems.DISC_C26.get(),
                 ModItems.DISC_C27.get(),
                 ModItems.DISC_C28.get(),
+                ModItems.DISC_C29.get(),
+                ModItems.DISC_C30.get(),
+                ModItems.DISC_C31.get(),
+                ModItems.DISC_C32.get(),
                 ModItems.DISC_JC1.get(),
                 ModItems.DISC_JC2.get(),
                 ModItems.DISC_JC3.get(),
@@ -152,12 +165,19 @@ public class ModItemTagGenerator extends ItemTagsProvider {
                 ModItems.DISC_J4.get(),
                 ModItems.DISC_J5.get(),
                 ModItems.DISC_J6.get(),
+                ModItems.DISC_J7.get(),
                 ModItems.DISC_JC1.get(),
                 ModItems.DISC_JC2.get(),
                 ModItems.DISC_JC3.get(),
                 ModItems.DISC_CJ1.get()
         );
 
+        this.tag(ModTags.Items.KAMALA_REMIXES).add(
+                ModItems.DISC_K1.get(),
+                ModItems.DISC_K2.get(),
+                ModItems.DISC_K3.get()
+        );
+        this.tag(ModTags.Items.TROYE_REMIXES).add(ModItems.DISC_C29.get(), ModItems.DISC_J3.get());
         this.tag(ItemTags.TRIM_TEMPLATES).add(ModItems.JIAFEI_TRIM_TEMPLATE.get());
     }
 }

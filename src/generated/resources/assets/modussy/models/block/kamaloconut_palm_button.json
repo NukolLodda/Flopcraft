@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:block/button",
+  "textures": {
+    "texture": "modussy:block/kamaloconut_palm_planks"
+  }
+}

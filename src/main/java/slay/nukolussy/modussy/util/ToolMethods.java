@@ -2,21 +2,23 @@ package slay.nukolussy.modussy.util;
 
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.particles.ParticleOptions;
-import net.minecraft.core.particles.ParticleTypes;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.nbt.ListTag;
 import net.minecraft.nbt.StringTag;
 import net.minecraft.network.chat.Component;
 import net.minecraft.server.level.ServerLevel;
-import net.minecraft.sounds.SoundEvent;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.sounds.SoundSource;
-import net.minecraft.world.effect.MobEffectInstance;
-import net.minecraft.world.effect.MobEffects;
-import net.minecraft.world.entity.*;
+import net.minecraft.world.entity.Entity;
+import net.minecraft.world.entity.EquipmentSlot;
+import net.minecraft.world.entity.LivingEntity;
+import net.minecraft.world.entity.Mob;
 import net.minecraft.world.entity.animal.Cat;
 import net.minecraft.world.entity.item.ItemEntity;
-import net.minecraft.world.entity.monster.*;
+import net.minecraft.world.entity.monster.MagmaCube;
+import net.minecraft.world.entity.monster.Slime;
+import net.minecraft.world.entity.monster.Spider;
+import net.minecraft.world.entity.monster.Witch;
 import net.minecraft.world.entity.npc.AbstractVillager;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.ItemStack;
@@ -25,17 +27,14 @@ import net.minecraft.world.level.Level;
 import net.minecraft.world.level.LevelAccessor;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.state.BlockState;
-import net.minecraft.world.phys.AABB;
-import net.minecraft.world.phys.Vec3;
 import slay.nukolussy.modussy.block.plants.JiafeiCrop;
 import slay.nukolussy.modussy.entities.ModEntities;
-import slay.nukolussy.modussy.entities.flops.AbstractFlopFigures;
-import slay.nukolussy.modussy.entities.flops.IFlopEntity;
 import slay.nukolussy.modussy.entities.flops.traders.Jiafei;
 import slay.nukolussy.modussy.item.ModItems;
 import slay.nukolussy.modussy.sound.ModSounds;
 
-import java.util.*;
+import java.util.List;
+import java.util.Random;
 
 public class ToolMethods {
 
@@ -103,7 +102,6 @@ public class ToolMethods {
         int z = pPos.getZ();
         Player player = null;
 
-        final Vec3 center = new Vec3(x, y, z);
         List<LivingEntity> entities = ModUtil.getEntityListOfDist(pLevel, LivingEntity.class, pPos.getCenter(), 4);
         for (LivingEntity ent : entities) {
             if (ent instanceof Player otherPlayer) {

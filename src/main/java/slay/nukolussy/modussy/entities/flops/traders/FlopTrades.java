@@ -23,6 +23,15 @@ public class FlopTrades {
 
     public static final Map<IFlopTraderVariant, Int2ObjectMap<ItemListing[]>> TRADES =
             Util.make(Maps.newHashMap(), (tag) -> {
+                tag.put(CharliXCX.Variant.VARIANT, toIntMap(ImmutableMap.of(1, new ItemListing[]{
+                        new ProductsForBrat(ModItems.SLAGINIUM.get(), COMMON_ITEMS_SUPPLY, 1),
+                        new BratForProducts(ModItems.KAMALOCONUT.get(), 2, DEFAULT_SUPPLY, 2),
+                        new BratForProducts(ModItems.SLAGINIUM_YASSIFIER.get(), 3, UNCOMMON_ITEMS_SUPPLY, 6),
+                        new BratForProducts(ModItems.DISC_C30.get(), 5, DEFAULT_SUPPLY, 2),
+                        new BratForProducts(ModItems.DISC_C31.get(), 5, DEFAULT_SUPPLY, 2),
+                        new BratForProducts(ModItems.DISC_C32.get(), 5, DEFAULT_SUPPLY, 2),
+                        new BratForProducts(ModItems.DISC_J7.get(), 5, UNCOMMON_ITEMS_SUPPLY, 6)
+                })));
                 tag.put(Jiafei.Variant.AESTHETIC, toIntMap(ImmutableMap.of(1, new ItemListing[]{
                         new ProductsForSlaginium(ModItems.JIAFEI_PRODUCT.get(), COMMON_ITEMS_SUPPLY, 1),
                         new SlaginiumForProducts(ModItems.JIAFEI_HELMET.get(), 4, DEFAULT_SUPPLY, 2),
@@ -124,6 +133,24 @@ public class FlopTrades {
             return new MerchantOffer(itemstack, new ItemStack(ModItems.SLAGINIUM.get(), 12), this.maxUses, this.flopXp, this.priceMultiplier);
         }
     }
+    static class ProductsForBrat implements ItemListing {
+        private final Item item;
+        private final int maxUses;
+        private final int flopXp;
+        private final float priceMultiplier;
+
+        public ProductsForBrat(ItemLike pItem, int pMaxUses, int pFlopXp) {
+            this.item = pItem.asItem();
+            this.maxUses = pMaxUses;
+            this.flopXp = pFlopXp;
+            this.priceMultiplier = 0.05F;
+        }
+
+        public MerchantOffer getOffer(Entity pTrader, RandomSource pRandom) {
+            ItemStack itemstack = new ItemStack(this.item, 5);
+            return new MerchantOffer(itemstack, new ItemStack(ModItems.BRAT.get(), 12), this.maxUses, this.flopXp, this.priceMultiplier);
+        }
+    }
     static class SlaginiumForProducts implements ItemListing {
         private final Item item;
         private final int cost;
@@ -162,6 +189,27 @@ public class FlopTrades {
         public MerchantOffer getOffer(Entity pTrader, RandomSource pRandom) {
             ItemStack itemstack = new ItemStack(this.item);
             return new MerchantOffer(new ItemStack(ModItems.INFUSED_SLAGINIUM.get(), this.cost), itemstack, this.maxUses, this.flopXp, this.priceMultiplier);
+        }
+    }
+
+    static class BratForProducts implements ItemListing {
+        private final Item item;
+        private final int cost;
+        private final int maxUses;
+        private final int flopXp;
+        private final float priceMultiplier;
+
+        public BratForProducts(ItemLike pItem, int pCost, int pMaxUses, int pFlopXp) {
+            this.item = pItem.asItem();
+            this.cost = pCost;
+            this.maxUses = pMaxUses;
+            this.flopXp = pFlopXp;
+            this.priceMultiplier = 0.05F;
+        }
+
+        public MerchantOffer getOffer(Entity pTrader, RandomSource pRandom) {
+            ItemStack itemstack = new ItemStack(this.item);
+            return new MerchantOffer(new ItemStack(ModItems.BRAT.get(), this.cost), itemstack, this.maxUses, this.flopXp, this.priceMultiplier);
         }
     }
 }

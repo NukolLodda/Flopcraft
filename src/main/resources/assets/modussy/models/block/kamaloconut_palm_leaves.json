@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:block/leaves",
+  "textures": {
+    "all": "modussy:block/kamaloconut_palm_leaves"
+  }
+}

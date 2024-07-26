@@ -15,10 +15,13 @@ import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
 import slay.nukolussy.modussy.Modussy;
+import slay.nukolussy.modussy.entities.flops.bosses.GirlbossSivan;
 import slay.nukolussy.modussy.entities.flops.figures.CupcakKe;
+import slay.nukolussy.modussy.entities.flops.figures.KamalaHarris;
 import slay.nukolussy.modussy.entities.flops.figures.LovelyPeaches;
 import slay.nukolussy.modussy.entities.flops.bosses.LovelyPeachesBoss;
 import slay.nukolussy.modussy.entities.flops.figures.MariahCarey;
+import slay.nukolussy.modussy.entities.flops.traders.CharliXCX;
 import slay.nukolussy.modussy.entities.flops.traders.Jiafei;
 import slay.nukolussy.modussy.entities.flops.traders.NickiMinaj;
 import slay.nukolussy.modussy.entities.flops.traders.Ranvision;
@@ -30,9 +33,20 @@ import slay.nukolussy.modussy.entities.twink.TwinkSivan;
 public class ModEntities {
     public static final DeferredRegister<EntityType<?>> Entities
             = DeferredRegister.create(ForgeRegistries.ENTITY_TYPES, Modussy.MODID);
+
+    public static final RegistryObject<EntityType<CharliXCX>> CHARLI_XCX = register("charlixcx",
+            EntityType.Builder.<CharliXCX>of(CharliXCX::new, MobCategory.AMBIENT).setShouldReceiveVelocityUpdates(true)
+                    .setTrackingRange(64).setUpdateInterval(3).setCustomClientFactory(CharliXCX::new)
+                    .sized(0.6f,1.8f));
+
     public static final RegistryObject<EntityType<CupcakKe>> CUPCAKKE = register("cupcakke",
             EntityType.Builder.<CupcakKe>of(CupcakKe::new, MobCategory.AMBIENT).setShouldReceiveVelocityUpdates(true)
                     .setTrackingRange(64).setUpdateInterval(3).setCustomClientFactory(CupcakKe::new)
+                    .sized(0.6f,1.8f));
+
+    public static final RegistryObject<EntityType<GirlbossSivan>> GIRLBOSS_SIVAN = register("girlboss_sivan",
+            EntityType.Builder.<GirlbossSivan>of(GirlbossSivan::new, MobCategory.AMBIENT).setShouldReceiveVelocityUpdates(true)
+                    .setTrackingRange(64).setUpdateInterval(3).setCustomClientFactory(GirlbossSivan::new)
                     .sized(0.6f,1.8f));
 
     public static final RegistryObject<EntityType<Jiafei>> JIAFEI = register("jiafei",
@@ -49,6 +63,11 @@ public class ModEntities {
             EntityType.Builder.<LovelyPeachesBoss>of(LovelyPeachesBoss::new, MobCategory.AMBIENT).setShouldReceiveVelocityUpdates(true)
                     .setTrackingRange(64).setUpdateInterval(3).setCustomClientFactory(LovelyPeachesBoss::new)
                     .sized(1.0f,6.0f));
+
+    public static final RegistryObject<EntityType<KamalaHarris>> KAMALA_HARRIS = register("kamala_harris",
+            EntityType.Builder.<KamalaHarris>of(KamalaHarris::new, MobCategory.AMBIENT).setShouldReceiveVelocityUpdates(true)
+                    .setTrackingRange(64).setUpdateInterval(3).setCustomClientFactory(KamalaHarris::new)
+                    .sized(0.6f,1.8f));
 
     public static final RegistryObject<EntityType<MariahCarey>> MARIAH_CAREY = register("mariah_carey",
             EntityType.Builder.<MariahCarey>of(MariahCarey::new, MobCategory.AMBIENT).setShouldReceiveVelocityUpdates(true)
@@ -93,6 +112,10 @@ public class ModEntities {
             EntityType.Builder.<ShotExtraBloodyTampon>of(ShotExtraBloodyTampon::new, MobCategory.MISC).sized(0.25f, 0.25f)
                     .clientTrackingRange(4).updateInterval(10).setCustomClientFactory(ShotExtraBloodyTampon::new));
 
+    public static final RegistryObject<EntityType<Kamaloconut>> KAMALOCONUT = register("kamaloconut",
+            EntityType.Builder.<Kamaloconut>of(Kamaloconut::new, MobCategory.MISC).sized(0.25f, 0.25f)
+                    .clientTrackingRange(4).updateInterval(10).setCustomClientFactory(Kamaloconut::new));
+
     public static final RegistryObject<EntityType<ThrownTwinkEgg>> TWINK_EGG = register("twink_egg",
             EntityType.Builder.<ThrownTwinkEgg>of(ThrownTwinkEgg::new, MobCategory.MISC).sized(0.25f, 0.25f)
                     .clientTrackingRange(4).updateInterval(10).setCustomClientFactory(ThrownTwinkEgg::new));
@@ -105,25 +128,30 @@ public class ModEntities {
     @SubscribeEvent
     public static void init(FMLCommonSetupEvent event) {
          event.enqueueWork(() -> {
-            CupcakKe.init();
-            Jiafei.init();
-            LovelyPeaches.init();
-            LovelyPeachesBoss.init();
-            MariahCarey.init();
-            NickiMinaj.init();
-            Ranvision.init();
-            Twink.init();
-            TwinkSivan.init();
-            ChargedLovelyPeach.init();
+             CharliXCX.init();
+             CupcakKe.init();
+             Jiafei.init();
+             LovelyPeaches.init();
+             LovelyPeachesBoss.init();
+             KamalaHarris.init();
+             MariahCarey.init();
+             NickiMinaj.init();
+             Ranvision.init();
+             Twink.init();
+             TwinkSivan.init();
+             ChargedLovelyPeach.init();
           });
     }
 
     @SubscribeEvent
     public static void registerAttributes(EntityAttributeCreationEvent event) {
+        event.put(CHARLI_XCX.get(), CharliXCX.createAttributes().build());
         event.put(CUPCAKKE.get(), CupcakKe.createAttributes().build());
+        event.put(GIRLBOSS_SIVAN.get(), GirlbossSivan.createAttributes().build());
         event.put(JIAFEI.get(), Jiafei.createAttributes().build());
         event.put(LOVELY_PEACHES.get(), LovelyPeaches.createAttributes().build());
         event.put(LOVELY_PEACHES_BOSS.get(), LovelyPeachesBoss.createAttributes().build());
+        event.put(KAMALA_HARRIS.get(), KamalaHarris.createAttributes().build());
         event.put(MARIAH_CAREY.get(), Ranvision.createAttributes().build());
         event.put(NICKI_MINAJ.get(), NickiMinaj.createAttributes().build());
         event.put(RANVISION.get(), Ranvision.createAttributes().build());

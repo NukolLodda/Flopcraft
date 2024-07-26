@@ -23,6 +23,7 @@ public class ModItemModelProvider extends ItemModelProvider {
         simpleItem(ModItems.BARBIE_CRYSTALS);
         simpleItem(ModItems.BLOOD_CLUMP);
         simpleItem(ModItems.BLOODY_TAMPON);
+        simpleItem(ModItems.BRAT);
         simpleItem(ModItems.CLITMAS_BUTTPLUG);
         simpleItem(ModItems.CUPCAKE);
         simpleItem(ModItems.CVM);
@@ -38,6 +39,7 @@ public class ModItemModelProvider extends ItemModelProvider {
         simpleItem(ModItems.KYLIE_JENNER_LIPSTICK);
         simpleItem(ModItems.LANCVM_CREAM);
         simpleItem(ModItems.LOVELY_PEACH);
+        simpleItem(ModItems.KAMALOCONUT);
         simpleItem(ModItems.SLAGINIUM_YASSIFIER);
         simpleItem(ModItems.SLAGINIUM_YASSIFIER_PLUS);
         simpleItem(ModItems.SLAGINIUM_YASSIFIER_PREMIUM);
@@ -47,7 +49,9 @@ public class ModItemModelProvider extends ItemModelProvider {
         simpleItem(ModItems.INFUSED_SLAGINIUM_PICKAXOL);
         simpleItem(ModItems.FLOPIUM_PICKAXOL);
         simpleItem(ModItems.MYSTICAL_FLOPIUM_PICKAXOL);
+        simpleItem(ModItems.TWINK_TRANSFORMER);
         simpleItem(ModItems.ARANA_GRANDE);
+        simpleItem(ModItems.BRATIFICATIONER);
         simpleItem(ModItems.JIAFEI_AXE);
         simpleItem(ModItems.JIAFEI_HAMMER);
         simpleItem(ModItems.JIAFEI_SICKLE);
@@ -90,12 +94,18 @@ public class ModItemModelProvider extends ItemModelProvider {
         simpleItem(ModItems.DISC_C26);
         simpleItem(ModItems.DISC_C27);
         simpleItem(ModItems.DISC_C28);
+        simpleItem(ModItems.DISC_C29);
+        simpleItem(ModItems.DISC_C30);
+        simpleItem(ModItems.DISC_C31);
+        simpleItem(ModItems.DISC_C32);
         simpleItem(ModItems.DISC_CJ1);
         simpleItem(ModItems.DISC_CPM1);
         simpleItem(ModItems.DISC_CUPCAKKE1);
         simpleItem(ModItems.DISC_CUPCAKKE2);
         simpleItem(ModItems.DISC_CUPCAKKE3);
         simpleItem(ModItems.DISC_CUPCAKKE4);
+        simpleItem(ModItems.DISC_CUPCAKKE5);
+        simpleItem(ModItems.DISC_CUPCAKKE6);
         simpleItem(ModItems.DISC_DB1);
         simpleItem(ModItems.DISC_DEJE_BULLYING);
         simpleItem(ModItems.DISC_J1);
@@ -104,10 +114,14 @@ public class ModItemModelProvider extends ItemModelProvider {
         simpleItem(ModItems.DISC_J4);
         simpleItem(ModItems.DISC_J5);
         simpleItem(ModItems.DISC_J6);
+        simpleItem(ModItems.DISC_J7);
         simpleItem(ModItems.DISC_JC1);
         simpleItem(ModItems.DISC_JC2);
         simpleItem(ModItems.DISC_JC3);
         simpleItem(ModItems.DISC_JIAFEI);
+        simpleItem(ModItems.DISC_K1);
+        simpleItem(ModItems.DISC_K2);
+        simpleItem(ModItems.DISC_K3);
         simpleItem(ModItems.DISC_PM1);
         simpleItem(ModItems.DISC_PONMI);
         simpleItem(ModItems.DISC_RANVISION);
@@ -128,9 +142,21 @@ public class ModItemModelProvider extends ItemModelProvider {
         simpleItem(ModItems.TAMPON);
         simpleItem(ModItems.TWINK_EGG);
         simpleItem(ModItems.TWINK_EGG_SHELLS);
+        simpleItem(ModItems.TWINK_EGG_PILE);
         simpleItem(ModItems.WONYOUNG_ESSENCE);
         simpleItem(ModItems.CVM_FLUID_BUCKET);
         simpleItem(ModItems.POOSAY_JUICE_BUCKET);
+
+        eggItem(ModItems.CHARLI_XCX_SPAWN_EGG);
+        eggItem(ModItems.CUPCAKKE_SPAWN_EGG);
+        eggItem(ModItems.JIAFEI_SPAWN_EGG);
+        eggItem(ModItems.LOVELY_PEACHES_SPAWN_EGG);
+        eggItem(ModItems.MARIAH_CAREY_SPAWN_EGG);
+        eggItem(ModItems.KAMALA_HARRIS_SPAWN_EGG);
+        eggItem(ModItems.NICKI_MINAJ_SPAWN_EGG);
+        eggItem(ModItems.RANVISION_SPAWN_EGG);
+        eggItem(ModItems.TWINK_SPAWN_EGG);
+        eggItem(ModItems.TWINK_SIVAN_SPAWN_EGG);
 
         //simpleItem(ModItems.LOVELY_PEACH_SIGN);
         //simpleItem(ModItems.LOVELY_PEACH_HANGING_SIGN);
@@ -138,6 +164,10 @@ public class ModItemModelProvider extends ItemModelProvider {
         fenceItem(ModBlocks.LOVELY_PEACH_FENCE, ModBlocks.LOVELY_PEACH_PLANKS);
         buttonItem(ModBlocks.LOVELY_PEACH_BUTTON, ModBlocks.LOVELY_PEACH_PLANKS);
         saplingItem(ModBlocks.LOVELY_PEACH_SAPLING);
+
+        fenceItem(ModBlocks.KAMALOCONUT_PALM_FENCE, ModBlocks.KAMALOCONUT_PALM_PLANKS);
+        buttonItem(ModBlocks.KAMALOCONUT_PALM_BUTTON, ModBlocks.KAMALOCONUT_PALM_PLANKS);
+        saplingItem(ModBlocks.KAMALOCONUT_PALM_SAPLING);
     }
 
     private ItemModelBuilder simpleItem(RegistryObject<Item> item) {
@@ -150,6 +180,11 @@ public class ModItemModelProvider extends ItemModelProvider {
         return withExistingParent(item.getId().getPath(),
                 new ResourceLocation("item/generated"))
                 .texture("layer0", new ResourceLocation(Modussy.MODID, "block/" + item.getId().getPath()));
+    }
+
+    private ItemModelBuilder eggItem(RegistryObject<Item> item) {
+        return withExistingParent(item.getId().getPath(),
+                new ResourceLocation("item/template_spawn_egg"));
     }
 
     public void fenceItem(RegistryObject<Block> pBlock, RegistryObject<Block> pBase) {

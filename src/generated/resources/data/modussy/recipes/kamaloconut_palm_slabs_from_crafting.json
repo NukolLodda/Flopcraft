@@ -1,0 +1,18 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "group": "kamaloconut_palm_slabs",
+  "key": {
+    "0": {
+      "item": "modussy:kamaloconut_palm_planks"
+    }
+  },
+  "pattern": [
+    "000"
+  ],
+  "result": {
+    "count": 6,
+    "item": "modussy:kamaloconut_palm_slabs"
+  },
+  "show_notification": true
+}

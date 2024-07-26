@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:block/fence_inventory",
+  "textures": {
+    "texture": "modussy:block/kamaloconut_palm_planks"
+  }
+}

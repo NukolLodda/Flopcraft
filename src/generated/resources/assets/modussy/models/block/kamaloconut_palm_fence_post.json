@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:block/fence_post",
+  "textures": {
+    "texture": "modussy:block/kamaloconut_palm_planks"
+  }
+}

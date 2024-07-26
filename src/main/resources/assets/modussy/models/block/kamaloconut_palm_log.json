@@ -1,0 +1,7 @@
+{
+  "parent": "minecraft:block/cube_column",
+  "textures": {
+    "end": "modussy:block/kamaloconut_palm_log_top",
+    "side": "modussy:block/kamaloconut_palm_log"
+  }
+}

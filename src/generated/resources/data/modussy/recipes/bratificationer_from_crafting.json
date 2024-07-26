@@ -1,0 +1,25 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "group": "bratificationer",
+  "key": {
+    "0": {
+      "tag": "forge:gems/brat"
+    },
+    "1": {
+      "item": "modussy:music_disc_c30"
+    },
+    "2": {
+      "tag": "forge:rods/wooden"
+    }
+  },
+  "pattern": [
+    " 0 ",
+    "010",
+    "20 "
+  ],
+  "result": {
+    "item": "modussy:bratificationer"
+  },
+  "show_notification": true
+}

@@ -153,13 +153,15 @@ public abstract class AbstractDeeldo extends BowItem {
                 }
             } else if (ent instanceof ItemEntity item && item.getItem().is(ModItems.TWINK_EGG_SHELLS.get())) {
                 BlockEntity below = world.getBlockEntity(item.blockPosition().below());
-                if (below instanceof JukeboxBlockEntity jukebox && jukebox.getItem(0).is(ModItems.DISC_J3.get())) {
+                if (below instanceof JukeboxBlockEntity jukebox &&
+                        (jukebox.getItem(0).is(ModItems.DISC_J3.get()) || jukebox.getItem(0).is(ModItems.DISC_C29.get()))) {
                     world.setBlock(below.getBlockPos().below(2), ModBlocks.CVM_FLUID.get().defaultBlockState(), 3);
                     world.setBlock(below.getBlockPos().below(), ModBlocks.CVM_FLUID.get().defaultBlockState(), 3);
                     world.setBlock(below.getBlockPos(), ModBlocks.CVM_FLUID.get().defaultBlockState(), 3);
                     TwinkSivan troye = new TwinkSivan(ModEntities.TWINK_SIVAN.get(), world);
                     troye.setPos(below.getBlockPos().below().getCenter());
                     troye.sendSystemMessage(Component.translatable("subtitle.twink_here"));
+                    troye.setRandomVariant();
                     world.addFreshEntity(troye);
                     item.discard();
                 }

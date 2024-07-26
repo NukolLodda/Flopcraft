@@ -1,21 +1,18 @@
-Modussy (Aka Flopcraft)
+Flopcraft (also known as Modussy)
 ---
 ![](https://github.com/NukolLodda/Modussy/blob/master/logo.png)A very s3xy and aesthetic Minecraft mod
 
-As of right now, Modussy currently has support for Minecraft Java version 1.20.1 on 
+As of right now, Flopcraft currently has support for Minecraft Java version 1.20.1 on 
 <a href="https://files.minecraftforge.net/">forge API</a>.
 
 <br>
-If you are interested in helping me with Modussy and you have the sufficient Java knowledge to do so,
+If you are interested in helping me with Flopcraft and you have the sufficient Java knowledge to do so,
 then please come over <a href="https://forms.gle/HN36moxHdA6yRNE3A">here</a> and apply to be part of the Modussy development team.
 <br>
 <br>
-<a href="https://www.tiktok.com/@nukollodda/video/7204148779816160554">Here</a> is a short introduction video to Modussy
+<a href="https://www.tiktok.com/@nukollodda/video/7204148779816160554">Here</a> is a short introduction video to Flopcraft
 <br>
 <br>
-<b>PLEASE READ BELOW</b>
-<br>
-Modussy is currently no-longer <b>worked on</b> I will not make any new updates to this mod in the foreseeable future.
 
 ---
 **Download**
@@ -25,49 +22,47 @@ Modussy is currently no-longer <b>worked on</b> I will not make any new updates 
 Information about the latest version<br>
 Forge API version: <a href="https://adfoc.us/serve/sitelinks/?id=271228&url=https://maven.minecraftforge.net/net/minecraftforge/forge/1.20.1-47.2.0/forge-1.20.1-47.2.0-installer.jar">47.2.0</a><br>
 Minecraft Java version: 1.20.1 <br>
-Modussy Version: 0.1.4 <br>
+Flopcraft Version: 0.1.5 <br>
 
 Changelog:
-+ Rosetoy
-+ Cl!tmas Buttplug
-+ Lancvm cream functionality
-+ Kylie Jenner lipstick functionality
-+ Ender dragon deeldos
-+ Yassified, yuh, and cvmmed effects
-+ Lovely Peaches tree, planks, and saplings
-+ Ranvision
++ Brat Ore and Brat Blocks
++ Charli XCX
++ Kamala Harris
++ Kamaloconut Tree
++ Charli XCX CupcakKe Remixes
++ Kamala Harris Remixes
++ Bratified Effect
++ Bratificationer
 + Cvm pie
-+ Mariah Cvmrey
-+ New music disc
-+ Ranpapi Tablet
++ Troye Sivan
 
 ---
 **Requests**
 
-I will no longer be taking requests for this mod.
+Requests are opening up in October this year.
 
-The Modussy discord server is down so if anyone wants to request, please use this github page itself.
+The Flopcraft discord server is under maintenance so if anyone wants to request, please use this github page itself.
 
 ___
-**Why Modussy Isn't On Curseforge**
+**Why Flopcraft Isn't On Curseforge**
 
 After reading Curseforge's terms of service, I believe that some features of Modussy, namely
 CupcakKe's texture, specific items, and mobs violates it, so the download links are in this
 repository instead. Click <a href="http://adfoc.us/83601097790792">here</a>
-for the most recent version uploaded (Modussy-0.1.4 for Minecraft 1.20.1
+for the most recent version uploaded (Modussy-0.1.5 for Minecraft 1.20.1
 <a href="https://adfoc.us/serve/sitelinks/?id=271228&url=https://maven.minecraftforge.net/net/minecraftforge/forge/1.20.1-47.2.0/forge-1.20.1-47.2.0-installer.jar">Forge API 47.2.0</a>)
 
 ___
-**Where Are Modussy's Aesthetic Music**
+**Where Are Flopcraft's Aesthetic Music**
 
 The music discs were removed to prevent any legal trouble with my mod
 however, if you want to listen to music using this mod, you have to record a song down and
 convert it to an ogg file using <a href="https://convertio.co/">this link</a>
 
 ___
-**Downloading Aesthetic Music Files For Modussy**
+**Downloading Aesthetic Music Files For Flopcraft**
 
-When you download the Modussy jar file, you either renamed the extension to .zip or make a texture pack.
+When you download the Flopcraft jar file(named Modussy), you either renamed the extension to .zip or make a texture pack.
 There are plenty of tutorials on how to make texture packs, but they aren't really that complicated.
 
 In both cases, you must have the sound files go to the following directory:

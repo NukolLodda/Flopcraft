@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "group": "kamaloconut_palm_pressure_plate",
+  "key": {
+    "0": {
+      "item": "modussy:kamaloconut_palm_planks"
+    }
+  },
+  "pattern": [
+    "00"
+  ],
+  "result": {
+    "item": "modussy:kamaloconut_palm_pressure_plate"
+  },
+  "show_notification": true
+}

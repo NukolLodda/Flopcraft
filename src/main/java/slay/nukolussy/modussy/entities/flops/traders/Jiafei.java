@@ -35,10 +35,8 @@ import slay.nukolussy.modussy.item.ModItems;
 import slay.nukolussy.modussy.sound.ModSounds;
 import slay.nukolussy.modussy.util.ModUtil;
 import slay.nukolussy.modussy.util.PlayerMethods;
-import slay.nukolussy.modussy.util.ToolMethods;
 
 import javax.annotation.Nullable;
-import java.util.List;
 import java.util.Set;
 import java.util.function.IntFunction;
 
@@ -122,7 +120,7 @@ public class Jiafei extends AbstractFlopTraders {
 
     @Override
     protected boolean newYearsGifting(Player pPlayer) {
-        if (ModUtil.isNewYears() && !PlayerMethods.isNewgen(pPlayer)) {
+        if (!PlayerMethods.isNewgen(pPlayer)) {
             this.level().playSound(null, new BlockPos(this.getBlockX(), this.getBlockY(), this.getBlockZ()),
                     ModSounds.JIAFEI_NEW_YEARS_TRADE.get(), SoundSource.AMBIENT);
         }

@@ -22,6 +22,9 @@ public class ModBlockStateProvider extends BlockStateProvider {
     protected void registerStatesAndModels() {
         blockWithItem(ModBlocks.AESTHETIC_STORE_BLOCK);
         blockWithItem(ModBlocks.BARBIE_LANTERN);
+        blockWithItem(ModBlocks.BRAT_ORE);
+        blockWithItem(ModBlocks.BRAT_BLOCK);
+        blockWithItem(ModBlocks.DEEPSLATE_BRAT_ORE);
         blockWithItem(ModBlocks.FLOPBUCKS_BLOCK);
         blockWithItem(ModBlocks.FLOPDONALDS_BLOCK);
         blockWithItem(ModBlocks.FLOPIUM_BLOCK);
@@ -40,8 +43,10 @@ public class ModBlockStateProvider extends BlockStateProvider {
         blockWithItem(ModBlocks.SLAGINIUM_BLOCK);
         blockWithItem(ModBlocks.SHENSEIUM_ORE);
         blockWithItem(ModBlocks.LOVELY_PEACH_PLANKS);
+        blockWithItem(ModBlocks.KAMALOCONUT_PALM_PLANKS);
 
         saplingBlock(ModBlocks.LOVELY_PEACH_SAPLING);
+        saplingBlock(ModBlocks.KAMALOCONUT_PALM_SAPLING);
 
         stairsBlock((StairBlock) ModBlocks.LOVELY_PEACH_STAIRS.get(), blockTexture(ModBlocks.LOVELY_PEACH_PLANKS.get()));
         slabBlock((SlabBlock) ModBlocks.LOVELY_PEACH_SLABS.get(),
@@ -59,6 +64,24 @@ public class ModBlockStateProvider extends BlockStateProvider {
                 blockTexture(ModBlocks.LOVELY_PEACH_PLANKS.get()));
         hangingSignBlock(ModBlocks.LOVELY_PEACH_HANGING_SIGN.get(), ModBlocks.LOVELY_PEACH_WALL_HANGING_SIGN.get(),
                 blockTexture(ModBlocks.LOVELY_PEACH_PLANKS.get()));
+
+
+        stairsBlock((StairBlock) ModBlocks.KAMALOCONUT_PALM_STAIRS.get(), blockTexture(ModBlocks.KAMALOCONUT_PALM_PLANKS.get()));
+        slabBlock((SlabBlock) ModBlocks.KAMALOCONUT_PALM_SLABS.get(),
+                blockTexture(ModBlocks.KAMALOCONUT_PALM_PLANKS.get()), blockTexture(ModBlocks.KAMALOCONUT_PALM_PLANKS.get()));
+        buttonBlock((ButtonBlock) ModBlocks.KAMALOCONUT_PALM_BUTTON.get(), blockTexture(ModBlocks.KAMALOCONUT_PALM_PLANKS.get()));
+        pressurePlateBlock((PressurePlateBlock) ModBlocks.KAMALOCONUT_PALM_PRESSURE_PLATE.get(), blockTexture(ModBlocks.KAMALOCONUT_PALM_PLANKS.get()));
+        fenceBlock((FenceBlock) ModBlocks.KAMALOCONUT_PALM_FENCE.get(), blockTexture(ModBlocks.KAMALOCONUT_PALM_PLANKS.get()));
+        fenceGateBlock((FenceGateBlock) ModBlocks.KAMALOCONUT_PALM_FENCE_GATE.get(), blockTexture(ModBlocks.KAMALOCONUT_PALM_PLANKS.get()));
+        doorBlockWithRenderType((DoorBlock) ModBlocks.KAMALOCONUT_PALM_DOOR.get(),
+                modLoc("block/kamaloconut_palm_door_bottom"), modLoc("block/kamaloconut_palm_door_top"), "cutout");
+        trapdoorBlockWithRenderType((TrapDoorBlock) ModBlocks.KAMALOCONUT_PALM_TRAPDOOR.get(),
+                modLoc("block/kamaloconut_palm_trapdoor"), true, "cutout");
+
+        signBlock((StandingSignBlock) ModBlocks.KAMALOCONUT_PALM_SIGN.get(), (WallSignBlock) ModBlocks.KAMALOCONUT_PALM_WALL_SIGN.get(),
+                blockTexture(ModBlocks.KAMALOCONUT_PALM_PLANKS.get()));
+        hangingSignBlock(ModBlocks.KAMALOCONUT_PALM_HANGING_SIGN.get(), ModBlocks.KAMALOCONUT_PALM_WALL_HANGING_SIGN.get(),
+                blockTexture(ModBlocks.KAMALOCONUT_PALM_PLANKS.get()));
     }
 
     private void hangingSignBlock(Block signBlock, Block wallSignBlock, ResourceLocation texture) {

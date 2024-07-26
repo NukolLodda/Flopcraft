@@ -11,10 +11,13 @@ import slay.nukolussy.modussy.entities.ModEntities;
 public class ModEntityRenderers {
     @SubscribeEvent
     public static void registerEntityRenderers(EntityRenderersEvent.RegisterRenderers event) {
+        event.registerEntityRenderer(ModEntities.CHARLI_XCX.get(), CharliXCXRenderer::new);
         event.registerEntityRenderer(ModEntities.CUPCAKKE.get(), CupcakKeRenderer::new);
+        event.registerEntityRenderer(ModEntities.GIRLBOSS_SIVAN.get(), GirlbossSivanRenderer::new);
         event.registerEntityRenderer(ModEntities.JIAFEI.get(), JiafeiRenderer::new);
         event.registerEntityRenderer(ModEntities.LOVELY_PEACHES.get(), LovelyPeachesRenderer::new);
         event.registerEntityRenderer(ModEntities.LOVELY_PEACHES_BOSS.get(), LovelyPeachesBossRenderer::new);
+        event.registerEntityRenderer(ModEntities.KAMALA_HARRIS.get(), KamalaHarrisRenderer::new);
         event.registerEntityRenderer(ModEntities.MARIAH_CAREY.get(), MariahCareyRenderer::new);
         event.registerEntityRenderer(ModEntities.NICKI_MINAJ.get(), NickiMinajRanderer::new);
         event.registerEntityRenderer(ModEntities.RANVISION.get(), RanvisionRenderer::new);
@@ -31,6 +34,9 @@ public class ModEntityRenderers {
                 new ThrownItemRenderer<>(context, 1.5f, false));
 
         event.registerEntityRenderer(ModEntities.EXTRA_BLOODY_TAMPONS.get(), context ->
+                new ThrownItemRenderer<>(context, 1.5f, false));
+
+        event.registerEntityRenderer(ModEntities.KAMALOCONUT.get(), context ->
                 new ThrownItemRenderer<>(context, 1.5f, false));
 
         event.registerEntityRenderer(ModEntities.TWINK_EGG.get(), context ->

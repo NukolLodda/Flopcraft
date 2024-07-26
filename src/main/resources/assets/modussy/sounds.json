@@ -359,6 +359,42 @@
       }
     ]
   },
+  "music_disc_c29": {
+    "subtitle": "subtitles.music",
+    "sounds": [
+      {
+        "name": "modussy:music_disc_c29",
+        "stream": true
+      }
+    ]
+  },
+  "music_disc_c30": {
+    "subtitle": "subtitles.music",
+    "sounds": [
+      {
+        "name": "modussy:music_disc_c30",
+        "stream": true
+      }
+    ]
+  },
+  "music_disc_c31": {
+    "subtitle": "subtitles.music",
+    "sounds": [
+      {
+        "name": "modussy:music_disc_c31",
+        "stream": true
+      }
+    ]
+  },
+  "music_disc_c32": {
+    "subtitle": "subtitles.music",
+    "sounds": [
+      {
+        "name": "modussy:music_disc_c32",
+        "stream": true
+      }
+    ]
+  },
   "music_disc_cj1": {
     "subtitle": "subtitles.music",
     "sounds": [
@@ -400,6 +436,24 @@
     "sounds": [
       {
         "name": "modussy:music_disc_cupcakke4",
+        "stream": true
+      }
+    ]
+  },
+  "music_disc_cupcakke5": {
+    "subtitle": "subtitles.music",
+    "sounds": [
+      {
+        "name": "modussy:music_disc_cupcakke5",
+        "stream": true
+      }
+    ]
+  },
+  "music_disc_cupcakke6": {
+    "subtitle": "subtitles.music",
+    "sounds": [
+      {
+        "name": "modussy:music_disc_cupcakke6",
         "stream": true
       }
     ]
@@ -485,6 +539,15 @@
       }
     ]
   },
+  "music_disc_j7": {
+    "subtitle": "subtitles.music",
+    "sounds": [
+      {
+        "name": "modussy:music_disc_j7",
+        "stream": true
+      }
+    ]
+  },
   "music_disc_jc1": {
     "subtitle": "subtitles.music",
     "sounds": [
@@ -517,6 +580,33 @@
     "sounds": [
       {
         "name": "modussy:music_disc_jiafei",
+        "stream": true
+      }
+    ]
+  },
+  "music_disc_k1": {
+    "subtitle": "subtitles.music",
+    "sounds": [
+      {
+        "name": "modussy:music_disc_k1",
+        "stream": true
+      }
+    ]
+  },
+  "music_disc_k2": {
+    "subtitle": "subtitles.music",
+    "sounds": [
+      {
+        "name": "modussy:music_disc_k2",
+        "stream": true
+      }
+    ]
+  },
+  "music_disc_k3": {
+    "subtitle": "subtitles.music",
+    "sounds": [
+      {
+        "name": "modussy:music_disc_k3",
         "stream": true
       }
     ]
@@ -562,6 +652,60 @@
     "sounds": [
       {
         "name": "modussy:squirt",
+        "stream": true
+      }
+    ]
+  },
+  "charlixcx_1": {
+    "subtitle": "subtitles.charlixcx",
+    "sounds": [
+      {
+        "name": "modussy:charlixcx_1",
+        "stream": true
+      }
+    ]
+  },
+  "charlixcx_2": {
+    "subtitle": "subtitles.charlixcx",
+    "sounds": [
+      {
+        "name": "modussy:charlixcx_2",
+        "stream": true
+      }
+    ]
+  },
+  "charlixcx_3": {
+    "subtitle": "subtitles.charlixcx",
+    "sounds": [
+      {
+        "name": "modussy:charlixcx_3",
+        "stream": true
+      }
+    ]
+  },
+  "charlixcx_death": {
+    "subtitle": "subtitles.flop_death",
+    "sounds": [
+      {
+        "name": "modussy:charlixcx_death",
+        "stream": true
+      }
+    ]
+  },
+  "charlixcx_hurt": {
+    "subtitle": "subtitles.charlixcx_hurt",
+    "sounds": [
+      {
+        "name": "modussy:charlixcx_hurt",
+        "stream": true
+      }
+    ]
+  },
+  "charlixcx_summon": {
+    "subtitle": "subtitles.charlixcx_summon",
+    "sounds": [
+      {
+        "name": "modussy:charlixcx_summon",
         "stream": true
       }
     ]
@@ -922,6 +1066,114 @@
     "sounds": [
       {
         "name": "modussy:jiafei_new_years_trade",
+        "stream": true
+      }
+    ]
+  },
+  "kamala_harris_1": {
+    "subtitle": "subtitles.kamala_harris",
+    "sounds": [
+      {
+        "name": "modussy:kamala_harris_1",
+        "stream": true
+      }
+    ]
+  },
+  "kamala_harris_2": {
+    "subtitle": "subtitles.kamala_harris",
+    "sounds": [
+      {
+        "name": "modussy:kamala_harris_2",
+        "stream": true
+      }
+    ]
+  },
+  "kamala_harris_3": {
+    "subtitle": "subtitles.kamala_harris",
+    "sounds": [
+      {
+        "name": "modussy:kamala_harris_3",
+        "stream": true
+      }
+    ]
+  },
+  "kamala_harris_4": {
+    "subtitle": "subtitles.kamala_harris",
+    "sounds": [
+      {
+        "name": "modussy:kamala_harris_4",
+        "stream": true
+      }
+    ]
+  },
+  "kamala_harris_5": {
+    "subtitle": "subtitles.kamala_harris",
+    "sounds": [
+      {
+        "name": "modussy:kamala_harris_5",
+        "stream": true
+      }
+    ]
+  },
+  "kamala_harris_6": {
+    "subtitle": "subtitles.kamala_harris",
+    "sounds": [
+      {
+        "name": "modussy:kamala_harris_6",
+        "stream": true
+      }
+    ]
+  },
+  "kamala_harris_7": {
+    "subtitle": "subtitles.kamala_harris",
+    "sounds": [
+      {
+        "name": "modussy:kamala_harris_7",
+        "stream": true
+      }
+    ]
+  },
+  "kamala_harris_death": {
+    "subtitle": "subtitles.kamala_harris_death",
+    "sounds": [
+      {
+        "name": "modussy:kamala_harris_death",
+        "stream": true
+      }
+    ]
+  },
+  "kamala_harris_hurt1": {
+    "subtitle": "subtitles.kamala_harris_hurt",
+    "sounds": [
+      {
+        "name": "modussy:kamala_harris_hurt1",
+        "stream": true
+      }
+    ]
+  },
+  "kamala_harris_hurt2": {
+    "subtitle": "subtitles.kamala_harris_hurt",
+    "sounds": [
+      {
+        "name": "modussy:kamala_harris_hurt2",
+        "stream": true
+      }
+    ]
+  },
+  "kamala_harris_hurt3": {
+    "subtitle": "subtitles.kamala_harris_hurt",
+    "sounds": [
+      {
+        "name": "modussy:kamala_harris_hurt3",
+        "stream": true
+      }
+    ]
+  },
+  "kamala_harris_summon": {
+    "subtitle": "subtitles.kamala_harris_summon",
+    "sounds": [
+      {
+        "name": "modussy:kamala_harris_summon",
         "stream": true
       }
     ]
@@ -1389,6 +1641,15 @@
     "sounds": [
       {
         "name": "modussy:twink_sivan_hurt2",
+        "stream": true
+      }
+    ]
+  },
+  "troye_transformation": {
+    "subtitle": "subtitles.troye_transformation",
+    "sounds": [
+      {
+        "name": "modussy:troye_transformation",
         "stream": true
       }
     ]

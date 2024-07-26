@@ -5,6 +5,8 @@
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/Modussy.iml" filepath="$PROJECT_DIR$/.idea/modules/Modussy.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/Modussy.main.iml" filepath="$PROJECT_DIR$/.idea/modules/Modussy.main.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/Modussy.test.iml" filepath="$PROJECT_DIR$/.idea/modules/Modussy.test.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/java.Modussy.main.iml" filepath="$PROJECT_DIR$/.idea/modules/java.Modussy.main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/java.Modussy.test.iml" filepath="$PROJECT_DIR$/.idea/modules/java.Modussy.test.iml" />
     </modules>
   </component>
 </project>

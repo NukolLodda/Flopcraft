@@ -58,9 +58,9 @@ public class CvmInfusionAlter extends BaseEntityBlock {
                                  Player player, InteractionHand hand, BlockHitResult hit) {
         if (!lvl.isClientSide()) {
             BlockEntity ent = lvl.getBlockEntity(pos);
-            if (ent instanceof CvmInfusionAlterEntity) { // opens the screen upon right clicking
+            if (ent instanceof CvmInfusionAlterEntity alterEntity) { // opens the screen upon right clicking
                 player.stopUsingItem();
-                NetworkHooks.openScreen(((ServerPlayer) player), (CvmInfusionAlterEntity) ent, pos);
+                NetworkHooks.openScreen(((ServerPlayer) player), alterEntity, pos);
             } else {
                 throw new IllegalStateException("Our Container provider is missing!");
             }
