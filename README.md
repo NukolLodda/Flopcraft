@@ -1,4 +1,4 @@
-Flopcraft (also known as Modussy)
+Flopcraft (formerly known as Modussy)
 ---
 ![](https://github.com/NukolLodda/Modussy/blob/master/logo.png)A very s3xy and aesthetic Minecraft mod
 
@@ -41,12 +41,27 @@ Changelog:
 
 Requests are opening up in October this year.
 
-The Flopcraft discord server is under maintenance so if anyone wants to request, please use this github page itself.
+If you have a bug you want to report or a suggestion to make, you may head over to the
+<a href="https://discord.gg/NTwqY3rcvU">Flopcraft discord server</a>!
+
+Requests I accept:
+- bug fixes
+- new items
+- new entities/mpbs
+- new blocks
+- new mechanics (if they are too complex I might decline)
+- things that aren't too difficult for a high school coder who has only programmed for like 2 years to do.
+
+There are however requests I do NOT accept, and the biggest among these are porting.
+Since I am the sole person developing this mod from the sprites to the sounds and the code,
+porting the mod means changes to the API I am using, whether it would be a backport, a port to a different api (like fabric/quilt),
+or to Minecraft bedrock edition, which given the complexity of the mod, fundamentally changes the code throughout meaning
+that I have spend possibly over a month of my life especially when I have other things going on, to code the port in.
 
 ___
 **Why Flopcraft Isn't On Curseforge**
 
-After reading Curseforge's terms of service, I believe that some features of Modussy, namely
+After reading Curseforge's terms of service, I believe that some features of Flopcraft, namely
 CupcakKe's texture, specific items, and mobs violates it, so the download links are in this
 repository instead. Click <a href="https://github.com/NukolLodda/Modussy/releases/download/v1.20.1-0.1.5/modussy-0.1.5.jar">here</a>
 for the most recent version uploaded (Modussy-0.1.5 for Minecraft 1.20.1
