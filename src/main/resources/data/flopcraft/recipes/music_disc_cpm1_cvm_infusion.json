@@ -1,0 +1,14 @@
+{
+  "type": "flopcraft:cvm_infusion_shapeless",
+  "ingredients": [
+    {
+      "item": "flopcraft:music_disc_c1"
+    },
+    {
+      "item": "flopcraft:shenseium"
+    }
+  ],
+  "output": {
+    "item": "flopcraft:music_disc_cpm1"
+  }
+}

@@ -1,0 +1,25 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "group": "girl_yas_pumpkin",
+  "key": {
+    "0": {
+      "item": "modussy:lovely_peach"
+    },
+    "1": {
+      "item": "modussy:scarussy"
+    },
+    "2": {
+      "tag": "forge:gems/flopium"
+    }
+  },
+  "pattern": [
+    "202",
+    "010",
+    "020"
+  ],
+  "result": {
+    "item": "modussy:girl_yess_pumpkin"
+  },
+  "show_notification": true
+}

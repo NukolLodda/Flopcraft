@@ -1,7 +1,0 @@
-{
-  "parent": "minecraft:block/cube_column",
-  "textures": {
-    "end": "modussy:block/lovely_peach_log_top",
-    "side": "modussy:block/lovely_peach_log"
-  }
-}

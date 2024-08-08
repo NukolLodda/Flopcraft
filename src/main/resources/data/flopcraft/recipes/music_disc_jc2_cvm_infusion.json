@@ -1,0 +1,21 @@
+{
+  "type": "flopcraft:cvm_infusion_shapeless",
+  "ingredients": [
+    {
+      "item": "flopcraft:jiafei_product"
+    },
+    {
+      "item": "flopcraft:cupcake"
+    },
+    {
+      "item": "flopcraft:slaginium"
+    },
+    {
+      "item": "minecraft:ender_pearl"
+    }
+  ],
+  "output": {
+    "count": 1,
+    "item": "flopcraft:music_disc_jc2"
+  }
+}

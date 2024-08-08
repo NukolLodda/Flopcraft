@@ -1,0 +1,14 @@
+{
+  "placement": {
+    "salt": 1642136475,
+    "spacing": 80,
+    "separation": 20,
+    "type": "minecraft:random_spread"
+  },
+  "structures": [
+    {
+      "structure": "flopcraft:floptropica_airport",
+      "weight": 1
+    }
+  ]
+}

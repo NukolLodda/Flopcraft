@@ -1,0 +1,29 @@
+{
+  "type": "flopcraft:cvm_infusion",
+  "ingredients": [
+    {
+      "item": "flopcraft:barbie_crystals"
+    },
+    {
+      "item": "flopcraft:blood_clump"
+    },
+    {
+      "item": "flopcraft:barbie_crystals"
+    },
+    {
+      "item": "flopcraft:barbie_crystals"
+    },
+    {
+      "item": "minecraft:obsidian"
+    },
+    {
+      "item": "flopcraft:barbie_crystals"
+    },
+    {
+      "item": "flopcraft:blood_clump"
+    }
+  ],
+  "output": {
+    "item": "flopcraft:hardened_period_cvm"
+  }
+}

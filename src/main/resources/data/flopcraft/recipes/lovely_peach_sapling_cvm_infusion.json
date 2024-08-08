@@ -1,0 +1,14 @@
+{
+  "type": "flopcraft:cvm_infusion_shapeless",
+  "ingredients": [
+    {
+      "item": "flopcraft:lovely_peach"
+    },
+    {
+      "item": "minecraft:bone_meal"
+    }
+  ],
+  "output": {
+    "item": "flopcraft:lovely_peach_sapling"
+  }
+}

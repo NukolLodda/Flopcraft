@@ -1,0 +1,19 @@
+{
+  "variants": {
+    "facing=east": {
+      "model": "flopcraft:block/girl_yess_pumpkin",
+      "y": 90
+    },
+    "facing=north": {
+      "model": "flopcraft:block/girl_yess_pumpkin"
+    },
+    "facing=south": {
+      "model": "flopcraft:block/girl_yess_pumpkin",
+      "y": 180
+    },
+    "facing=west": {
+      "model": "flopcraft:block/girl_yess_pumpkin",
+      "y": 270
+    }
+  }
+}

@@ -1,0 +1,29 @@
+{
+  "type": "flopcraft:cvm_infusion",
+  "ingredients": [
+    {
+      "item": "flopcraft:infused_slaginium"
+    },
+    {
+      "item": "flopcraft:shenseium"
+    },
+    {
+      "item": "flopcraft:infused_slaginium"
+    },
+    {
+      "item": "minecraft:barrier"
+    },
+    {
+      "item": "minecraft:blaze_rod"
+    },
+    {
+      "item": "flopcraft:infused_slaginium"
+    },
+    {
+      "item": "minecraft:blaze_rod"
+    }
+  ],
+  "output": {
+    "item": "flopcraft:infused_slaginium_pickaxol"
+  }
+}

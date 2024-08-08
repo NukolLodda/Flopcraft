@@ -1,0 +1,29 @@
+{
+  "type": "flopcraft:cvm_infusion",
+  "ingredients": [
+    {
+      "item": "flopcraft:mystical_flopium"
+    },
+    {
+      "item": "flopcraft:cvmium"
+    },
+    {
+      "item": "flopcraft:mystical_flopium"
+    },
+    {
+      "item": "flopcraft:infused_slaginium"
+    },
+    {
+      "item": "minecraft:copper_ingot"
+    },
+    {
+      "item": "flopcraft:infused_slaginium"
+    },
+    {
+      "item": "flopcraft:slaginium_yassifier"
+    }
+  ],
+  "output": {
+    "item": "flopcraft:ranpapi_tablet"
+  }
+}

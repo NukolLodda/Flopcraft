@@ -1,8 +1,0 @@
-{
-  "parent": "minecraft:block/orientable",
-  "textures": {
-    "front": "modussy:block/yassification_detector",
-    "side": "modussy:block/flop_tech_side_block",
-    "top": "minecraft:block/pink_concrete"
-  }
-}

@@ -1,0 +1,10 @@
+{
+  "type": "flopcraft:add_item",
+  "conditions": [
+    {
+      "condition": "block_state_property",
+      "block": "minecraft:grass"
+    }
+  ],
+  "item": "flopcraft:jiafei_seed"
+}

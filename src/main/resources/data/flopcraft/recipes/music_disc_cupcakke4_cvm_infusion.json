@@ -1,0 +1,14 @@
+{
+  "type": "flopcraft:cvm_infusion_shapeless",
+  "ingredients": [
+    {
+      "item": "minecraft:music_disc_pigstep"
+    },
+    {
+      "item": "minecraft:water_bucket"
+    }
+  ],
+  "output": {
+    "item": "flopcraft:music_disc_cupcakke4"
+  }
+}

@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/orientable",
+  "textures": {
+    "front": "flopcraft:block/flop_airline_ticket_scanner",
+    "side": "flopcraft:block/flop_tech_side_block",
+    "top": "flopcraft:block/flop_airline_block"
+  }
+}

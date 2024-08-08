@@ -1,0 +1,14 @@
+{
+  "type": "flopcraft:cvm_infusion_shapeless",
+  "ingredients": [
+    {
+      "item": "minecraft:ice"
+    },
+    {
+      "item": "flopcraft:mystical_flopium"
+    }
+  ],
+  "output": {
+    "item": "flopcraft:mariah_carey_ice_block"
+  }
+}

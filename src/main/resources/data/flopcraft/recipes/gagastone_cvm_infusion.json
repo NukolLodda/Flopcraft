@@ -1,0 +1,17 @@
+{
+  "type": "flopcraft:cvm_infusion_shapeless",
+  "ingredients": [
+    {
+      "item": "flopcraft:music_disc_c15"
+    },
+    {
+      "item": "flopcraft:music_disc_j1"
+    },
+    {
+      "item": "flopcraft:music_disc_c24"
+    }
+  ],
+  "output": {
+    "item": "flopcraft:gagastone"
+  }
+}

@@ -1,0 +1,11 @@
+{
+  "type": "flopcraft:cvm_infusion_shapeless",
+  "ingredients": [
+    {
+      "item": "flopcraft:music_disc_cupcakke1"
+    }
+  ],
+  "output": {
+    "item": "flopcraft:music_disc_c24"
+  }
+}

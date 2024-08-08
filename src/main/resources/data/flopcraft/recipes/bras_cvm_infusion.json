@@ -1,0 +1,26 @@
+{
+  "type": "flopcraft:cvm_infusion",
+  "ingredients": [
+    {
+      "item": "flopcraft:cvmtitplasm"
+    },
+    {
+      "item": "flopcraft:slaginium"
+    },
+    {
+      "item": "flopcraft:cvmtitplasm"
+    },
+    {
+      "item": "flopcraft:cvmtitplasm"
+    },
+    {
+      "item": "minecraft:barrier"
+    },
+    {
+      "item": "flopcraft:cvmtitplasm"
+    }
+  ],
+  "output": {
+    "item": "flopcraft:bra"
+  }
+}

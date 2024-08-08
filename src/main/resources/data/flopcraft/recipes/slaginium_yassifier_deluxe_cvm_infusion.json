@@ -1,0 +1,29 @@
+{
+  "type": "flopcraft:cvm_infusion",
+  "ingredients": [
+    {
+      "item": "flopcraft:mystical_flopium"
+    },
+    {
+      "item": "flopcraft:gagina"
+    },
+    {
+      "item": "flopcraft:mystical_flopium"
+    },
+    {
+      "item": "flopcraft:mystical_flopium"
+    },
+    {
+      "item": "minecraft:barrier"
+    },
+    {
+      "item": "flopcraft:mystical_flopium"
+    },
+    {
+      "item": "flopcraft:mystical_flopium"
+    }
+  ],
+  "output": {
+    "item": "flopcraft:slaginium_yassifier_deluxe"
+  }
+}

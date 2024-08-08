@@ -1,0 +1,24 @@
+{
+  "credit": "Made with Blockbench",
+  "parent": "cube",
+  "textures": {
+    "0": "flopcraft:block/peaches_strength",
+    "1": "flopcraft:block/peaches_block_sides",
+    "particle": "flopcraft:block/main_cvm_infusion_alter_sides"
+  },
+  "elements": [
+    {
+      "from": [-4, 0, 7],
+      "to": [21, 32, 9],
+      "color": 2,
+      "faces": {
+        "north": {"uv": [0, 0, 16, 16], "texture": "#0"},
+        "east": {"uv": [0, 0, 2, 16], "texture": "#1"},
+        "south": {"uv": [0, 0, 16, 16], "texture": "#0"},
+        "west": {"uv": [0, 0, 2, 16], "texture": "#1"},
+        "up": {"uv": [0, 0, 16, 2], "texture": "#1"},
+        "down": {"uv": [0, 0, 16, 2], "texture": "#1"}
+      }
+    }
+  ]
+}

@@ -1,0 +1,15 @@
+{
+  "type": "flopcraft:cvm_infusion_shapeless",
+  "ingredients": [
+    {
+      "item": "flopcraft:jiafei_product"
+    },
+    {
+      "item": "minecraft:tinted_glass"
+    }
+  ],
+  "output": {
+    "count": 1,
+    "item": "flopcraft:music_disc_j6"
+  }
+}

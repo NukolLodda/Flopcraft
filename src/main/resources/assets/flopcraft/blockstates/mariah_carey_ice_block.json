@@ -1,0 +1,34 @@
+{
+  "variants": {
+    "facing=east,istop=false": {
+      "model": "flopcraft:block/mariah_carey_ice_block_bottom",
+      "y": 90
+    },
+    "facing=east,istop=true": {
+      "model": "flopcraft:block/mariah_carey_ice_block_top",
+      "y": 90
+    },
+    "facing=north,istop=false": {
+      "model": "flopcraft:block/mariah_carey_ice_block_bottom"
+    },
+    "facing=north,istop=true": {
+      "model": "flopcraft:block/mariah_carey_ice_block_top"
+    },
+    "facing=south,istop=false": {
+      "model": "flopcraft:block/mariah_carey_ice_block_bottom",
+      "y": 180
+    },
+    "facing=south,istop=true": {
+      "model": "flopcraft:block/mariah_carey_ice_block_top",
+      "y": 180
+    },
+    "facing=west,istop=false": {
+      "model": "flopcraft:block/mariah_carey_ice_block_bottom",
+      "y": 270
+    },
+    "facing=west,istop=true": {
+      "model": "flopcraft:block/mariah_carey_ice_block_top",
+      "y": 270
+    }
+  }
+}

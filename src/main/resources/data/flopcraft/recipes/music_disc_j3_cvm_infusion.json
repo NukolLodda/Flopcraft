@@ -1,0 +1,14 @@
+{
+  "type": "flopcraft:cvm_infusion_shapeless",
+  "ingredients": [
+    {
+      "item": "flopcraft:twink_egg_shells"
+    },
+    {
+      "item": "flopcraft:jiafei_product"
+    }
+  ],
+  "output": {
+    "item": "flopcraft:music_disc_j4"
+  }
+}

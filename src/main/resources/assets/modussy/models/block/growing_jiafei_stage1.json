@@ -1,7 +1,0 @@
-{
-  "parent": "minecraft:block/crop",
-  "textures": {
-    "crop": "modussy:block/growing_jiafei_stage1"
-  },
-  "render_type": "cutout"
-}

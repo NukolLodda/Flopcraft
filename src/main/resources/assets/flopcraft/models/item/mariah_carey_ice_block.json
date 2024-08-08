@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:item/generated",
+  "textures": {
+    "layer0": "flopcraft:item/mariah_carey_ice_block"
+  }
+}

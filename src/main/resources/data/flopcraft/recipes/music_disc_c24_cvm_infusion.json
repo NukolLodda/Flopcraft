@@ -1,0 +1,14 @@
+{
+  "type": "flopcraft:cvm_infusion_shapeless",
+  "ingredients": [
+    {
+      "item": "flopcraft:scarussy"
+    },
+    {
+      "item": "flopcraft:cupcake"
+    }
+  ],
+  "output": {
+    "item": "flopcraft:music_disc_c24"
+  }
+}

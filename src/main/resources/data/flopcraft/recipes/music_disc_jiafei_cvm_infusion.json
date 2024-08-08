@@ -1,0 +1,11 @@
+{
+  "type": "flopcraft:cvm_infusion_shapeless",
+  "ingredients": [
+    {
+      "item": "flopcraft:jiafei_product"
+    }
+  ],
+  "output": {
+    "item": "flopcraft:music_disc_jiafei"
+  }
+}

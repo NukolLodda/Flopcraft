@@ -1,8 +1,8 @@
 Flopcraft (formerly known as Modussy)
 ---
-![](https://github.com/NukolLodda/Modussy/blob/master/logo.png)A very s3xy and aesthetic Minecraft mod
+![](https://github.com/NukolLodda/Modussy/blob/master/logo.png)A very iconic and aesthetic Minecraft mod
 
-As of right now, Flopcraft currently has support for Minecraft Java version 1.20.1 on 
+As of right now, Flopcraft currently has support for Minecraft Java version 1.21 on 
 <a href="https://files.minecraftforge.net/">forge API</a>.
 
 <br>

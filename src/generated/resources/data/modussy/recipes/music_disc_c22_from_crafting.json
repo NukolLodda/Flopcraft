@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "group": "music_disc_c22",
+  "ingredients": [
+    {
+      "item": "modussy:cvm_fluid_bucket"
+    },
+    {
+      "item": "modussy:cupcake"
+    },
+    {
+      "tag": "forge:yassifers/basic"
+    }
+  ],
+  "result": {
+    "item": "modussy:music_disc_c22"
+  }
+}

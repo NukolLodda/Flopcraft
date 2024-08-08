@@ -1,0 +1,29 @@
+{
+  "type": "flopcraft:cvm_infusion",
+  "ingredients": [
+    {
+      "item": "flopcraft:slaginium"
+    },
+    {
+      "item": "flopcraft:cvm"
+    },
+    {
+      "item": "flopcraft:slaginium"
+    },
+    {
+      "item": "flopcraft:slaginium"
+    },
+    {
+      "item": "minecraft:stick"
+    },
+    {
+      "item": "minecraft:barrier"
+    },
+    {
+      "item": "minecraft:stick"
+    }
+  ],
+  "output": {
+    "item": "flopcraft:slaginium_pickaxol"
+  }
+}

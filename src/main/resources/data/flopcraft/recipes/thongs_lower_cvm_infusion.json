@@ -1,0 +1,29 @@
+{
+  "type": "flopcraft:cvm_infusion",
+  "ingredients": [
+    {
+      "item": "minecraft:barrier"
+    },
+    {
+      "item": "minecraft:barrier"
+    },
+    {
+      "item": "minecraft:barrier"
+    },
+    {
+      "item": "flopcraft:cvmtitplasm"
+    },
+    {
+      "item": "flopcraft:cupcake"
+    },
+    {
+      "item": "flopcraft:cvmtitplasm"
+    },
+    {
+      "item": "flopcraft:cvmtitplasm"
+    }
+  ],
+  "output": {
+    "item": "flopcraft:thongs"
+  }
+}

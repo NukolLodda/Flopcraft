@@ -1,0 +1,14 @@
+{
+  "type": "flopcraft:cvm_infusion_shapeless",
+  "ingredients": [
+    {
+      "item": "flopcraft:flopium"
+    },
+    {
+      "item": "flopcraft:gagina"
+    }
+  ],
+  "output": {
+    "item": "flopcraft:mystical_flopium"
+  }
+}

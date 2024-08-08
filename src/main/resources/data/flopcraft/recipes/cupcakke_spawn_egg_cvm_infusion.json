@@ -1,0 +1,26 @@
+{
+  "type": "flopcraft:cvm_infusion",
+  "ingredients": [
+    {
+      "item": "flopcraft:cvmtitplasm"
+    },
+    {
+      "item": "flopcraft:cvm"
+    },
+    {
+      "item": "flopcraft:cvmtitplasm"
+    },
+    {
+      "item": "flopcraft:cupcake"
+    },
+    {
+      "item": "flopcraft:posei"
+    },
+    {
+      "item": "flopcraft:cupcake"
+    }
+  ],
+  "output": {
+    "item": "flopcraft:cupcakke_spawn_egg"
+  }
+}

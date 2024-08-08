@@ -1,0 +1,9 @@
+{
+  "variants": {
+    "age=0": { "model": "flopcraft:block/growing_jiafei_stage0" },
+    "age=1": { "model": "flopcraft:block/growing_jiafei_stage1" },
+    "age=2": { "model": "flopcraft:block/growing_jiafei_stage2" },
+    "age=3": { "model": "flopcraft:block/growing_jiafei_stage3" },
+    "age=4": { "model": "flopcraft:block/growing_jiafei_stage4" }
+  }
+}

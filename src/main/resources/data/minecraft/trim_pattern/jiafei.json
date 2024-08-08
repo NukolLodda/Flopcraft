@@ -1,7 +1,7 @@
 {
   "asset_id": "minecraft:coast",
   "description": {
-    "translate": "trim_pattern.modussy.jiafei"
+    "translate": "trim_pattern.flopcraft.jiafei"
   },
-  "template_item": "modussy:jiafei_armor_trim_template"
+  "template_item": "flopcraft:jiafei_armor_trim_template"
 }

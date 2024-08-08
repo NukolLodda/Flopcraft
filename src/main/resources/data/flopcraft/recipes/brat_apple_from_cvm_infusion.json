@@ -1,0 +1,29 @@
+{
+  "type": "flopcraft:cvm_infusion",
+  "ingredients": [
+    {
+      "item": "flopcraft:brat"
+    },
+    {
+      "item": "flopcraft:brat"
+    },
+    {
+      "item": "flopcraft:brat"
+    },
+    {
+      "item": "flopcraft:brat"
+    },
+    {
+      "item": "minecraft:apple"
+    },
+    {
+      "item": "flopcraft:brat"
+    },
+    {
+      "item": "flopcraft:brat"
+    }
+  ],
+  "output": {
+    "item": "flopcraft:brat_apple"
+  }
+}

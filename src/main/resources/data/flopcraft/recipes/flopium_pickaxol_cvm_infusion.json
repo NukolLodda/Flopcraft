@@ -1,0 +1,29 @@
+{
+  "type": "flopcraft:cvm_infusion",
+  "ingredients": [
+    {
+      "item": "flopcraft:flopium"
+    },
+    {
+      "item": "flopcraft:jiafei_product"
+    },
+    {
+      "item": "flopcraft:flopium"
+    },
+    {
+      "item": "flopcraft:flopium"
+    },
+    {
+      "item": "flopcraft:gagastone"
+    },
+    {
+      "item": "minecraft:barrier"
+    },
+    {
+      "item": "flopcraft:gagastone"
+    }
+  ],
+  "output": {
+    "item": "flopcraft:flopium_pickaxol"
+  }
+}

@@ -1,0 +1,17 @@
+{
+  "type": "flopcraft:cvm_infusion_shapeless",
+  "ingredients": [
+    {
+      "item": "minecraft:pumpkin"
+    },
+    {
+      "item": "flopcraft:cvm"
+    },
+    {
+      "item": "flopcraft:twink_egg"
+    }
+  ],
+  "output": {
+    "item": "flopcraft:cvm_pie"
+  }
+}

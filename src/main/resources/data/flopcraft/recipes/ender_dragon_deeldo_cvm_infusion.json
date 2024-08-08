@@ -1,0 +1,14 @@
+{
+  "type": "flopcraft:cvm_infusion_shapeless",
+  "ingredients": [
+    {
+      "item": "minecraft:dragon_head"
+    },
+    {
+      "item": "flopcraft:deeldo"
+    }
+  ],
+  "output": {
+    "item": "flopcraft:ender_dragon_deeldo"
+  }
+}

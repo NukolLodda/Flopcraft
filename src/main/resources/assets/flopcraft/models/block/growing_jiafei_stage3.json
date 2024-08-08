@@ -1,0 +1,7 @@
+{
+  "parent": "minecraft:block/crop",
+  "textures": {
+    "crop": "flopcraft:block/growing_jiafei_stage3"
+  },
+  "render_type": "cutout"
+}

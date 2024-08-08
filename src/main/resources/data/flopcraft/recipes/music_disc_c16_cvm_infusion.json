@@ -1,0 +1,15 @@
+{
+  "type": "flopcraft:cvm_infusion_shapeless",
+  "ingredients": [
+    {
+      "item": "flopcraft:cupcake"
+    },
+    {
+      "item": "flopcraft:bra"
+    }
+  ],
+  "output": {
+    "count": 1,
+    "item": "flopcraft:music_disc_c16"
+  }
+}

@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "group": "music_disc_c27",
+  "ingredients": [
+    {
+      "item": "modussy:mariah_carey_ice_block"
+    },
+    {
+      "item": "modussy:cupcake"
+    },
+    {
+      "tag": "forge:yassifers/basic"
+    }
+  ],
+  "result": {
+    "item": "modussy:music_disc_c27"
+  }
+}

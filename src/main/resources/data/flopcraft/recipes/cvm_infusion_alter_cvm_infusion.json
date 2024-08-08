@@ -1,0 +1,29 @@
+{
+  "type": "flopcraft:cvm_infusion",
+  "ingredients": [
+    {
+      "item": "flopcraft:slaginium"
+    },
+    {
+      "item": "flopcraft:cvmtitplasm"
+    },
+    {
+      "item": "flopcraft:slaginium"
+    },
+    {
+      "item": "flopcraft:slaginium"
+    },
+    {
+      "item": "minecraft:crafting_table"
+    },
+    {
+      "item": "flopcraft:slaginium"
+    },
+    {
+      "item": "flopcraft:slaginium"
+    }
+  ],
+  "output": {
+    "item": "flopcraft:cvm_infusion_alter"
+  }
+}

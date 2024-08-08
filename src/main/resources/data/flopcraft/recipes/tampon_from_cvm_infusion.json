@@ -1,0 +1,30 @@
+{
+  "type": "flopcraft:cvm_infusion_shapeless",
+  "ingredients": [
+    {
+      "item": "flopcraft:hairussy"
+    },
+    {
+      "tag": "forge:ingots/slaginium"
+    },
+    {
+      "item": "flopcraft:hairussy"
+    },
+    {
+      "item": "flopcraft:hairussy"
+    },
+    {
+      "item": "minecraft:string"
+    },
+    {
+      "item": "flopcraft:hairussy"
+    },
+    {
+      "item": "minecraft:string"
+    }
+  ],
+  "output": {
+    "count": 1,
+    "item": "flopcraft:tampon"
+  }
+}

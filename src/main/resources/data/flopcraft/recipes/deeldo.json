@@ -1,0 +1,29 @@
+{
+  "type": "flopcraft:cvm_infusion",
+  "ingredients": [
+    {
+      "item": "flopcraft:mystical_flopium"
+    },
+    {
+      "item": "flopcraft:cvmtitplasm"
+    },
+    {
+      "item": "flopcraft:mystical_flopium"
+    },
+    {
+      "item": "minecraft:barrier"
+    },
+    {
+      "item": "flopcraft:mystical_flopium"
+    },
+    {
+      "item": "minecraft:barrier"
+    },
+    {
+      "item": "flopcraft:cupcake"
+    }
+  ],
+  "output": {
+    "item": "flopcraft:deeldo"
+  }
+}

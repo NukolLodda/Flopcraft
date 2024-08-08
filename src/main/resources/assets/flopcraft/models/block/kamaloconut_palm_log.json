@@ -1,0 +1,7 @@
+{
+  "parent": "minecraft:block/cube_column",
+  "textures": {
+    "end": "flopcraft:block/kamaloconut_palm_log_top",
+    "side": "flopcraft:block/kamaloconut_palm_log"
+  }
+}

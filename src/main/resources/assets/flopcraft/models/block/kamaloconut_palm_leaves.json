@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:block/leaves",
+  "textures": {
+    "all": "flopcraft:block/kamaloconut_palm_leaves"
+  }
+}

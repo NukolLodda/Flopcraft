@@ -1,0 +1,19 @@
+{
+  "variants": {
+    "facing=east": {
+      "model": "flopcraft:block/peaches_health",
+      "y": 90
+    },
+    "facing=north": {
+      "model": "flopcraft:block/peaches_health"
+    },
+    "facing=south": {
+      "model": "flopcraft:block/peaches_health",
+      "y": 180
+    },
+    "facing=west": {
+      "model": "flopcraft:block/peaches_health",
+      "y": 270
+    }
+  }
+}

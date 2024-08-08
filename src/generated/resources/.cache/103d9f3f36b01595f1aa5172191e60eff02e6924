@@ -1,5 +1,9 @@
-// 1.20.1	2023-12-17T07:10:53.310579	Registries
+// 1.20.1	2024-07-24T11:03:16.3502481	Registries
+18f19fc64aa579d1699ac6844dab58a72576b6f8 data/modussy/forge/biome_modifier/add_brat_ore.json
 bd75dd202e9f3ed84cd4803626b94a9c9c38fe9f data/modussy/forge/biome_modifier/add_shenseium_ore.json
+484d5553262125ab9d95b5adac4fe44f0fea4166 data/modussy/worldgen/configured_feature/brat_ore.json
+a362e2f40adfc8caea97d6b6f4610a71f02639bb data/modussy/worldgen/configured_feature/kamaloconut_palm.json
 03e901c271a54d3a250510b8988ecf25c7bf4afc data/modussy/worldgen/configured_feature/lovely_peach.json
 0b7997fca23a38255aa7936411dee6994d261dce data/modussy/worldgen/configured_feature/shenseium_ore.json
+4e941bb9ce9e21d6c37823124511300877e22d0e data/modussy/worldgen/placed_feature/brat_ore_placed.json
 08604f93e6c2b7fe9643a376b59fd9cdaa02505a data/modussy/worldgen/placed_feature/shenseium_ore_placed.json

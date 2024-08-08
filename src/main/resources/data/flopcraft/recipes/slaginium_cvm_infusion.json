@@ -1,0 +1,30 @@
+{
+  "type": "flopcraft:cvm_infusion_shapeless",
+  "ingredients": [
+    {
+      "item": "flopcraft:cvm"
+    },
+    {
+      "item": "flopcraft:cvm"
+    },
+    {
+      "item": "flopcraft:cvm"
+    },
+    {
+      "item": "flopcraft:cupcake"
+    },
+    {
+      "item": "minecraft:gold_ingot"
+    },
+    {
+      "item": "minecraft:gold_ingot"
+    },
+    {
+      "item": "minecraft:gold_ingot"
+    }
+  ],
+  "output": {
+    "count": 3,
+    "item": "flopcraft:slaginium"
+  }
+}

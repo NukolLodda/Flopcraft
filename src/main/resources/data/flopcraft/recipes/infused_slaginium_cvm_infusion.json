@@ -1,0 +1,14 @@
+{
+  "type": "flopcraft:cvm_infusion_shapeless",
+  "ingredients": [
+    {
+      "item": "flopcraft:slaginium"
+    },
+    {
+      "item": "flopcraft:shenseium"
+    }
+  ],
+  "output": {
+    "item": "flopcraft:infused_slaginium"
+  }
+}

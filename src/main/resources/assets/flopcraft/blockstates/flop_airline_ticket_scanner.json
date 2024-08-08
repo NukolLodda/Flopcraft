@@ -1,0 +1,19 @@
+{
+  "variants": {
+    "facing=east": {
+      "model":  "flopcraft:block/flop_airline_ticket_scanner",
+      "y": 90
+    },
+    "facing=north": {
+      "model":  "flopcraft:block/flop_airline_ticket_scanner"
+    },
+    "facing=south": {
+      "model":  "flopcraft:block/flop_airline_ticket_scanner",
+      "y": 180
+    },
+    "facing=west": {
+      "model":  "flopcraft:block/flop_airline_ticket_scanner",
+      "y": 270
+    }
+  }
+}
